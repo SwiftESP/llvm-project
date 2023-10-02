@@ -1,0 +1,652 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = CodeGen
+target_output_name = libLLVMCodeGen
+
+build obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/CodeGen/CodeGen.AggressiveAntiDepBreaker.o: cxx ../../llvm/lib/CodeGen/AggressiveAntiDepBreaker.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = AggressiveAntiDepBreaker.cpp
+  source_name_part = AggressiveAntiDepBreaker
+build obj/llvm/lib/CodeGen/CodeGen.AllocationOrder.o: cxx ../../llvm/lib/CodeGen/AllocationOrder.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = AllocationOrder.cpp
+  source_name_part = AllocationOrder
+build obj/llvm/lib/CodeGen/CodeGen.Analysis.o: cxx ../../llvm/lib/CodeGen/Analysis.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = Analysis.cpp
+  source_name_part = Analysis
+build obj/llvm/lib/CodeGen/CodeGen.AtomicExpandPass.o: cxx ../../llvm/lib/CodeGen/AtomicExpandPass.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = AtomicExpandPass.cpp
+  source_name_part = AtomicExpandPass
+build obj/llvm/lib/CodeGen/CodeGen.BasicBlockSections.o: cxx ../../llvm/lib/CodeGen/BasicBlockSections.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = BasicBlockSections.cpp
+  source_name_part = BasicBlockSections
+build obj/llvm/lib/CodeGen/CodeGen.BasicBlockSectionsProfileReader.o: cxx ../../llvm/lib/CodeGen/BasicBlockSectionsProfileReader.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = BasicBlockSectionsProfileReader.cpp
+  source_name_part = BasicBlockSectionsProfileReader
+build obj/llvm/lib/CodeGen/CodeGen.BasicTargetTransformInfo.o: cxx ../../llvm/lib/CodeGen/BasicTargetTransformInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = BasicTargetTransformInfo.cpp
+  source_name_part = BasicTargetTransformInfo
+build obj/llvm/lib/CodeGen/CodeGen.BranchFolding.o: cxx ../../llvm/lib/CodeGen/BranchFolding.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = BranchFolding.cpp
+  source_name_part = BranchFolding
+build obj/llvm/lib/CodeGen/CodeGen.BranchRelaxation.o: cxx ../../llvm/lib/CodeGen/BranchRelaxation.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = BranchRelaxation.cpp
+  source_name_part = BranchRelaxation
+build obj/llvm/lib/CodeGen/CodeGen.BreakFalseDeps.o: cxx ../../llvm/lib/CodeGen/BreakFalseDeps.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = BreakFalseDeps.cpp
+  source_name_part = BreakFalseDeps
+build obj/llvm/lib/CodeGen/CodeGen.CFGuardLongjmp.o: cxx ../../llvm/lib/CodeGen/CFGuardLongjmp.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CFGuardLongjmp.cpp
+  source_name_part = CFGuardLongjmp
+build obj/llvm/lib/CodeGen/CodeGen.CFIFixup.o: cxx ../../llvm/lib/CodeGen/CFIFixup.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CFIFixup.cpp
+  source_name_part = CFIFixup
+build obj/llvm/lib/CodeGen/CodeGen.CFIInstrInserter.o: cxx ../../llvm/lib/CodeGen/CFIInstrInserter.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CFIInstrInserter.cpp
+  source_name_part = CFIInstrInserter
+build obj/llvm/lib/CodeGen/CodeGen.CalcSpillWeights.o: cxx ../../llvm/lib/CodeGen/CalcSpillWeights.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CalcSpillWeights.cpp
+  source_name_part = CalcSpillWeights
+build obj/llvm/lib/CodeGen/CodeGen.CallingConvLower.o: cxx ../../llvm/lib/CodeGen/CallingConvLower.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CallingConvLower.cpp
+  source_name_part = CallingConvLower
+build obj/llvm/lib/CodeGen/CodeGen.CodeGen.o: cxx ../../llvm/lib/CodeGen/CodeGen.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CodeGen.cpp
+  source_name_part = CodeGen
+build obj/llvm/lib/CodeGen/CodeGen.CodeGenCommonISel.o: cxx ../../llvm/lib/CodeGen/CodeGenCommonISel.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CodeGenCommonISel.cpp
+  source_name_part = CodeGenCommonISel
+build obj/llvm/lib/CodeGen/CodeGen.CodeGenPassBuilder.o: cxx ../../llvm/lib/CodeGen/CodeGenPassBuilder.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CodeGenPassBuilder.cpp
+  source_name_part = CodeGenPassBuilder
+build obj/llvm/lib/CodeGen/CodeGen.CodeGenPrepare.o: cxx ../../llvm/lib/CodeGen/CodeGenPrepare.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CodeGenPrepare.cpp
+  source_name_part = CodeGenPrepare
+build obj/llvm/lib/CodeGen/CodeGen.CommandFlags.o: cxx ../../llvm/lib/CodeGen/CommandFlags.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CommandFlags.cpp
+  source_name_part = CommandFlags
+build obj/llvm/lib/CodeGen/CodeGen.CriticalAntiDepBreaker.o: cxx ../../llvm/lib/CodeGen/CriticalAntiDepBreaker.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CriticalAntiDepBreaker.cpp
+  source_name_part = CriticalAntiDepBreaker
+build obj/llvm/lib/CodeGen/CodeGen.DFAPacketizer.o: cxx ../../llvm/lib/CodeGen/DFAPacketizer.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = DFAPacketizer.cpp
+  source_name_part = DFAPacketizer
+build obj/llvm/lib/CodeGen/CodeGen.DeadMachineInstructionElim.o: cxx ../../llvm/lib/CodeGen/DeadMachineInstructionElim.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = DeadMachineInstructionElim.cpp
+  source_name_part = DeadMachineInstructionElim
+build obj/llvm/lib/CodeGen/CodeGen.DetectDeadLanes.o: cxx ../../llvm/lib/CodeGen/DetectDeadLanes.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = DetectDeadLanes.cpp
+  source_name_part = DetectDeadLanes
+build obj/llvm/lib/CodeGen/CodeGen.DwarfEHPrepare.o: cxx ../../llvm/lib/CodeGen/DwarfEHPrepare.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = DwarfEHPrepare.cpp
+  source_name_part = DwarfEHPrepare
+build obj/llvm/lib/CodeGen/CodeGen.EHContGuardCatchret.o: cxx ../../llvm/lib/CodeGen/EHContGuardCatchret.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = EHContGuardCatchret.cpp
+  source_name_part = EHContGuardCatchret
+build obj/llvm/lib/CodeGen/CodeGen.EarlyIfConversion.o: cxx ../../llvm/lib/CodeGen/EarlyIfConversion.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = EarlyIfConversion.cpp
+  source_name_part = EarlyIfConversion
+build obj/llvm/lib/CodeGen/CodeGen.EdgeBundles.o: cxx ../../llvm/lib/CodeGen/EdgeBundles.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = EdgeBundles.cpp
+  source_name_part = EdgeBundles
+build obj/llvm/lib/CodeGen/CodeGen.ExecutionDomainFix.o: cxx ../../llvm/lib/CodeGen/ExecutionDomainFix.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ExecutionDomainFix.cpp
+  source_name_part = ExecutionDomainFix
+build obj/llvm/lib/CodeGen/CodeGen.ExpandLargeDivRem.o: cxx ../../llvm/lib/CodeGen/ExpandLargeDivRem.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ExpandLargeDivRem.cpp
+  source_name_part = ExpandLargeDivRem
+build obj/llvm/lib/CodeGen/CodeGen.ExpandMemCmp.o: cxx ../../llvm/lib/CodeGen/ExpandMemCmp.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ExpandMemCmp.cpp
+  source_name_part = ExpandMemCmp
+build obj/llvm/lib/CodeGen/CodeGen.ExpandPostRAPseudos.o: cxx ../../llvm/lib/CodeGen/ExpandPostRAPseudos.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ExpandPostRAPseudos.cpp
+  source_name_part = ExpandPostRAPseudos
+build obj/llvm/lib/CodeGen/CodeGen.ExpandReductions.o: cxx ../../llvm/lib/CodeGen/ExpandReductions.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ExpandReductions.cpp
+  source_name_part = ExpandReductions
+build obj/llvm/lib/CodeGen/CodeGen.ExpandVectorPredication.o: cxx ../../llvm/lib/CodeGen/ExpandVectorPredication.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ExpandVectorPredication.cpp
+  source_name_part = ExpandVectorPredication
+build obj/llvm/lib/CodeGen/CodeGen.FEntryInserter.o: cxx ../../llvm/lib/CodeGen/FEntryInserter.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = FEntryInserter.cpp
+  source_name_part = FEntryInserter
+build obj/llvm/lib/CodeGen/CodeGen.FaultMaps.o: cxx ../../llvm/lib/CodeGen/FaultMaps.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = FaultMaps.cpp
+  source_name_part = FaultMaps
+build obj/llvm/lib/CodeGen/CodeGen.FinalizeISel.o: cxx ../../llvm/lib/CodeGen/FinalizeISel.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = FinalizeISel.cpp
+  source_name_part = FinalizeISel
+build obj/llvm/lib/CodeGen/CodeGen.FixupStatepointCallerSaved.o: cxx ../../llvm/lib/CodeGen/FixupStatepointCallerSaved.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = FixupStatepointCallerSaved.cpp
+  source_name_part = FixupStatepointCallerSaved
+build obj/llvm/lib/CodeGen/CodeGen.FuncletLayout.o: cxx ../../llvm/lib/CodeGen/FuncletLayout.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = FuncletLayout.cpp
+  source_name_part = FuncletLayout
+build obj/llvm/lib/CodeGen/CodeGen.GCMetadata.o: cxx ../../llvm/lib/CodeGen/GCMetadata.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = GCMetadata.cpp
+  source_name_part = GCMetadata
+build obj/llvm/lib/CodeGen/CodeGen.GCMetadataPrinter.o: cxx ../../llvm/lib/CodeGen/GCMetadataPrinter.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = GCMetadataPrinter.cpp
+  source_name_part = GCMetadataPrinter
+build obj/llvm/lib/CodeGen/CodeGen.GCRootLowering.o: cxx ../../llvm/lib/CodeGen/GCRootLowering.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = GCRootLowering.cpp
+  source_name_part = GCRootLowering
+build obj/llvm/lib/CodeGen/CodeGen.GlobalMerge.o: cxx ../../llvm/lib/CodeGen/GlobalMerge.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = GlobalMerge.cpp
+  source_name_part = GlobalMerge
+build obj/llvm/lib/CodeGen/CodeGen.HardwareLoops.o: cxx ../../llvm/lib/CodeGen/HardwareLoops.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = HardwareLoops.cpp
+  source_name_part = HardwareLoops
+build obj/llvm/lib/CodeGen/CodeGen.IfConversion.o: cxx ../../llvm/lib/CodeGen/IfConversion.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = IfConversion.cpp
+  source_name_part = IfConversion
+build obj/llvm/lib/CodeGen/CodeGen.ImplicitNullChecks.o: cxx ../../llvm/lib/CodeGen/ImplicitNullChecks.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ImplicitNullChecks.cpp
+  source_name_part = ImplicitNullChecks
+build obj/llvm/lib/CodeGen/CodeGen.IndirectBrExpandPass.o: cxx ../../llvm/lib/CodeGen/IndirectBrExpandPass.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = IndirectBrExpandPass.cpp
+  source_name_part = IndirectBrExpandPass
+build obj/llvm/lib/CodeGen/CodeGen.InlineSpiller.o: cxx ../../llvm/lib/CodeGen/InlineSpiller.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = InlineSpiller.cpp
+  source_name_part = InlineSpiller
+build obj/llvm/lib/CodeGen/CodeGen.InterferenceCache.o: cxx ../../llvm/lib/CodeGen/InterferenceCache.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = InterferenceCache.cpp
+  source_name_part = InterferenceCache
+build obj/llvm/lib/CodeGen/CodeGen.InterleavedAccessPass.o: cxx ../../llvm/lib/CodeGen/InterleavedAccessPass.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = InterleavedAccessPass.cpp
+  source_name_part = InterleavedAccessPass
+build obj/llvm/lib/CodeGen/CodeGen.InterleavedLoadCombinePass.o: cxx ../../llvm/lib/CodeGen/InterleavedLoadCombinePass.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = InterleavedLoadCombinePass.cpp
+  source_name_part = InterleavedLoadCombinePass
+build obj/llvm/lib/CodeGen/CodeGen.IntrinsicLowering.o: cxx ../../llvm/lib/CodeGen/IntrinsicLowering.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = IntrinsicLowering.cpp
+  source_name_part = IntrinsicLowering
+build obj/llvm/lib/CodeGen/CodeGen.JMCInstrumenter.o: cxx ../../llvm/lib/CodeGen/JMCInstrumenter.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = JMCInstrumenter.cpp
+  source_name_part = JMCInstrumenter
+build obj/llvm/lib/CodeGen/CodeGen.LLVMTargetMachine.o: cxx ../../llvm/lib/CodeGen/LLVMTargetMachine.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LLVMTargetMachine.cpp
+  source_name_part = LLVMTargetMachine
+build obj/llvm/lib/CodeGen/CodeGen.LatencyPriorityQueue.o: cxx ../../llvm/lib/CodeGen/LatencyPriorityQueue.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LatencyPriorityQueue.cpp
+  source_name_part = LatencyPriorityQueue
+build obj/llvm/lib/CodeGen/CodeGen.LazyMachineBlockFrequencyInfo.o: cxx ../../llvm/lib/CodeGen/LazyMachineBlockFrequencyInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LazyMachineBlockFrequencyInfo.cpp
+  source_name_part = LazyMachineBlockFrequencyInfo
+build obj/llvm/lib/CodeGen/CodeGen.LexicalScopes.o: cxx ../../llvm/lib/CodeGen/LexicalScopes.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LexicalScopes.cpp
+  source_name_part = LexicalScopes
+build obj/llvm/lib/CodeGen/LiveDebugValues/CodeGen.InstrRefBasedImpl.o: cxx ../../llvm/lib/CodeGen/LiveDebugValues/InstrRefBasedImpl.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = InstrRefBasedImpl.cpp
+  source_name_part = InstrRefBasedImpl
+build obj/llvm/lib/CodeGen/LiveDebugValues/CodeGen.LiveDebugValues.o: cxx ../../llvm/lib/CodeGen/LiveDebugValues/LiveDebugValues.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LiveDebugValues.cpp
+  source_name_part = LiveDebugValues
+build obj/llvm/lib/CodeGen/LiveDebugValues/CodeGen.VarLocBasedImpl.o: cxx ../../llvm/lib/CodeGen/LiveDebugValues/VarLocBasedImpl.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = VarLocBasedImpl.cpp
+  source_name_part = VarLocBasedImpl
+build obj/llvm/lib/CodeGen/CodeGen.LiveDebugVariables.o: cxx ../../llvm/lib/CodeGen/LiveDebugVariables.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LiveDebugVariables.cpp
+  source_name_part = LiveDebugVariables
+build obj/llvm/lib/CodeGen/CodeGen.LiveInterval.o: cxx ../../llvm/lib/CodeGen/LiveInterval.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LiveInterval.cpp
+  source_name_part = LiveInterval
+build obj/llvm/lib/CodeGen/CodeGen.LiveIntervalCalc.o: cxx ../../llvm/lib/CodeGen/LiveIntervalCalc.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LiveIntervalCalc.cpp
+  source_name_part = LiveIntervalCalc
+build obj/llvm/lib/CodeGen/CodeGen.LiveIntervalUnion.o: cxx ../../llvm/lib/CodeGen/LiveIntervalUnion.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LiveIntervalUnion.cpp
+  source_name_part = LiveIntervalUnion
+build obj/llvm/lib/CodeGen/CodeGen.LiveIntervals.o: cxx ../../llvm/lib/CodeGen/LiveIntervals.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LiveIntervals.cpp
+  source_name_part = LiveIntervals
+build obj/llvm/lib/CodeGen/CodeGen.LivePhysRegs.o: cxx ../../llvm/lib/CodeGen/LivePhysRegs.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LivePhysRegs.cpp
+  source_name_part = LivePhysRegs
+build obj/llvm/lib/CodeGen/CodeGen.LiveRangeCalc.o: cxx ../../llvm/lib/CodeGen/LiveRangeCalc.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LiveRangeCalc.cpp
+  source_name_part = LiveRangeCalc
+build obj/llvm/lib/CodeGen/CodeGen.LiveRangeEdit.o: cxx ../../llvm/lib/CodeGen/LiveRangeEdit.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LiveRangeEdit.cpp
+  source_name_part = LiveRangeEdit
+build obj/llvm/lib/CodeGen/CodeGen.LiveRangeShrink.o: cxx ../../llvm/lib/CodeGen/LiveRangeShrink.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LiveRangeShrink.cpp
+  source_name_part = LiveRangeShrink
+build obj/llvm/lib/CodeGen/CodeGen.LiveRegMatrix.o: cxx ../../llvm/lib/CodeGen/LiveRegMatrix.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LiveRegMatrix.cpp
+  source_name_part = LiveRegMatrix
+build obj/llvm/lib/CodeGen/CodeGen.LiveRegUnits.o: cxx ../../llvm/lib/CodeGen/LiveRegUnits.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LiveRegUnits.cpp
+  source_name_part = LiveRegUnits
+build obj/llvm/lib/CodeGen/CodeGen.LiveStacks.o: cxx ../../llvm/lib/CodeGen/LiveStacks.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LiveStacks.cpp
+  source_name_part = LiveStacks
+build obj/llvm/lib/CodeGen/CodeGen.LiveVariables.o: cxx ../../llvm/lib/CodeGen/LiveVariables.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LiveVariables.cpp
+  source_name_part = LiveVariables
+build obj/llvm/lib/CodeGen/CodeGen.LocalStackSlotAllocation.o: cxx ../../llvm/lib/CodeGen/LocalStackSlotAllocation.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LocalStackSlotAllocation.cpp
+  source_name_part = LocalStackSlotAllocation
+build obj/llvm/lib/CodeGen/CodeGen.LoopTraversal.o: cxx ../../llvm/lib/CodeGen/LoopTraversal.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LoopTraversal.cpp
+  source_name_part = LoopTraversal
+build obj/llvm/lib/CodeGen/CodeGen.LowLevelType.o: cxx ../../llvm/lib/CodeGen/LowLevelType.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LowLevelType.cpp
+  source_name_part = LowLevelType
+build obj/llvm/lib/CodeGen/CodeGen.LowerEmuTLS.o: cxx ../../llvm/lib/CodeGen/LowerEmuTLS.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = LowerEmuTLS.cpp
+  source_name_part = LowerEmuTLS
+build obj/llvm/lib/CodeGen/CodeGen.MBFIWrapper.o: cxx ../../llvm/lib/CodeGen/MBFIWrapper.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MBFIWrapper.cpp
+  source_name_part = MBFIWrapper
+build obj/llvm/lib/CodeGen/CodeGen.MIRCanonicalizerPass.o: cxx ../../llvm/lib/CodeGen/MIRCanonicalizerPass.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MIRCanonicalizerPass.cpp
+  source_name_part = MIRCanonicalizerPass
+build obj/llvm/lib/CodeGen/CodeGen.MIRFSDiscriminator.o: cxx ../../llvm/lib/CodeGen/MIRFSDiscriminator.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MIRFSDiscriminator.cpp
+  source_name_part = MIRFSDiscriminator
+build obj/llvm/lib/CodeGen/CodeGen.MIRNamerPass.o: cxx ../../llvm/lib/CodeGen/MIRNamerPass.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MIRNamerPass.cpp
+  source_name_part = MIRNamerPass
+build obj/llvm/lib/CodeGen/CodeGen.MIRPrinter.o: cxx ../../llvm/lib/CodeGen/MIRPrinter.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MIRPrinter.cpp
+  source_name_part = MIRPrinter
+build obj/llvm/lib/CodeGen/CodeGen.MIRPrintingPass.o: cxx ../../llvm/lib/CodeGen/MIRPrintingPass.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MIRPrintingPass.cpp
+  source_name_part = MIRPrintingPass
+build obj/llvm/lib/CodeGen/CodeGen.MIRSampleProfile.o: cxx ../../llvm/lib/CodeGen/MIRSampleProfile.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MIRSampleProfile.cpp
+  source_name_part = MIRSampleProfile
+build obj/llvm/lib/CodeGen/CodeGen.MIRVRegNamerUtils.o: cxx ../../llvm/lib/CodeGen/MIRVRegNamerUtils.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MIRVRegNamerUtils.cpp
+  source_name_part = MIRVRegNamerUtils
+build obj/llvm/lib/CodeGen/CodeGen.MIRYamlMapping.o: cxx ../../llvm/lib/CodeGen/MIRYamlMapping.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MIRYamlMapping.cpp
+  source_name_part = MIRYamlMapping
+build obj/llvm/lib/CodeGen/CodeGen.MLRegallocEvictAdvisor.o: cxx ../../llvm/lib/CodeGen/MLRegallocEvictAdvisor.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MLRegallocEvictAdvisor.cpp
+  source_name_part = MLRegallocEvictAdvisor
+build obj/llvm/lib/CodeGen/CodeGen.MLRegallocPriorityAdvisor.o: cxx ../../llvm/lib/CodeGen/MLRegallocPriorityAdvisor.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MLRegallocPriorityAdvisor.cpp
+  source_name_part = MLRegallocPriorityAdvisor
+build obj/llvm/lib/CodeGen/CodeGen.MachineBasicBlock.o: cxx ../../llvm/lib/CodeGen/MachineBasicBlock.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineBasicBlock.cpp
+  source_name_part = MachineBasicBlock
+build obj/llvm/lib/CodeGen/CodeGen.MachineBlockFrequencyInfo.o: cxx ../../llvm/lib/CodeGen/MachineBlockFrequencyInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineBlockFrequencyInfo.cpp
+  source_name_part = MachineBlockFrequencyInfo
+build obj/llvm/lib/CodeGen/CodeGen.MachineBlockPlacement.o: cxx ../../llvm/lib/CodeGen/MachineBlockPlacement.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineBlockPlacement.cpp
+  source_name_part = MachineBlockPlacement
+build obj/llvm/lib/CodeGen/CodeGen.MachineBranchProbabilityInfo.o: cxx ../../llvm/lib/CodeGen/MachineBranchProbabilityInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineBranchProbabilityInfo.cpp
+  source_name_part = MachineBranchProbabilityInfo
+build obj/llvm/lib/CodeGen/CodeGen.MachineCFGPrinter.o: cxx ../../llvm/lib/CodeGen/MachineCFGPrinter.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineCFGPrinter.cpp
+  source_name_part = MachineCFGPrinter
+build obj/llvm/lib/CodeGen/CodeGen.MachineCSE.o: cxx ../../llvm/lib/CodeGen/MachineCSE.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineCSE.cpp
+  source_name_part = MachineCSE
+build obj/llvm/lib/CodeGen/CodeGen.MachineCheckDebugify.o: cxx ../../llvm/lib/CodeGen/MachineCheckDebugify.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineCheckDebugify.cpp
+  source_name_part = MachineCheckDebugify
+build obj/llvm/lib/CodeGen/CodeGen.MachineCombiner.o: cxx ../../llvm/lib/CodeGen/MachineCombiner.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineCombiner.cpp
+  source_name_part = MachineCombiner
+build obj/llvm/lib/CodeGen/CodeGen.MachineCopyPropagation.o: cxx ../../llvm/lib/CodeGen/MachineCopyPropagation.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineCopyPropagation.cpp
+  source_name_part = MachineCopyPropagation
+build obj/llvm/lib/CodeGen/CodeGen.MachineCycleAnalysis.o: cxx ../../llvm/lib/CodeGen/MachineCycleAnalysis.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineCycleAnalysis.cpp
+  source_name_part = MachineCycleAnalysis
+build obj/llvm/lib/CodeGen/CodeGen.MachineDebugify.o: cxx ../../llvm/lib/CodeGen/MachineDebugify.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineDebugify.cpp
+  source_name_part = MachineDebugify
+build obj/llvm/lib/CodeGen/CodeGen.MachineDominanceFrontier.o: cxx ../../llvm/lib/CodeGen/MachineDominanceFrontier.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineDominanceFrontier.cpp
+  source_name_part = MachineDominanceFrontier
+build obj/llvm/lib/CodeGen/CodeGen.MachineDominators.o: cxx ../../llvm/lib/CodeGen/MachineDominators.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineDominators.cpp
+  source_name_part = MachineDominators
+build obj/llvm/lib/CodeGen/CodeGen.MachineFrameInfo.o: cxx ../../llvm/lib/CodeGen/MachineFrameInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineFrameInfo.cpp
+  source_name_part = MachineFrameInfo
+build obj/llvm/lib/CodeGen/CodeGen.MachineFunction.o: cxx ../../llvm/lib/CodeGen/MachineFunction.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineFunction.cpp
+  source_name_part = MachineFunction
+build obj/llvm/lib/CodeGen/CodeGen.MachineFunctionPass.o: cxx ../../llvm/lib/CodeGen/MachineFunctionPass.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineFunctionPass.cpp
+  source_name_part = MachineFunctionPass
+build obj/llvm/lib/CodeGen/CodeGen.MachineFunctionPrinterPass.o: cxx ../../llvm/lib/CodeGen/MachineFunctionPrinterPass.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineFunctionPrinterPass.cpp
+  source_name_part = MachineFunctionPrinterPass
+build obj/llvm/lib/CodeGen/CodeGen.MachineFunctionSplitter.o: cxx ../../llvm/lib/CodeGen/MachineFunctionSplitter.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineFunctionSplitter.cpp
+  source_name_part = MachineFunctionSplitter
+build obj/llvm/lib/CodeGen/CodeGen.MachineInstr.o: cxx ../../llvm/lib/CodeGen/MachineInstr.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineInstr.cpp
+  source_name_part = MachineInstr
+build obj/llvm/lib/CodeGen/CodeGen.MachineInstrBundle.o: cxx ../../llvm/lib/CodeGen/MachineInstrBundle.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineInstrBundle.cpp
+  source_name_part = MachineInstrBundle
+build obj/llvm/lib/CodeGen/CodeGen.MachineLICM.o: cxx ../../llvm/lib/CodeGen/MachineLICM.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineLICM.cpp
+  source_name_part = MachineLICM
+build obj/llvm/lib/CodeGen/CodeGen.MachineLoopInfo.o: cxx ../../llvm/lib/CodeGen/MachineLoopInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineLoopInfo.cpp
+  source_name_part = MachineLoopInfo
+build obj/llvm/lib/CodeGen/CodeGen.MachineLoopUtils.o: cxx ../../llvm/lib/CodeGen/MachineLoopUtils.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineLoopUtils.cpp
+  source_name_part = MachineLoopUtils
+build obj/llvm/lib/CodeGen/CodeGen.MachineModuleInfo.o: cxx ../../llvm/lib/CodeGen/MachineModuleInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineModuleInfo.cpp
+  source_name_part = MachineModuleInfo
+build obj/llvm/lib/CodeGen/CodeGen.MachineModuleInfoImpls.o: cxx ../../llvm/lib/CodeGen/MachineModuleInfoImpls.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineModuleInfoImpls.cpp
+  source_name_part = MachineModuleInfoImpls
+build obj/llvm/lib/CodeGen/CodeGen.MachineModuleSlotTracker.o: cxx ../../llvm/lib/CodeGen/MachineModuleSlotTracker.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineModuleSlotTracker.cpp
+  source_name_part = MachineModuleSlotTracker
+build obj/llvm/lib/CodeGen/CodeGen.MachineOperand.o: cxx ../../llvm/lib/CodeGen/MachineOperand.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineOperand.cpp
+  source_name_part = MachineOperand
+build obj/llvm/lib/CodeGen/CodeGen.MachineOptimizationRemarkEmitter.o: cxx ../../llvm/lib/CodeGen/MachineOptimizationRemarkEmitter.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineOptimizationRemarkEmitter.cpp
+  source_name_part = MachineOptimizationRemarkEmitter
+build obj/llvm/lib/CodeGen/CodeGen.MachineOutliner.o: cxx ../../llvm/lib/CodeGen/MachineOutliner.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineOutliner.cpp
+  source_name_part = MachineOutliner
+build obj/llvm/lib/CodeGen/CodeGen.MachinePassManager.o: cxx ../../llvm/lib/CodeGen/MachinePassManager.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachinePassManager.cpp
+  source_name_part = MachinePassManager
+build obj/llvm/lib/CodeGen/CodeGen.MachinePipeliner.o: cxx ../../llvm/lib/CodeGen/MachinePipeliner.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachinePipeliner.cpp
+  source_name_part = MachinePipeliner
+build obj/llvm/lib/CodeGen/CodeGen.MachinePostDominators.o: cxx ../../llvm/lib/CodeGen/MachinePostDominators.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachinePostDominators.cpp
+  source_name_part = MachinePostDominators
+build obj/llvm/lib/CodeGen/CodeGen.MachineRegionInfo.o: cxx ../../llvm/lib/CodeGen/MachineRegionInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineRegionInfo.cpp
+  source_name_part = MachineRegionInfo
+build obj/llvm/lib/CodeGen/CodeGen.MachineRegisterInfo.o: cxx ../../llvm/lib/CodeGen/MachineRegisterInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineRegisterInfo.cpp
+  source_name_part = MachineRegisterInfo
+build obj/llvm/lib/CodeGen/CodeGen.MachineSSAContext.o: cxx ../../llvm/lib/CodeGen/MachineSSAContext.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineSSAContext.cpp
+  source_name_part = MachineSSAContext
+build obj/llvm/lib/CodeGen/CodeGen.MachineSSAUpdater.o: cxx ../../llvm/lib/CodeGen/MachineSSAUpdater.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineSSAUpdater.cpp
+  source_name_part = MachineSSAUpdater
+build obj/llvm/lib/CodeGen/CodeGen.MachineScheduler.o: cxx ../../llvm/lib/CodeGen/MachineScheduler.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineScheduler.cpp
+  source_name_part = MachineScheduler
+build obj/llvm/lib/CodeGen/CodeGen.MachineSink.o: cxx ../../llvm/lib/CodeGen/MachineSink.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineSink.cpp
+  source_name_part = MachineSink
+build obj/llvm/lib/CodeGen/CodeGen.MachineSizeOpts.o: cxx ../../llvm/lib/CodeGen/MachineSizeOpts.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineSizeOpts.cpp
+  source_name_part = MachineSizeOpts
+build obj/llvm/lib/CodeGen/CodeGen.MachineStableHash.o: cxx ../../llvm/lib/CodeGen/MachineStableHash.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineStableHash.cpp
+  source_name_part = MachineStableHash
+build obj/llvm/lib/CodeGen/CodeGen.MachineStripDebug.o: cxx ../../llvm/lib/CodeGen/MachineStripDebug.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineStripDebug.cpp
+  source_name_part = MachineStripDebug
+build obj/llvm/lib/CodeGen/CodeGen.MachineTraceMetrics.o: cxx ../../llvm/lib/CodeGen/MachineTraceMetrics.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineTraceMetrics.cpp
+  source_name_part = MachineTraceMetrics
+build obj/llvm/lib/CodeGen/CodeGen.MachineVerifier.o: cxx ../../llvm/lib/CodeGen/MachineVerifier.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MachineVerifier.cpp
+  source_name_part = MachineVerifier
+build obj/llvm/lib/CodeGen/CodeGen.MacroFusion.o: cxx ../../llvm/lib/CodeGen/MacroFusion.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MacroFusion.cpp
+  source_name_part = MacroFusion
+build obj/llvm/lib/CodeGen/CodeGen.ModuloSchedule.o: cxx ../../llvm/lib/CodeGen/ModuloSchedule.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ModuloSchedule.cpp
+  source_name_part = ModuloSchedule
+build obj/llvm/lib/CodeGen/CodeGen.MultiHazardRecognizer.o: cxx ../../llvm/lib/CodeGen/MultiHazardRecognizer.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MultiHazardRecognizer.cpp
+  source_name_part = MultiHazardRecognizer
+build obj/llvm/lib/CodeGen/CodeGen.NonRelocatableStringpool.o: cxx ../../llvm/lib/CodeGen/NonRelocatableStringpool.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = NonRelocatableStringpool.cpp
+  source_name_part = NonRelocatableStringpool
+build obj/llvm/lib/CodeGen/CodeGen.OptimizePHIs.o: cxx ../../llvm/lib/CodeGen/OptimizePHIs.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = OptimizePHIs.cpp
+  source_name_part = OptimizePHIs
+build obj/llvm/lib/CodeGen/CodeGen.PHIElimination.o: cxx ../../llvm/lib/CodeGen/PHIElimination.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = PHIElimination.cpp
+  source_name_part = PHIElimination
+build obj/llvm/lib/CodeGen/CodeGen.PHIEliminationUtils.o: cxx ../../llvm/lib/CodeGen/PHIEliminationUtils.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = PHIEliminationUtils.cpp
+  source_name_part = PHIEliminationUtils
+build obj/llvm/lib/CodeGen/CodeGen.ParallelCG.o: cxx ../../llvm/lib/CodeGen/ParallelCG.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ParallelCG.cpp
+  source_name_part = ParallelCG
+build obj/llvm/lib/CodeGen/CodeGen.PatchableFunction.o: cxx ../../llvm/lib/CodeGen/PatchableFunction.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = PatchableFunction.cpp
+  source_name_part = PatchableFunction
+build obj/llvm/lib/CodeGen/CodeGen.PeepholeOptimizer.o: cxx ../../llvm/lib/CodeGen/PeepholeOptimizer.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = PeepholeOptimizer.cpp
+  source_name_part = PeepholeOptimizer
+build obj/llvm/lib/CodeGen/CodeGen.PostRAHazardRecognizer.o: cxx ../../llvm/lib/CodeGen/PostRAHazardRecognizer.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = PostRAHazardRecognizer.cpp
+  source_name_part = PostRAHazardRecognizer
+build obj/llvm/lib/CodeGen/CodeGen.PostRASchedulerList.o: cxx ../../llvm/lib/CodeGen/PostRASchedulerList.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = PostRASchedulerList.cpp
+  source_name_part = PostRASchedulerList
+build obj/llvm/lib/CodeGen/CodeGen.PreISelIntrinsicLowering.o: cxx ../../llvm/lib/CodeGen/PreISelIntrinsicLowering.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = PreISelIntrinsicLowering.cpp
+  source_name_part = PreISelIntrinsicLowering
+build obj/llvm/lib/CodeGen/CodeGen.ProcessImplicitDefs.o: cxx ../../llvm/lib/CodeGen/ProcessImplicitDefs.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ProcessImplicitDefs.cpp
+  source_name_part = ProcessImplicitDefs
+build obj/llvm/lib/CodeGen/CodeGen.PrologEpilogInserter.o: cxx ../../llvm/lib/CodeGen/PrologEpilogInserter.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = PrologEpilogInserter.cpp
+  source_name_part = PrologEpilogInserter
+build obj/llvm/lib/CodeGen/CodeGen.PseudoProbeInserter.o: cxx ../../llvm/lib/CodeGen/PseudoProbeInserter.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = PseudoProbeInserter.cpp
+  source_name_part = PseudoProbeInserter
+build obj/llvm/lib/CodeGen/CodeGen.PseudoSourceValue.o: cxx ../../llvm/lib/CodeGen/PseudoSourceValue.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = PseudoSourceValue.cpp
+  source_name_part = PseudoSourceValue
+build obj/llvm/lib/CodeGen/CodeGen.RDFGraph.o: cxx ../../llvm/lib/CodeGen/RDFGraph.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RDFGraph.cpp
+  source_name_part = RDFGraph
+build obj/llvm/lib/CodeGen/CodeGen.RDFLiveness.o: cxx ../../llvm/lib/CodeGen/RDFLiveness.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RDFLiveness.cpp
+  source_name_part = RDFLiveness
+build obj/llvm/lib/CodeGen/CodeGen.RDFRegisters.o: cxx ../../llvm/lib/CodeGen/RDFRegisters.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RDFRegisters.cpp
+  source_name_part = RDFRegisters
+build obj/llvm/lib/CodeGen/CodeGen.ReachingDefAnalysis.o: cxx ../../llvm/lib/CodeGen/ReachingDefAnalysis.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ReachingDefAnalysis.cpp
+  source_name_part = ReachingDefAnalysis
+build obj/llvm/lib/CodeGen/CodeGen.RegAllocBase.o: cxx ../../llvm/lib/CodeGen/RegAllocBase.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegAllocBase.cpp
+  source_name_part = RegAllocBase
+build obj/llvm/lib/CodeGen/CodeGen.RegAllocBasic.o: cxx ../../llvm/lib/CodeGen/RegAllocBasic.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegAllocBasic.cpp
+  source_name_part = RegAllocBasic
+build obj/llvm/lib/CodeGen/CodeGen.RegAllocEvictionAdvisor.o: cxx ../../llvm/lib/CodeGen/RegAllocEvictionAdvisor.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegAllocEvictionAdvisor.cpp
+  source_name_part = RegAllocEvictionAdvisor
+build obj/llvm/lib/CodeGen/CodeGen.RegAllocFast.o: cxx ../../llvm/lib/CodeGen/RegAllocFast.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegAllocFast.cpp
+  source_name_part = RegAllocFast
+build obj/llvm/lib/CodeGen/CodeGen.RegAllocGreedy.o: cxx ../../llvm/lib/CodeGen/RegAllocGreedy.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegAllocGreedy.cpp
+  source_name_part = RegAllocGreedy
+build obj/llvm/lib/CodeGen/CodeGen.RegAllocPBQP.o: cxx ../../llvm/lib/CodeGen/RegAllocPBQP.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegAllocPBQP.cpp
+  source_name_part = RegAllocPBQP
+build obj/llvm/lib/CodeGen/CodeGen.RegAllocPriorityAdvisor.o: cxx ../../llvm/lib/CodeGen/RegAllocPriorityAdvisor.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegAllocPriorityAdvisor.cpp
+  source_name_part = RegAllocPriorityAdvisor
+build obj/llvm/lib/CodeGen/CodeGen.RegAllocScore.o: cxx ../../llvm/lib/CodeGen/RegAllocScore.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegAllocScore.cpp
+  source_name_part = RegAllocScore
+build obj/llvm/lib/CodeGen/CodeGen.RegUsageInfoCollector.o: cxx ../../llvm/lib/CodeGen/RegUsageInfoCollector.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegUsageInfoCollector.cpp
+  source_name_part = RegUsageInfoCollector
+build obj/llvm/lib/CodeGen/CodeGen.RegUsageInfoPropagate.o: cxx ../../llvm/lib/CodeGen/RegUsageInfoPropagate.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegUsageInfoPropagate.cpp
+  source_name_part = RegUsageInfoPropagate
+build obj/llvm/lib/CodeGen/CodeGen.RegisterBank.o: cxx ../../llvm/lib/CodeGen/RegisterBank.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegisterBank.cpp
+  source_name_part = RegisterBank
+build obj/llvm/lib/CodeGen/CodeGen.RegisterBankInfo.o: cxx ../../llvm/lib/CodeGen/RegisterBankInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegisterBankInfo.cpp
+  source_name_part = RegisterBankInfo
+build obj/llvm/lib/CodeGen/CodeGen.RegisterClassInfo.o: cxx ../../llvm/lib/CodeGen/RegisterClassInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegisterClassInfo.cpp
+  source_name_part = RegisterClassInfo
+build obj/llvm/lib/CodeGen/CodeGen.RegisterCoalescer.o: cxx ../../llvm/lib/CodeGen/RegisterCoalescer.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegisterCoalescer.cpp
+  source_name_part = RegisterCoalescer
+build obj/llvm/lib/CodeGen/CodeGen.RegisterPressure.o: cxx ../../llvm/lib/CodeGen/RegisterPressure.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegisterPressure.cpp
+  source_name_part = RegisterPressure
+build obj/llvm/lib/CodeGen/CodeGen.RegisterScavenging.o: cxx ../../llvm/lib/CodeGen/RegisterScavenging.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegisterScavenging.cpp
+  source_name_part = RegisterScavenging
+build obj/llvm/lib/CodeGen/CodeGen.RegisterUsageInfo.o: cxx ../../llvm/lib/CodeGen/RegisterUsageInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RegisterUsageInfo.cpp
+  source_name_part = RegisterUsageInfo
+build obj/llvm/lib/CodeGen/CodeGen.RemoveRedundantDebugValues.o: cxx ../../llvm/lib/CodeGen/RemoveRedundantDebugValues.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RemoveRedundantDebugValues.cpp
+  source_name_part = RemoveRedundantDebugValues
+build obj/llvm/lib/CodeGen/CodeGen.RenameIndependentSubregs.o: cxx ../../llvm/lib/CodeGen/RenameIndependentSubregs.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = RenameIndependentSubregs.cpp
+  source_name_part = RenameIndependentSubregs
+build obj/llvm/lib/CodeGen/CodeGen.ReplaceWithVeclib.o: cxx ../../llvm/lib/CodeGen/ReplaceWithVeclib.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ReplaceWithVeclib.cpp
+  source_name_part = ReplaceWithVeclib
+build obj/llvm/lib/CodeGen/CodeGen.ResetMachineFunctionPass.o: cxx ../../llvm/lib/CodeGen/ResetMachineFunctionPass.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ResetMachineFunctionPass.cpp
+  source_name_part = ResetMachineFunctionPass
+build obj/llvm/lib/CodeGen/CodeGen.SafeStack.o: cxx ../../llvm/lib/CodeGen/SafeStack.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = SafeStack.cpp
+  source_name_part = SafeStack
+build obj/llvm/lib/CodeGen/CodeGen.SafeStackLayout.o: cxx ../../llvm/lib/CodeGen/SafeStackLayout.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = SafeStackLayout.cpp
+  source_name_part = SafeStackLayout
+build obj/llvm/lib/CodeGen/CodeGen.ScheduleDAG.o: cxx ../../llvm/lib/CodeGen/ScheduleDAG.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ScheduleDAG.cpp
+  source_name_part = ScheduleDAG
+build obj/llvm/lib/CodeGen/CodeGen.ScheduleDAGInstrs.o: cxx ../../llvm/lib/CodeGen/ScheduleDAGInstrs.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ScheduleDAGInstrs.cpp
+  source_name_part = ScheduleDAGInstrs
+build obj/llvm/lib/CodeGen/CodeGen.ScheduleDAGPrinter.o: cxx ../../llvm/lib/CodeGen/ScheduleDAGPrinter.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ScheduleDAGPrinter.cpp
+  source_name_part = ScheduleDAGPrinter
+build obj/llvm/lib/CodeGen/CodeGen.ScoreboardHazardRecognizer.o: cxx ../../llvm/lib/CodeGen/ScoreboardHazardRecognizer.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ScoreboardHazardRecognizer.cpp
+  source_name_part = ScoreboardHazardRecognizer
+build obj/llvm/lib/CodeGen/CodeGen.SelectOptimize.o: cxx ../../llvm/lib/CodeGen/SelectOptimize.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = SelectOptimize.cpp
+  source_name_part = SelectOptimize
+build obj/llvm/lib/CodeGen/CodeGen.ShadowStackGCLowering.o: cxx ../../llvm/lib/CodeGen/ShadowStackGCLowering.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ShadowStackGCLowering.cpp
+  source_name_part = ShadowStackGCLowering
+build obj/llvm/lib/CodeGen/CodeGen.ShrinkWrap.o: cxx ../../llvm/lib/CodeGen/ShrinkWrap.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ShrinkWrap.cpp
+  source_name_part = ShrinkWrap
+build obj/llvm/lib/CodeGen/CodeGen.SjLjEHPrepare.o: cxx ../../llvm/lib/CodeGen/SjLjEHPrepare.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = SjLjEHPrepare.cpp
+  source_name_part = SjLjEHPrepare
+build obj/llvm/lib/CodeGen/CodeGen.SlotIndexes.o: cxx ../../llvm/lib/CodeGen/SlotIndexes.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = SlotIndexes.cpp
+  source_name_part = SlotIndexes
+build obj/llvm/lib/CodeGen/CodeGen.SpillPlacement.o: cxx ../../llvm/lib/CodeGen/SpillPlacement.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = SpillPlacement.cpp
+  source_name_part = SpillPlacement
+build obj/llvm/lib/CodeGen/CodeGen.SplitKit.o: cxx ../../llvm/lib/CodeGen/SplitKit.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = SplitKit.cpp
+  source_name_part = SplitKit
+build obj/llvm/lib/CodeGen/CodeGen.StackColoring.o: cxx ../../llvm/lib/CodeGen/StackColoring.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = StackColoring.cpp
+  source_name_part = StackColoring
+build obj/llvm/lib/CodeGen/CodeGen.StackMapLivenessAnalysis.o: cxx ../../llvm/lib/CodeGen/StackMapLivenessAnalysis.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = StackMapLivenessAnalysis.cpp
+  source_name_part = StackMapLivenessAnalysis
+build obj/llvm/lib/CodeGen/CodeGen.StackMaps.o: cxx ../../llvm/lib/CodeGen/StackMaps.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = StackMaps.cpp
+  source_name_part = StackMaps
+build obj/llvm/lib/CodeGen/CodeGen.StackProtector.o: cxx ../../llvm/lib/CodeGen/StackProtector.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = StackProtector.cpp
+  source_name_part = StackProtector
+build obj/llvm/lib/CodeGen/CodeGen.StackSlotColoring.o: cxx ../../llvm/lib/CodeGen/StackSlotColoring.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = StackSlotColoring.cpp
+  source_name_part = StackSlotColoring
+build obj/llvm/lib/CodeGen/CodeGen.SwiftErrorValueTracking.o: cxx ../../llvm/lib/CodeGen/SwiftErrorValueTracking.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = SwiftErrorValueTracking.cpp
+  source_name_part = SwiftErrorValueTracking
+build obj/llvm/lib/CodeGen/CodeGen.SwitchLoweringUtils.o: cxx ../../llvm/lib/CodeGen/SwitchLoweringUtils.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = SwitchLoweringUtils.cpp
+  source_name_part = SwitchLoweringUtils
+build obj/llvm/lib/CodeGen/CodeGen.TailDuplication.o: cxx ../../llvm/lib/CodeGen/TailDuplication.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = TailDuplication.cpp
+  source_name_part = TailDuplication
+build obj/llvm/lib/CodeGen/CodeGen.TailDuplicator.o: cxx ../../llvm/lib/CodeGen/TailDuplicator.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = TailDuplicator.cpp
+  source_name_part = TailDuplicator
+build obj/llvm/lib/CodeGen/CodeGen.TargetFrameLoweringImpl.o: cxx ../../llvm/lib/CodeGen/TargetFrameLoweringImpl.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = TargetFrameLoweringImpl.cpp
+  source_name_part = TargetFrameLoweringImpl
+build obj/llvm/lib/CodeGen/CodeGen.TargetInstrInfo.o: cxx ../../llvm/lib/CodeGen/TargetInstrInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = TargetInstrInfo.cpp
+  source_name_part = TargetInstrInfo
+build obj/llvm/lib/CodeGen/CodeGen.TargetLoweringBase.o: cxx ../../llvm/lib/CodeGen/TargetLoweringBase.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = TargetLoweringBase.cpp
+  source_name_part = TargetLoweringBase
+build obj/llvm/lib/CodeGen/CodeGen.TargetLoweringObjectFileImpl.o: cxx ../../llvm/lib/CodeGen/TargetLoweringObjectFileImpl.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = TargetLoweringObjectFileImpl.cpp
+  source_name_part = TargetLoweringObjectFileImpl
+build obj/llvm/lib/CodeGen/CodeGen.TargetOptionsImpl.o: cxx ../../llvm/lib/CodeGen/TargetOptionsImpl.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = TargetOptionsImpl.cpp
+  source_name_part = TargetOptionsImpl
+build obj/llvm/lib/CodeGen/CodeGen.TargetPassConfig.o: cxx ../../llvm/lib/CodeGen/TargetPassConfig.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = TargetPassConfig.cpp
+  source_name_part = TargetPassConfig
+build obj/llvm/lib/CodeGen/CodeGen.TargetRegisterInfo.o: cxx ../../llvm/lib/CodeGen/TargetRegisterInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = TargetRegisterInfo.cpp
+  source_name_part = TargetRegisterInfo
+build obj/llvm/lib/CodeGen/CodeGen.TargetSchedule.o: cxx ../../llvm/lib/CodeGen/TargetSchedule.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = TargetSchedule.cpp
+  source_name_part = TargetSchedule
+build obj/llvm/lib/CodeGen/CodeGen.TargetSubtargetInfo.o: cxx ../../llvm/lib/CodeGen/TargetSubtargetInfo.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = TargetSubtargetInfo.cpp
+  source_name_part = TargetSubtargetInfo
+build obj/llvm/lib/CodeGen/CodeGen.TwoAddressInstructionPass.o: cxx ../../llvm/lib/CodeGen/TwoAddressInstructionPass.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = TwoAddressInstructionPass.cpp
+  source_name_part = TwoAddressInstructionPass
+build obj/llvm/lib/CodeGen/CodeGen.TypePromotion.o: cxx ../../llvm/lib/CodeGen/TypePromotion.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = TypePromotion.cpp
+  source_name_part = TypePromotion
+build obj/llvm/lib/CodeGen/CodeGen.UnreachableBlockElim.o: cxx ../../llvm/lib/CodeGen/UnreachableBlockElim.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = UnreachableBlockElim.cpp
+  source_name_part = UnreachableBlockElim
+build obj/llvm/lib/CodeGen/CodeGen.VLIWMachineScheduler.o: cxx ../../llvm/lib/CodeGen/VLIWMachineScheduler.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = VLIWMachineScheduler.cpp
+  source_name_part = VLIWMachineScheduler
+build obj/llvm/lib/CodeGen/CodeGen.ValueTypes.o: cxx ../../llvm/lib/CodeGen/ValueTypes.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ValueTypes.cpp
+  source_name_part = ValueTypes
+build obj/llvm/lib/CodeGen/CodeGen.VirtRegMap.o: cxx ../../llvm/lib/CodeGen/VirtRegMap.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = VirtRegMap.cpp
+  source_name_part = VirtRegMap
+build obj/llvm/lib/CodeGen/CodeGen.WasmEHPrepare.o: cxx ../../llvm/lib/CodeGen/WasmEHPrepare.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = WasmEHPrepare.cpp
+  source_name_part = WasmEHPrepare
+build obj/llvm/lib/CodeGen/CodeGen.WinEHPrepare.o: cxx ../../llvm/lib/CodeGen/WinEHPrepare.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = WinEHPrepare.cpp
+  source_name_part = WinEHPrepare
+build obj/llvm/lib/CodeGen/CodeGen.XRayInstrumentation.o: cxx ../../llvm/lib/CodeGen/XRayInstrumentation.cpp || obj/llvm/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = XRayInstrumentation.cpp
+  source_name_part = XRayInstrumentation
+
+build ./lib/libLLVMCodeGen.a: alink obj/llvm/lib/CodeGen/CodeGen.AggressiveAntiDepBreaker.o obj/llvm/lib/CodeGen/CodeGen.AllocationOrder.o obj/llvm/lib/CodeGen/CodeGen.Analysis.o obj/llvm/lib/CodeGen/CodeGen.AtomicExpandPass.o obj/llvm/lib/CodeGen/CodeGen.BasicBlockSections.o obj/llvm/lib/CodeGen/CodeGen.BasicBlockSectionsProfileReader.o obj/llvm/lib/CodeGen/CodeGen.BasicTargetTransformInfo.o obj/llvm/lib/CodeGen/CodeGen.BranchFolding.o obj/llvm/lib/CodeGen/CodeGen.BranchRelaxation.o obj/llvm/lib/CodeGen/CodeGen.BreakFalseDeps.o obj/llvm/lib/CodeGen/CodeGen.CFGuardLongjmp.o obj/llvm/lib/CodeGen/CodeGen.CFIFixup.o obj/llvm/lib/CodeGen/CodeGen.CFIInstrInserter.o obj/llvm/lib/CodeGen/CodeGen.CalcSpillWeights.o obj/llvm/lib/CodeGen/CodeGen.CallingConvLower.o obj/llvm/lib/CodeGen/CodeGen.CodeGen.o obj/llvm/lib/CodeGen/CodeGen.CodeGenCommonISel.o obj/llvm/lib/CodeGen/CodeGen.CodeGenPassBuilder.o obj/llvm/lib/CodeGen/CodeGen.CodeGenPrepare.o obj/llvm/lib/CodeGen/CodeGen.CommandFlags.o obj/llvm/lib/CodeGen/CodeGen.CriticalAntiDepBreaker.o obj/llvm/lib/CodeGen/CodeGen.DFAPacketizer.o obj/llvm/lib/CodeGen/CodeGen.DeadMachineInstructionElim.o obj/llvm/lib/CodeGen/CodeGen.DetectDeadLanes.o obj/llvm/lib/CodeGen/CodeGen.DwarfEHPrepare.o obj/llvm/lib/CodeGen/CodeGen.EHContGuardCatchret.o obj/llvm/lib/CodeGen/CodeGen.EarlyIfConversion.o obj/llvm/lib/CodeGen/CodeGen.EdgeBundles.o obj/llvm/lib/CodeGen/CodeGen.ExecutionDomainFix.o obj/llvm/lib/CodeGen/CodeGen.ExpandLargeDivRem.o obj/llvm/lib/CodeGen/CodeGen.ExpandMemCmp.o obj/llvm/lib/CodeGen/CodeGen.ExpandPostRAPseudos.o obj/llvm/lib/CodeGen/CodeGen.ExpandReductions.o obj/llvm/lib/CodeGen/CodeGen.ExpandVectorPredication.o obj/llvm/lib/CodeGen/CodeGen.FEntryInserter.o obj/llvm/lib/CodeGen/CodeGen.FaultMaps.o obj/llvm/lib/CodeGen/CodeGen.FinalizeISel.o obj/llvm/lib/CodeGen/CodeGen.FixupStatepointCallerSaved.o obj/llvm/lib/CodeGen/CodeGen.FuncletLayout.o obj/llvm/lib/CodeGen/CodeGen.GCMetadata.o obj/llvm/lib/CodeGen/CodeGen.GCMetadataPrinter.o obj/llvm/lib/CodeGen/CodeGen.GCRootLowering.o obj/llvm/lib/CodeGen/CodeGen.GlobalMerge.o obj/llvm/lib/CodeGen/CodeGen.HardwareLoops.o obj/llvm/lib/CodeGen/CodeGen.IfConversion.o obj/llvm/lib/CodeGen/CodeGen.ImplicitNullChecks.o obj/llvm/lib/CodeGen/CodeGen.IndirectBrExpandPass.o obj/llvm/lib/CodeGen/CodeGen.InlineSpiller.o obj/llvm/lib/CodeGen/CodeGen.InterferenceCache.o obj/llvm/lib/CodeGen/CodeGen.InterleavedAccessPass.o obj/llvm/lib/CodeGen/CodeGen.InterleavedLoadCombinePass.o obj/llvm/lib/CodeGen/CodeGen.IntrinsicLowering.o obj/llvm/lib/CodeGen/CodeGen.JMCInstrumenter.o obj/llvm/lib/CodeGen/CodeGen.LLVMTargetMachine.o obj/llvm/lib/CodeGen/CodeGen.LatencyPriorityQueue.o obj/llvm/lib/CodeGen/CodeGen.LazyMachineBlockFrequencyInfo.o obj/llvm/lib/CodeGen/CodeGen.LexicalScopes.o obj/llvm/lib/CodeGen/LiveDebugValues/CodeGen.InstrRefBasedImpl.o obj/llvm/lib/CodeGen/LiveDebugValues/CodeGen.LiveDebugValues.o obj/llvm/lib/CodeGen/LiveDebugValues/CodeGen.VarLocBasedImpl.o obj/llvm/lib/CodeGen/CodeGen.LiveDebugVariables.o obj/llvm/lib/CodeGen/CodeGen.LiveInterval.o obj/llvm/lib/CodeGen/CodeGen.LiveIntervalCalc.o obj/llvm/lib/CodeGen/CodeGen.LiveIntervalUnion.o obj/llvm/lib/CodeGen/CodeGen.LiveIntervals.o obj/llvm/lib/CodeGen/CodeGen.LivePhysRegs.o obj/llvm/lib/CodeGen/CodeGen.LiveRangeCalc.o obj/llvm/lib/CodeGen/CodeGen.LiveRangeEdit.o obj/llvm/lib/CodeGen/CodeGen.LiveRangeShrink.o obj/llvm/lib/CodeGen/CodeGen.LiveRegMatrix.o obj/llvm/lib/CodeGen/CodeGen.LiveRegUnits.o obj/llvm/lib/CodeGen/CodeGen.LiveStacks.o obj/llvm/lib/CodeGen/CodeGen.LiveVariables.o obj/llvm/lib/CodeGen/CodeGen.LocalStackSlotAllocation.o obj/llvm/lib/CodeGen/CodeGen.LoopTraversal.o obj/llvm/lib/CodeGen/CodeGen.LowLevelType.o obj/llvm/lib/CodeGen/CodeGen.LowerEmuTLS.o obj/llvm/lib/CodeGen/CodeGen.MBFIWrapper.o obj/llvm/lib/CodeGen/CodeGen.MIRCanonicalizerPass.o obj/llvm/lib/CodeGen/CodeGen.MIRFSDiscriminator.o obj/llvm/lib/CodeGen/CodeGen.MIRNamerPass.o obj/llvm/lib/CodeGen/CodeGen.MIRPrinter.o obj/llvm/lib/CodeGen/CodeGen.MIRPrintingPass.o obj/llvm/lib/CodeGen/CodeGen.MIRSampleProfile.o obj/llvm/lib/CodeGen/CodeGen.MIRVRegNamerUtils.o obj/llvm/lib/CodeGen/CodeGen.MIRYamlMapping.o obj/llvm/lib/CodeGen/CodeGen.MLRegallocEvictAdvisor.o obj/llvm/lib/CodeGen/CodeGen.MLRegallocPriorityAdvisor.o obj/llvm/lib/CodeGen/CodeGen.MachineBasicBlock.o obj/llvm/lib/CodeGen/CodeGen.MachineBlockFrequencyInfo.o obj/llvm/lib/CodeGen/CodeGen.MachineBlockPlacement.o obj/llvm/lib/CodeGen/CodeGen.MachineBranchProbabilityInfo.o obj/llvm/lib/CodeGen/CodeGen.MachineCFGPrinter.o obj/llvm/lib/CodeGen/CodeGen.MachineCSE.o obj/llvm/lib/CodeGen/CodeGen.MachineCheckDebugify.o obj/llvm/lib/CodeGen/CodeGen.MachineCombiner.o obj/llvm/lib/CodeGen/CodeGen.MachineCopyPropagation.o obj/llvm/lib/CodeGen/CodeGen.MachineCycleAnalysis.o obj/llvm/lib/CodeGen/CodeGen.MachineDebugify.o obj/llvm/lib/CodeGen/CodeGen.MachineDominanceFrontier.o obj/llvm/lib/CodeGen/CodeGen.MachineDominators.o obj/llvm/lib/CodeGen/CodeGen.MachineFrameInfo.o obj/llvm/lib/CodeGen/CodeGen.MachineFunction.o obj/llvm/lib/CodeGen/CodeGen.MachineFunctionPass.o obj/llvm/lib/CodeGen/CodeGen.MachineFunctionPrinterPass.o obj/llvm/lib/CodeGen/CodeGen.MachineFunctionSplitter.o obj/llvm/lib/CodeGen/CodeGen.MachineInstr.o obj/llvm/lib/CodeGen/CodeGen.MachineInstrBundle.o obj/llvm/lib/CodeGen/CodeGen.MachineLICM.o obj/llvm/lib/CodeGen/CodeGen.MachineLoopInfo.o obj/llvm/lib/CodeGen/CodeGen.MachineLoopUtils.o obj/llvm/lib/CodeGen/CodeGen.MachineModuleInfo.o obj/llvm/lib/CodeGen/CodeGen.MachineModuleInfoImpls.o obj/llvm/lib/CodeGen/CodeGen.MachineModuleSlotTracker.o obj/llvm/lib/CodeGen/CodeGen.MachineOperand.o obj/llvm/lib/CodeGen/CodeGen.MachineOptimizationRemarkEmitter.o obj/llvm/lib/CodeGen/CodeGen.MachineOutliner.o obj/llvm/lib/CodeGen/CodeGen.MachinePassManager.o obj/llvm/lib/CodeGen/CodeGen.MachinePipeliner.o obj/llvm/lib/CodeGen/CodeGen.MachinePostDominators.o obj/llvm/lib/CodeGen/CodeGen.MachineRegionInfo.o obj/llvm/lib/CodeGen/CodeGen.MachineRegisterInfo.o obj/llvm/lib/CodeGen/CodeGen.MachineSSAContext.o obj/llvm/lib/CodeGen/CodeGen.MachineSSAUpdater.o obj/llvm/lib/CodeGen/CodeGen.MachineScheduler.o obj/llvm/lib/CodeGen/CodeGen.MachineSink.o obj/llvm/lib/CodeGen/CodeGen.MachineSizeOpts.o obj/llvm/lib/CodeGen/CodeGen.MachineStableHash.o obj/llvm/lib/CodeGen/CodeGen.MachineStripDebug.o obj/llvm/lib/CodeGen/CodeGen.MachineTraceMetrics.o obj/llvm/lib/CodeGen/CodeGen.MachineVerifier.o obj/llvm/lib/CodeGen/CodeGen.MacroFusion.o obj/llvm/lib/CodeGen/CodeGen.ModuloSchedule.o obj/llvm/lib/CodeGen/CodeGen.MultiHazardRecognizer.o obj/llvm/lib/CodeGen/CodeGen.NonRelocatableStringpool.o obj/llvm/lib/CodeGen/CodeGen.OptimizePHIs.o obj/llvm/lib/CodeGen/CodeGen.PHIElimination.o obj/llvm/lib/CodeGen/CodeGen.PHIEliminationUtils.o obj/llvm/lib/CodeGen/CodeGen.ParallelCG.o obj/llvm/lib/CodeGen/CodeGen.PatchableFunction.o obj/llvm/lib/CodeGen/CodeGen.PeepholeOptimizer.o obj/llvm/lib/CodeGen/CodeGen.PostRAHazardRecognizer.o obj/llvm/lib/CodeGen/CodeGen.PostRASchedulerList.o obj/llvm/lib/CodeGen/CodeGen.PreISelIntrinsicLowering.o obj/llvm/lib/CodeGen/CodeGen.ProcessImplicitDefs.o obj/llvm/lib/CodeGen/CodeGen.PrologEpilogInserter.o obj/llvm/lib/CodeGen/CodeGen.PseudoProbeInserter.o obj/llvm/lib/CodeGen/CodeGen.PseudoSourceValue.o obj/llvm/lib/CodeGen/CodeGen.RDFGraph.o obj/llvm/lib/CodeGen/CodeGen.RDFLiveness.o obj/llvm/lib/CodeGen/CodeGen.RDFRegisters.o obj/llvm/lib/CodeGen/CodeGen.ReachingDefAnalysis.o obj/llvm/lib/CodeGen/CodeGen.RegAllocBase.o obj/llvm/lib/CodeGen/CodeGen.RegAllocBasic.o obj/llvm/lib/CodeGen/CodeGen.RegAllocEvictionAdvisor.o obj/llvm/lib/CodeGen/CodeGen.RegAllocFast.o obj/llvm/lib/CodeGen/CodeGen.RegAllocGreedy.o obj/llvm/lib/CodeGen/CodeGen.RegAllocPBQP.o obj/llvm/lib/CodeGen/CodeGen.RegAllocPriorityAdvisor.o obj/llvm/lib/CodeGen/CodeGen.RegAllocScore.o obj/llvm/lib/CodeGen/CodeGen.RegUsageInfoCollector.o obj/llvm/lib/CodeGen/CodeGen.RegUsageInfoPropagate.o obj/llvm/lib/CodeGen/CodeGen.RegisterBank.o obj/llvm/lib/CodeGen/CodeGen.RegisterBankInfo.o obj/llvm/lib/CodeGen/CodeGen.RegisterClassInfo.o obj/llvm/lib/CodeGen/CodeGen.RegisterCoalescer.o obj/llvm/lib/CodeGen/CodeGen.RegisterPressure.o obj/llvm/lib/CodeGen/CodeGen.RegisterScavenging.o obj/llvm/lib/CodeGen/CodeGen.RegisterUsageInfo.o obj/llvm/lib/CodeGen/CodeGen.RemoveRedundantDebugValues.o obj/llvm/lib/CodeGen/CodeGen.RenameIndependentSubregs.o obj/llvm/lib/CodeGen/CodeGen.ReplaceWithVeclib.o obj/llvm/lib/CodeGen/CodeGen.ResetMachineFunctionPass.o obj/llvm/lib/CodeGen/CodeGen.SafeStack.o obj/llvm/lib/CodeGen/CodeGen.SafeStackLayout.o obj/llvm/lib/CodeGen/CodeGen.ScheduleDAG.o obj/llvm/lib/CodeGen/CodeGen.ScheduleDAGInstrs.o obj/llvm/lib/CodeGen/CodeGen.ScheduleDAGPrinter.o obj/llvm/lib/CodeGen/CodeGen.ScoreboardHazardRecognizer.o obj/llvm/lib/CodeGen/CodeGen.SelectOptimize.o obj/llvm/lib/CodeGen/CodeGen.ShadowStackGCLowering.o obj/llvm/lib/CodeGen/CodeGen.ShrinkWrap.o obj/llvm/lib/CodeGen/CodeGen.SjLjEHPrepare.o obj/llvm/lib/CodeGen/CodeGen.SlotIndexes.o obj/llvm/lib/CodeGen/CodeGen.SpillPlacement.o obj/llvm/lib/CodeGen/CodeGen.SplitKit.o obj/llvm/lib/CodeGen/CodeGen.StackColoring.o obj/llvm/lib/CodeGen/CodeGen.StackMapLivenessAnalysis.o obj/llvm/lib/CodeGen/CodeGen.StackMaps.o obj/llvm/lib/CodeGen/CodeGen.StackProtector.o obj/llvm/lib/CodeGen/CodeGen.StackSlotColoring.o obj/llvm/lib/CodeGen/CodeGen.SwiftErrorValueTracking.o obj/llvm/lib/CodeGen/CodeGen.SwitchLoweringUtils.o obj/llvm/lib/CodeGen/CodeGen.TailDuplication.o obj/llvm/lib/CodeGen/CodeGen.TailDuplicator.o obj/llvm/lib/CodeGen/CodeGen.TargetFrameLoweringImpl.o obj/llvm/lib/CodeGen/CodeGen.TargetInstrInfo.o obj/llvm/lib/CodeGen/CodeGen.TargetLoweringBase.o obj/llvm/lib/CodeGen/CodeGen.TargetLoweringObjectFileImpl.o obj/llvm/lib/CodeGen/CodeGen.TargetOptionsImpl.o obj/llvm/lib/CodeGen/CodeGen.TargetPassConfig.o obj/llvm/lib/CodeGen/CodeGen.TargetRegisterInfo.o obj/llvm/lib/CodeGen/CodeGen.TargetSchedule.o obj/llvm/lib/CodeGen/CodeGen.TargetSubtargetInfo.o obj/llvm/lib/CodeGen/CodeGen.TwoAddressInstructionPass.o obj/llvm/lib/CodeGen/CodeGen.TypePromotion.o obj/llvm/lib/CodeGen/CodeGen.UnreachableBlockElim.o obj/llvm/lib/CodeGen/CodeGen.VLIWMachineScheduler.o obj/llvm/lib/CodeGen/CodeGen.ValueTypes.o obj/llvm/lib/CodeGen/CodeGen.VirtRegMap.o obj/llvm/lib/CodeGen/CodeGen.WasmEHPrepare.o obj/llvm/lib/CodeGen/CodeGen.WinEHPrepare.o obj/llvm/lib/CodeGen/CodeGen.XRayInstrumentation.o || obj/llvm/include/llvm/Config/llvm-config.stamp ./lib/libLLVMAnalysis.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitWriter.a ./lib/libLLVMCore.a ./lib/libLLVMMC.a ./lib/libLLVMProfileData.a ./lib/libLLVMSupport.a ./lib/libLLVMTarget.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

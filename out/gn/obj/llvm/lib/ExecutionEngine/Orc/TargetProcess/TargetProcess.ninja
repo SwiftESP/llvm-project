@@ -1,0 +1,37 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = TargetProcess
+target_output_name = libLLVMOrcTargetProcess
+
+build obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.ExecutorSharedMemoryMapperService.o: cxx ../../llvm/lib/ExecutionEngine/Orc/TargetProcess/ExecutorSharedMemoryMapperService.cpp || obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.inputdeps.stamp
+  source_file_part = ExecutorSharedMemoryMapperService.cpp
+  source_name_part = ExecutorSharedMemoryMapperService
+build obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.JITLoaderGDB.o: cxx ../../llvm/lib/ExecutionEngine/Orc/TargetProcess/JITLoaderGDB.cpp || obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.inputdeps.stamp
+  source_file_part = JITLoaderGDB.cpp
+  source_name_part = JITLoaderGDB
+build obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.OrcRTBootstrap.o: cxx ../../llvm/lib/ExecutionEngine/Orc/TargetProcess/OrcRTBootstrap.cpp || obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.inputdeps.stamp
+  source_file_part = OrcRTBootstrap.cpp
+  source_name_part = OrcRTBootstrap
+build obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.RegisterEHFrames.o: cxx ../../llvm/lib/ExecutionEngine/Orc/TargetProcess/RegisterEHFrames.cpp || obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.inputdeps.stamp
+  source_file_part = RegisterEHFrames.cpp
+  source_name_part = RegisterEHFrames
+build obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.SimpleExecutorDylibManager.o: cxx ../../llvm/lib/ExecutionEngine/Orc/TargetProcess/SimpleExecutorDylibManager.cpp || obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.inputdeps.stamp
+  source_file_part = SimpleExecutorDylibManager.cpp
+  source_name_part = SimpleExecutorDylibManager
+build obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.SimpleExecutorMemoryManager.o: cxx ../../llvm/lib/ExecutionEngine/Orc/TargetProcess/SimpleExecutorMemoryManager.cpp || obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.inputdeps.stamp
+  source_file_part = SimpleExecutorMemoryManager.cpp
+  source_name_part = SimpleExecutorMemoryManager
+build obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.SimpleRemoteEPCServer.o: cxx ../../llvm/lib/ExecutionEngine/Orc/TargetProcess/SimpleRemoteEPCServer.cpp || obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.inputdeps.stamp
+  source_file_part = SimpleRemoteEPCServer.cpp
+  source_name_part = SimpleRemoteEPCServer
+build obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.TargetExecutionUtils.o: cxx ../../llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetExecutionUtils.cpp || obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.inputdeps.stamp
+  source_file_part = TargetExecutionUtils.cpp
+  source_name_part = TargetExecutionUtils
+
+build ./lib/libLLVMOrcTargetProcess.a: alink obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.ExecutorSharedMemoryMapperService.o obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.JITLoaderGDB.o obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.OrcRTBootstrap.o obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.RegisterEHFrames.o obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.SimpleExecutorDylibManager.o obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.SimpleExecutorMemoryManager.o obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.SimpleRemoteEPCServer.o obj/llvm/lib/ExecutionEngine/Orc/TargetProcess/TargetProcess.TargetExecutionUtils.o || ./lib/libLLVMOrcShared.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

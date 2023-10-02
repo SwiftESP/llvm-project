@@ -1,0 +1,76 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = lib
+target_output_name = libLLVMExegesis
+
+build obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp obj/llvm/tools/llvm-exegesis/lib/AArch64/AArch64GenExegesis.stamp
+build obj/llvm/tools/llvm-exegesis/lib/lib.Analysis.o: cxx ../../llvm/tools/llvm-exegesis/lib/Analysis.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = Analysis.cpp
+  source_name_part = Analysis
+build obj/llvm/tools/llvm-exegesis/lib/lib.Assembler.o: cxx ../../llvm/tools/llvm-exegesis/lib/Assembler.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = Assembler.cpp
+  source_name_part = Assembler
+build obj/llvm/tools/llvm-exegesis/lib/lib.BenchmarkResult.o: cxx ../../llvm/tools/llvm-exegesis/lib/BenchmarkResult.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = BenchmarkResult.cpp
+  source_name_part = BenchmarkResult
+build obj/llvm/tools/llvm-exegesis/lib/lib.BenchmarkRunner.o: cxx ../../llvm/tools/llvm-exegesis/lib/BenchmarkRunner.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = BenchmarkRunner.cpp
+  source_name_part = BenchmarkRunner
+build obj/llvm/tools/llvm-exegesis/lib/lib.Clustering.o: cxx ../../llvm/tools/llvm-exegesis/lib/Clustering.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = Clustering.cpp
+  source_name_part = Clustering
+build obj/llvm/tools/llvm-exegesis/lib/lib.CodeTemplate.o: cxx ../../llvm/tools/llvm-exegesis/lib/CodeTemplate.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = CodeTemplate.cpp
+  source_name_part = CodeTemplate
+build obj/llvm/tools/llvm-exegesis/lib/lib.Error.o: cxx ../../llvm/tools/llvm-exegesis/lib/Error.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = Error.cpp
+  source_name_part = Error
+build obj/llvm/tools/llvm-exegesis/lib/lib.LatencyBenchmarkRunner.o: cxx ../../llvm/tools/llvm-exegesis/lib/LatencyBenchmarkRunner.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = LatencyBenchmarkRunner.cpp
+  source_name_part = LatencyBenchmarkRunner
+build obj/llvm/tools/llvm-exegesis/lib/lib.LlvmState.o: cxx ../../llvm/tools/llvm-exegesis/lib/LlvmState.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = LlvmState.cpp
+  source_name_part = LlvmState
+build obj/llvm/tools/llvm-exegesis/lib/lib.MCInstrDescView.o: cxx ../../llvm/tools/llvm-exegesis/lib/MCInstrDescView.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = MCInstrDescView.cpp
+  source_name_part = MCInstrDescView
+build obj/llvm/tools/llvm-exegesis/lib/lib.ParallelSnippetGenerator.o: cxx ../../llvm/tools/llvm-exegesis/lib/ParallelSnippetGenerator.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = ParallelSnippetGenerator.cpp
+  source_name_part = ParallelSnippetGenerator
+build obj/llvm/tools/llvm-exegesis/lib/lib.PerfHelper.o: cxx ../../llvm/tools/llvm-exegesis/lib/PerfHelper.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = PerfHelper.cpp
+  source_name_part = PerfHelper
+build obj/llvm/tools/llvm-exegesis/lib/lib.RegisterAliasing.o: cxx ../../llvm/tools/llvm-exegesis/lib/RegisterAliasing.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = RegisterAliasing.cpp
+  source_name_part = RegisterAliasing
+build obj/llvm/tools/llvm-exegesis/lib/lib.RegisterValue.o: cxx ../../llvm/tools/llvm-exegesis/lib/RegisterValue.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = RegisterValue.cpp
+  source_name_part = RegisterValue
+build obj/llvm/tools/llvm-exegesis/lib/lib.SchedClassResolution.o: cxx ../../llvm/tools/llvm-exegesis/lib/SchedClassResolution.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = SchedClassResolution.cpp
+  source_name_part = SchedClassResolution
+build obj/llvm/tools/llvm-exegesis/lib/lib.SerialSnippetGenerator.o: cxx ../../llvm/tools/llvm-exegesis/lib/SerialSnippetGenerator.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = SerialSnippetGenerator.cpp
+  source_name_part = SerialSnippetGenerator
+build obj/llvm/tools/llvm-exegesis/lib/lib.SnippetFile.o: cxx ../../llvm/tools/llvm-exegesis/lib/SnippetFile.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = SnippetFile.cpp
+  source_name_part = SnippetFile
+build obj/llvm/tools/llvm-exegesis/lib/lib.SnippetGenerator.o: cxx ../../llvm/tools/llvm-exegesis/lib/SnippetGenerator.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = SnippetGenerator.cpp
+  source_name_part = SnippetGenerator
+build obj/llvm/tools/llvm-exegesis/lib/lib.SnippetRepetitor.o: cxx ../../llvm/tools/llvm-exegesis/lib/SnippetRepetitor.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = SnippetRepetitor.cpp
+  source_name_part = SnippetRepetitor
+build obj/llvm/tools/llvm-exegesis/lib/lib.Target.o: cxx ../../llvm/tools/llvm-exegesis/lib/Target.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = Target.cpp
+  source_name_part = Target
+build obj/llvm/tools/llvm-exegesis/lib/lib.UopsBenchmarkRunner.o: cxx ../../llvm/tools/llvm-exegesis/lib/UopsBenchmarkRunner.cpp || obj/llvm/tools/llvm-exegesis/lib/lib.inputdeps.stamp
+  source_file_part = UopsBenchmarkRunner.cpp
+  source_name_part = UopsBenchmarkRunner
+
+build ./lib/libLLVMExegesis.a: alink obj/llvm/tools/llvm-exegesis/lib/lib.Analysis.o obj/llvm/tools/llvm-exegesis/lib/lib.Assembler.o obj/llvm/tools/llvm-exegesis/lib/lib.BenchmarkResult.o obj/llvm/tools/llvm-exegesis/lib/lib.BenchmarkRunner.o obj/llvm/tools/llvm-exegesis/lib/lib.Clustering.o obj/llvm/tools/llvm-exegesis/lib/lib.CodeTemplate.o obj/llvm/tools/llvm-exegesis/lib/lib.Error.o obj/llvm/tools/llvm-exegesis/lib/lib.LatencyBenchmarkRunner.o obj/llvm/tools/llvm-exegesis/lib/lib.LlvmState.o obj/llvm/tools/llvm-exegesis/lib/lib.MCInstrDescView.o obj/llvm/tools/llvm-exegesis/lib/lib.ParallelSnippetGenerator.o obj/llvm/tools/llvm-exegesis/lib/lib.PerfHelper.o obj/llvm/tools/llvm-exegesis/lib/lib.RegisterAliasing.o obj/llvm/tools/llvm-exegesis/lib/lib.RegisterValue.o obj/llvm/tools/llvm-exegesis/lib/lib.SchedClassResolution.o obj/llvm/tools/llvm-exegesis/lib/lib.SerialSnippetGenerator.o obj/llvm/tools/llvm-exegesis/lib/lib.SnippetFile.o obj/llvm/tools/llvm-exegesis/lib/lib.SnippetGenerator.o obj/llvm/tools/llvm-exegesis/lib/lib.SnippetRepetitor.o obj/llvm/tools/llvm-exegesis/lib/lib.Target.o obj/llvm/tools/llvm-exegesis/lib/lib.UopsBenchmarkRunner.o || ./lib/libLLVMAnalysis.a ./lib/libLLVMCodeGen.a ./lib/libLLVMGlobalISel.a ./lib/libLLVMExecutionEngine.a ./lib/libLLVMMCJIT.a ./lib/libLLVMCore.a ./lib/libLLVMMC.a ./lib/libLLVMObject.a ./lib/libLLVMObjectYAML.a ./lib/libLLVMSupport.a ./lib/libLLVMExegesisAArch64.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMTarget.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMOrcTargetProcess.a ./lib/libLLVMOrcShared.a ./lib/libLLVMRuntimeDyld.a ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

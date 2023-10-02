@@ -1,0 +1,55 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../lld/include -Igen/lld/include -Igen/lld/wasm -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = wasm
+target_output_name = liblldWasm
+
+build obj/lld/wasm/wasm.inputdeps.stamp: stamp obj/lld/Common/write_vcsversion.stamp obj/lld/include/lld/Common/version.stamp obj/lld/wasm/Options.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/lld/wasm/wasm.Driver.o: cxx ../../lld/wasm/Driver.cpp || obj/lld/wasm/wasm.inputdeps.stamp
+  source_file_part = Driver.cpp
+  source_name_part = Driver
+build obj/lld/wasm/wasm.InputChunks.o: cxx ../../lld/wasm/InputChunks.cpp || obj/lld/wasm/wasm.inputdeps.stamp
+  source_file_part = InputChunks.cpp
+  source_name_part = InputChunks
+build obj/lld/wasm/wasm.InputFiles.o: cxx ../../lld/wasm/InputFiles.cpp || obj/lld/wasm/wasm.inputdeps.stamp
+  source_file_part = InputFiles.cpp
+  source_name_part = InputFiles
+build obj/lld/wasm/wasm.LTO.o: cxx ../../lld/wasm/LTO.cpp || obj/lld/wasm/wasm.inputdeps.stamp
+  source_file_part = LTO.cpp
+  source_name_part = LTO
+build obj/lld/wasm/wasm.MapFile.o: cxx ../../lld/wasm/MapFile.cpp || obj/lld/wasm/wasm.inputdeps.stamp
+  source_file_part = MapFile.cpp
+  source_name_part = MapFile
+build obj/lld/wasm/wasm.MarkLive.o: cxx ../../lld/wasm/MarkLive.cpp || obj/lld/wasm/wasm.inputdeps.stamp
+  source_file_part = MarkLive.cpp
+  source_name_part = MarkLive
+build obj/lld/wasm/wasm.OutputSections.o: cxx ../../lld/wasm/OutputSections.cpp || obj/lld/wasm/wasm.inputdeps.stamp
+  source_file_part = OutputSections.cpp
+  source_name_part = OutputSections
+build obj/lld/wasm/wasm.OutputSegment.o: cxx ../../lld/wasm/OutputSegment.cpp || obj/lld/wasm/wasm.inputdeps.stamp
+  source_file_part = OutputSegment.cpp
+  source_name_part = OutputSegment
+build obj/lld/wasm/wasm.Relocations.o: cxx ../../lld/wasm/Relocations.cpp || obj/lld/wasm/wasm.inputdeps.stamp
+  source_file_part = Relocations.cpp
+  source_name_part = Relocations
+build obj/lld/wasm/wasm.SymbolTable.o: cxx ../../lld/wasm/SymbolTable.cpp || obj/lld/wasm/wasm.inputdeps.stamp
+  source_file_part = SymbolTable.cpp
+  source_name_part = SymbolTable
+build obj/lld/wasm/wasm.Symbols.o: cxx ../../lld/wasm/Symbols.cpp || obj/lld/wasm/wasm.inputdeps.stamp
+  source_file_part = Symbols.cpp
+  source_name_part = Symbols
+build obj/lld/wasm/wasm.SyntheticSections.o: cxx ../../lld/wasm/SyntheticSections.cpp || obj/lld/wasm/wasm.inputdeps.stamp
+  source_file_part = SyntheticSections.cpp
+  source_name_part = SyntheticSections
+build obj/lld/wasm/wasm.Writer.o: cxx ../../lld/wasm/Writer.cpp || obj/lld/wasm/wasm.inputdeps.stamp
+  source_file_part = Writer.cpp
+  source_name_part = Writer
+build obj/lld/wasm/wasm.WriterUtils.o: cxx ../../lld/wasm/WriterUtils.cpp || obj/lld/wasm/wasm.inputdeps.stamp
+  source_file_part = WriterUtils.cpp
+  source_name_part = WriterUtils
+
+build ./lib/liblldWasm.a: alink obj/lld/wasm/wasm.Driver.o obj/lld/wasm/wasm.InputChunks.o obj/lld/wasm/wasm.InputFiles.o obj/lld/wasm/wasm.LTO.o obj/lld/wasm/wasm.MapFile.o obj/lld/wasm/wasm.MarkLive.o obj/lld/wasm/wasm.OutputSections.o obj/lld/wasm/wasm.OutputSegment.o obj/lld/wasm/wasm.Relocations.o obj/lld/wasm/wasm.SymbolTable.o obj/lld/wasm/wasm.Symbols.o obj/lld/wasm/wasm.SyntheticSections.o obj/lld/wasm/wasm.Writer.o obj/lld/wasm/wasm.WriterUtils.o || obj/lld/wasm/Options.stamp ./lib/liblldCommon.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMDemangle.a ./lib/libLLVMCore.a ./lib/libLLVMObject.a ./lib/libLLVMOption.a ./lib/libLLVMCodeGen.a ./lib/libLLVMAnalysis.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMTarget.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

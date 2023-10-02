@@ -1,0 +1,40 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = ObjCARC
+target_output_name = libLLVMObjCARCOpts
+
+build obj/llvm/lib/Transforms/ObjCARC/ObjCARC.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/Transforms/ObjCARC/ObjCARC.DependencyAnalysis.o: cxx ../../llvm/lib/Transforms/ObjCARC/DependencyAnalysis.cpp || obj/llvm/lib/Transforms/ObjCARC/ObjCARC.inputdeps.stamp
+  source_file_part = DependencyAnalysis.cpp
+  source_name_part = DependencyAnalysis
+build obj/llvm/lib/Transforms/ObjCARC/ObjCARC.ObjCARC.o: cxx ../../llvm/lib/Transforms/ObjCARC/ObjCARC.cpp || obj/llvm/lib/Transforms/ObjCARC/ObjCARC.inputdeps.stamp
+  source_file_part = ObjCARC.cpp
+  source_name_part = ObjCARC
+build obj/llvm/lib/Transforms/ObjCARC/ObjCARC.ObjCARCAPElim.o: cxx ../../llvm/lib/Transforms/ObjCARC/ObjCARCAPElim.cpp || obj/llvm/lib/Transforms/ObjCARC/ObjCARC.inputdeps.stamp
+  source_file_part = ObjCARCAPElim.cpp
+  source_name_part = ObjCARCAPElim
+build obj/llvm/lib/Transforms/ObjCARC/ObjCARC.ObjCARCContract.o: cxx ../../llvm/lib/Transforms/ObjCARC/ObjCARCContract.cpp || obj/llvm/lib/Transforms/ObjCARC/ObjCARC.inputdeps.stamp
+  source_file_part = ObjCARCContract.cpp
+  source_name_part = ObjCARCContract
+build obj/llvm/lib/Transforms/ObjCARC/ObjCARC.ObjCARCExpand.o: cxx ../../llvm/lib/Transforms/ObjCARC/ObjCARCExpand.cpp || obj/llvm/lib/Transforms/ObjCARC/ObjCARC.inputdeps.stamp
+  source_file_part = ObjCARCExpand.cpp
+  source_name_part = ObjCARCExpand
+build obj/llvm/lib/Transforms/ObjCARC/ObjCARC.ObjCARCOpts.o: cxx ../../llvm/lib/Transforms/ObjCARC/ObjCARCOpts.cpp || obj/llvm/lib/Transforms/ObjCARC/ObjCARC.inputdeps.stamp
+  source_file_part = ObjCARCOpts.cpp
+  source_name_part = ObjCARCOpts
+build obj/llvm/lib/Transforms/ObjCARC/ObjCARC.ProvenanceAnalysis.o: cxx ../../llvm/lib/Transforms/ObjCARC/ProvenanceAnalysis.cpp || obj/llvm/lib/Transforms/ObjCARC/ObjCARC.inputdeps.stamp
+  source_file_part = ProvenanceAnalysis.cpp
+  source_name_part = ProvenanceAnalysis
+build obj/llvm/lib/Transforms/ObjCARC/ObjCARC.ProvenanceAnalysisEvaluator.o: cxx ../../llvm/lib/Transforms/ObjCARC/ProvenanceAnalysisEvaluator.cpp || obj/llvm/lib/Transforms/ObjCARC/ObjCARC.inputdeps.stamp
+  source_file_part = ProvenanceAnalysisEvaluator.cpp
+  source_name_part = ProvenanceAnalysisEvaluator
+build obj/llvm/lib/Transforms/ObjCARC/ObjCARC.PtrState.o: cxx ../../llvm/lib/Transforms/ObjCARC/PtrState.cpp || obj/llvm/lib/Transforms/ObjCARC/ObjCARC.inputdeps.stamp
+  source_file_part = PtrState.cpp
+  source_name_part = PtrState
+
+build ./lib/libLLVMObjCARCOpts.a: alink obj/llvm/lib/Transforms/ObjCARC/ObjCARC.DependencyAnalysis.o obj/llvm/lib/Transforms/ObjCARC/ObjCARC.ObjCARC.o obj/llvm/lib/Transforms/ObjCARC/ObjCARC.ObjCARCAPElim.o obj/llvm/lib/Transforms/ObjCARC/ObjCARC.ObjCARCContract.o obj/llvm/lib/Transforms/ObjCARC/ObjCARC.ObjCARCExpand.o obj/llvm/lib/Transforms/ObjCARC/ObjCARC.ObjCARCOpts.o obj/llvm/lib/Transforms/ObjCARC/ObjCARC.ProvenanceAnalysis.o obj/llvm/lib/Transforms/ObjCARC/ObjCARC.ProvenanceAnalysisEvaluator.o obj/llvm/lib/Transforms/ObjCARC/ObjCARC.PtrState.o || ./lib/libLLVMAnalysis.a ./lib/libLLVMCore.a ./lib/libLLVMSupport.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

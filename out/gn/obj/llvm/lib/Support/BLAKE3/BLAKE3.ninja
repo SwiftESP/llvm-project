@@ -1,0 +1,21 @@
+defines = -DBLAKE3_NO_AVX512 -DBLAKE3_NO_AVX2 -DBLAKE3_NO_SSE41 -DBLAKE3_NO_SSE2 -DBLAKE3_USE_NEON=0
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_c =
+label_name = BLAKE3
+target_output_name = libLLVMSupportBlake3
+
+build obj/llvm/lib/Support/BLAKE3/BLAKE3.blake3.o: cc ../../llvm/lib/Support/BLAKE3/blake3.c || obj/llvm/include/llvm/Config/llvm-config.stamp
+  source_file_part = blake3.c
+  source_name_part = blake3
+build obj/llvm/lib/Support/BLAKE3/BLAKE3.blake3_dispatch.o: cc ../../llvm/lib/Support/BLAKE3/blake3_dispatch.c || obj/llvm/include/llvm/Config/llvm-config.stamp
+  source_file_part = blake3_dispatch.c
+  source_name_part = blake3_dispatch
+build obj/llvm/lib/Support/BLAKE3/BLAKE3.blake3_portable.o: cc ../../llvm/lib/Support/BLAKE3/blake3_portable.c || obj/llvm/include/llvm/Config/llvm-config.stamp
+  source_file_part = blake3_portable.c
+  source_name_part = blake3_portable
+
+build ./lib/libLLVMSupportBlake3.a: alink obj/llvm/lib/Support/BLAKE3/BLAKE3.blake3.o obj/llvm/lib/Support/BLAKE3/BLAKE3.blake3_dispatch.o obj/llvm/lib/Support/BLAKE3/BLAKE3.blake3_portable.o || obj/llvm/include/llvm/Config/llvm-config.stamp
+  arflags =
+  output_extension = 
+  output_dir = ./lib

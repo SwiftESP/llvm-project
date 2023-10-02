@@ -1,0 +1,12 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = UnitTestMain
+target_output_name = UnitTestMain
+
+build obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o: cxx ../../llvm/utils/unittest/UnitTestMain/TestMain.cpp || obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+  source_file_part = TestMain.cpp
+  source_name_part = TestMain
+
+build obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp: stamp obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o || ./lib/libgtest.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a

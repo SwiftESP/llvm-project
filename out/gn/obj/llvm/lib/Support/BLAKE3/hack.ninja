@@ -1,0 +1,37 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+asmflags = -mmacos-version-min=10.10
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_c =
+label_name = hack
+target_output_name = hack
+
+build obj/llvm/lib/Support/BLAKE3/hack.blake3_avx2_x86-64_unix.o: asm ../../llvm/lib/Support/BLAKE3/blake3_avx2_x86-64_unix.S
+  source_file_part = blake3_avx2_x86-64_unix.S
+  source_name_part = blake3_avx2_x86-64_unix
+build obj/llvm/lib/Support/BLAKE3/hack.blake3_avx2_x86-64_windows_gnu.o: asm ../../llvm/lib/Support/BLAKE3/blake3_avx2_x86-64_windows_gnu.S
+  source_file_part = blake3_avx2_x86-64_windows_gnu.S
+  source_name_part = blake3_avx2_x86-64_windows_gnu
+build obj/llvm/lib/Support/BLAKE3/hack.blake3_avx512_x86-64_unix.o: asm ../../llvm/lib/Support/BLAKE3/blake3_avx512_x86-64_unix.S
+  source_file_part = blake3_avx512_x86-64_unix.S
+  source_name_part = blake3_avx512_x86-64_unix
+build obj/llvm/lib/Support/BLAKE3/hack.blake3_avx512_x86-64_windows_gnu.o: asm ../../llvm/lib/Support/BLAKE3/blake3_avx512_x86-64_windows_gnu.S
+  source_file_part = blake3_avx512_x86-64_windows_gnu.S
+  source_name_part = blake3_avx512_x86-64_windows_gnu
+build obj/llvm/lib/Support/BLAKE3/hack.blake3_neon.o: cc ../../llvm/lib/Support/BLAKE3/blake3_neon.c
+  source_file_part = blake3_neon.c
+  source_name_part = blake3_neon
+build obj/llvm/lib/Support/BLAKE3/hack.blake3_sse2_x86-64_unix.o: asm ../../llvm/lib/Support/BLAKE3/blake3_sse2_x86-64_unix.S
+  source_file_part = blake3_sse2_x86-64_unix.S
+  source_name_part = blake3_sse2_x86-64_unix
+build obj/llvm/lib/Support/BLAKE3/hack.blake3_sse2_x86-64_windows_gnu.o: asm ../../llvm/lib/Support/BLAKE3/blake3_sse2_x86-64_windows_gnu.S
+  source_file_part = blake3_sse2_x86-64_windows_gnu.S
+  source_name_part = blake3_sse2_x86-64_windows_gnu
+build obj/llvm/lib/Support/BLAKE3/hack.blake3_sse41_x86-64_unix.o: asm ../../llvm/lib/Support/BLAKE3/blake3_sse41_x86-64_unix.S
+  source_file_part = blake3_sse41_x86-64_unix.S
+  source_name_part = blake3_sse41_x86-64_unix
+build obj/llvm/lib/Support/BLAKE3/hack.blake3_sse41_x86-64_windows_gnu.o: asm ../../llvm/lib/Support/BLAKE3/blake3_sse41_x86-64_windows_gnu.S
+  source_file_part = blake3_sse41_x86-64_windows_gnu.S
+  source_name_part = blake3_sse41_x86-64_windows_gnu
+
+build obj/llvm/lib/Support/BLAKE3/hack.stamp: stamp obj/llvm/lib/Support/BLAKE3/hack.blake3_avx2_x86-64_unix.o obj/llvm/lib/Support/BLAKE3/hack.blake3_avx2_x86-64_windows_gnu.o obj/llvm/lib/Support/BLAKE3/hack.blake3_avx512_x86-64_unix.o obj/llvm/lib/Support/BLAKE3/hack.blake3_avx512_x86-64_windows_gnu.o obj/llvm/lib/Support/BLAKE3/hack.blake3_neon.o obj/llvm/lib/Support/BLAKE3/hack.blake3_sse2_x86-64_unix.o obj/llvm/lib/Support/BLAKE3/hack.blake3_sse2_x86-64_windows_gnu.o obj/llvm/lib/Support/BLAKE3/hack.blake3_sse41_x86-64_unix.o obj/llvm/lib/Support/BLAKE3/hack.blake3_sse41_x86-64_windows_gnu.o

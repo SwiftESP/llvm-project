@@ -1,0 +1,7 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+label_name = _unused
+target_output_name = _unused
+
+
+build obj/compiler-rt/include/_unused.stamp: stamp

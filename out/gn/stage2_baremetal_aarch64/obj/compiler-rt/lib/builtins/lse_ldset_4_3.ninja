@@ -1,0 +1,11 @@
+defines = -DL_ldset -DSIZE=4 -DMODEL=3
+include_dirs = -I../../compiler-rt/lib/builtins -I../../llvm/include -Istage2_baremetal_aarch64/gen/llvm/include
+asmflags = --target=aarch64-elf
+label_name = lse_ldset_4_3
+target_output_name = lse_ldset_4_3
+
+build stage2_baremetal_aarch64/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_4_3.lse.o: stage2_baremetal_aarch64_asm ../../compiler-rt/lib/builtins/aarch64/lse.S || obj/clang.stamp obj/lld.stamp obj/llvm-ar.stamp
+  source_file_part = lse.S
+  source_name_part = lse
+
+build stage2_baremetal_aarch64/obj/compiler-rt/lib/builtins/lse_ldset_4_3.stamp: stage2_baremetal_aarch64_stamp stage2_baremetal_aarch64/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_4_3.lse.o

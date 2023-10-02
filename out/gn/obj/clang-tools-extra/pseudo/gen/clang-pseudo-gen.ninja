@@ -1,0 +1,18 @@
+defines =
+include_dirs = -I../../clang-tools-extra/pseudo/include -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = clang-pseudo-gen
+target_output_name = clang-pseudo-gen
+
+build obj/clang-tools-extra/pseudo/gen/clang-pseudo-gen.Main.o: cxx ../../clang-tools-extra/pseudo/gen/Main.cpp || obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+  source_file_part = Main.cpp
+  source_name_part = Main
+
+build ./bin/clang-pseudo-gen: link obj/clang-tools-extra/pseudo/gen/clang-pseudo-gen.Main.o ./lib/libclangPseudoGrammar.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

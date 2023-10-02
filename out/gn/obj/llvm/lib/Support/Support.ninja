@@ -1,0 +1,464 @@
+defines =
+include_dirs = -I../../llvm/lib/Support/Unix -I../../llvm/lib/Support/Windows -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_c =
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Support
+target_output_name = libLLVMSupport
+
+build obj/llvm/lib/Support/Support.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/Support/Support.AArch64TargetParser.o: cxx ../../llvm/lib/Support/AArch64TargetParser.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = AArch64TargetParser.cpp
+  source_name_part = AArch64TargetParser
+build obj/llvm/lib/Support/Support.ABIBreak.o: cxx ../../llvm/lib/Support/ABIBreak.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ABIBreak.cpp
+  source_name_part = ABIBreak
+build obj/llvm/lib/Support/Support.AMDGPUMetadata.o: cxx ../../llvm/lib/Support/AMDGPUMetadata.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = AMDGPUMetadata.cpp
+  source_name_part = AMDGPUMetadata
+build obj/llvm/lib/Support/Support.APFixedPoint.o: cxx ../../llvm/lib/Support/APFixedPoint.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = APFixedPoint.cpp
+  source_name_part = APFixedPoint
+build obj/llvm/lib/Support/Support.APFloat.o: cxx ../../llvm/lib/Support/APFloat.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = APFloat.cpp
+  source_name_part = APFloat
+build obj/llvm/lib/Support/Support.APInt.o: cxx ../../llvm/lib/Support/APInt.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = APInt.cpp
+  source_name_part = APInt
+build obj/llvm/lib/Support/Support.APSInt.o: cxx ../../llvm/lib/Support/APSInt.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = APSInt.cpp
+  source_name_part = APSInt
+build obj/llvm/lib/Support/Support.ARMAttributeParser.o: cxx ../../llvm/lib/Support/ARMAttributeParser.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ARMAttributeParser.cpp
+  source_name_part = ARMAttributeParser
+build obj/llvm/lib/Support/Support.ARMBuildAttrs.o: cxx ../../llvm/lib/Support/ARMBuildAttrs.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ARMBuildAttrs.cpp
+  source_name_part = ARMBuildAttrs
+build obj/llvm/lib/Support/Support.ARMTargetParser.o: cxx ../../llvm/lib/Support/ARMTargetParser.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ARMTargetParser.cpp
+  source_name_part = ARMTargetParser
+build obj/llvm/lib/Support/Support.ARMWinEH.o: cxx ../../llvm/lib/Support/ARMWinEH.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ARMWinEH.cpp
+  source_name_part = ARMWinEH
+build obj/llvm/lib/Support/Support.AddressRanges.o: cxx ../../llvm/lib/Support/AddressRanges.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = AddressRanges.cpp
+  source_name_part = AddressRanges
+build obj/llvm/lib/Support/Support.Allocator.o: cxx ../../llvm/lib/Support/Allocator.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Allocator.cpp
+  source_name_part = Allocator
+build obj/llvm/lib/Support/Support.AutoConvert.o: cxx ../../llvm/lib/Support/AutoConvert.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = AutoConvert.cpp
+  source_name_part = AutoConvert
+build obj/llvm/lib/Support/Support.Base64.o: cxx ../../llvm/lib/Support/Base64.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Base64.cpp
+  source_name_part = Base64
+build obj/llvm/lib/Support/Support.BinaryStreamError.o: cxx ../../llvm/lib/Support/BinaryStreamError.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = BinaryStreamError.cpp
+  source_name_part = BinaryStreamError
+build obj/llvm/lib/Support/Support.BinaryStreamReader.o: cxx ../../llvm/lib/Support/BinaryStreamReader.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = BinaryStreamReader.cpp
+  source_name_part = BinaryStreamReader
+build obj/llvm/lib/Support/Support.BinaryStreamRef.o: cxx ../../llvm/lib/Support/BinaryStreamRef.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = BinaryStreamRef.cpp
+  source_name_part = BinaryStreamRef
+build obj/llvm/lib/Support/Support.BinaryStreamWriter.o: cxx ../../llvm/lib/Support/BinaryStreamWriter.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = BinaryStreamWriter.cpp
+  source_name_part = BinaryStreamWriter
+build obj/llvm/lib/Support/Support.BlockFrequency.o: cxx ../../llvm/lib/Support/BlockFrequency.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = BlockFrequency.cpp
+  source_name_part = BlockFrequency
+build obj/llvm/lib/Support/Support.BranchProbability.o: cxx ../../llvm/lib/Support/BranchProbability.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = BranchProbability.cpp
+  source_name_part = BranchProbability
+build obj/llvm/lib/Support/Support.BuryPointer.o: cxx ../../llvm/lib/Support/BuryPointer.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = BuryPointer.cpp
+  source_name_part = BuryPointer
+build obj/llvm/lib/Support/Support.COM.o: cxx ../../llvm/lib/Support/COM.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = COM.cpp
+  source_name_part = COM
+build obj/llvm/lib/Support/Support.CRC.o: cxx ../../llvm/lib/Support/CRC.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = CRC.cpp
+  source_name_part = CRC
+build obj/llvm/lib/Support/Support.CSKYAttributeParser.o: cxx ../../llvm/lib/Support/CSKYAttributeParser.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = CSKYAttributeParser.cpp
+  source_name_part = CSKYAttributeParser
+build obj/llvm/lib/Support/Support.CSKYAttributes.o: cxx ../../llvm/lib/Support/CSKYAttributes.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = CSKYAttributes.cpp
+  source_name_part = CSKYAttributes
+build obj/llvm/lib/Support/Support.CSKYTargetParser.o: cxx ../../llvm/lib/Support/CSKYTargetParser.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = CSKYTargetParser.cpp
+  source_name_part = CSKYTargetParser
+build obj/llvm/lib/Support/Support.CachePruning.o: cxx ../../llvm/lib/Support/CachePruning.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = CachePruning.cpp
+  source_name_part = CachePruning
+build obj/llvm/lib/Support/Support.Caching.o: cxx ../../llvm/lib/Support/Caching.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Caching.cpp
+  source_name_part = Caching
+build obj/llvm/lib/Support/Support.Chrono.o: cxx ../../llvm/lib/Support/Chrono.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Chrono.cpp
+  source_name_part = Chrono
+build obj/llvm/lib/Support/Support.CodeGenCoverage.o: cxx ../../llvm/lib/Support/CodeGenCoverage.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = CodeGenCoverage.cpp
+  source_name_part = CodeGenCoverage
+build obj/llvm/lib/Support/Support.CommandLine.o: cxx ../../llvm/lib/Support/CommandLine.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = CommandLine.cpp
+  source_name_part = CommandLine
+build obj/llvm/lib/Support/Support.Compression.o: cxx ../../llvm/lib/Support/Compression.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Compression.cpp
+  source_name_part = Compression
+build obj/llvm/lib/Support/Support.ConvertUTF.o: cxx ../../llvm/lib/Support/ConvertUTF.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ConvertUTF.cpp
+  source_name_part = ConvertUTF
+build obj/llvm/lib/Support/Support.ConvertUTFWrapper.o: cxx ../../llvm/lib/Support/ConvertUTFWrapper.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ConvertUTFWrapper.cpp
+  source_name_part = ConvertUTFWrapper
+build obj/llvm/lib/Support/Support.CrashRecoveryContext.o: cxx ../../llvm/lib/Support/CrashRecoveryContext.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = CrashRecoveryContext.cpp
+  source_name_part = CrashRecoveryContext
+build obj/llvm/lib/Support/Support.DAGDeltaAlgorithm.o: cxx ../../llvm/lib/Support/DAGDeltaAlgorithm.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = DAGDeltaAlgorithm.cpp
+  source_name_part = DAGDeltaAlgorithm
+build obj/llvm/lib/Support/Support.DJB.o: cxx ../../llvm/lib/Support/DJB.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = DJB.cpp
+  source_name_part = DJB
+build obj/llvm/lib/Support/Support.DataExtractor.o: cxx ../../llvm/lib/Support/DataExtractor.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = DataExtractor.cpp
+  source_name_part = DataExtractor
+build obj/llvm/lib/Support/Support.Debug.o: cxx ../../llvm/lib/Support/Debug.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Debug.cpp
+  source_name_part = Debug
+build obj/llvm/lib/Support/Support.DebugCounter.o: cxx ../../llvm/lib/Support/DebugCounter.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = DebugCounter.cpp
+  source_name_part = DebugCounter
+build obj/llvm/lib/Support/Support.DeltaAlgorithm.o: cxx ../../llvm/lib/Support/DeltaAlgorithm.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = DeltaAlgorithm.cpp
+  source_name_part = DeltaAlgorithm
+build obj/llvm/lib/Support/Support.DivisionByConstantInfo.o: cxx ../../llvm/lib/Support/DivisionByConstantInfo.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = DivisionByConstantInfo.cpp
+  source_name_part = DivisionByConstantInfo
+build obj/llvm/lib/Support/Support.ELFAttributeParser.o: cxx ../../llvm/lib/Support/ELFAttributeParser.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ELFAttributeParser.cpp
+  source_name_part = ELFAttributeParser
+build obj/llvm/lib/Support/Support.ELFAttributes.o: cxx ../../llvm/lib/Support/ELFAttributes.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ELFAttributes.cpp
+  source_name_part = ELFAttributes
+build obj/llvm/lib/Support/Support.Error.o: cxx ../../llvm/lib/Support/Error.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Error.cpp
+  source_name_part = Error
+build obj/llvm/lib/Support/Support.ErrorHandling.o: cxx ../../llvm/lib/Support/ErrorHandling.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ErrorHandling.cpp
+  source_name_part = ErrorHandling
+build obj/llvm/lib/Support/Support.ExtensibleRTTI.o: cxx ../../llvm/lib/Support/ExtensibleRTTI.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ExtensibleRTTI.cpp
+  source_name_part = ExtensibleRTTI
+build obj/llvm/lib/Support/Support.FileCollector.o: cxx ../../llvm/lib/Support/FileCollector.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = FileCollector.cpp
+  source_name_part = FileCollector
+build obj/llvm/lib/Support/Support.FileOutputBuffer.o: cxx ../../llvm/lib/Support/FileOutputBuffer.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = FileOutputBuffer.cpp
+  source_name_part = FileOutputBuffer
+build obj/llvm/lib/Support/Support.FileUtilities.o: cxx ../../llvm/lib/Support/FileUtilities.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = FileUtilities.cpp
+  source_name_part = FileUtilities
+build obj/llvm/lib/Support/Support.FoldingSet.o: cxx ../../llvm/lib/Support/FoldingSet.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = FoldingSet.cpp
+  source_name_part = FoldingSet
+build obj/llvm/lib/Support/Support.FormatVariadic.o: cxx ../../llvm/lib/Support/FormatVariadic.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = FormatVariadic.cpp
+  source_name_part = FormatVariadic
+build obj/llvm/lib/Support/Support.FormattedStream.o: cxx ../../llvm/lib/Support/FormattedStream.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = FormattedStream.cpp
+  source_name_part = FormattedStream
+build obj/llvm/lib/Support/Support.GlobPattern.o: cxx ../../llvm/lib/Support/GlobPattern.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = GlobPattern.cpp
+  source_name_part = GlobPattern
+build obj/llvm/lib/Support/Support.GraphWriter.o: cxx ../../llvm/lib/Support/GraphWriter.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = GraphWriter.cpp
+  source_name_part = GraphWriter
+build obj/llvm/lib/Support/Support.Hashing.o: cxx ../../llvm/lib/Support/Hashing.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Hashing.cpp
+  source_name_part = Hashing
+build obj/llvm/lib/Support/Support.InitLLVM.o: cxx ../../llvm/lib/Support/InitLLVM.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = InitLLVM.cpp
+  source_name_part = InitLLVM
+build obj/llvm/lib/Support/Support.InstructionCost.o: cxx ../../llvm/lib/Support/InstructionCost.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = InstructionCost.cpp
+  source_name_part = InstructionCost
+build obj/llvm/lib/Support/Support.IntEqClasses.o: cxx ../../llvm/lib/Support/IntEqClasses.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = IntEqClasses.cpp
+  source_name_part = IntEqClasses
+build obj/llvm/lib/Support/Support.IntervalMap.o: cxx ../../llvm/lib/Support/IntervalMap.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = IntervalMap.cpp
+  source_name_part = IntervalMap
+build obj/llvm/lib/Support/Support.ItaniumManglingCanonicalizer.o: cxx ../../llvm/lib/Support/ItaniumManglingCanonicalizer.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ItaniumManglingCanonicalizer.cpp
+  source_name_part = ItaniumManglingCanonicalizer
+build obj/llvm/lib/Support/Support.JSON.o: cxx ../../llvm/lib/Support/JSON.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = JSON.cpp
+  source_name_part = JSON
+build obj/llvm/lib/Support/Support.KnownBits.o: cxx ../../llvm/lib/Support/KnownBits.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = KnownBits.cpp
+  source_name_part = KnownBits
+build obj/llvm/lib/Support/Support.LEB128.o: cxx ../../llvm/lib/Support/LEB128.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = LEB128.cpp
+  source_name_part = LEB128
+build obj/llvm/lib/Support/Support.LineIterator.o: cxx ../../llvm/lib/Support/LineIterator.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = LineIterator.cpp
+  source_name_part = LineIterator
+build obj/llvm/lib/Support/Support.Locale.o: cxx ../../llvm/lib/Support/Locale.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Locale.cpp
+  source_name_part = Locale
+build obj/llvm/lib/Support/Support.LockFileManager.o: cxx ../../llvm/lib/Support/LockFileManager.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = LockFileManager.cpp
+  source_name_part = LockFileManager
+build obj/llvm/lib/Support/Support.LowLevelType.o: cxx ../../llvm/lib/Support/LowLevelType.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = LowLevelType.cpp
+  source_name_part = LowLevelType
+build obj/llvm/lib/Support/Support.MD5.o: cxx ../../llvm/lib/Support/MD5.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = MD5.cpp
+  source_name_part = MD5
+build obj/llvm/lib/Support/Support.MSP430AttributeParser.o: cxx ../../llvm/lib/Support/MSP430AttributeParser.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = MSP430AttributeParser.cpp
+  source_name_part = MSP430AttributeParser
+build obj/llvm/lib/Support/Support.MSP430Attributes.o: cxx ../../llvm/lib/Support/MSP430Attributes.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = MSP430Attributes.cpp
+  source_name_part = MSP430Attributes
+build obj/llvm/lib/Support/Support.ManagedStatic.o: cxx ../../llvm/lib/Support/ManagedStatic.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ManagedStatic.cpp
+  source_name_part = ManagedStatic
+build obj/llvm/lib/Support/Support.MathExtras.o: cxx ../../llvm/lib/Support/MathExtras.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = MathExtras.cpp
+  source_name_part = MathExtras
+build obj/llvm/lib/Support/Support.MemAlloc.o: cxx ../../llvm/lib/Support/MemAlloc.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = MemAlloc.cpp
+  source_name_part = MemAlloc
+build obj/llvm/lib/Support/Support.MemoryBuffer.o: cxx ../../llvm/lib/Support/MemoryBuffer.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = MemoryBuffer.cpp
+  source_name_part = MemoryBuffer
+build obj/llvm/lib/Support/Support.MemoryBufferRef.o: cxx ../../llvm/lib/Support/MemoryBufferRef.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = MemoryBufferRef.cpp
+  source_name_part = MemoryBufferRef
+build obj/llvm/lib/Support/Support.NativeFormatting.o: cxx ../../llvm/lib/Support/NativeFormatting.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = NativeFormatting.cpp
+  source_name_part = NativeFormatting
+build obj/llvm/lib/Support/Support.OptimizedStructLayout.o: cxx ../../llvm/lib/Support/OptimizedStructLayout.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = OptimizedStructLayout.cpp
+  source_name_part = OptimizedStructLayout
+build obj/llvm/lib/Support/Support.Optional.o: cxx ../../llvm/lib/Support/Optional.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Optional.cpp
+  source_name_part = Optional
+build obj/llvm/lib/Support/Support.Parallel.o: cxx ../../llvm/lib/Support/Parallel.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Parallel.cpp
+  source_name_part = Parallel
+build obj/llvm/lib/Support/Support.PluginLoader.o: cxx ../../llvm/lib/Support/PluginLoader.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = PluginLoader.cpp
+  source_name_part = PluginLoader
+build obj/llvm/lib/Support/Support.PrettyStackTrace.o: cxx ../../llvm/lib/Support/PrettyStackTrace.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = PrettyStackTrace.cpp
+  source_name_part = PrettyStackTrace
+build obj/llvm/lib/Support/Support.RISCVAttributeParser.o: cxx ../../llvm/lib/Support/RISCVAttributeParser.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = RISCVAttributeParser.cpp
+  source_name_part = RISCVAttributeParser
+build obj/llvm/lib/Support/Support.RISCVAttributes.o: cxx ../../llvm/lib/Support/RISCVAttributes.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = RISCVAttributes.cpp
+  source_name_part = RISCVAttributes
+build obj/llvm/lib/Support/Support.RISCVISAInfo.o: cxx ../../llvm/lib/Support/RISCVISAInfo.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = RISCVISAInfo.cpp
+  source_name_part = RISCVISAInfo
+build obj/llvm/lib/Support/Support.RWMutex.o: cxx ../../llvm/lib/Support/RWMutex.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = RWMutex.cpp
+  source_name_part = RWMutex
+build obj/llvm/lib/Support/Support.RandomNumberGenerator.o: cxx ../../llvm/lib/Support/RandomNumberGenerator.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = RandomNumberGenerator.cpp
+  source_name_part = RandomNumberGenerator
+build obj/llvm/lib/Support/Support.Regex.o: cxx ../../llvm/lib/Support/Regex.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Regex.cpp
+  source_name_part = Regex
+build obj/llvm/lib/Support/Support.SHA1.o: cxx ../../llvm/lib/Support/SHA1.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = SHA1.cpp
+  source_name_part = SHA1
+build obj/llvm/lib/Support/Support.SHA256.o: cxx ../../llvm/lib/Support/SHA256.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = SHA256.cpp
+  source_name_part = SHA256
+build obj/llvm/lib/Support/Support.ScaledNumber.o: cxx ../../llvm/lib/Support/ScaledNumber.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ScaledNumber.cpp
+  source_name_part = ScaledNumber
+build obj/llvm/lib/Support/Support.ScopedPrinter.o: cxx ../../llvm/lib/Support/ScopedPrinter.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ScopedPrinter.cpp
+  source_name_part = ScopedPrinter
+build obj/llvm/lib/Support/Support.Signposts.o: cxx ../../llvm/lib/Support/Signposts.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Signposts.cpp
+  source_name_part = Signposts
+build obj/llvm/lib/Support/Support.SmallPtrSet.o: cxx ../../llvm/lib/Support/SmallPtrSet.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = SmallPtrSet.cpp
+  source_name_part = SmallPtrSet
+build obj/llvm/lib/Support/Support.SmallVector.o: cxx ../../llvm/lib/Support/SmallVector.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = SmallVector.cpp
+  source_name_part = SmallVector
+build obj/llvm/lib/Support/Support.SourceMgr.o: cxx ../../llvm/lib/Support/SourceMgr.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = SourceMgr.cpp
+  source_name_part = SourceMgr
+build obj/llvm/lib/Support/Support.SpecialCaseList.o: cxx ../../llvm/lib/Support/SpecialCaseList.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = SpecialCaseList.cpp
+  source_name_part = SpecialCaseList
+build obj/llvm/lib/Support/Support.Statistic.o: cxx ../../llvm/lib/Support/Statistic.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Statistic.cpp
+  source_name_part = Statistic
+build obj/llvm/lib/Support/Support.StringExtras.o: cxx ../../llvm/lib/Support/StringExtras.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = StringExtras.cpp
+  source_name_part = StringExtras
+build obj/llvm/lib/Support/Support.StringMap.o: cxx ../../llvm/lib/Support/StringMap.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = StringMap.cpp
+  source_name_part = StringMap
+build obj/llvm/lib/Support/Support.StringRef.o: cxx ../../llvm/lib/Support/StringRef.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = StringRef.cpp
+  source_name_part = StringRef
+build obj/llvm/lib/Support/Support.StringSaver.o: cxx ../../llvm/lib/Support/StringSaver.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = StringSaver.cpp
+  source_name_part = StringSaver
+build obj/llvm/lib/Support/Support.SuffixTree.o: cxx ../../llvm/lib/Support/SuffixTree.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = SuffixTree.cpp
+  source_name_part = SuffixTree
+build obj/llvm/lib/Support/Support.SymbolRemappingReader.o: cxx ../../llvm/lib/Support/SymbolRemappingReader.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = SymbolRemappingReader.cpp
+  source_name_part = SymbolRemappingReader
+build obj/llvm/lib/Support/Support.SystemUtils.o: cxx ../../llvm/lib/Support/SystemUtils.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = SystemUtils.cpp
+  source_name_part = SystemUtils
+build obj/llvm/lib/Support/Support.TarWriter.o: cxx ../../llvm/lib/Support/TarWriter.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = TarWriter.cpp
+  source_name_part = TarWriter
+build obj/llvm/lib/Support/Support.TargetParser.o: cxx ../../llvm/lib/Support/TargetParser.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = TargetParser.cpp
+  source_name_part = TargetParser
+build obj/llvm/lib/Support/Support.ThreadPool.o: cxx ../../llvm/lib/Support/ThreadPool.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ThreadPool.cpp
+  source_name_part = ThreadPool
+build obj/llvm/lib/Support/Support.TimeProfiler.o: cxx ../../llvm/lib/Support/TimeProfiler.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = TimeProfiler.cpp
+  source_name_part = TimeProfiler
+build obj/llvm/lib/Support/Support.Timer.o: cxx ../../llvm/lib/Support/Timer.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Timer.cpp
+  source_name_part = Timer
+build obj/llvm/lib/Support/Support.ToolOutputFile.o: cxx ../../llvm/lib/Support/ToolOutputFile.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ToolOutputFile.cpp
+  source_name_part = ToolOutputFile
+build obj/llvm/lib/Support/Support.TrigramIndex.o: cxx ../../llvm/lib/Support/TrigramIndex.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = TrigramIndex.cpp
+  source_name_part = TrigramIndex
+build obj/llvm/lib/Support/Support.Triple.o: cxx ../../llvm/lib/Support/Triple.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Triple.cpp
+  source_name_part = Triple
+build obj/llvm/lib/Support/Support.Twine.o: cxx ../../llvm/lib/Support/Twine.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Twine.cpp
+  source_name_part = Twine
+build obj/llvm/lib/Support/Support.TypeSize.o: cxx ../../llvm/lib/Support/TypeSize.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = TypeSize.cpp
+  source_name_part = TypeSize
+build obj/llvm/lib/Support/Support.Unicode.o: cxx ../../llvm/lib/Support/Unicode.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Unicode.cpp
+  source_name_part = Unicode
+build obj/llvm/lib/Support/Support.UnicodeCaseFold.o: cxx ../../llvm/lib/Support/UnicodeCaseFold.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = UnicodeCaseFold.cpp
+  source_name_part = UnicodeCaseFold
+build obj/llvm/lib/Support/Support.UnicodeNameToCodepoint.o: cxx ../../llvm/lib/Support/UnicodeNameToCodepoint.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = UnicodeNameToCodepoint.cpp
+  source_name_part = UnicodeNameToCodepoint
+build obj/llvm/lib/Support/Support.UnicodeNameToCodepointGenerated.o: cxx ../../llvm/lib/Support/UnicodeNameToCodepointGenerated.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = UnicodeNameToCodepointGenerated.cpp
+  source_name_part = UnicodeNameToCodepointGenerated
+build obj/llvm/lib/Support/Support.VersionTuple.o: cxx ../../llvm/lib/Support/VersionTuple.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = VersionTuple.cpp
+  source_name_part = VersionTuple
+build obj/llvm/lib/Support/Support.WithColor.o: cxx ../../llvm/lib/Support/WithColor.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = WithColor.cpp
+  source_name_part = WithColor
+build obj/llvm/lib/Support/Support.X86TargetParser.o: cxx ../../llvm/lib/Support/X86TargetParser.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = X86TargetParser.cpp
+  source_name_part = X86TargetParser
+build obj/llvm/lib/Support/Support.XtensaTargetParser.o: cxx ../../llvm/lib/Support/XtensaTargetParser.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = XtensaTargetParser.cpp
+  source_name_part = XtensaTargetParser
+build obj/llvm/lib/Support/Support.YAMLParser.o: cxx ../../llvm/lib/Support/YAMLParser.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = YAMLParser.cpp
+  source_name_part = YAMLParser
+build obj/llvm/lib/Support/Support.YAMLTraits.o: cxx ../../llvm/lib/Support/YAMLTraits.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = YAMLTraits.cpp
+  source_name_part = YAMLTraits
+build obj/llvm/lib/Support/Support.Z3Solver.o: cxx ../../llvm/lib/Support/Z3Solver.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Z3Solver.cpp
+  source_name_part = Z3Solver
+build obj/llvm/lib/Support/Support.circular_raw_ostream.o: cxx ../../llvm/lib/Support/circular_raw_ostream.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = circular_raw_ostream.cpp
+  source_name_part = circular_raw_ostream
+build obj/llvm/lib/Support/Support.raw_os_ostream.o: cxx ../../llvm/lib/Support/raw_os_ostream.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = raw_os_ostream.cpp
+  source_name_part = raw_os_ostream
+build obj/llvm/lib/Support/Support.raw_ostream.o: cxx ../../llvm/lib/Support/raw_ostream.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = raw_ostream.cpp
+  source_name_part = raw_ostream
+build obj/llvm/lib/Support/Support.regcomp.o: cc ../../llvm/lib/Support/regcomp.c || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = regcomp.c
+  source_name_part = regcomp
+build obj/llvm/lib/Support/Support.regerror.o: cc ../../llvm/lib/Support/regerror.c || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = regerror.c
+  source_name_part = regerror
+build obj/llvm/lib/Support/Support.regexec.o: cc ../../llvm/lib/Support/regexec.c || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = regexec.c
+  source_name_part = regexec
+build obj/llvm/lib/Support/Support.regfree.o: cc ../../llvm/lib/Support/regfree.c || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = regfree.c
+  source_name_part = regfree
+build obj/llvm/lib/Support/Support.regstrlcpy.o: cc ../../llvm/lib/Support/regstrlcpy.c || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = regstrlcpy.c
+  source_name_part = regstrlcpy
+build obj/llvm/lib/Support/Support.xxhash.o: cxx ../../llvm/lib/Support/xxhash.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = xxhash.cpp
+  source_name_part = xxhash
+build obj/llvm/lib/Support/Support.Atomic.o: cxx ../../llvm/lib/Support/Atomic.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Atomic.cpp
+  source_name_part = Atomic
+build obj/llvm/lib/Support/Support.DynamicLibrary.o: cxx ../../llvm/lib/Support/DynamicLibrary.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = DynamicLibrary.cpp
+  source_name_part = DynamicLibrary
+build obj/llvm/lib/Support/Support.Errno.o: cxx ../../llvm/lib/Support/Errno.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Errno.cpp
+  source_name_part = Errno
+build obj/llvm/lib/Support/Support.Host.o: cxx ../../llvm/lib/Support/Host.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Host.cpp
+  source_name_part = Host
+build obj/llvm/lib/Support/Support.Memory.o: cxx ../../llvm/lib/Support/Memory.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Memory.cpp
+  source_name_part = Memory
+build obj/llvm/lib/Support/Support.Path.o: cxx ../../llvm/lib/Support/Path.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Path.cpp
+  source_name_part = Path
+build obj/llvm/lib/Support/Support.Process.o: cxx ../../llvm/lib/Support/Process.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Process.cpp
+  source_name_part = Process
+build obj/llvm/lib/Support/Support.Program.o: cxx ../../llvm/lib/Support/Program.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Program.cpp
+  source_name_part = Program
+build obj/llvm/lib/Support/Support.Signals.o: cxx ../../llvm/lib/Support/Signals.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Signals.cpp
+  source_name_part = Signals
+build obj/llvm/lib/Support/Support.ThreadLocal.o: cxx ../../llvm/lib/Support/ThreadLocal.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = ThreadLocal.cpp
+  source_name_part = ThreadLocal
+build obj/llvm/lib/Support/Support.Threading.o: cxx ../../llvm/lib/Support/Threading.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Threading.cpp
+  source_name_part = Threading
+build obj/llvm/lib/Support/Support.Valgrind.o: cxx ../../llvm/lib/Support/Valgrind.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Valgrind.cpp
+  source_name_part = Valgrind
+build obj/llvm/lib/Support/Support.VirtualFileSystem.o: cxx ../../llvm/lib/Support/VirtualFileSystem.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = VirtualFileSystem.cpp
+  source_name_part = VirtualFileSystem
+build obj/llvm/lib/Support/Support.Watchdog.o: cxx ../../llvm/lib/Support/Watchdog.cpp || obj/llvm/lib/Support/Support.inputdeps.stamp
+  source_file_part = Watchdog.cpp
+  source_name_part = Watchdog
+
+build ./lib/libLLVMSupport.a: alink obj/llvm/lib/Support/Support.AArch64TargetParser.o obj/llvm/lib/Support/Support.ABIBreak.o obj/llvm/lib/Support/Support.AMDGPUMetadata.o obj/llvm/lib/Support/Support.APFixedPoint.o obj/llvm/lib/Support/Support.APFloat.o obj/llvm/lib/Support/Support.APInt.o obj/llvm/lib/Support/Support.APSInt.o obj/llvm/lib/Support/Support.ARMAttributeParser.o obj/llvm/lib/Support/Support.ARMBuildAttrs.o obj/llvm/lib/Support/Support.ARMTargetParser.o obj/llvm/lib/Support/Support.ARMWinEH.o obj/llvm/lib/Support/Support.AddressRanges.o obj/llvm/lib/Support/Support.Allocator.o obj/llvm/lib/Support/Support.AutoConvert.o obj/llvm/lib/Support/Support.Base64.o obj/llvm/lib/Support/Support.BinaryStreamError.o obj/llvm/lib/Support/Support.BinaryStreamReader.o obj/llvm/lib/Support/Support.BinaryStreamRef.o obj/llvm/lib/Support/Support.BinaryStreamWriter.o obj/llvm/lib/Support/Support.BlockFrequency.o obj/llvm/lib/Support/Support.BranchProbability.o obj/llvm/lib/Support/Support.BuryPointer.o obj/llvm/lib/Support/Support.COM.o obj/llvm/lib/Support/Support.CRC.o obj/llvm/lib/Support/Support.CSKYAttributeParser.o obj/llvm/lib/Support/Support.CSKYAttributes.o obj/llvm/lib/Support/Support.CSKYTargetParser.o obj/llvm/lib/Support/Support.CachePruning.o obj/llvm/lib/Support/Support.Caching.o obj/llvm/lib/Support/Support.Chrono.o obj/llvm/lib/Support/Support.CodeGenCoverage.o obj/llvm/lib/Support/Support.CommandLine.o obj/llvm/lib/Support/Support.Compression.o obj/llvm/lib/Support/Support.ConvertUTF.o obj/llvm/lib/Support/Support.ConvertUTFWrapper.o obj/llvm/lib/Support/Support.CrashRecoveryContext.o obj/llvm/lib/Support/Support.DAGDeltaAlgorithm.o obj/llvm/lib/Support/Support.DJB.o obj/llvm/lib/Support/Support.DataExtractor.o obj/llvm/lib/Support/Support.Debug.o obj/llvm/lib/Support/Support.DebugCounter.o obj/llvm/lib/Support/Support.DeltaAlgorithm.o obj/llvm/lib/Support/Support.DivisionByConstantInfo.o obj/llvm/lib/Support/Support.ELFAttributeParser.o obj/llvm/lib/Support/Support.ELFAttributes.o obj/llvm/lib/Support/Support.Error.o obj/llvm/lib/Support/Support.ErrorHandling.o obj/llvm/lib/Support/Support.ExtensibleRTTI.o obj/llvm/lib/Support/Support.FileCollector.o obj/llvm/lib/Support/Support.FileOutputBuffer.o obj/llvm/lib/Support/Support.FileUtilities.o obj/llvm/lib/Support/Support.FoldingSet.o obj/llvm/lib/Support/Support.FormatVariadic.o obj/llvm/lib/Support/Support.FormattedStream.o obj/llvm/lib/Support/Support.GlobPattern.o obj/llvm/lib/Support/Support.GraphWriter.o obj/llvm/lib/Support/Support.Hashing.o obj/llvm/lib/Support/Support.InitLLVM.o obj/llvm/lib/Support/Support.InstructionCost.o obj/llvm/lib/Support/Support.IntEqClasses.o obj/llvm/lib/Support/Support.IntervalMap.o obj/llvm/lib/Support/Support.ItaniumManglingCanonicalizer.o obj/llvm/lib/Support/Support.JSON.o obj/llvm/lib/Support/Support.KnownBits.o obj/llvm/lib/Support/Support.LEB128.o obj/llvm/lib/Support/Support.LineIterator.o obj/llvm/lib/Support/Support.Locale.o obj/llvm/lib/Support/Support.LockFileManager.o obj/llvm/lib/Support/Support.LowLevelType.o obj/llvm/lib/Support/Support.MD5.o obj/llvm/lib/Support/Support.MSP430AttributeParser.o obj/llvm/lib/Support/Support.MSP430Attributes.o obj/llvm/lib/Support/Support.ManagedStatic.o obj/llvm/lib/Support/Support.MathExtras.o obj/llvm/lib/Support/Support.MemAlloc.o obj/llvm/lib/Support/Support.MemoryBuffer.o obj/llvm/lib/Support/Support.MemoryBufferRef.o obj/llvm/lib/Support/Support.NativeFormatting.o obj/llvm/lib/Support/Support.OptimizedStructLayout.o obj/llvm/lib/Support/Support.Optional.o obj/llvm/lib/Support/Support.Parallel.o obj/llvm/lib/Support/Support.PluginLoader.o obj/llvm/lib/Support/Support.PrettyStackTrace.o obj/llvm/lib/Support/Support.RISCVAttributeParser.o obj/llvm/lib/Support/Support.RISCVAttributes.o obj/llvm/lib/Support/Support.RISCVISAInfo.o obj/llvm/lib/Support/Support.RWMutex.o obj/llvm/lib/Support/Support.RandomNumberGenerator.o obj/llvm/lib/Support/Support.Regex.o obj/llvm/lib/Support/Support.SHA1.o obj/llvm/lib/Support/Support.SHA256.o obj/llvm/lib/Support/Support.ScaledNumber.o obj/llvm/lib/Support/Support.ScopedPrinter.o obj/llvm/lib/Support/Support.Signposts.o obj/llvm/lib/Support/Support.SmallPtrSet.o obj/llvm/lib/Support/Support.SmallVector.o obj/llvm/lib/Support/Support.SourceMgr.o obj/llvm/lib/Support/Support.SpecialCaseList.o obj/llvm/lib/Support/Support.Statistic.o obj/llvm/lib/Support/Support.StringExtras.o obj/llvm/lib/Support/Support.StringMap.o obj/llvm/lib/Support/Support.StringRef.o obj/llvm/lib/Support/Support.StringSaver.o obj/llvm/lib/Support/Support.SuffixTree.o obj/llvm/lib/Support/Support.SymbolRemappingReader.o obj/llvm/lib/Support/Support.SystemUtils.o obj/llvm/lib/Support/Support.TarWriter.o obj/llvm/lib/Support/Support.TargetParser.o obj/llvm/lib/Support/Support.ThreadPool.o obj/llvm/lib/Support/Support.TimeProfiler.o obj/llvm/lib/Support/Support.Timer.o obj/llvm/lib/Support/Support.ToolOutputFile.o obj/llvm/lib/Support/Support.TrigramIndex.o obj/llvm/lib/Support/Support.Triple.o obj/llvm/lib/Support/Support.Twine.o obj/llvm/lib/Support/Support.TypeSize.o obj/llvm/lib/Support/Support.Unicode.o obj/llvm/lib/Support/Support.UnicodeCaseFold.o obj/llvm/lib/Support/Support.UnicodeNameToCodepoint.o obj/llvm/lib/Support/Support.UnicodeNameToCodepointGenerated.o obj/llvm/lib/Support/Support.VersionTuple.o obj/llvm/lib/Support/Support.WithColor.o obj/llvm/lib/Support/Support.X86TargetParser.o obj/llvm/lib/Support/Support.XtensaTargetParser.o obj/llvm/lib/Support/Support.YAMLParser.o obj/llvm/lib/Support/Support.YAMLTraits.o obj/llvm/lib/Support/Support.Z3Solver.o obj/llvm/lib/Support/Support.circular_raw_ostream.o obj/llvm/lib/Support/Support.raw_os_ostream.o obj/llvm/lib/Support/Support.raw_ostream.o obj/llvm/lib/Support/Support.regcomp.o obj/llvm/lib/Support/Support.regerror.o obj/llvm/lib/Support/Support.regexec.o obj/llvm/lib/Support/Support.regfree.o obj/llvm/lib/Support/Support.regstrlcpy.o obj/llvm/lib/Support/Support.xxhash.o obj/llvm/lib/Support/Support.Atomic.o obj/llvm/lib/Support/Support.DynamicLibrary.o obj/llvm/lib/Support/Support.Errno.o obj/llvm/lib/Support/Support.Host.o obj/llvm/lib/Support/Support.Memory.o obj/llvm/lib/Support/Support.Path.o obj/llvm/lib/Support/Support.Process.o obj/llvm/lib/Support/Support.Program.o obj/llvm/lib/Support/Support.Signals.o obj/llvm/lib/Support/Support.ThreadLocal.o obj/llvm/lib/Support/Support.Threading.o obj/llvm/lib/Support/Support.Valgrind.o obj/llvm/lib/Support/Support.VirtualFileSystem.o obj/llvm/lib/Support/Support.Watchdog.o || obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Config/write_target_def_files.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp ./lib/libLLVMSupportBlake3.a obj/llvm/include/llvm/Config/config.stamp ./lib/libLLVMDemangle.a obj/llvm/utils/gn/build/libs/pthread/pthread.stamp obj/llvm/utils/gn/build/libs/terminfo/terminfo.stamp obj/llvm/utils/gn/build/libs/zlib/zlib.stamp
+  arflags =
+  output_extension = 
+  output_dir = ./lib

@@ -1,0 +1,133 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = CodeView
+target_output_name = libLLVMDebugInfoCodeView
+
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.AppendingTypeTableBuilder.o: cxx ../../llvm/lib/DebugInfo/CodeView/AppendingTypeTableBuilder.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = AppendingTypeTableBuilder.cpp
+  source_name_part = AppendingTypeTableBuilder
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.CVSymbolVisitor.o: cxx ../../llvm/lib/DebugInfo/CodeView/CVSymbolVisitor.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = CVSymbolVisitor.cpp
+  source_name_part = CVSymbolVisitor
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.CVTypeVisitor.o: cxx ../../llvm/lib/DebugInfo/CodeView/CVTypeVisitor.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = CVTypeVisitor.cpp
+  source_name_part = CVTypeVisitor
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.CodeViewError.o: cxx ../../llvm/lib/DebugInfo/CodeView/CodeViewError.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = CodeViewError.cpp
+  source_name_part = CodeViewError
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.CodeViewRecordIO.o: cxx ../../llvm/lib/DebugInfo/CodeView/CodeViewRecordIO.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = CodeViewRecordIO.cpp
+  source_name_part = CodeViewRecordIO
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.ContinuationRecordBuilder.o: cxx ../../llvm/lib/DebugInfo/CodeView/ContinuationRecordBuilder.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = ContinuationRecordBuilder.cpp
+  source_name_part = ContinuationRecordBuilder
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugChecksumsSubsection.o: cxx ../../llvm/lib/DebugInfo/CodeView/DebugChecksumsSubsection.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = DebugChecksumsSubsection.cpp
+  source_name_part = DebugChecksumsSubsection
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugCrossExSubsection.o: cxx ../../llvm/lib/DebugInfo/CodeView/DebugCrossExSubsection.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = DebugCrossExSubsection.cpp
+  source_name_part = DebugCrossExSubsection
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugCrossImpSubsection.o: cxx ../../llvm/lib/DebugInfo/CodeView/DebugCrossImpSubsection.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = DebugCrossImpSubsection.cpp
+  source_name_part = DebugCrossImpSubsection
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugFrameDataSubsection.o: cxx ../../llvm/lib/DebugInfo/CodeView/DebugFrameDataSubsection.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = DebugFrameDataSubsection.cpp
+  source_name_part = DebugFrameDataSubsection
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugInlineeLinesSubsection.o: cxx ../../llvm/lib/DebugInfo/CodeView/DebugInlineeLinesSubsection.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = DebugInlineeLinesSubsection.cpp
+  source_name_part = DebugInlineeLinesSubsection
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugLinesSubsection.o: cxx ../../llvm/lib/DebugInfo/CodeView/DebugLinesSubsection.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = DebugLinesSubsection.cpp
+  source_name_part = DebugLinesSubsection
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugStringTableSubsection.o: cxx ../../llvm/lib/DebugInfo/CodeView/DebugStringTableSubsection.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = DebugStringTableSubsection.cpp
+  source_name_part = DebugStringTableSubsection
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugSubsection.o: cxx ../../llvm/lib/DebugInfo/CodeView/DebugSubsection.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = DebugSubsection.cpp
+  source_name_part = DebugSubsection
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugSubsectionRecord.o: cxx ../../llvm/lib/DebugInfo/CodeView/DebugSubsectionRecord.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = DebugSubsectionRecord.cpp
+  source_name_part = DebugSubsectionRecord
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugSubsectionVisitor.o: cxx ../../llvm/lib/DebugInfo/CodeView/DebugSubsectionVisitor.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = DebugSubsectionVisitor.cpp
+  source_name_part = DebugSubsectionVisitor
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugSymbolRVASubsection.o: cxx ../../llvm/lib/DebugInfo/CodeView/DebugSymbolRVASubsection.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = DebugSymbolRVASubsection.cpp
+  source_name_part = DebugSymbolRVASubsection
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugSymbolsSubsection.o: cxx ../../llvm/lib/DebugInfo/CodeView/DebugSymbolsSubsection.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = DebugSymbolsSubsection.cpp
+  source_name_part = DebugSymbolsSubsection
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.EnumTables.o: cxx ../../llvm/lib/DebugInfo/CodeView/EnumTables.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = EnumTables.cpp
+  source_name_part = EnumTables
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.Formatters.o: cxx ../../llvm/lib/DebugInfo/CodeView/Formatters.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = Formatters.cpp
+  source_name_part = Formatters
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.GlobalTypeTableBuilder.o: cxx ../../llvm/lib/DebugInfo/CodeView/GlobalTypeTableBuilder.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = GlobalTypeTableBuilder.cpp
+  source_name_part = GlobalTypeTableBuilder
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.LazyRandomTypeCollection.o: cxx ../../llvm/lib/DebugInfo/CodeView/LazyRandomTypeCollection.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = LazyRandomTypeCollection.cpp
+  source_name_part = LazyRandomTypeCollection
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.Line.o: cxx ../../llvm/lib/DebugInfo/CodeView/Line.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = Line.cpp
+  source_name_part = Line
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.MergingTypeTableBuilder.o: cxx ../../llvm/lib/DebugInfo/CodeView/MergingTypeTableBuilder.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = MergingTypeTableBuilder.cpp
+  source_name_part = MergingTypeTableBuilder
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.RecordName.o: cxx ../../llvm/lib/DebugInfo/CodeView/RecordName.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = RecordName.cpp
+  source_name_part = RecordName
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.RecordSerialization.o: cxx ../../llvm/lib/DebugInfo/CodeView/RecordSerialization.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = RecordSerialization.cpp
+  source_name_part = RecordSerialization
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.SimpleTypeSerializer.o: cxx ../../llvm/lib/DebugInfo/CodeView/SimpleTypeSerializer.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = SimpleTypeSerializer.cpp
+  source_name_part = SimpleTypeSerializer
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.StringsAndChecksums.o: cxx ../../llvm/lib/DebugInfo/CodeView/StringsAndChecksums.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = StringsAndChecksums.cpp
+  source_name_part = StringsAndChecksums
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.SymbolDumper.o: cxx ../../llvm/lib/DebugInfo/CodeView/SymbolDumper.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = SymbolDumper.cpp
+  source_name_part = SymbolDumper
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.SymbolRecordHelpers.o: cxx ../../llvm/lib/DebugInfo/CodeView/SymbolRecordHelpers.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = SymbolRecordHelpers.cpp
+  source_name_part = SymbolRecordHelpers
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.SymbolRecordMapping.o: cxx ../../llvm/lib/DebugInfo/CodeView/SymbolRecordMapping.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = SymbolRecordMapping.cpp
+  source_name_part = SymbolRecordMapping
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.SymbolSerializer.o: cxx ../../llvm/lib/DebugInfo/CodeView/SymbolSerializer.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = SymbolSerializer.cpp
+  source_name_part = SymbolSerializer
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeDumpVisitor.o: cxx ../../llvm/lib/DebugInfo/CodeView/TypeDumpVisitor.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = TypeDumpVisitor.cpp
+  source_name_part = TypeDumpVisitor
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeHashing.o: cxx ../../llvm/lib/DebugInfo/CodeView/TypeHashing.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = TypeHashing.cpp
+  source_name_part = TypeHashing
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeIndex.o: cxx ../../llvm/lib/DebugInfo/CodeView/TypeIndex.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = TypeIndex.cpp
+  source_name_part = TypeIndex
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeIndexDiscovery.o: cxx ../../llvm/lib/DebugInfo/CodeView/TypeIndexDiscovery.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = TypeIndexDiscovery.cpp
+  source_name_part = TypeIndexDiscovery
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeRecordHelpers.o: cxx ../../llvm/lib/DebugInfo/CodeView/TypeRecordHelpers.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = TypeRecordHelpers.cpp
+  source_name_part = TypeRecordHelpers
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeRecordMapping.o: cxx ../../llvm/lib/DebugInfo/CodeView/TypeRecordMapping.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = TypeRecordMapping.cpp
+  source_name_part = TypeRecordMapping
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeStreamMerger.o: cxx ../../llvm/lib/DebugInfo/CodeView/TypeStreamMerger.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = TypeStreamMerger.cpp
+  source_name_part = TypeStreamMerger
+build obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeTableCollection.o: cxx ../../llvm/lib/DebugInfo/CodeView/TypeTableCollection.cpp || obj/llvm/lib/DebugInfo/CodeView/CodeView.inputdeps.stamp
+  source_file_part = TypeTableCollection.cpp
+  source_name_part = TypeTableCollection
+
+build ./lib/libLLVMDebugInfoCodeView.a: alink obj/llvm/lib/DebugInfo/CodeView/CodeView.AppendingTypeTableBuilder.o obj/llvm/lib/DebugInfo/CodeView/CodeView.CVSymbolVisitor.o obj/llvm/lib/DebugInfo/CodeView/CodeView.CVTypeVisitor.o obj/llvm/lib/DebugInfo/CodeView/CodeView.CodeViewError.o obj/llvm/lib/DebugInfo/CodeView/CodeView.CodeViewRecordIO.o obj/llvm/lib/DebugInfo/CodeView/CodeView.ContinuationRecordBuilder.o obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugChecksumsSubsection.o obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugCrossExSubsection.o obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugCrossImpSubsection.o obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugFrameDataSubsection.o obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugInlineeLinesSubsection.o obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugLinesSubsection.o obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugStringTableSubsection.o obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugSubsection.o obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugSubsectionRecord.o obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugSubsectionVisitor.o obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugSymbolRVASubsection.o obj/llvm/lib/DebugInfo/CodeView/CodeView.DebugSymbolsSubsection.o obj/llvm/lib/DebugInfo/CodeView/CodeView.EnumTables.o obj/llvm/lib/DebugInfo/CodeView/CodeView.Formatters.o obj/llvm/lib/DebugInfo/CodeView/CodeView.GlobalTypeTableBuilder.o obj/llvm/lib/DebugInfo/CodeView/CodeView.LazyRandomTypeCollection.o obj/llvm/lib/DebugInfo/CodeView/CodeView.Line.o obj/llvm/lib/DebugInfo/CodeView/CodeView.MergingTypeTableBuilder.o obj/llvm/lib/DebugInfo/CodeView/CodeView.RecordName.o obj/llvm/lib/DebugInfo/CodeView/CodeView.RecordSerialization.o obj/llvm/lib/DebugInfo/CodeView/CodeView.SimpleTypeSerializer.o obj/llvm/lib/DebugInfo/CodeView/CodeView.StringsAndChecksums.o obj/llvm/lib/DebugInfo/CodeView/CodeView.SymbolDumper.o obj/llvm/lib/DebugInfo/CodeView/CodeView.SymbolRecordHelpers.o obj/llvm/lib/DebugInfo/CodeView/CodeView.SymbolRecordMapping.o obj/llvm/lib/DebugInfo/CodeView/CodeView.SymbolSerializer.o obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeDumpVisitor.o obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeHashing.o obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeIndex.o obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeIndexDiscovery.o obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeRecordHelpers.o obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeRecordMapping.o obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeStreamMerger.o obj/llvm/lib/DebugInfo/CodeView/CodeView.TypeTableCollection.o || ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

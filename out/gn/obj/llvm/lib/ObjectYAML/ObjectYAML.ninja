@@ -1,0 +1,94 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = ObjectYAML
+target_output_name = libLLVMObjectYAML
+
+build obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/ObjectYAML/ObjectYAML.ArchiveEmitter.o: cxx ../../llvm/lib/ObjectYAML/ArchiveEmitter.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = ArchiveEmitter.cpp
+  source_name_part = ArchiveEmitter
+build obj/llvm/lib/ObjectYAML/ObjectYAML.ArchiveYAML.o: cxx ../../llvm/lib/ObjectYAML/ArchiveYAML.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = ArchiveYAML.cpp
+  source_name_part = ArchiveYAML
+build obj/llvm/lib/ObjectYAML/ObjectYAML.COFFEmitter.o: cxx ../../llvm/lib/ObjectYAML/COFFEmitter.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = COFFEmitter.cpp
+  source_name_part = COFFEmitter
+build obj/llvm/lib/ObjectYAML/ObjectYAML.COFFYAML.o: cxx ../../llvm/lib/ObjectYAML/COFFYAML.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = COFFYAML.cpp
+  source_name_part = COFFYAML
+build obj/llvm/lib/ObjectYAML/ObjectYAML.CodeViewYAMLDebugSections.o: cxx ../../llvm/lib/ObjectYAML/CodeViewYAMLDebugSections.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = CodeViewYAMLDebugSections.cpp
+  source_name_part = CodeViewYAMLDebugSections
+build obj/llvm/lib/ObjectYAML/ObjectYAML.CodeViewYAMLSymbols.o: cxx ../../llvm/lib/ObjectYAML/CodeViewYAMLSymbols.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = CodeViewYAMLSymbols.cpp
+  source_name_part = CodeViewYAMLSymbols
+build obj/llvm/lib/ObjectYAML/ObjectYAML.CodeViewYAMLTypeHashing.o: cxx ../../llvm/lib/ObjectYAML/CodeViewYAMLTypeHashing.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = CodeViewYAMLTypeHashing.cpp
+  source_name_part = CodeViewYAMLTypeHashing
+build obj/llvm/lib/ObjectYAML/ObjectYAML.CodeViewYAMLTypes.o: cxx ../../llvm/lib/ObjectYAML/CodeViewYAMLTypes.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = CodeViewYAMLTypes.cpp
+  source_name_part = CodeViewYAMLTypes
+build obj/llvm/lib/ObjectYAML/ObjectYAML.DWARFEmitter.o: cxx ../../llvm/lib/ObjectYAML/DWARFEmitter.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = DWARFEmitter.cpp
+  source_name_part = DWARFEmitter
+build obj/llvm/lib/ObjectYAML/ObjectYAML.DWARFYAML.o: cxx ../../llvm/lib/ObjectYAML/DWARFYAML.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = DWARFYAML.cpp
+  source_name_part = DWARFYAML
+build obj/llvm/lib/ObjectYAML/ObjectYAML.DXContainerEmitter.o: cxx ../../llvm/lib/ObjectYAML/DXContainerEmitter.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = DXContainerEmitter.cpp
+  source_name_part = DXContainerEmitter
+build obj/llvm/lib/ObjectYAML/ObjectYAML.DXContainerYAML.o: cxx ../../llvm/lib/ObjectYAML/DXContainerYAML.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = DXContainerYAML.cpp
+  source_name_part = DXContainerYAML
+build obj/llvm/lib/ObjectYAML/ObjectYAML.ELFEmitter.o: cxx ../../llvm/lib/ObjectYAML/ELFEmitter.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = ELFEmitter.cpp
+  source_name_part = ELFEmitter
+build obj/llvm/lib/ObjectYAML/ObjectYAML.ELFYAML.o: cxx ../../llvm/lib/ObjectYAML/ELFYAML.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = ELFYAML.cpp
+  source_name_part = ELFYAML
+build obj/llvm/lib/ObjectYAML/ObjectYAML.MachOEmitter.o: cxx ../../llvm/lib/ObjectYAML/MachOEmitter.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = MachOEmitter.cpp
+  source_name_part = MachOEmitter
+build obj/llvm/lib/ObjectYAML/ObjectYAML.MachOYAML.o: cxx ../../llvm/lib/ObjectYAML/MachOYAML.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = MachOYAML.cpp
+  source_name_part = MachOYAML
+build obj/llvm/lib/ObjectYAML/ObjectYAML.MinidumpEmitter.o: cxx ../../llvm/lib/ObjectYAML/MinidumpEmitter.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = MinidumpEmitter.cpp
+  source_name_part = MinidumpEmitter
+build obj/llvm/lib/ObjectYAML/ObjectYAML.MinidumpYAML.o: cxx ../../llvm/lib/ObjectYAML/MinidumpYAML.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = MinidumpYAML.cpp
+  source_name_part = MinidumpYAML
+build obj/llvm/lib/ObjectYAML/ObjectYAML.ObjectYAML.o: cxx ../../llvm/lib/ObjectYAML/ObjectYAML.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = ObjectYAML.cpp
+  source_name_part = ObjectYAML
+build obj/llvm/lib/ObjectYAML/ObjectYAML.OffloadEmitter.o: cxx ../../llvm/lib/ObjectYAML/OffloadEmitter.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = OffloadEmitter.cpp
+  source_name_part = OffloadEmitter
+build obj/llvm/lib/ObjectYAML/ObjectYAML.OffloadYAML.o: cxx ../../llvm/lib/ObjectYAML/OffloadYAML.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = OffloadYAML.cpp
+  source_name_part = OffloadYAML
+build obj/llvm/lib/ObjectYAML/ObjectYAML.WasmEmitter.o: cxx ../../llvm/lib/ObjectYAML/WasmEmitter.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = WasmEmitter.cpp
+  source_name_part = WasmEmitter
+build obj/llvm/lib/ObjectYAML/ObjectYAML.WasmYAML.o: cxx ../../llvm/lib/ObjectYAML/WasmYAML.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = WasmYAML.cpp
+  source_name_part = WasmYAML
+build obj/llvm/lib/ObjectYAML/ObjectYAML.XCOFFEmitter.o: cxx ../../llvm/lib/ObjectYAML/XCOFFEmitter.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = XCOFFEmitter.cpp
+  source_name_part = XCOFFEmitter
+build obj/llvm/lib/ObjectYAML/ObjectYAML.XCOFFYAML.o: cxx ../../llvm/lib/ObjectYAML/XCOFFYAML.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = XCOFFYAML.cpp
+  source_name_part = XCOFFYAML
+build obj/llvm/lib/ObjectYAML/ObjectYAML.YAML.o: cxx ../../llvm/lib/ObjectYAML/YAML.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = YAML.cpp
+  source_name_part = YAML
+build obj/llvm/lib/ObjectYAML/ObjectYAML.yaml2obj.o: cxx ../../llvm/lib/ObjectYAML/yaml2obj.cpp || obj/llvm/lib/ObjectYAML/ObjectYAML.inputdeps.stamp
+  source_file_part = yaml2obj.cpp
+  source_name_part = yaml2obj
+
+build ./lib/libLLVMObjectYAML.a: alink obj/llvm/lib/ObjectYAML/ObjectYAML.ArchiveEmitter.o obj/llvm/lib/ObjectYAML/ObjectYAML.ArchiveYAML.o obj/llvm/lib/ObjectYAML/ObjectYAML.COFFEmitter.o obj/llvm/lib/ObjectYAML/ObjectYAML.COFFYAML.o obj/llvm/lib/ObjectYAML/ObjectYAML.CodeViewYAMLDebugSections.o obj/llvm/lib/ObjectYAML/ObjectYAML.CodeViewYAMLSymbols.o obj/llvm/lib/ObjectYAML/ObjectYAML.CodeViewYAMLTypeHashing.o obj/llvm/lib/ObjectYAML/ObjectYAML.CodeViewYAMLTypes.o obj/llvm/lib/ObjectYAML/ObjectYAML.DWARFEmitter.o obj/llvm/lib/ObjectYAML/ObjectYAML.DWARFYAML.o obj/llvm/lib/ObjectYAML/ObjectYAML.DXContainerEmitter.o obj/llvm/lib/ObjectYAML/ObjectYAML.DXContainerYAML.o obj/llvm/lib/ObjectYAML/ObjectYAML.ELFEmitter.o obj/llvm/lib/ObjectYAML/ObjectYAML.ELFYAML.o obj/llvm/lib/ObjectYAML/ObjectYAML.MachOEmitter.o obj/llvm/lib/ObjectYAML/ObjectYAML.MachOYAML.o obj/llvm/lib/ObjectYAML/ObjectYAML.MinidumpEmitter.o obj/llvm/lib/ObjectYAML/ObjectYAML.MinidumpYAML.o obj/llvm/lib/ObjectYAML/ObjectYAML.ObjectYAML.o obj/llvm/lib/ObjectYAML/ObjectYAML.OffloadEmitter.o obj/llvm/lib/ObjectYAML/ObjectYAML.OffloadYAML.o obj/llvm/lib/ObjectYAML/ObjectYAML.WasmEmitter.o obj/llvm/lib/ObjectYAML/ObjectYAML.WasmYAML.o obj/llvm/lib/ObjectYAML/ObjectYAML.XCOFFEmitter.o obj/llvm/lib/ObjectYAML/ObjectYAML.XCOFFYAML.o obj/llvm/lib/ObjectYAML/ObjectYAML.YAML.o obj/llvm/lib/ObjectYAML/ObjectYAML.yaml2obj.o || ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMMC.a ./lib/libLLVMObject.a ./lib/libLLVMSupport.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

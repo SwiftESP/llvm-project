@@ -1,0 +1,40 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/tools/llvm-objdump
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = llvm-objdump
+target_output_name = llvm-objdump
+
+build obj/llvm/tools/llvm-objdump/llvm-objdump.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp obj/llvm/tools/llvm-objdump/ObjdumpOpts.stamp obj/llvm/tools/llvm-objdump/OtoolOpts.stamp
+build obj/llvm/tools/llvm-objdump/llvm-objdump.COFFDump.o: cxx ../../llvm/tools/llvm-objdump/COFFDump.cpp || obj/llvm/tools/llvm-objdump/llvm-objdump.inputdeps.stamp
+  source_file_part = COFFDump.cpp
+  source_name_part = COFFDump
+build obj/llvm/tools/llvm-objdump/llvm-objdump.ELFDump.o: cxx ../../llvm/tools/llvm-objdump/ELFDump.cpp || obj/llvm/tools/llvm-objdump/llvm-objdump.inputdeps.stamp
+  source_file_part = ELFDump.cpp
+  source_name_part = ELFDump
+build obj/llvm/tools/llvm-objdump/llvm-objdump.MachODump.o: cxx ../../llvm/tools/llvm-objdump/MachODump.cpp || obj/llvm/tools/llvm-objdump/llvm-objdump.inputdeps.stamp
+  source_file_part = MachODump.cpp
+  source_name_part = MachODump
+build obj/llvm/tools/llvm-objdump/llvm-objdump.OffloadDump.o: cxx ../../llvm/tools/llvm-objdump/OffloadDump.cpp || obj/llvm/tools/llvm-objdump/llvm-objdump.inputdeps.stamp
+  source_file_part = OffloadDump.cpp
+  source_name_part = OffloadDump
+build obj/llvm/tools/llvm-objdump/llvm-objdump.SourcePrinter.o: cxx ../../llvm/tools/llvm-objdump/SourcePrinter.cpp || obj/llvm/tools/llvm-objdump/llvm-objdump.inputdeps.stamp
+  source_file_part = SourcePrinter.cpp
+  source_name_part = SourcePrinter
+build obj/llvm/tools/llvm-objdump/llvm-objdump.WasmDump.o: cxx ../../llvm/tools/llvm-objdump/WasmDump.cpp || obj/llvm/tools/llvm-objdump/llvm-objdump.inputdeps.stamp
+  source_file_part = WasmDump.cpp
+  source_name_part = WasmDump
+build obj/llvm/tools/llvm-objdump/llvm-objdump.XCOFFDump.o: cxx ../../llvm/tools/llvm-objdump/XCOFFDump.cpp || obj/llvm/tools/llvm-objdump/llvm-objdump.inputdeps.stamp
+  source_file_part = XCOFFDump.cpp
+  source_name_part = XCOFFDump
+build obj/llvm/tools/llvm-objdump/llvm-objdump.llvm-objdump.o: cxx ../../llvm/tools/llvm-objdump/llvm-objdump.cpp || obj/llvm/tools/llvm-objdump/llvm-objdump.inputdeps.stamp
+  source_file_part = llvm-objdump.cpp
+  source_name_part = llvm-objdump
+
+build ./bin/llvm-objdump: link obj/llvm/tools/llvm-objdump/llvm-objdump.COFFDump.o obj/llvm/tools/llvm-objdump/llvm-objdump.ELFDump.o obj/llvm/tools/llvm-objdump/llvm-objdump.MachODump.o obj/llvm/tools/llvm-objdump/llvm-objdump.OffloadDump.o obj/llvm/tools/llvm-objdump/llvm-objdump.SourcePrinter.o obj/llvm/tools/llvm-objdump/llvm-objdump.WasmDump.o obj/llvm/tools/llvm-objdump/llvm-objdump.XCOFFDump.o obj/llvm/tools/llvm-objdump/llvm-objdump.llvm-objdump.o ./lib/libLLVMCodeGen.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebuginfod.a ./lib/libLLVMDemangle.a ./lib/libLLVMMC.a ./lib/libLLVMMCDisassembler.a ./lib/libLLVMObject.a ./lib/libLLVMOption.a ./lib/libLLVMSupport.a ./lib/libLLVMAnalysis.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMTarget.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMAArch64Disassembler.a || obj/llvm/tools/llvm-objdump/ObjdumpOpts.stamp obj/llvm/tools/llvm-objdump/OtoolOpts.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/lib/Target/AllTargetsDescs.stamp obj/llvm/lib/Target/AllTargetsDisassemblers.stamp obj/llvm/lib/Target/AllTargetsInfos.stamp obj/llvm/utils/gn/build/libs/xar/xar.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lxar -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

@@ -1,0 +1,18 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_c =
+label_name = clang-fuzzer-dictionary
+target_output_name = clang-fuzzer-dictionary
+
+build obj/clang/tools/clang-fuzzer/dictionary/clang-fuzzer-dictionary.dictionary.o: cc ../../clang/tools/clang-fuzzer/dictionary/dictionary.c
+  source_file_part = dictionary.c
+  source_name_part = dictionary
+
+build ./bin/clang-fuzzer-dictionary: link obj/clang/tools/clang-fuzzer/dictionary/clang-fuzzer-dictionary.dictionary.o
+  ldflags = -mmacos-version-min=10.10
+  libs =
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

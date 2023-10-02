@@ -1,0 +1,33 @@
+defines =
+include_dirs = -I../../compiler-rt/lib
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -Wcovered-switch-default -fno-builtin -gline-tables-only -fPIC -funwind-tables -fvisibility=hidden -Werror=thread-safety -Werror=thread-safety-reference -Werror=thread-safety-beta
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = sources
+target_output_name = sources
+
+build obj/compiler-rt/lib/scudo/sources.scudo_allocator.o: cxx ../../compiler-rt/lib/scudo/scudo_allocator.cpp
+  source_file_part = scudo_allocator.cpp
+  source_name_part = scudo_allocator
+build obj/compiler-rt/lib/scudo/sources.scudo_crc32.o: cxx ../../compiler-rt/lib/scudo/scudo_crc32.cpp
+  source_file_part = scudo_crc32.cpp
+  source_name_part = scudo_crc32
+build obj/compiler-rt/lib/scudo/sources.scudo_errors.o: cxx ../../compiler-rt/lib/scudo/scudo_errors.cpp
+  source_file_part = scudo_errors.cpp
+  source_name_part = scudo_errors
+build obj/compiler-rt/lib/scudo/sources.scudo_flags.o: cxx ../../compiler-rt/lib/scudo/scudo_flags.cpp
+  source_file_part = scudo_flags.cpp
+  source_name_part = scudo_flags
+build obj/compiler-rt/lib/scudo/sources.scudo_malloc.o: cxx ../../compiler-rt/lib/scudo/scudo_malloc.cpp
+  source_file_part = scudo_malloc.cpp
+  source_name_part = scudo_malloc
+build obj/compiler-rt/lib/scudo/sources.scudo_termination.o: cxx ../../compiler-rt/lib/scudo/scudo_termination.cpp
+  source_file_part = scudo_termination.cpp
+  source_name_part = scudo_termination
+build obj/compiler-rt/lib/scudo/sources.scudo_tsd_exclusive.o: cxx ../../compiler-rt/lib/scudo/scudo_tsd_exclusive.cpp
+  source_file_part = scudo_tsd_exclusive.cpp
+  source_name_part = scudo_tsd_exclusive
+build obj/compiler-rt/lib/scudo/sources.scudo_tsd_shared.o: cxx ../../compiler-rt/lib/scudo/scudo_tsd_shared.cpp
+  source_file_part = scudo_tsd_shared.cpp
+  source_name_part = scudo_tsd_shared
+
+build obj/compiler-rt/lib/scudo/sources.stamp: stamp obj/compiler-rt/lib/scudo/sources.scudo_allocator.o obj/compiler-rt/lib/scudo/sources.scudo_crc32.o obj/compiler-rt/lib/scudo/sources.scudo_errors.o obj/compiler-rt/lib/scudo/sources.scudo_flags.o obj/compiler-rt/lib/scudo/sources.scudo_malloc.o obj/compiler-rt/lib/scudo/sources.scudo_termination.o obj/compiler-rt/lib/scudo/sources.scudo_tsd_exclusive.o obj/compiler-rt/lib/scudo/sources.scudo_tsd_shared.o

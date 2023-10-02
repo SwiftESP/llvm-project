@@ -1,0 +1,85 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = OrcJITTests
+target_output_name = OrcJITTests
+
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/ExecutionEngine/JITLink/COFFOptions.stamp obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.CoreAPIsTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/CoreAPIsTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = CoreAPIsTest.cpp
+  source_name_part = CoreAPIsTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.EPCGenericJITLinkMemoryManagerTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/EPCGenericJITLinkMemoryManagerTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = EPCGenericJITLinkMemoryManagerTest.cpp
+  source_name_part = EPCGenericJITLinkMemoryManagerTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.EPCGenericMemoryAccessTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/EPCGenericMemoryAccessTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = EPCGenericMemoryAccessTest.cpp
+  source_name_part = EPCGenericMemoryAccessTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.ExecutionSessionWrapperFunctionCallsTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/ExecutionSessionWrapperFunctionCallsTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = ExecutionSessionWrapperFunctionCallsTest.cpp
+  source_name_part = ExecutionSessionWrapperFunctionCallsTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.ExecutorAddressTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/ExecutorAddressTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = ExecutorAddressTest.cpp
+  source_name_part = ExecutorAddressTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.IndirectionUtilsTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/IndirectionUtilsTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = IndirectionUtilsTest.cpp
+  source_name_part = IndirectionUtilsTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.JITTargetMachineBuilderTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/JITTargetMachineBuilderTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = JITTargetMachineBuilderTest.cpp
+  source_name_part = JITTargetMachineBuilderTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.LazyCallThroughAndReexportsTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/LazyCallThroughAndReexportsTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = LazyCallThroughAndReexportsTest.cpp
+  source_name_part = LazyCallThroughAndReexportsTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.LookupAndRecordAddrsTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/LookupAndRecordAddrsTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = LookupAndRecordAddrsTest.cpp
+  source_name_part = LookupAndRecordAddrsTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.MapperJITLinkMemoryManagerTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/MapperJITLinkMemoryManagerTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = MapperJITLinkMemoryManagerTest.cpp
+  source_name_part = MapperJITLinkMemoryManagerTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.MemoryMapperTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/MemoryMapperTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = MemoryMapperTest.cpp
+  source_name_part = MemoryMapperTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.ObjectLinkingLayerTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/ObjectLinkingLayerTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = ObjectLinkingLayerTest.cpp
+  source_name_part = ObjectLinkingLayerTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.OrcCAPITest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/OrcCAPITest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = OrcCAPITest.cpp
+  source_name_part = OrcCAPITest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.OrcTestCommon.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/OrcTestCommon.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = OrcTestCommon.cpp
+  source_name_part = OrcTestCommon
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.RTDyldObjectLinkingLayerTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/RTDyldObjectLinkingLayerTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = RTDyldObjectLinkingLayerTest.cpp
+  source_name_part = RTDyldObjectLinkingLayerTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.ResourceTrackerTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/ResourceTrackerTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = ResourceTrackerTest.cpp
+  source_name_part = ResourceTrackerTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.SharedMemoryMapperTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/SharedMemoryMapperTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = SharedMemoryMapperTest.cpp
+  source_name_part = SharedMemoryMapperTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.SimpleExecutorMemoryManagerTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/SimpleExecutorMemoryManagerTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = SimpleExecutorMemoryManagerTest.cpp
+  source_name_part = SimpleExecutorMemoryManagerTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.SimplePackedSerializationTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/SimplePackedSerializationTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = SimplePackedSerializationTest.cpp
+  source_name_part = SimplePackedSerializationTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.SymbolStringPoolTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/SymbolStringPoolTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = SymbolStringPoolTest.cpp
+  source_name_part = SymbolStringPoolTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.TaskDispatchTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/TaskDispatchTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = TaskDispatchTest.cpp
+  source_name_part = TaskDispatchTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.ThreadSafeModuleTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/ThreadSafeModuleTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = ThreadSafeModuleTest.cpp
+  source_name_part = ThreadSafeModuleTest
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.WrapperFunctionUtilsTest.o: cxx ../../llvm/unittests/ExecutionEngine/Orc/WrapperFunctionUtilsTest.cpp || obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.inputdeps.stamp
+  source_file_part = WrapperFunctionUtilsTest.cpp
+  source_name_part = WrapperFunctionUtilsTest
+
+build obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests: link obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.CoreAPIsTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.EPCGenericJITLinkMemoryManagerTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.EPCGenericMemoryAccessTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.ExecutionSessionWrapperFunctionCallsTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.ExecutorAddressTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.IndirectionUtilsTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.JITTargetMachineBuilderTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.LazyCallThroughAndReexportsTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.LookupAndRecordAddrsTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.MapperJITLinkMemoryManagerTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.MemoryMapperTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.ObjectLinkingLayerTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.OrcCAPITest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.OrcTestCommon.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.RTDyldObjectLinkingLayerTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.ResourceTrackerTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.SharedMemoryMapperTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.SimpleExecutorMemoryManagerTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.SimplePackedSerializationTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.SymbolStringPoolTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.TaskDispatchTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.ThreadSafeModuleTest.o obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests.WrapperFunctionUtilsTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMExecutionEngine.a ./lib/libLLVMOrcJIT.a ./lib/libLLVMOrcShared.a ./lib/libLLVMRuntimeDyld.a ./lib/libLLVMCore.a ./lib/libLLVMObject.a ./lib/libLLVMSupport.a ./lib/libLLVMTestingSupport.a ./lib/libLLVMOrcTargetProcess.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMTarget.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMJITLink.a ./lib/libLLVMOption.a ./lib/libLLVMPasses.a ./lib/libLLVMCodeGen.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMCoroutines.a ./lib/libLLVMipo.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMLinker.a ./lib/libLLVMInstrumentation.a ./lib/libLLVMVectorize.a ./lib/libLLVMObjCARCOpts.a ./lib/libLLVMWindowsDriver.a ./lib/libLLVMAArch64CodeGen.a ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMAsmPrinter.a ./lib/libLLVMGlobalISel.a ./lib/libLLVMSelectionDAG.a ./lib/libLLVMCFGuard.a ./lib/libLLVMAArch64AsmParser.a ./lib/libLLVMAArch64Disassembler.a ./lib/libLLVMMCDisassembler.a ./lib/libgtest.a || obj/llvm/lib/Target/NativeTarget.stamp obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/ExecutionEngine/Orc

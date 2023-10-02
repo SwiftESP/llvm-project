@@ -1,0 +1,52 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = llvm-cov
+target_output_name = llvm-cov
+
+build obj/llvm/tools/llvm-cov/llvm-cov.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/tools/llvm-cov/llvm-cov.CodeCoverage.o: cxx ../../llvm/tools/llvm-cov/CodeCoverage.cpp || obj/llvm/tools/llvm-cov/llvm-cov.inputdeps.stamp
+  source_file_part = CodeCoverage.cpp
+  source_name_part = CodeCoverage
+build obj/llvm/tools/llvm-cov/llvm-cov.CoverageExporterJson.o: cxx ../../llvm/tools/llvm-cov/CoverageExporterJson.cpp || obj/llvm/tools/llvm-cov/llvm-cov.inputdeps.stamp
+  source_file_part = CoverageExporterJson.cpp
+  source_name_part = CoverageExporterJson
+build obj/llvm/tools/llvm-cov/llvm-cov.CoverageExporterLcov.o: cxx ../../llvm/tools/llvm-cov/CoverageExporterLcov.cpp || obj/llvm/tools/llvm-cov/llvm-cov.inputdeps.stamp
+  source_file_part = CoverageExporterLcov.cpp
+  source_name_part = CoverageExporterLcov
+build obj/llvm/tools/llvm-cov/llvm-cov.CoverageFilters.o: cxx ../../llvm/tools/llvm-cov/CoverageFilters.cpp || obj/llvm/tools/llvm-cov/llvm-cov.inputdeps.stamp
+  source_file_part = CoverageFilters.cpp
+  source_name_part = CoverageFilters
+build obj/llvm/tools/llvm-cov/llvm-cov.CoverageReport.o: cxx ../../llvm/tools/llvm-cov/CoverageReport.cpp || obj/llvm/tools/llvm-cov/llvm-cov.inputdeps.stamp
+  source_file_part = CoverageReport.cpp
+  source_name_part = CoverageReport
+build obj/llvm/tools/llvm-cov/llvm-cov.CoverageSummaryInfo.o: cxx ../../llvm/tools/llvm-cov/CoverageSummaryInfo.cpp || obj/llvm/tools/llvm-cov/llvm-cov.inputdeps.stamp
+  source_file_part = CoverageSummaryInfo.cpp
+  source_name_part = CoverageSummaryInfo
+build obj/llvm/tools/llvm-cov/llvm-cov.SourceCoverageView.o: cxx ../../llvm/tools/llvm-cov/SourceCoverageView.cpp || obj/llvm/tools/llvm-cov/llvm-cov.inputdeps.stamp
+  source_file_part = SourceCoverageView.cpp
+  source_name_part = SourceCoverageView
+build obj/llvm/tools/llvm-cov/llvm-cov.SourceCoverageViewHTML.o: cxx ../../llvm/tools/llvm-cov/SourceCoverageViewHTML.cpp || obj/llvm/tools/llvm-cov/llvm-cov.inputdeps.stamp
+  source_file_part = SourceCoverageViewHTML.cpp
+  source_name_part = SourceCoverageViewHTML
+build obj/llvm/tools/llvm-cov/llvm-cov.SourceCoverageViewText.o: cxx ../../llvm/tools/llvm-cov/SourceCoverageViewText.cpp || obj/llvm/tools/llvm-cov/llvm-cov.inputdeps.stamp
+  source_file_part = SourceCoverageViewText.cpp
+  source_name_part = SourceCoverageViewText
+build obj/llvm/tools/llvm-cov/llvm-cov.TestingSupport.o: cxx ../../llvm/tools/llvm-cov/TestingSupport.cpp || obj/llvm/tools/llvm-cov/llvm-cov.inputdeps.stamp
+  source_file_part = TestingSupport.cpp
+  source_name_part = TestingSupport
+build obj/llvm/tools/llvm-cov/llvm-cov.gcov.o: cxx ../../llvm/tools/llvm-cov/gcov.cpp || obj/llvm/tools/llvm-cov/llvm-cov.inputdeps.stamp
+  source_file_part = gcov.cpp
+  source_name_part = gcov
+build obj/llvm/tools/llvm-cov/llvm-cov.llvm-cov.o: cxx ../../llvm/tools/llvm-cov/llvm-cov.cpp || obj/llvm/tools/llvm-cov/llvm-cov.inputdeps.stamp
+  source_file_part = llvm-cov.cpp
+  source_name_part = llvm-cov
+
+build ./bin/llvm-cov: link obj/llvm/tools/llvm-cov/llvm-cov.CodeCoverage.o obj/llvm/tools/llvm-cov/llvm-cov.CoverageExporterJson.o obj/llvm/tools/llvm-cov/llvm-cov.CoverageExporterLcov.o obj/llvm/tools/llvm-cov/llvm-cov.CoverageFilters.o obj/llvm/tools/llvm-cov/llvm-cov.CoverageReport.o obj/llvm/tools/llvm-cov/llvm-cov.CoverageSummaryInfo.o obj/llvm/tools/llvm-cov/llvm-cov.SourceCoverageView.o obj/llvm/tools/llvm-cov/llvm-cov.SourceCoverageViewHTML.o obj/llvm/tools/llvm-cov/llvm-cov.SourceCoverageViewText.o obj/llvm/tools/llvm-cov/llvm-cov.TestingSupport.o obj/llvm/tools/llvm-cov/llvm-cov.gcov.o obj/llvm/tools/llvm-cov/llvm-cov.llvm-cov.o ./lib/libLLVMCore.a ./lib/libLLVMObject.a ./lib/libLLVMProfileData.a ./lib/libLLVMCoverage.a ./lib/libLLVMSupport.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a || obj/llvm/include/llvm/Config/llvm-config.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

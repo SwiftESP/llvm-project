@@ -1,0 +1,49 @@
+defines =
+include_dirs = -I../../clang-tools-extra/clangd -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = support
+target_output_name = libclangdSupport
+
+build obj/clang-tools-extra/clangd/support/support.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/clang-tools-extra/clangd/support/support.Cancellation.o: cxx ../../clang-tools-extra/clangd/support/Cancellation.cpp || obj/clang-tools-extra/clangd/support/support.inputdeps.stamp
+  source_file_part = Cancellation.cpp
+  source_name_part = Cancellation
+build obj/clang-tools-extra/clangd/support/support.Context.o: cxx ../../clang-tools-extra/clangd/support/Context.cpp || obj/clang-tools-extra/clangd/support/support.inputdeps.stamp
+  source_file_part = Context.cpp
+  source_name_part = Context
+build obj/clang-tools-extra/clangd/support/support.FileCache.o: cxx ../../clang-tools-extra/clangd/support/FileCache.cpp || obj/clang-tools-extra/clangd/support/support.inputdeps.stamp
+  source_file_part = FileCache.cpp
+  source_name_part = FileCache
+build obj/clang-tools-extra/clangd/support/support.Logger.o: cxx ../../clang-tools-extra/clangd/support/Logger.cpp || obj/clang-tools-extra/clangd/support/support.inputdeps.stamp
+  source_file_part = Logger.cpp
+  source_name_part = Logger
+build obj/clang-tools-extra/clangd/support/support.Markup.o: cxx ../../clang-tools-extra/clangd/support/Markup.cpp || obj/clang-tools-extra/clangd/support/support.inputdeps.stamp
+  source_file_part = Markup.cpp
+  source_name_part = Markup
+build obj/clang-tools-extra/clangd/support/support.MemoryTree.o: cxx ../../clang-tools-extra/clangd/support/MemoryTree.cpp || obj/clang-tools-extra/clangd/support/support.inputdeps.stamp
+  source_file_part = MemoryTree.cpp
+  source_name_part = MemoryTree
+build obj/clang-tools-extra/clangd/support/support.Path.o: cxx ../../clang-tools-extra/clangd/support/Path.cpp || obj/clang-tools-extra/clangd/support/support.inputdeps.stamp
+  source_file_part = Path.cpp
+  source_name_part = Path
+build obj/clang-tools-extra/clangd/support/support.Shutdown.o: cxx ../../clang-tools-extra/clangd/support/Shutdown.cpp || obj/clang-tools-extra/clangd/support/support.inputdeps.stamp
+  source_file_part = Shutdown.cpp
+  source_name_part = Shutdown
+build obj/clang-tools-extra/clangd/support/support.ThreadCrashReporter.o: cxx ../../clang-tools-extra/clangd/support/ThreadCrashReporter.cpp || obj/clang-tools-extra/clangd/support/support.inputdeps.stamp
+  source_file_part = ThreadCrashReporter.cpp
+  source_name_part = ThreadCrashReporter
+build obj/clang-tools-extra/clangd/support/support.Threading.o: cxx ../../clang-tools-extra/clangd/support/Threading.cpp || obj/clang-tools-extra/clangd/support/support.inputdeps.stamp
+  source_file_part = Threading.cpp
+  source_name_part = Threading
+build obj/clang-tools-extra/clangd/support/support.ThreadsafeFS.o: cxx ../../clang-tools-extra/clangd/support/ThreadsafeFS.cpp || obj/clang-tools-extra/clangd/support/support.inputdeps.stamp
+  source_file_part = ThreadsafeFS.cpp
+  source_name_part = ThreadsafeFS
+build obj/clang-tools-extra/clangd/support/support.Trace.o: cxx ../../clang-tools-extra/clangd/support/Trace.cpp || obj/clang-tools-extra/clangd/support/support.inputdeps.stamp
+  source_file_part = Trace.cpp
+  source_name_part = Trace
+
+build ./lib/libclangdSupport.a: alink obj/clang-tools-extra/clangd/support/support.Cancellation.o obj/clang-tools-extra/clangd/support/support.Context.o obj/clang-tools-extra/clangd/support/support.FileCache.o obj/clang-tools-extra/clangd/support/support.Logger.o obj/clang-tools-extra/clangd/support/support.Markup.o obj/clang-tools-extra/clangd/support/support.MemoryTree.o obj/clang-tools-extra/clangd/support/support.Path.o obj/clang-tools-extra/clangd/support/support.Shutdown.o obj/clang-tools-extra/clangd/support/support.ThreadCrashReporter.o obj/clang-tools-extra/clangd/support/support.Threading.o obj/clang-tools-extra/clangd/support/support.ThreadsafeFS.o obj/clang-tools-extra/clangd/support/support.Trace.o || ./lib/libLLVMSupport.a obj/llvm/utils/gn/build/libs/atomic/atomic.stamp ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

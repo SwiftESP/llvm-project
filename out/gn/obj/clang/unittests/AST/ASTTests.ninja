@@ -1,0 +1,100 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = ASTTests
+target_output_name = ASTTests
+
+build obj/clang/unittests/AST/ASTTests.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/clang/lib/Tooling/node_introspection_inc.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang/unittests/AST/ASTTests.ASTContextParentMapTest.o: cxx ../../clang/unittests/AST/ASTContextParentMapTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = ASTContextParentMapTest.cpp
+  source_name_part = ASTContextParentMapTest
+build obj/clang/unittests/AST/ASTTests.ASTImporterFixtures.o: cxx ../../clang/unittests/AST/ASTImporterFixtures.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = ASTImporterFixtures.cpp
+  source_name_part = ASTImporterFixtures
+build obj/clang/unittests/AST/ASTTests.ASTImporterGenericRedeclTest.o: cxx ../../clang/unittests/AST/ASTImporterGenericRedeclTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = ASTImporterGenericRedeclTest.cpp
+  source_name_part = ASTImporterGenericRedeclTest
+build obj/clang/unittests/AST/ASTTests.ASTImporterODRStrategiesTest.o: cxx ../../clang/unittests/AST/ASTImporterODRStrategiesTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = ASTImporterODRStrategiesTest.cpp
+  source_name_part = ASTImporterODRStrategiesTest
+build obj/clang/unittests/AST/ASTTests.ASTImporterObjCTest.o: cxx ../../clang/unittests/AST/ASTImporterObjCTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = ASTImporterObjCTest.cpp
+  source_name_part = ASTImporterObjCTest
+build obj/clang/unittests/AST/ASTTests.ASTImporterTest.o: cxx ../../clang/unittests/AST/ASTImporterTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = ASTImporterTest.cpp
+  source_name_part = ASTImporterTest
+build obj/clang/unittests/AST/ASTTests.ASTImporterVisibilityTest.o: cxx ../../clang/unittests/AST/ASTImporterVisibilityTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = ASTImporterVisibilityTest.cpp
+  source_name_part = ASTImporterVisibilityTest
+build obj/clang/unittests/AST/ASTTests.ASTTraverserTest.o: cxx ../../clang/unittests/AST/ASTTraverserTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = ASTTraverserTest.cpp
+  source_name_part = ASTTraverserTest
+build obj/clang/unittests/AST/ASTTests.ASTTypeTraitsTest.o: cxx ../../clang/unittests/AST/ASTTypeTraitsTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = ASTTypeTraitsTest.cpp
+  source_name_part = ASTTypeTraitsTest
+build obj/clang/unittests/AST/ASTTests.ASTVectorTest.o: cxx ../../clang/unittests/AST/ASTVectorTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = ASTVectorTest.cpp
+  source_name_part = ASTVectorTest
+build obj/clang/unittests/AST/ASTTests.AttrTest.o: cxx ../../clang/unittests/AST/AttrTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = AttrTest.cpp
+  source_name_part = AttrTest
+build obj/clang/unittests/AST/ASTTests.CommentLexer.o: cxx ../../clang/unittests/AST/CommentLexer.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = CommentLexer.cpp
+  source_name_part = CommentLexer
+build obj/clang/unittests/AST/ASTTests.CommentParser.o: cxx ../../clang/unittests/AST/CommentParser.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = CommentParser.cpp
+  source_name_part = CommentParser
+build obj/clang/unittests/AST/ASTTests.CommentTextTest.o: cxx ../../clang/unittests/AST/CommentTextTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = CommentTextTest.cpp
+  source_name_part = CommentTextTest
+build obj/clang/unittests/AST/ASTTests.DataCollectionTest.o: cxx ../../clang/unittests/AST/DataCollectionTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = DataCollectionTest.cpp
+  source_name_part = DataCollectionTest
+build obj/clang/unittests/AST/ASTTests.DeclPrinterTest.o: cxx ../../clang/unittests/AST/DeclPrinterTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = DeclPrinterTest.cpp
+  source_name_part = DeclPrinterTest
+build obj/clang/unittests/AST/ASTTests.DeclTest.o: cxx ../../clang/unittests/AST/DeclTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = DeclTest.cpp
+  source_name_part = DeclTest
+build obj/clang/unittests/AST/ASTTests.EvaluateAsRValueTest.o: cxx ../../clang/unittests/AST/EvaluateAsRValueTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = EvaluateAsRValueTest.cpp
+  source_name_part = EvaluateAsRValueTest
+build obj/clang/unittests/AST/ASTTests.ExternalASTSourceTest.o: cxx ../../clang/unittests/AST/ExternalASTSourceTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = ExternalASTSourceTest.cpp
+  source_name_part = ExternalASTSourceTest
+build obj/clang/unittests/AST/ASTTests.NamedDeclPrinterTest.o: cxx ../../clang/unittests/AST/NamedDeclPrinterTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = NamedDeclPrinterTest.cpp
+  source_name_part = NamedDeclPrinterTest
+build obj/clang/unittests/AST/ASTTests.RandstructTest.o: cxx ../../clang/unittests/AST/RandstructTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = RandstructTest.cpp
+  source_name_part = RandstructTest
+build obj/clang/unittests/AST/ASTTests.RecursiveASTVisitorTest.o: cxx ../../clang/unittests/AST/RecursiveASTVisitorTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = RecursiveASTVisitorTest.cpp
+  source_name_part = RecursiveASTVisitorTest
+build obj/clang/unittests/AST/ASTTests.SizelessTypesTest.o: cxx ../../clang/unittests/AST/SizelessTypesTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = SizelessTypesTest.cpp
+  source_name_part = SizelessTypesTest
+build obj/clang/unittests/AST/ASTTests.SourceLocationTest.o: cxx ../../clang/unittests/AST/SourceLocationTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = SourceLocationTest.cpp
+  source_name_part = SourceLocationTest
+build obj/clang/unittests/AST/ASTTests.StmtPrinterTest.o: cxx ../../clang/unittests/AST/StmtPrinterTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = StmtPrinterTest.cpp
+  source_name_part = StmtPrinterTest
+build obj/clang/unittests/AST/ASTTests.StructuralEquivalenceTest.o: cxx ../../clang/unittests/AST/StructuralEquivalenceTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = StructuralEquivalenceTest.cpp
+  source_name_part = StructuralEquivalenceTest
+build obj/clang/unittests/AST/ASTTests.TemplateNameTest.o: cxx ../../clang/unittests/AST/TemplateNameTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = TemplateNameTest.cpp
+  source_name_part = TemplateNameTest
+build obj/clang/unittests/AST/ASTTests.TypePrinterTest.o: cxx ../../clang/unittests/AST/TypePrinterTest.cpp || obj/clang/unittests/AST/ASTTests.inputdeps.stamp
+  source_file_part = TypePrinterTest.cpp
+  source_name_part = TypePrinterTest
+
+build obj/clang/unittests/AST/ASTTests: link obj/clang/unittests/AST/ASTTests.ASTContextParentMapTest.o obj/clang/unittests/AST/ASTTests.ASTImporterFixtures.o obj/clang/unittests/AST/ASTTests.ASTImporterGenericRedeclTest.o obj/clang/unittests/AST/ASTTests.ASTImporterODRStrategiesTest.o obj/clang/unittests/AST/ASTTests.ASTImporterObjCTest.o obj/clang/unittests/AST/ASTTests.ASTImporterTest.o obj/clang/unittests/AST/ASTTests.ASTImporterVisibilityTest.o obj/clang/unittests/AST/ASTTests.ASTTraverserTest.o obj/clang/unittests/AST/ASTTests.ASTTypeTraitsTest.o obj/clang/unittests/AST/ASTTests.ASTVectorTest.o obj/clang/unittests/AST/ASTTests.AttrTest.o obj/clang/unittests/AST/ASTTests.CommentLexer.o obj/clang/unittests/AST/ASTTests.CommentParser.o obj/clang/unittests/AST/ASTTests.CommentTextTest.o obj/clang/unittests/AST/ASTTests.DataCollectionTest.o obj/clang/unittests/AST/ASTTests.DeclPrinterTest.o obj/clang/unittests/AST/ASTTests.DeclTest.o obj/clang/unittests/AST/ASTTests.EvaluateAsRValueTest.o obj/clang/unittests/AST/ASTTests.ExternalASTSourceTest.o obj/clang/unittests/AST/ASTTests.NamedDeclPrinterTest.o obj/clang/unittests/AST/ASTTests.RandstructTest.o obj/clang/unittests/AST/ASTTests.RecursiveASTVisitorTest.o obj/clang/unittests/AST/ASTTests.SizelessTypesTest.o obj/clang/unittests/AST/ASTTests.SourceLocationTest.o obj/clang/unittests/AST/ASTTests.StmtPrinterTest.o obj/clang/unittests/AST/ASTTests.StructuralEquivalenceTest.o obj/clang/unittests/AST/ASTTests.TemplateNameTest.o obj/clang/unittests/AST/ASTTests.TypePrinterTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libclangAST.a ./lib/libclangASTMatchers.a ./lib/libclangAnalysis.a ./lib/libclangBasic.a ./lib/libclangFrontend.a ./lib/libclangTesting.a ./lib/libclangTooling.a ./lib/libLLVMSupport.a ./lib/libLLVMTestingSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libclangLex.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangDriver.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libclangEdit.a ./lib/libclangParse.a ./lib/libclangSema.a ./lib/libclangSupport.a ./lib/libclangSerialization.a ./lib/libgtest.a ./lib/libclangFormat.a ./lib/libclangToolingCore.a ./lib/libclangRewrite.a ./lib/libclangToolingInclusions.a || obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/clang/unittests/AST

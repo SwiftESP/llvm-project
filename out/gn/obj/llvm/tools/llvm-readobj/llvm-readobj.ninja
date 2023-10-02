@@ -1,0 +1,52 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/tools/llvm-readobj
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = llvm-readobj
+target_output_name = llvm-readobj
+
+build obj/llvm/tools/llvm-readobj/llvm-readobj.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/tools/llvm-readobj/Opts.stamp obj/llvm/tools/llvm-readobj/llvm_readobj-driver.stamp
+build obj/llvm/tools/llvm-readobj/llvm-readobj.ARMWinEHPrinter.o: cxx ../../llvm/tools/llvm-readobj/ARMWinEHPrinter.cpp || obj/llvm/tools/llvm-readobj/llvm-readobj.inputdeps.stamp
+  source_file_part = ARMWinEHPrinter.cpp
+  source_name_part = ARMWinEHPrinter
+build obj/llvm/tools/llvm-readobj/llvm-readobj.COFFDumper.o: cxx ../../llvm/tools/llvm-readobj/COFFDumper.cpp || obj/llvm/tools/llvm-readobj/llvm-readobj.inputdeps.stamp
+  source_file_part = COFFDumper.cpp
+  source_name_part = COFFDumper
+build obj/llvm/tools/llvm-readobj/llvm-readobj.COFFImportDumper.o: cxx ../../llvm/tools/llvm-readobj/COFFImportDumper.cpp || obj/llvm/tools/llvm-readobj/llvm-readobj.inputdeps.stamp
+  source_file_part = COFFImportDumper.cpp
+  source_name_part = COFFImportDumper
+build obj/llvm/tools/llvm-readobj/llvm-readobj.ELFDumper.o: cxx ../../llvm/tools/llvm-readobj/ELFDumper.cpp || obj/llvm/tools/llvm-readobj/llvm-readobj.inputdeps.stamp
+  source_file_part = ELFDumper.cpp
+  source_name_part = ELFDumper
+build obj/llvm/tools/llvm-readobj/llvm-readobj.MachODumper.o: cxx ../../llvm/tools/llvm-readobj/MachODumper.cpp || obj/llvm/tools/llvm-readobj/llvm-readobj.inputdeps.stamp
+  source_file_part = MachODumper.cpp
+  source_name_part = MachODumper
+build obj/llvm/tools/llvm-readobj/llvm-readobj.ObjDumper.o: cxx ../../llvm/tools/llvm-readobj/ObjDumper.cpp || obj/llvm/tools/llvm-readobj/llvm-readobj.inputdeps.stamp
+  source_file_part = ObjDumper.cpp
+  source_name_part = ObjDumper
+build obj/llvm/tools/llvm-readobj/llvm-readobj.WasmDumper.o: cxx ../../llvm/tools/llvm-readobj/WasmDumper.cpp || obj/llvm/tools/llvm-readobj/llvm-readobj.inputdeps.stamp
+  source_file_part = WasmDumper.cpp
+  source_name_part = WasmDumper
+build obj/llvm/tools/llvm-readobj/llvm-readobj.Win64EHDumper.o: cxx ../../llvm/tools/llvm-readobj/Win64EHDumper.cpp || obj/llvm/tools/llvm-readobj/llvm-readobj.inputdeps.stamp
+  source_file_part = Win64EHDumper.cpp
+  source_name_part = Win64EHDumper
+build obj/llvm/tools/llvm-readobj/llvm-readobj.WindowsResourceDumper.o: cxx ../../llvm/tools/llvm-readobj/WindowsResourceDumper.cpp || obj/llvm/tools/llvm-readobj/llvm-readobj.inputdeps.stamp
+  source_file_part = WindowsResourceDumper.cpp
+  source_name_part = WindowsResourceDumper
+build obj/llvm/tools/llvm-readobj/llvm-readobj.XCOFFDumper.o: cxx ../../llvm/tools/llvm-readobj/XCOFFDumper.cpp || obj/llvm/tools/llvm-readobj/llvm-readobj.inputdeps.stamp
+  source_file_part = XCOFFDumper.cpp
+  source_name_part = XCOFFDumper
+build obj/llvm/tools/llvm-readobj/llvm-readobj.llvm-readobj.o: cxx ../../llvm/tools/llvm-readobj/llvm-readobj.cpp || obj/llvm/tools/llvm-readobj/llvm-readobj.inputdeps.stamp
+  source_file_part = llvm-readobj.cpp
+  source_name_part = llvm-readobj
+build obj/BUILD_DIR/gen/llvm/tools/llvm-readobj/llvm-readobj.llvm_readobj-driver.o: cxx gen/llvm/tools/llvm-readobj/llvm_readobj-driver.cpp || obj/llvm/tools/llvm-readobj/llvm-readobj.inputdeps.stamp
+  source_file_part = llvm_readobj-driver.cpp
+  source_name_part = llvm_readobj-driver
+
+build ./bin/llvm-readobj: link obj/llvm/tools/llvm-readobj/llvm-readobj.ARMWinEHPrinter.o obj/llvm/tools/llvm-readobj/llvm-readobj.COFFDumper.o obj/llvm/tools/llvm-readobj/llvm-readobj.COFFImportDumper.o obj/llvm/tools/llvm-readobj/llvm-readobj.ELFDumper.o obj/llvm/tools/llvm-readobj/llvm-readobj.MachODumper.o obj/llvm/tools/llvm-readobj/llvm-readobj.ObjDumper.o obj/llvm/tools/llvm-readobj/llvm-readobj.WasmDumper.o obj/llvm/tools/llvm-readobj/llvm-readobj.Win64EHDumper.o obj/llvm/tools/llvm-readobj/llvm-readobj.WindowsResourceDumper.o obj/llvm/tools/llvm-readobj/llvm-readobj.XCOFFDumper.o obj/llvm/tools/llvm-readobj/llvm-readobj.llvm-readobj.o obj/BUILD_DIR/gen/llvm/tools/llvm-readobj/llvm-readobj.llvm_readobj-driver.o ./lib/libLLVMBinaryFormat.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMObject.a ./lib/libLLVMOption.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMMC.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a || obj/llvm/tools/llvm-readobj/Opts.stamp obj/llvm/tools/llvm-readobj/llvm_readobj-driver.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

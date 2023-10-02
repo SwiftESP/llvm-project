@@ -1,0 +1,31 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = opt
+target_output_name = opt
+
+build obj/llvm/tools/opt/opt.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build obj/llvm/tools/opt/opt.AnalysisWrappers.o: cxx ../../llvm/tools/opt/AnalysisWrappers.cpp || obj/llvm/tools/opt/opt.inputdeps.stamp
+  source_file_part = AnalysisWrappers.cpp
+  source_name_part = AnalysisWrappers
+build obj/llvm/tools/opt/opt.BreakpointPrinter.o: cxx ../../llvm/tools/opt/BreakpointPrinter.cpp || obj/llvm/tools/opt/opt.inputdeps.stamp
+  source_file_part = BreakpointPrinter.cpp
+  source_name_part = BreakpointPrinter
+build obj/llvm/tools/opt/opt.NewPMDriver.o: cxx ../../llvm/tools/opt/NewPMDriver.cpp || obj/llvm/tools/opt/opt.inputdeps.stamp
+  source_file_part = NewPMDriver.cpp
+  source_name_part = NewPMDriver
+build obj/llvm/tools/opt/opt.PrintSCC.o: cxx ../../llvm/tools/opt/PrintSCC.cpp || obj/llvm/tools/opt/opt.inputdeps.stamp
+  source_file_part = PrintSCC.cpp
+  source_name_part = PrintSCC
+build obj/llvm/tools/opt/opt.opt.o: cxx ../../llvm/tools/opt/opt.cpp || obj/llvm/tools/opt/opt.inputdeps.stamp
+  source_file_part = opt.cpp
+  source_name_part = opt
+
+build ./bin/opt: link obj/llvm/tools/opt/opt.AnalysisWrappers.o obj/llvm/tools/opt/opt.BreakpointPrinter.o obj/llvm/tools/opt/opt.NewPMDriver.o obj/llvm/tools/opt/opt.PrintSCC.o obj/llvm/tools/opt/opt.opt.o ./lib/libLLVMAnalysis.a ./lib/libLLVMBitWriter.a ./lib/libLLVMCodeGen.a ./lib/libLLVMCore.a ./lib/libLLVMMC.a ./lib/libLLVMPasses.a ./lib/libLLVMSupport.a ./lib/libLLVMTarget.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMCoroutines.a ./lib/libLLVMipo.a ./lib/libLLVMInstrumentation.a ./lib/libLLVMObjCARCOpts.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMVectorize.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMInstCombine.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMLinker.a ./lib/libLLVMAArch64CodeGen.a ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMAsmPrinter.a ./lib/libLLVMGlobalISel.a ./lib/libLLVMSelectionDAG.a ./lib/libLLVMCFGuard.a ./lib/libLLVMAArch64AsmParser.a ./lib/libLLVMAArch64Disassembler.a ./lib/libLLVMMCDisassembler.a || obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/lib/Target/TargetsToBuild.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

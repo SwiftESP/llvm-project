@@ -1,0 +1,82 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Lex
+target_output_name = libclangLex
+
+build obj/clang/lib/Lex/Lex.inputdeps.stamp: stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/clang/lib/Lex/Lex.DependencyDirectivesScanner.o: cxx ../../clang/lib/Lex/DependencyDirectivesScanner.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = DependencyDirectivesScanner.cpp
+  source_name_part = DependencyDirectivesScanner
+build obj/clang/lib/Lex/Lex.HeaderMap.o: cxx ../../clang/lib/Lex/HeaderMap.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = HeaderMap.cpp
+  source_name_part = HeaderMap
+build obj/clang/lib/Lex/Lex.HeaderSearch.o: cxx ../../clang/lib/Lex/HeaderSearch.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = HeaderSearch.cpp
+  source_name_part = HeaderSearch
+build obj/clang/lib/Lex/Lex.InitHeaderSearch.o: cxx ../../clang/lib/Lex/InitHeaderSearch.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = InitHeaderSearch.cpp
+  source_name_part = InitHeaderSearch
+build obj/clang/lib/Lex/Lex.Lexer.o: cxx ../../clang/lib/Lex/Lexer.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = Lexer.cpp
+  source_name_part = Lexer
+build obj/clang/lib/Lex/Lex.LiteralSupport.o: cxx ../../clang/lib/Lex/LiteralSupport.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = LiteralSupport.cpp
+  source_name_part = LiteralSupport
+build obj/clang/lib/Lex/Lex.MacroArgs.o: cxx ../../clang/lib/Lex/MacroArgs.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = MacroArgs.cpp
+  source_name_part = MacroArgs
+build obj/clang/lib/Lex/Lex.MacroInfo.o: cxx ../../clang/lib/Lex/MacroInfo.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = MacroInfo.cpp
+  source_name_part = MacroInfo
+build obj/clang/lib/Lex/Lex.ModuleMap.o: cxx ../../clang/lib/Lex/ModuleMap.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = ModuleMap.cpp
+  source_name_part = ModuleMap
+build obj/clang/lib/Lex/Lex.PPCaching.o: cxx ../../clang/lib/Lex/PPCaching.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = PPCaching.cpp
+  source_name_part = PPCaching
+build obj/clang/lib/Lex/Lex.PPCallbacks.o: cxx ../../clang/lib/Lex/PPCallbacks.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = PPCallbacks.cpp
+  source_name_part = PPCallbacks
+build obj/clang/lib/Lex/Lex.PPConditionalDirectiveRecord.o: cxx ../../clang/lib/Lex/PPConditionalDirectiveRecord.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = PPConditionalDirectiveRecord.cpp
+  source_name_part = PPConditionalDirectiveRecord
+build obj/clang/lib/Lex/Lex.PPDirectives.o: cxx ../../clang/lib/Lex/PPDirectives.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = PPDirectives.cpp
+  source_name_part = PPDirectives
+build obj/clang/lib/Lex/Lex.PPExpressions.o: cxx ../../clang/lib/Lex/PPExpressions.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = PPExpressions.cpp
+  source_name_part = PPExpressions
+build obj/clang/lib/Lex/Lex.PPLexerChange.o: cxx ../../clang/lib/Lex/PPLexerChange.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = PPLexerChange.cpp
+  source_name_part = PPLexerChange
+build obj/clang/lib/Lex/Lex.PPMacroExpansion.o: cxx ../../clang/lib/Lex/PPMacroExpansion.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = PPMacroExpansion.cpp
+  source_name_part = PPMacroExpansion
+build obj/clang/lib/Lex/Lex.Pragma.o: cxx ../../clang/lib/Lex/Pragma.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = Pragma.cpp
+  source_name_part = Pragma
+build obj/clang/lib/Lex/Lex.PreprocessingRecord.o: cxx ../../clang/lib/Lex/PreprocessingRecord.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = PreprocessingRecord.cpp
+  source_name_part = PreprocessingRecord
+build obj/clang/lib/Lex/Lex.Preprocessor.o: cxx ../../clang/lib/Lex/Preprocessor.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = Preprocessor.cpp
+  source_name_part = Preprocessor
+build obj/clang/lib/Lex/Lex.PreprocessorLexer.o: cxx ../../clang/lib/Lex/PreprocessorLexer.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = PreprocessorLexer.cpp
+  source_name_part = PreprocessorLexer
+build obj/clang/lib/Lex/Lex.ScratchBuffer.o: cxx ../../clang/lib/Lex/ScratchBuffer.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = ScratchBuffer.cpp
+  source_name_part = ScratchBuffer
+build obj/clang/lib/Lex/Lex.TokenConcatenation.o: cxx ../../clang/lib/Lex/TokenConcatenation.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = TokenConcatenation.cpp
+  source_name_part = TokenConcatenation
+build obj/clang/lib/Lex/Lex.TokenLexer.o: cxx ../../clang/lib/Lex/TokenLexer.cpp || obj/clang/lib/Lex/Lex.inputdeps.stamp
+  source_file_part = TokenLexer.cpp
+  source_name_part = TokenLexer
+
+build ./lib/libclangLex.a: alink obj/clang/lib/Lex/Lex.DependencyDirectivesScanner.o obj/clang/lib/Lex/Lex.HeaderMap.o obj/clang/lib/Lex/Lex.HeaderSearch.o obj/clang/lib/Lex/Lex.InitHeaderSearch.o obj/clang/lib/Lex/Lex.Lexer.o obj/clang/lib/Lex/Lex.LiteralSupport.o obj/clang/lib/Lex/Lex.MacroArgs.o obj/clang/lib/Lex/Lex.MacroInfo.o obj/clang/lib/Lex/Lex.ModuleMap.o obj/clang/lib/Lex/Lex.PPCaching.o obj/clang/lib/Lex/Lex.PPCallbacks.o obj/clang/lib/Lex/Lex.PPConditionalDirectiveRecord.o obj/clang/lib/Lex/Lex.PPDirectives.o obj/clang/lib/Lex/Lex.PPExpressions.o obj/clang/lib/Lex/Lex.PPLexerChange.o obj/clang/lib/Lex/Lex.PPMacroExpansion.o obj/clang/lib/Lex/Lex.Pragma.o obj/clang/lib/Lex/Lex.PreprocessingRecord.o obj/clang/lib/Lex/Lex.Preprocessor.o obj/clang/lib/Lex/Lex.PreprocessorLexer.o obj/clang/lib/Lex/Lex.ScratchBuffer.o obj/clang/lib/Lex/Lex.TokenConcatenation.o obj/clang/lib/Lex/Lex.TokenLexer.o || ./lib/libclangBasic.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

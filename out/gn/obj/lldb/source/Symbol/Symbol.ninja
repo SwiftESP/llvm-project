@@ -1,0 +1,112 @@
+defines =
+include_dirs = -I../../lldb/source -I../../llvm/include -Igen/llvm/include -I../../lldb/include -Igen/lldb/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libxml2
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Symbol
+target_output_name = liblldbSymbol
+
+build obj/lldb/source/Symbol/Symbol.inputdeps.stamp: stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/lldb/include/lldb/Host/Config.stamp obj/lldb/include/lldb/Version/version.stamp obj/lldb/source/Commands/CommandOptions.stamp obj/lldb/source/Core/CoreProperties.stamp obj/lldb/source/Core/CorePropertiesEnum.stamp obj/lldb/source/Interpreter/InterpreterProperties.stamp obj/lldb/source/Interpreter/InterpreterPropertiesEnum.stamp obj/lldb/source/Version/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/lldb/source/Symbol/Symbol.ArmUnwindInfo.o: cxx ../../lldb/source/Symbol/ArmUnwindInfo.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = ArmUnwindInfo.cpp
+  source_name_part = ArmUnwindInfo
+build obj/lldb/source/Symbol/Symbol.Block.o: cxx ../../lldb/source/Symbol/Block.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = Block.cpp
+  source_name_part = Block
+build obj/lldb/source/Symbol/Symbol.CompactUnwindInfo.o: cxx ../../lldb/source/Symbol/CompactUnwindInfo.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = CompactUnwindInfo.cpp
+  source_name_part = CompactUnwindInfo
+build obj/lldb/source/Symbol/Symbol.CompileUnit.o: cxx ../../lldb/source/Symbol/CompileUnit.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = CompileUnit.cpp
+  source_name_part = CompileUnit
+build obj/lldb/source/Symbol/Symbol.CompilerDecl.o: cxx ../../lldb/source/Symbol/CompilerDecl.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = CompilerDecl.cpp
+  source_name_part = CompilerDecl
+build obj/lldb/source/Symbol/Symbol.CompilerDeclContext.o: cxx ../../lldb/source/Symbol/CompilerDeclContext.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = CompilerDeclContext.cpp
+  source_name_part = CompilerDeclContext
+build obj/lldb/source/Symbol/Symbol.CompilerType.o: cxx ../../lldb/source/Symbol/CompilerType.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = CompilerType.cpp
+  source_name_part = CompilerType
+build obj/lldb/source/Symbol/Symbol.DWARFCallFrameInfo.o: cxx ../../lldb/source/Symbol/DWARFCallFrameInfo.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = DWARFCallFrameInfo.cpp
+  source_name_part = DWARFCallFrameInfo
+build obj/lldb/source/Symbol/Symbol.DebugMacros.o: cxx ../../lldb/source/Symbol/DebugMacros.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = DebugMacros.cpp
+  source_name_part = DebugMacros
+build obj/lldb/source/Symbol/Symbol.DeclVendor.o: cxx ../../lldb/source/Symbol/DeclVendor.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = DeclVendor.cpp
+  source_name_part = DeclVendor
+build obj/lldb/source/Symbol/Symbol.FuncUnwinders.o: cxx ../../lldb/source/Symbol/FuncUnwinders.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = FuncUnwinders.cpp
+  source_name_part = FuncUnwinders
+build obj/lldb/source/Symbol/Symbol.Function.o: cxx ../../lldb/source/Symbol/Function.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = Function.cpp
+  source_name_part = Function
+build obj/lldb/source/Symbol/Symbol.LineEntry.o: cxx ../../lldb/source/Symbol/LineEntry.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = LineEntry.cpp
+  source_name_part = LineEntry
+build obj/lldb/source/Symbol/Symbol.LineTable.o: cxx ../../lldb/source/Symbol/LineTable.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = LineTable.cpp
+  source_name_part = LineTable
+build obj/lldb/source/Symbol/Symbol.LocateSymbolFile.o: cxx ../../lldb/source/Symbol/LocateSymbolFile.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = LocateSymbolFile.cpp
+  source_name_part = LocateSymbolFile
+build obj/lldb/source/Symbol/Symbol.ObjectContainer.o: cxx ../../lldb/source/Symbol/ObjectContainer.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = ObjectContainer.cpp
+  source_name_part = ObjectContainer
+build obj/lldb/source/Symbol/Symbol.ObjectFile.o: cxx ../../lldb/source/Symbol/ObjectFile.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = ObjectFile.cpp
+  source_name_part = ObjectFile
+build obj/lldb/source/Symbol/Symbol.PostfixExpression.o: cxx ../../lldb/source/Symbol/PostfixExpression.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = PostfixExpression.cpp
+  source_name_part = PostfixExpression
+build obj/lldb/source/Symbol/Symbol.Symbol.o: cxx ../../lldb/source/Symbol/Symbol.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = Symbol.cpp
+  source_name_part = Symbol
+build obj/lldb/source/Symbol/Symbol.SymbolContext.o: cxx ../../lldb/source/Symbol/SymbolContext.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = SymbolContext.cpp
+  source_name_part = SymbolContext
+build obj/lldb/source/Symbol/Symbol.SymbolFile.o: cxx ../../lldb/source/Symbol/SymbolFile.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = SymbolFile.cpp
+  source_name_part = SymbolFile
+build obj/lldb/source/Symbol/Symbol.SymbolFileOnDemand.o: cxx ../../lldb/source/Symbol/SymbolFileOnDemand.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = SymbolFileOnDemand.cpp
+  source_name_part = SymbolFileOnDemand
+build obj/lldb/source/Symbol/Symbol.SymbolVendor.o: cxx ../../lldb/source/Symbol/SymbolVendor.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = SymbolVendor.cpp
+  source_name_part = SymbolVendor
+build obj/lldb/source/Symbol/Symbol.Symtab.o: cxx ../../lldb/source/Symbol/Symtab.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = Symtab.cpp
+  source_name_part = Symtab
+build obj/lldb/source/Symbol/Symbol.Type.o: cxx ../../lldb/source/Symbol/Type.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = Type.cpp
+  source_name_part = Type
+build obj/lldb/source/Symbol/Symbol.TypeList.o: cxx ../../lldb/source/Symbol/TypeList.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = TypeList.cpp
+  source_name_part = TypeList
+build obj/lldb/source/Symbol/Symbol.TypeMap.o: cxx ../../lldb/source/Symbol/TypeMap.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = TypeMap.cpp
+  source_name_part = TypeMap
+build obj/lldb/source/Symbol/Symbol.TypeSystem.o: cxx ../../lldb/source/Symbol/TypeSystem.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = TypeSystem.cpp
+  source_name_part = TypeSystem
+build obj/lldb/source/Symbol/Symbol.UnwindPlan.o: cxx ../../lldb/source/Symbol/UnwindPlan.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = UnwindPlan.cpp
+  source_name_part = UnwindPlan
+build obj/lldb/source/Symbol/Symbol.UnwindTable.o: cxx ../../lldb/source/Symbol/UnwindTable.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = UnwindTable.cpp
+  source_name_part = UnwindTable
+build obj/lldb/source/Symbol/Symbol.Variable.o: cxx ../../lldb/source/Symbol/Variable.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = Variable.cpp
+  source_name_part = Variable
+build obj/lldb/source/Symbol/Symbol.VariableList.o: cxx ../../lldb/source/Symbol/VariableList.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = VariableList.cpp
+  source_name_part = VariableList
+build obj/lldb/source/Symbol/Symbol.LocateSymbolFileMacOSX.o: cxx ../../lldb/source/Symbol/LocateSymbolFileMacOSX.cpp || obj/lldb/source/Symbol/Symbol.inputdeps.stamp
+  source_file_part = LocateSymbolFileMacOSX.cpp
+  source_name_part = LocateSymbolFileMacOSX
+
+build ./lib/liblldbSymbol.a: alink obj/lldb/source/Symbol/Symbol.ArmUnwindInfo.o obj/lldb/source/Symbol/Symbol.Block.o obj/lldb/source/Symbol/Symbol.CompactUnwindInfo.o obj/lldb/source/Symbol/Symbol.CompileUnit.o obj/lldb/source/Symbol/Symbol.CompilerDecl.o obj/lldb/source/Symbol/Symbol.CompilerDeclContext.o obj/lldb/source/Symbol/Symbol.CompilerType.o obj/lldb/source/Symbol/Symbol.DWARFCallFrameInfo.o obj/lldb/source/Symbol/Symbol.DebugMacros.o obj/lldb/source/Symbol/Symbol.DeclVendor.o obj/lldb/source/Symbol/Symbol.FuncUnwinders.o obj/lldb/source/Symbol/Symbol.Function.o obj/lldb/source/Symbol/Symbol.LineEntry.o obj/lldb/source/Symbol/Symbol.LineTable.o obj/lldb/source/Symbol/Symbol.LocateSymbolFile.o obj/lldb/source/Symbol/Symbol.ObjectContainer.o obj/lldb/source/Symbol/Symbol.ObjectFile.o obj/lldb/source/Symbol/Symbol.PostfixExpression.o obj/lldb/source/Symbol/Symbol.Symbol.o obj/lldb/source/Symbol/Symbol.SymbolContext.o obj/lldb/source/Symbol/Symbol.SymbolFile.o obj/lldb/source/Symbol/Symbol.SymbolFileOnDemand.o obj/lldb/source/Symbol/Symbol.SymbolVendor.o obj/lldb/source/Symbol/Symbol.Symtab.o obj/lldb/source/Symbol/Symbol.Type.o obj/lldb/source/Symbol/Symbol.TypeList.o obj/lldb/source/Symbol/Symbol.TypeMap.o obj/lldb/source/Symbol/Symbol.TypeSystem.o obj/lldb/source/Symbol/Symbol.UnwindPlan.o obj/lldb/source/Symbol/Symbol.UnwindTable.o obj/lldb/source/Symbol/Symbol.Variable.o obj/lldb/source/Symbol/Symbol.VariableList.o obj/lldb/source/Symbol/Symbol.LocateSymbolFileMacOSX.o || ./lib/liblldbCore.a ./lib/liblldbExpression.a ./lib/liblldbHost.a ./lib/liblldbUtility.a ./lib/libLLVMSupport.a ./lib/libclangDriver.a ./lib/libclangBasic.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/liblldbHostMacOSXObjCXX.a ./lib/liblldbInterpreter.a ./lib/liblldbCommands.a ./lib/liblldbDataFormatters.a ./lib/liblldbVersion.a ./lib/liblldbPluginObjectFileJIT.a ./lib/libLLVMExecutionEngine.a ./lib/libLLVMOrcTargetProcess.a ./lib/libLLVMOrcShared.a ./lib/libLLVMTarget.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

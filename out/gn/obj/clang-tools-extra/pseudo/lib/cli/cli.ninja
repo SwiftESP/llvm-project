@@ -1,0 +1,15 @@
+defines =
+include_dirs = -I../../clang-tools-extra/pseudo/include -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang-tools-extra/pseudo/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = cli
+target_output_name = libclangPseudoCLI
+
+build obj/clang-tools-extra/pseudo/lib/cli/cli.CLI.o: cxx ../../clang-tools-extra/pseudo/lib/cli/CLI.cpp || obj/clang-tools-extra/pseudo/include/CXXBNF.inc.stamp obj/clang-tools-extra/pseudo/include/CXXSymbols.inc.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+  source_file_part = CLI.cpp
+  source_name_part = CLI
+
+build ./lib/libclangPseudoCLI.a: alink obj/clang-tools-extra/pseudo/lib/cli/cli.CLI.o || ./lib/libclangPseudoCXX.a ./lib/libclangPseudoGrammar.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

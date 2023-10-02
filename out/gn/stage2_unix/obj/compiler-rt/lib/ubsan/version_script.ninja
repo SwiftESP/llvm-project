@@ -1,0 +1,8 @@
+defines =
+include_dirs = -I../../llvm/include -Istage2_unix/gen/llvm/include
+label_name = version_script
+target_output_name = version_script
+
+build stage2_unix/obj/compiler-rt/lib/ubsan/version_script.inputdeps.stamp: stage2_unix_stamp obj/clang.stamp obj/lld.stamp
+
+build stage2_unix/obj/compiler-rt/lib/ubsan/version_script.stamp: stage2_unix_stamp

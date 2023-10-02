@@ -1,0 +1,217 @@
+defines =
+include_dirs = -I../../clang/lib/Basic -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP -Igen/clang/lib/Basic
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Basic
+target_output_name = libclangBasic
+
+build obj/clang/lib/Basic/Basic.inputdeps.stamp: stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/clang/lib/Basic/Basic.Attributes.o: cxx ../../clang/lib/Basic/Attributes.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Attributes.cpp
+  source_name_part = Attributes
+build obj/clang/lib/Basic/Basic.Builtins.o: cxx ../../clang/lib/Basic/Builtins.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Builtins.cpp
+  source_name_part = Builtins
+build obj/clang/lib/Basic/Basic.CLWarnings.o: cxx ../../clang/lib/Basic/CLWarnings.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = CLWarnings.cpp
+  source_name_part = CLWarnings
+build obj/clang/lib/Basic/Basic.CharInfo.o: cxx ../../clang/lib/Basic/CharInfo.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = CharInfo.cpp
+  source_name_part = CharInfo
+build obj/clang/lib/Basic/Basic.CodeGenOptions.o: cxx ../../clang/lib/Basic/CodeGenOptions.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = CodeGenOptions.cpp
+  source_name_part = CodeGenOptions
+build obj/clang/lib/Basic/Basic.Cuda.o: cxx ../../clang/lib/Basic/Cuda.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Cuda.cpp
+  source_name_part = Cuda
+build obj/clang/lib/Basic/Basic.DarwinSDKInfo.o: cxx ../../clang/lib/Basic/DarwinSDKInfo.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = DarwinSDKInfo.cpp
+  source_name_part = DarwinSDKInfo
+build obj/clang/lib/Basic/Basic.Diagnostic.o: cxx ../../clang/lib/Basic/Diagnostic.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Diagnostic.cpp
+  source_name_part = Diagnostic
+build obj/clang/lib/Basic/Basic.DiagnosticIDs.o: cxx ../../clang/lib/Basic/DiagnosticIDs.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = DiagnosticIDs.cpp
+  source_name_part = DiagnosticIDs
+build obj/clang/lib/Basic/Basic.DiagnosticOptions.o: cxx ../../clang/lib/Basic/DiagnosticOptions.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = DiagnosticOptions.cpp
+  source_name_part = DiagnosticOptions
+build obj/clang/lib/Basic/Basic.ExpressionTraits.o: cxx ../../clang/lib/Basic/ExpressionTraits.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = ExpressionTraits.cpp
+  source_name_part = ExpressionTraits
+build obj/clang/lib/Basic/Basic.FileEntry.o: cxx ../../clang/lib/Basic/FileEntry.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = FileEntry.cpp
+  source_name_part = FileEntry
+build obj/clang/lib/Basic/Basic.FileManager.o: cxx ../../clang/lib/Basic/FileManager.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = FileManager.cpp
+  source_name_part = FileManager
+build obj/clang/lib/Basic/Basic.FileSystemStatCache.o: cxx ../../clang/lib/Basic/FileSystemStatCache.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = FileSystemStatCache.cpp
+  source_name_part = FileSystemStatCache
+build obj/clang/lib/Basic/Basic.IdentifierTable.o: cxx ../../clang/lib/Basic/IdentifierTable.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = IdentifierTable.cpp
+  source_name_part = IdentifierTable
+build obj/clang/lib/Basic/Basic.LangOptions.o: cxx ../../clang/lib/Basic/LangOptions.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = LangOptions.cpp
+  source_name_part = LangOptions
+build obj/clang/lib/Basic/Basic.LangStandards.o: cxx ../../clang/lib/Basic/LangStandards.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = LangStandards.cpp
+  source_name_part = LangStandards
+build obj/clang/lib/Basic/Basic.MakeSupport.o: cxx ../../clang/lib/Basic/MakeSupport.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = MakeSupport.cpp
+  source_name_part = MakeSupport
+build obj/clang/lib/Basic/Basic.Module.o: cxx ../../clang/lib/Basic/Module.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Module.cpp
+  source_name_part = Module
+build obj/clang/lib/Basic/Basic.NoSanitizeList.o: cxx ../../clang/lib/Basic/NoSanitizeList.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = NoSanitizeList.cpp
+  source_name_part = NoSanitizeList
+build obj/clang/lib/Basic/Basic.ObjCRuntime.o: cxx ../../clang/lib/Basic/ObjCRuntime.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = ObjCRuntime.cpp
+  source_name_part = ObjCRuntime
+build obj/clang/lib/Basic/Basic.OpenCLOptions.o: cxx ../../clang/lib/Basic/OpenCLOptions.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = OpenCLOptions.cpp
+  source_name_part = OpenCLOptions
+build obj/clang/lib/Basic/Basic.OpenMPKinds.o: cxx ../../clang/lib/Basic/OpenMPKinds.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = OpenMPKinds.cpp
+  source_name_part = OpenMPKinds
+build obj/clang/lib/Basic/Basic.OperatorPrecedence.o: cxx ../../clang/lib/Basic/OperatorPrecedence.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = OperatorPrecedence.cpp
+  source_name_part = OperatorPrecedence
+build obj/clang/lib/Basic/Basic.ProfileList.o: cxx ../../clang/lib/Basic/ProfileList.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = ProfileList.cpp
+  source_name_part = ProfileList
+build obj/clang/lib/Basic/Basic.SanitizerSpecialCaseList.o: cxx ../../clang/lib/Basic/SanitizerSpecialCaseList.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = SanitizerSpecialCaseList.cpp
+  source_name_part = SanitizerSpecialCaseList
+build obj/clang/lib/Basic/Basic.Sanitizers.o: cxx ../../clang/lib/Basic/Sanitizers.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Sanitizers.cpp
+  source_name_part = Sanitizers
+build obj/clang/lib/Basic/Basic.Sarif.o: cxx ../../clang/lib/Basic/Sarif.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Sarif.cpp
+  source_name_part = Sarif
+build obj/clang/lib/Basic/Basic.SourceLocation.o: cxx ../../clang/lib/Basic/SourceLocation.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = SourceLocation.cpp
+  source_name_part = SourceLocation
+build obj/clang/lib/Basic/Basic.SourceManager.o: cxx ../../clang/lib/Basic/SourceManager.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = SourceManager.cpp
+  source_name_part = SourceManager
+build obj/clang/lib/Basic/Basic.Stack.o: cxx ../../clang/lib/Basic/Stack.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Stack.cpp
+  source_name_part = Stack
+build obj/clang/lib/Basic/Basic.TargetID.o: cxx ../../clang/lib/Basic/TargetID.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = TargetID.cpp
+  source_name_part = TargetID
+build obj/clang/lib/Basic/Basic.TargetInfo.o: cxx ../../clang/lib/Basic/TargetInfo.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = TargetInfo.cpp
+  source_name_part = TargetInfo
+build obj/clang/lib/Basic/Basic.Targets.o: cxx ../../clang/lib/Basic/Targets.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Targets.cpp
+  source_name_part = Targets
+build obj/clang/lib/Basic/Targets/Basic.AArch64.o: cxx ../../clang/lib/Basic/Targets/AArch64.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = AArch64.cpp
+  source_name_part = AArch64
+build obj/clang/lib/Basic/Targets/Basic.AMDGPU.o: cxx ../../clang/lib/Basic/Targets/AMDGPU.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = AMDGPU.cpp
+  source_name_part = AMDGPU
+build obj/clang/lib/Basic/Targets/Basic.ARC.o: cxx ../../clang/lib/Basic/Targets/ARC.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = ARC.cpp
+  source_name_part = ARC
+build obj/clang/lib/Basic/Targets/Basic.ARM.o: cxx ../../clang/lib/Basic/Targets/ARM.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = ARM.cpp
+  source_name_part = ARM
+build obj/clang/lib/Basic/Targets/Basic.AVR.o: cxx ../../clang/lib/Basic/Targets/AVR.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = AVR.cpp
+  source_name_part = AVR
+build obj/clang/lib/Basic/Targets/Basic.BPF.o: cxx ../../clang/lib/Basic/Targets/BPF.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = BPF.cpp
+  source_name_part = BPF
+build obj/clang/lib/Basic/Targets/Basic.CSKY.o: cxx ../../clang/lib/Basic/Targets/CSKY.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = CSKY.cpp
+  source_name_part = CSKY
+build obj/clang/lib/Basic/Targets/Basic.DirectX.o: cxx ../../clang/lib/Basic/Targets/DirectX.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = DirectX.cpp
+  source_name_part = DirectX
+build obj/clang/lib/Basic/Targets/Basic.Hexagon.o: cxx ../../clang/lib/Basic/Targets/Hexagon.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Hexagon.cpp
+  source_name_part = Hexagon
+build obj/clang/lib/Basic/Targets/Basic.Lanai.o: cxx ../../clang/lib/Basic/Targets/Lanai.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Lanai.cpp
+  source_name_part = Lanai
+build obj/clang/lib/Basic/Targets/Basic.Le64.o: cxx ../../clang/lib/Basic/Targets/Le64.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Le64.cpp
+  source_name_part = Le64
+build obj/clang/lib/Basic/Targets/Basic.LoongArch.o: cxx ../../clang/lib/Basic/Targets/LoongArch.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = LoongArch.cpp
+  source_name_part = LoongArch
+build obj/clang/lib/Basic/Targets/Basic.M68k.o: cxx ../../clang/lib/Basic/Targets/M68k.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = M68k.cpp
+  source_name_part = M68k
+build obj/clang/lib/Basic/Targets/Basic.MSP430.o: cxx ../../clang/lib/Basic/Targets/MSP430.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = MSP430.cpp
+  source_name_part = MSP430
+build obj/clang/lib/Basic/Targets/Basic.Mips.o: cxx ../../clang/lib/Basic/Targets/Mips.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Mips.cpp
+  source_name_part = Mips
+build obj/clang/lib/Basic/Targets/Basic.NVPTX.o: cxx ../../clang/lib/Basic/Targets/NVPTX.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = NVPTX.cpp
+  source_name_part = NVPTX
+build obj/clang/lib/Basic/Targets/Basic.OSTargets.o: cxx ../../clang/lib/Basic/Targets/OSTargets.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = OSTargets.cpp
+  source_name_part = OSTargets
+build obj/clang/lib/Basic/Targets/Basic.PNaCl.o: cxx ../../clang/lib/Basic/Targets/PNaCl.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = PNaCl.cpp
+  source_name_part = PNaCl
+build obj/clang/lib/Basic/Targets/Basic.PPC.o: cxx ../../clang/lib/Basic/Targets/PPC.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = PPC.cpp
+  source_name_part = PPC
+build obj/clang/lib/Basic/Targets/Basic.RISCV.o: cxx ../../clang/lib/Basic/Targets/RISCV.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = RISCV.cpp
+  source_name_part = RISCV
+build obj/clang/lib/Basic/Targets/Basic.SPIR.o: cxx ../../clang/lib/Basic/Targets/SPIR.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = SPIR.cpp
+  source_name_part = SPIR
+build obj/clang/lib/Basic/Targets/Basic.Sparc.o: cxx ../../clang/lib/Basic/Targets/Sparc.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Sparc.cpp
+  source_name_part = Sparc
+build obj/clang/lib/Basic/Targets/Basic.SystemZ.o: cxx ../../clang/lib/Basic/Targets/SystemZ.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = SystemZ.cpp
+  source_name_part = SystemZ
+build obj/clang/lib/Basic/Targets/Basic.TCE.o: cxx ../../clang/lib/Basic/Targets/TCE.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = TCE.cpp
+  source_name_part = TCE
+build obj/clang/lib/Basic/Targets/Basic.VE.o: cxx ../../clang/lib/Basic/Targets/VE.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = VE.cpp
+  source_name_part = VE
+build obj/clang/lib/Basic/Targets/Basic.WebAssembly.o: cxx ../../clang/lib/Basic/Targets/WebAssembly.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = WebAssembly.cpp
+  source_name_part = WebAssembly
+build obj/clang/lib/Basic/Targets/Basic.X86.o: cxx ../../clang/lib/Basic/Targets/X86.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = X86.cpp
+  source_name_part = X86
+build obj/clang/lib/Basic/Targets/Basic.XCore.o: cxx ../../clang/lib/Basic/Targets/XCore.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = XCore.cpp
+  source_name_part = XCore
+build obj/clang/lib/Basic/Basic.TokenKinds.o: cxx ../../clang/lib/Basic/TokenKinds.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = TokenKinds.cpp
+  source_name_part = TokenKinds
+build obj/clang/lib/Basic/Basic.TypeTraits.o: cxx ../../clang/lib/Basic/TypeTraits.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = TypeTraits.cpp
+  source_name_part = TypeTraits
+build obj/clang/lib/Basic/Basic.Version.o: cxx ../../clang/lib/Basic/Version.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Version.cpp
+  source_name_part = Version
+build obj/clang/lib/Basic/Basic.Warnings.o: cxx ../../clang/lib/Basic/Warnings.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = Warnings.cpp
+  source_name_part = Warnings
+build obj/clang/lib/Basic/Basic.XRayInstr.o: cxx ../../clang/lib/Basic/XRayInstr.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = XRayInstr.cpp
+  source_name_part = XRayInstr
+build obj/clang/lib/Basic/Basic.XRayLists.o: cxx ../../clang/lib/Basic/XRayLists.cpp || obj/clang/lib/Basic/Basic.inputdeps.stamp
+  source_file_part = XRayLists.cpp
+  source_name_part = XRayLists
+
+build ./lib/libclangBasic.a: alink obj/clang/lib/Basic/Basic.Attributes.o obj/clang/lib/Basic/Basic.Builtins.o obj/clang/lib/Basic/Basic.CLWarnings.o obj/clang/lib/Basic/Basic.CharInfo.o obj/clang/lib/Basic/Basic.CodeGenOptions.o obj/clang/lib/Basic/Basic.Cuda.o obj/clang/lib/Basic/Basic.DarwinSDKInfo.o obj/clang/lib/Basic/Basic.Diagnostic.o obj/clang/lib/Basic/Basic.DiagnosticIDs.o obj/clang/lib/Basic/Basic.DiagnosticOptions.o obj/clang/lib/Basic/Basic.ExpressionTraits.o obj/clang/lib/Basic/Basic.FileEntry.o obj/clang/lib/Basic/Basic.FileManager.o obj/clang/lib/Basic/Basic.FileSystemStatCache.o obj/clang/lib/Basic/Basic.IdentifierTable.o obj/clang/lib/Basic/Basic.LangOptions.o obj/clang/lib/Basic/Basic.LangStandards.o obj/clang/lib/Basic/Basic.MakeSupport.o obj/clang/lib/Basic/Basic.Module.o obj/clang/lib/Basic/Basic.NoSanitizeList.o obj/clang/lib/Basic/Basic.ObjCRuntime.o obj/clang/lib/Basic/Basic.OpenCLOptions.o obj/clang/lib/Basic/Basic.OpenMPKinds.o obj/clang/lib/Basic/Basic.OperatorPrecedence.o obj/clang/lib/Basic/Basic.ProfileList.o obj/clang/lib/Basic/Basic.SanitizerSpecialCaseList.o obj/clang/lib/Basic/Basic.Sanitizers.o obj/clang/lib/Basic/Basic.Sarif.o obj/clang/lib/Basic/Basic.SourceLocation.o obj/clang/lib/Basic/Basic.SourceManager.o obj/clang/lib/Basic/Basic.Stack.o obj/clang/lib/Basic/Basic.TargetID.o obj/clang/lib/Basic/Basic.TargetInfo.o obj/clang/lib/Basic/Basic.Targets.o obj/clang/lib/Basic/Targets/Basic.AArch64.o obj/clang/lib/Basic/Targets/Basic.AMDGPU.o obj/clang/lib/Basic/Targets/Basic.ARC.o obj/clang/lib/Basic/Targets/Basic.ARM.o obj/clang/lib/Basic/Targets/Basic.AVR.o obj/clang/lib/Basic/Targets/Basic.BPF.o obj/clang/lib/Basic/Targets/Basic.CSKY.o obj/clang/lib/Basic/Targets/Basic.DirectX.o obj/clang/lib/Basic/Targets/Basic.Hexagon.o obj/clang/lib/Basic/Targets/Basic.Lanai.o obj/clang/lib/Basic/Targets/Basic.Le64.o obj/clang/lib/Basic/Targets/Basic.LoongArch.o obj/clang/lib/Basic/Targets/Basic.M68k.o obj/clang/lib/Basic/Targets/Basic.MSP430.o obj/clang/lib/Basic/Targets/Basic.Mips.o obj/clang/lib/Basic/Targets/Basic.NVPTX.o obj/clang/lib/Basic/Targets/Basic.OSTargets.o obj/clang/lib/Basic/Targets/Basic.PNaCl.o obj/clang/lib/Basic/Targets/Basic.PPC.o obj/clang/lib/Basic/Targets/Basic.RISCV.o obj/clang/lib/Basic/Targets/Basic.SPIR.o obj/clang/lib/Basic/Targets/Basic.Sparc.o obj/clang/lib/Basic/Targets/Basic.SystemZ.o obj/clang/lib/Basic/Targets/Basic.TCE.o obj/clang/lib/Basic/Targets/Basic.VE.o obj/clang/lib/Basic/Targets/Basic.WebAssembly.o obj/clang/lib/Basic/Targets/Basic.X86.o obj/clang/lib/Basic/Targets/Basic.XCore.o obj/clang/lib/Basic/Basic.TokenKinds.o obj/clang/lib/Basic/Basic.TypeTraits.o obj/clang/lib/Basic/Basic.Version.o obj/clang/lib/Basic/Basic.Warnings.o obj/clang/lib/Basic/Basic.XRayInstr.o obj/clang/lib/Basic/Basic.XRayLists.o || obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/diags_tablegen.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/llvm/include/llvm/Frontend/OpenMP/public_tablegen.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/llvm/include/llvm/Config/llvm-config.stamp ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

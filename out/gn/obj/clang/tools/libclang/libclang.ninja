@@ -1,0 +1,82 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = libclang
+target_output_name = libclang
+
+build obj/clang/tools/libclang/libclang.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Headers/Headers.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/clang/lib/Tooling/node_introspection_inc.stamp obj/clang/tools/libclang/exports.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build obj/clang/tools/libclang/libclang.ARCMigrate.o: cxx ../../clang/tools/libclang/ARCMigrate.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = ARCMigrate.cpp
+  source_name_part = ARCMigrate
+build obj/clang/tools/libclang/libclang.BuildSystem.o: cxx ../../clang/tools/libclang/BuildSystem.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = BuildSystem.cpp
+  source_name_part = BuildSystem
+build obj/clang/tools/libclang/libclang.CIndex.o: cxx ../../clang/tools/libclang/CIndex.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CIndex.cpp
+  source_name_part = CIndex
+build obj/clang/tools/libclang/libclang.CIndexCXX.o: cxx ../../clang/tools/libclang/CIndexCXX.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CIndexCXX.cpp
+  source_name_part = CIndexCXX
+build obj/clang/tools/libclang/libclang.CIndexCodeCompletion.o: cxx ../../clang/tools/libclang/CIndexCodeCompletion.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CIndexCodeCompletion.cpp
+  source_name_part = CIndexCodeCompletion
+build obj/clang/tools/libclang/libclang.CIndexDiagnostic.o: cxx ../../clang/tools/libclang/CIndexDiagnostic.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CIndexDiagnostic.cpp
+  source_name_part = CIndexDiagnostic
+build obj/clang/tools/libclang/libclang.CIndexHigh.o: cxx ../../clang/tools/libclang/CIndexHigh.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CIndexHigh.cpp
+  source_name_part = CIndexHigh
+build obj/clang/tools/libclang/libclang.CIndexInclusionStack.o: cxx ../../clang/tools/libclang/CIndexInclusionStack.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CIndexInclusionStack.cpp
+  source_name_part = CIndexInclusionStack
+build obj/clang/tools/libclang/libclang.CIndexUSRs.o: cxx ../../clang/tools/libclang/CIndexUSRs.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CIndexUSRs.cpp
+  source_name_part = CIndexUSRs
+build obj/clang/tools/libclang/libclang.CIndexer.o: cxx ../../clang/tools/libclang/CIndexer.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CIndexer.cpp
+  source_name_part = CIndexer
+build obj/clang/tools/libclang/libclang.CXComment.o: cxx ../../clang/tools/libclang/CXComment.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CXComment.cpp
+  source_name_part = CXComment
+build obj/clang/tools/libclang/libclang.CXCompilationDatabase.o: cxx ../../clang/tools/libclang/CXCompilationDatabase.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CXCompilationDatabase.cpp
+  source_name_part = CXCompilationDatabase
+build obj/clang/tools/libclang/libclang.CXCursor.o: cxx ../../clang/tools/libclang/CXCursor.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CXCursor.cpp
+  source_name_part = CXCursor
+build obj/clang/tools/libclang/libclang.CXIndexDataConsumer.o: cxx ../../clang/tools/libclang/CXIndexDataConsumer.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CXIndexDataConsumer.cpp
+  source_name_part = CXIndexDataConsumer
+build obj/clang/tools/libclang/libclang.CXLoadedDiagnostic.o: cxx ../../clang/tools/libclang/CXLoadedDiagnostic.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CXLoadedDiagnostic.cpp
+  source_name_part = CXLoadedDiagnostic
+build obj/clang/tools/libclang/libclang.CXSourceLocation.o: cxx ../../clang/tools/libclang/CXSourceLocation.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CXSourceLocation.cpp
+  source_name_part = CXSourceLocation
+build obj/clang/tools/libclang/libclang.CXStoredDiagnostic.o: cxx ../../clang/tools/libclang/CXStoredDiagnostic.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CXStoredDiagnostic.cpp
+  source_name_part = CXStoredDiagnostic
+build obj/clang/tools/libclang/libclang.CXString.o: cxx ../../clang/tools/libclang/CXString.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CXString.cpp
+  source_name_part = CXString
+build obj/clang/tools/libclang/libclang.CXType.o: cxx ../../clang/tools/libclang/CXType.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = CXType.cpp
+  source_name_part = CXType
+build obj/clang/tools/libclang/libclang.FatalErrorHandler.o: cxx ../../clang/tools/libclang/FatalErrorHandler.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = FatalErrorHandler.cpp
+  source_name_part = FatalErrorHandler
+build obj/clang/tools/libclang/libclang.Indexing.o: cxx ../../clang/tools/libclang/Indexing.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = Indexing.cpp
+  source_name_part = Indexing
+build obj/clang/tools/libclang/libclang.Rewrite.o: cxx ../../clang/tools/libclang/Rewrite.cpp || obj/clang/tools/libclang/libclang.inputdeps.stamp
+  source_file_part = Rewrite.cpp
+  source_name_part = Rewrite
+
+build ./lib/libclang.dylib: solink obj/clang/tools/libclang/libclang.ARCMigrate.o obj/clang/tools/libclang/libclang.BuildSystem.o obj/clang/tools/libclang/libclang.CIndex.o obj/clang/tools/libclang/libclang.CIndexCXX.o obj/clang/tools/libclang/libclang.CIndexCodeCompletion.o obj/clang/tools/libclang/libclang.CIndexDiagnostic.o obj/clang/tools/libclang/libclang.CIndexHigh.o obj/clang/tools/libclang/libclang.CIndexInclusionStack.o obj/clang/tools/libclang/libclang.CIndexUSRs.o obj/clang/tools/libclang/libclang.CIndexer.o obj/clang/tools/libclang/libclang.CXComment.o obj/clang/tools/libclang/libclang.CXCompilationDatabase.o obj/clang/tools/libclang/libclang.CXCursor.o obj/clang/tools/libclang/libclang.CXIndexDataConsumer.o obj/clang/tools/libclang/libclang.CXLoadedDiagnostic.o obj/clang/tools/libclang/libclang.CXSourceLocation.o obj/clang/tools/libclang/libclang.CXStoredDiagnostic.o obj/clang/tools/libclang/libclang.CXString.o obj/clang/tools/libclang/libclang.CXType.o obj/clang/tools/libclang/libclang.FatalErrorHandler.o obj/clang/tools/libclang/libclang.Indexing.o obj/clang/tools/libclang/libclang.Rewrite.o ./lib/libclangAST.a ./lib/libclangBasic.a ./lib/libclangFrontend.a ./lib/libclangIndex.a ./lib/libclangLex.a ./lib/libclangSema.a ./lib/libclangTooling.a ./lib/libLLVMCore.a ./lib/libLLVMSupport.a ./lib/libclangARCMigrate.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangDriver.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libclangEdit.a ./lib/libclangParse.a ./lib/libclangAnalysis.a ./lib/libclangASTMatchers.a ./lib/libclangSupport.a ./lib/libclangSerialization.a ./lib/libclangFormat.a ./lib/libclangToolingCore.a ./lib/libclangRewrite.a ./lib/libclangToolingInclusions.a ./lib/libLLVMAArch64CodeGen.a ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMCodeGen.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTarget.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMAsmPrinter.a ./lib/libLLVMGlobalISel.a ./lib/libLLVMSelectionDAG.a ./lib/libLLVMCFGuard.a ./lib/libLLVMAArch64AsmParser.a ./lib/libLLVMAArch64Disassembler.a ./lib/libLLVMMCDisassembler.a || obj/clang/include/clang/Config/Config.stamp obj/clang/lib/Headers/Headers.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/lib/Target/TargetsToBuild.stamp obj/clang/tools/libclang/exports.stamp
+  ldflags = -Wl,-compatibility_version,1 -Wl,-current_version,16.0.0 -Wl,-install_name,@rpath/libclang.dylib -Wl,-rpath,@loader_path/../lib -mmacos-version-min=10.10 -Wl,-exported_symbols_list,gen/clang/tools/libclang/libclang_symbols.txt
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = .dylib
+  output_dir = ./lib

@@ -34,6 +34,11 @@ public:
   void
   addLibStdCxxIncludePaths(const llvm::opt::ArgList &DriverArgs,
                            llvm::opt::ArgStringList &CC1Args) const override;
+  bool IsIntegratedAssemblerDefault() const override {
+    if (GCCInstallation.getTriple().getVendor() == llvm::Triple::Espressif)
+      return false;
+    return Generic_ELF::IsIntegratedAssemblerDefault();
+  }
 
 protected:
   Tool *buildLinker() const override;

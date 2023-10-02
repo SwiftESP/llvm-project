@@ -155,6 +155,7 @@ static_library("Support") {
     "VersionTuple.cpp",
     "WithColor.cpp",
     "X86TargetParser.cpp",
+    "XtensaTargetParser.cpp",
     "YAMLParser.cpp",
     "YAMLTraits.cpp",
     "Z3Solver.cpp",

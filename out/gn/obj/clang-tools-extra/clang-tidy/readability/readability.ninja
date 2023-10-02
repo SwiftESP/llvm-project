@@ -1,0 +1,145 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = readability
+target_output_name = libclangTidyReadabilityModule
+
+build obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp: stamp obj/clang-tools-extra/clang-tidy/clang-tidy-config.stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/clang/lib/Tooling/node_introspection_inc.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang-tools-extra/clang-tidy/readability/readability.AvoidConstParamsInDecls.o: cxx ../../clang-tools-extra/clang-tidy/readability/AvoidConstParamsInDecls.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = AvoidConstParamsInDecls.cpp
+  source_name_part = AvoidConstParamsInDecls
+build obj/clang-tools-extra/clang-tidy/readability/readability.BracesAroundStatementsCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/BracesAroundStatementsCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = BracesAroundStatementsCheck.cpp
+  source_name_part = BracesAroundStatementsCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.ConstReturnTypeCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/ConstReturnTypeCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = ConstReturnTypeCheck.cpp
+  source_name_part = ConstReturnTypeCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.ContainerContainsCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/ContainerContainsCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = ContainerContainsCheck.cpp
+  source_name_part = ContainerContainsCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.ContainerDataPointerCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/ContainerDataPointerCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = ContainerDataPointerCheck.cpp
+  source_name_part = ContainerDataPointerCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.ContainerSizeEmptyCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/ContainerSizeEmptyCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = ContainerSizeEmptyCheck.cpp
+  source_name_part = ContainerSizeEmptyCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.ConvertMemberFunctionsToStatic.o: cxx ../../clang-tools-extra/clang-tidy/readability/ConvertMemberFunctionsToStatic.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = ConvertMemberFunctionsToStatic.cpp
+  source_name_part = ConvertMemberFunctionsToStatic
+build obj/clang-tools-extra/clang-tidy/readability/readability.DeleteNullPointerCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/DeleteNullPointerCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = DeleteNullPointerCheck.cpp
+  source_name_part = DeleteNullPointerCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.DuplicateIncludeCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/DuplicateIncludeCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = DuplicateIncludeCheck.cpp
+  source_name_part = DuplicateIncludeCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.ElseAfterReturnCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/ElseAfterReturnCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = ElseAfterReturnCheck.cpp
+  source_name_part = ElseAfterReturnCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.FunctionCognitiveComplexityCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/FunctionCognitiveComplexityCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = FunctionCognitiveComplexityCheck.cpp
+  source_name_part = FunctionCognitiveComplexityCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.FunctionSizeCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/FunctionSizeCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = FunctionSizeCheck.cpp
+  source_name_part = FunctionSizeCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.IdentifierLengthCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/IdentifierLengthCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = IdentifierLengthCheck.cpp
+  source_name_part = IdentifierLengthCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.IdentifierNamingCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/IdentifierNamingCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = IdentifierNamingCheck.cpp
+  source_name_part = IdentifierNamingCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.ImplicitBoolConversionCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/ImplicitBoolConversionCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = ImplicitBoolConversionCheck.cpp
+  source_name_part = ImplicitBoolConversionCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.InconsistentDeclarationParameterNameCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/InconsistentDeclarationParameterNameCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = InconsistentDeclarationParameterNameCheck.cpp
+  source_name_part = InconsistentDeclarationParameterNameCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.IsolateDeclarationCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/IsolateDeclarationCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = IsolateDeclarationCheck.cpp
+  source_name_part = IsolateDeclarationCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.MagicNumbersCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/MagicNumbersCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = MagicNumbersCheck.cpp
+  source_name_part = MagicNumbersCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.MakeMemberFunctionConstCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/MakeMemberFunctionConstCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = MakeMemberFunctionConstCheck.cpp
+  source_name_part = MakeMemberFunctionConstCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.MisleadingIndentationCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/MisleadingIndentationCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = MisleadingIndentationCheck.cpp
+  source_name_part = MisleadingIndentationCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.MisplacedArrayIndexCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/MisplacedArrayIndexCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = MisplacedArrayIndexCheck.cpp
+  source_name_part = MisplacedArrayIndexCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.NamedParameterCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/NamedParameterCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = NamedParameterCheck.cpp
+  source_name_part = NamedParameterCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.NamespaceCommentCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/NamespaceCommentCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = NamespaceCommentCheck.cpp
+  source_name_part = NamespaceCommentCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.NonConstParameterCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/NonConstParameterCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = NonConstParameterCheck.cpp
+  source_name_part = NonConstParameterCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.QualifiedAutoCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/QualifiedAutoCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = QualifiedAutoCheck.cpp
+  source_name_part = QualifiedAutoCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.ReadabilityTidyModule.o: cxx ../../clang-tools-extra/clang-tidy/readability/ReadabilityTidyModule.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = ReadabilityTidyModule.cpp
+  source_name_part = ReadabilityTidyModule
+build obj/clang-tools-extra/clang-tidy/readability/readability.RedundantAccessSpecifiersCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/RedundantAccessSpecifiersCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = RedundantAccessSpecifiersCheck.cpp
+  source_name_part = RedundantAccessSpecifiersCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.RedundantControlFlowCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/RedundantControlFlowCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = RedundantControlFlowCheck.cpp
+  source_name_part = RedundantControlFlowCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.RedundantDeclarationCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/RedundantDeclarationCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = RedundantDeclarationCheck.cpp
+  source_name_part = RedundantDeclarationCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.RedundantFunctionPtrDereferenceCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/RedundantFunctionPtrDereferenceCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = RedundantFunctionPtrDereferenceCheck.cpp
+  source_name_part = RedundantFunctionPtrDereferenceCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.RedundantMemberInitCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/RedundantMemberInitCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = RedundantMemberInitCheck.cpp
+  source_name_part = RedundantMemberInitCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.RedundantPreprocessorCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/RedundantPreprocessorCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = RedundantPreprocessorCheck.cpp
+  source_name_part = RedundantPreprocessorCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.RedundantSmartptrGetCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/RedundantSmartptrGetCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = RedundantSmartptrGetCheck.cpp
+  source_name_part = RedundantSmartptrGetCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.RedundantStringCStrCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/RedundantStringCStrCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = RedundantStringCStrCheck.cpp
+  source_name_part = RedundantStringCStrCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.RedundantStringInitCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/RedundantStringInitCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = RedundantStringInitCheck.cpp
+  source_name_part = RedundantStringInitCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.SimplifyBooleanExprCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/SimplifyBooleanExprCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = SimplifyBooleanExprCheck.cpp
+  source_name_part = SimplifyBooleanExprCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.SimplifySubscriptExprCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/SimplifySubscriptExprCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = SimplifySubscriptExprCheck.cpp
+  source_name_part = SimplifySubscriptExprCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.StaticAccessedThroughInstanceCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/StaticAccessedThroughInstanceCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = StaticAccessedThroughInstanceCheck.cpp
+  source_name_part = StaticAccessedThroughInstanceCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.StaticDefinitionInAnonymousNamespaceCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/StaticDefinitionInAnonymousNamespaceCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = StaticDefinitionInAnonymousNamespaceCheck.cpp
+  source_name_part = StaticDefinitionInAnonymousNamespaceCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.StringCompareCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/StringCompareCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = StringCompareCheck.cpp
+  source_name_part = StringCompareCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.SuspiciousCallArgumentCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/SuspiciousCallArgumentCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = SuspiciousCallArgumentCheck.cpp
+  source_name_part = SuspiciousCallArgumentCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.UniqueptrDeleteReleaseCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/UniqueptrDeleteReleaseCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = UniqueptrDeleteReleaseCheck.cpp
+  source_name_part = UniqueptrDeleteReleaseCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.UppercaseLiteralSuffixCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/UppercaseLiteralSuffixCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = UppercaseLiteralSuffixCheck.cpp
+  source_name_part = UppercaseLiteralSuffixCheck
+build obj/clang-tools-extra/clang-tidy/readability/readability.UseAnyOfAllOfCheck.o: cxx ../../clang-tools-extra/clang-tidy/readability/UseAnyOfAllOfCheck.cpp || obj/clang-tools-extra/clang-tidy/readability/readability.inputdeps.stamp
+  source_file_part = UseAnyOfAllOfCheck.cpp
+  source_name_part = UseAnyOfAllOfCheck
+
+build ./lib/libclangTidyReadabilityModule.a: alink obj/clang-tools-extra/clang-tidy/readability/readability.AvoidConstParamsInDecls.o obj/clang-tools-extra/clang-tidy/readability/readability.BracesAroundStatementsCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.ConstReturnTypeCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.ContainerContainsCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.ContainerDataPointerCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.ContainerSizeEmptyCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.ConvertMemberFunctionsToStatic.o obj/clang-tools-extra/clang-tidy/readability/readability.DeleteNullPointerCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.DuplicateIncludeCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.ElseAfterReturnCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.FunctionCognitiveComplexityCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.FunctionSizeCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.IdentifierLengthCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.IdentifierNamingCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.ImplicitBoolConversionCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.InconsistentDeclarationParameterNameCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.IsolateDeclarationCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.MagicNumbersCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.MakeMemberFunctionConstCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.MisleadingIndentationCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.MisplacedArrayIndexCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.NamedParameterCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.NamespaceCommentCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.NonConstParameterCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.QualifiedAutoCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.ReadabilityTidyModule.o obj/clang-tools-extra/clang-tidy/readability/readability.RedundantAccessSpecifiersCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.RedundantControlFlowCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.RedundantDeclarationCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.RedundantFunctionPtrDereferenceCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.RedundantMemberInitCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.RedundantPreprocessorCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.RedundantSmartptrGetCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.RedundantStringCStrCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.RedundantStringInitCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.SimplifyBooleanExprCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.SimplifySubscriptExprCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.StaticAccessedThroughInstanceCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.StaticDefinitionInAnonymousNamespaceCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.StringCompareCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.SuspiciousCallArgumentCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.UniqueptrDeleteReleaseCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.UppercaseLiteralSuffixCheck.o obj/clang-tools-extra/clang-tidy/readability/readability.UseAnyOfAllOfCheck.o || ./lib/libclangTidy.a ./lib/libclangTidyUtils.a ./lib/libclangAST.a ./lib/libclangASTMatchers.a ./lib/libclangBasic.a ./lib/libclangLex.a ./lib/libclangTooling.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangFormat.a ./lib/libclangToolingCore.a ./lib/libclangRewrite.a ./lib/libclangToolingInclusions.a ./lib/libclangFrontend.a ./lib/libclangDriver.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libclangEdit.a ./lib/libclangParse.a ./lib/libclangSema.a ./lib/libclangAnalysis.a ./lib/libclangSupport.a ./lib/libclangSerialization.a ./lib/libclangStaticAnalyzerCore.a ./lib/libclangCrossTU.a ./lib/libclangIndex.a ./lib/libclangStaticAnalyzerFrontend.a ./lib/libclangStaticAnalyzerCheckers.a ./lib/libclangToolingTransformer.a ./lib/libclangToolingRefactoring.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

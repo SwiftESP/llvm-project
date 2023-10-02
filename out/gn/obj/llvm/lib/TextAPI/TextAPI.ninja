@@ -1,0 +1,40 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = TextAPI
+target_output_name = libLLVMTextAPI
+
+build obj/llvm/lib/TextAPI/TextAPI.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/TextAPI/TextAPI.Architecture.o: cxx ../../llvm/lib/TextAPI/Architecture.cpp || obj/llvm/lib/TextAPI/TextAPI.inputdeps.stamp
+  source_file_part = Architecture.cpp
+  source_name_part = Architecture
+build obj/llvm/lib/TextAPI/TextAPI.ArchitectureSet.o: cxx ../../llvm/lib/TextAPI/ArchitectureSet.cpp || obj/llvm/lib/TextAPI/TextAPI.inputdeps.stamp
+  source_file_part = ArchitectureSet.cpp
+  source_name_part = ArchitectureSet
+build obj/llvm/lib/TextAPI/TextAPI.InterfaceFile.o: cxx ../../llvm/lib/TextAPI/InterfaceFile.cpp || obj/llvm/lib/TextAPI/TextAPI.inputdeps.stamp
+  source_file_part = InterfaceFile.cpp
+  source_name_part = InterfaceFile
+build obj/llvm/lib/TextAPI/TextAPI.PackedVersion.o: cxx ../../llvm/lib/TextAPI/PackedVersion.cpp || obj/llvm/lib/TextAPI/TextAPI.inputdeps.stamp
+  source_file_part = PackedVersion.cpp
+  source_name_part = PackedVersion
+build obj/llvm/lib/TextAPI/TextAPI.Platform.o: cxx ../../llvm/lib/TextAPI/Platform.cpp || obj/llvm/lib/TextAPI/TextAPI.inputdeps.stamp
+  source_file_part = Platform.cpp
+  source_name_part = Platform
+build obj/llvm/lib/TextAPI/TextAPI.Symbol.o: cxx ../../llvm/lib/TextAPI/Symbol.cpp || obj/llvm/lib/TextAPI/TextAPI.inputdeps.stamp
+  source_file_part = Symbol.cpp
+  source_name_part = Symbol
+build obj/llvm/lib/TextAPI/TextAPI.Target.o: cxx ../../llvm/lib/TextAPI/Target.cpp || obj/llvm/lib/TextAPI/TextAPI.inputdeps.stamp
+  source_file_part = Target.cpp
+  source_name_part = Target
+build obj/llvm/lib/TextAPI/TextAPI.TextStub.o: cxx ../../llvm/lib/TextAPI/TextStub.cpp || obj/llvm/lib/TextAPI/TextAPI.inputdeps.stamp
+  source_file_part = TextStub.cpp
+  source_name_part = TextStub
+build obj/llvm/lib/TextAPI/TextAPI.TextStubCommon.o: cxx ../../llvm/lib/TextAPI/TextStubCommon.cpp || obj/llvm/lib/TextAPI/TextAPI.inputdeps.stamp
+  source_file_part = TextStubCommon.cpp
+  source_name_part = TextStubCommon
+
+build ./lib/libLLVMTextAPI.a: alink obj/llvm/lib/TextAPI/TextAPI.Architecture.o obj/llvm/lib/TextAPI/TextAPI.ArchitectureSet.o obj/llvm/lib/TextAPI/TextAPI.InterfaceFile.o obj/llvm/lib/TextAPI/TextAPI.PackedVersion.o obj/llvm/lib/TextAPI/TextAPI.Platform.o obj/llvm/lib/TextAPI/TextAPI.Symbol.o obj/llvm/lib/TextAPI/TextAPI.Target.o obj/llvm/lib/TextAPI/TextAPI.TextStub.o obj/llvm/lib/TextAPI/TextAPI.TextStubCommon.o || ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

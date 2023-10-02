@@ -1,0 +1,49 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = TableGen
+target_output_name = libLLVMTableGen
+
+build obj/llvm/lib/TableGen/TableGen.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/TableGen/TableGen.DetailedRecordsBackend.o: cxx ../../llvm/lib/TableGen/DetailedRecordsBackend.cpp || obj/llvm/lib/TableGen/TableGen.inputdeps.stamp
+  source_file_part = DetailedRecordsBackend.cpp
+  source_name_part = DetailedRecordsBackend
+build obj/llvm/lib/TableGen/TableGen.Error.o: cxx ../../llvm/lib/TableGen/Error.cpp || obj/llvm/lib/TableGen/TableGen.inputdeps.stamp
+  source_file_part = Error.cpp
+  source_name_part = Error
+build obj/llvm/lib/TableGen/TableGen.JSONBackend.o: cxx ../../llvm/lib/TableGen/JSONBackend.cpp || obj/llvm/lib/TableGen/TableGen.inputdeps.stamp
+  source_file_part = JSONBackend.cpp
+  source_name_part = JSONBackend
+build obj/llvm/lib/TableGen/TableGen.Main.o: cxx ../../llvm/lib/TableGen/Main.cpp || obj/llvm/lib/TableGen/TableGen.inputdeps.stamp
+  source_file_part = Main.cpp
+  source_name_part = Main
+build obj/llvm/lib/TableGen/TableGen.Parser.o: cxx ../../llvm/lib/TableGen/Parser.cpp || obj/llvm/lib/TableGen/TableGen.inputdeps.stamp
+  source_file_part = Parser.cpp
+  source_name_part = Parser
+build obj/llvm/lib/TableGen/TableGen.Record.o: cxx ../../llvm/lib/TableGen/Record.cpp || obj/llvm/lib/TableGen/TableGen.inputdeps.stamp
+  source_file_part = Record.cpp
+  source_name_part = Record
+build obj/llvm/lib/TableGen/TableGen.SetTheory.o: cxx ../../llvm/lib/TableGen/SetTheory.cpp || obj/llvm/lib/TableGen/TableGen.inputdeps.stamp
+  source_file_part = SetTheory.cpp
+  source_name_part = SetTheory
+build obj/llvm/lib/TableGen/TableGen.StringMatcher.o: cxx ../../llvm/lib/TableGen/StringMatcher.cpp || obj/llvm/lib/TableGen/TableGen.inputdeps.stamp
+  source_file_part = StringMatcher.cpp
+  source_name_part = StringMatcher
+build obj/llvm/lib/TableGen/TableGen.TGLexer.o: cxx ../../llvm/lib/TableGen/TGLexer.cpp || obj/llvm/lib/TableGen/TableGen.inputdeps.stamp
+  source_file_part = TGLexer.cpp
+  source_name_part = TGLexer
+build obj/llvm/lib/TableGen/TableGen.TGParser.o: cxx ../../llvm/lib/TableGen/TGParser.cpp || obj/llvm/lib/TableGen/TableGen.inputdeps.stamp
+  source_file_part = TGParser.cpp
+  source_name_part = TGParser
+build obj/llvm/lib/TableGen/TableGen.TableGenBackend.o: cxx ../../llvm/lib/TableGen/TableGenBackend.cpp || obj/llvm/lib/TableGen/TableGen.inputdeps.stamp
+  source_file_part = TableGenBackend.cpp
+  source_name_part = TableGenBackend
+build obj/llvm/lib/TableGen/TableGen.TableGenBackendSkeleton.o: cxx ../../llvm/lib/TableGen/TableGenBackendSkeleton.cpp || obj/llvm/lib/TableGen/TableGen.inputdeps.stamp
+  source_file_part = TableGenBackendSkeleton.cpp
+  source_name_part = TableGenBackendSkeleton
+
+build ./lib/libLLVMTableGen.a: alink obj/llvm/lib/TableGen/TableGen.DetailedRecordsBackend.o obj/llvm/lib/TableGen/TableGen.Error.o obj/llvm/lib/TableGen/TableGen.JSONBackend.o obj/llvm/lib/TableGen/TableGen.Main.o obj/llvm/lib/TableGen/TableGen.Parser.o obj/llvm/lib/TableGen/TableGen.Record.o obj/llvm/lib/TableGen/TableGen.SetTheory.o obj/llvm/lib/TableGen/TableGen.StringMatcher.o obj/llvm/lib/TableGen/TableGen.TGLexer.o obj/llvm/lib/TableGen/TableGen.TGParser.o obj/llvm/lib/TableGen/TableGen.TableGenBackend.o obj/llvm/lib/TableGen/TableGen.TableGenBackendSkeleton.o || ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

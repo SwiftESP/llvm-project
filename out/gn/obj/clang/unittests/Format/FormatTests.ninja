@@ -1,0 +1,88 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = FormatTests
+target_output_name = FormatTests
+
+build obj/clang/unittests/Format/FormatTests.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang/unittests/Format/FormatTests.CleanupTest.o: cxx ../../clang/unittests/Format/CleanupTest.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = CleanupTest.cpp
+  source_name_part = CleanupTest
+build obj/clang/unittests/Format/FormatTests.DefinitionBlockSeparatorTest.o: cxx ../../clang/unittests/Format/DefinitionBlockSeparatorTest.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = DefinitionBlockSeparatorTest.cpp
+  source_name_part = DefinitionBlockSeparatorTest
+build obj/clang/unittests/Format/FormatTests.FormatTest.o: cxx ../../clang/unittests/Format/FormatTest.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = FormatTest.cpp
+  source_name_part = FormatTest
+build obj/clang/unittests/Format/FormatTests.FormatTestCSharp.o: cxx ../../clang/unittests/Format/FormatTestCSharp.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = FormatTestCSharp.cpp
+  source_name_part = FormatTestCSharp
+build obj/clang/unittests/Format/FormatTests.FormatTestComments.o: cxx ../../clang/unittests/Format/FormatTestComments.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = FormatTestComments.cpp
+  source_name_part = FormatTestComments
+build obj/clang/unittests/Format/FormatTests.FormatTestJS.o: cxx ../../clang/unittests/Format/FormatTestJS.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = FormatTestJS.cpp
+  source_name_part = FormatTestJS
+build obj/clang/unittests/Format/FormatTests.FormatTestJava.o: cxx ../../clang/unittests/Format/FormatTestJava.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = FormatTestJava.cpp
+  source_name_part = FormatTestJava
+build obj/clang/unittests/Format/FormatTests.FormatTestJson.o: cxx ../../clang/unittests/Format/FormatTestJson.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = FormatTestJson.cpp
+  source_name_part = FormatTestJson
+build obj/clang/unittests/Format/FormatTests.FormatTestObjC.o: cxx ../../clang/unittests/Format/FormatTestObjC.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = FormatTestObjC.cpp
+  source_name_part = FormatTestObjC
+build obj/clang/unittests/Format/FormatTests.FormatTestProto.o: cxx ../../clang/unittests/Format/FormatTestProto.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = FormatTestProto.cpp
+  source_name_part = FormatTestProto
+build obj/clang/unittests/Format/FormatTests.FormatTestRawStrings.o: cxx ../../clang/unittests/Format/FormatTestRawStrings.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = FormatTestRawStrings.cpp
+  source_name_part = FormatTestRawStrings
+build obj/clang/unittests/Format/FormatTests.FormatTestSelective.o: cxx ../../clang/unittests/Format/FormatTestSelective.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = FormatTestSelective.cpp
+  source_name_part = FormatTestSelective
+build obj/clang/unittests/Format/FormatTests.FormatTestTableGen.o: cxx ../../clang/unittests/Format/FormatTestTableGen.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = FormatTestTableGen.cpp
+  source_name_part = FormatTestTableGen
+build obj/clang/unittests/Format/FormatTests.FormatTestTextProto.o: cxx ../../clang/unittests/Format/FormatTestTextProto.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = FormatTestTextProto.cpp
+  source_name_part = FormatTestTextProto
+build obj/clang/unittests/Format/FormatTests.FormatTestVerilog.o: cxx ../../clang/unittests/Format/FormatTestVerilog.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = FormatTestVerilog.cpp
+  source_name_part = FormatTestVerilog
+build obj/clang/unittests/Format/FormatTests.MacroCallReconstructorTest.o: cxx ../../clang/unittests/Format/MacroCallReconstructorTest.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = MacroCallReconstructorTest.cpp
+  source_name_part = MacroCallReconstructorTest
+build obj/clang/unittests/Format/FormatTests.MacroExpanderTest.o: cxx ../../clang/unittests/Format/MacroExpanderTest.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = MacroExpanderTest.cpp
+  source_name_part = MacroExpanderTest
+build obj/clang/unittests/Format/FormatTests.NamespaceEndCommentsFixerTest.o: cxx ../../clang/unittests/Format/NamespaceEndCommentsFixerTest.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = NamespaceEndCommentsFixerTest.cpp
+  source_name_part = NamespaceEndCommentsFixerTest
+build obj/clang/unittests/Format/FormatTests.QualifierFixerTest.o: cxx ../../clang/unittests/Format/QualifierFixerTest.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = QualifierFixerTest.cpp
+  source_name_part = QualifierFixerTest
+build obj/clang/unittests/Format/FormatTests.SortImportsTestJS.o: cxx ../../clang/unittests/Format/SortImportsTestJS.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = SortImportsTestJS.cpp
+  source_name_part = SortImportsTestJS
+build obj/clang/unittests/Format/FormatTests.SortImportsTestJava.o: cxx ../../clang/unittests/Format/SortImportsTestJava.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = SortImportsTestJava.cpp
+  source_name_part = SortImportsTestJava
+build obj/clang/unittests/Format/FormatTests.SortIncludesTest.o: cxx ../../clang/unittests/Format/SortIncludesTest.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = SortIncludesTest.cpp
+  source_name_part = SortIncludesTest
+build obj/clang/unittests/Format/FormatTests.TokenAnnotatorTest.o: cxx ../../clang/unittests/Format/TokenAnnotatorTest.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = TokenAnnotatorTest.cpp
+  source_name_part = TokenAnnotatorTest
+build obj/clang/unittests/Format/FormatTests.UsingDeclarationsSorterTest.o: cxx ../../clang/unittests/Format/UsingDeclarationsSorterTest.cpp || obj/clang/unittests/Format/FormatTests.inputdeps.stamp
+  source_file_part = UsingDeclarationsSorterTest.cpp
+  source_name_part = UsingDeclarationsSorterTest
+
+build obj/clang/unittests/Format/FormatTests: link obj/clang/unittests/Format/FormatTests.CleanupTest.o obj/clang/unittests/Format/FormatTests.DefinitionBlockSeparatorTest.o obj/clang/unittests/Format/FormatTests.FormatTest.o obj/clang/unittests/Format/FormatTests.FormatTestCSharp.o obj/clang/unittests/Format/FormatTests.FormatTestComments.o obj/clang/unittests/Format/FormatTests.FormatTestJS.o obj/clang/unittests/Format/FormatTests.FormatTestJava.o obj/clang/unittests/Format/FormatTests.FormatTestJson.o obj/clang/unittests/Format/FormatTests.FormatTestObjC.o obj/clang/unittests/Format/FormatTests.FormatTestProto.o obj/clang/unittests/Format/FormatTests.FormatTestRawStrings.o obj/clang/unittests/Format/FormatTests.FormatTestSelective.o obj/clang/unittests/Format/FormatTests.FormatTestTableGen.o obj/clang/unittests/Format/FormatTests.FormatTestTextProto.o obj/clang/unittests/Format/FormatTests.FormatTestVerilog.o obj/clang/unittests/Format/FormatTests.MacroCallReconstructorTest.o obj/clang/unittests/Format/FormatTests.MacroExpanderTest.o obj/clang/unittests/Format/FormatTests.NamespaceEndCommentsFixerTest.o obj/clang/unittests/Format/FormatTests.QualifierFixerTest.o obj/clang/unittests/Format/FormatTests.SortImportsTestJS.o obj/clang/unittests/Format/FormatTests.SortImportsTestJava.o obj/clang/unittests/Format/FormatTests.SortIncludesTest.o obj/clang/unittests/Format/FormatTests.TokenAnnotatorTest.o obj/clang/unittests/Format/FormatTests.UsingDeclarationsSorterTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libclangBasic.a ./lib/libclangFormat.a ./lib/libclangFrontend.a ./lib/libclangRewrite.a ./lib/libclangToolingCore.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libclangLex.a ./lib/libclangToolingInclusions.a ./lib/libclangAST.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangDriver.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libclangEdit.a ./lib/libclangParse.a ./lib/libclangSema.a ./lib/libclangAnalysis.a ./lib/libclangASTMatchers.a ./lib/libclangSupport.a ./lib/libclangSerialization.a ./lib/libgtest.a || obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/clang/unittests/Format

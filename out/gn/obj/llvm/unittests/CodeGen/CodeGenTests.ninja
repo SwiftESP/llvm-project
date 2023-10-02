@@ -1,0 +1,79 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = CodeGenTests
+target_output_name = CodeGenTests
+
+build obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build obj/llvm/unittests/CodeGen/CodeGenTests.AArch64SelectionDAGTest.o: cxx ../../llvm/unittests/CodeGen/AArch64SelectionDAGTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = AArch64SelectionDAGTest.cpp
+  source_name_part = AArch64SelectionDAGTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.AMDGPUMetadataTest.o: cxx ../../llvm/unittests/CodeGen/AMDGPUMetadataTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = AMDGPUMetadataTest.cpp
+  source_name_part = AMDGPUMetadataTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.AllocationOrderTest.o: cxx ../../llvm/unittests/CodeGen/AllocationOrderTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = AllocationOrderTest.cpp
+  source_name_part = AllocationOrderTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.AsmPrinterDwarfTest.o: cxx ../../llvm/unittests/CodeGen/AsmPrinterDwarfTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = AsmPrinterDwarfTest.cpp
+  source_name_part = AsmPrinterDwarfTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.DIEHashTest.o: cxx ../../llvm/unittests/CodeGen/DIEHashTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = DIEHashTest.cpp
+  source_name_part = DIEHashTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.DIETest.o: cxx ../../llvm/unittests/CodeGen/DIETest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = DIETest.cpp
+  source_name_part = DIETest
+build obj/llvm/unittests/CodeGen/CodeGenTests.DwarfStringPoolEntryRefTest.o: cxx ../../llvm/unittests/CodeGen/DwarfStringPoolEntryRefTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = DwarfStringPoolEntryRefTest.cpp
+  source_name_part = DwarfStringPoolEntryRefTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.InstrRefLDVTest.o: cxx ../../llvm/unittests/CodeGen/InstrRefLDVTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = InstrRefLDVTest.cpp
+  source_name_part = InstrRefLDVTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.LexicalScopesTest.o: cxx ../../llvm/unittests/CodeGen/LexicalScopesTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = LexicalScopesTest.cpp
+  source_name_part = LexicalScopesTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.LowLevelTypeTest.o: cxx ../../llvm/unittests/CodeGen/LowLevelTypeTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = LowLevelTypeTest.cpp
+  source_name_part = LowLevelTypeTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.MLRegallocDevelopmentFeatures.o: cxx ../../llvm/unittests/CodeGen/MLRegallocDevelopmentFeatures.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = MLRegallocDevelopmentFeatures.cpp
+  source_name_part = MLRegallocDevelopmentFeatures
+build obj/llvm/unittests/CodeGen/CodeGenTests.MachineInstrBundleIteratorTest.o: cxx ../../llvm/unittests/CodeGen/MachineInstrBundleIteratorTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = MachineInstrBundleIteratorTest.cpp
+  source_name_part = MachineInstrBundleIteratorTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.MachineInstrTest.o: cxx ../../llvm/unittests/CodeGen/MachineInstrTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = MachineInstrTest.cpp
+  source_name_part = MachineInstrTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.MachineOperandTest.o: cxx ../../llvm/unittests/CodeGen/MachineOperandTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = MachineOperandTest.cpp
+  source_name_part = MachineOperandTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.PassManagerTest.o: cxx ../../llvm/unittests/CodeGen/PassManagerTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = PassManagerTest.cpp
+  source_name_part = PassManagerTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.RegAllocScoreTest.o: cxx ../../llvm/unittests/CodeGen/RegAllocScoreTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = RegAllocScoreTest.cpp
+  source_name_part = RegAllocScoreTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.ScalableVectorMVTsTest.o: cxx ../../llvm/unittests/CodeGen/ScalableVectorMVTsTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = ScalableVectorMVTsTest.cpp
+  source_name_part = ScalableVectorMVTsTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.SelectionDAGAddressAnalysisTest.o: cxx ../../llvm/unittests/CodeGen/SelectionDAGAddressAnalysisTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = SelectionDAGAddressAnalysisTest.cpp
+  source_name_part = SelectionDAGAddressAnalysisTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.TargetOptionsTest.o: cxx ../../llvm/unittests/CodeGen/TargetOptionsTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = TargetOptionsTest.cpp
+  source_name_part = TargetOptionsTest
+build obj/llvm/unittests/CodeGen/CodeGenTests.TestAsmPrinter.o: cxx ../../llvm/unittests/CodeGen/TestAsmPrinter.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = TestAsmPrinter.cpp
+  source_name_part = TestAsmPrinter
+build obj/llvm/unittests/CodeGen/CodeGenTests.TypeTraitsTest.o: cxx ../../llvm/unittests/CodeGen/TypeTraitsTest.cpp || obj/llvm/unittests/CodeGen/CodeGenTests.inputdeps.stamp
+  source_file_part = TypeTraitsTest.cpp
+  source_name_part = TypeTraitsTest
+
+build obj/llvm/unittests/CodeGen/CodeGenTests: link obj/llvm/unittests/CodeGen/CodeGenTests.AArch64SelectionDAGTest.o obj/llvm/unittests/CodeGen/CodeGenTests.AMDGPUMetadataTest.o obj/llvm/unittests/CodeGen/CodeGenTests.AllocationOrderTest.o obj/llvm/unittests/CodeGen/CodeGenTests.AsmPrinterDwarfTest.o obj/llvm/unittests/CodeGen/CodeGenTests.DIEHashTest.o obj/llvm/unittests/CodeGen/CodeGenTests.DIETest.o obj/llvm/unittests/CodeGen/CodeGenTests.DwarfStringPoolEntryRefTest.o obj/llvm/unittests/CodeGen/CodeGenTests.InstrRefLDVTest.o obj/llvm/unittests/CodeGen/CodeGenTests.LexicalScopesTest.o obj/llvm/unittests/CodeGen/CodeGenTests.LowLevelTypeTest.o obj/llvm/unittests/CodeGen/CodeGenTests.MLRegallocDevelopmentFeatures.o obj/llvm/unittests/CodeGen/CodeGenTests.MachineInstrBundleIteratorTest.o obj/llvm/unittests/CodeGen/CodeGenTests.MachineInstrTest.o obj/llvm/unittests/CodeGen/CodeGenTests.MachineOperandTest.o obj/llvm/unittests/CodeGen/CodeGenTests.PassManagerTest.o obj/llvm/unittests/CodeGen/CodeGenTests.RegAllocScoreTest.o obj/llvm/unittests/CodeGen/CodeGenTests.ScalableVectorMVTsTest.o obj/llvm/unittests/CodeGen/CodeGenTests.SelectionDAGAddressAnalysisTest.o obj/llvm/unittests/CodeGen/CodeGenTests.TargetOptionsTest.o obj/llvm/unittests/CodeGen/CodeGenTests.TestAsmPrinter.o obj/llvm/unittests/CodeGen/CodeGenTests.TypeTraitsTest.o ./lib/libLLVMAnalysis.a ./lib/libLLVMAsmParser.a ./lib/libLLVMCodeGen.a ./lib/libLLVMAsmPrinter.a ./lib/libLLVMMIRParser.a ./lib/libLLVMSelectionDAG.a ./lib/libLLVMFileCheck.a ./lib/libLLVMCore.a ./lib/libLLVMMC.a ./lib/libLLVMPasses.a ./lib/libLLVMSupport.a ./lib/libLLVMTarget.a ./lib/libLLVMTestingSupport.a ./lib/libgtest.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMCoroutines.a ./lib/libLLVMipo.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMLinker.a ./lib/libLLVMInstrumentation.a ./lib/libLLVMVectorize.a ./lib/libLLVMObjCARCOpts.a ./lib/libLLVMAArch64CodeGen.a ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMGlobalISel.a ./lib/libLLVMCFGuard.a ./lib/libLLVMAArch64AsmParser.a ./lib/libLLVMAArch64Disassembler.a ./lib/libLLVMMCDisassembler.a || obj/llvm/lib/Target/TargetsToBuild.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/CodeGen

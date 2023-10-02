@@ -1,0 +1,112 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Object
+target_output_name = libLLVMObject
+
+build obj/llvm/lib/Object/Object.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/Object/Object.Archive.o: cxx ../../llvm/lib/Object/Archive.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = Archive.cpp
+  source_name_part = Archive
+build obj/llvm/lib/Object/Object.ArchiveWriter.o: cxx ../../llvm/lib/Object/ArchiveWriter.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = ArchiveWriter.cpp
+  source_name_part = ArchiveWriter
+build obj/llvm/lib/Object/Object.Binary.o: cxx ../../llvm/lib/Object/Binary.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = Binary.cpp
+  source_name_part = Binary
+build obj/llvm/lib/Object/Object.BuildID.o: cxx ../../llvm/lib/Object/BuildID.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = BuildID.cpp
+  source_name_part = BuildID
+build obj/llvm/lib/Object/Object.COFFImportFile.o: cxx ../../llvm/lib/Object/COFFImportFile.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = COFFImportFile.cpp
+  source_name_part = COFFImportFile
+build obj/llvm/lib/Object/Object.COFFModuleDefinition.o: cxx ../../llvm/lib/Object/COFFModuleDefinition.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = COFFModuleDefinition.cpp
+  source_name_part = COFFModuleDefinition
+build obj/llvm/lib/Object/Object.COFFObjectFile.o: cxx ../../llvm/lib/Object/COFFObjectFile.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = COFFObjectFile.cpp
+  source_name_part = COFFObjectFile
+build obj/llvm/lib/Object/Object.DXContainer.o: cxx ../../llvm/lib/Object/DXContainer.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = DXContainer.cpp
+  source_name_part = DXContainer
+build obj/llvm/lib/Object/Object.Decompressor.o: cxx ../../llvm/lib/Object/Decompressor.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = Decompressor.cpp
+  source_name_part = Decompressor
+build obj/llvm/lib/Object/Object.ELF.o: cxx ../../llvm/lib/Object/ELF.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = ELF.cpp
+  source_name_part = ELF
+build obj/llvm/lib/Object/Object.ELFObjectFile.o: cxx ../../llvm/lib/Object/ELFObjectFile.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = ELFObjectFile.cpp
+  source_name_part = ELFObjectFile
+build obj/llvm/lib/Object/Object.Error.o: cxx ../../llvm/lib/Object/Error.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = Error.cpp
+  source_name_part = Error
+build obj/llvm/lib/Object/Object.FaultMapParser.o: cxx ../../llvm/lib/Object/FaultMapParser.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = FaultMapParser.cpp
+  source_name_part = FaultMapParser
+build obj/llvm/lib/Object/Object.IRObjectFile.o: cxx ../../llvm/lib/Object/IRObjectFile.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = IRObjectFile.cpp
+  source_name_part = IRObjectFile
+build obj/llvm/lib/Object/Object.IRSymtab.o: cxx ../../llvm/lib/Object/IRSymtab.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = IRSymtab.cpp
+  source_name_part = IRSymtab
+build obj/llvm/lib/Object/Object.MachOObjectFile.o: cxx ../../llvm/lib/Object/MachOObjectFile.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = MachOObjectFile.cpp
+  source_name_part = MachOObjectFile
+build obj/llvm/lib/Object/Object.MachOUniversal.o: cxx ../../llvm/lib/Object/MachOUniversal.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = MachOUniversal.cpp
+  source_name_part = MachOUniversal
+build obj/llvm/lib/Object/Object.MachOUniversalWriter.o: cxx ../../llvm/lib/Object/MachOUniversalWriter.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = MachOUniversalWriter.cpp
+  source_name_part = MachOUniversalWriter
+build obj/llvm/lib/Object/Object.Minidump.o: cxx ../../llvm/lib/Object/Minidump.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = Minidump.cpp
+  source_name_part = Minidump
+build obj/llvm/lib/Object/Object.ModuleSymbolTable.o: cxx ../../llvm/lib/Object/ModuleSymbolTable.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = ModuleSymbolTable.cpp
+  source_name_part = ModuleSymbolTable
+build obj/llvm/lib/Object/Object.Object.o: cxx ../../llvm/lib/Object/Object.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = Object.cpp
+  source_name_part = Object
+build obj/llvm/lib/Object/Object.ObjectFile.o: cxx ../../llvm/lib/Object/ObjectFile.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = ObjectFile.cpp
+  source_name_part = ObjectFile
+build obj/llvm/lib/Object/Object.OffloadBinary.o: cxx ../../llvm/lib/Object/OffloadBinary.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = OffloadBinary.cpp
+  source_name_part = OffloadBinary
+build obj/llvm/lib/Object/Object.RecordStreamer.o: cxx ../../llvm/lib/Object/RecordStreamer.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = RecordStreamer.cpp
+  source_name_part = RecordStreamer
+build obj/llvm/lib/Object/Object.RelocationResolver.o: cxx ../../llvm/lib/Object/RelocationResolver.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = RelocationResolver.cpp
+  source_name_part = RelocationResolver
+build obj/llvm/lib/Object/Object.SymbolSize.o: cxx ../../llvm/lib/Object/SymbolSize.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = SymbolSize.cpp
+  source_name_part = SymbolSize
+build obj/llvm/lib/Object/Object.SymbolicFile.o: cxx ../../llvm/lib/Object/SymbolicFile.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = SymbolicFile.cpp
+  source_name_part = SymbolicFile
+build obj/llvm/lib/Object/Object.TapiFile.o: cxx ../../llvm/lib/Object/TapiFile.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = TapiFile.cpp
+  source_name_part = TapiFile
+build obj/llvm/lib/Object/Object.TapiUniversal.o: cxx ../../llvm/lib/Object/TapiUniversal.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = TapiUniversal.cpp
+  source_name_part = TapiUniversal
+build obj/llvm/lib/Object/Object.WasmObjectFile.o: cxx ../../llvm/lib/Object/WasmObjectFile.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = WasmObjectFile.cpp
+  source_name_part = WasmObjectFile
+build obj/llvm/lib/Object/Object.WindowsMachineFlag.o: cxx ../../llvm/lib/Object/WindowsMachineFlag.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = WindowsMachineFlag.cpp
+  source_name_part = WindowsMachineFlag
+build obj/llvm/lib/Object/Object.WindowsResource.o: cxx ../../llvm/lib/Object/WindowsResource.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = WindowsResource.cpp
+  source_name_part = WindowsResource
+build obj/llvm/lib/Object/Object.XCOFFObjectFile.o: cxx ../../llvm/lib/Object/XCOFFObjectFile.cpp || obj/llvm/lib/Object/Object.inputdeps.stamp
+  source_file_part = XCOFFObjectFile.cpp
+  source_name_part = XCOFFObjectFile
+
+build ./lib/libLLVMObject.a: alink obj/llvm/lib/Object/Object.Archive.o obj/llvm/lib/Object/Object.ArchiveWriter.o obj/llvm/lib/Object/Object.Binary.o obj/llvm/lib/Object/Object.BuildID.o obj/llvm/lib/Object/Object.COFFImportFile.o obj/llvm/lib/Object/Object.COFFModuleDefinition.o obj/llvm/lib/Object/Object.COFFObjectFile.o obj/llvm/lib/Object/Object.DXContainer.o obj/llvm/lib/Object/Object.Decompressor.o obj/llvm/lib/Object/Object.ELF.o obj/llvm/lib/Object/Object.ELFObjectFile.o obj/llvm/lib/Object/Object.Error.o obj/llvm/lib/Object/Object.FaultMapParser.o obj/llvm/lib/Object/Object.IRObjectFile.o obj/llvm/lib/Object/Object.IRSymtab.o obj/llvm/lib/Object/Object.MachOObjectFile.o obj/llvm/lib/Object/Object.MachOUniversal.o obj/llvm/lib/Object/Object.MachOUniversalWriter.o obj/llvm/lib/Object/Object.Minidump.o obj/llvm/lib/Object/Object.ModuleSymbolTable.o obj/llvm/lib/Object/Object.Object.o obj/llvm/lib/Object/Object.ObjectFile.o obj/llvm/lib/Object/Object.OffloadBinary.o obj/llvm/lib/Object/Object.RecordStreamer.o obj/llvm/lib/Object/Object.RelocationResolver.o obj/llvm/lib/Object/Object.SymbolSize.o obj/llvm/lib/Object/Object.SymbolicFile.o obj/llvm/lib/Object/Object.TapiFile.o obj/llvm/lib/Object/Object.TapiUniversal.o obj/llvm/lib/Object/Object.WasmObjectFile.o obj/llvm/lib/Object/Object.WindowsMachineFlag.o obj/llvm/lib/Object/Object.WindowsResource.o obj/llvm/lib/Object/Object.XCOFFObjectFile.o || obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp ./lib/libLLVMBinaryFormat.a ./lib/libLLVMBitReader.a ./lib/libLLVMCore.a ./lib/libLLVMIRReader.a ./lib/libLLVMMC.a ./lib/libLLVMMCParser.a ./lib/libLLVMSupport.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMRemarks.a ./lib/libLLVMAsmParser.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

@@ -69,6 +69,16 @@ RISCVToolChain::RISCVToolChain(const Driver &D, const llvm::Triple &Triple,
   } else {
     getProgramPaths().push_back(D.Dir);
   }
+      
+  if (getTriple().getVendor() == llvm::Triple::Espressif) {
+    // TODO: need to detect multilibs when GCC installation is not available
+    addEspMultilibsPaths(D, Multilibs, SelectedMultilib,
+                         Args.getLastArgValue(options::OPT_mcpu_EQ, "generic-rv32"),
+                         D.getInstalledDir(), getLibraryPaths());
+    addEspMultilibsPaths(D, Multilibs, SelectedMultilib,
+                         Args.getLastArgValue(options::OPT_mcpu_EQ, "generic-rv32"),
+                         D.getInstalledDir(), getFilePaths());
+  }
   getFilePaths().push_back(computeSysRoot() + "/lib");
 }
 
@@ -184,7 +194,13 @@ void RISCV::Linker::ConstructJob(Compilation &C, const JobAction &JA,
   }
 
   if (WantCRTs) {
-    CmdArgs.push_back(Args.MakeArgString(ToolChain.GetFilePath("crt0.o")));
+    /* Espressif toolchain uses newlib. crt0.o from it refers to 'main' symbol.
+       In 'freestanding' mode, 'main' is not marked as special symbol by clang.
+     */
+    bool Freestanding = Args.hasFlag(options::OPT_ffreestanding, options::OPT_fhosted, false);
+    if (!Freestanding || ToolChain.getTriple().getVendor() != llvm::Triple::Espressif) {
+      CmdArgs.push_back(Args.MakeArgString(ToolChain.GetFilePath("crt0.o")));
+    }
     CmdArgs.push_back(Args.MakeArgString(ToolChain.GetFilePath(crtbegin)));
   }
 
@@ -209,6 +225,9 @@ void RISCV::Linker::ConstructJob(Compilation &C, const JobAction &JA,
     CmdArgs.push_back("--start-group");
     CmdArgs.push_back("-lc");
     CmdArgs.push_back("-lgloss");
+    if (ToolChain.getTriple().getVendor() == llvm::Triple::Espressif) {
+      CmdArgs.push_back("-lnosys");
+    }
     CmdArgs.push_back("--end-group");
     AddRunTimeLibs(ToolChain, ToolChain.getDriver(), CmdArgs, Args);
   }

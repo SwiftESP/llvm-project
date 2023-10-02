@@ -1,0 +1,25 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/utils/TableGen -I../../llvm/include -Igen/llvm/include -Igen/llvm/unittests/TableGen -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = TableGenTests
+target_output_name = TableGenTests
+
+build obj/llvm/unittests/TableGen/TableGenTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/unittests/TableGen/AutomataAutomata.stamp obj/llvm/unittests/TableGen/AutomataTables.stamp
+build obj/llvm/unittests/TableGen/TableGenTests.AutomataTest.o: cxx ../../llvm/unittests/TableGen/AutomataTest.cpp || obj/llvm/unittests/TableGen/TableGenTests.inputdeps.stamp
+  source_file_part = AutomataTest.cpp
+  source_name_part = AutomataTest
+build obj/llvm/unittests/TableGen/TableGenTests.CodeExpanderTest.o: cxx ../../llvm/unittests/TableGen/CodeExpanderTest.cpp || obj/llvm/unittests/TableGen/TableGenTests.inputdeps.stamp
+  source_file_part = CodeExpanderTest.cpp
+  source_name_part = CodeExpanderTest
+build obj/llvm/unittests/TableGen/TableGenTests.ParserEntryPointTest.o: cxx ../../llvm/unittests/TableGen/ParserEntryPointTest.cpp || obj/llvm/unittests/TableGen/TableGenTests.inputdeps.stamp
+  source_file_part = ParserEntryPointTest.cpp
+  source_name_part = ParserEntryPointTest
+
+build obj/llvm/unittests/TableGen/TableGenTests: link obj/llvm/unittests/TableGen/TableGenTests.AutomataTest.o obj/llvm/unittests/TableGen/TableGenTests.CodeExpanderTest.o obj/llvm/unittests/TableGen/TableGenTests.ParserEntryPointTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMSupport.a ./lib/libLLVMTableGen.a ./lib/libGlobalISel.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libgtest.a || obj/llvm/unittests/TableGen/AutomataAutomata.stamp obj/llvm/unittests/TableGen/AutomataTables.stamp obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/TableGen

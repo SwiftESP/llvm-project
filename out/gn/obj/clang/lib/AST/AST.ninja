@@ -1,0 +1,316 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/AST -Igen/clang/lib/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = AST
+target_output_name = libclangAST
+
+build obj/clang/lib/AST/AST.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang/lib/AST/AST.APValue.o: cxx ../../clang/lib/AST/APValue.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = APValue.cpp
+  source_name_part = APValue
+build obj/clang/lib/AST/AST.ASTConcept.o: cxx ../../clang/lib/AST/ASTConcept.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ASTConcept.cpp
+  source_name_part = ASTConcept
+build obj/clang/lib/AST/AST.ASTConsumer.o: cxx ../../clang/lib/AST/ASTConsumer.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ASTConsumer.cpp
+  source_name_part = ASTConsumer
+build obj/clang/lib/AST/AST.ASTContext.o: cxx ../../clang/lib/AST/ASTContext.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ASTContext.cpp
+  source_name_part = ASTContext
+build obj/clang/lib/AST/AST.ASTDiagnostic.o: cxx ../../clang/lib/AST/ASTDiagnostic.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ASTDiagnostic.cpp
+  source_name_part = ASTDiagnostic
+build obj/clang/lib/AST/AST.ASTDumper.o: cxx ../../clang/lib/AST/ASTDumper.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ASTDumper.cpp
+  source_name_part = ASTDumper
+build obj/clang/lib/AST/AST.ASTImporter.o: cxx ../../clang/lib/AST/ASTImporter.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ASTImporter.cpp
+  source_name_part = ASTImporter
+build obj/clang/lib/AST/AST.ASTImporterLookupTable.o: cxx ../../clang/lib/AST/ASTImporterLookupTable.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ASTImporterLookupTable.cpp
+  source_name_part = ASTImporterLookupTable
+build obj/clang/lib/AST/AST.ASTStructuralEquivalence.o: cxx ../../clang/lib/AST/ASTStructuralEquivalence.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ASTStructuralEquivalence.cpp
+  source_name_part = ASTStructuralEquivalence
+build obj/clang/lib/AST/AST.ASTTypeTraits.o: cxx ../../clang/lib/AST/ASTTypeTraits.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ASTTypeTraits.cpp
+  source_name_part = ASTTypeTraits
+build obj/clang/lib/AST/AST.AttrDocTable.o: cxx ../../clang/lib/AST/AttrDocTable.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = AttrDocTable.cpp
+  source_name_part = AttrDocTable
+build obj/clang/lib/AST/AST.AttrImpl.o: cxx ../../clang/lib/AST/AttrImpl.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = AttrImpl.cpp
+  source_name_part = AttrImpl
+build obj/clang/lib/AST/AST.CXXInheritance.o: cxx ../../clang/lib/AST/CXXInheritance.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = CXXInheritance.cpp
+  source_name_part = CXXInheritance
+build obj/clang/lib/AST/AST.Comment.o: cxx ../../clang/lib/AST/Comment.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Comment.cpp
+  source_name_part = Comment
+build obj/clang/lib/AST/AST.CommentBriefParser.o: cxx ../../clang/lib/AST/CommentBriefParser.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = CommentBriefParser.cpp
+  source_name_part = CommentBriefParser
+build obj/clang/lib/AST/AST.CommentCommandTraits.o: cxx ../../clang/lib/AST/CommentCommandTraits.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = CommentCommandTraits.cpp
+  source_name_part = CommentCommandTraits
+build obj/clang/lib/AST/AST.CommentLexer.o: cxx ../../clang/lib/AST/CommentLexer.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = CommentLexer.cpp
+  source_name_part = CommentLexer
+build obj/clang/lib/AST/AST.CommentParser.o: cxx ../../clang/lib/AST/CommentParser.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = CommentParser.cpp
+  source_name_part = CommentParser
+build obj/clang/lib/AST/AST.CommentSema.o: cxx ../../clang/lib/AST/CommentSema.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = CommentSema.cpp
+  source_name_part = CommentSema
+build obj/clang/lib/AST/AST.ComparisonCategories.o: cxx ../../clang/lib/AST/ComparisonCategories.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ComparisonCategories.cpp
+  source_name_part = ComparisonCategories
+build obj/clang/lib/AST/AST.ComputeDependence.o: cxx ../../clang/lib/AST/ComputeDependence.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ComputeDependence.cpp
+  source_name_part = ComputeDependence
+build obj/clang/lib/AST/AST.DataCollection.o: cxx ../../clang/lib/AST/DataCollection.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = DataCollection.cpp
+  source_name_part = DataCollection
+build obj/clang/lib/AST/AST.Decl.o: cxx ../../clang/lib/AST/Decl.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Decl.cpp
+  source_name_part = Decl
+build obj/clang/lib/AST/AST.DeclBase.o: cxx ../../clang/lib/AST/DeclBase.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = DeclBase.cpp
+  source_name_part = DeclBase
+build obj/clang/lib/AST/AST.DeclCXX.o: cxx ../../clang/lib/AST/DeclCXX.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = DeclCXX.cpp
+  source_name_part = DeclCXX
+build obj/clang/lib/AST/AST.DeclFriend.o: cxx ../../clang/lib/AST/DeclFriend.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = DeclFriend.cpp
+  source_name_part = DeclFriend
+build obj/clang/lib/AST/AST.DeclGroup.o: cxx ../../clang/lib/AST/DeclGroup.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = DeclGroup.cpp
+  source_name_part = DeclGroup
+build obj/clang/lib/AST/AST.DeclObjC.o: cxx ../../clang/lib/AST/DeclObjC.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = DeclObjC.cpp
+  source_name_part = DeclObjC
+build obj/clang/lib/AST/AST.DeclOpenMP.o: cxx ../../clang/lib/AST/DeclOpenMP.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = DeclOpenMP.cpp
+  source_name_part = DeclOpenMP
+build obj/clang/lib/AST/AST.DeclPrinter.o: cxx ../../clang/lib/AST/DeclPrinter.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = DeclPrinter.cpp
+  source_name_part = DeclPrinter
+build obj/clang/lib/AST/AST.DeclTemplate.o: cxx ../../clang/lib/AST/DeclTemplate.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = DeclTemplate.cpp
+  source_name_part = DeclTemplate
+build obj/clang/lib/AST/AST.DeclarationName.o: cxx ../../clang/lib/AST/DeclarationName.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = DeclarationName.cpp
+  source_name_part = DeclarationName
+build obj/clang/lib/AST/AST.Expr.o: cxx ../../clang/lib/AST/Expr.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Expr.cpp
+  source_name_part = Expr
+build obj/clang/lib/AST/AST.ExprCXX.o: cxx ../../clang/lib/AST/ExprCXX.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ExprCXX.cpp
+  source_name_part = ExprCXX
+build obj/clang/lib/AST/AST.ExprClassification.o: cxx ../../clang/lib/AST/ExprClassification.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ExprClassification.cpp
+  source_name_part = ExprClassification
+build obj/clang/lib/AST/AST.ExprConcepts.o: cxx ../../clang/lib/AST/ExprConcepts.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ExprConcepts.cpp
+  source_name_part = ExprConcepts
+build obj/clang/lib/AST/AST.ExprConstant.o: cxx ../../clang/lib/AST/ExprConstant.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ExprConstant.cpp
+  source_name_part = ExprConstant
+build obj/clang/lib/AST/AST.ExprObjC.o: cxx ../../clang/lib/AST/ExprObjC.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ExprObjC.cpp
+  source_name_part = ExprObjC
+build obj/clang/lib/AST/AST.ExternalASTMerger.o: cxx ../../clang/lib/AST/ExternalASTMerger.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ExternalASTMerger.cpp
+  source_name_part = ExternalASTMerger
+build obj/clang/lib/AST/AST.ExternalASTSource.o: cxx ../../clang/lib/AST/ExternalASTSource.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ExternalASTSource.cpp
+  source_name_part = ExternalASTSource
+build obj/clang/lib/AST/AST.FormatString.o: cxx ../../clang/lib/AST/FormatString.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = FormatString.cpp
+  source_name_part = FormatString
+build obj/clang/lib/AST/AST.InheritViz.o: cxx ../../clang/lib/AST/InheritViz.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = InheritViz.cpp
+  source_name_part = InheritViz
+build obj/clang/lib/AST/Interp/AST.ByteCodeEmitter.o: cxx ../../clang/lib/AST/Interp/ByteCodeEmitter.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ByteCodeEmitter.cpp
+  source_name_part = ByteCodeEmitter
+build obj/clang/lib/AST/Interp/AST.ByteCodeExprGen.o: cxx ../../clang/lib/AST/Interp/ByteCodeExprGen.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ByteCodeExprGen.cpp
+  source_name_part = ByteCodeExprGen
+build obj/clang/lib/AST/Interp/AST.ByteCodeGenError.o: cxx ../../clang/lib/AST/Interp/ByteCodeGenError.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ByteCodeGenError.cpp
+  source_name_part = ByteCodeGenError
+build obj/clang/lib/AST/Interp/AST.ByteCodeStmtGen.o: cxx ../../clang/lib/AST/Interp/ByteCodeStmtGen.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ByteCodeStmtGen.cpp
+  source_name_part = ByteCodeStmtGen
+build obj/clang/lib/AST/Interp/AST.Context.o: cxx ../../clang/lib/AST/Interp/Context.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Context.cpp
+  source_name_part = Context
+build obj/clang/lib/AST/Interp/AST.Descriptor.o: cxx ../../clang/lib/AST/Interp/Descriptor.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Descriptor.cpp
+  source_name_part = Descriptor
+build obj/clang/lib/AST/Interp/AST.Disasm.o: cxx ../../clang/lib/AST/Interp/Disasm.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Disasm.cpp
+  source_name_part = Disasm
+build obj/clang/lib/AST/Interp/AST.EvalEmitter.o: cxx ../../clang/lib/AST/Interp/EvalEmitter.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = EvalEmitter.cpp
+  source_name_part = EvalEmitter
+build obj/clang/lib/AST/Interp/AST.Frame.o: cxx ../../clang/lib/AST/Interp/Frame.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Frame.cpp
+  source_name_part = Frame
+build obj/clang/lib/AST/Interp/AST.Function.o: cxx ../../clang/lib/AST/Interp/Function.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Function.cpp
+  source_name_part = Function
+build obj/clang/lib/AST/Interp/AST.Interp.o: cxx ../../clang/lib/AST/Interp/Interp.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Interp.cpp
+  source_name_part = Interp
+build obj/clang/lib/AST/Interp/AST.InterpBlock.o: cxx ../../clang/lib/AST/Interp/InterpBlock.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = InterpBlock.cpp
+  source_name_part = InterpBlock
+build obj/clang/lib/AST/Interp/AST.InterpFrame.o: cxx ../../clang/lib/AST/Interp/InterpFrame.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = InterpFrame.cpp
+  source_name_part = InterpFrame
+build obj/clang/lib/AST/Interp/AST.InterpStack.o: cxx ../../clang/lib/AST/Interp/InterpStack.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = InterpStack.cpp
+  source_name_part = InterpStack
+build obj/clang/lib/AST/Interp/AST.InterpState.o: cxx ../../clang/lib/AST/Interp/InterpState.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = InterpState.cpp
+  source_name_part = InterpState
+build obj/clang/lib/AST/Interp/AST.Pointer.o: cxx ../../clang/lib/AST/Interp/Pointer.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Pointer.cpp
+  source_name_part = Pointer
+build obj/clang/lib/AST/Interp/AST.PrimType.o: cxx ../../clang/lib/AST/Interp/PrimType.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = PrimType.cpp
+  source_name_part = PrimType
+build obj/clang/lib/AST/Interp/AST.Program.o: cxx ../../clang/lib/AST/Interp/Program.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Program.cpp
+  source_name_part = Program
+build obj/clang/lib/AST/Interp/AST.Record.o: cxx ../../clang/lib/AST/Interp/Record.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Record.cpp
+  source_name_part = Record
+build obj/clang/lib/AST/Interp/AST.Source.o: cxx ../../clang/lib/AST/Interp/Source.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Source.cpp
+  source_name_part = Source
+build obj/clang/lib/AST/Interp/AST.State.o: cxx ../../clang/lib/AST/Interp/State.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = State.cpp
+  source_name_part = State
+build obj/clang/lib/AST/AST.ItaniumCXXABI.o: cxx ../../clang/lib/AST/ItaniumCXXABI.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ItaniumCXXABI.cpp
+  source_name_part = ItaniumCXXABI
+build obj/clang/lib/AST/AST.ItaniumMangle.o: cxx ../../clang/lib/AST/ItaniumMangle.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ItaniumMangle.cpp
+  source_name_part = ItaniumMangle
+build obj/clang/lib/AST/AST.JSONNodeDumper.o: cxx ../../clang/lib/AST/JSONNodeDumper.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = JSONNodeDumper.cpp
+  source_name_part = JSONNodeDumper
+build obj/clang/lib/AST/AST.Mangle.o: cxx ../../clang/lib/AST/Mangle.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Mangle.cpp
+  source_name_part = Mangle
+build obj/clang/lib/AST/AST.MicrosoftCXXABI.o: cxx ../../clang/lib/AST/MicrosoftCXXABI.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = MicrosoftCXXABI.cpp
+  source_name_part = MicrosoftCXXABI
+build obj/clang/lib/AST/AST.MicrosoftMangle.o: cxx ../../clang/lib/AST/MicrosoftMangle.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = MicrosoftMangle.cpp
+  source_name_part = MicrosoftMangle
+build obj/clang/lib/AST/AST.NSAPI.o: cxx ../../clang/lib/AST/NSAPI.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = NSAPI.cpp
+  source_name_part = NSAPI
+build obj/clang/lib/AST/AST.NestedNameSpecifier.o: cxx ../../clang/lib/AST/NestedNameSpecifier.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = NestedNameSpecifier.cpp
+  source_name_part = NestedNameSpecifier
+build obj/clang/lib/AST/AST.ODRDiagsEmitter.o: cxx ../../clang/lib/AST/ODRDiagsEmitter.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ODRDiagsEmitter.cpp
+  source_name_part = ODRDiagsEmitter
+build obj/clang/lib/AST/AST.ODRHash.o: cxx ../../clang/lib/AST/ODRHash.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ODRHash.cpp
+  source_name_part = ODRHash
+build obj/clang/lib/AST/AST.OSLog.o: cxx ../../clang/lib/AST/OSLog.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = OSLog.cpp
+  source_name_part = OSLog
+build obj/clang/lib/AST/AST.OpenMPClause.o: cxx ../../clang/lib/AST/OpenMPClause.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = OpenMPClause.cpp
+  source_name_part = OpenMPClause
+build obj/clang/lib/AST/AST.ParentMap.o: cxx ../../clang/lib/AST/ParentMap.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ParentMap.cpp
+  source_name_part = ParentMap
+build obj/clang/lib/AST/AST.ParentMapContext.o: cxx ../../clang/lib/AST/ParentMapContext.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ParentMapContext.cpp
+  source_name_part = ParentMapContext
+build obj/clang/lib/AST/AST.PrintfFormatString.o: cxx ../../clang/lib/AST/PrintfFormatString.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = PrintfFormatString.cpp
+  source_name_part = PrintfFormatString
+build obj/clang/lib/AST/AST.QualTypeNames.o: cxx ../../clang/lib/AST/QualTypeNames.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = QualTypeNames.cpp
+  source_name_part = QualTypeNames
+build obj/clang/lib/AST/AST.Randstruct.o: cxx ../../clang/lib/AST/Randstruct.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Randstruct.cpp
+  source_name_part = Randstruct
+build obj/clang/lib/AST/AST.RawCommentList.o: cxx ../../clang/lib/AST/RawCommentList.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = RawCommentList.cpp
+  source_name_part = RawCommentList
+build obj/clang/lib/AST/AST.RecordLayout.o: cxx ../../clang/lib/AST/RecordLayout.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = RecordLayout.cpp
+  source_name_part = RecordLayout
+build obj/clang/lib/AST/AST.RecordLayoutBuilder.o: cxx ../../clang/lib/AST/RecordLayoutBuilder.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = RecordLayoutBuilder.cpp
+  source_name_part = RecordLayoutBuilder
+build obj/clang/lib/AST/AST.ScanfFormatString.o: cxx ../../clang/lib/AST/ScanfFormatString.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = ScanfFormatString.cpp
+  source_name_part = ScanfFormatString
+build obj/clang/lib/AST/AST.SelectorLocationsKind.o: cxx ../../clang/lib/AST/SelectorLocationsKind.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = SelectorLocationsKind.cpp
+  source_name_part = SelectorLocationsKind
+build obj/clang/lib/AST/AST.Stmt.o: cxx ../../clang/lib/AST/Stmt.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Stmt.cpp
+  source_name_part = Stmt
+build obj/clang/lib/AST/AST.StmtCXX.o: cxx ../../clang/lib/AST/StmtCXX.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = StmtCXX.cpp
+  source_name_part = StmtCXX
+build obj/clang/lib/AST/AST.StmtIterator.o: cxx ../../clang/lib/AST/StmtIterator.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = StmtIterator.cpp
+  source_name_part = StmtIterator
+build obj/clang/lib/AST/AST.StmtObjC.o: cxx ../../clang/lib/AST/StmtObjC.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = StmtObjC.cpp
+  source_name_part = StmtObjC
+build obj/clang/lib/AST/AST.StmtOpenMP.o: cxx ../../clang/lib/AST/StmtOpenMP.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = StmtOpenMP.cpp
+  source_name_part = StmtOpenMP
+build obj/clang/lib/AST/AST.StmtPrinter.o: cxx ../../clang/lib/AST/StmtPrinter.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = StmtPrinter.cpp
+  source_name_part = StmtPrinter
+build obj/clang/lib/AST/AST.StmtProfile.o: cxx ../../clang/lib/AST/StmtProfile.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = StmtProfile.cpp
+  source_name_part = StmtProfile
+build obj/clang/lib/AST/AST.StmtViz.o: cxx ../../clang/lib/AST/StmtViz.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = StmtViz.cpp
+  source_name_part = StmtViz
+build obj/clang/lib/AST/AST.TemplateBase.o: cxx ../../clang/lib/AST/TemplateBase.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = TemplateBase.cpp
+  source_name_part = TemplateBase
+build obj/clang/lib/AST/AST.TemplateName.o: cxx ../../clang/lib/AST/TemplateName.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = TemplateName.cpp
+  source_name_part = TemplateName
+build obj/clang/lib/AST/AST.TextNodeDumper.o: cxx ../../clang/lib/AST/TextNodeDumper.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = TextNodeDumper.cpp
+  source_name_part = TextNodeDumper
+build obj/clang/lib/AST/AST.Type.o: cxx ../../clang/lib/AST/Type.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = Type.cpp
+  source_name_part = Type
+build obj/clang/lib/AST/AST.TypeLoc.o: cxx ../../clang/lib/AST/TypeLoc.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = TypeLoc.cpp
+  source_name_part = TypeLoc
+build obj/clang/lib/AST/AST.TypePrinter.o: cxx ../../clang/lib/AST/TypePrinter.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = TypePrinter.cpp
+  source_name_part = TypePrinter
+build obj/clang/lib/AST/AST.VTTBuilder.o: cxx ../../clang/lib/AST/VTTBuilder.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = VTTBuilder.cpp
+  source_name_part = VTTBuilder
+build obj/clang/lib/AST/AST.VTableBuilder.o: cxx ../../clang/lib/AST/VTableBuilder.cpp || obj/clang/lib/AST/AST.inputdeps.stamp
+  source_file_part = VTableBuilder.cpp
+  source_name_part = VTableBuilder
+
+build ./lib/libclangAST.a: alink obj/clang/lib/AST/AST.APValue.o obj/clang/lib/AST/AST.ASTConcept.o obj/clang/lib/AST/AST.ASTConsumer.o obj/clang/lib/AST/AST.ASTContext.o obj/clang/lib/AST/AST.ASTDiagnostic.o obj/clang/lib/AST/AST.ASTDumper.o obj/clang/lib/AST/AST.ASTImporter.o obj/clang/lib/AST/AST.ASTImporterLookupTable.o obj/clang/lib/AST/AST.ASTStructuralEquivalence.o obj/clang/lib/AST/AST.ASTTypeTraits.o obj/clang/lib/AST/AST.AttrDocTable.o obj/clang/lib/AST/AST.AttrImpl.o obj/clang/lib/AST/AST.CXXInheritance.o obj/clang/lib/AST/AST.Comment.o obj/clang/lib/AST/AST.CommentBriefParser.o obj/clang/lib/AST/AST.CommentCommandTraits.o obj/clang/lib/AST/AST.CommentLexer.o obj/clang/lib/AST/AST.CommentParser.o obj/clang/lib/AST/AST.CommentSema.o obj/clang/lib/AST/AST.ComparisonCategories.o obj/clang/lib/AST/AST.ComputeDependence.o obj/clang/lib/AST/AST.DataCollection.o obj/clang/lib/AST/AST.Decl.o obj/clang/lib/AST/AST.DeclBase.o obj/clang/lib/AST/AST.DeclCXX.o obj/clang/lib/AST/AST.DeclFriend.o obj/clang/lib/AST/AST.DeclGroup.o obj/clang/lib/AST/AST.DeclObjC.o obj/clang/lib/AST/AST.DeclOpenMP.o obj/clang/lib/AST/AST.DeclPrinter.o obj/clang/lib/AST/AST.DeclTemplate.o obj/clang/lib/AST/AST.DeclarationName.o obj/clang/lib/AST/AST.Expr.o obj/clang/lib/AST/AST.ExprCXX.o obj/clang/lib/AST/AST.ExprClassification.o obj/clang/lib/AST/AST.ExprConcepts.o obj/clang/lib/AST/AST.ExprConstant.o obj/clang/lib/AST/AST.ExprObjC.o obj/clang/lib/AST/AST.ExternalASTMerger.o obj/clang/lib/AST/AST.ExternalASTSource.o obj/clang/lib/AST/AST.FormatString.o obj/clang/lib/AST/AST.InheritViz.o obj/clang/lib/AST/Interp/AST.ByteCodeEmitter.o obj/clang/lib/AST/Interp/AST.ByteCodeExprGen.o obj/clang/lib/AST/Interp/AST.ByteCodeGenError.o obj/clang/lib/AST/Interp/AST.ByteCodeStmtGen.o obj/clang/lib/AST/Interp/AST.Context.o obj/clang/lib/AST/Interp/AST.Descriptor.o obj/clang/lib/AST/Interp/AST.Disasm.o obj/clang/lib/AST/Interp/AST.EvalEmitter.o obj/clang/lib/AST/Interp/AST.Frame.o obj/clang/lib/AST/Interp/AST.Function.o obj/clang/lib/AST/Interp/AST.Interp.o obj/clang/lib/AST/Interp/AST.InterpBlock.o obj/clang/lib/AST/Interp/AST.InterpFrame.o obj/clang/lib/AST/Interp/AST.InterpStack.o obj/clang/lib/AST/Interp/AST.InterpState.o obj/clang/lib/AST/Interp/AST.Pointer.o obj/clang/lib/AST/Interp/AST.PrimType.o obj/clang/lib/AST/Interp/AST.Program.o obj/clang/lib/AST/Interp/AST.Record.o obj/clang/lib/AST/Interp/AST.Source.o obj/clang/lib/AST/Interp/AST.State.o obj/clang/lib/AST/AST.ItaniumCXXABI.o obj/clang/lib/AST/AST.ItaniumMangle.o obj/clang/lib/AST/AST.JSONNodeDumper.o obj/clang/lib/AST/AST.Mangle.o obj/clang/lib/AST/AST.MicrosoftCXXABI.o obj/clang/lib/AST/AST.MicrosoftMangle.o obj/clang/lib/AST/AST.NSAPI.o obj/clang/lib/AST/AST.NestedNameSpecifier.o obj/clang/lib/AST/AST.ODRDiagsEmitter.o obj/clang/lib/AST/AST.ODRHash.o obj/clang/lib/AST/AST.OSLog.o obj/clang/lib/AST/AST.OpenMPClause.o obj/clang/lib/AST/AST.ParentMap.o obj/clang/lib/AST/AST.ParentMapContext.o obj/clang/lib/AST/AST.PrintfFormatString.o obj/clang/lib/AST/AST.QualTypeNames.o obj/clang/lib/AST/AST.Randstruct.o obj/clang/lib/AST/AST.RawCommentList.o obj/clang/lib/AST/AST.RecordLayout.o obj/clang/lib/AST/AST.RecordLayoutBuilder.o obj/clang/lib/AST/AST.ScanfFormatString.o obj/clang/lib/AST/AST.SelectorLocationsKind.o obj/clang/lib/AST/AST.Stmt.o obj/clang/lib/AST/AST.StmtCXX.o obj/clang/lib/AST/AST.StmtIterator.o obj/clang/lib/AST/AST.StmtObjC.o obj/clang/lib/AST/AST.StmtOpenMP.o obj/clang/lib/AST/AST.StmtPrinter.o obj/clang/lib/AST/AST.StmtProfile.o obj/clang/lib/AST/AST.StmtViz.o obj/clang/lib/AST/AST.TemplateBase.o obj/clang/lib/AST/AST.TemplateName.o obj/clang/lib/AST/AST.TextNodeDumper.o obj/clang/lib/AST/AST.Type.o obj/clang/lib/AST/AST.TypeLoc.o obj/clang/lib/AST/AST.TypePrinter.o obj/clang/lib/AST/AST.VTTBuilder.o obj/clang/lib/AST/AST.VTableBuilder.o || obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/DeclNodes.stamp ./lib/libclangBasic.a ./lib/libclangLex.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

@@ -1,0 +1,55 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = XRay
+target_output_name = libLLVMXRay
+
+build obj/llvm/lib/XRay/XRay.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/XRay/XRay.BlockIndexer.o: cxx ../../llvm/lib/XRay/BlockIndexer.cpp || obj/llvm/lib/XRay/XRay.inputdeps.stamp
+  source_file_part = BlockIndexer.cpp
+  source_name_part = BlockIndexer
+build obj/llvm/lib/XRay/XRay.BlockPrinter.o: cxx ../../llvm/lib/XRay/BlockPrinter.cpp || obj/llvm/lib/XRay/XRay.inputdeps.stamp
+  source_file_part = BlockPrinter.cpp
+  source_name_part = BlockPrinter
+build obj/llvm/lib/XRay/XRay.BlockVerifier.o: cxx ../../llvm/lib/XRay/BlockVerifier.cpp || obj/llvm/lib/XRay/XRay.inputdeps.stamp
+  source_file_part = BlockVerifier.cpp
+  source_name_part = BlockVerifier
+build obj/llvm/lib/XRay/XRay.FDRRecordProducer.o: cxx ../../llvm/lib/XRay/FDRRecordProducer.cpp || obj/llvm/lib/XRay/XRay.inputdeps.stamp
+  source_file_part = FDRRecordProducer.cpp
+  source_name_part = FDRRecordProducer
+build obj/llvm/lib/XRay/XRay.FDRRecords.o: cxx ../../llvm/lib/XRay/FDRRecords.cpp || obj/llvm/lib/XRay/XRay.inputdeps.stamp
+  source_file_part = FDRRecords.cpp
+  source_name_part = FDRRecords
+build obj/llvm/lib/XRay/XRay.FDRTraceExpander.o: cxx ../../llvm/lib/XRay/FDRTraceExpander.cpp || obj/llvm/lib/XRay/XRay.inputdeps.stamp
+  source_file_part = FDRTraceExpander.cpp
+  source_name_part = FDRTraceExpander
+build obj/llvm/lib/XRay/XRay.FDRTraceWriter.o: cxx ../../llvm/lib/XRay/FDRTraceWriter.cpp || obj/llvm/lib/XRay/XRay.inputdeps.stamp
+  source_file_part = FDRTraceWriter.cpp
+  source_name_part = FDRTraceWriter
+build obj/llvm/lib/XRay/XRay.FileHeaderReader.o: cxx ../../llvm/lib/XRay/FileHeaderReader.cpp || obj/llvm/lib/XRay/XRay.inputdeps.stamp
+  source_file_part = FileHeaderReader.cpp
+  source_name_part = FileHeaderReader
+build obj/llvm/lib/XRay/XRay.InstrumentationMap.o: cxx ../../llvm/lib/XRay/InstrumentationMap.cpp || obj/llvm/lib/XRay/XRay.inputdeps.stamp
+  source_file_part = InstrumentationMap.cpp
+  source_name_part = InstrumentationMap
+build obj/llvm/lib/XRay/XRay.LogBuilderConsumer.o: cxx ../../llvm/lib/XRay/LogBuilderConsumer.cpp || obj/llvm/lib/XRay/XRay.inputdeps.stamp
+  source_file_part = LogBuilderConsumer.cpp
+  source_name_part = LogBuilderConsumer
+build obj/llvm/lib/XRay/XRay.Profile.o: cxx ../../llvm/lib/XRay/Profile.cpp || obj/llvm/lib/XRay/XRay.inputdeps.stamp
+  source_file_part = Profile.cpp
+  source_name_part = Profile
+build obj/llvm/lib/XRay/XRay.RecordInitializer.o: cxx ../../llvm/lib/XRay/RecordInitializer.cpp || obj/llvm/lib/XRay/XRay.inputdeps.stamp
+  source_file_part = RecordInitializer.cpp
+  source_name_part = RecordInitializer
+build obj/llvm/lib/XRay/XRay.RecordPrinter.o: cxx ../../llvm/lib/XRay/RecordPrinter.cpp || obj/llvm/lib/XRay/XRay.inputdeps.stamp
+  source_file_part = RecordPrinter.cpp
+  source_name_part = RecordPrinter
+build obj/llvm/lib/XRay/XRay.Trace.o: cxx ../../llvm/lib/XRay/Trace.cpp || obj/llvm/lib/XRay/XRay.inputdeps.stamp
+  source_file_part = Trace.cpp
+  source_name_part = Trace
+
+build ./lib/libLLVMXRay.a: alink obj/llvm/lib/XRay/XRay.BlockIndexer.o obj/llvm/lib/XRay/XRay.BlockPrinter.o obj/llvm/lib/XRay/XRay.BlockVerifier.o obj/llvm/lib/XRay/XRay.FDRRecordProducer.o obj/llvm/lib/XRay/XRay.FDRRecords.o obj/llvm/lib/XRay/XRay.FDRTraceExpander.o obj/llvm/lib/XRay/XRay.FDRTraceWriter.o obj/llvm/lib/XRay/XRay.FileHeaderReader.o obj/llvm/lib/XRay/XRay.InstrumentationMap.o obj/llvm/lib/XRay/XRay.LogBuilderConsumer.o obj/llvm/lib/XRay/XRay.Profile.o obj/llvm/lib/XRay/XRay.RecordInitializer.o obj/llvm/lib/XRay/XRay.RecordPrinter.o obj/llvm/lib/XRay/XRay.Trace.o || ./lib/libLLVMObject.a ./lib/libLLVMSupport.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

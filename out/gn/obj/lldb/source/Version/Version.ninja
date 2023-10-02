@@ -1,0 +1,15 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../lldb/include -Igen/lldb/include -I../../clang/include -Igen/clang/include -Igen/lldb/source/Version
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Version
+target_output_name = liblldbVersion
+
+build obj/lldb/source/Version/Version.Version.o: cxx ../../lldb/source/Version/Version.cpp || obj/lldb/include/lldb/Version/version.stamp obj/lldb/source/Version/write_vcsversion.stamp
+  source_file_part = Version.cpp
+  source_name_part = Version
+
+build ./lib/liblldbVersion.a: alink obj/lldb/source/Version/Version.Version.o || obj/lldb/include/lldb/Version/version.stamp obj/lldb/source/Version/write_vcsversion.stamp
+  arflags =
+  output_extension = 
+  output_dir = ./lib

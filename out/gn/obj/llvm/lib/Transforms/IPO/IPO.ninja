@@ -1,0 +1,142 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/Frontend/OpenMP -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = IPO
+target_output_name = libLLVMipo
+
+build obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/Transforms/IPO/IPO.AlwaysInliner.o: cxx ../../llvm/lib/Transforms/IPO/AlwaysInliner.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = AlwaysInliner.cpp
+  source_name_part = AlwaysInliner
+build obj/llvm/lib/Transforms/IPO/IPO.Annotation2Metadata.o: cxx ../../llvm/lib/Transforms/IPO/Annotation2Metadata.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = Annotation2Metadata.cpp
+  source_name_part = Annotation2Metadata
+build obj/llvm/lib/Transforms/IPO/IPO.ArgumentPromotion.o: cxx ../../llvm/lib/Transforms/IPO/ArgumentPromotion.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = ArgumentPromotion.cpp
+  source_name_part = ArgumentPromotion
+build obj/llvm/lib/Transforms/IPO/IPO.Attributor.o: cxx ../../llvm/lib/Transforms/IPO/Attributor.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = Attributor.cpp
+  source_name_part = Attributor
+build obj/llvm/lib/Transforms/IPO/IPO.AttributorAttributes.o: cxx ../../llvm/lib/Transforms/IPO/AttributorAttributes.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = AttributorAttributes.cpp
+  source_name_part = AttributorAttributes
+build obj/llvm/lib/Transforms/IPO/IPO.BarrierNoopPass.o: cxx ../../llvm/lib/Transforms/IPO/BarrierNoopPass.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = BarrierNoopPass.cpp
+  source_name_part = BarrierNoopPass
+build obj/llvm/lib/Transforms/IPO/IPO.BlockExtractor.o: cxx ../../llvm/lib/Transforms/IPO/BlockExtractor.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = BlockExtractor.cpp
+  source_name_part = BlockExtractor
+build obj/llvm/lib/Transforms/IPO/IPO.CalledValuePropagation.o: cxx ../../llvm/lib/Transforms/IPO/CalledValuePropagation.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = CalledValuePropagation.cpp
+  source_name_part = CalledValuePropagation
+build obj/llvm/lib/Transforms/IPO/IPO.ConstantMerge.o: cxx ../../llvm/lib/Transforms/IPO/ConstantMerge.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = ConstantMerge.cpp
+  source_name_part = ConstantMerge
+build obj/llvm/lib/Transforms/IPO/IPO.CrossDSOCFI.o: cxx ../../llvm/lib/Transforms/IPO/CrossDSOCFI.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = CrossDSOCFI.cpp
+  source_name_part = CrossDSOCFI
+build obj/llvm/lib/Transforms/IPO/IPO.DeadArgumentElimination.o: cxx ../../llvm/lib/Transforms/IPO/DeadArgumentElimination.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = DeadArgumentElimination.cpp
+  source_name_part = DeadArgumentElimination
+build obj/llvm/lib/Transforms/IPO/IPO.ElimAvailExtern.o: cxx ../../llvm/lib/Transforms/IPO/ElimAvailExtern.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = ElimAvailExtern.cpp
+  source_name_part = ElimAvailExtern
+build obj/llvm/lib/Transforms/IPO/IPO.ExtractGV.o: cxx ../../llvm/lib/Transforms/IPO/ExtractGV.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = ExtractGV.cpp
+  source_name_part = ExtractGV
+build obj/llvm/lib/Transforms/IPO/IPO.ForceFunctionAttrs.o: cxx ../../llvm/lib/Transforms/IPO/ForceFunctionAttrs.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = ForceFunctionAttrs.cpp
+  source_name_part = ForceFunctionAttrs
+build obj/llvm/lib/Transforms/IPO/IPO.FunctionAttrs.o: cxx ../../llvm/lib/Transforms/IPO/FunctionAttrs.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = FunctionAttrs.cpp
+  source_name_part = FunctionAttrs
+build obj/llvm/lib/Transforms/IPO/IPO.FunctionImport.o: cxx ../../llvm/lib/Transforms/IPO/FunctionImport.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = FunctionImport.cpp
+  source_name_part = FunctionImport
+build obj/llvm/lib/Transforms/IPO/IPO.FunctionSpecialization.o: cxx ../../llvm/lib/Transforms/IPO/FunctionSpecialization.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = FunctionSpecialization.cpp
+  source_name_part = FunctionSpecialization
+build obj/llvm/lib/Transforms/IPO/IPO.GlobalDCE.o: cxx ../../llvm/lib/Transforms/IPO/GlobalDCE.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = GlobalDCE.cpp
+  source_name_part = GlobalDCE
+build obj/llvm/lib/Transforms/IPO/IPO.GlobalOpt.o: cxx ../../llvm/lib/Transforms/IPO/GlobalOpt.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = GlobalOpt.cpp
+  source_name_part = GlobalOpt
+build obj/llvm/lib/Transforms/IPO/IPO.GlobalSplit.o: cxx ../../llvm/lib/Transforms/IPO/GlobalSplit.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = GlobalSplit.cpp
+  source_name_part = GlobalSplit
+build obj/llvm/lib/Transforms/IPO/IPO.HotColdSplitting.o: cxx ../../llvm/lib/Transforms/IPO/HotColdSplitting.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = HotColdSplitting.cpp
+  source_name_part = HotColdSplitting
+build obj/llvm/lib/Transforms/IPO/IPO.IPO.o: cxx ../../llvm/lib/Transforms/IPO/IPO.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = IPO.cpp
+  source_name_part = IPO
+build obj/llvm/lib/Transforms/IPO/IPO.IROutliner.o: cxx ../../llvm/lib/Transforms/IPO/IROutliner.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = IROutliner.cpp
+  source_name_part = IROutliner
+build obj/llvm/lib/Transforms/IPO/IPO.InferFunctionAttrs.o: cxx ../../llvm/lib/Transforms/IPO/InferFunctionAttrs.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = InferFunctionAttrs.cpp
+  source_name_part = InferFunctionAttrs
+build obj/llvm/lib/Transforms/IPO/IPO.InlineSimple.o: cxx ../../llvm/lib/Transforms/IPO/InlineSimple.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = InlineSimple.cpp
+  source_name_part = InlineSimple
+build obj/llvm/lib/Transforms/IPO/IPO.Inliner.o: cxx ../../llvm/lib/Transforms/IPO/Inliner.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = Inliner.cpp
+  source_name_part = Inliner
+build obj/llvm/lib/Transforms/IPO/IPO.Internalize.o: cxx ../../llvm/lib/Transforms/IPO/Internalize.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = Internalize.cpp
+  source_name_part = Internalize
+build obj/llvm/lib/Transforms/IPO/IPO.LoopExtractor.o: cxx ../../llvm/lib/Transforms/IPO/LoopExtractor.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = LoopExtractor.cpp
+  source_name_part = LoopExtractor
+build obj/llvm/lib/Transforms/IPO/IPO.LowerTypeTests.o: cxx ../../llvm/lib/Transforms/IPO/LowerTypeTests.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = LowerTypeTests.cpp
+  source_name_part = LowerTypeTests
+build obj/llvm/lib/Transforms/IPO/IPO.MergeFunctions.o: cxx ../../llvm/lib/Transforms/IPO/MergeFunctions.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = MergeFunctions.cpp
+  source_name_part = MergeFunctions
+build obj/llvm/lib/Transforms/IPO/IPO.ModuleInliner.o: cxx ../../llvm/lib/Transforms/IPO/ModuleInliner.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = ModuleInliner.cpp
+  source_name_part = ModuleInliner
+build obj/llvm/lib/Transforms/IPO/IPO.OpenMPOpt.o: cxx ../../llvm/lib/Transforms/IPO/OpenMPOpt.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = OpenMPOpt.cpp
+  source_name_part = OpenMPOpt
+build obj/llvm/lib/Transforms/IPO/IPO.PartialInlining.o: cxx ../../llvm/lib/Transforms/IPO/PartialInlining.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = PartialInlining.cpp
+  source_name_part = PartialInlining
+build obj/llvm/lib/Transforms/IPO/IPO.PassManagerBuilder.o: cxx ../../llvm/lib/Transforms/IPO/PassManagerBuilder.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = PassManagerBuilder.cpp
+  source_name_part = PassManagerBuilder
+build obj/llvm/lib/Transforms/IPO/IPO.SCCP.o: cxx ../../llvm/lib/Transforms/IPO/SCCP.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = SCCP.cpp
+  source_name_part = SCCP
+build obj/llvm/lib/Transforms/IPO/IPO.SampleContextTracker.o: cxx ../../llvm/lib/Transforms/IPO/SampleContextTracker.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = SampleContextTracker.cpp
+  source_name_part = SampleContextTracker
+build obj/llvm/lib/Transforms/IPO/IPO.SampleProfile.o: cxx ../../llvm/lib/Transforms/IPO/SampleProfile.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = SampleProfile.cpp
+  source_name_part = SampleProfile
+build obj/llvm/lib/Transforms/IPO/IPO.SampleProfileProbe.o: cxx ../../llvm/lib/Transforms/IPO/SampleProfileProbe.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = SampleProfileProbe.cpp
+  source_name_part = SampleProfileProbe
+build obj/llvm/lib/Transforms/IPO/IPO.StripDeadPrototypes.o: cxx ../../llvm/lib/Transforms/IPO/StripDeadPrototypes.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = StripDeadPrototypes.cpp
+  source_name_part = StripDeadPrototypes
+build obj/llvm/lib/Transforms/IPO/IPO.StripSymbols.o: cxx ../../llvm/lib/Transforms/IPO/StripSymbols.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = StripSymbols.cpp
+  source_name_part = StripSymbols
+build obj/llvm/lib/Transforms/IPO/IPO.SyntheticCountsPropagation.o: cxx ../../llvm/lib/Transforms/IPO/SyntheticCountsPropagation.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = SyntheticCountsPropagation.cpp
+  source_name_part = SyntheticCountsPropagation
+build obj/llvm/lib/Transforms/IPO/IPO.ThinLTOBitcodeWriter.o: cxx ../../llvm/lib/Transforms/IPO/ThinLTOBitcodeWriter.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = ThinLTOBitcodeWriter.cpp
+  source_name_part = ThinLTOBitcodeWriter
+build obj/llvm/lib/Transforms/IPO/IPO.WholeProgramDevirt.o: cxx ../../llvm/lib/Transforms/IPO/WholeProgramDevirt.cpp || obj/llvm/lib/Transforms/IPO/IPO.inputdeps.stamp
+  source_file_part = WholeProgramDevirt.cpp
+  source_name_part = WholeProgramDevirt
+
+build ./lib/libLLVMipo.a: alink obj/llvm/lib/Transforms/IPO/IPO.AlwaysInliner.o obj/llvm/lib/Transforms/IPO/IPO.Annotation2Metadata.o obj/llvm/lib/Transforms/IPO/IPO.ArgumentPromotion.o obj/llvm/lib/Transforms/IPO/IPO.Attributor.o obj/llvm/lib/Transforms/IPO/IPO.AttributorAttributes.o obj/llvm/lib/Transforms/IPO/IPO.BarrierNoopPass.o obj/llvm/lib/Transforms/IPO/IPO.BlockExtractor.o obj/llvm/lib/Transforms/IPO/IPO.CalledValuePropagation.o obj/llvm/lib/Transforms/IPO/IPO.ConstantMerge.o obj/llvm/lib/Transforms/IPO/IPO.CrossDSOCFI.o obj/llvm/lib/Transforms/IPO/IPO.DeadArgumentElimination.o obj/llvm/lib/Transforms/IPO/IPO.ElimAvailExtern.o obj/llvm/lib/Transforms/IPO/IPO.ExtractGV.o obj/llvm/lib/Transforms/IPO/IPO.ForceFunctionAttrs.o obj/llvm/lib/Transforms/IPO/IPO.FunctionAttrs.o obj/llvm/lib/Transforms/IPO/IPO.FunctionImport.o obj/llvm/lib/Transforms/IPO/IPO.FunctionSpecialization.o obj/llvm/lib/Transforms/IPO/IPO.GlobalDCE.o obj/llvm/lib/Transforms/IPO/IPO.GlobalOpt.o obj/llvm/lib/Transforms/IPO/IPO.GlobalSplit.o obj/llvm/lib/Transforms/IPO/IPO.HotColdSplitting.o obj/llvm/lib/Transforms/IPO/IPO.IPO.o obj/llvm/lib/Transforms/IPO/IPO.IROutliner.o obj/llvm/lib/Transforms/IPO/IPO.InferFunctionAttrs.o obj/llvm/lib/Transforms/IPO/IPO.InlineSimple.o obj/llvm/lib/Transforms/IPO/IPO.Inliner.o obj/llvm/lib/Transforms/IPO/IPO.Internalize.o obj/llvm/lib/Transforms/IPO/IPO.LoopExtractor.o obj/llvm/lib/Transforms/IPO/IPO.LowerTypeTests.o obj/llvm/lib/Transforms/IPO/IPO.MergeFunctions.o obj/llvm/lib/Transforms/IPO/IPO.ModuleInliner.o obj/llvm/lib/Transforms/IPO/IPO.OpenMPOpt.o obj/llvm/lib/Transforms/IPO/IPO.PartialInlining.o obj/llvm/lib/Transforms/IPO/IPO.PassManagerBuilder.o obj/llvm/lib/Transforms/IPO/IPO.SCCP.o obj/llvm/lib/Transforms/IPO/IPO.SampleContextTracker.o obj/llvm/lib/Transforms/IPO/IPO.SampleProfile.o obj/llvm/lib/Transforms/IPO/IPO.SampleProfileProbe.o obj/llvm/lib/Transforms/IPO/IPO.StripDeadPrototypes.o obj/llvm/lib/Transforms/IPO/IPO.StripSymbols.o obj/llvm/lib/Transforms/IPO/IPO.SyntheticCountsPropagation.o obj/llvm/lib/Transforms/IPO/IPO.ThinLTOBitcodeWriter.o obj/llvm/lib/Transforms/IPO/IPO.WholeProgramDevirt.o || ./lib/libLLVMAnalysis.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitWriter.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMIRReader.a ./lib/libLLVMLinker.a ./lib/libLLVMObject.a ./lib/libLLVMProfileData.a ./lib/libLLVMSupport.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMInstrumentation.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMVectorize.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

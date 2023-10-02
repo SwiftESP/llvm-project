@@ -1,0 +1,223 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = MC
+target_output_name = libLLVMMC
+
+build obj/llvm/lib/MC/MC.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/MC/MC.ConstantPools.o: cxx ../../llvm/lib/MC/ConstantPools.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = ConstantPools.cpp
+  source_name_part = ConstantPools
+build obj/llvm/lib/MC/MC.ELFObjectWriter.o: cxx ../../llvm/lib/MC/ELFObjectWriter.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = ELFObjectWriter.cpp
+  source_name_part = ELFObjectWriter
+build obj/llvm/lib/MC/MC.MCAsmBackend.o: cxx ../../llvm/lib/MC/MCAsmBackend.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCAsmBackend.cpp
+  source_name_part = MCAsmBackend
+build obj/llvm/lib/MC/MC.MCAsmInfo.o: cxx ../../llvm/lib/MC/MCAsmInfo.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCAsmInfo.cpp
+  source_name_part = MCAsmInfo
+build obj/llvm/lib/MC/MC.MCAsmInfoCOFF.o: cxx ../../llvm/lib/MC/MCAsmInfoCOFF.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCAsmInfoCOFF.cpp
+  source_name_part = MCAsmInfoCOFF
+build obj/llvm/lib/MC/MC.MCAsmInfoDarwin.o: cxx ../../llvm/lib/MC/MCAsmInfoDarwin.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCAsmInfoDarwin.cpp
+  source_name_part = MCAsmInfoDarwin
+build obj/llvm/lib/MC/MC.MCAsmInfoELF.o: cxx ../../llvm/lib/MC/MCAsmInfoELF.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCAsmInfoELF.cpp
+  source_name_part = MCAsmInfoELF
+build obj/llvm/lib/MC/MC.MCAsmInfoGOFF.o: cxx ../../llvm/lib/MC/MCAsmInfoGOFF.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCAsmInfoGOFF.cpp
+  source_name_part = MCAsmInfoGOFF
+build obj/llvm/lib/MC/MC.MCAsmInfoWasm.o: cxx ../../llvm/lib/MC/MCAsmInfoWasm.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCAsmInfoWasm.cpp
+  source_name_part = MCAsmInfoWasm
+build obj/llvm/lib/MC/MC.MCAsmInfoXCOFF.o: cxx ../../llvm/lib/MC/MCAsmInfoXCOFF.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCAsmInfoXCOFF.cpp
+  source_name_part = MCAsmInfoXCOFF
+build obj/llvm/lib/MC/MC.MCAsmMacro.o: cxx ../../llvm/lib/MC/MCAsmMacro.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCAsmMacro.cpp
+  source_name_part = MCAsmMacro
+build obj/llvm/lib/MC/MC.MCAsmStreamer.o: cxx ../../llvm/lib/MC/MCAsmStreamer.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCAsmStreamer.cpp
+  source_name_part = MCAsmStreamer
+build obj/llvm/lib/MC/MC.MCAssembler.o: cxx ../../llvm/lib/MC/MCAssembler.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCAssembler.cpp
+  source_name_part = MCAssembler
+build obj/llvm/lib/MC/MC.MCCodeEmitter.o: cxx ../../llvm/lib/MC/MCCodeEmitter.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCCodeEmitter.cpp
+  source_name_part = MCCodeEmitter
+build obj/llvm/lib/MC/MC.MCCodeView.o: cxx ../../llvm/lib/MC/MCCodeView.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCCodeView.cpp
+  source_name_part = MCCodeView
+build obj/llvm/lib/MC/MC.MCContext.o: cxx ../../llvm/lib/MC/MCContext.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCContext.cpp
+  source_name_part = MCContext
+build obj/llvm/lib/MC/MC.MCDXContainerStreamer.o: cxx ../../llvm/lib/MC/MCDXContainerStreamer.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCDXContainerStreamer.cpp
+  source_name_part = MCDXContainerStreamer
+build obj/llvm/lib/MC/MC.MCDXContainerWriter.o: cxx ../../llvm/lib/MC/MCDXContainerWriter.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCDXContainerWriter.cpp
+  source_name_part = MCDXContainerWriter
+build obj/llvm/lib/MC/MC.MCDwarf.o: cxx ../../llvm/lib/MC/MCDwarf.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCDwarf.cpp
+  source_name_part = MCDwarf
+build obj/llvm/lib/MC/MC.MCELFObjectTargetWriter.o: cxx ../../llvm/lib/MC/MCELFObjectTargetWriter.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCELFObjectTargetWriter.cpp
+  source_name_part = MCELFObjectTargetWriter
+build obj/llvm/lib/MC/MC.MCELFStreamer.o: cxx ../../llvm/lib/MC/MCELFStreamer.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCELFStreamer.cpp
+  source_name_part = MCELFStreamer
+build obj/llvm/lib/MC/MC.MCExpr.o: cxx ../../llvm/lib/MC/MCExpr.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCExpr.cpp
+  source_name_part = MCExpr
+build obj/llvm/lib/MC/MC.MCFragment.o: cxx ../../llvm/lib/MC/MCFragment.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCFragment.cpp
+  source_name_part = MCFragment
+build obj/llvm/lib/MC/MC.MCInst.o: cxx ../../llvm/lib/MC/MCInst.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCInst.cpp
+  source_name_part = MCInst
+build obj/llvm/lib/MC/MC.MCInstPrinter.o: cxx ../../llvm/lib/MC/MCInstPrinter.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCInstPrinter.cpp
+  source_name_part = MCInstPrinter
+build obj/llvm/lib/MC/MC.MCInstrAnalysis.o: cxx ../../llvm/lib/MC/MCInstrAnalysis.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCInstrAnalysis.cpp
+  source_name_part = MCInstrAnalysis
+build obj/llvm/lib/MC/MC.MCInstrDesc.o: cxx ../../llvm/lib/MC/MCInstrDesc.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCInstrDesc.cpp
+  source_name_part = MCInstrDesc
+build obj/llvm/lib/MC/MC.MCInstrInfo.o: cxx ../../llvm/lib/MC/MCInstrInfo.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCInstrInfo.cpp
+  source_name_part = MCInstrInfo
+build obj/llvm/lib/MC/MC.MCLabel.o: cxx ../../llvm/lib/MC/MCLabel.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCLabel.cpp
+  source_name_part = MCLabel
+build obj/llvm/lib/MC/MC.MCLinkerOptimizationHint.o: cxx ../../llvm/lib/MC/MCLinkerOptimizationHint.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCLinkerOptimizationHint.cpp
+  source_name_part = MCLinkerOptimizationHint
+build obj/llvm/lib/MC/MC.MCMachOStreamer.o: cxx ../../llvm/lib/MC/MCMachOStreamer.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCMachOStreamer.cpp
+  source_name_part = MCMachOStreamer
+build obj/llvm/lib/MC/MC.MCMachObjectTargetWriter.o: cxx ../../llvm/lib/MC/MCMachObjectTargetWriter.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCMachObjectTargetWriter.cpp
+  source_name_part = MCMachObjectTargetWriter
+build obj/llvm/lib/MC/MC.MCNullStreamer.o: cxx ../../llvm/lib/MC/MCNullStreamer.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCNullStreamer.cpp
+  source_name_part = MCNullStreamer
+build obj/llvm/lib/MC/MC.MCObjectFileInfo.o: cxx ../../llvm/lib/MC/MCObjectFileInfo.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCObjectFileInfo.cpp
+  source_name_part = MCObjectFileInfo
+build obj/llvm/lib/MC/MC.MCObjectStreamer.o: cxx ../../llvm/lib/MC/MCObjectStreamer.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCObjectStreamer.cpp
+  source_name_part = MCObjectStreamer
+build obj/llvm/lib/MC/MC.MCObjectWriter.o: cxx ../../llvm/lib/MC/MCObjectWriter.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCObjectWriter.cpp
+  source_name_part = MCObjectWriter
+build obj/llvm/lib/MC/MC.MCPseudoProbe.o: cxx ../../llvm/lib/MC/MCPseudoProbe.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCPseudoProbe.cpp
+  source_name_part = MCPseudoProbe
+build obj/llvm/lib/MC/MC.MCRegisterInfo.o: cxx ../../llvm/lib/MC/MCRegisterInfo.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCRegisterInfo.cpp
+  source_name_part = MCRegisterInfo
+build obj/llvm/lib/MC/MC.MCSPIRVStreamer.o: cxx ../../llvm/lib/MC/MCSPIRVStreamer.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCSPIRVStreamer.cpp
+  source_name_part = MCSPIRVStreamer
+build obj/llvm/lib/MC/MC.MCSchedule.o: cxx ../../llvm/lib/MC/MCSchedule.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCSchedule.cpp
+  source_name_part = MCSchedule
+build obj/llvm/lib/MC/MC.MCSection.o: cxx ../../llvm/lib/MC/MCSection.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCSection.cpp
+  source_name_part = MCSection
+build obj/llvm/lib/MC/MC.MCSectionCOFF.o: cxx ../../llvm/lib/MC/MCSectionCOFF.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCSectionCOFF.cpp
+  source_name_part = MCSectionCOFF
+build obj/llvm/lib/MC/MC.MCSectionDXContainer.o: cxx ../../llvm/lib/MC/MCSectionDXContainer.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCSectionDXContainer.cpp
+  source_name_part = MCSectionDXContainer
+build obj/llvm/lib/MC/MC.MCSectionELF.o: cxx ../../llvm/lib/MC/MCSectionELF.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCSectionELF.cpp
+  source_name_part = MCSectionELF
+build obj/llvm/lib/MC/MC.MCSectionMachO.o: cxx ../../llvm/lib/MC/MCSectionMachO.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCSectionMachO.cpp
+  source_name_part = MCSectionMachO
+build obj/llvm/lib/MC/MC.MCSectionWasm.o: cxx ../../llvm/lib/MC/MCSectionWasm.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCSectionWasm.cpp
+  source_name_part = MCSectionWasm
+build obj/llvm/lib/MC/MC.MCSectionXCOFF.o: cxx ../../llvm/lib/MC/MCSectionXCOFF.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCSectionXCOFF.cpp
+  source_name_part = MCSectionXCOFF
+build obj/llvm/lib/MC/MC.MCStreamer.o: cxx ../../llvm/lib/MC/MCStreamer.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCStreamer.cpp
+  source_name_part = MCStreamer
+build obj/llvm/lib/MC/MC.MCSubtargetInfo.o: cxx ../../llvm/lib/MC/MCSubtargetInfo.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCSubtargetInfo.cpp
+  source_name_part = MCSubtargetInfo
+build obj/llvm/lib/MC/MC.MCSymbol.o: cxx ../../llvm/lib/MC/MCSymbol.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCSymbol.cpp
+  source_name_part = MCSymbol
+build obj/llvm/lib/MC/MC.MCSymbolELF.o: cxx ../../llvm/lib/MC/MCSymbolELF.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCSymbolELF.cpp
+  source_name_part = MCSymbolELF
+build obj/llvm/lib/MC/MC.MCSymbolXCOFF.o: cxx ../../llvm/lib/MC/MCSymbolXCOFF.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCSymbolXCOFF.cpp
+  source_name_part = MCSymbolXCOFF
+build obj/llvm/lib/MC/MC.MCTargetOptions.o: cxx ../../llvm/lib/MC/MCTargetOptions.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCTargetOptions.cpp
+  source_name_part = MCTargetOptions
+build obj/llvm/lib/MC/MC.MCTargetOptionsCommandFlags.o: cxx ../../llvm/lib/MC/MCTargetOptionsCommandFlags.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCTargetOptionsCommandFlags.cpp
+  source_name_part = MCTargetOptionsCommandFlags
+build obj/llvm/lib/MC/MC.MCValue.o: cxx ../../llvm/lib/MC/MCValue.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCValue.cpp
+  source_name_part = MCValue
+build obj/llvm/lib/MC/MC.MCWasmObjectTargetWriter.o: cxx ../../llvm/lib/MC/MCWasmObjectTargetWriter.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCWasmObjectTargetWriter.cpp
+  source_name_part = MCWasmObjectTargetWriter
+build obj/llvm/lib/MC/MC.MCWasmStreamer.o: cxx ../../llvm/lib/MC/MCWasmStreamer.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCWasmStreamer.cpp
+  source_name_part = MCWasmStreamer
+build obj/llvm/lib/MC/MC.MCWin64EH.o: cxx ../../llvm/lib/MC/MCWin64EH.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCWin64EH.cpp
+  source_name_part = MCWin64EH
+build obj/llvm/lib/MC/MC.MCWinCOFFStreamer.o: cxx ../../llvm/lib/MC/MCWinCOFFStreamer.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCWinCOFFStreamer.cpp
+  source_name_part = MCWinCOFFStreamer
+build obj/llvm/lib/MC/MC.MCWinEH.o: cxx ../../llvm/lib/MC/MCWinEH.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCWinEH.cpp
+  source_name_part = MCWinEH
+build obj/llvm/lib/MC/MC.MCXCOFFObjectTargetWriter.o: cxx ../../llvm/lib/MC/MCXCOFFObjectTargetWriter.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCXCOFFObjectTargetWriter.cpp
+  source_name_part = MCXCOFFObjectTargetWriter
+build obj/llvm/lib/MC/MC.MCXCOFFStreamer.o: cxx ../../llvm/lib/MC/MCXCOFFStreamer.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MCXCOFFStreamer.cpp
+  source_name_part = MCXCOFFStreamer
+build obj/llvm/lib/MC/MC.MachObjectWriter.o: cxx ../../llvm/lib/MC/MachObjectWriter.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = MachObjectWriter.cpp
+  source_name_part = MachObjectWriter
+build obj/llvm/lib/MC/MC.SPIRVObjectWriter.o: cxx ../../llvm/lib/MC/SPIRVObjectWriter.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = SPIRVObjectWriter.cpp
+  source_name_part = SPIRVObjectWriter
+build obj/llvm/lib/MC/MC.StringTableBuilder.o: cxx ../../llvm/lib/MC/StringTableBuilder.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = StringTableBuilder.cpp
+  source_name_part = StringTableBuilder
+build obj/llvm/lib/MC/MC.SubtargetFeature.o: cxx ../../llvm/lib/MC/SubtargetFeature.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = SubtargetFeature.cpp
+  source_name_part = SubtargetFeature
+build obj/llvm/lib/MC/MC.TargetRegistry.o: cxx ../../llvm/lib/MC/TargetRegistry.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = TargetRegistry.cpp
+  source_name_part = TargetRegistry
+build obj/llvm/lib/MC/MC.WasmObjectWriter.o: cxx ../../llvm/lib/MC/WasmObjectWriter.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = WasmObjectWriter.cpp
+  source_name_part = WasmObjectWriter
+build obj/llvm/lib/MC/MC.WinCOFFObjectWriter.o: cxx ../../llvm/lib/MC/WinCOFFObjectWriter.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = WinCOFFObjectWriter.cpp
+  source_name_part = WinCOFFObjectWriter
+build obj/llvm/lib/MC/MC.XCOFFObjectWriter.o: cxx ../../llvm/lib/MC/XCOFFObjectWriter.cpp || obj/llvm/lib/MC/MC.inputdeps.stamp
+  source_file_part = XCOFFObjectWriter.cpp
+  source_name_part = XCOFFObjectWriter
+
+build ./lib/libLLVMMC.a: alink obj/llvm/lib/MC/MC.ConstantPools.o obj/llvm/lib/MC/MC.ELFObjectWriter.o obj/llvm/lib/MC/MC.MCAsmBackend.o obj/llvm/lib/MC/MC.MCAsmInfo.o obj/llvm/lib/MC/MC.MCAsmInfoCOFF.o obj/llvm/lib/MC/MC.MCAsmInfoDarwin.o obj/llvm/lib/MC/MC.MCAsmInfoELF.o obj/llvm/lib/MC/MC.MCAsmInfoGOFF.o obj/llvm/lib/MC/MC.MCAsmInfoWasm.o obj/llvm/lib/MC/MC.MCAsmInfoXCOFF.o obj/llvm/lib/MC/MC.MCAsmMacro.o obj/llvm/lib/MC/MC.MCAsmStreamer.o obj/llvm/lib/MC/MC.MCAssembler.o obj/llvm/lib/MC/MC.MCCodeEmitter.o obj/llvm/lib/MC/MC.MCCodeView.o obj/llvm/lib/MC/MC.MCContext.o obj/llvm/lib/MC/MC.MCDXContainerStreamer.o obj/llvm/lib/MC/MC.MCDXContainerWriter.o obj/llvm/lib/MC/MC.MCDwarf.o obj/llvm/lib/MC/MC.MCELFObjectTargetWriter.o obj/llvm/lib/MC/MC.MCELFStreamer.o obj/llvm/lib/MC/MC.MCExpr.o obj/llvm/lib/MC/MC.MCFragment.o obj/llvm/lib/MC/MC.MCInst.o obj/llvm/lib/MC/MC.MCInstPrinter.o obj/llvm/lib/MC/MC.MCInstrAnalysis.o obj/llvm/lib/MC/MC.MCInstrDesc.o obj/llvm/lib/MC/MC.MCInstrInfo.o obj/llvm/lib/MC/MC.MCLabel.o obj/llvm/lib/MC/MC.MCLinkerOptimizationHint.o obj/llvm/lib/MC/MC.MCMachOStreamer.o obj/llvm/lib/MC/MC.MCMachObjectTargetWriter.o obj/llvm/lib/MC/MC.MCNullStreamer.o obj/llvm/lib/MC/MC.MCObjectFileInfo.o obj/llvm/lib/MC/MC.MCObjectStreamer.o obj/llvm/lib/MC/MC.MCObjectWriter.o obj/llvm/lib/MC/MC.MCPseudoProbe.o obj/llvm/lib/MC/MC.MCRegisterInfo.o obj/llvm/lib/MC/MC.MCSPIRVStreamer.o obj/llvm/lib/MC/MC.MCSchedule.o obj/llvm/lib/MC/MC.MCSection.o obj/llvm/lib/MC/MC.MCSectionCOFF.o obj/llvm/lib/MC/MC.MCSectionDXContainer.o obj/llvm/lib/MC/MC.MCSectionELF.o obj/llvm/lib/MC/MC.MCSectionMachO.o obj/llvm/lib/MC/MC.MCSectionWasm.o obj/llvm/lib/MC/MC.MCSectionXCOFF.o obj/llvm/lib/MC/MC.MCStreamer.o obj/llvm/lib/MC/MC.MCSubtargetInfo.o obj/llvm/lib/MC/MC.MCSymbol.o obj/llvm/lib/MC/MC.MCSymbolELF.o obj/llvm/lib/MC/MC.MCSymbolXCOFF.o obj/llvm/lib/MC/MC.MCTargetOptions.o obj/llvm/lib/MC/MC.MCTargetOptionsCommandFlags.o obj/llvm/lib/MC/MC.MCValue.o obj/llvm/lib/MC/MC.MCWasmObjectTargetWriter.o obj/llvm/lib/MC/MC.MCWasmStreamer.o obj/llvm/lib/MC/MC.MCWin64EH.o obj/llvm/lib/MC/MC.MCWinCOFFStreamer.o obj/llvm/lib/MC/MC.MCWinEH.o obj/llvm/lib/MC/MC.MCXCOFFObjectTargetWriter.o obj/llvm/lib/MC/MC.MCXCOFFStreamer.o obj/llvm/lib/MC/MC.MachObjectWriter.o obj/llvm/lib/MC/MC.SPIRVObjectWriter.o obj/llvm/lib/MC/MC.StringTableBuilder.o obj/llvm/lib/MC/MC.SubtargetFeature.o obj/llvm/lib/MC/MC.TargetRegistry.o obj/llvm/lib/MC/MC.WasmObjectWriter.o obj/llvm/lib/MC/MC.WinCOFFObjectWriter.o obj/llvm/lib/MC/MC.XCOFFObjectWriter.o || obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Config/config.stamp ./lib/libLLVMBinaryFormat.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMDebugInfoMSF.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

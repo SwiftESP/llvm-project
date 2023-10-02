@@ -1,0 +1,127 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = IRTests
+target_output_name = IRTests
+
+build obj/llvm/unittests/IR/IRTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/unittests/IR/IRTests.AbstractCallSiteTest.o: cxx ../../llvm/unittests/IR/AbstractCallSiteTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = AbstractCallSiteTest.cpp
+  source_name_part = AbstractCallSiteTest
+build obj/llvm/unittests/IR/IRTests.AsmWriterTest.o: cxx ../../llvm/unittests/IR/AsmWriterTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = AsmWriterTest.cpp
+  source_name_part = AsmWriterTest
+build obj/llvm/unittests/IR/IRTests.AttributesTest.o: cxx ../../llvm/unittests/IR/AttributesTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = AttributesTest.cpp
+  source_name_part = AttributesTest
+build obj/llvm/unittests/IR/IRTests.BasicBlockTest.o: cxx ../../llvm/unittests/IR/BasicBlockTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = BasicBlockTest.cpp
+  source_name_part = BasicBlockTest
+build obj/llvm/unittests/IR/IRTests.CFGBuilder.o: cxx ../../llvm/unittests/IR/CFGBuilder.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = CFGBuilder.cpp
+  source_name_part = CFGBuilder
+build obj/llvm/unittests/IR/IRTests.ConstantRangeTest.o: cxx ../../llvm/unittests/IR/ConstantRangeTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = ConstantRangeTest.cpp
+  source_name_part = ConstantRangeTest
+build obj/llvm/unittests/IR/IRTests.ConstantsTest.o: cxx ../../llvm/unittests/IR/ConstantsTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = ConstantsTest.cpp
+  source_name_part = ConstantsTest
+build obj/llvm/unittests/IR/IRTests.DataLayoutTest.o: cxx ../../llvm/unittests/IR/DataLayoutTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = DataLayoutTest.cpp
+  source_name_part = DataLayoutTest
+build obj/llvm/unittests/IR/IRTests.DebugInfoTest.o: cxx ../../llvm/unittests/IR/DebugInfoTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = DebugInfoTest.cpp
+  source_name_part = DebugInfoTest
+build obj/llvm/unittests/IR/IRTests.DebugTypeODRUniquingTest.o: cxx ../../llvm/unittests/IR/DebugTypeODRUniquingTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = DebugTypeODRUniquingTest.cpp
+  source_name_part = DebugTypeODRUniquingTest
+build obj/llvm/unittests/IR/IRTests.DemandedBitsTest.o: cxx ../../llvm/unittests/IR/DemandedBitsTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = DemandedBitsTest.cpp
+  source_name_part = DemandedBitsTest
+build obj/llvm/unittests/IR/IRTests.DominatorTreeBatchUpdatesTest.o: cxx ../../llvm/unittests/IR/DominatorTreeBatchUpdatesTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = DominatorTreeBatchUpdatesTest.cpp
+  source_name_part = DominatorTreeBatchUpdatesTest
+build obj/llvm/unittests/IR/IRTests.DominatorTreeTest.o: cxx ../../llvm/unittests/IR/DominatorTreeTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = DominatorTreeTest.cpp
+  source_name_part = DominatorTreeTest
+build obj/llvm/unittests/IR/IRTests.FunctionTest.o: cxx ../../llvm/unittests/IR/FunctionTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = FunctionTest.cpp
+  source_name_part = FunctionTest
+build obj/llvm/unittests/IR/IRTests.IRBuilderTest.o: cxx ../../llvm/unittests/IR/IRBuilderTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = IRBuilderTest.cpp
+  source_name_part = IRBuilderTest
+build obj/llvm/unittests/IR/IRTests.InstructionsTest.o: cxx ../../llvm/unittests/IR/InstructionsTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = InstructionsTest.cpp
+  source_name_part = InstructionsTest
+build obj/llvm/unittests/IR/IRTests.IntrinsicsTest.o: cxx ../../llvm/unittests/IR/IntrinsicsTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = IntrinsicsTest.cpp
+  source_name_part = IntrinsicsTest
+build obj/llvm/unittests/IR/IRTests.LegacyPassManagerTest.o: cxx ../../llvm/unittests/IR/LegacyPassManagerTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = LegacyPassManagerTest.cpp
+  source_name_part = LegacyPassManagerTest
+build obj/llvm/unittests/IR/IRTests.MDBuilderTest.o: cxx ../../llvm/unittests/IR/MDBuilderTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = MDBuilderTest.cpp
+  source_name_part = MDBuilderTest
+build obj/llvm/unittests/IR/IRTests.ManglerTest.o: cxx ../../llvm/unittests/IR/ManglerTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = ManglerTest.cpp
+  source_name_part = ManglerTest
+build obj/llvm/unittests/IR/IRTests.MetadataTest.o: cxx ../../llvm/unittests/IR/MetadataTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = MetadataTest.cpp
+  source_name_part = MetadataTest
+build obj/llvm/unittests/IR/IRTests.ModuleTest.o: cxx ../../llvm/unittests/IR/ModuleTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = ModuleTest.cpp
+  source_name_part = ModuleTest
+build obj/llvm/unittests/IR/IRTests.PassBuilderCallbacksTest.o: cxx ../../llvm/unittests/IR/PassBuilderCallbacksTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = PassBuilderCallbacksTest.cpp
+  source_name_part = PassBuilderCallbacksTest
+build obj/llvm/unittests/IR/IRTests.PassManagerTest.o: cxx ../../llvm/unittests/IR/PassManagerTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = PassManagerTest.cpp
+  source_name_part = PassManagerTest
+build obj/llvm/unittests/IR/IRTests.PatternMatch.o: cxx ../../llvm/unittests/IR/PatternMatch.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = PatternMatch.cpp
+  source_name_part = PatternMatch
+build obj/llvm/unittests/IR/IRTests.ShuffleVectorInstTest.o: cxx ../../llvm/unittests/IR/ShuffleVectorInstTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = ShuffleVectorInstTest.cpp
+  source_name_part = ShuffleVectorInstTest
+build obj/llvm/unittests/IR/IRTests.TimePassesTest.o: cxx ../../llvm/unittests/IR/TimePassesTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = TimePassesTest.cpp
+  source_name_part = TimePassesTest
+build obj/llvm/unittests/IR/IRTests.TypesTest.o: cxx ../../llvm/unittests/IR/TypesTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = TypesTest.cpp
+  source_name_part = TypesTest
+build obj/llvm/unittests/IR/IRTests.UseTest.o: cxx ../../llvm/unittests/IR/UseTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = UseTest.cpp
+  source_name_part = UseTest
+build obj/llvm/unittests/IR/IRTests.UserTest.o: cxx ../../llvm/unittests/IR/UserTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = UserTest.cpp
+  source_name_part = UserTest
+build obj/llvm/unittests/IR/IRTests.VPIntrinsicTest.o: cxx ../../llvm/unittests/IR/VPIntrinsicTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = VPIntrinsicTest.cpp
+  source_name_part = VPIntrinsicTest
+build obj/llvm/unittests/IR/IRTests.ValueHandleTest.o: cxx ../../llvm/unittests/IR/ValueHandleTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = ValueHandleTest.cpp
+  source_name_part = ValueHandleTest
+build obj/llvm/unittests/IR/IRTests.ValueMapTest.o: cxx ../../llvm/unittests/IR/ValueMapTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = ValueMapTest.cpp
+  source_name_part = ValueMapTest
+build obj/llvm/unittests/IR/IRTests.ValueTest.o: cxx ../../llvm/unittests/IR/ValueTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = ValueTest.cpp
+  source_name_part = ValueTest
+build obj/llvm/unittests/IR/IRTests.VectorBuilderTest.o: cxx ../../llvm/unittests/IR/VectorBuilderTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = VectorBuilderTest.cpp
+  source_name_part = VectorBuilderTest
+build obj/llvm/unittests/IR/IRTests.VectorTypesTest.o: cxx ../../llvm/unittests/IR/VectorTypesTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = VectorTypesTest.cpp
+  source_name_part = VectorTypesTest
+build obj/llvm/unittests/IR/IRTests.VerifierTest.o: cxx ../../llvm/unittests/IR/VerifierTest.cpp || obj/llvm/unittests/IR/IRTests.inputdeps.stamp
+  source_file_part = VerifierTest.cpp
+  source_name_part = VerifierTest
+
+build obj/llvm/unittests/IR/IRTests: link obj/llvm/unittests/IR/IRTests.AbstractCallSiteTest.o obj/llvm/unittests/IR/IRTests.AsmWriterTest.o obj/llvm/unittests/IR/IRTests.AttributesTest.o obj/llvm/unittests/IR/IRTests.BasicBlockTest.o obj/llvm/unittests/IR/IRTests.CFGBuilder.o obj/llvm/unittests/IR/IRTests.ConstantRangeTest.o obj/llvm/unittests/IR/IRTests.ConstantsTest.o obj/llvm/unittests/IR/IRTests.DataLayoutTest.o obj/llvm/unittests/IR/IRTests.DebugInfoTest.o obj/llvm/unittests/IR/IRTests.DebugTypeODRUniquingTest.o obj/llvm/unittests/IR/IRTests.DemandedBitsTest.o obj/llvm/unittests/IR/IRTests.DominatorTreeBatchUpdatesTest.o obj/llvm/unittests/IR/IRTests.DominatorTreeTest.o obj/llvm/unittests/IR/IRTests.FunctionTest.o obj/llvm/unittests/IR/IRTests.IRBuilderTest.o obj/llvm/unittests/IR/IRTests.InstructionsTest.o obj/llvm/unittests/IR/IRTests.IntrinsicsTest.o obj/llvm/unittests/IR/IRTests.LegacyPassManagerTest.o obj/llvm/unittests/IR/IRTests.MDBuilderTest.o obj/llvm/unittests/IR/IRTests.ManglerTest.o obj/llvm/unittests/IR/IRTests.MetadataTest.o obj/llvm/unittests/IR/IRTests.ModuleTest.o obj/llvm/unittests/IR/IRTests.PassBuilderCallbacksTest.o obj/llvm/unittests/IR/IRTests.PassManagerTest.o obj/llvm/unittests/IR/IRTests.PatternMatch.o obj/llvm/unittests/IR/IRTests.ShuffleVectorInstTest.o obj/llvm/unittests/IR/IRTests.TimePassesTest.o obj/llvm/unittests/IR/IRTests.TypesTest.o obj/llvm/unittests/IR/IRTests.UseTest.o obj/llvm/unittests/IR/IRTests.UserTest.o obj/llvm/unittests/IR/IRTests.VPIntrinsicTest.o obj/llvm/unittests/IR/IRTests.ValueHandleTest.o obj/llvm/unittests/IR/IRTests.ValueMapTest.o obj/llvm/unittests/IR/IRTests.ValueTest.o obj/llvm/unittests/IR/IRTests.VectorBuilderTest.o obj/llvm/unittests/IR/IRTests.VectorTypesTest.o obj/llvm/unittests/IR/IRTests.VerifierTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMAnalysis.a ./lib/libLLVMAsmParser.a ./lib/libLLVMCore.a ./lib/libLLVMPasses.a ./lib/libLLVMSupport.a ./lib/libLLVMTestingSupport.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMCodeGen.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTarget.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMCoroutines.a ./lib/libLLVMipo.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMLinker.a ./lib/libLLVMInstrumentation.a ./lib/libLLVMVectorize.a ./lib/libLLVMObjCARCOpts.a ./lib/libgtest.a || obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/IR

@@ -1,0 +1,226 @@
+defines =
+include_dirs = -I../../lldb/source -I../../llvm/include -Igen/llvm/include -I../../lldb/include -Igen/lldb/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libxml2 -Igen/lldb/source
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = liblldb
+target_output_name = liblldb
+
+build obj/lldb/source/API/liblldb.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_cg.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_cg.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtin_cg.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_cg.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/lldb/include/lldb/Host/Config.stamp obj/lldb/include/lldb/Version/version.stamp obj/lldb/source/Commands/CommandOptions.stamp obj/lldb/source/Core/CoreProperties.stamp obj/lldb/source/Core/CorePropertiesEnum.stamp obj/lldb/source/Interpreter/InterpreterProperties.stamp obj/lldb/source/Interpreter/InterpreterPropertiesEnum.stamp obj/lldb/source/Plugins/Plugins.def.stamp obj/lldb/source/Plugins/DynamicLoader/Darwin-Kernel/DynamicLoaderDarwinKernelProperties.stamp obj/lldb/source/Plugins/DynamicLoader/Darwin-Kernel/DynamicLoaderDarwinKernelPropertiesEnum.stamp obj/lldb/source/Plugins/JITLoader/GDB/JITLoaderGDBProperties.stamp obj/lldb/source/Plugins/JITLoader/GDB/JITLoaderGDBPropertiesEnum.stamp obj/lldb/source/Plugins/ObjectFile/PECOFF/ObjectFilePECOFFProperties.stamp obj/lldb/source/Plugins/ObjectFile/PECOFF/ObjectFilePECOFFPropertiesEnum.stamp obj/lldb/source/Plugins/Platform/MacOSX/PlatformMacOSXProperties.stamp obj/lldb/source/Plugins/Platform/MacOSX/PlatformMacOSXPropertiesEnum.stamp obj/lldb/source/Plugins/Process/gdb-remote/ProcessGDBRemoteProperties.stamp obj/lldb/source/Plugins/Process/gdb-remote/ProcessGDBRemotePropertiesEnum.stamp obj/lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARFProperties.stamp obj/lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARFPropertiesEnum.stamp obj/lldb/source/Target/TargetProperties.stamp obj/lldb/source/Target/TargetPropertiesEnum.stamp obj/lldb/source/Version/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build obj/lldb/source/API/liblldb.SBAddress.o: cxx ../../lldb/source/API/SBAddress.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBAddress.cpp
+  source_name_part = SBAddress
+build obj/lldb/source/API/liblldb.SBAttachInfo.o: cxx ../../lldb/source/API/SBAttachInfo.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBAttachInfo.cpp
+  source_name_part = SBAttachInfo
+build obj/lldb/source/API/liblldb.SBBlock.o: cxx ../../lldb/source/API/SBBlock.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBBlock.cpp
+  source_name_part = SBBlock
+build obj/lldb/source/API/liblldb.SBBreakpoint.o: cxx ../../lldb/source/API/SBBreakpoint.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBBreakpoint.cpp
+  source_name_part = SBBreakpoint
+build obj/lldb/source/API/liblldb.SBBreakpointLocation.o: cxx ../../lldb/source/API/SBBreakpointLocation.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBBreakpointLocation.cpp
+  source_name_part = SBBreakpointLocation
+build obj/lldb/source/API/liblldb.SBBreakpointName.o: cxx ../../lldb/source/API/SBBreakpointName.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBBreakpointName.cpp
+  source_name_part = SBBreakpointName
+build obj/lldb/source/API/liblldb.SBBreakpointOptionCommon.o: cxx ../../lldb/source/API/SBBreakpointOptionCommon.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBBreakpointOptionCommon.cpp
+  source_name_part = SBBreakpointOptionCommon
+build obj/lldb/source/API/liblldb.SBBroadcaster.o: cxx ../../lldb/source/API/SBBroadcaster.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBBroadcaster.cpp
+  source_name_part = SBBroadcaster
+build obj/lldb/source/API/liblldb.SBCommandInterpreter.o: cxx ../../lldb/source/API/SBCommandInterpreter.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBCommandInterpreter.cpp
+  source_name_part = SBCommandInterpreter
+build obj/lldb/source/API/liblldb.SBCommandInterpreterRunOptions.o: cxx ../../lldb/source/API/SBCommandInterpreterRunOptions.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBCommandInterpreterRunOptions.cpp
+  source_name_part = SBCommandInterpreterRunOptions
+build obj/lldb/source/API/liblldb.SBCommandReturnObject.o: cxx ../../lldb/source/API/SBCommandReturnObject.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBCommandReturnObject.cpp
+  source_name_part = SBCommandReturnObject
+build obj/lldb/source/API/liblldb.SBCommunication.o: cxx ../../lldb/source/API/SBCommunication.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBCommunication.cpp
+  source_name_part = SBCommunication
+build obj/lldb/source/API/liblldb.SBCompileUnit.o: cxx ../../lldb/source/API/SBCompileUnit.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBCompileUnit.cpp
+  source_name_part = SBCompileUnit
+build obj/lldb/source/API/liblldb.SBData.o: cxx ../../lldb/source/API/SBData.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBData.cpp
+  source_name_part = SBData
+build obj/lldb/source/API/liblldb.SBDebugger.o: cxx ../../lldb/source/API/SBDebugger.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBDebugger.cpp
+  source_name_part = SBDebugger
+build obj/lldb/source/API/liblldb.SBDeclaration.o: cxx ../../lldb/source/API/SBDeclaration.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBDeclaration.cpp
+  source_name_part = SBDeclaration
+build obj/lldb/source/API/liblldb.SBEnvironment.o: cxx ../../lldb/source/API/SBEnvironment.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBEnvironment.cpp
+  source_name_part = SBEnvironment
+build obj/lldb/source/API/liblldb.SBError.o: cxx ../../lldb/source/API/SBError.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBError.cpp
+  source_name_part = SBError
+build obj/lldb/source/API/liblldb.SBEvent.o: cxx ../../lldb/source/API/SBEvent.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBEvent.cpp
+  source_name_part = SBEvent
+build obj/lldb/source/API/liblldb.SBExecutionContext.o: cxx ../../lldb/source/API/SBExecutionContext.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBExecutionContext.cpp
+  source_name_part = SBExecutionContext
+build obj/lldb/source/API/liblldb.SBExpressionOptions.o: cxx ../../lldb/source/API/SBExpressionOptions.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBExpressionOptions.cpp
+  source_name_part = SBExpressionOptions
+build obj/lldb/source/API/liblldb.SBFile.o: cxx ../../lldb/source/API/SBFile.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBFile.cpp
+  source_name_part = SBFile
+build obj/lldb/source/API/liblldb.SBFileSpec.o: cxx ../../lldb/source/API/SBFileSpec.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBFileSpec.cpp
+  source_name_part = SBFileSpec
+build obj/lldb/source/API/liblldb.SBFileSpecList.o: cxx ../../lldb/source/API/SBFileSpecList.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBFileSpecList.cpp
+  source_name_part = SBFileSpecList
+build obj/lldb/source/API/liblldb.SBFrame.o: cxx ../../lldb/source/API/SBFrame.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBFrame.cpp
+  source_name_part = SBFrame
+build obj/lldb/source/API/liblldb.SBFunction.o: cxx ../../lldb/source/API/SBFunction.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBFunction.cpp
+  source_name_part = SBFunction
+build obj/lldb/source/API/liblldb.SBHostOS.o: cxx ../../lldb/source/API/SBHostOS.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBHostOS.cpp
+  source_name_part = SBHostOS
+build obj/lldb/source/API/liblldb.SBInstruction.o: cxx ../../lldb/source/API/SBInstruction.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBInstruction.cpp
+  source_name_part = SBInstruction
+build obj/lldb/source/API/liblldb.SBInstructionList.o: cxx ../../lldb/source/API/SBInstructionList.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBInstructionList.cpp
+  source_name_part = SBInstructionList
+build obj/lldb/source/API/liblldb.SBLanguageRuntime.o: cxx ../../lldb/source/API/SBLanguageRuntime.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBLanguageRuntime.cpp
+  source_name_part = SBLanguageRuntime
+build obj/lldb/source/API/liblldb.SBLaunchInfo.o: cxx ../../lldb/source/API/SBLaunchInfo.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBLaunchInfo.cpp
+  source_name_part = SBLaunchInfo
+build obj/lldb/source/API/liblldb.SBLineEntry.o: cxx ../../lldb/source/API/SBLineEntry.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBLineEntry.cpp
+  source_name_part = SBLineEntry
+build obj/lldb/source/API/liblldb.SBListener.o: cxx ../../lldb/source/API/SBListener.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBListener.cpp
+  source_name_part = SBListener
+build obj/lldb/source/API/liblldb.SBMemoryRegionInfo.o: cxx ../../lldb/source/API/SBMemoryRegionInfo.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBMemoryRegionInfo.cpp
+  source_name_part = SBMemoryRegionInfo
+build obj/lldb/source/API/liblldb.SBMemoryRegionInfoList.o: cxx ../../lldb/source/API/SBMemoryRegionInfoList.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBMemoryRegionInfoList.cpp
+  source_name_part = SBMemoryRegionInfoList
+build obj/lldb/source/API/liblldb.SBModule.o: cxx ../../lldb/source/API/SBModule.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBModule.cpp
+  source_name_part = SBModule
+build obj/lldb/source/API/liblldb.SBModuleSpec.o: cxx ../../lldb/source/API/SBModuleSpec.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBModuleSpec.cpp
+  source_name_part = SBModuleSpec
+build obj/lldb/source/API/liblldb.SBPlatform.o: cxx ../../lldb/source/API/SBPlatform.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBPlatform.cpp
+  source_name_part = SBPlatform
+build obj/lldb/source/API/liblldb.SBProcess.o: cxx ../../lldb/source/API/SBProcess.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBProcess.cpp
+  source_name_part = SBProcess
+build obj/lldb/source/API/liblldb.SBProcessInfo.o: cxx ../../lldb/source/API/SBProcessInfo.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBProcessInfo.cpp
+  source_name_part = SBProcessInfo
+build obj/lldb/source/API/liblldb.SBQueue.o: cxx ../../lldb/source/API/SBQueue.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBQueue.cpp
+  source_name_part = SBQueue
+build obj/lldb/source/API/liblldb.SBQueueItem.o: cxx ../../lldb/source/API/SBQueueItem.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBQueueItem.cpp
+  source_name_part = SBQueueItem
+build obj/lldb/source/API/liblldb.SBReproducer.o: cxx ../../lldb/source/API/SBReproducer.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBReproducer.cpp
+  source_name_part = SBReproducer
+build obj/lldb/source/API/liblldb.SBSection.o: cxx ../../lldb/source/API/SBSection.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBSection.cpp
+  source_name_part = SBSection
+build obj/lldb/source/API/liblldb.SBSourceManager.o: cxx ../../lldb/source/API/SBSourceManager.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBSourceManager.cpp
+  source_name_part = SBSourceManager
+build obj/lldb/source/API/liblldb.SBStream.o: cxx ../../lldb/source/API/SBStream.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBStream.cpp
+  source_name_part = SBStream
+build obj/lldb/source/API/liblldb.SBStringList.o: cxx ../../lldb/source/API/SBStringList.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBStringList.cpp
+  source_name_part = SBStringList
+build obj/lldb/source/API/liblldb.SBStructuredData.o: cxx ../../lldb/source/API/SBStructuredData.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBStructuredData.cpp
+  source_name_part = SBStructuredData
+build obj/lldb/source/API/liblldb.SBSymbol.o: cxx ../../lldb/source/API/SBSymbol.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBSymbol.cpp
+  source_name_part = SBSymbol
+build obj/lldb/source/API/liblldb.SBSymbolContext.o: cxx ../../lldb/source/API/SBSymbolContext.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBSymbolContext.cpp
+  source_name_part = SBSymbolContext
+build obj/lldb/source/API/liblldb.SBSymbolContextList.o: cxx ../../lldb/source/API/SBSymbolContextList.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBSymbolContextList.cpp
+  source_name_part = SBSymbolContextList
+build obj/lldb/source/API/liblldb.SBTarget.o: cxx ../../lldb/source/API/SBTarget.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBTarget.cpp
+  source_name_part = SBTarget
+build obj/lldb/source/API/liblldb.SBThread.o: cxx ../../lldb/source/API/SBThread.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBThread.cpp
+  source_name_part = SBThread
+build obj/lldb/source/API/liblldb.SBThreadCollection.o: cxx ../../lldb/source/API/SBThreadCollection.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBThreadCollection.cpp
+  source_name_part = SBThreadCollection
+build obj/lldb/source/API/liblldb.SBThreadPlan.o: cxx ../../lldb/source/API/SBThreadPlan.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBThreadPlan.cpp
+  source_name_part = SBThreadPlan
+build obj/lldb/source/API/liblldb.SBTrace.o: cxx ../../lldb/source/API/SBTrace.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBTrace.cpp
+  source_name_part = SBTrace
+build obj/lldb/source/API/liblldb.SBTraceCursor.o: cxx ../../lldb/source/API/SBTraceCursor.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBTraceCursor.cpp
+  source_name_part = SBTraceCursor
+build obj/lldb/source/API/liblldb.SBType.o: cxx ../../lldb/source/API/SBType.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBType.cpp
+  source_name_part = SBType
+build obj/lldb/source/API/liblldb.SBTypeCategory.o: cxx ../../lldb/source/API/SBTypeCategory.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBTypeCategory.cpp
+  source_name_part = SBTypeCategory
+build obj/lldb/source/API/liblldb.SBTypeEnumMember.o: cxx ../../lldb/source/API/SBTypeEnumMember.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBTypeEnumMember.cpp
+  source_name_part = SBTypeEnumMember
+build obj/lldb/source/API/liblldb.SBTypeFilter.o: cxx ../../lldb/source/API/SBTypeFilter.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBTypeFilter.cpp
+  source_name_part = SBTypeFilter
+build obj/lldb/source/API/liblldb.SBTypeFormat.o: cxx ../../lldb/source/API/SBTypeFormat.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBTypeFormat.cpp
+  source_name_part = SBTypeFormat
+build obj/lldb/source/API/liblldb.SBTypeNameSpecifier.o: cxx ../../lldb/source/API/SBTypeNameSpecifier.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBTypeNameSpecifier.cpp
+  source_name_part = SBTypeNameSpecifier
+build obj/lldb/source/API/liblldb.SBTypeSummary.o: cxx ../../lldb/source/API/SBTypeSummary.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBTypeSummary.cpp
+  source_name_part = SBTypeSummary
+build obj/lldb/source/API/liblldb.SBTypeSynthetic.o: cxx ../../lldb/source/API/SBTypeSynthetic.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBTypeSynthetic.cpp
+  source_name_part = SBTypeSynthetic
+build obj/lldb/source/API/liblldb.SBUnixSignals.o: cxx ../../lldb/source/API/SBUnixSignals.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBUnixSignals.cpp
+  source_name_part = SBUnixSignals
+build obj/lldb/source/API/liblldb.SBValue.o: cxx ../../lldb/source/API/SBValue.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBValue.cpp
+  source_name_part = SBValue
+build obj/lldb/source/API/liblldb.SBValueList.o: cxx ../../lldb/source/API/SBValueList.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBValueList.cpp
+  source_name_part = SBValueList
+build obj/lldb/source/API/liblldb.SBVariablesOptions.o: cxx ../../lldb/source/API/SBVariablesOptions.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBVariablesOptions.cpp
+  source_name_part = SBVariablesOptions
+build obj/lldb/source/API/liblldb.SBWatchpoint.o: cxx ../../lldb/source/API/SBWatchpoint.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SBWatchpoint.cpp
+  source_name_part = SBWatchpoint
+build obj/lldb/source/API/liblldb.SystemInitializerFull.o: cxx ../../lldb/source/API/SystemInitializerFull.cpp || obj/lldb/source/API/liblldb.inputdeps.stamp
+  source_file_part = SystemInitializerFull.cpp
+  source_name_part = SystemInitializerFull
+
+build ./lib/liblldb.a: alink obj/lldb/source/API/liblldb.SBAddress.o obj/lldb/source/API/liblldb.SBAttachInfo.o obj/lldb/source/API/liblldb.SBBlock.o obj/lldb/source/API/liblldb.SBBreakpoint.o obj/lldb/source/API/liblldb.SBBreakpointLocation.o obj/lldb/source/API/liblldb.SBBreakpointName.o obj/lldb/source/API/liblldb.SBBreakpointOptionCommon.o obj/lldb/source/API/liblldb.SBBroadcaster.o obj/lldb/source/API/liblldb.SBCommandInterpreter.o obj/lldb/source/API/liblldb.SBCommandInterpreterRunOptions.o obj/lldb/source/API/liblldb.SBCommandReturnObject.o obj/lldb/source/API/liblldb.SBCommunication.o obj/lldb/source/API/liblldb.SBCompileUnit.o obj/lldb/source/API/liblldb.SBData.o obj/lldb/source/API/liblldb.SBDebugger.o obj/lldb/source/API/liblldb.SBDeclaration.o obj/lldb/source/API/liblldb.SBEnvironment.o obj/lldb/source/API/liblldb.SBError.o obj/lldb/source/API/liblldb.SBEvent.o obj/lldb/source/API/liblldb.SBExecutionContext.o obj/lldb/source/API/liblldb.SBExpressionOptions.o obj/lldb/source/API/liblldb.SBFile.o obj/lldb/source/API/liblldb.SBFileSpec.o obj/lldb/source/API/liblldb.SBFileSpecList.o obj/lldb/source/API/liblldb.SBFrame.o obj/lldb/source/API/liblldb.SBFunction.o obj/lldb/source/API/liblldb.SBHostOS.o obj/lldb/source/API/liblldb.SBInstruction.o obj/lldb/source/API/liblldb.SBInstructionList.o obj/lldb/source/API/liblldb.SBLanguageRuntime.o obj/lldb/source/API/liblldb.SBLaunchInfo.o obj/lldb/source/API/liblldb.SBLineEntry.o obj/lldb/source/API/liblldb.SBListener.o obj/lldb/source/API/liblldb.SBMemoryRegionInfo.o obj/lldb/source/API/liblldb.SBMemoryRegionInfoList.o obj/lldb/source/API/liblldb.SBModule.o obj/lldb/source/API/liblldb.SBModuleSpec.o obj/lldb/source/API/liblldb.SBPlatform.o obj/lldb/source/API/liblldb.SBProcess.o obj/lldb/source/API/liblldb.SBProcessInfo.o obj/lldb/source/API/liblldb.SBQueue.o obj/lldb/source/API/liblldb.SBQueueItem.o obj/lldb/source/API/liblldb.SBReproducer.o obj/lldb/source/API/liblldb.SBSection.o obj/lldb/source/API/liblldb.SBSourceManager.o obj/lldb/source/API/liblldb.SBStream.o obj/lldb/source/API/liblldb.SBStringList.o obj/lldb/source/API/liblldb.SBStructuredData.o obj/lldb/source/API/liblldb.SBSymbol.o obj/lldb/source/API/liblldb.SBSymbolContext.o obj/lldb/source/API/liblldb.SBSymbolContextList.o obj/lldb/source/API/liblldb.SBTarget.o obj/lldb/source/API/liblldb.SBThread.o obj/lldb/source/API/liblldb.SBThreadCollection.o obj/lldb/source/API/liblldb.SBThreadPlan.o obj/lldb/source/API/liblldb.SBTrace.o obj/lldb/source/API/liblldb.SBTraceCursor.o obj/lldb/source/API/liblldb.SBType.o obj/lldb/source/API/liblldb.SBTypeCategory.o obj/lldb/source/API/liblldb.SBTypeEnumMember.o obj/lldb/source/API/liblldb.SBTypeFilter.o obj/lldb/source/API/liblldb.SBTypeFormat.o obj/lldb/source/API/liblldb.SBTypeNameSpecifier.o obj/lldb/source/API/liblldb.SBTypeSummary.o obj/lldb/source/API/liblldb.SBTypeSynthetic.o obj/lldb/source/API/liblldb.SBUnixSignals.o obj/lldb/source/API/liblldb.SBValue.o obj/lldb/source/API/liblldb.SBValueList.o obj/lldb/source/API/liblldb.SBVariablesOptions.o obj/lldb/source/API/liblldb.SBWatchpoint.o obj/lldb/source/API/liblldb.SystemInitializerFull.o || obj/lldb/include/lldb/Host/Config.stamp ./lib/liblldbBreakpoint.a ./lib/liblldbCore.a ./lib/liblldbDataFormatters.a ./lib/liblldbExpression.a ./lib/liblldbHost.a ./lib/liblldbInitialization.a ./lib/liblldbInterpreter.a obj/lldb/source/Plugins/LldbAllPlugins.stamp ./lib/liblldbSymbol.a ./lib/liblldbTarget.a ./lib/liblldbUtility.a ./lib/liblldbVersion.a ./bin/lldb-argdumper ./lib/libLLVMSupport.a ./lib/libclangDriver.a ./lib/libclangBasic.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/liblldbHostMacOSXObjCXX.a ./lib/liblldbCommands.a ./lib/liblldbPluginObjectFileJIT.a ./lib/libLLVMExecutionEngine.a ./lib/libLLVMOrcTargetProcess.a ./lib/libLLVMOrcShared.a ./lib/libLLVMTarget.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/liblldbPluginProcessUtility.a ./lib/liblldbPluginProcessGDBRemote.a ./lib/liblldbPluginPlatformMacOSX.a ./lib/liblldbPluginDynamicLoaderDarwinKernel.a ./lib/liblldbPluginObjectContainerMachOFileset.a ./lib/liblldbPluginPlatformPOSIX.a ./lib/liblldbPluginPlatformGDB.a ./lib/liblldbPluginTypeSystemClang.a ./lib/libclangAST.a ./lib/libclangLex.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMTransformUtils.a ./lib/libclangFrontend.a ./lib/libclangEdit.a ./lib/libclangParse.a ./lib/libclangSema.a ./lib/libclangAnalysis.a ./lib/libclangASTMatchers.a ./lib/libclangSupport.a ./lib/libclangSerialization.a ./lib/liblldbPluginExpressionParserClang.a ./lib/libclangCodeGen.a ./lib/libLLVMLTO.a ./lib/libLLVMBitWriter.a ./lib/libLLVMCodeGen.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMExtensions.a ./lib/libLLVMLinker.a ./lib/libLLVMPasses.a ./lib/libLLVMCoroutines.a ./lib/libLLVMipo.a ./lib/libLLVMInstrumentation.a ./lib/libLLVMVectorize.a ./lib/libLLVMObjCARCOpts.a ./lib/libLLVMCoverage.a ./lib/libclangRewriteFrontend.a ./lib/libclangRewrite.a ./lib/liblldbPluginCPPRuntime.a ./lib/liblldbPluginObjCRuntime.a ./lib/liblldbPluginRenderScriptRuntime.a ./lib/libLLVMMCJIT.a ./lib/libLLVMRuntimeDyld.a ./lib/liblldbPluginSymbolFileDWARF.a ./lib/liblldbPluginObjCLanguage.a ./lib/liblldbPluginClangCommon.a ./lib/liblldbPluginAppleObjCRuntime.a ./lib/liblldbPluginSymbolFilePDB.a ./lib/liblldbPluginSymbolFileNativePDB.a ./lib/liblldbPluginObjectFilePDB.a ./lib/liblldbPluginPlatformMacOSXObjCXX.a ./lib/liblldbPluginArchitecturePPC64.a ./lib/liblldbPluginDisassemblerLLVMC.a ./lib/libLLVMMCDisassembler.a ./lib/libLLVMAArch64CodeGen.a ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMAsmPrinter.a ./lib/libLLVMGlobalISel.a ./lib/libLLVMSelectionDAG.a ./lib/libLLVMCFGuard.a ./lib/libLLVMAArch64AsmParser.a ./lib/libLLVMAArch64Disassembler.a ./lib/liblldbPluginDynamicLoaderMacOSXDYLD.a ./lib/liblldbPluginDynamicLoaderPosixDYLD.a ./lib/liblldbPluginDynamicLoaderStatic.a ./lib/liblldbPluginDynamicLoaderWindowsDYLD.a ./lib/liblldbPluginInstructionARM.a ./lib/liblldbPluginJITLoaderGDB.a ./lib/liblldbPluginObjectFileMachO.a ./lib/liblldbPluginCPlusPlusLanguage.a ./lib/liblldbPluginObjCPlusPlusLanguage.a ./lib/liblldbPluginCXXItaniumABI.a ./lib/liblldbPluginObjectContainerBSDArchive.a ./lib/liblldbPluginObjectContainerMachOArchive.a ./lib/liblldbPluginObjectFileBreakpad.a ./lib/liblldbPluginObjectFileELF.a ./lib/liblldbPluginObjectFilePECOFF.a ./lib/liblldbPluginObjectFileWasm.a ./lib/liblldbPluginPlatformLinux.a ./lib/liblldbPluginPlatformWindows.a ./lib/liblldbPluginProcessElfCore.a ./lib/liblldbPluginProcessMachCore.a ./lib/liblldbPluginProcessMinidump.a ./lib/liblldbPluginClangREPL.a ./lib/liblldbPluginScriptInterpreterNone.a ./lib/liblldbPluginSymbolFileBreakpad.a ./lib/liblldbPluginSymbolFileSymtab.a ./lib/liblldbPluginSymbolVendorMacOSX.a ./lib/liblldbPluginSymbolVendorELF.a ./lib/liblldbPluginSymbolVendorWasm.a ./lib/liblldbPluginSymbolVendorPECOFF.a ./lib/liblldbPluginUnwindAssemblyInstEmulation.a ./lib/liblldbPluginUnwindAssemblyX86.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

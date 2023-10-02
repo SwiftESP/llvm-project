@@ -1,0 +1,25 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = MSF
+target_output_name = libLLVMDebugInfoMSF
+
+build obj/llvm/lib/DebugInfo/MSF/MSF.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/DebugInfo/MSF/MSF.MSFBuilder.o: cxx ../../llvm/lib/DebugInfo/MSF/MSFBuilder.cpp || obj/llvm/lib/DebugInfo/MSF/MSF.inputdeps.stamp
+  source_file_part = MSFBuilder.cpp
+  source_name_part = MSFBuilder
+build obj/llvm/lib/DebugInfo/MSF/MSF.MSFCommon.o: cxx ../../llvm/lib/DebugInfo/MSF/MSFCommon.cpp || obj/llvm/lib/DebugInfo/MSF/MSF.inputdeps.stamp
+  source_file_part = MSFCommon.cpp
+  source_name_part = MSFCommon
+build obj/llvm/lib/DebugInfo/MSF/MSF.MSFError.o: cxx ../../llvm/lib/DebugInfo/MSF/MSFError.cpp || obj/llvm/lib/DebugInfo/MSF/MSF.inputdeps.stamp
+  source_file_part = MSFError.cpp
+  source_name_part = MSFError
+build obj/llvm/lib/DebugInfo/MSF/MSF.MappedBlockStream.o: cxx ../../llvm/lib/DebugInfo/MSF/MappedBlockStream.cpp || obj/llvm/lib/DebugInfo/MSF/MSF.inputdeps.stamp
+  source_file_part = MappedBlockStream.cpp
+  source_name_part = MappedBlockStream
+
+build ./lib/libLLVMDebugInfoMSF.a: alink obj/llvm/lib/DebugInfo/MSF/MSF.MSFBuilder.o obj/llvm/lib/DebugInfo/MSF/MSF.MSFCommon.o obj/llvm/lib/DebugInfo/MSF/MSF.MSFError.o obj/llvm/lib/DebugInfo/MSF/MSF.MappedBlockStream.o || ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

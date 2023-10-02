@@ -1,0 +1,181 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = llvm-tblgen
+target_output_name = llvm-tblgen
+
+build obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/utils/TableGen/llvm-tblgen.AsmMatcherEmitter.o: cxx ../../llvm/utils/TableGen/AsmMatcherEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = AsmMatcherEmitter.cpp
+  source_name_part = AsmMatcherEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.AsmWriterEmitter.o: cxx ../../llvm/utils/TableGen/AsmWriterEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = AsmWriterEmitter.cpp
+  source_name_part = AsmWriterEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.AsmWriterInst.o: cxx ../../llvm/utils/TableGen/AsmWriterInst.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = AsmWriterInst.cpp
+  source_name_part = AsmWriterInst
+build obj/llvm/utils/TableGen/llvm-tblgen.Attributes.o: cxx ../../llvm/utils/TableGen/Attributes.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = Attributes.cpp
+  source_name_part = Attributes
+build obj/llvm/utils/TableGen/llvm-tblgen.CTagsEmitter.o: cxx ../../llvm/utils/TableGen/CTagsEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = CTagsEmitter.cpp
+  source_name_part = CTagsEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.CallingConvEmitter.o: cxx ../../llvm/utils/TableGen/CallingConvEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = CallingConvEmitter.cpp
+  source_name_part = CallingConvEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.CodeEmitterGen.o: cxx ../../llvm/utils/TableGen/CodeEmitterGen.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = CodeEmitterGen.cpp
+  source_name_part = CodeEmitterGen
+build obj/llvm/utils/TableGen/llvm-tblgen.CodeGenDAGPatterns.o: cxx ../../llvm/utils/TableGen/CodeGenDAGPatterns.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = CodeGenDAGPatterns.cpp
+  source_name_part = CodeGenDAGPatterns
+build obj/llvm/utils/TableGen/llvm-tblgen.CodeGenHwModes.o: cxx ../../llvm/utils/TableGen/CodeGenHwModes.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = CodeGenHwModes.cpp
+  source_name_part = CodeGenHwModes
+build obj/llvm/utils/TableGen/llvm-tblgen.CodeGenInstruction.o: cxx ../../llvm/utils/TableGen/CodeGenInstruction.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = CodeGenInstruction.cpp
+  source_name_part = CodeGenInstruction
+build obj/llvm/utils/TableGen/llvm-tblgen.CodeGenMapTable.o: cxx ../../llvm/utils/TableGen/CodeGenMapTable.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = CodeGenMapTable.cpp
+  source_name_part = CodeGenMapTable
+build obj/llvm/utils/TableGen/llvm-tblgen.CodeGenRegisters.o: cxx ../../llvm/utils/TableGen/CodeGenRegisters.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = CodeGenRegisters.cpp
+  source_name_part = CodeGenRegisters
+build obj/llvm/utils/TableGen/llvm-tblgen.CodeGenSchedule.o: cxx ../../llvm/utils/TableGen/CodeGenSchedule.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = CodeGenSchedule.cpp
+  source_name_part = CodeGenSchedule
+build obj/llvm/utils/TableGen/llvm-tblgen.CodeGenTarget.o: cxx ../../llvm/utils/TableGen/CodeGenTarget.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = CodeGenTarget.cpp
+  source_name_part = CodeGenTarget
+build obj/llvm/utils/TableGen/llvm-tblgen.CompressInstEmitter.o: cxx ../../llvm/utils/TableGen/CompressInstEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = CompressInstEmitter.cpp
+  source_name_part = CompressInstEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.DAGISelEmitter.o: cxx ../../llvm/utils/TableGen/DAGISelEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = DAGISelEmitter.cpp
+  source_name_part = DAGISelEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.DAGISelMatcher.o: cxx ../../llvm/utils/TableGen/DAGISelMatcher.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = DAGISelMatcher.cpp
+  source_name_part = DAGISelMatcher
+build obj/llvm/utils/TableGen/llvm-tblgen.DAGISelMatcherEmitter.o: cxx ../../llvm/utils/TableGen/DAGISelMatcherEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = DAGISelMatcherEmitter.cpp
+  source_name_part = DAGISelMatcherEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.DAGISelMatcherGen.o: cxx ../../llvm/utils/TableGen/DAGISelMatcherGen.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = DAGISelMatcherGen.cpp
+  source_name_part = DAGISelMatcherGen
+build obj/llvm/utils/TableGen/llvm-tblgen.DAGISelMatcherOpt.o: cxx ../../llvm/utils/TableGen/DAGISelMatcherOpt.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = DAGISelMatcherOpt.cpp
+  source_name_part = DAGISelMatcherOpt
+build obj/llvm/utils/TableGen/llvm-tblgen.DFAEmitter.o: cxx ../../llvm/utils/TableGen/DFAEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = DFAEmitter.cpp
+  source_name_part = DFAEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.DFAPacketizerEmitter.o: cxx ../../llvm/utils/TableGen/DFAPacketizerEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = DFAPacketizerEmitter.cpp
+  source_name_part = DFAPacketizerEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.DXILEmitter.o: cxx ../../llvm/utils/TableGen/DXILEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = DXILEmitter.cpp
+  source_name_part = DXILEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.DecoderEmitter.o: cxx ../../llvm/utils/TableGen/DecoderEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = DecoderEmitter.cpp
+  source_name_part = DecoderEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.DirectiveEmitter.o: cxx ../../llvm/utils/TableGen/DirectiveEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = DirectiveEmitter.cpp
+  source_name_part = DirectiveEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.DisassemblerEmitter.o: cxx ../../llvm/utils/TableGen/DisassemblerEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = DisassemblerEmitter.cpp
+  source_name_part = DisassemblerEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.ExegesisEmitter.o: cxx ../../llvm/utils/TableGen/ExegesisEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = ExegesisEmitter.cpp
+  source_name_part = ExegesisEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.FastISelEmitter.o: cxx ../../llvm/utils/TableGen/FastISelEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = FastISelEmitter.cpp
+  source_name_part = FastISelEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.GICombinerEmitter.o: cxx ../../llvm/utils/TableGen/GICombinerEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = GICombinerEmitter.cpp
+  source_name_part = GICombinerEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.GlobalISelEmitter.o: cxx ../../llvm/utils/TableGen/GlobalISelEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = GlobalISelEmitter.cpp
+  source_name_part = GlobalISelEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.InfoByHwMode.o: cxx ../../llvm/utils/TableGen/InfoByHwMode.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = InfoByHwMode.cpp
+  source_name_part = InfoByHwMode
+build obj/llvm/utils/TableGen/llvm-tblgen.InstrDocsEmitter.o: cxx ../../llvm/utils/TableGen/InstrDocsEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = InstrDocsEmitter.cpp
+  source_name_part = InstrDocsEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.InstrInfoEmitter.o: cxx ../../llvm/utils/TableGen/InstrInfoEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = InstrInfoEmitter.cpp
+  source_name_part = InstrInfoEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.IntrinsicEmitter.o: cxx ../../llvm/utils/TableGen/IntrinsicEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = IntrinsicEmitter.cpp
+  source_name_part = IntrinsicEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.OptEmitter.o: cxx ../../llvm/utils/TableGen/OptEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = OptEmitter.cpp
+  source_name_part = OptEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.OptParserEmitter.o: cxx ../../llvm/utils/TableGen/OptParserEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = OptParserEmitter.cpp
+  source_name_part = OptParserEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.OptRSTEmitter.o: cxx ../../llvm/utils/TableGen/OptRSTEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = OptRSTEmitter.cpp
+  source_name_part = OptRSTEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.PredicateExpander.o: cxx ../../llvm/utils/TableGen/PredicateExpander.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = PredicateExpander.cpp
+  source_name_part = PredicateExpander
+build obj/llvm/utils/TableGen/llvm-tblgen.PseudoLoweringEmitter.o: cxx ../../llvm/utils/TableGen/PseudoLoweringEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = PseudoLoweringEmitter.cpp
+  source_name_part = PseudoLoweringEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.RegisterBankEmitter.o: cxx ../../llvm/utils/TableGen/RegisterBankEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = RegisterBankEmitter.cpp
+  source_name_part = RegisterBankEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.RegisterInfoEmitter.o: cxx ../../llvm/utils/TableGen/RegisterInfoEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = RegisterInfoEmitter.cpp
+  source_name_part = RegisterInfoEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.SDNodeProperties.o: cxx ../../llvm/utils/TableGen/SDNodeProperties.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = SDNodeProperties.cpp
+  source_name_part = SDNodeProperties
+build obj/llvm/utils/TableGen/llvm-tblgen.SearchableTableEmitter.o: cxx ../../llvm/utils/TableGen/SearchableTableEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = SearchableTableEmitter.cpp
+  source_name_part = SearchableTableEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.SubtargetEmitter.o: cxx ../../llvm/utils/TableGen/SubtargetEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = SubtargetEmitter.cpp
+  source_name_part = SubtargetEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.SubtargetFeatureInfo.o: cxx ../../llvm/utils/TableGen/SubtargetFeatureInfo.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = SubtargetFeatureInfo.cpp
+  source_name_part = SubtargetFeatureInfo
+build obj/llvm/utils/TableGen/llvm-tblgen.TableGen.o: cxx ../../llvm/utils/TableGen/TableGen.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = TableGen.cpp
+  source_name_part = TableGen
+build obj/llvm/utils/TableGen/llvm-tblgen.Types.o: cxx ../../llvm/utils/TableGen/Types.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = Types.cpp
+  source_name_part = Types
+build obj/llvm/utils/TableGen/llvm-tblgen.VarLenCodeEmitterGen.o: cxx ../../llvm/utils/TableGen/VarLenCodeEmitterGen.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = VarLenCodeEmitterGen.cpp
+  source_name_part = VarLenCodeEmitterGen
+build obj/llvm/utils/TableGen/llvm-tblgen.WebAssemblyDisassemblerEmitter.o: cxx ../../llvm/utils/TableGen/WebAssemblyDisassemblerEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = WebAssemblyDisassemblerEmitter.cpp
+  source_name_part = WebAssemblyDisassemblerEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.X86DisassemblerTables.o: cxx ../../llvm/utils/TableGen/X86DisassemblerTables.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = X86DisassemblerTables.cpp
+  source_name_part = X86DisassemblerTables
+build obj/llvm/utils/TableGen/llvm-tblgen.X86EVEX2VEXTablesEmitter.o: cxx ../../llvm/utils/TableGen/X86EVEX2VEXTablesEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = X86EVEX2VEXTablesEmitter.cpp
+  source_name_part = X86EVEX2VEXTablesEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.X86FoldTablesEmitter.o: cxx ../../llvm/utils/TableGen/X86FoldTablesEmitter.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = X86FoldTablesEmitter.cpp
+  source_name_part = X86FoldTablesEmitter
+build obj/llvm/utils/TableGen/llvm-tblgen.X86MnemonicTables.o: cxx ../../llvm/utils/TableGen/X86MnemonicTables.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = X86MnemonicTables.cpp
+  source_name_part = X86MnemonicTables
+build obj/llvm/utils/TableGen/llvm-tblgen.X86ModRMFilters.o: cxx ../../llvm/utils/TableGen/X86ModRMFilters.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = X86ModRMFilters.cpp
+  source_name_part = X86ModRMFilters
+build obj/llvm/utils/TableGen/llvm-tblgen.X86RecognizableInstr.o: cxx ../../llvm/utils/TableGen/X86RecognizableInstr.cpp || obj/llvm/utils/TableGen/llvm-tblgen.inputdeps.stamp
+  source_file_part = X86RecognizableInstr.cpp
+  source_name_part = X86RecognizableInstr
+
+build ./bin/llvm-tblgen: link obj/llvm/utils/TableGen/llvm-tblgen.AsmMatcherEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.AsmWriterEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.AsmWriterInst.o obj/llvm/utils/TableGen/llvm-tblgen.Attributes.o obj/llvm/utils/TableGen/llvm-tblgen.CTagsEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.CallingConvEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.CodeEmitterGen.o obj/llvm/utils/TableGen/llvm-tblgen.CodeGenDAGPatterns.o obj/llvm/utils/TableGen/llvm-tblgen.CodeGenHwModes.o obj/llvm/utils/TableGen/llvm-tblgen.CodeGenInstruction.o obj/llvm/utils/TableGen/llvm-tblgen.CodeGenMapTable.o obj/llvm/utils/TableGen/llvm-tblgen.CodeGenRegisters.o obj/llvm/utils/TableGen/llvm-tblgen.CodeGenSchedule.o obj/llvm/utils/TableGen/llvm-tblgen.CodeGenTarget.o obj/llvm/utils/TableGen/llvm-tblgen.CompressInstEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.DAGISelEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.DAGISelMatcher.o obj/llvm/utils/TableGen/llvm-tblgen.DAGISelMatcherEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.DAGISelMatcherGen.o obj/llvm/utils/TableGen/llvm-tblgen.DAGISelMatcherOpt.o obj/llvm/utils/TableGen/llvm-tblgen.DFAEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.DFAPacketizerEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.DXILEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.DecoderEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.DirectiveEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.DisassemblerEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.ExegesisEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.FastISelEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.GICombinerEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.GlobalISelEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.InfoByHwMode.o obj/llvm/utils/TableGen/llvm-tblgen.InstrDocsEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.InstrInfoEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.IntrinsicEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.OptEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.OptParserEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.OptRSTEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.PredicateExpander.o obj/llvm/utils/TableGen/llvm-tblgen.PseudoLoweringEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.RegisterBankEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.RegisterInfoEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.SDNodeProperties.o obj/llvm/utils/TableGen/llvm-tblgen.SearchableTableEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.SubtargetEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.SubtargetFeatureInfo.o obj/llvm/utils/TableGen/llvm-tblgen.TableGen.o obj/llvm/utils/TableGen/llvm-tblgen.Types.o obj/llvm/utils/TableGen/llvm-tblgen.VarLenCodeEmitterGen.o obj/llvm/utils/TableGen/llvm-tblgen.WebAssemblyDisassemblerEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.X86DisassemblerTables.o obj/llvm/utils/TableGen/llvm-tblgen.X86EVEX2VEXTablesEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.X86FoldTablesEmitter.o obj/llvm/utils/TableGen/llvm-tblgen.X86MnemonicTables.o obj/llvm/utils/TableGen/llvm-tblgen.X86ModRMFilters.o obj/llvm/utils/TableGen/llvm-tblgen.X86RecognizableInstr.o ./lib/libLLVMSupport.a ./lib/libLLVMTableGen.a ./lib/libGlobalISel.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a || obj/llvm/include/llvm/Config/llvm-config.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

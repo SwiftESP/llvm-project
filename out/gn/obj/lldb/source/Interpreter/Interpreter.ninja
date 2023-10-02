@@ -1,0 +1,148 @@
+defines =
+include_dirs = -I../../lldb/source -I../../llvm/include -Igen/llvm/include -I../../lldb/include -Igen/lldb/include -Igen/lldb/source/Interpreter -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libxml2
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Interpreter
+target_output_name = liblldbInterpreter
+
+build obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp: stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/lldb/include/lldb/Host/Config.stamp obj/lldb/include/lldb/Version/version.stamp obj/lldb/source/Commands/CommandOptions.stamp obj/lldb/source/Core/CoreProperties.stamp obj/lldb/source/Core/CorePropertiesEnum.stamp obj/lldb/source/Interpreter/InterpreterProperties.stamp obj/lldb/source/Interpreter/InterpreterPropertiesEnum.stamp obj/lldb/source/Version/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/lldb/source/Interpreter/Interpreter.CommandAlias.o: cxx ../../lldb/source/Interpreter/CommandAlias.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = CommandAlias.cpp
+  source_name_part = CommandAlias
+build obj/lldb/source/Interpreter/Interpreter.CommandHistory.o: cxx ../../lldb/source/Interpreter/CommandHistory.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = CommandHistory.cpp
+  source_name_part = CommandHistory
+build obj/lldb/source/Interpreter/Interpreter.CommandInterpreter.o: cxx ../../lldb/source/Interpreter/CommandInterpreter.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = CommandInterpreter.cpp
+  source_name_part = CommandInterpreter
+build obj/lldb/source/Interpreter/Interpreter.CommandObject.o: cxx ../../lldb/source/Interpreter/CommandObject.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = CommandObject.cpp
+  source_name_part = CommandObject
+build obj/lldb/source/Interpreter/Interpreter.CommandOptionValidators.o: cxx ../../lldb/source/Interpreter/CommandOptionValidators.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = CommandOptionValidators.cpp
+  source_name_part = CommandOptionValidators
+build obj/lldb/source/Interpreter/Interpreter.CommandReturnObject.o: cxx ../../lldb/source/Interpreter/CommandReturnObject.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = CommandReturnObject.cpp
+  source_name_part = CommandReturnObject
+build obj/lldb/source/Interpreter/Interpreter.OptionArgParser.o: cxx ../../lldb/source/Interpreter/OptionArgParser.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionArgParser.cpp
+  source_name_part = OptionArgParser
+build obj/lldb/source/Interpreter/Interpreter.OptionGroupArchitecture.o: cxx ../../lldb/source/Interpreter/OptionGroupArchitecture.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionGroupArchitecture.cpp
+  source_name_part = OptionGroupArchitecture
+build obj/lldb/source/Interpreter/Interpreter.OptionGroupBoolean.o: cxx ../../lldb/source/Interpreter/OptionGroupBoolean.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionGroupBoolean.cpp
+  source_name_part = OptionGroupBoolean
+build obj/lldb/source/Interpreter/Interpreter.OptionGroupFile.o: cxx ../../lldb/source/Interpreter/OptionGroupFile.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionGroupFile.cpp
+  source_name_part = OptionGroupFile
+build obj/lldb/source/Interpreter/Interpreter.OptionGroupFormat.o: cxx ../../lldb/source/Interpreter/OptionGroupFormat.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionGroupFormat.cpp
+  source_name_part = OptionGroupFormat
+build obj/lldb/source/Interpreter/Interpreter.OptionGroupMemoryTag.o: cxx ../../lldb/source/Interpreter/OptionGroupMemoryTag.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionGroupMemoryTag.cpp
+  source_name_part = OptionGroupMemoryTag
+build obj/lldb/source/Interpreter/Interpreter.OptionGroupOutputFile.o: cxx ../../lldb/source/Interpreter/OptionGroupOutputFile.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionGroupOutputFile.cpp
+  source_name_part = OptionGroupOutputFile
+build obj/lldb/source/Interpreter/Interpreter.OptionGroupPlatform.o: cxx ../../lldb/source/Interpreter/OptionGroupPlatform.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionGroupPlatform.cpp
+  source_name_part = OptionGroupPlatform
+build obj/lldb/source/Interpreter/Interpreter.OptionGroupPythonClassWithDict.o: cxx ../../lldb/source/Interpreter/OptionGroupPythonClassWithDict.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionGroupPythonClassWithDict.cpp
+  source_name_part = OptionGroupPythonClassWithDict
+build obj/lldb/source/Interpreter/Interpreter.OptionGroupString.o: cxx ../../lldb/source/Interpreter/OptionGroupString.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionGroupString.cpp
+  source_name_part = OptionGroupString
+build obj/lldb/source/Interpreter/Interpreter.OptionGroupUInt64.o: cxx ../../lldb/source/Interpreter/OptionGroupUInt64.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionGroupUInt64.cpp
+  source_name_part = OptionGroupUInt64
+build obj/lldb/source/Interpreter/Interpreter.OptionGroupUUID.o: cxx ../../lldb/source/Interpreter/OptionGroupUUID.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionGroupUUID.cpp
+  source_name_part = OptionGroupUUID
+build obj/lldb/source/Interpreter/Interpreter.OptionGroupValueObjectDisplay.o: cxx ../../lldb/source/Interpreter/OptionGroupValueObjectDisplay.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionGroupValueObjectDisplay.cpp
+  source_name_part = OptionGroupValueObjectDisplay
+build obj/lldb/source/Interpreter/Interpreter.OptionGroupVariable.o: cxx ../../lldb/source/Interpreter/OptionGroupVariable.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionGroupVariable.cpp
+  source_name_part = OptionGroupVariable
+build obj/lldb/source/Interpreter/Interpreter.OptionGroupWatchpoint.o: cxx ../../lldb/source/Interpreter/OptionGroupWatchpoint.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionGroupWatchpoint.cpp
+  source_name_part = OptionGroupWatchpoint
+build obj/lldb/source/Interpreter/Interpreter.OptionValue.o: cxx ../../lldb/source/Interpreter/OptionValue.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValue.cpp
+  source_name_part = OptionValue
+build obj/lldb/source/Interpreter/Interpreter.OptionValueArch.o: cxx ../../lldb/source/Interpreter/OptionValueArch.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueArch.cpp
+  source_name_part = OptionValueArch
+build obj/lldb/source/Interpreter/Interpreter.OptionValueArgs.o: cxx ../../lldb/source/Interpreter/OptionValueArgs.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueArgs.cpp
+  source_name_part = OptionValueArgs
+build obj/lldb/source/Interpreter/Interpreter.OptionValueArray.o: cxx ../../lldb/source/Interpreter/OptionValueArray.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueArray.cpp
+  source_name_part = OptionValueArray
+build obj/lldb/source/Interpreter/Interpreter.OptionValueBoolean.o: cxx ../../lldb/source/Interpreter/OptionValueBoolean.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueBoolean.cpp
+  source_name_part = OptionValueBoolean
+build obj/lldb/source/Interpreter/Interpreter.OptionValueChar.o: cxx ../../lldb/source/Interpreter/OptionValueChar.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueChar.cpp
+  source_name_part = OptionValueChar
+build obj/lldb/source/Interpreter/Interpreter.OptionValueDictionary.o: cxx ../../lldb/source/Interpreter/OptionValueDictionary.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueDictionary.cpp
+  source_name_part = OptionValueDictionary
+build obj/lldb/source/Interpreter/Interpreter.OptionValueEnumeration.o: cxx ../../lldb/source/Interpreter/OptionValueEnumeration.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueEnumeration.cpp
+  source_name_part = OptionValueEnumeration
+build obj/lldb/source/Interpreter/Interpreter.OptionValueFileColonLine.o: cxx ../../lldb/source/Interpreter/OptionValueFileColonLine.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueFileColonLine.cpp
+  source_name_part = OptionValueFileColonLine
+build obj/lldb/source/Interpreter/Interpreter.OptionValueFileSpec.o: cxx ../../lldb/source/Interpreter/OptionValueFileSpec.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueFileSpec.cpp
+  source_name_part = OptionValueFileSpec
+build obj/lldb/source/Interpreter/Interpreter.OptionValueFileSpecList.o: cxx ../../lldb/source/Interpreter/OptionValueFileSpecList.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueFileSpecList.cpp
+  source_name_part = OptionValueFileSpecList
+build obj/lldb/source/Interpreter/Interpreter.OptionValueFormat.o: cxx ../../lldb/source/Interpreter/OptionValueFormat.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueFormat.cpp
+  source_name_part = OptionValueFormat
+build obj/lldb/source/Interpreter/Interpreter.OptionValueFormatEntity.o: cxx ../../lldb/source/Interpreter/OptionValueFormatEntity.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueFormatEntity.cpp
+  source_name_part = OptionValueFormatEntity
+build obj/lldb/source/Interpreter/Interpreter.OptionValueLanguage.o: cxx ../../lldb/source/Interpreter/OptionValueLanguage.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueLanguage.cpp
+  source_name_part = OptionValueLanguage
+build obj/lldb/source/Interpreter/Interpreter.OptionValuePathMappings.o: cxx ../../lldb/source/Interpreter/OptionValuePathMappings.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValuePathMappings.cpp
+  source_name_part = OptionValuePathMappings
+build obj/lldb/source/Interpreter/Interpreter.OptionValueProperties.o: cxx ../../lldb/source/Interpreter/OptionValueProperties.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueProperties.cpp
+  source_name_part = OptionValueProperties
+build obj/lldb/source/Interpreter/Interpreter.OptionValueRegex.o: cxx ../../lldb/source/Interpreter/OptionValueRegex.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueRegex.cpp
+  source_name_part = OptionValueRegex
+build obj/lldb/source/Interpreter/Interpreter.OptionValueSInt64.o: cxx ../../lldb/source/Interpreter/OptionValueSInt64.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueSInt64.cpp
+  source_name_part = OptionValueSInt64
+build obj/lldb/source/Interpreter/Interpreter.OptionValueString.o: cxx ../../lldb/source/Interpreter/OptionValueString.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueString.cpp
+  source_name_part = OptionValueString
+build obj/lldb/source/Interpreter/Interpreter.OptionValueUInt64.o: cxx ../../lldb/source/Interpreter/OptionValueUInt64.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueUInt64.cpp
+  source_name_part = OptionValueUInt64
+build obj/lldb/source/Interpreter/Interpreter.OptionValueUUID.o: cxx ../../lldb/source/Interpreter/OptionValueUUID.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = OptionValueUUID.cpp
+  source_name_part = OptionValueUUID
+build obj/lldb/source/Interpreter/Interpreter.Options.o: cxx ../../lldb/source/Interpreter/Options.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = Options.cpp
+  source_name_part = Options
+build obj/lldb/source/Interpreter/Interpreter.Property.o: cxx ../../lldb/source/Interpreter/Property.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = Property.cpp
+  source_name_part = Property
+build obj/lldb/source/Interpreter/Interpreter.ScriptInterpreter.o: cxx ../../lldb/source/Interpreter/ScriptInterpreter.cpp || obj/lldb/source/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = ScriptInterpreter.cpp
+  source_name_part = ScriptInterpreter
+
+build ./lib/liblldbInterpreter.a: alink obj/lldb/source/Interpreter/Interpreter.CommandAlias.o obj/lldb/source/Interpreter/Interpreter.CommandHistory.o obj/lldb/source/Interpreter/Interpreter.CommandInterpreter.o obj/lldb/source/Interpreter/Interpreter.CommandObject.o obj/lldb/source/Interpreter/Interpreter.CommandOptionValidators.o obj/lldb/source/Interpreter/Interpreter.CommandReturnObject.o obj/lldb/source/Interpreter/Interpreter.OptionArgParser.o obj/lldb/source/Interpreter/Interpreter.OptionGroupArchitecture.o obj/lldb/source/Interpreter/Interpreter.OptionGroupBoolean.o obj/lldb/source/Interpreter/Interpreter.OptionGroupFile.o obj/lldb/source/Interpreter/Interpreter.OptionGroupFormat.o obj/lldb/source/Interpreter/Interpreter.OptionGroupMemoryTag.o obj/lldb/source/Interpreter/Interpreter.OptionGroupOutputFile.o obj/lldb/source/Interpreter/Interpreter.OptionGroupPlatform.o obj/lldb/source/Interpreter/Interpreter.OptionGroupPythonClassWithDict.o obj/lldb/source/Interpreter/Interpreter.OptionGroupString.o obj/lldb/source/Interpreter/Interpreter.OptionGroupUInt64.o obj/lldb/source/Interpreter/Interpreter.OptionGroupUUID.o obj/lldb/source/Interpreter/Interpreter.OptionGroupValueObjectDisplay.o obj/lldb/source/Interpreter/Interpreter.OptionGroupVariable.o obj/lldb/source/Interpreter/Interpreter.OptionGroupWatchpoint.o obj/lldb/source/Interpreter/Interpreter.OptionValue.o obj/lldb/source/Interpreter/Interpreter.OptionValueArch.o obj/lldb/source/Interpreter/Interpreter.OptionValueArgs.o obj/lldb/source/Interpreter/Interpreter.OptionValueArray.o obj/lldb/source/Interpreter/Interpreter.OptionValueBoolean.o obj/lldb/source/Interpreter/Interpreter.OptionValueChar.o obj/lldb/source/Interpreter/Interpreter.OptionValueDictionary.o obj/lldb/source/Interpreter/Interpreter.OptionValueEnumeration.o obj/lldb/source/Interpreter/Interpreter.OptionValueFileColonLine.o obj/lldb/source/Interpreter/Interpreter.OptionValueFileSpec.o obj/lldb/source/Interpreter/Interpreter.OptionValueFileSpecList.o obj/lldb/source/Interpreter/Interpreter.OptionValueFormat.o obj/lldb/source/Interpreter/Interpreter.OptionValueFormatEntity.o obj/lldb/source/Interpreter/Interpreter.OptionValueLanguage.o obj/lldb/source/Interpreter/Interpreter.OptionValuePathMappings.o obj/lldb/source/Interpreter/Interpreter.OptionValueProperties.o obj/lldb/source/Interpreter/Interpreter.OptionValueRegex.o obj/lldb/source/Interpreter/Interpreter.OptionValueSInt64.o obj/lldb/source/Interpreter/Interpreter.OptionValueString.o obj/lldb/source/Interpreter/Interpreter.OptionValueUInt64.o obj/lldb/source/Interpreter/Interpreter.OptionValueUUID.o obj/lldb/source/Interpreter/Interpreter.Options.o obj/lldb/source/Interpreter/Interpreter.Property.o obj/lldb/source/Interpreter/Interpreter.ScriptInterpreter.o || obj/lldb/source/Interpreter/InterpreterProperties.stamp obj/lldb/source/Interpreter/InterpreterPropertiesEnum.stamp ./lib/liblldbCommands.a ./lib/liblldbCore.a ./lib/liblldbDataFormatters.a ./lib/liblldbHost.a ./lib/liblldbUtility.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libclangDriver.a ./lib/libclangBasic.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/liblldbHostMacOSXObjCXX.a ./lib/liblldbVersion.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

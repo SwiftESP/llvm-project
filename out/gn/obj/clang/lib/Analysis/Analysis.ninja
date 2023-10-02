@@ -1,0 +1,97 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Analysis
+target_output_name = libclangAnalysis
+
+build obj/clang/lib/Analysis/Analysis.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang/lib/Analysis/Analysis.AnalysisDeclContext.o: cxx ../../clang/lib/Analysis/AnalysisDeclContext.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = AnalysisDeclContext.cpp
+  source_name_part = AnalysisDeclContext
+build obj/clang/lib/Analysis/Analysis.BodyFarm.o: cxx ../../clang/lib/Analysis/BodyFarm.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = BodyFarm.cpp
+  source_name_part = BodyFarm
+build obj/clang/lib/Analysis/Analysis.CFG.o: cxx ../../clang/lib/Analysis/CFG.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CFG.cpp
+  source_name_part = CFG
+build obj/clang/lib/Analysis/Analysis.CFGReachabilityAnalysis.o: cxx ../../clang/lib/Analysis/CFGReachabilityAnalysis.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CFGReachabilityAnalysis.cpp
+  source_name_part = CFGReachabilityAnalysis
+build obj/clang/lib/Analysis/Analysis.CFGStmtMap.o: cxx ../../clang/lib/Analysis/CFGStmtMap.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CFGStmtMap.cpp
+  source_name_part = CFGStmtMap
+build obj/clang/lib/Analysis/Analysis.CallGraph.o: cxx ../../clang/lib/Analysis/CallGraph.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CallGraph.cpp
+  source_name_part = CallGraph
+build obj/clang/lib/Analysis/Analysis.CalledOnceCheck.o: cxx ../../clang/lib/Analysis/CalledOnceCheck.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CalledOnceCheck.cpp
+  source_name_part = CalledOnceCheck
+build obj/clang/lib/Analysis/Analysis.CloneDetection.o: cxx ../../clang/lib/Analysis/CloneDetection.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CloneDetection.cpp
+  source_name_part = CloneDetection
+build obj/clang/lib/Analysis/Analysis.CocoaConventions.o: cxx ../../clang/lib/Analysis/CocoaConventions.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CocoaConventions.cpp
+  source_name_part = CocoaConventions
+build obj/clang/lib/Analysis/Analysis.CodeInjector.o: cxx ../../clang/lib/Analysis/CodeInjector.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CodeInjector.cpp
+  source_name_part = CodeInjector
+build obj/clang/lib/Analysis/Analysis.ConstructionContext.o: cxx ../../clang/lib/Analysis/ConstructionContext.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ConstructionContext.cpp
+  source_name_part = ConstructionContext
+build obj/clang/lib/Analysis/Analysis.Consumed.o: cxx ../../clang/lib/Analysis/Consumed.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = Consumed.cpp
+  source_name_part = Consumed
+build obj/clang/lib/Analysis/Analysis.Dominators.o: cxx ../../clang/lib/Analysis/Dominators.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = Dominators.cpp
+  source_name_part = Dominators
+build obj/clang/lib/Analysis/Analysis.ExprMutationAnalyzer.o: cxx ../../clang/lib/Analysis/ExprMutationAnalyzer.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ExprMutationAnalyzer.cpp
+  source_name_part = ExprMutationAnalyzer
+build obj/clang/lib/Analysis/Analysis.IssueHash.o: cxx ../../clang/lib/Analysis/IssueHash.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = IssueHash.cpp
+  source_name_part = IssueHash
+build obj/clang/lib/Analysis/Analysis.LiveVariables.o: cxx ../../clang/lib/Analysis/LiveVariables.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = LiveVariables.cpp
+  source_name_part = LiveVariables
+build obj/clang/lib/Analysis/Analysis.MacroExpansionContext.o: cxx ../../clang/lib/Analysis/MacroExpansionContext.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = MacroExpansionContext.cpp
+  source_name_part = MacroExpansionContext
+build obj/clang/lib/Analysis/Analysis.ObjCNoReturn.o: cxx ../../clang/lib/Analysis/ObjCNoReturn.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ObjCNoReturn.cpp
+  source_name_part = ObjCNoReturn
+build obj/clang/lib/Analysis/Analysis.PathDiagnostic.o: cxx ../../clang/lib/Analysis/PathDiagnostic.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = PathDiagnostic.cpp
+  source_name_part = PathDiagnostic
+build obj/clang/lib/Analysis/Analysis.PostOrderCFGView.o: cxx ../../clang/lib/Analysis/PostOrderCFGView.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = PostOrderCFGView.cpp
+  source_name_part = PostOrderCFGView
+build obj/clang/lib/Analysis/Analysis.ProgramPoint.o: cxx ../../clang/lib/Analysis/ProgramPoint.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ProgramPoint.cpp
+  source_name_part = ProgramPoint
+build obj/clang/lib/Analysis/Analysis.ReachableCode.o: cxx ../../clang/lib/Analysis/ReachableCode.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ReachableCode.cpp
+  source_name_part = ReachableCode
+build obj/clang/lib/Analysis/Analysis.RetainSummaryManager.o: cxx ../../clang/lib/Analysis/RetainSummaryManager.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = RetainSummaryManager.cpp
+  source_name_part = RetainSummaryManager
+build obj/clang/lib/Analysis/Analysis.ThreadSafety.o: cxx ../../clang/lib/Analysis/ThreadSafety.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ThreadSafety.cpp
+  source_name_part = ThreadSafety
+build obj/clang/lib/Analysis/Analysis.ThreadSafetyCommon.o: cxx ../../clang/lib/Analysis/ThreadSafetyCommon.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ThreadSafetyCommon.cpp
+  source_name_part = ThreadSafetyCommon
+build obj/clang/lib/Analysis/Analysis.ThreadSafetyLogical.o: cxx ../../clang/lib/Analysis/ThreadSafetyLogical.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ThreadSafetyLogical.cpp
+  source_name_part = ThreadSafetyLogical
+build obj/clang/lib/Analysis/Analysis.ThreadSafetyTIL.o: cxx ../../clang/lib/Analysis/ThreadSafetyTIL.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ThreadSafetyTIL.cpp
+  source_name_part = ThreadSafetyTIL
+build obj/clang/lib/Analysis/Analysis.UninitializedValues.o: cxx ../../clang/lib/Analysis/UninitializedValues.cpp || obj/clang/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = UninitializedValues.cpp
+  source_name_part = UninitializedValues
+
+build ./lib/libclangAnalysis.a: alink obj/clang/lib/Analysis/Analysis.AnalysisDeclContext.o obj/clang/lib/Analysis/Analysis.BodyFarm.o obj/clang/lib/Analysis/Analysis.CFG.o obj/clang/lib/Analysis/Analysis.CFGReachabilityAnalysis.o obj/clang/lib/Analysis/Analysis.CFGStmtMap.o obj/clang/lib/Analysis/Analysis.CallGraph.o obj/clang/lib/Analysis/Analysis.CalledOnceCheck.o obj/clang/lib/Analysis/Analysis.CloneDetection.o obj/clang/lib/Analysis/Analysis.CocoaConventions.o obj/clang/lib/Analysis/Analysis.CodeInjector.o obj/clang/lib/Analysis/Analysis.ConstructionContext.o obj/clang/lib/Analysis/Analysis.Consumed.o obj/clang/lib/Analysis/Analysis.Dominators.o obj/clang/lib/Analysis/Analysis.ExprMutationAnalyzer.o obj/clang/lib/Analysis/Analysis.IssueHash.o obj/clang/lib/Analysis/Analysis.LiveVariables.o obj/clang/lib/Analysis/Analysis.MacroExpansionContext.o obj/clang/lib/Analysis/Analysis.ObjCNoReturn.o obj/clang/lib/Analysis/Analysis.PathDiagnostic.o obj/clang/lib/Analysis/Analysis.PostOrderCFGView.o obj/clang/lib/Analysis/Analysis.ProgramPoint.o obj/clang/lib/Analysis/Analysis.ReachableCode.o obj/clang/lib/Analysis/Analysis.RetainSummaryManager.o obj/clang/lib/Analysis/Analysis.ThreadSafety.o obj/clang/lib/Analysis/Analysis.ThreadSafetyCommon.o obj/clang/lib/Analysis/Analysis.ThreadSafetyLogical.o obj/clang/lib/Analysis/Analysis.ThreadSafetyTIL.o obj/clang/lib/Analysis/Analysis.UninitializedValues.o || obj/clang/include/clang/AST/StmtDataCollectors.stamp ./lib/libclangAST.a ./lib/libclangASTMatchers.a ./lib/libclangBasic.a ./lib/libclangLex.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

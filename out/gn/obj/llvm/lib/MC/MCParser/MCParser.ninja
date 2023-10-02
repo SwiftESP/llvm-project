@@ -1,0 +1,55 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = MCParser
+target_output_name = libLLVMMCParser
+
+build obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/MC/MCParser/MCParser.AsmLexer.o: cxx ../../llvm/lib/MC/MCParser/AsmLexer.cpp || obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp
+  source_file_part = AsmLexer.cpp
+  source_name_part = AsmLexer
+build obj/llvm/lib/MC/MCParser/MCParser.AsmParser.o: cxx ../../llvm/lib/MC/MCParser/AsmParser.cpp || obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp
+  source_file_part = AsmParser.cpp
+  source_name_part = AsmParser
+build obj/llvm/lib/MC/MCParser/MCParser.COFFAsmParser.o: cxx ../../llvm/lib/MC/MCParser/COFFAsmParser.cpp || obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp
+  source_file_part = COFFAsmParser.cpp
+  source_name_part = COFFAsmParser
+build obj/llvm/lib/MC/MCParser/MCParser.COFFMasmParser.o: cxx ../../llvm/lib/MC/MCParser/COFFMasmParser.cpp || obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp
+  source_file_part = COFFMasmParser.cpp
+  source_name_part = COFFMasmParser
+build obj/llvm/lib/MC/MCParser/MCParser.DarwinAsmParser.o: cxx ../../llvm/lib/MC/MCParser/DarwinAsmParser.cpp || obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp
+  source_file_part = DarwinAsmParser.cpp
+  source_name_part = DarwinAsmParser
+build obj/llvm/lib/MC/MCParser/MCParser.ELFAsmParser.o: cxx ../../llvm/lib/MC/MCParser/ELFAsmParser.cpp || obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp
+  source_file_part = ELFAsmParser.cpp
+  source_name_part = ELFAsmParser
+build obj/llvm/lib/MC/MCParser/MCParser.GOFFAsmParser.o: cxx ../../llvm/lib/MC/MCParser/GOFFAsmParser.cpp || obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp
+  source_file_part = GOFFAsmParser.cpp
+  source_name_part = GOFFAsmParser
+build obj/llvm/lib/MC/MCParser/MCParser.MCAsmLexer.o: cxx ../../llvm/lib/MC/MCParser/MCAsmLexer.cpp || obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp
+  source_file_part = MCAsmLexer.cpp
+  source_name_part = MCAsmLexer
+build obj/llvm/lib/MC/MCParser/MCParser.MCAsmParser.o: cxx ../../llvm/lib/MC/MCParser/MCAsmParser.cpp || obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp
+  source_file_part = MCAsmParser.cpp
+  source_name_part = MCAsmParser
+build obj/llvm/lib/MC/MCParser/MCParser.MCAsmParserExtension.o: cxx ../../llvm/lib/MC/MCParser/MCAsmParserExtension.cpp || obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp
+  source_file_part = MCAsmParserExtension.cpp
+  source_name_part = MCAsmParserExtension
+build obj/llvm/lib/MC/MCParser/MCParser.MCTargetAsmParser.o: cxx ../../llvm/lib/MC/MCParser/MCTargetAsmParser.cpp || obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp
+  source_file_part = MCTargetAsmParser.cpp
+  source_name_part = MCTargetAsmParser
+build obj/llvm/lib/MC/MCParser/MCParser.MasmParser.o: cxx ../../llvm/lib/MC/MCParser/MasmParser.cpp || obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp
+  source_file_part = MasmParser.cpp
+  source_name_part = MasmParser
+build obj/llvm/lib/MC/MCParser/MCParser.WasmAsmParser.o: cxx ../../llvm/lib/MC/MCParser/WasmAsmParser.cpp || obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp
+  source_file_part = WasmAsmParser.cpp
+  source_name_part = WasmAsmParser
+build obj/llvm/lib/MC/MCParser/MCParser.XCOFFAsmParser.o: cxx ../../llvm/lib/MC/MCParser/XCOFFAsmParser.cpp || obj/llvm/lib/MC/MCParser/MCParser.inputdeps.stamp
+  source_file_part = XCOFFAsmParser.cpp
+  source_name_part = XCOFFAsmParser
+
+build ./lib/libLLVMMCParser.a: alink obj/llvm/lib/MC/MCParser/MCParser.AsmLexer.o obj/llvm/lib/MC/MCParser/MCParser.AsmParser.o obj/llvm/lib/MC/MCParser/MCParser.COFFAsmParser.o obj/llvm/lib/MC/MCParser/MCParser.COFFMasmParser.o obj/llvm/lib/MC/MCParser/MCParser.DarwinAsmParser.o obj/llvm/lib/MC/MCParser/MCParser.ELFAsmParser.o obj/llvm/lib/MC/MCParser/MCParser.GOFFAsmParser.o obj/llvm/lib/MC/MCParser/MCParser.MCAsmLexer.o obj/llvm/lib/MC/MCParser/MCParser.MCAsmParser.o obj/llvm/lib/MC/MCParser/MCParser.MCAsmParserExtension.o obj/llvm/lib/MC/MCParser/MCParser.MCTargetAsmParser.o obj/llvm/lib/MC/MCParser/MCParser.MasmParser.o obj/llvm/lib/MC/MCParser/MCParser.WasmAsmParser.o obj/llvm/lib/MC/MCParser/MCParser.XCOFFAsmParser.o || ./lib/libLLVMMC.a ./lib/libLLVMSupport.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

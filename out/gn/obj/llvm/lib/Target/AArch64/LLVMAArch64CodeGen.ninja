@@ -1,0 +1,181 @@
+defines =
+include_dirs = -I../../llvm/lib/Target/AArch64 -I../../llvm/include -Igen/llvm/include -Igen/llvm/lib/Target/AArch64 -Igen/llvm/lib/Target/AArch64/AsmParser -Igen/llvm/lib/Target/AArch64/MCTargetDesc -Igen/llvm/lib/Target/AArch64/Utils -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = LLVMAArch64CodeGen
+target_output_name = libLLVMAArch64CodeGen
+
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64A53Fix835769.o: cxx ../../llvm/lib/Target/AArch64/AArch64A53Fix835769.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64A53Fix835769.cpp
+  source_name_part = AArch64A53Fix835769
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64A57FPLoadBalancing.o: cxx ../../llvm/lib/Target/AArch64/AArch64A57FPLoadBalancing.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64A57FPLoadBalancing.cpp
+  source_name_part = AArch64A57FPLoadBalancing
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64AdvSIMDScalarPass.o: cxx ../../llvm/lib/Target/AArch64/AArch64AdvSIMDScalarPass.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64AdvSIMDScalarPass.cpp
+  source_name_part = AArch64AdvSIMDScalarPass
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64AsmPrinter.o: cxx ../../llvm/lib/Target/AArch64/AArch64AsmPrinter.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64AsmPrinter.cpp
+  source_name_part = AArch64AsmPrinter
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64BranchTargets.o: cxx ../../llvm/lib/Target/AArch64/AArch64BranchTargets.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64BranchTargets.cpp
+  source_name_part = AArch64BranchTargets
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64CallingConvention.o: cxx ../../llvm/lib/Target/AArch64/AArch64CallingConvention.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64CallingConvention.cpp
+  source_name_part = AArch64CallingConvention
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64CleanupLocalDynamicTLSPass.o: cxx ../../llvm/lib/Target/AArch64/AArch64CleanupLocalDynamicTLSPass.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64CleanupLocalDynamicTLSPass.cpp
+  source_name_part = AArch64CleanupLocalDynamicTLSPass
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64CollectLOH.o: cxx ../../llvm/lib/Target/AArch64/AArch64CollectLOH.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64CollectLOH.cpp
+  source_name_part = AArch64CollectLOH
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64CompressJumpTables.o: cxx ../../llvm/lib/Target/AArch64/AArch64CompressJumpTables.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64CompressJumpTables.cpp
+  source_name_part = AArch64CompressJumpTables
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64CondBrTuning.o: cxx ../../llvm/lib/Target/AArch64/AArch64CondBrTuning.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64CondBrTuning.cpp
+  source_name_part = AArch64CondBrTuning
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64ConditionOptimizer.o: cxx ../../llvm/lib/Target/AArch64/AArch64ConditionOptimizer.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64ConditionOptimizer.cpp
+  source_name_part = AArch64ConditionOptimizer
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64ConditionalCompares.o: cxx ../../llvm/lib/Target/AArch64/AArch64ConditionalCompares.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64ConditionalCompares.cpp
+  source_name_part = AArch64ConditionalCompares
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64DeadRegisterDefinitionsPass.o: cxx ../../llvm/lib/Target/AArch64/AArch64DeadRegisterDefinitionsPass.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64DeadRegisterDefinitionsPass.cpp
+  source_name_part = AArch64DeadRegisterDefinitionsPass
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64ExpandImm.o: cxx ../../llvm/lib/Target/AArch64/AArch64ExpandImm.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64ExpandImm.cpp
+  source_name_part = AArch64ExpandImm
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64ExpandPseudoInsts.o: cxx ../../llvm/lib/Target/AArch64/AArch64ExpandPseudoInsts.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64ExpandPseudoInsts.cpp
+  source_name_part = AArch64ExpandPseudoInsts
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64FalkorHWPFFix.o: cxx ../../llvm/lib/Target/AArch64/AArch64FalkorHWPFFix.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64FalkorHWPFFix.cpp
+  source_name_part = AArch64FalkorHWPFFix
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64FastISel.o: cxx ../../llvm/lib/Target/AArch64/AArch64FastISel.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64FastISel.cpp
+  source_name_part = AArch64FastISel
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64FrameLowering.o: cxx ../../llvm/lib/Target/AArch64/AArch64FrameLowering.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64FrameLowering.cpp
+  source_name_part = AArch64FrameLowering
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64ISelDAGToDAG.o: cxx ../../llvm/lib/Target/AArch64/AArch64ISelDAGToDAG.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64ISelDAGToDAG.cpp
+  source_name_part = AArch64ISelDAGToDAG
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64ISelLowering.o: cxx ../../llvm/lib/Target/AArch64/AArch64ISelLowering.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64ISelLowering.cpp
+  source_name_part = AArch64ISelLowering
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64InstrInfo.o: cxx ../../llvm/lib/Target/AArch64/AArch64InstrInfo.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64InstrInfo.cpp
+  source_name_part = AArch64InstrInfo
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64KCFI.o: cxx ../../llvm/lib/Target/AArch64/AArch64KCFI.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64KCFI.cpp
+  source_name_part = AArch64KCFI
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64LoadStoreOptimizer.o: cxx ../../llvm/lib/Target/AArch64/AArch64LoadStoreOptimizer.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64LoadStoreOptimizer.cpp
+  source_name_part = AArch64LoadStoreOptimizer
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64LowerHomogeneousPrologEpilog.o: cxx ../../llvm/lib/Target/AArch64/AArch64LowerHomogeneousPrologEpilog.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64LowerHomogeneousPrologEpilog.cpp
+  source_name_part = AArch64LowerHomogeneousPrologEpilog
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64MCInstLower.o: cxx ../../llvm/lib/Target/AArch64/AArch64MCInstLower.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64MCInstLower.cpp
+  source_name_part = AArch64MCInstLower
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64MIPeepholeOpt.o: cxx ../../llvm/lib/Target/AArch64/AArch64MIPeepholeOpt.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64MIPeepholeOpt.cpp
+  source_name_part = AArch64MIPeepholeOpt
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64MachineFunctionInfo.o: cxx ../../llvm/lib/Target/AArch64/AArch64MachineFunctionInfo.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64MachineFunctionInfo.cpp
+  source_name_part = AArch64MachineFunctionInfo
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64MachineScheduler.o: cxx ../../llvm/lib/Target/AArch64/AArch64MachineScheduler.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64MachineScheduler.cpp
+  source_name_part = AArch64MachineScheduler
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64MacroFusion.o: cxx ../../llvm/lib/Target/AArch64/AArch64MacroFusion.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64MacroFusion.cpp
+  source_name_part = AArch64MacroFusion
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64PBQPRegAlloc.o: cxx ../../llvm/lib/Target/AArch64/AArch64PBQPRegAlloc.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64PBQPRegAlloc.cpp
+  source_name_part = AArch64PBQPRegAlloc
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64PromoteConstant.o: cxx ../../llvm/lib/Target/AArch64/AArch64PromoteConstant.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64PromoteConstant.cpp
+  source_name_part = AArch64PromoteConstant
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64RedundantCopyElimination.o: cxx ../../llvm/lib/Target/AArch64/AArch64RedundantCopyElimination.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64RedundantCopyElimination.cpp
+  source_name_part = AArch64RedundantCopyElimination
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64RegisterInfo.o: cxx ../../llvm/lib/Target/AArch64/AArch64RegisterInfo.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64RegisterInfo.cpp
+  source_name_part = AArch64RegisterInfo
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64SIMDInstrOpt.o: cxx ../../llvm/lib/Target/AArch64/AArch64SIMDInstrOpt.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64SIMDInstrOpt.cpp
+  source_name_part = AArch64SIMDInstrOpt
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64SLSHardening.o: cxx ../../llvm/lib/Target/AArch64/AArch64SLSHardening.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64SLSHardening.cpp
+  source_name_part = AArch64SLSHardening
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64SelectionDAGInfo.o: cxx ../../llvm/lib/Target/AArch64/AArch64SelectionDAGInfo.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64SelectionDAGInfo.cpp
+  source_name_part = AArch64SelectionDAGInfo
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64SpeculationHardening.o: cxx ../../llvm/lib/Target/AArch64/AArch64SpeculationHardening.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64SpeculationHardening.cpp
+  source_name_part = AArch64SpeculationHardening
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64StackTagging.o: cxx ../../llvm/lib/Target/AArch64/AArch64StackTagging.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64StackTagging.cpp
+  source_name_part = AArch64StackTagging
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64StackTaggingPreRA.o: cxx ../../llvm/lib/Target/AArch64/AArch64StackTaggingPreRA.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64StackTaggingPreRA.cpp
+  source_name_part = AArch64StackTaggingPreRA
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64StorePairSuppress.o: cxx ../../llvm/lib/Target/AArch64/AArch64StorePairSuppress.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64StorePairSuppress.cpp
+  source_name_part = AArch64StorePairSuppress
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64Subtarget.o: cxx ../../llvm/lib/Target/AArch64/AArch64Subtarget.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64Subtarget.cpp
+  source_name_part = AArch64Subtarget
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64TargetMachine.o: cxx ../../llvm/lib/Target/AArch64/AArch64TargetMachine.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64TargetMachine.cpp
+  source_name_part = AArch64TargetMachine
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64TargetObjectFile.o: cxx ../../llvm/lib/Target/AArch64/AArch64TargetObjectFile.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64TargetObjectFile.cpp
+  source_name_part = AArch64TargetObjectFile
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64TargetTransformInfo.o: cxx ../../llvm/lib/Target/AArch64/AArch64TargetTransformInfo.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64TargetTransformInfo.cpp
+  source_name_part = AArch64TargetTransformInfo
+build obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64CallLowering.o: cxx ../../llvm/lib/Target/AArch64/GISel/AArch64CallLowering.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64CallLowering.cpp
+  source_name_part = AArch64CallLowering
+build obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64GlobalISelUtils.o: cxx ../../llvm/lib/Target/AArch64/GISel/AArch64GlobalISelUtils.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64GlobalISelUtils.cpp
+  source_name_part = AArch64GlobalISelUtils
+build obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64InstructionSelector.o: cxx ../../llvm/lib/Target/AArch64/GISel/AArch64InstructionSelector.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64InstructionSelector.cpp
+  source_name_part = AArch64InstructionSelector
+build obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64LegalizerInfo.o: cxx ../../llvm/lib/Target/AArch64/GISel/AArch64LegalizerInfo.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64LegalizerInfo.cpp
+  source_name_part = AArch64LegalizerInfo
+build obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64O0PreLegalizerCombiner.o: cxx ../../llvm/lib/Target/AArch64/GISel/AArch64O0PreLegalizerCombiner.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64O0PreLegalizerCombiner.cpp
+  source_name_part = AArch64O0PreLegalizerCombiner
+build obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64PostLegalizerCombiner.o: cxx ../../llvm/lib/Target/AArch64/GISel/AArch64PostLegalizerCombiner.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64PostLegalizerCombiner.cpp
+  source_name_part = AArch64PostLegalizerCombiner
+build obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64PostLegalizerLowering.o: cxx ../../llvm/lib/Target/AArch64/GISel/AArch64PostLegalizerLowering.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64PostLegalizerLowering.cpp
+  source_name_part = AArch64PostLegalizerLowering
+build obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64PostSelectOptimize.o: cxx ../../llvm/lib/Target/AArch64/GISel/AArch64PostSelectOptimize.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64PostSelectOptimize.cpp
+  source_name_part = AArch64PostSelectOptimize
+build obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64PreLegalizerCombiner.o: cxx ../../llvm/lib/Target/AArch64/GISel/AArch64PreLegalizerCombiner.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64PreLegalizerCombiner.cpp
+  source_name_part = AArch64PreLegalizerCombiner
+build obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64RegisterBankInfo.o: cxx ../../llvm/lib/Target/AArch64/GISel/AArch64RegisterBankInfo.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = AArch64RegisterBankInfo.cpp
+  source_name_part = AArch64RegisterBankInfo
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.SMEABIPass.o: cxx ../../llvm/lib/Target/AArch64/SMEABIPass.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = SMEABIPass.cpp
+  source_name_part = SMEABIPass
+build obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.SVEIntrinsicOpts.o: cxx ../../llvm/lib/Target/AArch64/SVEIntrinsicOpts.cpp || obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.inputdeps.stamp
+  source_file_part = SVEIntrinsicOpts.cpp
+  source_name_part = SVEIntrinsicOpts
+
+build ./lib/libLLVMAArch64CodeGen.a: alink obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64A53Fix835769.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64A57FPLoadBalancing.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64AdvSIMDScalarPass.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64AsmPrinter.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64BranchTargets.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64CallingConvention.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64CleanupLocalDynamicTLSPass.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64CollectLOH.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64CompressJumpTables.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64CondBrTuning.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64ConditionOptimizer.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64ConditionalCompares.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64DeadRegisterDefinitionsPass.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64ExpandImm.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64ExpandPseudoInsts.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64FalkorHWPFFix.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64FastISel.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64FrameLowering.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64ISelDAGToDAG.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64ISelLowering.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64InstrInfo.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64KCFI.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64LoadStoreOptimizer.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64LowerHomogeneousPrologEpilog.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64MCInstLower.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64MIPeepholeOpt.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64MachineFunctionInfo.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64MachineScheduler.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64MacroFusion.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64PBQPRegAlloc.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64PromoteConstant.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64RedundantCopyElimination.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64RegisterInfo.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64SIMDInstrOpt.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64SLSHardening.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64SelectionDAGInfo.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64SpeculationHardening.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64StackTagging.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64StackTaggingPreRA.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64StorePairSuppress.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64Subtarget.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64TargetMachine.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64TargetObjectFile.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.AArch64TargetTransformInfo.o obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64CallLowering.o obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64GlobalISelUtils.o obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64InstructionSelector.o obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64LegalizerInfo.o obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64O0PreLegalizerCombiner.o obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64PostLegalizerCombiner.o obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64PostLegalizerLowering.o obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64PostSelectOptimize.o obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64PreLegalizerCombiner.o obj/llvm/lib/Target/AArch64/GISel/LLVMAArch64CodeGen.AArch64RegisterBankInfo.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.SMEABIPass.o obj/llvm/lib/Target/AArch64/LLVMAArch64CodeGen.SVEIntrinsicOpts.o || obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMCodeGen.a ./lib/libLLVMAsmPrinter.a ./lib/libLLVMGlobalISel.a ./lib/libLLVMSelectionDAG.a ./lib/libLLVMCore.a ./lib/libLLVMMC.a ./lib/libLLVMSupport.a ./lib/libLLVMTarget.a ./lib/libLLVMCFGuard.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMBitWriter.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

@@ -1,0 +1,73 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Instrumentation
+target_output_name = libLLVMInstrumentation
+
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.AddressSanitizer.o: cxx ../../llvm/lib/Transforms/Instrumentation/AddressSanitizer.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = AddressSanitizer.cpp
+  source_name_part = AddressSanitizer
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.BoundsChecking.o: cxx ../../llvm/lib/Transforms/Instrumentation/BoundsChecking.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = BoundsChecking.cpp
+  source_name_part = BoundsChecking
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.CGProfile.o: cxx ../../llvm/lib/Transforms/Instrumentation/CGProfile.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = CGProfile.cpp
+  source_name_part = CGProfile
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.ControlHeightReduction.o: cxx ../../llvm/lib/Transforms/Instrumentation/ControlHeightReduction.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = ControlHeightReduction.cpp
+  source_name_part = ControlHeightReduction
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.DataFlowSanitizer.o: cxx ../../llvm/lib/Transforms/Instrumentation/DataFlowSanitizer.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = DataFlowSanitizer.cpp
+  source_name_part = DataFlowSanitizer
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.GCOVProfiling.o: cxx ../../llvm/lib/Transforms/Instrumentation/GCOVProfiling.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = GCOVProfiling.cpp
+  source_name_part = GCOVProfiling
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.HWAddressSanitizer.o: cxx ../../llvm/lib/Transforms/Instrumentation/HWAddressSanitizer.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = HWAddressSanitizer.cpp
+  source_name_part = HWAddressSanitizer
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.IndirectCallPromotion.o: cxx ../../llvm/lib/Transforms/Instrumentation/IndirectCallPromotion.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = IndirectCallPromotion.cpp
+  source_name_part = IndirectCallPromotion
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.InstrOrderFile.o: cxx ../../llvm/lib/Transforms/Instrumentation/InstrOrderFile.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = InstrOrderFile.cpp
+  source_name_part = InstrOrderFile
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.InstrProfiling.o: cxx ../../llvm/lib/Transforms/Instrumentation/InstrProfiling.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = InstrProfiling.cpp
+  source_name_part = InstrProfiling
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.Instrumentation.o: cxx ../../llvm/lib/Transforms/Instrumentation/Instrumentation.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = Instrumentation.cpp
+  source_name_part = Instrumentation
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.MemProfiler.o: cxx ../../llvm/lib/Transforms/Instrumentation/MemProfiler.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = MemProfiler.cpp
+  source_name_part = MemProfiler
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.MemorySanitizer.o: cxx ../../llvm/lib/Transforms/Instrumentation/MemorySanitizer.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = MemorySanitizer.cpp
+  source_name_part = MemorySanitizer
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.PGOInstrumentation.o: cxx ../../llvm/lib/Transforms/Instrumentation/PGOInstrumentation.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = PGOInstrumentation.cpp
+  source_name_part = PGOInstrumentation
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.PGOMemOPSizeOpt.o: cxx ../../llvm/lib/Transforms/Instrumentation/PGOMemOPSizeOpt.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = PGOMemOPSizeOpt.cpp
+  source_name_part = PGOMemOPSizeOpt
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.PoisonChecking.o: cxx ../../llvm/lib/Transforms/Instrumentation/PoisonChecking.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = PoisonChecking.cpp
+  source_name_part = PoisonChecking
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.SanitizerBinaryMetadata.o: cxx ../../llvm/lib/Transforms/Instrumentation/SanitizerBinaryMetadata.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = SanitizerBinaryMetadata.cpp
+  source_name_part = SanitizerBinaryMetadata
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.SanitizerCoverage.o: cxx ../../llvm/lib/Transforms/Instrumentation/SanitizerCoverage.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = SanitizerCoverage.cpp
+  source_name_part = SanitizerCoverage
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.ThreadSanitizer.o: cxx ../../llvm/lib/Transforms/Instrumentation/ThreadSanitizer.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = ThreadSanitizer.cpp
+  source_name_part = ThreadSanitizer
+build obj/llvm/lib/Transforms/Instrumentation/Instrumentation.ValueProfileCollector.o: cxx ../../llvm/lib/Transforms/Instrumentation/ValueProfileCollector.cpp || obj/llvm/lib/Transforms/Instrumentation/Instrumentation.inputdeps.stamp
+  source_file_part = ValueProfileCollector.cpp
+  source_name_part = ValueProfileCollector
+
+build ./lib/libLLVMInstrumentation.a: alink obj/llvm/lib/Transforms/Instrumentation/Instrumentation.AddressSanitizer.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.BoundsChecking.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.CGProfile.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.ControlHeightReduction.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.DataFlowSanitizer.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.GCOVProfiling.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.HWAddressSanitizer.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.IndirectCallPromotion.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.InstrOrderFile.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.InstrProfiling.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.Instrumentation.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.MemProfiler.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.MemorySanitizer.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.PGOInstrumentation.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.PGOMemOPSizeOpt.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.PoisonChecking.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.SanitizerBinaryMetadata.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.SanitizerCoverage.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.ThreadSanitizer.o obj/llvm/lib/Transforms/Instrumentation/Instrumentation.ValueProfileCollector.o || ./lib/libLLVMAnalysis.a ./lib/libLLVMCore.a ./lib/libLLVMMC.a ./lib/libLLVMProfileData.a ./lib/libLLVMSupport.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

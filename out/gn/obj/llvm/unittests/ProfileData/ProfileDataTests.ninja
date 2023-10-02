@@ -1,0 +1,31 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = ProfileDataTests
+target_output_name = ProfileDataTests
+
+build obj/llvm/unittests/ProfileData/ProfileDataTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/unittests/ProfileData/ProfileDataTests.CoverageMappingTest.o: cxx ../../llvm/unittests/ProfileData/CoverageMappingTest.cpp || obj/llvm/unittests/ProfileData/ProfileDataTests.inputdeps.stamp
+  source_file_part = CoverageMappingTest.cpp
+  source_name_part = CoverageMappingTest
+build obj/llvm/unittests/ProfileData/ProfileDataTests.InstrProfDataTest.o: cxx ../../llvm/unittests/ProfileData/InstrProfDataTest.cpp || obj/llvm/unittests/ProfileData/ProfileDataTests.inputdeps.stamp
+  source_file_part = InstrProfDataTest.cpp
+  source_name_part = InstrProfDataTest
+build obj/llvm/unittests/ProfileData/ProfileDataTests.InstrProfTest.o: cxx ../../llvm/unittests/ProfileData/InstrProfTest.cpp || obj/llvm/unittests/ProfileData/ProfileDataTests.inputdeps.stamp
+  source_file_part = InstrProfTest.cpp
+  source_name_part = InstrProfTest
+build obj/llvm/unittests/ProfileData/ProfileDataTests.MemProfTest.o: cxx ../../llvm/unittests/ProfileData/MemProfTest.cpp || obj/llvm/unittests/ProfileData/ProfileDataTests.inputdeps.stamp
+  source_file_part = MemProfTest.cpp
+  source_name_part = MemProfTest
+build obj/llvm/unittests/ProfileData/ProfileDataTests.SampleProfTest.o: cxx ../../llvm/unittests/ProfileData/SampleProfTest.cpp || obj/llvm/unittests/ProfileData/ProfileDataTests.inputdeps.stamp
+  source_file_part = SampleProfTest.cpp
+  source_name_part = SampleProfTest
+
+build obj/llvm/unittests/ProfileData/ProfileDataTests: link obj/llvm/unittests/ProfileData/ProfileDataTests.CoverageMappingTest.o obj/llvm/unittests/ProfileData/ProfileDataTests.InstrProfDataTest.o obj/llvm/unittests/ProfileData/ProfileDataTests.InstrProfTest.o obj/llvm/unittests/ProfileData/ProfileDataTests.MemProfTest.o obj/llvm/unittests/ProfileData/ProfileDataTests.SampleProfTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMCore.a ./lib/libLLVMProfileData.a ./lib/libLLVMCoverage.a ./lib/libLLVMTestingSupport.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libgtest.a || obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/ProfileData

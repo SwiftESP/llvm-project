@@ -1,0 +1,22 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Support
+target_output_name = libLLVMTestingSupport
+
+build obj/llvm/lib/Testing/Support/Support.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/Testing/Support/Support.Annotations.o: cxx ../../llvm/lib/Testing/Support/Annotations.cpp || obj/llvm/lib/Testing/Support/Support.inputdeps.stamp
+  source_file_part = Annotations.cpp
+  source_name_part = Annotations
+build obj/llvm/lib/Testing/Support/Support.Error.o: cxx ../../llvm/lib/Testing/Support/Error.cpp || obj/llvm/lib/Testing/Support/Support.inputdeps.stamp
+  source_file_part = Error.cpp
+  source_name_part = Error
+build obj/llvm/lib/Testing/Support/Support.SupportHelpers.o: cxx ../../llvm/lib/Testing/Support/SupportHelpers.cpp || obj/llvm/lib/Testing/Support/Support.inputdeps.stamp
+  source_file_part = SupportHelpers.cpp
+  source_name_part = SupportHelpers
+
+build ./lib/libLLVMTestingSupport.a: alink obj/llvm/lib/Testing/Support/Support.Annotations.o obj/llvm/lib/Testing/Support/Support.Error.o obj/llvm/lib/Testing/Support/Support.SupportHelpers.o || ./lib/libLLVMSupport.a ./lib/libgtest.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

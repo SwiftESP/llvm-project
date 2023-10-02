@@ -1,0 +1,220 @@
+defines =
+include_dirs = -I../../lldb/source -I../../llvm/include -Igen/llvm/include -I../../lldb/include -Igen/lldb/include -Igen/lldb/source/Target -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libxml2
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Target
+target_output_name = liblldbTarget
+
+build obj/lldb/source/Target/Target.inputdeps.stamp: stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/lldb/include/lldb/Host/Config.stamp obj/lldb/include/lldb/Version/version.stamp obj/lldb/source/Commands/CommandOptions.stamp obj/lldb/source/Core/CoreProperties.stamp obj/lldb/source/Core/CorePropertiesEnum.stamp obj/lldb/source/Interpreter/InterpreterProperties.stamp obj/lldb/source/Interpreter/InterpreterPropertiesEnum.stamp obj/lldb/source/Target/TargetProperties.stamp obj/lldb/source/Target/TargetPropertiesEnum.stamp obj/lldb/source/Version/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/lldb/source/Target/Target.ABI.o: cxx ../../lldb/source/Target/ABI.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ABI.cpp
+  source_name_part = ABI
+build obj/lldb/source/Target/Target.AssertFrameRecognizer.o: cxx ../../lldb/source/Target/AssertFrameRecognizer.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = AssertFrameRecognizer.cpp
+  source_name_part = AssertFrameRecognizer
+build obj/lldb/source/Target/Target.DynamicRegisterInfo.o: cxx ../../lldb/source/Target/DynamicRegisterInfo.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = DynamicRegisterInfo.cpp
+  source_name_part = DynamicRegisterInfo
+build obj/lldb/source/Target/Target.ExecutionContext.o: cxx ../../lldb/source/Target/ExecutionContext.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ExecutionContext.cpp
+  source_name_part = ExecutionContext
+build obj/lldb/source/Target/Target.InstrumentationRuntime.o: cxx ../../lldb/source/Target/InstrumentationRuntime.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = InstrumentationRuntime.cpp
+  source_name_part = InstrumentationRuntime
+build obj/lldb/source/Target/Target.InstrumentationRuntimeStopInfo.o: cxx ../../lldb/source/Target/InstrumentationRuntimeStopInfo.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = InstrumentationRuntimeStopInfo.cpp
+  source_name_part = InstrumentationRuntimeStopInfo
+build obj/lldb/source/Target/Target.JITLoader.o: cxx ../../lldb/source/Target/JITLoader.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = JITLoader.cpp
+  source_name_part = JITLoader
+build obj/lldb/source/Target/Target.JITLoaderList.o: cxx ../../lldb/source/Target/JITLoaderList.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = JITLoaderList.cpp
+  source_name_part = JITLoaderList
+build obj/lldb/source/Target/Target.Language.o: cxx ../../lldb/source/Target/Language.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = Language.cpp
+  source_name_part = Language
+build obj/lldb/source/Target/Target.LanguageRuntime.o: cxx ../../lldb/source/Target/LanguageRuntime.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = LanguageRuntime.cpp
+  source_name_part = LanguageRuntime
+build obj/lldb/source/Target/Target.Memory.o: cxx ../../lldb/source/Target/Memory.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = Memory.cpp
+  source_name_part = Memory
+build obj/lldb/source/Target/Target.MemoryHistory.o: cxx ../../lldb/source/Target/MemoryHistory.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = MemoryHistory.cpp
+  source_name_part = MemoryHistory
+build obj/lldb/source/Target/Target.MemoryRegionInfo.o: cxx ../../lldb/source/Target/MemoryRegionInfo.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = MemoryRegionInfo.cpp
+  source_name_part = MemoryRegionInfo
+build obj/lldb/source/Target/Target.MemoryTagMap.o: cxx ../../lldb/source/Target/MemoryTagMap.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = MemoryTagMap.cpp
+  source_name_part = MemoryTagMap
+build obj/lldb/source/Target/Target.ModuleCache.o: cxx ../../lldb/source/Target/ModuleCache.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ModuleCache.cpp
+  source_name_part = ModuleCache
+build obj/lldb/source/Target/Target.OperatingSystem.o: cxx ../../lldb/source/Target/OperatingSystem.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = OperatingSystem.cpp
+  source_name_part = OperatingSystem
+build obj/lldb/source/Target/Target.PathMappingList.o: cxx ../../lldb/source/Target/PathMappingList.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = PathMappingList.cpp
+  source_name_part = PathMappingList
+build obj/lldb/source/Target/Target.Platform.o: cxx ../../lldb/source/Target/Platform.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = Platform.cpp
+  source_name_part = Platform
+build obj/lldb/source/Target/Target.Process.o: cxx ../../lldb/source/Target/Process.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = Process.cpp
+  source_name_part = Process
+build obj/lldb/source/Target/Target.ProcessTrace.o: cxx ../../lldb/source/Target/ProcessTrace.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ProcessTrace.cpp
+  source_name_part = ProcessTrace
+build obj/lldb/source/Target/Target.Queue.o: cxx ../../lldb/source/Target/Queue.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = Queue.cpp
+  source_name_part = Queue
+build obj/lldb/source/Target/Target.QueueItem.o: cxx ../../lldb/source/Target/QueueItem.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = QueueItem.cpp
+  source_name_part = QueueItem
+build obj/lldb/source/Target/Target.QueueList.o: cxx ../../lldb/source/Target/QueueList.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = QueueList.cpp
+  source_name_part = QueueList
+build obj/lldb/source/Target/Target.RegisterContext.o: cxx ../../lldb/source/Target/RegisterContext.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = RegisterContext.cpp
+  source_name_part = RegisterContext
+build obj/lldb/source/Target/Target.RegisterContextUnwind.o: cxx ../../lldb/source/Target/RegisterContextUnwind.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = RegisterContextUnwind.cpp
+  source_name_part = RegisterContextUnwind
+build obj/lldb/source/Target/Target.RegisterNumber.o: cxx ../../lldb/source/Target/RegisterNumber.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = RegisterNumber.cpp
+  source_name_part = RegisterNumber
+build obj/lldb/source/Target/Target.RemoteAwarePlatform.o: cxx ../../lldb/source/Target/RemoteAwarePlatform.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = RemoteAwarePlatform.cpp
+  source_name_part = RemoteAwarePlatform
+build obj/lldb/source/Target/Target.SectionLoadHistory.o: cxx ../../lldb/source/Target/SectionLoadHistory.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = SectionLoadHistory.cpp
+  source_name_part = SectionLoadHistory
+build obj/lldb/source/Target/Target.SectionLoadList.o: cxx ../../lldb/source/Target/SectionLoadList.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = SectionLoadList.cpp
+  source_name_part = SectionLoadList
+build obj/lldb/source/Target/Target.StackFrame.o: cxx ../../lldb/source/Target/StackFrame.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = StackFrame.cpp
+  source_name_part = StackFrame
+build obj/lldb/source/Target/Target.StackFrameList.o: cxx ../../lldb/source/Target/StackFrameList.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = StackFrameList.cpp
+  source_name_part = StackFrameList
+build obj/lldb/source/Target/Target.StackFrameRecognizer.o: cxx ../../lldb/source/Target/StackFrameRecognizer.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = StackFrameRecognizer.cpp
+  source_name_part = StackFrameRecognizer
+build obj/lldb/source/Target/Target.StackID.o: cxx ../../lldb/source/Target/StackID.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = StackID.cpp
+  source_name_part = StackID
+build obj/lldb/source/Target/Target.Statistics.o: cxx ../../lldb/source/Target/Statistics.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = Statistics.cpp
+  source_name_part = Statistics
+build obj/lldb/source/Target/Target.StopInfo.o: cxx ../../lldb/source/Target/StopInfo.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = StopInfo.cpp
+  source_name_part = StopInfo
+build obj/lldb/source/Target/Target.StructuredDataPlugin.o: cxx ../../lldb/source/Target/StructuredDataPlugin.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = StructuredDataPlugin.cpp
+  source_name_part = StructuredDataPlugin
+build obj/lldb/source/Target/Target.SystemRuntime.o: cxx ../../lldb/source/Target/SystemRuntime.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = SystemRuntime.cpp
+  source_name_part = SystemRuntime
+build obj/lldb/source/Target/Target.Target.o: cxx ../../lldb/source/Target/Target.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = Target.cpp
+  source_name_part = Target
+build obj/lldb/source/Target/Target.TargetList.o: cxx ../../lldb/source/Target/TargetList.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = TargetList.cpp
+  source_name_part = TargetList
+build obj/lldb/source/Target/Target.Thread.o: cxx ../../lldb/source/Target/Thread.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = Thread.cpp
+  source_name_part = Thread
+build obj/lldb/source/Target/Target.ThreadCollection.o: cxx ../../lldb/source/Target/ThreadCollection.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadCollection.cpp
+  source_name_part = ThreadCollection
+build obj/lldb/source/Target/Target.ThreadList.o: cxx ../../lldb/source/Target/ThreadList.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadList.cpp
+  source_name_part = ThreadList
+build obj/lldb/source/Target/Target.ThreadPlan.o: cxx ../../lldb/source/Target/ThreadPlan.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlan.cpp
+  source_name_part = ThreadPlan
+build obj/lldb/source/Target/Target.ThreadPlanBase.o: cxx ../../lldb/source/Target/ThreadPlanBase.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanBase.cpp
+  source_name_part = ThreadPlanBase
+build obj/lldb/source/Target/Target.ThreadPlanCallFunction.o: cxx ../../lldb/source/Target/ThreadPlanCallFunction.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanCallFunction.cpp
+  source_name_part = ThreadPlanCallFunction
+build obj/lldb/source/Target/Target.ThreadPlanCallFunctionUsingABI.o: cxx ../../lldb/source/Target/ThreadPlanCallFunctionUsingABI.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanCallFunctionUsingABI.cpp
+  source_name_part = ThreadPlanCallFunctionUsingABI
+build obj/lldb/source/Target/Target.ThreadPlanCallOnFunctionExit.o: cxx ../../lldb/source/Target/ThreadPlanCallOnFunctionExit.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanCallOnFunctionExit.cpp
+  source_name_part = ThreadPlanCallOnFunctionExit
+build obj/lldb/source/Target/Target.ThreadPlanCallUserExpression.o: cxx ../../lldb/source/Target/ThreadPlanCallUserExpression.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanCallUserExpression.cpp
+  source_name_part = ThreadPlanCallUserExpression
+build obj/lldb/source/Target/Target.ThreadPlanPython.o: cxx ../../lldb/source/Target/ThreadPlanPython.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanPython.cpp
+  source_name_part = ThreadPlanPython
+build obj/lldb/source/Target/Target.ThreadPlanRunToAddress.o: cxx ../../lldb/source/Target/ThreadPlanRunToAddress.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanRunToAddress.cpp
+  source_name_part = ThreadPlanRunToAddress
+build obj/lldb/source/Target/Target.ThreadPlanShouldStopHere.o: cxx ../../lldb/source/Target/ThreadPlanShouldStopHere.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanShouldStopHere.cpp
+  source_name_part = ThreadPlanShouldStopHere
+build obj/lldb/source/Target/Target.ThreadPlanStack.o: cxx ../../lldb/source/Target/ThreadPlanStack.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanStack.cpp
+  source_name_part = ThreadPlanStack
+build obj/lldb/source/Target/Target.ThreadPlanStepInRange.o: cxx ../../lldb/source/Target/ThreadPlanStepInRange.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanStepInRange.cpp
+  source_name_part = ThreadPlanStepInRange
+build obj/lldb/source/Target/Target.ThreadPlanStepInstruction.o: cxx ../../lldb/source/Target/ThreadPlanStepInstruction.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanStepInstruction.cpp
+  source_name_part = ThreadPlanStepInstruction
+build obj/lldb/source/Target/Target.ThreadPlanStepOut.o: cxx ../../lldb/source/Target/ThreadPlanStepOut.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanStepOut.cpp
+  source_name_part = ThreadPlanStepOut
+build obj/lldb/source/Target/Target.ThreadPlanStepOverBreakpoint.o: cxx ../../lldb/source/Target/ThreadPlanStepOverBreakpoint.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanStepOverBreakpoint.cpp
+  source_name_part = ThreadPlanStepOverBreakpoint
+build obj/lldb/source/Target/Target.ThreadPlanStepOverRange.o: cxx ../../lldb/source/Target/ThreadPlanStepOverRange.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanStepOverRange.cpp
+  source_name_part = ThreadPlanStepOverRange
+build obj/lldb/source/Target/Target.ThreadPlanStepRange.o: cxx ../../lldb/source/Target/ThreadPlanStepRange.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanStepRange.cpp
+  source_name_part = ThreadPlanStepRange
+build obj/lldb/source/Target/Target.ThreadPlanStepThrough.o: cxx ../../lldb/source/Target/ThreadPlanStepThrough.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanStepThrough.cpp
+  source_name_part = ThreadPlanStepThrough
+build obj/lldb/source/Target/Target.ThreadPlanStepUntil.o: cxx ../../lldb/source/Target/ThreadPlanStepUntil.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanStepUntil.cpp
+  source_name_part = ThreadPlanStepUntil
+build obj/lldb/source/Target/Target.ThreadPlanTracer.o: cxx ../../lldb/source/Target/ThreadPlanTracer.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadPlanTracer.cpp
+  source_name_part = ThreadPlanTracer
+build obj/lldb/source/Target/Target.ThreadSpec.o: cxx ../../lldb/source/Target/ThreadSpec.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = ThreadSpec.cpp
+  source_name_part = ThreadSpec
+build obj/lldb/source/Target/Target.Trace.o: cxx ../../lldb/source/Target/Trace.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = Trace.cpp
+  source_name_part = Trace
+build obj/lldb/source/Target/Target.TraceCursor.o: cxx ../../lldb/source/Target/TraceCursor.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = TraceCursor.cpp
+  source_name_part = TraceCursor
+build obj/lldb/source/Target/Target.TraceDumper.o: cxx ../../lldb/source/Target/TraceDumper.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = TraceDumper.cpp
+  source_name_part = TraceDumper
+build obj/lldb/source/Target/Target.TraceExporter.o: cxx ../../lldb/source/Target/TraceExporter.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = TraceExporter.cpp
+  source_name_part = TraceExporter
+build obj/lldb/source/Target/Target.UnixSignals.o: cxx ../../lldb/source/Target/UnixSignals.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = UnixSignals.cpp
+  source_name_part = UnixSignals
+build obj/lldb/source/Target/Target.UnwindAssembly.o: cxx ../../lldb/source/Target/UnwindAssembly.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = UnwindAssembly.cpp
+  source_name_part = UnwindAssembly
+build obj/lldb/source/Target/Target.UnwindLLDB.o: cxx ../../lldb/source/Target/UnwindLLDB.cpp || obj/lldb/source/Target/Target.inputdeps.stamp
+  source_file_part = UnwindLLDB.cpp
+  source_name_part = UnwindLLDB
+
+build ./lib/liblldbTarget.a: alink obj/lldb/source/Target/Target.ABI.o obj/lldb/source/Target/Target.AssertFrameRecognizer.o obj/lldb/source/Target/Target.DynamicRegisterInfo.o obj/lldb/source/Target/Target.ExecutionContext.o obj/lldb/source/Target/Target.InstrumentationRuntime.o obj/lldb/source/Target/Target.InstrumentationRuntimeStopInfo.o obj/lldb/source/Target/Target.JITLoader.o obj/lldb/source/Target/Target.JITLoaderList.o obj/lldb/source/Target/Target.Language.o obj/lldb/source/Target/Target.LanguageRuntime.o obj/lldb/source/Target/Target.Memory.o obj/lldb/source/Target/Target.MemoryHistory.o obj/lldb/source/Target/Target.MemoryRegionInfo.o obj/lldb/source/Target/Target.MemoryTagMap.o obj/lldb/source/Target/Target.ModuleCache.o obj/lldb/source/Target/Target.OperatingSystem.o obj/lldb/source/Target/Target.PathMappingList.o obj/lldb/source/Target/Target.Platform.o obj/lldb/source/Target/Target.Process.o obj/lldb/source/Target/Target.ProcessTrace.o obj/lldb/source/Target/Target.Queue.o obj/lldb/source/Target/Target.QueueItem.o obj/lldb/source/Target/Target.QueueList.o obj/lldb/source/Target/Target.RegisterContext.o obj/lldb/source/Target/Target.RegisterContextUnwind.o obj/lldb/source/Target/Target.RegisterNumber.o obj/lldb/source/Target/Target.RemoteAwarePlatform.o obj/lldb/source/Target/Target.SectionLoadHistory.o obj/lldb/source/Target/Target.SectionLoadList.o obj/lldb/source/Target/Target.StackFrame.o obj/lldb/source/Target/Target.StackFrameList.o obj/lldb/source/Target/Target.StackFrameRecognizer.o obj/lldb/source/Target/Target.StackID.o obj/lldb/source/Target/Target.Statistics.o obj/lldb/source/Target/Target.StopInfo.o obj/lldb/source/Target/Target.StructuredDataPlugin.o obj/lldb/source/Target/Target.SystemRuntime.o obj/lldb/source/Target/Target.Target.o obj/lldb/source/Target/Target.TargetList.o obj/lldb/source/Target/Target.Thread.o obj/lldb/source/Target/Target.ThreadCollection.o obj/lldb/source/Target/Target.ThreadList.o obj/lldb/source/Target/Target.ThreadPlan.o obj/lldb/source/Target/Target.ThreadPlanBase.o obj/lldb/source/Target/Target.ThreadPlanCallFunction.o obj/lldb/source/Target/Target.ThreadPlanCallFunctionUsingABI.o obj/lldb/source/Target/Target.ThreadPlanCallOnFunctionExit.o obj/lldb/source/Target/Target.ThreadPlanCallUserExpression.o obj/lldb/source/Target/Target.ThreadPlanPython.o obj/lldb/source/Target/Target.ThreadPlanRunToAddress.o obj/lldb/source/Target/Target.ThreadPlanShouldStopHere.o obj/lldb/source/Target/Target.ThreadPlanStack.o obj/lldb/source/Target/Target.ThreadPlanStepInRange.o obj/lldb/source/Target/Target.ThreadPlanStepInstruction.o obj/lldb/source/Target/Target.ThreadPlanStepOut.o obj/lldb/source/Target/Target.ThreadPlanStepOverBreakpoint.o obj/lldb/source/Target/Target.ThreadPlanStepOverRange.o obj/lldb/source/Target/Target.ThreadPlanStepRange.o obj/lldb/source/Target/Target.ThreadPlanStepThrough.o obj/lldb/source/Target/Target.ThreadPlanStepUntil.o obj/lldb/source/Target/Target.ThreadPlanTracer.o obj/lldb/source/Target/Target.ThreadSpec.o obj/lldb/source/Target/Target.Trace.o obj/lldb/source/Target/Target.TraceCursor.o obj/lldb/source/Target/Target.TraceDumper.o obj/lldb/source/Target/Target.TraceExporter.o obj/lldb/source/Target/Target.UnixSignals.o obj/lldb/source/Target/Target.UnwindAssembly.o obj/lldb/source/Target/Target.UnwindLLDB.o || obj/lldb/source/Target/TargetProperties.stamp obj/lldb/source/Target/TargetPropertiesEnum.stamp ./lib/liblldbCore.a ./lib/liblldbExpression.a ./lib/liblldbHost.a ./lib/liblldbInterpreter.a ./lib/liblldbPluginProcessUtility.a ./lib/liblldbSymbol.a ./lib/liblldbUtility.a ./lib/libLLVMMC.a ./lib/libLLVMSupport.a ./lib/libclangDriver.a ./lib/libclangBasic.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/liblldbHostMacOSXObjCXX.a ./lib/liblldbCommands.a ./lib/liblldbDataFormatters.a ./lib/liblldbVersion.a ./lib/liblldbPluginObjectFileJIT.a ./lib/libLLVMExecutionEngine.a ./lib/libLLVMOrcTargetProcess.a ./lib/libLLVMOrcShared.a ./lib/libLLVMTarget.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

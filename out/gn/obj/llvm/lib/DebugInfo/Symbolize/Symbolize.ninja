@@ -1,0 +1,28 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Symbolize
+target_output_name = libLLVMSymbolize
+
+build obj/llvm/lib/DebugInfo/Symbolize/Symbolize.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/DebugInfo/Symbolize/Symbolize.DIPrinter.o: cxx ../../llvm/lib/DebugInfo/Symbolize/DIPrinter.cpp || obj/llvm/lib/DebugInfo/Symbolize/Symbolize.inputdeps.stamp
+  source_file_part = DIPrinter.cpp
+  source_name_part = DIPrinter
+build obj/llvm/lib/DebugInfo/Symbolize/Symbolize.Markup.o: cxx ../../llvm/lib/DebugInfo/Symbolize/Markup.cpp || obj/llvm/lib/DebugInfo/Symbolize/Symbolize.inputdeps.stamp
+  source_file_part = Markup.cpp
+  source_name_part = Markup
+build obj/llvm/lib/DebugInfo/Symbolize/Symbolize.MarkupFilter.o: cxx ../../llvm/lib/DebugInfo/Symbolize/MarkupFilter.cpp || obj/llvm/lib/DebugInfo/Symbolize/Symbolize.inputdeps.stamp
+  source_file_part = MarkupFilter.cpp
+  source_name_part = MarkupFilter
+build obj/llvm/lib/DebugInfo/Symbolize/Symbolize.SymbolizableObjectFile.o: cxx ../../llvm/lib/DebugInfo/Symbolize/SymbolizableObjectFile.cpp || obj/llvm/lib/DebugInfo/Symbolize/Symbolize.inputdeps.stamp
+  source_file_part = SymbolizableObjectFile.cpp
+  source_name_part = SymbolizableObjectFile
+build obj/llvm/lib/DebugInfo/Symbolize/Symbolize.Symbolize.o: cxx ../../llvm/lib/DebugInfo/Symbolize/Symbolize.cpp || obj/llvm/lib/DebugInfo/Symbolize/Symbolize.inputdeps.stamp
+  source_file_part = Symbolize.cpp
+  source_name_part = Symbolize
+
+build ./lib/libLLVMSymbolize.a: alink obj/llvm/lib/DebugInfo/Symbolize/Symbolize.DIPrinter.o obj/llvm/lib/DebugInfo/Symbolize/Symbolize.Markup.o obj/llvm/lib/DebugInfo/Symbolize/Symbolize.MarkupFilter.o obj/llvm/lib/DebugInfo/Symbolize/Symbolize.SymbolizableObjectFile.o obj/llvm/lib/DebugInfo/Symbolize/Symbolize.Symbolize.o || obj/llvm/include/llvm/Config/config.stamp ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMDemangle.a ./lib/libLLVMObject.a ./lib/libLLVMSupport.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

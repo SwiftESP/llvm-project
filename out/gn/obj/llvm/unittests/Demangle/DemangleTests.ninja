@@ -1,0 +1,37 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = DemangleTests
+target_output_name = DemangleTests
+
+build obj/llvm/unittests/Demangle/DemangleTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/unittests/Demangle/DemangleTests.DLangDemangleTest.o: cxx ../../llvm/unittests/Demangle/DLangDemangleTest.cpp || obj/llvm/unittests/Demangle/DemangleTests.inputdeps.stamp
+  source_file_part = DLangDemangleTest.cpp
+  source_name_part = DLangDemangleTest
+build obj/llvm/unittests/Demangle/DemangleTests.DemangleTest.o: cxx ../../llvm/unittests/Demangle/DemangleTest.cpp || obj/llvm/unittests/Demangle/DemangleTests.inputdeps.stamp
+  source_file_part = DemangleTest.cpp
+  source_name_part = DemangleTest
+build obj/llvm/unittests/Demangle/DemangleTests.ItaniumDemangleTest.o: cxx ../../llvm/unittests/Demangle/ItaniumDemangleTest.cpp || obj/llvm/unittests/Demangle/DemangleTests.inputdeps.stamp
+  source_file_part = ItaniumDemangleTest.cpp
+  source_name_part = ItaniumDemangleTest
+build obj/llvm/unittests/Demangle/DemangleTests.OutputBufferTest.o: cxx ../../llvm/unittests/Demangle/OutputBufferTest.cpp || obj/llvm/unittests/Demangle/DemangleTests.inputdeps.stamp
+  source_file_part = OutputBufferTest.cpp
+  source_name_part = OutputBufferTest
+build obj/llvm/unittests/Demangle/DemangleTests.PartialDemangleTest.o: cxx ../../llvm/unittests/Demangle/PartialDemangleTest.cpp || obj/llvm/unittests/Demangle/DemangleTests.inputdeps.stamp
+  source_file_part = PartialDemangleTest.cpp
+  source_name_part = PartialDemangleTest
+build obj/llvm/unittests/Demangle/DemangleTests.RustDemangleTest.o: cxx ../../llvm/unittests/Demangle/RustDemangleTest.cpp || obj/llvm/unittests/Demangle/DemangleTests.inputdeps.stamp
+  source_file_part = RustDemangleTest.cpp
+  source_name_part = RustDemangleTest
+build obj/llvm/unittests/Demangle/DemangleTests.StringViewTest.o: cxx ../../llvm/unittests/Demangle/StringViewTest.cpp || obj/llvm/unittests/Demangle/DemangleTests.inputdeps.stamp
+  source_file_part = StringViewTest.cpp
+  source_name_part = StringViewTest
+
+build obj/llvm/unittests/Demangle/DemangleTests: link obj/llvm/unittests/Demangle/DemangleTests.DLangDemangleTest.o obj/llvm/unittests/Demangle/DemangleTests.DemangleTest.o obj/llvm/unittests/Demangle/DemangleTests.ItaniumDemangleTest.o obj/llvm/unittests/Demangle/DemangleTests.OutputBufferTest.o obj/llvm/unittests/Demangle/DemangleTests.PartialDemangleTest.o obj/llvm/unittests/Demangle/DemangleTests.RustDemangleTest.o obj/llvm/unittests/Demangle/DemangleTests.StringViewTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMDemangle.a ./lib/libgtest.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a || obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/Demangle

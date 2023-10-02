@@ -1,0 +1,79 @@
+defines =
+include_dirs = -I../../llvm/lib/ObjCopy -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = ObjCopy
+target_output_name = libLLVMObjCopy
+
+build obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/ObjCopy/ObjCopy.Archive.o: cxx ../../llvm/lib/ObjCopy/Archive.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = Archive.cpp
+  source_name_part = Archive
+build obj/llvm/lib/ObjCopy/COFF/ObjCopy.COFFObjcopy.o: cxx ../../llvm/lib/ObjCopy/COFF/COFFObjcopy.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = COFFObjcopy.cpp
+  source_name_part = COFFObjcopy
+build obj/llvm/lib/ObjCopy/COFF/ObjCopy.COFFObject.o: cxx ../../llvm/lib/ObjCopy/COFF/COFFObject.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = COFFObject.cpp
+  source_name_part = COFFObject
+build obj/llvm/lib/ObjCopy/COFF/ObjCopy.COFFReader.o: cxx ../../llvm/lib/ObjCopy/COFF/COFFReader.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = COFFReader.cpp
+  source_name_part = COFFReader
+build obj/llvm/lib/ObjCopy/COFF/ObjCopy.COFFWriter.o: cxx ../../llvm/lib/ObjCopy/COFF/COFFWriter.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = COFFWriter.cpp
+  source_name_part = COFFWriter
+build obj/llvm/lib/ObjCopy/ObjCopy.CommonConfig.o: cxx ../../llvm/lib/ObjCopy/CommonConfig.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = CommonConfig.cpp
+  source_name_part = CommonConfig
+build obj/llvm/lib/ObjCopy/ObjCopy.ConfigManager.o: cxx ../../llvm/lib/ObjCopy/ConfigManager.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = ConfigManager.cpp
+  source_name_part = ConfigManager
+build obj/llvm/lib/ObjCopy/ELF/ObjCopy.ELFObjcopy.o: cxx ../../llvm/lib/ObjCopy/ELF/ELFObjcopy.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = ELFObjcopy.cpp
+  source_name_part = ELFObjcopy
+build obj/llvm/lib/ObjCopy/ELF/ObjCopy.ELFObject.o: cxx ../../llvm/lib/ObjCopy/ELF/ELFObject.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = ELFObject.cpp
+  source_name_part = ELFObject
+build obj/llvm/lib/ObjCopy/MachO/ObjCopy.MachOLayoutBuilder.o: cxx ../../llvm/lib/ObjCopy/MachO/MachOLayoutBuilder.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = MachOLayoutBuilder.cpp
+  source_name_part = MachOLayoutBuilder
+build obj/llvm/lib/ObjCopy/MachO/ObjCopy.MachOObjcopy.o: cxx ../../llvm/lib/ObjCopy/MachO/MachOObjcopy.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = MachOObjcopy.cpp
+  source_name_part = MachOObjcopy
+build obj/llvm/lib/ObjCopy/MachO/ObjCopy.MachOObject.o: cxx ../../llvm/lib/ObjCopy/MachO/MachOObject.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = MachOObject.cpp
+  source_name_part = MachOObject
+build obj/llvm/lib/ObjCopy/MachO/ObjCopy.MachOReader.o: cxx ../../llvm/lib/ObjCopy/MachO/MachOReader.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = MachOReader.cpp
+  source_name_part = MachOReader
+build obj/llvm/lib/ObjCopy/MachO/ObjCopy.MachOWriter.o: cxx ../../llvm/lib/ObjCopy/MachO/MachOWriter.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = MachOWriter.cpp
+  source_name_part = MachOWriter
+build obj/llvm/lib/ObjCopy/ObjCopy.ObjCopy.o: cxx ../../llvm/lib/ObjCopy/ObjCopy.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = ObjCopy.cpp
+  source_name_part = ObjCopy
+build obj/llvm/lib/ObjCopy/XCOFF/ObjCopy.XCOFFObjcopy.o: cxx ../../llvm/lib/ObjCopy/XCOFF/XCOFFObjcopy.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = XCOFFObjcopy.cpp
+  source_name_part = XCOFFObjcopy
+build obj/llvm/lib/ObjCopy/XCOFF/ObjCopy.XCOFFReader.o: cxx ../../llvm/lib/ObjCopy/XCOFF/XCOFFReader.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = XCOFFReader.cpp
+  source_name_part = XCOFFReader
+build obj/llvm/lib/ObjCopy/XCOFF/ObjCopy.XCOFFWriter.o: cxx ../../llvm/lib/ObjCopy/XCOFF/XCOFFWriter.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = XCOFFWriter.cpp
+  source_name_part = XCOFFWriter
+build obj/llvm/lib/ObjCopy/wasm/ObjCopy.WasmObjcopy.o: cxx ../../llvm/lib/ObjCopy/wasm/WasmObjcopy.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = WasmObjcopy.cpp
+  source_name_part = WasmObjcopy
+build obj/llvm/lib/ObjCopy/wasm/ObjCopy.WasmObject.o: cxx ../../llvm/lib/ObjCopy/wasm/WasmObject.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = WasmObject.cpp
+  source_name_part = WasmObject
+build obj/llvm/lib/ObjCopy/wasm/ObjCopy.WasmReader.o: cxx ../../llvm/lib/ObjCopy/wasm/WasmReader.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = WasmReader.cpp
+  source_name_part = WasmReader
+build obj/llvm/lib/ObjCopy/wasm/ObjCopy.WasmWriter.o: cxx ../../llvm/lib/ObjCopy/wasm/WasmWriter.cpp || obj/llvm/lib/ObjCopy/ObjCopy.inputdeps.stamp
+  source_file_part = WasmWriter.cpp
+  source_name_part = WasmWriter
+
+build ./lib/libLLVMObjCopy.a: alink obj/llvm/lib/ObjCopy/ObjCopy.Archive.o obj/llvm/lib/ObjCopy/COFF/ObjCopy.COFFObjcopy.o obj/llvm/lib/ObjCopy/COFF/ObjCopy.COFFObject.o obj/llvm/lib/ObjCopy/COFF/ObjCopy.COFFReader.o obj/llvm/lib/ObjCopy/COFF/ObjCopy.COFFWriter.o obj/llvm/lib/ObjCopy/ObjCopy.CommonConfig.o obj/llvm/lib/ObjCopy/ObjCopy.ConfigManager.o obj/llvm/lib/ObjCopy/ELF/ObjCopy.ELFObjcopy.o obj/llvm/lib/ObjCopy/ELF/ObjCopy.ELFObject.o obj/llvm/lib/ObjCopy/MachO/ObjCopy.MachOLayoutBuilder.o obj/llvm/lib/ObjCopy/MachO/ObjCopy.MachOObjcopy.o obj/llvm/lib/ObjCopy/MachO/ObjCopy.MachOObject.o obj/llvm/lib/ObjCopy/MachO/ObjCopy.MachOReader.o obj/llvm/lib/ObjCopy/MachO/ObjCopy.MachOWriter.o obj/llvm/lib/ObjCopy/ObjCopy.ObjCopy.o obj/llvm/lib/ObjCopy/XCOFF/ObjCopy.XCOFFObjcopy.o obj/llvm/lib/ObjCopy/XCOFF/ObjCopy.XCOFFReader.o obj/llvm/lib/ObjCopy/XCOFF/ObjCopy.XCOFFWriter.o obj/llvm/lib/ObjCopy/wasm/ObjCopy.WasmObjcopy.o obj/llvm/lib/ObjCopy/wasm/ObjCopy.WasmObject.o obj/llvm/lib/ObjCopy/wasm/ObjCopy.WasmReader.o obj/llvm/lib/ObjCopy/wasm/ObjCopy.WasmWriter.o || ./lib/libLLVMMC.a ./lib/libLLVMObject.a ./lib/libLLVMSupport.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

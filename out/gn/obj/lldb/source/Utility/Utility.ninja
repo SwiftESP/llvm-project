@@ -1,0 +1,157 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../lldb/include -Igen/lldb/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Utility
+target_output_name = liblldbUtility
+
+build obj/lldb/source/Utility/Utility.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/lldb/source/Utility/Utility.ArchSpec.o: cxx ../../lldb/source/Utility/ArchSpec.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = ArchSpec.cpp
+  source_name_part = ArchSpec
+build obj/lldb/source/Utility/Utility.Args.o: cxx ../../lldb/source/Utility/Args.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = Args.cpp
+  source_name_part = Args
+build obj/lldb/source/Utility/Utility.Baton.o: cxx ../../lldb/source/Utility/Baton.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = Baton.cpp
+  source_name_part = Baton
+build obj/lldb/source/Utility/Utility.Broadcaster.o: cxx ../../lldb/source/Utility/Broadcaster.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = Broadcaster.cpp
+  source_name_part = Broadcaster
+build obj/lldb/source/Utility/Utility.CompletionRequest.o: cxx ../../lldb/source/Utility/CompletionRequest.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = CompletionRequest.cpp
+  source_name_part = CompletionRequest
+build obj/lldb/source/Utility/Utility.Connection.o: cxx ../../lldb/source/Utility/Connection.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = Connection.cpp
+  source_name_part = Connection
+build obj/lldb/source/Utility/Utility.ConstString.o: cxx ../../lldb/source/Utility/ConstString.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = ConstString.cpp
+  source_name_part = ConstString
+build obj/lldb/source/Utility/Utility.DataBufferHeap.o: cxx ../../lldb/source/Utility/DataBufferHeap.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = DataBufferHeap.cpp
+  source_name_part = DataBufferHeap
+build obj/lldb/source/Utility/Utility.DataBufferLLVM.o: cxx ../../lldb/source/Utility/DataBufferLLVM.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = DataBufferLLVM.cpp
+  source_name_part = DataBufferLLVM
+build obj/lldb/source/Utility/Utility.DataEncoder.o: cxx ../../lldb/source/Utility/DataEncoder.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = DataEncoder.cpp
+  source_name_part = DataEncoder
+build obj/lldb/source/Utility/Utility.DataExtractor.o: cxx ../../lldb/source/Utility/DataExtractor.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = DataExtractor.cpp
+  source_name_part = DataExtractor
+build obj/lldb/source/Utility/Utility.Environment.o: cxx ../../lldb/source/Utility/Environment.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = Environment.cpp
+  source_name_part = Environment
+build obj/lldb/source/Utility/Utility.Event.o: cxx ../../lldb/source/Utility/Event.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = Event.cpp
+  source_name_part = Event
+build obj/lldb/source/Utility/Utility.FileSpec.o: cxx ../../lldb/source/Utility/FileSpec.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = FileSpec.cpp
+  source_name_part = FileSpec
+build obj/lldb/source/Utility/Utility.GDBRemote.o: cxx ../../lldb/source/Utility/GDBRemote.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = GDBRemote.cpp
+  source_name_part = GDBRemote
+build obj/lldb/source/Utility/Utility.IOObject.o: cxx ../../lldb/source/Utility/IOObject.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = IOObject.cpp
+  source_name_part = IOObject
+build obj/lldb/source/Utility/Utility.Instrumentation.o: cxx ../../lldb/source/Utility/Instrumentation.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = Instrumentation.cpp
+  source_name_part = Instrumentation
+build obj/lldb/source/Utility/Utility.LLDBAssert.o: cxx ../../lldb/source/Utility/LLDBAssert.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = LLDBAssert.cpp
+  source_name_part = LLDBAssert
+build obj/lldb/source/Utility/Utility.LLDBLog.o: cxx ../../lldb/source/Utility/LLDBLog.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = LLDBLog.cpp
+  source_name_part = LLDBLog
+build obj/lldb/source/Utility/Utility.Listener.o: cxx ../../lldb/source/Utility/Listener.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = Listener.cpp
+  source_name_part = Listener
+build obj/lldb/source/Utility/Utility.Log.o: cxx ../../lldb/source/Utility/Log.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = Log.cpp
+  source_name_part = Log
+build obj/lldb/source/Utility/Utility.NameMatches.o: cxx ../../lldb/source/Utility/NameMatches.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = NameMatches.cpp
+  source_name_part = NameMatches
+build obj/lldb/source/Utility/Utility.ProcessInfo.o: cxx ../../lldb/source/Utility/ProcessInfo.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = ProcessInfo.cpp
+  source_name_part = ProcessInfo
+build obj/lldb/source/Utility/Utility.RegisterValue.o: cxx ../../lldb/source/Utility/RegisterValue.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterValue.cpp
+  source_name_part = RegisterValue
+build obj/lldb/source/Utility/Utility.RegularExpression.o: cxx ../../lldb/source/Utility/RegularExpression.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = RegularExpression.cpp
+  source_name_part = RegularExpression
+build obj/lldb/source/Utility/Utility.Scalar.o: cxx ../../lldb/source/Utility/Scalar.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = Scalar.cpp
+  source_name_part = Scalar
+build obj/lldb/source/Utility/Utility.SelectHelper.o: cxx ../../lldb/source/Utility/SelectHelper.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = SelectHelper.cpp
+  source_name_part = SelectHelper
+build obj/lldb/source/Utility/Utility.State.o: cxx ../../lldb/source/Utility/State.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = State.cpp
+  source_name_part = State
+build obj/lldb/source/Utility/Utility.Status.o: cxx ../../lldb/source/Utility/Status.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = Status.cpp
+  source_name_part = Status
+build obj/lldb/source/Utility/Utility.Stream.o: cxx ../../lldb/source/Utility/Stream.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = Stream.cpp
+  source_name_part = Stream
+build obj/lldb/source/Utility/Utility.StreamString.o: cxx ../../lldb/source/Utility/StreamString.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = StreamString.cpp
+  source_name_part = StreamString
+build obj/lldb/source/Utility/Utility.StringExtractor.o: cxx ../../lldb/source/Utility/StringExtractor.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = StringExtractor.cpp
+  source_name_part = StringExtractor
+build obj/lldb/source/Utility/Utility.StringExtractorGDBRemote.o: cxx ../../lldb/source/Utility/StringExtractorGDBRemote.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = StringExtractorGDBRemote.cpp
+  source_name_part = StringExtractorGDBRemote
+build obj/lldb/source/Utility/Utility.StringLexer.o: cxx ../../lldb/source/Utility/StringLexer.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = StringLexer.cpp
+  source_name_part = StringLexer
+build obj/lldb/source/Utility/Utility.StringList.o: cxx ../../lldb/source/Utility/StringList.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = StringList.cpp
+  source_name_part = StringList
+build obj/lldb/source/Utility/Utility.StructuredData.o: cxx ../../lldb/source/Utility/StructuredData.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = StructuredData.cpp
+  source_name_part = StructuredData
+build obj/lldb/source/Utility/Utility.TildeExpressionResolver.o: cxx ../../lldb/source/Utility/TildeExpressionResolver.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = TildeExpressionResolver.cpp
+  source_name_part = TildeExpressionResolver
+build obj/lldb/source/Utility/Utility.Timer.o: cxx ../../lldb/source/Utility/Timer.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = Timer.cpp
+  source_name_part = Timer
+build obj/lldb/source/Utility/Utility.TraceGDBRemotePackets.o: cxx ../../lldb/source/Utility/TraceGDBRemotePackets.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = TraceGDBRemotePackets.cpp
+  source_name_part = TraceGDBRemotePackets
+build obj/lldb/source/Utility/Utility.TraceIntelPTGDBRemotePackets.o: cxx ../../lldb/source/Utility/TraceIntelPTGDBRemotePackets.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = TraceIntelPTGDBRemotePackets.cpp
+  source_name_part = TraceIntelPTGDBRemotePackets
+build obj/lldb/source/Utility/Utility.UUID.o: cxx ../../lldb/source/Utility/UUID.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = UUID.cpp
+  source_name_part = UUID
+build obj/lldb/source/Utility/Utility.UnimplementedError.o: cxx ../../lldb/source/Utility/UnimplementedError.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = UnimplementedError.cpp
+  source_name_part = UnimplementedError
+build obj/lldb/source/Utility/Utility.UriParser.o: cxx ../../lldb/source/Utility/UriParser.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = UriParser.cpp
+  source_name_part = UriParser
+build obj/lldb/source/Utility/Utility.UserID.o: cxx ../../lldb/source/Utility/UserID.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = UserID.cpp
+  source_name_part = UserID
+build obj/lldb/source/Utility/Utility.UserIDResolver.o: cxx ../../lldb/source/Utility/UserIDResolver.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = UserIDResolver.cpp
+  source_name_part = UserIDResolver
+build obj/lldb/source/Utility/Utility.VASprintf.o: cxx ../../lldb/source/Utility/VASprintf.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = VASprintf.cpp
+  source_name_part = VASprintf
+build obj/lldb/source/Utility/Utility.VMRange.o: cxx ../../lldb/source/Utility/VMRange.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = VMRange.cpp
+  source_name_part = VMRange
+build obj/lldb/source/Utility/Utility.XcodeSDK.o: cxx ../../lldb/source/Utility/XcodeSDK.cpp || obj/lldb/source/Utility/Utility.inputdeps.stamp
+  source_file_part = XcodeSDK.cpp
+  source_name_part = XcodeSDK
+
+build ./lib/liblldbUtility.a: alink obj/lldb/source/Utility/Utility.ArchSpec.o obj/lldb/source/Utility/Utility.Args.o obj/lldb/source/Utility/Utility.Baton.o obj/lldb/source/Utility/Utility.Broadcaster.o obj/lldb/source/Utility/Utility.CompletionRequest.o obj/lldb/source/Utility/Utility.Connection.o obj/lldb/source/Utility/Utility.ConstString.o obj/lldb/source/Utility/Utility.DataBufferHeap.o obj/lldb/source/Utility/Utility.DataBufferLLVM.o obj/lldb/source/Utility/Utility.DataEncoder.o obj/lldb/source/Utility/Utility.DataExtractor.o obj/lldb/source/Utility/Utility.Environment.o obj/lldb/source/Utility/Utility.Event.o obj/lldb/source/Utility/Utility.FileSpec.o obj/lldb/source/Utility/Utility.GDBRemote.o obj/lldb/source/Utility/Utility.IOObject.o obj/lldb/source/Utility/Utility.Instrumentation.o obj/lldb/source/Utility/Utility.LLDBAssert.o obj/lldb/source/Utility/Utility.LLDBLog.o obj/lldb/source/Utility/Utility.Listener.o obj/lldb/source/Utility/Utility.Log.o obj/lldb/source/Utility/Utility.NameMatches.o obj/lldb/source/Utility/Utility.ProcessInfo.o obj/lldb/source/Utility/Utility.RegisterValue.o obj/lldb/source/Utility/Utility.RegularExpression.o obj/lldb/source/Utility/Utility.Scalar.o obj/lldb/source/Utility/Utility.SelectHelper.o obj/lldb/source/Utility/Utility.State.o obj/lldb/source/Utility/Utility.Status.o obj/lldb/source/Utility/Utility.Stream.o obj/lldb/source/Utility/Utility.StreamString.o obj/lldb/source/Utility/Utility.StringExtractor.o obj/lldb/source/Utility/Utility.StringExtractorGDBRemote.o obj/lldb/source/Utility/Utility.StringLexer.o obj/lldb/source/Utility/Utility.StringList.o obj/lldb/source/Utility/Utility.StructuredData.o obj/lldb/source/Utility/Utility.TildeExpressionResolver.o obj/lldb/source/Utility/Utility.Timer.o obj/lldb/source/Utility/Utility.TraceGDBRemotePackets.o obj/lldb/source/Utility/Utility.TraceIntelPTGDBRemotePackets.o obj/lldb/source/Utility/Utility.UUID.o obj/lldb/source/Utility/Utility.UnimplementedError.o obj/lldb/source/Utility/Utility.UriParser.o obj/lldb/source/Utility/Utility.UserID.o obj/lldb/source/Utility/Utility.UserIDResolver.o obj/lldb/source/Utility/Utility.VASprintf.o obj/lldb/source/Utility/Utility.VMRange.o obj/lldb/source/Utility/Utility.XcodeSDK.o || ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

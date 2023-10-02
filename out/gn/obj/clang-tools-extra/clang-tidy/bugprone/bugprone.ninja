@@ -1,0 +1,211 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = bugprone
+target_output_name = libclangTidyBugproneModule
+
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp: stamp obj/clang-tools-extra/clang-tidy/clang-tidy-config.stamp obj/clang-tools-extra/clang-tidy/misc/Confusables.inc.stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/clang/lib/Tooling/node_introspection_inc.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ArgumentCommentCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/ArgumentCommentCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = ArgumentCommentCheck.cpp
+  source_name_part = ArgumentCommentCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.AssertSideEffectCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/AssertSideEffectCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = AssertSideEffectCheck.cpp
+  source_name_part = AssertSideEffectCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.AssignmentInIfConditionCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/AssignmentInIfConditionCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = AssignmentInIfConditionCheck.cpp
+  source_name_part = AssignmentInIfConditionCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.BadSignalToKillThreadCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/BadSignalToKillThreadCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = BadSignalToKillThreadCheck.cpp
+  source_name_part = BadSignalToKillThreadCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.BoolPointerImplicitConversionCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/BoolPointerImplicitConversionCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = BoolPointerImplicitConversionCheck.cpp
+  source_name_part = BoolPointerImplicitConversionCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.BranchCloneCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/BranchCloneCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = BranchCloneCheck.cpp
+  source_name_part = BranchCloneCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.BugproneTidyModule.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/BugproneTidyModule.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = BugproneTidyModule.cpp
+  source_name_part = BugproneTidyModule
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.CopyConstructorInitCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/CopyConstructorInitCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = CopyConstructorInitCheck.cpp
+  source_name_part = CopyConstructorInitCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.DanglingHandleCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/DanglingHandleCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = DanglingHandleCheck.cpp
+  source_name_part = DanglingHandleCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.DynamicStaticInitializersCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/DynamicStaticInitializersCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = DynamicStaticInitializersCheck.cpp
+  source_name_part = DynamicStaticInitializersCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.EasilySwappableParametersCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/EasilySwappableParametersCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = EasilySwappableParametersCheck.cpp
+  source_name_part = EasilySwappableParametersCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ExceptionEscapeCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/ExceptionEscapeCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = ExceptionEscapeCheck.cpp
+  source_name_part = ExceptionEscapeCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.FoldInitTypeCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/FoldInitTypeCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = FoldInitTypeCheck.cpp
+  source_name_part = FoldInitTypeCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ForwardDeclarationNamespaceCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/ForwardDeclarationNamespaceCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = ForwardDeclarationNamespaceCheck.cpp
+  source_name_part = ForwardDeclarationNamespaceCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ForwardingReferenceOverloadCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/ForwardingReferenceOverloadCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = ForwardingReferenceOverloadCheck.cpp
+  source_name_part = ForwardingReferenceOverloadCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ImplicitWideningOfMultiplicationResultCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/ImplicitWideningOfMultiplicationResultCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = ImplicitWideningOfMultiplicationResultCheck.cpp
+  source_name_part = ImplicitWideningOfMultiplicationResultCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.InaccurateEraseCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/InaccurateEraseCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = InaccurateEraseCheck.cpp
+  source_name_part = InaccurateEraseCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.IncorrectRoundingsCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/IncorrectRoundingsCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = IncorrectRoundingsCheck.cpp
+  source_name_part = IncorrectRoundingsCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.InfiniteLoopCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/InfiniteLoopCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = InfiniteLoopCheck.cpp
+  source_name_part = InfiniteLoopCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.IntegerDivisionCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/IntegerDivisionCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = IntegerDivisionCheck.cpp
+  source_name_part = IntegerDivisionCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.LambdaFunctionNameCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/LambdaFunctionNameCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = LambdaFunctionNameCheck.cpp
+  source_name_part = LambdaFunctionNameCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.MacroParenthesesCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/MacroParenthesesCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = MacroParenthesesCheck.cpp
+  source_name_part = MacroParenthesesCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.MacroRepeatedSideEffectsCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/MacroRepeatedSideEffectsCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = MacroRepeatedSideEffectsCheck.cpp
+  source_name_part = MacroRepeatedSideEffectsCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.MisplacedOperatorInStrlenInAllocCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/MisplacedOperatorInStrlenInAllocCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = MisplacedOperatorInStrlenInAllocCheck.cpp
+  source_name_part = MisplacedOperatorInStrlenInAllocCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.MisplacedPointerArithmeticInAllocCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/MisplacedPointerArithmeticInAllocCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = MisplacedPointerArithmeticInAllocCheck.cpp
+  source_name_part = MisplacedPointerArithmeticInAllocCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.MisplacedWideningCastCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/MisplacedWideningCastCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = MisplacedWideningCastCheck.cpp
+  source_name_part = MisplacedWideningCastCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.MoveForwardingReferenceCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/MoveForwardingReferenceCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = MoveForwardingReferenceCheck.cpp
+  source_name_part = MoveForwardingReferenceCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.MultipleStatementMacroCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/MultipleStatementMacroCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = MultipleStatementMacroCheck.cpp
+  source_name_part = MultipleStatementMacroCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.NoEscapeCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/NoEscapeCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = NoEscapeCheck.cpp
+  source_name_part = NoEscapeCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.NotNullTerminatedResultCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/NotNullTerminatedResultCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = NotNullTerminatedResultCheck.cpp
+  source_name_part = NotNullTerminatedResultCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ParentVirtualCallCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/ParentVirtualCallCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = ParentVirtualCallCheck.cpp
+  source_name_part = ParentVirtualCallCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.PosixReturnCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/PosixReturnCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = PosixReturnCheck.cpp
+  source_name_part = PosixReturnCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.RedundantBranchConditionCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/RedundantBranchConditionCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = RedundantBranchConditionCheck.cpp
+  source_name_part = RedundantBranchConditionCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ReservedIdentifierCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/ReservedIdentifierCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = ReservedIdentifierCheck.cpp
+  source_name_part = ReservedIdentifierCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SharedPtrArrayMismatchCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SharedPtrArrayMismatchCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SharedPtrArrayMismatchCheck.cpp
+  source_name_part = SharedPtrArrayMismatchCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SignalHandlerCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SignalHandlerCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SignalHandlerCheck.cpp
+  source_name_part = SignalHandlerCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SignedCharMisuseCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SignedCharMisuseCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SignedCharMisuseCheck.cpp
+  source_name_part = SignedCharMisuseCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SizeofContainerCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SizeofContainerCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SizeofContainerCheck.cpp
+  source_name_part = SizeofContainerCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SizeofExpressionCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SizeofExpressionCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SizeofExpressionCheck.cpp
+  source_name_part = SizeofExpressionCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SmartPtrArrayMismatchCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SmartPtrArrayMismatchCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SmartPtrArrayMismatchCheck.cpp
+  source_name_part = SmartPtrArrayMismatchCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SpuriouslyWakeUpFunctionsCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SpuriouslyWakeUpFunctionsCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SpuriouslyWakeUpFunctionsCheck.cpp
+  source_name_part = SpuriouslyWakeUpFunctionsCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.StringConstructorCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/StringConstructorCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = StringConstructorCheck.cpp
+  source_name_part = StringConstructorCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.StringIntegerAssignmentCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/StringIntegerAssignmentCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = StringIntegerAssignmentCheck.cpp
+  source_name_part = StringIntegerAssignmentCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.StringLiteralWithEmbeddedNulCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/StringLiteralWithEmbeddedNulCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = StringLiteralWithEmbeddedNulCheck.cpp
+  source_name_part = StringLiteralWithEmbeddedNulCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.StringviewNullptrCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/StringviewNullptrCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = StringviewNullptrCheck.cpp
+  source_name_part = StringviewNullptrCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousEnumUsageCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SuspiciousEnumUsageCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SuspiciousEnumUsageCheck.cpp
+  source_name_part = SuspiciousEnumUsageCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousIncludeCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SuspiciousIncludeCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SuspiciousIncludeCheck.cpp
+  source_name_part = SuspiciousIncludeCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousMemoryComparisonCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SuspiciousMemoryComparisonCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SuspiciousMemoryComparisonCheck.cpp
+  source_name_part = SuspiciousMemoryComparisonCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousMemsetUsageCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SuspiciousMemsetUsageCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SuspiciousMemsetUsageCheck.cpp
+  source_name_part = SuspiciousMemsetUsageCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousMissingCommaCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SuspiciousMissingCommaCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SuspiciousMissingCommaCheck.cpp
+  source_name_part = SuspiciousMissingCommaCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousReallocUsageCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SuspiciousReallocUsageCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SuspiciousReallocUsageCheck.cpp
+  source_name_part = SuspiciousReallocUsageCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousSemicolonCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SuspiciousSemicolonCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SuspiciousSemicolonCheck.cpp
+  source_name_part = SuspiciousSemicolonCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousStringCompareCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SuspiciousStringCompareCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SuspiciousStringCompareCheck.cpp
+  source_name_part = SuspiciousStringCompareCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SwappedArgumentsCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/SwappedArgumentsCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = SwappedArgumentsCheck.cpp
+  source_name_part = SwappedArgumentsCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.TerminatingContinueCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/TerminatingContinueCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = TerminatingContinueCheck.cpp
+  source_name_part = TerminatingContinueCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ThrowKeywordMissingCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/ThrowKeywordMissingCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = ThrowKeywordMissingCheck.cpp
+  source_name_part = ThrowKeywordMissingCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.TooSmallLoopVariableCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/TooSmallLoopVariableCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = TooSmallLoopVariableCheck.cpp
+  source_name_part = TooSmallLoopVariableCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UncheckedOptionalAccessCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/UncheckedOptionalAccessCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = UncheckedOptionalAccessCheck.cpp
+  source_name_part = UncheckedOptionalAccessCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UndefinedMemoryManipulationCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/UndefinedMemoryManipulationCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = UndefinedMemoryManipulationCheck.cpp
+  source_name_part = UndefinedMemoryManipulationCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UndelegatedConstructorCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/UndelegatedConstructorCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = UndelegatedConstructorCheck.cpp
+  source_name_part = UndelegatedConstructorCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UnhandledExceptionAtNewCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/UnhandledExceptionAtNewCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = UnhandledExceptionAtNewCheck.cpp
+  source_name_part = UnhandledExceptionAtNewCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UnhandledSelfAssignmentCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/UnhandledSelfAssignmentCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = UnhandledSelfAssignmentCheck.cpp
+  source_name_part = UnhandledSelfAssignmentCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UnusedRaiiCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/UnusedRaiiCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = UnusedRaiiCheck.cpp
+  source_name_part = UnusedRaiiCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UnusedReturnValueCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/UnusedReturnValueCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = UnusedReturnValueCheck.cpp
+  source_name_part = UnusedReturnValueCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UseAfterMoveCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/UseAfterMoveCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = UseAfterMoveCheck.cpp
+  source_name_part = UseAfterMoveCheck
+build obj/clang-tools-extra/clang-tidy/bugprone/bugprone.VirtualNearMissCheck.o: cxx ../../clang-tools-extra/clang-tidy/bugprone/VirtualNearMissCheck.cpp || obj/clang-tools-extra/clang-tidy/bugprone/bugprone.inputdeps.stamp
+  source_file_part = VirtualNearMissCheck.cpp
+  source_name_part = VirtualNearMissCheck
+
+build ./lib/libclangTidyBugproneModule.a: alink obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ArgumentCommentCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.AssertSideEffectCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.AssignmentInIfConditionCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.BadSignalToKillThreadCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.BoolPointerImplicitConversionCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.BranchCloneCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.BugproneTidyModule.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.CopyConstructorInitCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.DanglingHandleCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.DynamicStaticInitializersCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.EasilySwappableParametersCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ExceptionEscapeCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.FoldInitTypeCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ForwardDeclarationNamespaceCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ForwardingReferenceOverloadCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ImplicitWideningOfMultiplicationResultCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.InaccurateEraseCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.IncorrectRoundingsCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.InfiniteLoopCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.IntegerDivisionCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.LambdaFunctionNameCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.MacroParenthesesCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.MacroRepeatedSideEffectsCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.MisplacedOperatorInStrlenInAllocCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.MisplacedPointerArithmeticInAllocCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.MisplacedWideningCastCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.MoveForwardingReferenceCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.MultipleStatementMacroCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.NoEscapeCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.NotNullTerminatedResultCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ParentVirtualCallCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.PosixReturnCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.RedundantBranchConditionCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ReservedIdentifierCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SharedPtrArrayMismatchCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SignalHandlerCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SignedCharMisuseCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SizeofContainerCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SizeofExpressionCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SmartPtrArrayMismatchCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SpuriouslyWakeUpFunctionsCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.StringConstructorCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.StringIntegerAssignmentCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.StringLiteralWithEmbeddedNulCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.StringviewNullptrCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousEnumUsageCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousIncludeCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousMemoryComparisonCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousMemsetUsageCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousMissingCommaCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousReallocUsageCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousSemicolonCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SuspiciousStringCompareCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.SwappedArgumentsCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.TerminatingContinueCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.ThrowKeywordMissingCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.TooSmallLoopVariableCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UncheckedOptionalAccessCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UndefinedMemoryManipulationCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UndelegatedConstructorCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UnhandledExceptionAtNewCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UnhandledSelfAssignmentCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UnusedRaiiCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UnusedReturnValueCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.UseAfterMoveCheck.o obj/clang-tools-extra/clang-tidy/bugprone/bugprone.VirtualNearMissCheck.o || ./lib/libclangTidy.a ./lib/libclangTidyCppCoreGuidelinesModule.a ./lib/libclangTidyUtils.a ./lib/libclangAST.a ./lib/libclangASTMatchers.a ./lib/libclangAnalysis.a ./lib/libclangAnalysisFlowSensitive.a ./lib/libclangAnalysisFlowSensitiveModels.a ./lib/libclangBasic.a ./lib/libclangLex.a ./lib/libclangTooling.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangFormat.a ./lib/libclangToolingCore.a ./lib/libclangRewrite.a ./lib/libclangToolingInclusions.a ./lib/libclangFrontend.a ./lib/libclangDriver.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libclangEdit.a ./lib/libclangParse.a ./lib/libclangSema.a ./lib/libclangSupport.a ./lib/libclangSerialization.a ./lib/libclangStaticAnalyzerCore.a ./lib/libclangCrossTU.a ./lib/libclangIndex.a ./lib/libclangStaticAnalyzerFrontend.a ./lib/libclangStaticAnalyzerCheckers.a ./lib/libclangTidyMiscModule.a ./lib/libclangToolingTransformer.a ./lib/libclangToolingRefactoring.a ./lib/libclangTidyModernizeModule.a ./lib/libclangTidyReadabilityModule.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

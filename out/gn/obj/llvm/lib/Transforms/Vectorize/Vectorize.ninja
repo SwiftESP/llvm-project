@@ -1,0 +1,49 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Vectorize
+target_output_name = libLLVMVectorize
+
+build obj/llvm/lib/Transforms/Vectorize/Vectorize.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/Transforms/Vectorize/Vectorize.LoadStoreVectorizer.o: cxx ../../llvm/lib/Transforms/Vectorize/LoadStoreVectorizer.cpp || obj/llvm/lib/Transforms/Vectorize/Vectorize.inputdeps.stamp
+  source_file_part = LoadStoreVectorizer.cpp
+  source_name_part = LoadStoreVectorizer
+build obj/llvm/lib/Transforms/Vectorize/Vectorize.LoopVectorizationLegality.o: cxx ../../llvm/lib/Transforms/Vectorize/LoopVectorizationLegality.cpp || obj/llvm/lib/Transforms/Vectorize/Vectorize.inputdeps.stamp
+  source_file_part = LoopVectorizationLegality.cpp
+  source_name_part = LoopVectorizationLegality
+build obj/llvm/lib/Transforms/Vectorize/Vectorize.LoopVectorize.o: cxx ../../llvm/lib/Transforms/Vectorize/LoopVectorize.cpp || obj/llvm/lib/Transforms/Vectorize/Vectorize.inputdeps.stamp
+  source_file_part = LoopVectorize.cpp
+  source_name_part = LoopVectorize
+build obj/llvm/lib/Transforms/Vectorize/Vectorize.SLPVectorizer.o: cxx ../../llvm/lib/Transforms/Vectorize/SLPVectorizer.cpp || obj/llvm/lib/Transforms/Vectorize/Vectorize.inputdeps.stamp
+  source_file_part = SLPVectorizer.cpp
+  source_name_part = SLPVectorizer
+build obj/llvm/lib/Transforms/Vectorize/Vectorize.VPlan.o: cxx ../../llvm/lib/Transforms/Vectorize/VPlan.cpp || obj/llvm/lib/Transforms/Vectorize/Vectorize.inputdeps.stamp
+  source_file_part = VPlan.cpp
+  source_name_part = VPlan
+build obj/llvm/lib/Transforms/Vectorize/Vectorize.VPlanHCFGBuilder.o: cxx ../../llvm/lib/Transforms/Vectorize/VPlanHCFGBuilder.cpp || obj/llvm/lib/Transforms/Vectorize/Vectorize.inputdeps.stamp
+  source_file_part = VPlanHCFGBuilder.cpp
+  source_name_part = VPlanHCFGBuilder
+build obj/llvm/lib/Transforms/Vectorize/Vectorize.VPlanRecipes.o: cxx ../../llvm/lib/Transforms/Vectorize/VPlanRecipes.cpp || obj/llvm/lib/Transforms/Vectorize/Vectorize.inputdeps.stamp
+  source_file_part = VPlanRecipes.cpp
+  source_name_part = VPlanRecipes
+build obj/llvm/lib/Transforms/Vectorize/Vectorize.VPlanSLP.o: cxx ../../llvm/lib/Transforms/Vectorize/VPlanSLP.cpp || obj/llvm/lib/Transforms/Vectorize/Vectorize.inputdeps.stamp
+  source_file_part = VPlanSLP.cpp
+  source_name_part = VPlanSLP
+build obj/llvm/lib/Transforms/Vectorize/Vectorize.VPlanTransforms.o: cxx ../../llvm/lib/Transforms/Vectorize/VPlanTransforms.cpp || obj/llvm/lib/Transforms/Vectorize/Vectorize.inputdeps.stamp
+  source_file_part = VPlanTransforms.cpp
+  source_name_part = VPlanTransforms
+build obj/llvm/lib/Transforms/Vectorize/Vectorize.VPlanVerifier.o: cxx ../../llvm/lib/Transforms/Vectorize/VPlanVerifier.cpp || obj/llvm/lib/Transforms/Vectorize/Vectorize.inputdeps.stamp
+  source_file_part = VPlanVerifier.cpp
+  source_name_part = VPlanVerifier
+build obj/llvm/lib/Transforms/Vectorize/Vectorize.VectorCombine.o: cxx ../../llvm/lib/Transforms/Vectorize/VectorCombine.cpp || obj/llvm/lib/Transforms/Vectorize/Vectorize.inputdeps.stamp
+  source_file_part = VectorCombine.cpp
+  source_name_part = VectorCombine
+build obj/llvm/lib/Transforms/Vectorize/Vectorize.Vectorize.o: cxx ../../llvm/lib/Transforms/Vectorize/Vectorize.cpp || obj/llvm/lib/Transforms/Vectorize/Vectorize.inputdeps.stamp
+  source_file_part = Vectorize.cpp
+  source_name_part = Vectorize
+
+build ./lib/libLLVMVectorize.a: alink obj/llvm/lib/Transforms/Vectorize/Vectorize.LoadStoreVectorizer.o obj/llvm/lib/Transforms/Vectorize/Vectorize.LoopVectorizationLegality.o obj/llvm/lib/Transforms/Vectorize/Vectorize.LoopVectorize.o obj/llvm/lib/Transforms/Vectorize/Vectorize.SLPVectorizer.o obj/llvm/lib/Transforms/Vectorize/Vectorize.VPlan.o obj/llvm/lib/Transforms/Vectorize/Vectorize.VPlanHCFGBuilder.o obj/llvm/lib/Transforms/Vectorize/Vectorize.VPlanRecipes.o obj/llvm/lib/Transforms/Vectorize/Vectorize.VPlanSLP.o obj/llvm/lib/Transforms/Vectorize/Vectorize.VPlanTransforms.o obj/llvm/lib/Transforms/Vectorize/Vectorize.VPlanVerifier.o obj/llvm/lib/Transforms/Vectorize/Vectorize.VectorCombine.o obj/llvm/lib/Transforms/Vectorize/Vectorize.Vectorize.o || ./lib/libLLVMAnalysis.a ./lib/libLLVMCore.a ./lib/libLLVMSupport.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

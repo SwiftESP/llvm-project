@@ -1,0 +1,28 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = DebugInfoCodeViewTests
+target_output_name = DebugInfoCodeViewTests
+
+build obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests.GUIDFormatTest.o: cxx ../../llvm/unittests/DebugInfo/CodeView/GUIDFormatTest.cpp || obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests.inputdeps.stamp
+  source_file_part = GUIDFormatTest.cpp
+  source_name_part = GUIDFormatTest
+build obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests.RandomAccessVisitorTest.o: cxx ../../llvm/unittests/DebugInfo/CodeView/RandomAccessVisitorTest.cpp || obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests.inputdeps.stamp
+  source_file_part = RandomAccessVisitorTest.cpp
+  source_name_part = RandomAccessVisitorTest
+build obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests.TypeHashingTest.o: cxx ../../llvm/unittests/DebugInfo/CodeView/TypeHashingTest.cpp || obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests.inputdeps.stamp
+  source_file_part = TypeHashingTest.cpp
+  source_name_part = TypeHashingTest
+build obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests.TypeIndexDiscoveryTest.o: cxx ../../llvm/unittests/DebugInfo/CodeView/TypeIndexDiscoveryTest.cpp || obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests.inputdeps.stamp
+  source_file_part = TypeIndexDiscoveryTest.cpp
+  source_name_part = TypeIndexDiscoveryTest
+
+build obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests: link obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests.GUIDFormatTest.o obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests.RandomAccessVisitorTest.o obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests.TypeHashingTest.o obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests.TypeIndexDiscoveryTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMTestingSupport.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libgtest.a || obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/DebugInfo/CodeView

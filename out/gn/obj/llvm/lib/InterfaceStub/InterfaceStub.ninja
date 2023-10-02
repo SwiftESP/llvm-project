@@ -1,0 +1,22 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = InterfaceStub
+target_output_name = libLLVMInterfaceStub
+
+build obj/llvm/lib/InterfaceStub/InterfaceStub.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/InterfaceStub/InterfaceStub.ELFObjHandler.o: cxx ../../llvm/lib/InterfaceStub/ELFObjHandler.cpp || obj/llvm/lib/InterfaceStub/InterfaceStub.inputdeps.stamp
+  source_file_part = ELFObjHandler.cpp
+  source_name_part = ELFObjHandler
+build obj/llvm/lib/InterfaceStub/InterfaceStub.IFSHandler.o: cxx ../../llvm/lib/InterfaceStub/IFSHandler.cpp || obj/llvm/lib/InterfaceStub/InterfaceStub.inputdeps.stamp
+  source_file_part = IFSHandler.cpp
+  source_name_part = IFSHandler
+build obj/llvm/lib/InterfaceStub/InterfaceStub.IFSStub.o: cxx ../../llvm/lib/InterfaceStub/IFSStub.cpp || obj/llvm/lib/InterfaceStub/InterfaceStub.inputdeps.stamp
+  source_file_part = IFSStub.cpp
+  source_name_part = IFSStub
+
+build ./lib/libLLVMInterfaceStub.a: alink obj/llvm/lib/InterfaceStub/InterfaceStub.ELFObjHandler.o obj/llvm/lib/InterfaceStub/InterfaceStub.IFSHandler.o obj/llvm/lib/InterfaceStub/InterfaceStub.IFSStub.o || ./lib/libLLVMObject.a ./lib/libLLVMSupport.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

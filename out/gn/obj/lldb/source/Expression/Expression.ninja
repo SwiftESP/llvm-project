@@ -1,0 +1,55 @@
+defines =
+include_dirs = -I../../lldb/source -I../../llvm/include -Igen/llvm/include -I../../lldb/include -Igen/lldb/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libxml2 -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Expression
+target_output_name = liblldbExpression
+
+build obj/lldb/source/Expression/Expression.inputdeps.stamp: stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/lldb/include/lldb/Host/Config.stamp obj/lldb/include/lldb/Version/version.stamp obj/lldb/source/Commands/CommandOptions.stamp obj/lldb/source/Core/CoreProperties.stamp obj/lldb/source/Core/CorePropertiesEnum.stamp obj/lldb/source/Interpreter/InterpreterProperties.stamp obj/lldb/source/Interpreter/InterpreterPropertiesEnum.stamp obj/lldb/source/Version/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/lldb/source/Expression/Expression.DWARFExpression.o: cxx ../../lldb/source/Expression/DWARFExpression.cpp || obj/lldb/source/Expression/Expression.inputdeps.stamp
+  source_file_part = DWARFExpression.cpp
+  source_name_part = DWARFExpression
+build obj/lldb/source/Expression/Expression.DWARFExpressionList.o: cxx ../../lldb/source/Expression/DWARFExpressionList.cpp || obj/lldb/source/Expression/Expression.inputdeps.stamp
+  source_file_part = DWARFExpressionList.cpp
+  source_name_part = DWARFExpressionList
+build obj/lldb/source/Expression/Expression.DiagnosticManager.o: cxx ../../lldb/source/Expression/DiagnosticManager.cpp || obj/lldb/source/Expression/Expression.inputdeps.stamp
+  source_file_part = DiagnosticManager.cpp
+  source_name_part = DiagnosticManager
+build obj/lldb/source/Expression/Expression.Expression.o: cxx ../../lldb/source/Expression/Expression.cpp || obj/lldb/source/Expression/Expression.inputdeps.stamp
+  source_file_part = Expression.cpp
+  source_name_part = Expression
+build obj/lldb/source/Expression/Expression.ExpressionVariable.o: cxx ../../lldb/source/Expression/ExpressionVariable.cpp || obj/lldb/source/Expression/Expression.inputdeps.stamp
+  source_file_part = ExpressionVariable.cpp
+  source_name_part = ExpressionVariable
+build obj/lldb/source/Expression/Expression.FunctionCaller.o: cxx ../../lldb/source/Expression/FunctionCaller.cpp || obj/lldb/source/Expression/Expression.inputdeps.stamp
+  source_file_part = FunctionCaller.cpp
+  source_name_part = FunctionCaller
+build obj/lldb/source/Expression/Expression.IRExecutionUnit.o: cxx ../../lldb/source/Expression/IRExecutionUnit.cpp || obj/lldb/source/Expression/Expression.inputdeps.stamp
+  source_file_part = IRExecutionUnit.cpp
+  source_name_part = IRExecutionUnit
+build obj/lldb/source/Expression/Expression.IRInterpreter.o: cxx ../../lldb/source/Expression/IRInterpreter.cpp || obj/lldb/source/Expression/Expression.inputdeps.stamp
+  source_file_part = IRInterpreter.cpp
+  source_name_part = IRInterpreter
+build obj/lldb/source/Expression/Expression.IRMemoryMap.o: cxx ../../lldb/source/Expression/IRMemoryMap.cpp || obj/lldb/source/Expression/Expression.inputdeps.stamp
+  source_file_part = IRMemoryMap.cpp
+  source_name_part = IRMemoryMap
+build obj/lldb/source/Expression/Expression.LLVMUserExpression.o: cxx ../../lldb/source/Expression/LLVMUserExpression.cpp || obj/lldb/source/Expression/Expression.inputdeps.stamp
+  source_file_part = LLVMUserExpression.cpp
+  source_name_part = LLVMUserExpression
+build obj/lldb/source/Expression/Expression.Materializer.o: cxx ../../lldb/source/Expression/Materializer.cpp || obj/lldb/source/Expression/Expression.inputdeps.stamp
+  source_file_part = Materializer.cpp
+  source_name_part = Materializer
+build obj/lldb/source/Expression/Expression.REPL.o: cxx ../../lldb/source/Expression/REPL.cpp || obj/lldb/source/Expression/Expression.inputdeps.stamp
+  source_file_part = REPL.cpp
+  source_name_part = REPL
+build obj/lldb/source/Expression/Expression.UserExpression.o: cxx ../../lldb/source/Expression/UserExpression.cpp || obj/lldb/source/Expression/Expression.inputdeps.stamp
+  source_file_part = UserExpression.cpp
+  source_name_part = UserExpression
+build obj/lldb/source/Expression/Expression.UtilityFunction.o: cxx ../../lldb/source/Expression/UtilityFunction.cpp || obj/lldb/source/Expression/Expression.inputdeps.stamp
+  source_file_part = UtilityFunction.cpp
+  source_name_part = UtilityFunction
+
+build ./lib/liblldbExpression.a: alink obj/lldb/source/Expression/Expression.DWARFExpression.o obj/lldb/source/Expression/Expression.DWARFExpressionList.o obj/lldb/source/Expression/Expression.DiagnosticManager.o obj/lldb/source/Expression/Expression.Expression.o obj/lldb/source/Expression/Expression.ExpressionVariable.o obj/lldb/source/Expression/Expression.FunctionCaller.o obj/lldb/source/Expression/Expression.IRExecutionUnit.o obj/lldb/source/Expression/Expression.IRInterpreter.o obj/lldb/source/Expression/Expression.IRMemoryMap.o obj/lldb/source/Expression/Expression.LLVMUserExpression.o obj/lldb/source/Expression/Expression.Materializer.o obj/lldb/source/Expression/Expression.REPL.o obj/lldb/source/Expression/Expression.UserExpression.o obj/lldb/source/Expression/Expression.UtilityFunction.o || ./lib/liblldbCore.a ./lib/liblldbHost.a ./lib/liblldbInterpreter.a ./lib/liblldbPluginObjectFileJIT.a ./lib/liblldbUtility.a ./lib/libLLVMExecutionEngine.a ./lib/libLLVMCore.a ./lib/libLLVMSupport.a ./lib/libclangDriver.a ./lib/libclangBasic.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/liblldbHostMacOSXObjCXX.a ./lib/liblldbCommands.a ./lib/liblldbDataFormatters.a ./lib/liblldbVersion.a ./lib/libLLVMOrcTargetProcess.a ./lib/libLLVMOrcShared.a ./lib/libLLVMTarget.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

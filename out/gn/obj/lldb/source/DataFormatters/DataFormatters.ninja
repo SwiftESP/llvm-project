@@ -1,0 +1,61 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../lldb/include -Igen/lldb/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = DataFormatters
+target_output_name = liblldbDataFormatters
+
+build obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp: stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/lldb/include/lldb/Host/Config.stamp obj/lldb/source/Core/CoreProperties.stamp obj/lldb/source/Core/CorePropertiesEnum.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/lldb/source/DataFormatters/DataFormatters.CXXFunctionPointer.o: cxx ../../lldb/source/DataFormatters/CXXFunctionPointer.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = CXXFunctionPointer.cpp
+  source_name_part = CXXFunctionPointer
+build obj/lldb/source/DataFormatters/DataFormatters.DataVisualization.o: cxx ../../lldb/source/DataFormatters/DataVisualization.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = DataVisualization.cpp
+  source_name_part = DataVisualization
+build obj/lldb/source/DataFormatters/DataFormatters.DumpValueObjectOptions.o: cxx ../../lldb/source/DataFormatters/DumpValueObjectOptions.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = DumpValueObjectOptions.cpp
+  source_name_part = DumpValueObjectOptions
+build obj/lldb/source/DataFormatters/DataFormatters.FormatCache.o: cxx ../../lldb/source/DataFormatters/FormatCache.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = FormatCache.cpp
+  source_name_part = FormatCache
+build obj/lldb/source/DataFormatters/DataFormatters.FormatClasses.o: cxx ../../lldb/source/DataFormatters/FormatClasses.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = FormatClasses.cpp
+  source_name_part = FormatClasses
+build obj/lldb/source/DataFormatters/DataFormatters.FormatManager.o: cxx ../../lldb/source/DataFormatters/FormatManager.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = FormatManager.cpp
+  source_name_part = FormatManager
+build obj/lldb/source/DataFormatters/DataFormatters.FormattersHelpers.o: cxx ../../lldb/source/DataFormatters/FormattersHelpers.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = FormattersHelpers.cpp
+  source_name_part = FormattersHelpers
+build obj/lldb/source/DataFormatters/DataFormatters.LanguageCategory.o: cxx ../../lldb/source/DataFormatters/LanguageCategory.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = LanguageCategory.cpp
+  source_name_part = LanguageCategory
+build obj/lldb/source/DataFormatters/DataFormatters.StringPrinter.o: cxx ../../lldb/source/DataFormatters/StringPrinter.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = StringPrinter.cpp
+  source_name_part = StringPrinter
+build obj/lldb/source/DataFormatters/DataFormatters.TypeCategory.o: cxx ../../lldb/source/DataFormatters/TypeCategory.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = TypeCategory.cpp
+  source_name_part = TypeCategory
+build obj/lldb/source/DataFormatters/DataFormatters.TypeCategoryMap.o: cxx ../../lldb/source/DataFormatters/TypeCategoryMap.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = TypeCategoryMap.cpp
+  source_name_part = TypeCategoryMap
+build obj/lldb/source/DataFormatters/DataFormatters.TypeFormat.o: cxx ../../lldb/source/DataFormatters/TypeFormat.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = TypeFormat.cpp
+  source_name_part = TypeFormat
+build obj/lldb/source/DataFormatters/DataFormatters.TypeSummary.o: cxx ../../lldb/source/DataFormatters/TypeSummary.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = TypeSummary.cpp
+  source_name_part = TypeSummary
+build obj/lldb/source/DataFormatters/DataFormatters.TypeSynthetic.o: cxx ../../lldb/source/DataFormatters/TypeSynthetic.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = TypeSynthetic.cpp
+  source_name_part = TypeSynthetic
+build obj/lldb/source/DataFormatters/DataFormatters.ValueObjectPrinter.o: cxx ../../lldb/source/DataFormatters/ValueObjectPrinter.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = ValueObjectPrinter.cpp
+  source_name_part = ValueObjectPrinter
+build obj/lldb/source/DataFormatters/DataFormatters.VectorType.o: cxx ../../lldb/source/DataFormatters/VectorType.cpp || obj/lldb/source/DataFormatters/DataFormatters.inputdeps.stamp
+  source_file_part = VectorType.cpp
+  source_name_part = VectorType
+
+build ./lib/liblldbDataFormatters.a: alink obj/lldb/source/DataFormatters/DataFormatters.CXXFunctionPointer.o obj/lldb/source/DataFormatters/DataFormatters.DataVisualization.o obj/lldb/source/DataFormatters/DataFormatters.DumpValueObjectOptions.o obj/lldb/source/DataFormatters/DataFormatters.FormatCache.o obj/lldb/source/DataFormatters/DataFormatters.FormatClasses.o obj/lldb/source/DataFormatters/DataFormatters.FormatManager.o obj/lldb/source/DataFormatters/DataFormatters.FormattersHelpers.o obj/lldb/source/DataFormatters/DataFormatters.LanguageCategory.o obj/lldb/source/DataFormatters/DataFormatters.StringPrinter.o obj/lldb/source/DataFormatters/DataFormatters.TypeCategory.o obj/lldb/source/DataFormatters/DataFormatters.TypeCategoryMap.o obj/lldb/source/DataFormatters/DataFormatters.TypeFormat.o obj/lldb/source/DataFormatters/DataFormatters.TypeSummary.o obj/lldb/source/DataFormatters/DataFormatters.TypeSynthetic.o obj/lldb/source/DataFormatters/DataFormatters.ValueObjectPrinter.o obj/lldb/source/DataFormatters/DataFormatters.VectorType.o || ./lib/liblldbCore.a ./lib/liblldbUtility.a ./lib/libLLVMSupport.a ./lib/libclangDriver.a ./lib/libclangBasic.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/liblldbHost.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/liblldbHostMacOSXObjCXX.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

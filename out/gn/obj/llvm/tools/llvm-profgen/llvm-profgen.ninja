@@ -1,0 +1,31 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = llvm-profgen
+target_output_name = llvm-profgen
+
+build obj/llvm/tools/llvm-profgen/llvm-profgen.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build obj/llvm/tools/llvm-profgen/llvm-profgen.CSPreInliner.o: cxx ../../llvm/tools/llvm-profgen/CSPreInliner.cpp || obj/llvm/tools/llvm-profgen/llvm-profgen.inputdeps.stamp
+  source_file_part = CSPreInliner.cpp
+  source_name_part = CSPreInliner
+build obj/llvm/tools/llvm-profgen/llvm-profgen.PerfReader.o: cxx ../../llvm/tools/llvm-profgen/PerfReader.cpp || obj/llvm/tools/llvm-profgen/llvm-profgen.inputdeps.stamp
+  source_file_part = PerfReader.cpp
+  source_name_part = PerfReader
+build obj/llvm/tools/llvm-profgen/llvm-profgen.ProfileGenerator.o: cxx ../../llvm/tools/llvm-profgen/ProfileGenerator.cpp || obj/llvm/tools/llvm-profgen/llvm-profgen.inputdeps.stamp
+  source_file_part = ProfileGenerator.cpp
+  source_name_part = ProfileGenerator
+build obj/llvm/tools/llvm-profgen/llvm-profgen.ProfiledBinary.o: cxx ../../llvm/tools/llvm-profgen/ProfiledBinary.cpp || obj/llvm/tools/llvm-profgen/llvm-profgen.inputdeps.stamp
+  source_file_part = ProfiledBinary.cpp
+  source_name_part = ProfiledBinary
+build obj/llvm/tools/llvm-profgen/llvm-profgen.llvm-profgen.o: cxx ../../llvm/tools/llvm-profgen/llvm-profgen.cpp || obj/llvm/tools/llvm-profgen/llvm-profgen.inputdeps.stamp
+  source_file_part = llvm-profgen.cpp
+  source_name_part = llvm-profgen
+
+build ./bin/llvm-profgen: link obj/llvm/tools/llvm-profgen/llvm-profgen.CSPreInliner.o obj/llvm/tools/llvm-profgen/llvm-profgen.PerfReader.o obj/llvm/tools/llvm-profgen/llvm-profgen.ProfileGenerator.o obj/llvm/tools/llvm-profgen/llvm-profgen.ProfiledBinary.o obj/llvm/tools/llvm-profgen/llvm-profgen.llvm-profgen.o ./lib/libLLVMSymbolize.a ./lib/libLLVMCore.a ./lib/libLLVMMC.a ./lib/libLLVMMCDisassembler.a ./lib/libLLVMObject.a ./lib/libLLVMProfileData.a ./lib/libLLVMSupport.a ./lib/libLLVMipo.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMAArch64Disassembler.a ./lib/libLLVMAnalysis.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMLinker.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMInstrumentation.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMVectorize.a || obj/llvm/lib/Target/AllTargetsDescs.stamp obj/llvm/lib/Target/AllTargetsDisassemblers.stamp obj/llvm/lib/Target/AllTargetsInfos.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

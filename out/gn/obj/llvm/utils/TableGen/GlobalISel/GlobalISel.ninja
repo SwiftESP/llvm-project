@@ -1,0 +1,37 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = GlobalISel
+target_output_name = libGlobalISel
+
+build obj/llvm/utils/TableGen/GlobalISel/GlobalISel.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/utils/TableGen/GlobalISel/GlobalISel.CodeExpander.o: cxx ../../llvm/utils/TableGen/GlobalISel/CodeExpander.cpp || obj/llvm/utils/TableGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = CodeExpander.cpp
+  source_name_part = CodeExpander
+build obj/llvm/utils/TableGen/GlobalISel/GlobalISel.GIMatchDag.o: cxx ../../llvm/utils/TableGen/GlobalISel/GIMatchDag.cpp || obj/llvm/utils/TableGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = GIMatchDag.cpp
+  source_name_part = GIMatchDag
+build obj/llvm/utils/TableGen/GlobalISel/GlobalISel.GIMatchDagEdge.o: cxx ../../llvm/utils/TableGen/GlobalISel/GIMatchDagEdge.cpp || obj/llvm/utils/TableGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = GIMatchDagEdge.cpp
+  source_name_part = GIMatchDagEdge
+build obj/llvm/utils/TableGen/GlobalISel/GlobalISel.GIMatchDagInstr.o: cxx ../../llvm/utils/TableGen/GlobalISel/GIMatchDagInstr.cpp || obj/llvm/utils/TableGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = GIMatchDagInstr.cpp
+  source_name_part = GIMatchDagInstr
+build obj/llvm/utils/TableGen/GlobalISel/GlobalISel.GIMatchDagOperands.o: cxx ../../llvm/utils/TableGen/GlobalISel/GIMatchDagOperands.cpp || obj/llvm/utils/TableGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = GIMatchDagOperands.cpp
+  source_name_part = GIMatchDagOperands
+build obj/llvm/utils/TableGen/GlobalISel/GlobalISel.GIMatchDagPredicate.o: cxx ../../llvm/utils/TableGen/GlobalISel/GIMatchDagPredicate.cpp || obj/llvm/utils/TableGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = GIMatchDagPredicate.cpp
+  source_name_part = GIMatchDagPredicate
+build obj/llvm/utils/TableGen/GlobalISel/GlobalISel.GIMatchDagPredicateDependencyEdge.o: cxx ../../llvm/utils/TableGen/GlobalISel/GIMatchDagPredicateDependencyEdge.cpp || obj/llvm/utils/TableGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = GIMatchDagPredicateDependencyEdge.cpp
+  source_name_part = GIMatchDagPredicateDependencyEdge
+build obj/llvm/utils/TableGen/GlobalISel/GlobalISel.GIMatchTree.o: cxx ../../llvm/utils/TableGen/GlobalISel/GIMatchTree.cpp || obj/llvm/utils/TableGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = GIMatchTree.cpp
+  source_name_part = GIMatchTree
+
+build ./lib/libGlobalISel.a: alink obj/llvm/utils/TableGen/GlobalISel/GlobalISel.CodeExpander.o obj/llvm/utils/TableGen/GlobalISel/GlobalISel.GIMatchDag.o obj/llvm/utils/TableGen/GlobalISel/GlobalISel.GIMatchDagEdge.o obj/llvm/utils/TableGen/GlobalISel/GlobalISel.GIMatchDagInstr.o obj/llvm/utils/TableGen/GlobalISel/GlobalISel.GIMatchDagOperands.o obj/llvm/utils/TableGen/GlobalISel/GlobalISel.GIMatchDagPredicate.o obj/llvm/utils/TableGen/GlobalISel/GlobalISel.GIMatchDagPredicateDependencyEdge.o obj/llvm/utils/TableGen/GlobalISel/GlobalISel.GIMatchTree.o || ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

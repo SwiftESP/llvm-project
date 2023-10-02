@@ -1,0 +1,319 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../clang-tools-extra/clangd/unittests -I../../clang-tools-extra/clangd -Igen/clang-tools-extra/clangd/tool -Igen/clang-tools-extra/clangd/unittests -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang-tools-extra/clangd -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP -Igen/clang/include/clang/Tooling/Syntax -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = ClangdTests
+target_output_name = ClangdTests
+
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp: stamp obj/clang-tools-extra/clang-tidy/clang-tidy-config.stamp obj/clang-tools-extra/clang-tidy/misc/Confusables.inc.stamp obj/clang-tools-extra/clangd/CompletionModelCpp.stamp obj/clang-tools-extra/clangd/features.stamp obj/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTestCpp.stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/include/clang/Tooling/Syntax/NodeClasses.stamp obj/clang/include/clang/Tooling/Syntax/Nodes.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/clang/lib/Tooling/node_introspection_inc.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.ASTSignalsTests.o: cxx ../../clang-tools-extra/clangd/unittests/ASTSignalsTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ASTSignalsTests.cpp
+  source_name_part = ASTSignalsTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.ASTTests.o: cxx ../../clang-tools-extra/clangd/unittests/ASTTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ASTTests.cpp
+  source_name_part = ASTTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.Annotations.o: cxx ../../clang-tools-extra/clangd/unittests/Annotations.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = Annotations.cpp
+  source_name_part = Annotations
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.BackgroundIndexTests.o: cxx ../../clang-tools-extra/clangd/unittests/BackgroundIndexTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = BackgroundIndexTests.cpp
+  source_name_part = BackgroundIndexTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.CallHierarchyTests.o: cxx ../../clang-tools-extra/clangd/unittests/CallHierarchyTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = CallHierarchyTests.cpp
+  source_name_part = CallHierarchyTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.CanonicalIncludesTests.o: cxx ../../clang-tools-extra/clangd/unittests/CanonicalIncludesTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = CanonicalIncludesTests.cpp
+  source_name_part = CanonicalIncludesTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.ClangdLSPServerTests.o: cxx ../../clang-tools-extra/clangd/unittests/ClangdLSPServerTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ClangdLSPServerTests.cpp
+  source_name_part = ClangdLSPServerTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.ClangdTests.o: cxx ../../clang-tools-extra/clangd/unittests/ClangdTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ClangdTests.cpp
+  source_name_part = ClangdTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.CodeCompleteTests.o: cxx ../../clang-tools-extra/clangd/unittests/CodeCompleteTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = CodeCompleteTests.cpp
+  source_name_part = CodeCompleteTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.CodeCompletionStringsTests.o: cxx ../../clang-tools-extra/clangd/unittests/CodeCompletionStringsTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = CodeCompletionStringsTests.cpp
+  source_name_part = CodeCompletionStringsTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.CollectMacrosTests.o: cxx ../../clang-tools-extra/clangd/unittests/CollectMacrosTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = CollectMacrosTests.cpp
+  source_name_part = CollectMacrosTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.CompileCommandsTests.o: cxx ../../clang-tools-extra/clangd/unittests/CompileCommandsTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = CompileCommandsTests.cpp
+  source_name_part = CompileCommandsTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.CompilerTests.o: cxx ../../clang-tools-extra/clangd/unittests/CompilerTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = CompilerTests.cpp
+  source_name_part = CompilerTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.ConfigCompileTests.o: cxx ../../clang-tools-extra/clangd/unittests/ConfigCompileTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ConfigCompileTests.cpp
+  source_name_part = ConfigCompileTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.ConfigProviderTests.o: cxx ../../clang-tools-extra/clangd/unittests/ConfigProviderTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ConfigProviderTests.cpp
+  source_name_part = ConfigProviderTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.ConfigYAMLTests.o: cxx ../../clang-tools-extra/clangd/unittests/ConfigYAMLTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ConfigYAMLTests.cpp
+  source_name_part = ConfigYAMLTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.DecisionForestTests.o: cxx ../../clang-tools-extra/clangd/unittests/DecisionForestTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = DecisionForestTests.cpp
+  source_name_part = DecisionForestTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.DexTests.o: cxx ../../clang-tools-extra/clangd/unittests/DexTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = DexTests.cpp
+  source_name_part = DexTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.DiagnosticsTests.o: cxx ../../clang-tools-extra/clangd/unittests/DiagnosticsTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = DiagnosticsTests.cpp
+  source_name_part = DiagnosticsTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.DraftStoreTests.o: cxx ../../clang-tools-extra/clangd/unittests/DraftStoreTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = DraftStoreTests.cpp
+  source_name_part = DraftStoreTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.DumpASTTests.o: cxx ../../clang-tools-extra/clangd/unittests/DumpASTTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = DumpASTTests.cpp
+  source_name_part = DumpASTTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.ExpectedTypeTest.o: cxx ../../clang-tools-extra/clangd/unittests/ExpectedTypeTest.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ExpectedTypeTest.cpp
+  source_name_part = ExpectedTypeTest
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.FSTests.o: cxx ../../clang-tools-extra/clangd/unittests/FSTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = FSTests.cpp
+  source_name_part = FSTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.FeatureModulesTests.o: cxx ../../clang-tools-extra/clangd/unittests/FeatureModulesTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = FeatureModulesTests.cpp
+  source_name_part = FeatureModulesTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.FileDistanceTests.o: cxx ../../clang-tools-extra/clangd/unittests/FileDistanceTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = FileDistanceTests.cpp
+  source_name_part = FileDistanceTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.FileIndexTests.o: cxx ../../clang-tools-extra/clangd/unittests/FileIndexTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = FileIndexTests.cpp
+  source_name_part = FileIndexTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.FindSymbolsTests.o: cxx ../../clang-tools-extra/clangd/unittests/FindSymbolsTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = FindSymbolsTests.cpp
+  source_name_part = FindSymbolsTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.FindTargetTests.o: cxx ../../clang-tools-extra/clangd/unittests/FindTargetTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = FindTargetTests.cpp
+  source_name_part = FindTargetTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.FormatTests.o: cxx ../../clang-tools-extra/clangd/unittests/FormatTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = FormatTests.cpp
+  source_name_part = FormatTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.FuzzyMatchTests.o: cxx ../../clang-tools-extra/clangd/unittests/FuzzyMatchTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = FuzzyMatchTests.cpp
+  source_name_part = FuzzyMatchTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.GlobalCompilationDatabaseTests.o: cxx ../../clang-tools-extra/clangd/unittests/GlobalCompilationDatabaseTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = GlobalCompilationDatabaseTests.cpp
+  source_name_part = GlobalCompilationDatabaseTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.HeaderSourceSwitchTests.o: cxx ../../clang-tools-extra/clangd/unittests/HeaderSourceSwitchTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = HeaderSourceSwitchTests.cpp
+  source_name_part = HeaderSourceSwitchTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.HeadersTests.o: cxx ../../clang-tools-extra/clangd/unittests/HeadersTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = HeadersTests.cpp
+  source_name_part = HeadersTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.HoverTests.o: cxx ../../clang-tools-extra/clangd/unittests/HoverTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = HoverTests.cpp
+  source_name_part = HoverTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.IncludeCleanerTests.o: cxx ../../clang-tools-extra/clangd/unittests/IncludeCleanerTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = IncludeCleanerTests.cpp
+  source_name_part = IncludeCleanerTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.IndexActionTests.o: cxx ../../clang-tools-extra/clangd/unittests/IndexActionTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = IndexActionTests.cpp
+  source_name_part = IndexActionTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.IndexTests.o: cxx ../../clang-tools-extra/clangd/unittests/IndexTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = IndexTests.cpp
+  source_name_part = IndexTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.InlayHintTests.o: cxx ../../clang-tools-extra/clangd/unittests/InlayHintTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = InlayHintTests.cpp
+  source_name_part = InlayHintTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.InsertionPointTests.o: cxx ../../clang-tools-extra/clangd/unittests/InsertionPointTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = InsertionPointTests.cpp
+  source_name_part = InsertionPointTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.JSONTransportTests.o: cxx ../../clang-tools-extra/clangd/unittests/JSONTransportTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = JSONTransportTests.cpp
+  source_name_part = JSONTransportTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.LSPBinderTests.o: cxx ../../clang-tools-extra/clangd/unittests/LSPBinderTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = LSPBinderTests.cpp
+  source_name_part = LSPBinderTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.LSPClient.o: cxx ../../clang-tools-extra/clangd/unittests/LSPClient.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = LSPClient.cpp
+  source_name_part = LSPClient
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.LoggerTests.o: cxx ../../clang-tools-extra/clangd/unittests/LoggerTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = LoggerTests.cpp
+  source_name_part = LoggerTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.ModulesTests.o: cxx ../../clang-tools-extra/clangd/unittests/ModulesTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ModulesTests.cpp
+  source_name_part = ModulesTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.ParsedASTTests.o: cxx ../../clang-tools-extra/clangd/unittests/ParsedASTTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ParsedASTTests.cpp
+  source_name_part = ParsedASTTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.PathMappingTests.o: cxx ../../clang-tools-extra/clangd/unittests/PathMappingTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = PathMappingTests.cpp
+  source_name_part = PathMappingTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.PreambleTests.o: cxx ../../clang-tools-extra/clangd/unittests/PreambleTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = PreambleTests.cpp
+  source_name_part = PreambleTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.PrintASTTests.o: cxx ../../clang-tools-extra/clangd/unittests/PrintASTTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = PrintASTTests.cpp
+  source_name_part = PrintASTTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.ProjectAwareIndexTests.o: cxx ../../clang-tools-extra/clangd/unittests/ProjectAwareIndexTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ProjectAwareIndexTests.cpp
+  source_name_part = ProjectAwareIndexTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.QualityTests.o: cxx ../../clang-tools-extra/clangd/unittests/QualityTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = QualityTests.cpp
+  source_name_part = QualityTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.RIFFTests.o: cxx ../../clang-tools-extra/clangd/unittests/RIFFTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = RIFFTests.cpp
+  source_name_part = RIFFTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.RenameTests.o: cxx ../../clang-tools-extra/clangd/unittests/RenameTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = RenameTests.cpp
+  source_name_part = RenameTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.SelectionTests.o: cxx ../../clang-tools-extra/clangd/unittests/SelectionTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = SelectionTests.cpp
+  source_name_part = SelectionTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.SemanticHighlightingTests.o: cxx ../../clang-tools-extra/clangd/unittests/SemanticHighlightingTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = SemanticHighlightingTests.cpp
+  source_name_part = SemanticHighlightingTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.SemanticSelectionTests.o: cxx ../../clang-tools-extra/clangd/unittests/SemanticSelectionTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = SemanticSelectionTests.cpp
+  source_name_part = SemanticSelectionTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.SerializationTests.o: cxx ../../clang-tools-extra/clangd/unittests/SerializationTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = SerializationTests.cpp
+  source_name_part = SerializationTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.SourceCodeTests.o: cxx ../../clang-tools-extra/clangd/unittests/SourceCodeTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = SourceCodeTests.cpp
+  source_name_part = SourceCodeTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.StdLibTests.o: cxx ../../clang-tools-extra/clangd/unittests/StdLibTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = StdLibTests.cpp
+  source_name_part = StdLibTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.SymbolCollectorTests.o: cxx ../../clang-tools-extra/clangd/unittests/SymbolCollectorTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = SymbolCollectorTests.cpp
+  source_name_part = SymbolCollectorTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.SymbolInfoTests.o: cxx ../../clang-tools-extra/clangd/unittests/SymbolInfoTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = SymbolInfoTests.cpp
+  source_name_part = SymbolInfoTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.SyncAPI.o: cxx ../../clang-tools-extra/clangd/unittests/SyncAPI.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = SyncAPI.cpp
+  source_name_part = SyncAPI
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.TUSchedulerTests.o: cxx ../../clang-tools-extra/clangd/unittests/TUSchedulerTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = TUSchedulerTests.cpp
+  source_name_part = TUSchedulerTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.TestFS.o: cxx ../../clang-tools-extra/clangd/unittests/TestFS.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = TestFS.cpp
+  source_name_part = TestFS
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.TestIndex.o: cxx ../../clang-tools-extra/clangd/unittests/TestIndex.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = TestIndex.cpp
+  source_name_part = TestIndex
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.TestTU.o: cxx ../../clang-tools-extra/clangd/unittests/TestTU.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = TestTU.cpp
+  source_name_part = TestTU
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.TestWorkspace.o: cxx ../../clang-tools-extra/clangd/unittests/TestWorkspace.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = TestWorkspace.cpp
+  source_name_part = TestWorkspace
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.ThreadCrashReporterTests.o: cxx ../../clang-tools-extra/clangd/unittests/ThreadCrashReporterTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ThreadCrashReporterTests.cpp
+  source_name_part = ThreadCrashReporterTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.TidyProviderTests.o: cxx ../../clang-tools-extra/clangd/unittests/TidyProviderTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = TidyProviderTests.cpp
+  source_name_part = TidyProviderTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.TypeHierarchyTests.o: cxx ../../clang-tools-extra/clangd/unittests/TypeHierarchyTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = TypeHierarchyTests.cpp
+  source_name_part = TypeHierarchyTests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.URITests.o: cxx ../../clang-tools-extra/clangd/unittests/URITests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = URITests.cpp
+  source_name_part = URITests
+build obj/clang-tools-extra/clangd/unittests/ClangdTests.XRefsTests.o: cxx ../../clang-tools-extra/clangd/unittests/XRefsTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = XRefsTests.cpp
+  source_name_part = XRefsTests
+build obj/clang-tools-extra/clangd/unittests/support/ClangdTests.CancellationTests.o: cxx ../../clang-tools-extra/clangd/unittests/support/CancellationTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = CancellationTests.cpp
+  source_name_part = CancellationTests
+build obj/clang-tools-extra/clangd/unittests/support/ClangdTests.ContextTests.o: cxx ../../clang-tools-extra/clangd/unittests/support/ContextTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ContextTests.cpp
+  source_name_part = ContextTests
+build obj/clang-tools-extra/clangd/unittests/support/ClangdTests.FunctionTests.o: cxx ../../clang-tools-extra/clangd/unittests/support/FunctionTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = FunctionTests.cpp
+  source_name_part = FunctionTests
+build obj/clang-tools-extra/clangd/unittests/support/ClangdTests.MarkupTests.o: cxx ../../clang-tools-extra/clangd/unittests/support/MarkupTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = MarkupTests.cpp
+  source_name_part = MarkupTests
+build obj/clang-tools-extra/clangd/unittests/support/ClangdTests.MemoryTreeTests.o: cxx ../../clang-tools-extra/clangd/unittests/support/MemoryTreeTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = MemoryTreeTests.cpp
+  source_name_part = MemoryTreeTests
+build obj/clang-tools-extra/clangd/unittests/support/ClangdTests.PathTests.o: cxx ../../clang-tools-extra/clangd/unittests/support/PathTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = PathTests.cpp
+  source_name_part = PathTests
+build obj/clang-tools-extra/clangd/unittests/support/ClangdTests.TestTracer.o: cxx ../../clang-tools-extra/clangd/unittests/support/TestTracer.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = TestTracer.cpp
+  source_name_part = TestTracer
+build obj/clang-tools-extra/clangd/unittests/support/ClangdTests.ThreadingTests.o: cxx ../../clang-tools-extra/clangd/unittests/support/ThreadingTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ThreadingTests.cpp
+  source_name_part = ThreadingTests
+build obj/clang-tools-extra/clangd/unittests/support/ClangdTests.TraceTests.o: cxx ../../clang-tools-extra/clangd/unittests/support/TraceTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = TraceTests.cpp
+  source_name_part = TraceTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.AddUsingTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/AddUsingTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = AddUsingTests.cpp
+  source_name_part = AddUsingTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.AnnotateHighlightingsTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/AnnotateHighlightingsTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = AnnotateHighlightingsTests.cpp
+  source_name_part = AnnotateHighlightingsTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.DefineInlineTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/DefineInlineTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = DefineInlineTests.cpp
+  source_name_part = DefineInlineTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.DefineOutlineTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/DefineOutlineTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = DefineOutlineTests.cpp
+  source_name_part = DefineOutlineTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.DumpASTTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/DumpASTTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = DumpASTTests.cpp
+  source_name_part = DumpASTTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.DumpRecordLayoutTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/DumpRecordLayoutTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = DumpRecordLayoutTests.cpp
+  source_name_part = DumpRecordLayoutTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.DumpSymbolTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/DumpSymbolTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = DumpSymbolTests.cpp
+  source_name_part = DumpSymbolTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.ExpandAutoTypeTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/ExpandAutoTypeTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ExpandAutoTypeTests.cpp
+  source_name_part = ExpandAutoTypeTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.ExpandMacroTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/ExpandMacroTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ExpandMacroTests.cpp
+  source_name_part = ExpandMacroTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.ExtractFunctionTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/ExtractFunctionTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ExtractFunctionTests.cpp
+  source_name_part = ExtractFunctionTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.ExtractVariableTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/ExtractVariableTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ExtractVariableTests.cpp
+  source_name_part = ExtractVariableTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.MemberwiseConstructorTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/MemberwiseConstructorTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = MemberwiseConstructorTests.cpp
+  source_name_part = MemberwiseConstructorTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.ObjCLocalizeStringLiteralTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/ObjCLocalizeStringLiteralTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ObjCLocalizeStringLiteralTests.cpp
+  source_name_part = ObjCLocalizeStringLiteralTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.ObjCMemberwiseInitializerTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/ObjCMemberwiseInitializerTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ObjCMemberwiseInitializerTests.cpp
+  source_name_part = ObjCMemberwiseInitializerTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.PopulateSwitchTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/PopulateSwitchTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = PopulateSwitchTests.cpp
+  source_name_part = PopulateSwitchTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.RawStringLiteralTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/RawStringLiteralTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = RawStringLiteralTests.cpp
+  source_name_part = RawStringLiteralTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.RemoveUsingNamespaceTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/RemoveUsingNamespaceTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = RemoveUsingNamespaceTests.cpp
+  source_name_part = RemoveUsingNamespaceTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.ShowSelectionTreeTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/ShowSelectionTreeTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = ShowSelectionTreeTests.cpp
+  source_name_part = ShowSelectionTreeTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.SwapIfBranchesTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/SwapIfBranchesTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = SwapIfBranchesTests.cpp
+  source_name_part = SwapIfBranchesTests
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.TweakTesting.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/TweakTesting.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = TweakTesting.cpp
+  source_name_part = TweakTesting
+build obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.TweakTests.o: cxx ../../clang-tools-extra/clangd/unittests/tweaks/TweakTests.cpp || obj/clang-tools-extra/clangd/unittests/ClangdTests.inputdeps.stamp
+  source_file_part = TweakTests.cpp
+  source_name_part = TweakTests
+
+build obj/clang-tools-extra/clangd/unittests/ClangdTests: link obj/clang-tools-extra/clangd/unittests/ClangdTests.ASTSignalsTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.ASTTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.Annotations.o obj/clang-tools-extra/clangd/unittests/ClangdTests.BackgroundIndexTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.CallHierarchyTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.CanonicalIncludesTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.ClangdLSPServerTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.ClangdTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.CodeCompleteTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.CodeCompletionStringsTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.CollectMacrosTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.CompileCommandsTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.CompilerTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.ConfigCompileTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.ConfigProviderTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.ConfigYAMLTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.DecisionForestTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.DexTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.DiagnosticsTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.DraftStoreTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.DumpASTTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.ExpectedTypeTest.o obj/clang-tools-extra/clangd/unittests/ClangdTests.FSTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.FeatureModulesTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.FileDistanceTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.FileIndexTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.FindSymbolsTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.FindTargetTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.FormatTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.FuzzyMatchTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.GlobalCompilationDatabaseTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.HeaderSourceSwitchTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.HeadersTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.HoverTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.IncludeCleanerTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.IndexActionTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.IndexTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.InlayHintTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.InsertionPointTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.JSONTransportTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.LSPBinderTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.LSPClient.o obj/clang-tools-extra/clangd/unittests/ClangdTests.LoggerTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.ModulesTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.ParsedASTTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.PathMappingTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.PreambleTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.PrintASTTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.ProjectAwareIndexTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.QualityTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.RIFFTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.RenameTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.SelectionTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.SemanticHighlightingTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.SemanticSelectionTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.SerializationTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.SourceCodeTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.StdLibTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.SymbolCollectorTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.SymbolInfoTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.SyncAPI.o obj/clang-tools-extra/clangd/unittests/ClangdTests.TUSchedulerTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.TestFS.o obj/clang-tools-extra/clangd/unittests/ClangdTests.TestIndex.o obj/clang-tools-extra/clangd/unittests/ClangdTests.TestTU.o obj/clang-tools-extra/clangd/unittests/ClangdTests.TestWorkspace.o obj/clang-tools-extra/clangd/unittests/ClangdTests.ThreadCrashReporterTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.TidyProviderTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.TypeHierarchyTests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.URITests.o obj/clang-tools-extra/clangd/unittests/ClangdTests.XRefsTests.o obj/clang-tools-extra/clangd/unittests/support/ClangdTests.CancellationTests.o obj/clang-tools-extra/clangd/unittests/support/ClangdTests.ContextTests.o obj/clang-tools-extra/clangd/unittests/support/ClangdTests.FunctionTests.o obj/clang-tools-extra/clangd/unittests/support/ClangdTests.MarkupTests.o obj/clang-tools-extra/clangd/unittests/support/ClangdTests.MemoryTreeTests.o obj/clang-tools-extra/clangd/unittests/support/ClangdTests.PathTests.o obj/clang-tools-extra/clangd/unittests/support/ClangdTests.TestTracer.o obj/clang-tools-extra/clangd/unittests/support/ClangdTests.ThreadingTests.o obj/clang-tools-extra/clangd/unittests/support/ClangdTests.TraceTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.AddUsingTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.AnnotateHighlightingsTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.DefineInlineTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.DefineOutlineTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.DumpASTTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.DumpRecordLayoutTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.DumpSymbolTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.ExpandAutoTypeTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.ExpandMacroTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.ExtractFunctionTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.ExtractVariableTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.MemberwiseConstructorTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.ObjCLocalizeStringLiteralTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.ObjCMemberwiseInitializerTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.PopulateSwitchTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.RawStringLiteralTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.RemoveUsingNamespaceTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.ShowSelectionTreeTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.SwapIfBranchesTests.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.TweakTesting.o obj/clang-tools-extra/clangd/unittests/tweaks/ClangdTests.TweakTests.o obj/BUILD_DIR/gen/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTest.DecisionForestRuntimeTest.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.AddUsing.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.AnnotateHighlightings.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.DefineInline.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.DefineOutline.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.DumpAST.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.ExpandAutoType.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.ExpandMacro.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.ExtractFunction.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.ExtractVariable.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.MemberwiseConstructor.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.ObjCLocalizeStringLiteral.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.ObjCMemberwiseInitializer.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.PopulateSwitch.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.RawStringLiteral.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.RemoveUsingNamespace.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.SpecialMembers.o obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.SwapIfBranches.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o obj/BUILD_DIR/gen/clang-tools-extra/clangd/CompletionModel.CompletionModel.o ./lib/libclangTidy.a ./lib/libclangDaemon.a ./lib/libclangAST.a ./lib/libclangBasic.a ./lib/libclangFormat.a ./lib/libclangFrontend.a ./lib/libclangIndex.a ./lib/libclangLex.a ./lib/libclangSema.a ./lib/libclangSerialization.a ./lib/libclangTooling.a ./lib/libclangToolingCore.a ./lib/libclangToolingInclusions.a ./lib/libclangToolingSyntax.a ./lib/libLLVMSupport.a ./lib/libLLVMTestingSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangASTMatchers.a ./lib/libclangRewrite.a ./lib/libclangDriver.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libclangEdit.a ./lib/libclangParse.a ./lib/libclangAnalysis.a ./lib/libclangSupport.a ./lib/libclangStaticAnalyzerCore.a ./lib/libclangCrossTU.a ./lib/libclangStaticAnalyzerFrontend.a ./lib/libclangStaticAnalyzerCheckers.a ./lib/libclangTidyAbseilModule.a ./lib/libclangTidyUtils.a ./lib/libclangToolingTransformer.a ./lib/libclangToolingRefactoring.a ./lib/libclangTidyAlteraModule.a ./lib/libclangTidyAndroidModule.a ./lib/libclangTidyBoostModule.a ./lib/libclangTidyBugproneModule.a ./lib/libclangTidyCppCoreGuidelinesModule.a ./lib/libclangTidyMiscModule.a ./lib/libclangTidyModernizeModule.a ./lib/libclangTidyReadabilityModule.a ./lib/libclangAnalysisFlowSensitive.a ./lib/libclangAnalysisFlowSensitiveModels.a ./lib/libclangTidyCERTModule.a ./lib/libclangTidyGoogleModule.a ./lib/libclangTidyPerformanceModule.a ./lib/libclangTidyConcurrencyModule.a ./lib/libclangTidyDarwinModule.a ./lib/libclangTidyFuchsiaModule.a ./lib/libclangTidyHICPPModule.a ./lib/libclangTidyLinuxKernelModule.a ./lib/libclangTidyLLVMModule.a ./lib/libclangTidyLLVMLibcModule.a ./lib/libclangTidyObjCModule.a ./lib/libclangTidyOpenMPModule.a ./lib/libclangTidyPortabilityModule.a ./lib/libclangTidyZirconModule.a ./lib/libclangTidyMPIModule.a ./lib/libclangdSupport.a ./lib/libclangPseudo.a ./lib/libclangPseudoGrammar.a ./lib/libclangToolingInclusionsStdlib.a ./lib/libLLVMAArch64Info.a ./lib/libgtest.a || obj/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTest.stamp obj/clang-tools-extra/clangd/features.stamp obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp obj/clang-tools-extra/clangd/CompletionModel.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/clang-tools-extra/clangd/unittests

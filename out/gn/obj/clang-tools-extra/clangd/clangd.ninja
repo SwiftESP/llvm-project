@@ -1,0 +1,247 @@
+defines =
+include_dirs = -I../../clang-tools-extra/clangd -I../../clang-tools-extra/pseudo/include -Igen/clang-tools-extra/clangd/tool -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang-tools-extra/clangd -Igen/clang-tools-extra/clang-tidy -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP -Igen/clang/include/clang/Driver -Igen/clang/include/clang/Tooling/Syntax
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = clangd
+target_output_name = libclangDaemon
+
+build obj/clang-tools-extra/clangd/clangd.inputdeps.stamp: stamp obj/clang-tools-extra/clang-tidy/clang-tidy-config.stamp obj/clang-tools-extra/clang-tidy/misc/Confusables.inc.stamp obj/clang-tools-extra/clangd/CompletionModelCpp.stamp obj/clang-tools-extra/clangd/features.stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/include/clang/Tooling/Syntax/NodeClasses.stamp obj/clang/include/clang/Tooling/Syntax/Nodes.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/clang/lib/Tooling/node_introspection_inc.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang-tools-extra/clangd/clangd.AST.o: cxx ../../clang-tools-extra/clangd/AST.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = AST.cpp
+  source_name_part = AST
+build obj/clang-tools-extra/clangd/clangd.ASTSignals.o: cxx ../../clang-tools-extra/clangd/ASTSignals.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = ASTSignals.cpp
+  source_name_part = ASTSignals
+build obj/clang-tools-extra/clangd/clangd.ClangdLSPServer.o: cxx ../../clang-tools-extra/clangd/ClangdLSPServer.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = ClangdLSPServer.cpp
+  source_name_part = ClangdLSPServer
+build obj/clang-tools-extra/clangd/clangd.ClangdServer.o: cxx ../../clang-tools-extra/clangd/ClangdServer.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = ClangdServer.cpp
+  source_name_part = ClangdServer
+build obj/clang-tools-extra/clangd/clangd.CodeComplete.o: cxx ../../clang-tools-extra/clangd/CodeComplete.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = CodeComplete.cpp
+  source_name_part = CodeComplete
+build obj/clang-tools-extra/clangd/clangd.CodeCompletionStrings.o: cxx ../../clang-tools-extra/clangd/CodeCompletionStrings.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = CodeCompletionStrings.cpp
+  source_name_part = CodeCompletionStrings
+build obj/clang-tools-extra/clangd/clangd.CollectMacros.o: cxx ../../clang-tools-extra/clangd/CollectMacros.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = CollectMacros.cpp
+  source_name_part = CollectMacros
+build obj/clang-tools-extra/clangd/clangd.CompileCommands.o: cxx ../../clang-tools-extra/clangd/CompileCommands.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = CompileCommands.cpp
+  source_name_part = CompileCommands
+build obj/clang-tools-extra/clangd/clangd.Compiler.o: cxx ../../clang-tools-extra/clangd/Compiler.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Compiler.cpp
+  source_name_part = Compiler
+build obj/clang-tools-extra/clangd/clangd.Config.o: cxx ../../clang-tools-extra/clangd/Config.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Config.cpp
+  source_name_part = Config
+build obj/clang-tools-extra/clangd/clangd.ConfigCompile.o: cxx ../../clang-tools-extra/clangd/ConfigCompile.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = ConfigCompile.cpp
+  source_name_part = ConfigCompile
+build obj/clang-tools-extra/clangd/clangd.ConfigProvider.o: cxx ../../clang-tools-extra/clangd/ConfigProvider.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = ConfigProvider.cpp
+  source_name_part = ConfigProvider
+build obj/clang-tools-extra/clangd/clangd.ConfigYAML.o: cxx ../../clang-tools-extra/clangd/ConfigYAML.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = ConfigYAML.cpp
+  source_name_part = ConfigYAML
+build obj/clang-tools-extra/clangd/clangd.Diagnostics.o: cxx ../../clang-tools-extra/clangd/Diagnostics.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Diagnostics.cpp
+  source_name_part = Diagnostics
+build obj/clang-tools-extra/clangd/clangd.DraftStore.o: cxx ../../clang-tools-extra/clangd/DraftStore.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = DraftStore.cpp
+  source_name_part = DraftStore
+build obj/clang-tools-extra/clangd/clangd.DumpAST.o: cxx ../../clang-tools-extra/clangd/DumpAST.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = DumpAST.cpp
+  source_name_part = DumpAST
+build obj/clang-tools-extra/clangd/clangd.ExpectedTypes.o: cxx ../../clang-tools-extra/clangd/ExpectedTypes.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = ExpectedTypes.cpp
+  source_name_part = ExpectedTypes
+build obj/clang-tools-extra/clangd/clangd.FS.o: cxx ../../clang-tools-extra/clangd/FS.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = FS.cpp
+  source_name_part = FS
+build obj/clang-tools-extra/clangd/clangd.Feature.o: cxx ../../clang-tools-extra/clangd/Feature.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Feature.cpp
+  source_name_part = Feature
+build obj/clang-tools-extra/clangd/clangd.FeatureModule.o: cxx ../../clang-tools-extra/clangd/FeatureModule.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = FeatureModule.cpp
+  source_name_part = FeatureModule
+build obj/clang-tools-extra/clangd/clangd.FileDistance.o: cxx ../../clang-tools-extra/clangd/FileDistance.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = FileDistance.cpp
+  source_name_part = FileDistance
+build obj/clang-tools-extra/clangd/clangd.FindSymbols.o: cxx ../../clang-tools-extra/clangd/FindSymbols.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = FindSymbols.cpp
+  source_name_part = FindSymbols
+build obj/clang-tools-extra/clangd/clangd.FindTarget.o: cxx ../../clang-tools-extra/clangd/FindTarget.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = FindTarget.cpp
+  source_name_part = FindTarget
+build obj/clang-tools-extra/clangd/clangd.Format.o: cxx ../../clang-tools-extra/clangd/Format.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Format.cpp
+  source_name_part = Format
+build obj/clang-tools-extra/clangd/clangd.FuzzyMatch.o: cxx ../../clang-tools-extra/clangd/FuzzyMatch.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = FuzzyMatch.cpp
+  source_name_part = FuzzyMatch
+build obj/clang-tools-extra/clangd/clangd.GlobalCompilationDatabase.o: cxx ../../clang-tools-extra/clangd/GlobalCompilationDatabase.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = GlobalCompilationDatabase.cpp
+  source_name_part = GlobalCompilationDatabase
+build obj/clang-tools-extra/clangd/clangd.HeaderSourceSwitch.o: cxx ../../clang-tools-extra/clangd/HeaderSourceSwitch.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = HeaderSourceSwitch.cpp
+  source_name_part = HeaderSourceSwitch
+build obj/clang-tools-extra/clangd/clangd.Headers.o: cxx ../../clang-tools-extra/clangd/Headers.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Headers.cpp
+  source_name_part = Headers
+build obj/clang-tools-extra/clangd/clangd.HeuristicResolver.o: cxx ../../clang-tools-extra/clangd/HeuristicResolver.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = HeuristicResolver.cpp
+  source_name_part = HeuristicResolver
+build obj/clang-tools-extra/clangd/clangd.Hover.o: cxx ../../clang-tools-extra/clangd/Hover.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Hover.cpp
+  source_name_part = Hover
+build obj/clang-tools-extra/clangd/clangd.IncludeCleaner.o: cxx ../../clang-tools-extra/clangd/IncludeCleaner.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = IncludeCleaner.cpp
+  source_name_part = IncludeCleaner
+build obj/clang-tools-extra/clangd/clangd.IncludeFixer.o: cxx ../../clang-tools-extra/clangd/IncludeFixer.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = IncludeFixer.cpp
+  source_name_part = IncludeFixer
+build obj/clang-tools-extra/clangd/clangd.InlayHints.o: cxx ../../clang-tools-extra/clangd/InlayHints.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = InlayHints.cpp
+  source_name_part = InlayHints
+build obj/clang-tools-extra/clangd/clangd.JSONTransport.o: cxx ../../clang-tools-extra/clangd/JSONTransport.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = JSONTransport.cpp
+  source_name_part = JSONTransport
+build obj/clang-tools-extra/clangd/clangd.ParsedAST.o: cxx ../../clang-tools-extra/clangd/ParsedAST.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = ParsedAST.cpp
+  source_name_part = ParsedAST
+build obj/clang-tools-extra/clangd/clangd.PathMapping.o: cxx ../../clang-tools-extra/clangd/PathMapping.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = PathMapping.cpp
+  source_name_part = PathMapping
+build obj/clang-tools-extra/clangd/clangd.Preamble.o: cxx ../../clang-tools-extra/clangd/Preamble.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Preamble.cpp
+  source_name_part = Preamble
+build obj/clang-tools-extra/clangd/clangd.Protocol.o: cxx ../../clang-tools-extra/clangd/Protocol.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Protocol.cpp
+  source_name_part = Protocol
+build obj/clang-tools-extra/clangd/clangd.Quality.o: cxx ../../clang-tools-extra/clangd/Quality.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Quality.cpp
+  source_name_part = Quality
+build obj/clang-tools-extra/clangd/clangd.QueryDriverDatabase.o: cxx ../../clang-tools-extra/clangd/QueryDriverDatabase.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = QueryDriverDatabase.cpp
+  source_name_part = QueryDriverDatabase
+build obj/clang-tools-extra/clangd/clangd.RIFF.o: cxx ../../clang-tools-extra/clangd/RIFF.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = RIFF.cpp
+  source_name_part = RIFF
+build obj/clang-tools-extra/clangd/clangd.Selection.o: cxx ../../clang-tools-extra/clangd/Selection.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Selection.cpp
+  source_name_part = Selection
+build obj/clang-tools-extra/clangd/clangd.SemanticHighlighting.o: cxx ../../clang-tools-extra/clangd/SemanticHighlighting.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = SemanticHighlighting.cpp
+  source_name_part = SemanticHighlighting
+build obj/clang-tools-extra/clangd/clangd.SemanticSelection.o: cxx ../../clang-tools-extra/clangd/SemanticSelection.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = SemanticSelection.cpp
+  source_name_part = SemanticSelection
+build obj/clang-tools-extra/clangd/clangd.SourceCode.o: cxx ../../clang-tools-extra/clangd/SourceCode.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = SourceCode.cpp
+  source_name_part = SourceCode
+build obj/clang-tools-extra/clangd/clangd.TUScheduler.o: cxx ../../clang-tools-extra/clangd/TUScheduler.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = TUScheduler.cpp
+  source_name_part = TUScheduler
+build obj/clang-tools-extra/clangd/clangd.TidyProvider.o: cxx ../../clang-tools-extra/clangd/TidyProvider.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = TidyProvider.cpp
+  source_name_part = TidyProvider
+build obj/clang-tools-extra/clangd/clangd.URI.o: cxx ../../clang-tools-extra/clangd/URI.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = URI.cpp
+  source_name_part = URI
+build obj/clang-tools-extra/clangd/clangd.XRefs.o: cxx ../../clang-tools-extra/clangd/XRefs.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = XRefs.cpp
+  source_name_part = XRefs
+build obj/clang-tools-extra/clangd/index/clangd.Background.o: cxx ../../clang-tools-extra/clangd/index/Background.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Background.cpp
+  source_name_part = Background
+build obj/clang-tools-extra/clangd/index/clangd.BackgroundIndexLoader.o: cxx ../../clang-tools-extra/clangd/index/BackgroundIndexLoader.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = BackgroundIndexLoader.cpp
+  source_name_part = BackgroundIndexLoader
+build obj/clang-tools-extra/clangd/index/clangd.BackgroundIndexStorage.o: cxx ../../clang-tools-extra/clangd/index/BackgroundIndexStorage.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = BackgroundIndexStorage.cpp
+  source_name_part = BackgroundIndexStorage
+build obj/clang-tools-extra/clangd/index/clangd.BackgroundQueue.o: cxx ../../clang-tools-extra/clangd/index/BackgroundQueue.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = BackgroundQueue.cpp
+  source_name_part = BackgroundQueue
+build obj/clang-tools-extra/clangd/index/clangd.BackgroundRebuild.o: cxx ../../clang-tools-extra/clangd/index/BackgroundRebuild.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = BackgroundRebuild.cpp
+  source_name_part = BackgroundRebuild
+build obj/clang-tools-extra/clangd/index/clangd.CanonicalIncludes.o: cxx ../../clang-tools-extra/clangd/index/CanonicalIncludes.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = CanonicalIncludes.cpp
+  source_name_part = CanonicalIncludes
+build obj/clang-tools-extra/clangd/index/clangd.FileIndex.o: cxx ../../clang-tools-extra/clangd/index/FileIndex.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = FileIndex.cpp
+  source_name_part = FileIndex
+build obj/clang-tools-extra/clangd/index/clangd.Index.o: cxx ../../clang-tools-extra/clangd/index/Index.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Index.cpp
+  source_name_part = Index
+build obj/clang-tools-extra/clangd/index/clangd.IndexAction.o: cxx ../../clang-tools-extra/clangd/index/IndexAction.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = IndexAction.cpp
+  source_name_part = IndexAction
+build obj/clang-tools-extra/clangd/index/clangd.MemIndex.o: cxx ../../clang-tools-extra/clangd/index/MemIndex.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = MemIndex.cpp
+  source_name_part = MemIndex
+build obj/clang-tools-extra/clangd/index/clangd.Merge.o: cxx ../../clang-tools-extra/clangd/index/Merge.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Merge.cpp
+  source_name_part = Merge
+build obj/clang-tools-extra/clangd/index/clangd.ProjectAware.o: cxx ../../clang-tools-extra/clangd/index/ProjectAware.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = ProjectAware.cpp
+  source_name_part = ProjectAware
+build obj/clang-tools-extra/clangd/index/clangd.Ref.o: cxx ../../clang-tools-extra/clangd/index/Ref.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Ref.cpp
+  source_name_part = Ref
+build obj/clang-tools-extra/clangd/index/clangd.Relation.o: cxx ../../clang-tools-extra/clangd/index/Relation.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Relation.cpp
+  source_name_part = Relation
+build obj/clang-tools-extra/clangd/index/clangd.Serialization.o: cxx ../../clang-tools-extra/clangd/index/Serialization.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Serialization.cpp
+  source_name_part = Serialization
+build obj/clang-tools-extra/clangd/index/clangd.StdLib.o: cxx ../../clang-tools-extra/clangd/index/StdLib.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = StdLib.cpp
+  source_name_part = StdLib
+build obj/clang-tools-extra/clangd/index/clangd.Symbol.o: cxx ../../clang-tools-extra/clangd/index/Symbol.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Symbol.cpp
+  source_name_part = Symbol
+build obj/clang-tools-extra/clangd/index/clangd.SymbolCollector.o: cxx ../../clang-tools-extra/clangd/index/SymbolCollector.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = SymbolCollector.cpp
+  source_name_part = SymbolCollector
+build obj/clang-tools-extra/clangd/index/clangd.SymbolID.o: cxx ../../clang-tools-extra/clangd/index/SymbolID.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = SymbolID.cpp
+  source_name_part = SymbolID
+build obj/clang-tools-extra/clangd/index/clangd.SymbolLocation.o: cxx ../../clang-tools-extra/clangd/index/SymbolLocation.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = SymbolLocation.cpp
+  source_name_part = SymbolLocation
+build obj/clang-tools-extra/clangd/index/clangd.SymbolOrigin.o: cxx ../../clang-tools-extra/clangd/index/SymbolOrigin.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = SymbolOrigin.cpp
+  source_name_part = SymbolOrigin
+build obj/clang-tools-extra/clangd/index/clangd.YAMLSerialization.o: cxx ../../clang-tools-extra/clangd/index/YAMLSerialization.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = YAMLSerialization.cpp
+  source_name_part = YAMLSerialization
+build obj/clang-tools-extra/clangd/index/dex/clangd.Dex.o: cxx ../../clang-tools-extra/clangd/index/dex/Dex.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Dex.cpp
+  source_name_part = Dex
+build obj/clang-tools-extra/clangd/index/dex/clangd.Iterator.o: cxx ../../clang-tools-extra/clangd/index/dex/Iterator.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Iterator.cpp
+  source_name_part = Iterator
+build obj/clang-tools-extra/clangd/index/dex/clangd.PostingList.o: cxx ../../clang-tools-extra/clangd/index/dex/PostingList.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = PostingList.cpp
+  source_name_part = PostingList
+build obj/clang-tools-extra/clangd/index/dex/clangd.Trigram.o: cxx ../../clang-tools-extra/clangd/index/dex/Trigram.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Trigram.cpp
+  source_name_part = Trigram
+build obj/clang-tools-extra/clangd/refactor/clangd.InsertionPoint.o: cxx ../../clang-tools-extra/clangd/refactor/InsertionPoint.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = InsertionPoint.cpp
+  source_name_part = InsertionPoint
+build obj/clang-tools-extra/clangd/refactor/clangd.Rename.o: cxx ../../clang-tools-extra/clangd/refactor/Rename.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Rename.cpp
+  source_name_part = Rename
+build obj/clang-tools-extra/clangd/refactor/clangd.Tweak.o: cxx ../../clang-tools-extra/clangd/refactor/Tweak.cpp || obj/clang-tools-extra/clangd/clangd.inputdeps.stamp
+  source_file_part = Tweak.cpp
+  source_name_part = Tweak
+
+build ./lib/libclangDaemon.a: alink obj/clang-tools-extra/clangd/clangd.AST.o obj/clang-tools-extra/clangd/clangd.ASTSignals.o obj/clang-tools-extra/clangd/clangd.ClangdLSPServer.o obj/clang-tools-extra/clangd/clangd.ClangdServer.o obj/clang-tools-extra/clangd/clangd.CodeComplete.o obj/clang-tools-extra/clangd/clangd.CodeCompletionStrings.o obj/clang-tools-extra/clangd/clangd.CollectMacros.o obj/clang-tools-extra/clangd/clangd.CompileCommands.o obj/clang-tools-extra/clangd/clangd.Compiler.o obj/clang-tools-extra/clangd/clangd.Config.o obj/clang-tools-extra/clangd/clangd.ConfigCompile.o obj/clang-tools-extra/clangd/clangd.ConfigProvider.o obj/clang-tools-extra/clangd/clangd.ConfigYAML.o obj/clang-tools-extra/clangd/clangd.Diagnostics.o obj/clang-tools-extra/clangd/clangd.DraftStore.o obj/clang-tools-extra/clangd/clangd.DumpAST.o obj/clang-tools-extra/clangd/clangd.ExpectedTypes.o obj/clang-tools-extra/clangd/clangd.FS.o obj/clang-tools-extra/clangd/clangd.Feature.o obj/clang-tools-extra/clangd/clangd.FeatureModule.o obj/clang-tools-extra/clangd/clangd.FileDistance.o obj/clang-tools-extra/clangd/clangd.FindSymbols.o obj/clang-tools-extra/clangd/clangd.FindTarget.o obj/clang-tools-extra/clangd/clangd.Format.o obj/clang-tools-extra/clangd/clangd.FuzzyMatch.o obj/clang-tools-extra/clangd/clangd.GlobalCompilationDatabase.o obj/clang-tools-extra/clangd/clangd.HeaderSourceSwitch.o obj/clang-tools-extra/clangd/clangd.Headers.o obj/clang-tools-extra/clangd/clangd.HeuristicResolver.o obj/clang-tools-extra/clangd/clangd.Hover.o obj/clang-tools-extra/clangd/clangd.IncludeCleaner.o obj/clang-tools-extra/clangd/clangd.IncludeFixer.o obj/clang-tools-extra/clangd/clangd.InlayHints.o obj/clang-tools-extra/clangd/clangd.JSONTransport.o obj/clang-tools-extra/clangd/clangd.ParsedAST.o obj/clang-tools-extra/clangd/clangd.PathMapping.o obj/clang-tools-extra/clangd/clangd.Preamble.o obj/clang-tools-extra/clangd/clangd.Protocol.o obj/clang-tools-extra/clangd/clangd.Quality.o obj/clang-tools-extra/clangd/clangd.QueryDriverDatabase.o obj/clang-tools-extra/clangd/clangd.RIFF.o obj/clang-tools-extra/clangd/clangd.Selection.o obj/clang-tools-extra/clangd/clangd.SemanticHighlighting.o obj/clang-tools-extra/clangd/clangd.SemanticSelection.o obj/clang-tools-extra/clangd/clangd.SourceCode.o obj/clang-tools-extra/clangd/clangd.TUScheduler.o obj/clang-tools-extra/clangd/clangd.TidyProvider.o obj/clang-tools-extra/clangd/clangd.URI.o obj/clang-tools-extra/clangd/clangd.XRefs.o obj/clang-tools-extra/clangd/index/clangd.Background.o obj/clang-tools-extra/clangd/index/clangd.BackgroundIndexLoader.o obj/clang-tools-extra/clangd/index/clangd.BackgroundIndexStorage.o obj/clang-tools-extra/clangd/index/clangd.BackgroundQueue.o obj/clang-tools-extra/clangd/index/clangd.BackgroundRebuild.o obj/clang-tools-extra/clangd/index/clangd.CanonicalIncludes.o obj/clang-tools-extra/clangd/index/clangd.FileIndex.o obj/clang-tools-extra/clangd/index/clangd.Index.o obj/clang-tools-extra/clangd/index/clangd.IndexAction.o obj/clang-tools-extra/clangd/index/clangd.MemIndex.o obj/clang-tools-extra/clangd/index/clangd.Merge.o obj/clang-tools-extra/clangd/index/clangd.ProjectAware.o obj/clang-tools-extra/clangd/index/clangd.Ref.o obj/clang-tools-extra/clangd/index/clangd.Relation.o obj/clang-tools-extra/clangd/index/clangd.Serialization.o obj/clang-tools-extra/clangd/index/clangd.StdLib.o obj/clang-tools-extra/clangd/index/clangd.Symbol.o obj/clang-tools-extra/clangd/index/clangd.SymbolCollector.o obj/clang-tools-extra/clangd/index/clangd.SymbolID.o obj/clang-tools-extra/clangd/index/clangd.SymbolLocation.o obj/clang-tools-extra/clangd/index/clangd.SymbolOrigin.o obj/clang-tools-extra/clangd/index/clangd.YAMLSerialization.o obj/clang-tools-extra/clangd/index/dex/clangd.Dex.o obj/clang-tools-extra/clangd/index/dex/clangd.Iterator.o obj/clang-tools-extra/clangd/index/dex/clangd.PostingList.o obj/clang-tools-extra/clangd/index/dex/clangd.Trigram.o obj/clang-tools-extra/clangd/refactor/clangd.InsertionPoint.o obj/clang-tools-extra/clangd/refactor/clangd.Rename.o obj/clang-tools-extra/clangd/refactor/clangd.Tweak.o || obj/clang-tools-extra/clangd/CompletionModel.stamp obj/clang-tools-extra/clangd/features.stamp ./lib/libclangTidy.a obj/clang-tools-extra/clang-tidy/all-checks.stamp obj/clang-tools-extra/clang-tidy/clang-tidy-config.stamp ./lib/libclangdSupport.a ./lib/libclangPseudo.a ./lib/libclangAST.a ./lib/libclangASTMatchers.a ./lib/libclangBasic.a ./lib/libclangDriver.a ./lib/libclangFormat.a ./lib/libclangFrontend.a ./lib/libclangIndex.a ./lib/libclangLex.a ./lib/libclangSema.a ./lib/libclangSerialization.a ./lib/libclangTooling.a ./lib/libclangToolingCore.a ./lib/libclangToolingInclusions.a ./lib/libclangToolingInclusionsStdlib.a ./lib/libclangToolingRefactoring.a ./lib/libclangToolingSyntax.a ./lib/libLLVMSupport.a obj/llvm/lib/Target/AllTargetsInfos.stamp obj/llvm/utils/gn/build/libs/pthread/pthread.stamp ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangAnalysis.a ./lib/libclangEdit.a ./lib/libclangSupport.a ./lib/libclangRewrite.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libclangParse.a ./lib/libclangStaticAnalyzerCore.a ./lib/libclangCrossTU.a ./lib/libclangStaticAnalyzerFrontend.a ./lib/libclangStaticAnalyzerCheckers.a ./lib/libclangTidyAbseilModule.a ./lib/libclangTidyUtils.a ./lib/libclangToolingTransformer.a ./lib/libclangTidyAlteraModule.a ./lib/libclangTidyAndroidModule.a ./lib/libclangTidyBoostModule.a ./lib/libclangTidyBugproneModule.a ./lib/libclangTidyCppCoreGuidelinesModule.a ./lib/libclangTidyMiscModule.a ./lib/libclangTidyModernizeModule.a ./lib/libclangTidyReadabilityModule.a ./lib/libclangAnalysisFlowSensitive.a ./lib/libclangAnalysisFlowSensitiveModels.a ./lib/libclangTidyCERTModule.a ./lib/libclangTidyGoogleModule.a ./lib/libclangTidyPerformanceModule.a ./lib/libclangTidyConcurrencyModule.a ./lib/libclangTidyDarwinModule.a ./lib/libclangTidyFuchsiaModule.a ./lib/libclangTidyHICPPModule.a ./lib/libclangTidyLinuxKernelModule.a ./lib/libclangTidyLLVMModule.a ./lib/libclangTidyLLVMLibcModule.a ./lib/libclangTidyObjCModule.a ./lib/libclangTidyOpenMPModule.a ./lib/libclangTidyPortabilityModule.a ./lib/libclangTidyZirconModule.a ./lib/libclangTidyMPIModule.a ./lib/libclangPseudoGrammar.a ./lib/libLLVMAArch64Info.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

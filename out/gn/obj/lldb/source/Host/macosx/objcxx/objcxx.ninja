@@ -1,0 +1,22 @@
+defines =
+include_dirs = -I../../lldb/source -I../../llvm/include -Igen/llvm/include -I../../lldb/include -Igen/lldb/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_objcc = -fno-objc-exceptions -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = objcxx
+target_output_name = liblldbHostMacOSXObjCXX
+
+build obj/lldb/source/Host/macosx/objcxx/objcxx.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/lldb/source/Host/macosx/objcxx/objcxx.Host.o: objcxx ../../lldb/source/Host/macosx/objcxx/Host.mm || obj/lldb/source/Host/macosx/objcxx/objcxx.inputdeps.stamp
+  source_file_part = Host.mm
+  source_name_part = Host
+build obj/lldb/source/Host/macosx/objcxx/objcxx.HostInfoMacOSX.o: objcxx ../../lldb/source/Host/macosx/objcxx/HostInfoMacOSX.mm || obj/lldb/source/Host/macosx/objcxx/objcxx.inputdeps.stamp
+  source_file_part = HostInfoMacOSX.mm
+  source_name_part = HostInfoMacOSX
+build obj/lldb/source/Host/macosx/objcxx/objcxx.HostThreadMacOSX.o: objcxx ../../lldb/source/Host/macosx/objcxx/HostThreadMacOSX.mm || obj/lldb/source/Host/macosx/objcxx/objcxx.inputdeps.stamp
+  source_file_part = HostThreadMacOSX.mm
+  source_name_part = HostThreadMacOSX
+
+build ./lib/liblldbHostMacOSXObjCXX.a: alink obj/lldb/source/Host/macosx/objcxx/objcxx.Host.o obj/lldb/source/Host/macosx/objcxx/objcxx.HostInfoMacOSX.o obj/lldb/source/Host/macosx/objcxx/objcxx.HostThreadMacOSX.o || ./lib/liblldbUtility.a ./lib/libLLVMSupport.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

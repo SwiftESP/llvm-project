@@ -1,0 +1,175 @@
+defines =
+include_dirs = -I../../lldb/source -I../../llvm/include -Igen/llvm/include -I../../lldb/include -Igen/lldb/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libxml2
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Utility
+target_output_name = liblldbPluginProcessUtility
+
+build obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp: stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/lldb/include/lldb/Host/Config.stamp obj/lldb/include/lldb/Version/version.stamp obj/lldb/source/Commands/CommandOptions.stamp obj/lldb/source/Core/CoreProperties.stamp obj/lldb/source/Core/CorePropertiesEnum.stamp obj/lldb/source/Interpreter/InterpreterProperties.stamp obj/lldb/source/Interpreter/InterpreterPropertiesEnum.stamp obj/lldb/source/Version/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/lldb/source/Plugins/Process/Utility/Utility.AuxVector.o: cxx ../../lldb/source/Plugins/Process/Utility/AuxVector.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = AuxVector.cpp
+  source_name_part = AuxVector
+build obj/lldb/source/Plugins/Process/Utility/Utility.FreeBSDSignals.o: cxx ../../lldb/source/Plugins/Process/Utility/FreeBSDSignals.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = FreeBSDSignals.cpp
+  source_name_part = FreeBSDSignals
+build obj/lldb/source/Plugins/Process/Utility/Utility.GDBRemoteSignals.o: cxx ../../lldb/source/Plugins/Process/Utility/GDBRemoteSignals.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = GDBRemoteSignals.cpp
+  source_name_part = GDBRemoteSignals
+build obj/lldb/source/Plugins/Process/Utility/Utility.HistoryThread.o: cxx ../../lldb/source/Plugins/Process/Utility/HistoryThread.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = HistoryThread.cpp
+  source_name_part = HistoryThread
+build obj/lldb/source/Plugins/Process/Utility/Utility.HistoryUnwind.o: cxx ../../lldb/source/Plugins/Process/Utility/HistoryUnwind.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = HistoryUnwind.cpp
+  source_name_part = HistoryUnwind
+build obj/lldb/source/Plugins/Process/Utility/Utility.InferiorCallPOSIX.o: cxx ../../lldb/source/Plugins/Process/Utility/InferiorCallPOSIX.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = InferiorCallPOSIX.cpp
+  source_name_part = InferiorCallPOSIX
+build obj/lldb/source/Plugins/Process/Utility/Utility.LinuxProcMaps.o: cxx ../../lldb/source/Plugins/Process/Utility/LinuxProcMaps.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = LinuxProcMaps.cpp
+  source_name_part = LinuxProcMaps
+build obj/lldb/source/Plugins/Process/Utility/Utility.LinuxSignals.o: cxx ../../lldb/source/Plugins/Process/Utility/LinuxSignals.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = LinuxSignals.cpp
+  source_name_part = LinuxSignals
+build obj/lldb/source/Plugins/Process/Utility/Utility.MemoryTagManagerAArch64MTE.o: cxx ../../lldb/source/Plugins/Process/Utility/MemoryTagManagerAArch64MTE.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = MemoryTagManagerAArch64MTE.cpp
+  source_name_part = MemoryTagManagerAArch64MTE
+build obj/lldb/source/Plugins/Process/Utility/Utility.MipsLinuxSignals.o: cxx ../../lldb/source/Plugins/Process/Utility/MipsLinuxSignals.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = MipsLinuxSignals.cpp
+  source_name_part = MipsLinuxSignals
+build obj/lldb/source/Plugins/Process/Utility/Utility.NativeProcessSoftwareSingleStep.o: cxx ../../lldb/source/Plugins/Process/Utility/NativeProcessSoftwareSingleStep.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = NativeProcessSoftwareSingleStep.cpp
+  source_name_part = NativeProcessSoftwareSingleStep
+build obj/lldb/source/Plugins/Process/Utility/Utility.NativeRegisterContextDBReg_arm64.o: cxx ../../lldb/source/Plugins/Process/Utility/NativeRegisterContextDBReg_arm64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = NativeRegisterContextDBReg_arm64.cpp
+  source_name_part = NativeRegisterContextDBReg_arm64
+build obj/lldb/source/Plugins/Process/Utility/Utility.NativeRegisterContextDBReg_x86.o: cxx ../../lldb/source/Plugins/Process/Utility/NativeRegisterContextDBReg_x86.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = NativeRegisterContextDBReg_x86.cpp
+  source_name_part = NativeRegisterContextDBReg_x86
+build obj/lldb/source/Plugins/Process/Utility/Utility.NativeRegisterContextRegisterInfo.o: cxx ../../lldb/source/Plugins/Process/Utility/NativeRegisterContextRegisterInfo.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = NativeRegisterContextRegisterInfo.cpp
+  source_name_part = NativeRegisterContextRegisterInfo
+build obj/lldb/source/Plugins/Process/Utility/Utility.NetBSDSignals.o: cxx ../../lldb/source/Plugins/Process/Utility/NetBSDSignals.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = NetBSDSignals.cpp
+  source_name_part = NetBSDSignals
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextDarwin_arm.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextDarwin_arm.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextDarwin_arm.cpp
+  source_name_part = RegisterContextDarwin_arm
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextDarwin_arm64.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextDarwin_arm64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextDarwin_arm64.cpp
+  source_name_part = RegisterContextDarwin_arm64
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextDarwin_i386.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextDarwin_i386.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextDarwin_i386.cpp
+  source_name_part = RegisterContextDarwin_i386
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextDarwin_x86_64.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextDarwin_x86_64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextDarwin_x86_64.cpp
+  source_name_part = RegisterContextDarwin_x86_64
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextDummy.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextDummy.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextDummy.cpp
+  source_name_part = RegisterContextDummy
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextFreeBSD_i386.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextFreeBSD_i386.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextFreeBSD_i386.cpp
+  source_name_part = RegisterContextFreeBSD_i386
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextFreeBSD_mips64.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextFreeBSD_mips64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextFreeBSD_mips64.cpp
+  source_name_part = RegisterContextFreeBSD_mips64
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextFreeBSD_powerpc.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextFreeBSD_powerpc.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextFreeBSD_powerpc.cpp
+  source_name_part = RegisterContextFreeBSD_powerpc
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextFreeBSD_x86_64.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextFreeBSD_x86_64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextFreeBSD_x86_64.cpp
+  source_name_part = RegisterContextFreeBSD_x86_64
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextHistory.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextHistory.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextHistory.cpp
+  source_name_part = RegisterContextHistory
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextLinux_i386.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextLinux_i386.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextLinux_i386.cpp
+  source_name_part = RegisterContextLinux_i386
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextLinux_s390x.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextLinux_s390x.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextLinux_s390x.cpp
+  source_name_part = RegisterContextLinux_s390x
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextLinux_x86_64.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextLinux_x86_64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextLinux_x86_64.cpp
+  source_name_part = RegisterContextLinux_x86_64
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextMach_arm.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextMach_arm.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextMach_arm.cpp
+  source_name_part = RegisterContextMach_arm
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextMach_i386.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextMach_i386.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextMach_i386.cpp
+  source_name_part = RegisterContextMach_i386
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextMach_x86_64.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextMach_x86_64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextMach_x86_64.cpp
+  source_name_part = RegisterContextMach_x86_64
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextMemory.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextMemory.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextMemory.cpp
+  source_name_part = RegisterContextMemory
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextNetBSD_i386.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextNetBSD_i386.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextNetBSD_i386.cpp
+  source_name_part = RegisterContextNetBSD_i386
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextNetBSD_x86_64.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextNetBSD_x86_64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextNetBSD_x86_64.cpp
+  source_name_part = RegisterContextNetBSD_x86_64
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextOpenBSD_i386.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextOpenBSD_i386.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextOpenBSD_i386.cpp
+  source_name_part = RegisterContextOpenBSD_i386
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextOpenBSD_x86_64.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextOpenBSD_x86_64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextOpenBSD_x86_64.cpp
+  source_name_part = RegisterContextOpenBSD_x86_64
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_arm.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextPOSIX_arm.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextPOSIX_arm.cpp
+  source_name_part = RegisterContextPOSIX_arm
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_arm64.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextPOSIX_arm64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextPOSIX_arm64.cpp
+  source_name_part = RegisterContextPOSIX_arm64
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_mips64.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextPOSIX_mips64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextPOSIX_mips64.cpp
+  source_name_part = RegisterContextPOSIX_mips64
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_powerpc.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextPOSIX_powerpc.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextPOSIX_powerpc.cpp
+  source_name_part = RegisterContextPOSIX_powerpc
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_ppc64le.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextPOSIX_ppc64le.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextPOSIX_ppc64le.cpp
+  source_name_part = RegisterContextPOSIX_ppc64le
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_riscv64.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextPOSIX_riscv64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextPOSIX_riscv64.cpp
+  source_name_part = RegisterContextPOSIX_riscv64
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_s390x.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextPOSIX_s390x.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextPOSIX_s390x.cpp
+  source_name_part = RegisterContextPOSIX_s390x
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_x86.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextPOSIX_x86.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextPOSIX_x86.cpp
+  source_name_part = RegisterContextPOSIX_x86
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextThreadMemory.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextThreadMemory.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextThreadMemory.cpp
+  source_name_part = RegisterContextThreadMemory
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextWindows_i386.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextWindows_i386.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextWindows_i386.cpp
+  source_name_part = RegisterContextWindows_i386
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextWindows_x86_64.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContextWindows_x86_64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContextWindows_x86_64.cpp
+  source_name_part = RegisterContextWindows_x86_64
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContext_x86.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterContext_x86.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterContext_x86.cpp
+  source_name_part = RegisterContext_x86
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterInfoPOSIX_arm.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterInfoPOSIX_arm.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterInfoPOSIX_arm.cpp
+  source_name_part = RegisterInfoPOSIX_arm
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterInfoPOSIX_arm64.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterInfoPOSIX_arm64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterInfoPOSIX_arm64.cpp
+  source_name_part = RegisterInfoPOSIX_arm64
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterInfoPOSIX_ppc64le.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterInfoPOSIX_ppc64le.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterInfoPOSIX_ppc64le.cpp
+  source_name_part = RegisterInfoPOSIX_ppc64le
+build obj/lldb/source/Plugins/Process/Utility/Utility.RegisterInfoPOSIX_riscv64.o: cxx ../../lldb/source/Plugins/Process/Utility/RegisterInfoPOSIX_riscv64.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = RegisterInfoPOSIX_riscv64.cpp
+  source_name_part = RegisterInfoPOSIX_riscv64
+build obj/lldb/source/Plugins/Process/Utility/Utility.StopInfoMachException.o: cxx ../../lldb/source/Plugins/Process/Utility/StopInfoMachException.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = StopInfoMachException.cpp
+  source_name_part = StopInfoMachException
+build obj/lldb/source/Plugins/Process/Utility/Utility.ThreadMemory.o: cxx ../../lldb/source/Plugins/Process/Utility/ThreadMemory.cpp || obj/lldb/source/Plugins/Process/Utility/Utility.inputdeps.stamp
+  source_file_part = ThreadMemory.cpp
+  source_name_part = ThreadMemory
+
+build ./lib/liblldbPluginProcessUtility.a: alink obj/lldb/source/Plugins/Process/Utility/Utility.AuxVector.o obj/lldb/source/Plugins/Process/Utility/Utility.FreeBSDSignals.o obj/lldb/source/Plugins/Process/Utility/Utility.GDBRemoteSignals.o obj/lldb/source/Plugins/Process/Utility/Utility.HistoryThread.o obj/lldb/source/Plugins/Process/Utility/Utility.HistoryUnwind.o obj/lldb/source/Plugins/Process/Utility/Utility.InferiorCallPOSIX.o obj/lldb/source/Plugins/Process/Utility/Utility.LinuxProcMaps.o obj/lldb/source/Plugins/Process/Utility/Utility.LinuxSignals.o obj/lldb/source/Plugins/Process/Utility/Utility.MemoryTagManagerAArch64MTE.o obj/lldb/source/Plugins/Process/Utility/Utility.MipsLinuxSignals.o obj/lldb/source/Plugins/Process/Utility/Utility.NativeProcessSoftwareSingleStep.o obj/lldb/source/Plugins/Process/Utility/Utility.NativeRegisterContextDBReg_arm64.o obj/lldb/source/Plugins/Process/Utility/Utility.NativeRegisterContextDBReg_x86.o obj/lldb/source/Plugins/Process/Utility/Utility.NativeRegisterContextRegisterInfo.o obj/lldb/source/Plugins/Process/Utility/Utility.NetBSDSignals.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextDarwin_arm.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextDarwin_arm64.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextDarwin_i386.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextDarwin_x86_64.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextDummy.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextFreeBSD_i386.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextFreeBSD_mips64.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextFreeBSD_powerpc.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextFreeBSD_x86_64.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextHistory.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextLinux_i386.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextLinux_s390x.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextLinux_x86_64.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextMach_arm.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextMach_i386.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextMach_x86_64.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextMemory.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextNetBSD_i386.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextNetBSD_x86_64.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextOpenBSD_i386.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextOpenBSD_x86_64.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_arm.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_arm64.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_mips64.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_powerpc.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_ppc64le.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_riscv64.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_s390x.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextPOSIX_x86.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextThreadMemory.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextWindows_i386.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContextWindows_x86_64.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterContext_x86.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterInfoPOSIX_arm.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterInfoPOSIX_arm64.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterInfoPOSIX_ppc64le.o obj/lldb/source/Plugins/Process/Utility/Utility.RegisterInfoPOSIX_riscv64.o obj/lldb/source/Plugins/Process/Utility/Utility.StopInfoMachException.o obj/lldb/source/Plugins/Process/Utility/Utility.ThreadMemory.o || ./lib/liblldbCore.a ./lib/liblldbDataFormatters.a ./lib/liblldbExpression.a ./lib/liblldbHost.a ./lib/liblldbSymbol.a ./lib/liblldbUtility.a ./lib/libLLVMSupport.a ./lib/libclangDriver.a ./lib/libclangBasic.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/liblldbHostMacOSXObjCXX.a ./lib/liblldbInterpreter.a ./lib/liblldbCommands.a ./lib/liblldbVersion.a ./lib/liblldbPluginObjectFileJIT.a ./lib/libLLVMExecutionEngine.a ./lib/libLLVMOrcTargetProcess.a ./lib/libLLVMOrcShared.a ./lib/libLLVMTarget.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

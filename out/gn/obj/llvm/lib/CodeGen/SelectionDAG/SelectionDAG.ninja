@@ -1,0 +1,88 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = SelectionDAG
+target_output_name = libLLVMSelectionDAG
+
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.DAGCombiner.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/DAGCombiner.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = DAGCombiner.cpp
+  source_name_part = DAGCombiner
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.FastISel.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/FastISel.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = FastISel.cpp
+  source_name_part = FastISel
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.FunctionLoweringInfo.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/FunctionLoweringInfo.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = FunctionLoweringInfo.cpp
+  source_name_part = FunctionLoweringInfo
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.InstrEmitter.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/InstrEmitter.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = InstrEmitter.cpp
+  source_name_part = InstrEmitter
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.LegalizeDAG.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/LegalizeDAG.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = LegalizeDAG.cpp
+  source_name_part = LegalizeDAG
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.LegalizeFloatTypes.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/LegalizeFloatTypes.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = LegalizeFloatTypes.cpp
+  source_name_part = LegalizeFloatTypes
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.LegalizeIntegerTypes.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/LegalizeIntegerTypes.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = LegalizeIntegerTypes.cpp
+  source_name_part = LegalizeIntegerTypes
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.LegalizeTypes.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/LegalizeTypes.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = LegalizeTypes.cpp
+  source_name_part = LegalizeTypes
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.LegalizeTypesGeneric.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/LegalizeTypesGeneric.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = LegalizeTypesGeneric.cpp
+  source_name_part = LegalizeTypesGeneric
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.LegalizeVectorOps.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/LegalizeVectorOps.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = LegalizeVectorOps.cpp
+  source_name_part = LegalizeVectorOps
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.LegalizeVectorTypes.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/LegalizeVectorTypes.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = LegalizeVectorTypes.cpp
+  source_name_part = LegalizeVectorTypes
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.ResourcePriorityQueue.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/ResourcePriorityQueue.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = ResourcePriorityQueue.cpp
+  source_name_part = ResourcePriorityQueue
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.ScheduleDAGFast.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/ScheduleDAGFast.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = ScheduleDAGFast.cpp
+  source_name_part = ScheduleDAGFast
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.ScheduleDAGRRList.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/ScheduleDAGRRList.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = ScheduleDAGRRList.cpp
+  source_name_part = ScheduleDAGRRList
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.ScheduleDAGSDNodes.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/ScheduleDAGSDNodes.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = ScheduleDAGSDNodes.cpp
+  source_name_part = ScheduleDAGSDNodes
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.ScheduleDAGVLIW.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/ScheduleDAGVLIW.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = ScheduleDAGVLIW.cpp
+  source_name_part = ScheduleDAGVLIW
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.SelectionDAG.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/SelectionDAG.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = SelectionDAG.cpp
+  source_name_part = SelectionDAG
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.SelectionDAGAddressAnalysis.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/SelectionDAGAddressAnalysis.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = SelectionDAGAddressAnalysis.cpp
+  source_name_part = SelectionDAGAddressAnalysis
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.SelectionDAGBuilder.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/SelectionDAGBuilder.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = SelectionDAGBuilder.cpp
+  source_name_part = SelectionDAGBuilder
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.SelectionDAGDumper.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/SelectionDAGDumper.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = SelectionDAGDumper.cpp
+  source_name_part = SelectionDAGDumper
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.SelectionDAGISel.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/SelectionDAGISel.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = SelectionDAGISel.cpp
+  source_name_part = SelectionDAGISel
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.SelectionDAGPrinter.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/SelectionDAGPrinter.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = SelectionDAGPrinter.cpp
+  source_name_part = SelectionDAGPrinter
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.SelectionDAGTargetInfo.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/SelectionDAGTargetInfo.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = SelectionDAGTargetInfo.cpp
+  source_name_part = SelectionDAGTargetInfo
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.StatepointLowering.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/StatepointLowering.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = StatepointLowering.cpp
+  source_name_part = StatepointLowering
+build obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.TargetLowering.o: cxx ../../llvm/lib/CodeGen/SelectionDAG/TargetLowering.cpp || obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.inputdeps.stamp
+  source_file_part = TargetLowering.cpp
+  source_name_part = TargetLowering
+
+build ./lib/libLLVMSelectionDAG.a: alink obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.DAGCombiner.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.FastISel.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.FunctionLoweringInfo.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.InstrEmitter.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.LegalizeDAG.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.LegalizeFloatTypes.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.LegalizeIntegerTypes.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.LegalizeTypes.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.LegalizeTypesGeneric.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.LegalizeVectorOps.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.LegalizeVectorTypes.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.ResourcePriorityQueue.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.ScheduleDAGFast.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.ScheduleDAGRRList.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.ScheduleDAGSDNodes.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.ScheduleDAGVLIW.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.SelectionDAG.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.SelectionDAGAddressAnalysis.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.SelectionDAGBuilder.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.SelectionDAGDumper.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.SelectionDAGISel.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.SelectionDAGPrinter.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.SelectionDAGTargetInfo.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.StatepointLowering.o obj/llvm/lib/CodeGen/SelectionDAG/SelectionDAG.TargetLowering.o || ./lib/libLLVMAnalysis.a ./lib/libLLVMCodeGen.a ./lib/libLLVMCore.a ./lib/libLLVMMC.a ./lib/libLLVMSupport.a ./lib/libLLVMTarget.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMBitWriter.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

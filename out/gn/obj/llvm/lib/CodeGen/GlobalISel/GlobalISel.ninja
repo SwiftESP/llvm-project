@@ -1,0 +1,85 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = GlobalISel
+target_output_name = libLLVMGlobalISel
+
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.CSEInfo.o: cxx ../../llvm/lib/CodeGen/GlobalISel/CSEInfo.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = CSEInfo.cpp
+  source_name_part = CSEInfo
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.CSEMIRBuilder.o: cxx ../../llvm/lib/CodeGen/GlobalISel/CSEMIRBuilder.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = CSEMIRBuilder.cpp
+  source_name_part = CSEMIRBuilder
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.CallLowering.o: cxx ../../llvm/lib/CodeGen/GlobalISel/CallLowering.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = CallLowering.cpp
+  source_name_part = CallLowering
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.Combiner.o: cxx ../../llvm/lib/CodeGen/GlobalISel/Combiner.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = Combiner.cpp
+  source_name_part = Combiner
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.CombinerHelper.o: cxx ../../llvm/lib/CodeGen/GlobalISel/CombinerHelper.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = CombinerHelper.cpp
+  source_name_part = CombinerHelper
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.GISelChangeObserver.o: cxx ../../llvm/lib/CodeGen/GlobalISel/GISelChangeObserver.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = GISelChangeObserver.cpp
+  source_name_part = GISelChangeObserver
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.GISelKnownBits.o: cxx ../../llvm/lib/CodeGen/GlobalISel/GISelKnownBits.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = GISelKnownBits.cpp
+  source_name_part = GISelKnownBits
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.GlobalISel.o: cxx ../../llvm/lib/CodeGen/GlobalISel/GlobalISel.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = GlobalISel.cpp
+  source_name_part = GlobalISel
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.IRTranslator.o: cxx ../../llvm/lib/CodeGen/GlobalISel/IRTranslator.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = IRTranslator.cpp
+  source_name_part = IRTranslator
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.InlineAsmLowering.o: cxx ../../llvm/lib/CodeGen/GlobalISel/InlineAsmLowering.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = InlineAsmLowering.cpp
+  source_name_part = InlineAsmLowering
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.InstructionSelect.o: cxx ../../llvm/lib/CodeGen/GlobalISel/InstructionSelect.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = InstructionSelect.cpp
+  source_name_part = InstructionSelect
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.InstructionSelector.o: cxx ../../llvm/lib/CodeGen/GlobalISel/InstructionSelector.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = InstructionSelector.cpp
+  source_name_part = InstructionSelector
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.LegacyLegalizerInfo.o: cxx ../../llvm/lib/CodeGen/GlobalISel/LegacyLegalizerInfo.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = LegacyLegalizerInfo.cpp
+  source_name_part = LegacyLegalizerInfo
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.LegalityPredicates.o: cxx ../../llvm/lib/CodeGen/GlobalISel/LegalityPredicates.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = LegalityPredicates.cpp
+  source_name_part = LegalityPredicates
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.LegalizeMutations.o: cxx ../../llvm/lib/CodeGen/GlobalISel/LegalizeMutations.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = LegalizeMutations.cpp
+  source_name_part = LegalizeMutations
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.Legalizer.o: cxx ../../llvm/lib/CodeGen/GlobalISel/Legalizer.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = Legalizer.cpp
+  source_name_part = Legalizer
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.LegalizerHelper.o: cxx ../../llvm/lib/CodeGen/GlobalISel/LegalizerHelper.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = LegalizerHelper.cpp
+  source_name_part = LegalizerHelper
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.LegalizerInfo.o: cxx ../../llvm/lib/CodeGen/GlobalISel/LegalizerInfo.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = LegalizerInfo.cpp
+  source_name_part = LegalizerInfo
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.LoadStoreOpt.o: cxx ../../llvm/lib/CodeGen/GlobalISel/LoadStoreOpt.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = LoadStoreOpt.cpp
+  source_name_part = LoadStoreOpt
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.Localizer.o: cxx ../../llvm/lib/CodeGen/GlobalISel/Localizer.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = Localizer.cpp
+  source_name_part = Localizer
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.LostDebugLocObserver.o: cxx ../../llvm/lib/CodeGen/GlobalISel/LostDebugLocObserver.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = LostDebugLocObserver.cpp
+  source_name_part = LostDebugLocObserver
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.MachineIRBuilder.o: cxx ../../llvm/lib/CodeGen/GlobalISel/MachineIRBuilder.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = MachineIRBuilder.cpp
+  source_name_part = MachineIRBuilder
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.RegBankSelect.o: cxx ../../llvm/lib/CodeGen/GlobalISel/RegBankSelect.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = RegBankSelect.cpp
+  source_name_part = RegBankSelect
+build obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.Utils.o: cxx ../../llvm/lib/CodeGen/GlobalISel/Utils.cpp || obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.inputdeps.stamp
+  source_file_part = Utils.cpp
+  source_name_part = Utils
+
+build ./lib/libLLVMGlobalISel.a: alink obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.CSEInfo.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.CSEMIRBuilder.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.CallLowering.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.Combiner.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.CombinerHelper.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.GISelChangeObserver.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.GISelKnownBits.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.GlobalISel.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.IRTranslator.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.InlineAsmLowering.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.InstructionSelect.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.InstructionSelector.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.LegacyLegalizerInfo.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.LegalityPredicates.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.LegalizeMutations.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.Legalizer.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.LegalizerHelper.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.LegalizerInfo.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.LoadStoreOpt.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.Localizer.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.LostDebugLocObserver.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.MachineIRBuilder.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.RegBankSelect.o obj/llvm/lib/CodeGen/GlobalISel/GlobalISel.Utils.o || obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp ./lib/libLLVMAnalysis.a ./lib/libLLVMCodeGen.a ./lib/libLLVMCore.a ./lib/libLLVMMC.a ./lib/libLLVMSupport.a ./lib/libLLVMTarget.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMBitWriter.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

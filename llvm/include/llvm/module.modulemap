@@ -421,6 +421,7 @@ module LLVM_Utils {
     textual header "Support/TargetOpcodes.def"
     textual header "Support/X86TargetParser.def"
     textual header "Support/VirtualOutputConfig.def"
+    textual header "Support/XtensaTargetParser.def"
   }
 
   // This part of the module is usable from both C and C++ code.

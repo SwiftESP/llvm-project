@@ -1,0 +1,409 @@
+defines =
+include_dirs = -I../../clang/lib/StaticAnalyzer/Checkers -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/StaticAnalyzer/Checkers -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Checkers
+target_output_name = libclangStaticAnalyzerCheckers
+
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.AnalysisOrderChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/AnalysisOrderChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = AnalysisOrderChecker.cpp
+  source_name_part = AnalysisOrderChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.AnalyzerStatsChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/AnalyzerStatsChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = AnalyzerStatsChecker.cpp
+  source_name_part = AnalyzerStatsChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ArrayBoundChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ArrayBoundChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ArrayBoundChecker.cpp
+  source_name_part = ArrayBoundChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ArrayBoundCheckerV2.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ArrayBoundCheckerV2.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ArrayBoundCheckerV2.cpp
+  source_name_part = ArrayBoundCheckerV2
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.BasicObjCFoundationChecks.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/BasicObjCFoundationChecks.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = BasicObjCFoundationChecks.cpp
+  source_name_part = BasicObjCFoundationChecks
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.BlockInCriticalSectionChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/BlockInCriticalSectionChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = BlockInCriticalSectionChecker.cpp
+  source_name_part = BlockInCriticalSectionChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.BoolAssignmentChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/BoolAssignmentChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = BoolAssignmentChecker.cpp
+  source_name_part = BoolAssignmentChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.BuiltinFunctionChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/BuiltinFunctionChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = BuiltinFunctionChecker.cpp
+  source_name_part = BuiltinFunctionChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CStringChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/CStringChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = CStringChecker.cpp
+  source_name_part = CStringChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CStringSyntaxChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/CStringSyntaxChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = CStringSyntaxChecker.cpp
+  source_name_part = CStringSyntaxChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CXXSelfAssignmentChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/CXXSelfAssignmentChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = CXXSelfAssignmentChecker.cpp
+  source_name_part = CXXSelfAssignmentChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CallAndMessageChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/CallAndMessageChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = CallAndMessageChecker.cpp
+  source_name_part = CallAndMessageChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CastSizeChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/CastSizeChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = CastSizeChecker.cpp
+  source_name_part = CastSizeChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CastToStructChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/CastToStructChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = CastToStructChecker.cpp
+  source_name_part = CastToStructChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CastValueChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/CastValueChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = CastValueChecker.cpp
+  source_name_part = CastValueChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CheckObjCDealloc.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/CheckObjCDealloc.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = CheckObjCDealloc.cpp
+  source_name_part = CheckObjCDealloc
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CheckObjCInstMethSignature.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/CheckObjCInstMethSignature.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = CheckObjCInstMethSignature.cpp
+  source_name_part = CheckObjCInstMethSignature
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CheckPlacementNew.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/CheckPlacementNew.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = CheckPlacementNew.cpp
+  source_name_part = CheckPlacementNew
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CheckSecuritySyntaxOnly.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/CheckSecuritySyntaxOnly.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = CheckSecuritySyntaxOnly.cpp
+  source_name_part = CheckSecuritySyntaxOnly
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CheckSizeofPointer.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/CheckSizeofPointer.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = CheckSizeofPointer.cpp
+  source_name_part = CheckSizeofPointer
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CheckerDocumentation.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/CheckerDocumentation.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = CheckerDocumentation.cpp
+  source_name_part = CheckerDocumentation
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ChrootChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ChrootChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ChrootChecker.cpp
+  source_name_part = ChrootChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CloneChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/CloneChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = CloneChecker.cpp
+  source_name_part = CloneChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ContainerModeling.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ContainerModeling.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ContainerModeling.cpp
+  source_name_part = ContainerModeling
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ConversionChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ConversionChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ConversionChecker.cpp
+  source_name_part = ConversionChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DeadStoresChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/DeadStoresChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = DeadStoresChecker.cpp
+  source_name_part = DeadStoresChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DebugCheckers.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/DebugCheckers.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = DebugCheckers.cpp
+  source_name_part = DebugCheckers
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DebugContainerModeling.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/DebugContainerModeling.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = DebugContainerModeling.cpp
+  source_name_part = DebugContainerModeling
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DebugIteratorModeling.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/DebugIteratorModeling.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = DebugIteratorModeling.cpp
+  source_name_part = DebugIteratorModeling
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DeleteWithNonVirtualDtorChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/DeleteWithNonVirtualDtorChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = DeleteWithNonVirtualDtorChecker.cpp
+  source_name_part = DeleteWithNonVirtualDtorChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DereferenceChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/DereferenceChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = DereferenceChecker.cpp
+  source_name_part = DereferenceChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DirectIvarAssignment.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/DirectIvarAssignment.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = DirectIvarAssignment.cpp
+  source_name_part = DirectIvarAssignment
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DivZeroChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/DivZeroChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = DivZeroChecker.cpp
+  source_name_part = DivZeroChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DynamicTypeChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/DynamicTypeChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = DynamicTypeChecker.cpp
+  source_name_part = DynamicTypeChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DynamicTypePropagation.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/DynamicTypePropagation.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = DynamicTypePropagation.cpp
+  source_name_part = DynamicTypePropagation
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.EnumCastOutOfRangeChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/EnumCastOutOfRangeChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = EnumCastOutOfRangeChecker.cpp
+  source_name_part = EnumCastOutOfRangeChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ErrnoChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ErrnoChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ErrnoChecker.cpp
+  source_name_part = ErrnoChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ErrnoModeling.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ErrnoModeling.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ErrnoModeling.cpp
+  source_name_part = ErrnoModeling
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ErrnoTesterChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ErrnoTesterChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ErrnoTesterChecker.cpp
+  source_name_part = ErrnoTesterChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ExprInspectionChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ExprInspectionChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ExprInspectionChecker.cpp
+  source_name_part = ExprInspectionChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.FixedAddressChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/FixedAddressChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = FixedAddressChecker.cpp
+  source_name_part = FixedAddressChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.FuchsiaHandleChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/FuchsiaHandleChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = FuchsiaHandleChecker.cpp
+  source_name_part = FuchsiaHandleChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.GCDAntipatternChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/GCDAntipatternChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = GCDAntipatternChecker.cpp
+  source_name_part = GCDAntipatternChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.GTestChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/GTestChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = GTestChecker.cpp
+  source_name_part = GTestChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.GenericTaintChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/GenericTaintChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = GenericTaintChecker.cpp
+  source_name_part = GenericTaintChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.IdenticalExprChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/IdenticalExprChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = IdenticalExprChecker.cpp
+  source_name_part = IdenticalExprChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.InnerPointerChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/InnerPointerChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = InnerPointerChecker.cpp
+  source_name_part = InnerPointerChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.InvalidatedIteratorChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/InvalidatedIteratorChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = InvalidatedIteratorChecker.cpp
+  source_name_part = InvalidatedIteratorChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.Iterator.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/Iterator.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = Iterator.cpp
+  source_name_part = Iterator
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.IteratorModeling.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/IteratorModeling.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = IteratorModeling.cpp
+  source_name_part = IteratorModeling
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.IteratorRangeChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/IteratorRangeChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = IteratorRangeChecker.cpp
+  source_name_part = IteratorRangeChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.IvarInvalidationChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/IvarInvalidationChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = IvarInvalidationChecker.cpp
+  source_name_part = IvarInvalidationChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.LLVMConventionsChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/LLVMConventionsChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = LLVMConventionsChecker.cpp
+  source_name_part = LLVMConventionsChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.LocalizationChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/LocalizationChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = LocalizationChecker.cpp
+  source_name_part = LocalizationChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MIGChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/MIGChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = MIGChecker.cpp
+  source_name_part = MIGChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/MPI-Checker/Checkers.MPIBugReporter.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/MPI-Checker/MPIBugReporter.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = MPIBugReporter.cpp
+  source_name_part = MPIBugReporter
+build obj/clang/lib/StaticAnalyzer/Checkers/MPI-Checker/Checkers.MPIChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/MPI-Checker/MPIChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = MPIChecker.cpp
+  source_name_part = MPIChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/MPI-Checker/Checkers.MPIFunctionClassifier.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/MPI-Checker/MPIFunctionClassifier.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = MPIFunctionClassifier.cpp
+  source_name_part = MPIFunctionClassifier
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MacOSKeychainAPIChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/MacOSKeychainAPIChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = MacOSKeychainAPIChecker.cpp
+  source_name_part = MacOSKeychainAPIChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MacOSXAPIChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/MacOSXAPIChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = MacOSXAPIChecker.cpp
+  source_name_part = MacOSXAPIChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MallocChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/MallocChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = MallocChecker.cpp
+  source_name_part = MallocChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MallocOverflowSecurityChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/MallocOverflowSecurityChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = MallocOverflowSecurityChecker.cpp
+  source_name_part = MallocOverflowSecurityChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MallocSizeofChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/MallocSizeofChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = MallocSizeofChecker.cpp
+  source_name_part = MallocSizeofChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MismatchedIteratorChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/MismatchedIteratorChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = MismatchedIteratorChecker.cpp
+  source_name_part = MismatchedIteratorChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MmapWriteExecChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/MmapWriteExecChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = MmapWriteExecChecker.cpp
+  source_name_part = MmapWriteExecChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MoveChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/MoveChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = MoveChecker.cpp
+  source_name_part = MoveChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.NSAutoreleasePoolChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/NSAutoreleasePoolChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = NSAutoreleasePoolChecker.cpp
+  source_name_part = NSAutoreleasePoolChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.NSErrorChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/NSErrorChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = NSErrorChecker.cpp
+  source_name_part = NSErrorChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.NoReturnFunctionChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/NoReturnFunctionChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = NoReturnFunctionChecker.cpp
+  source_name_part = NoReturnFunctionChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.NonNullParamChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/NonNullParamChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = NonNullParamChecker.cpp
+  source_name_part = NonNullParamChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.NonnullGlobalConstantsChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/NonnullGlobalConstantsChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = NonnullGlobalConstantsChecker.cpp
+  source_name_part = NonnullGlobalConstantsChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.NullabilityChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/NullabilityChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = NullabilityChecker.cpp
+  source_name_part = NullabilityChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.NumberObjectConversionChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/NumberObjectConversionChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = NumberObjectConversionChecker.cpp
+  source_name_part = NumberObjectConversionChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.OSObjectCStyleCast.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/OSObjectCStyleCast.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = OSObjectCStyleCast.cpp
+  source_name_part = OSObjectCStyleCast
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCAtSyncChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ObjCAtSyncChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ObjCAtSyncChecker.cpp
+  source_name_part = ObjCAtSyncChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCAutoreleaseWriteChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ObjCAutoreleaseWriteChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ObjCAutoreleaseWriteChecker.cpp
+  source_name_part = ObjCAutoreleaseWriteChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCContainersASTChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ObjCContainersASTChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ObjCContainersASTChecker.cpp
+  source_name_part = ObjCContainersASTChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCContainersChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ObjCContainersChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ObjCContainersChecker.cpp
+  source_name_part = ObjCContainersChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCMissingSuperCallChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ObjCMissingSuperCallChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ObjCMissingSuperCallChecker.cpp
+  source_name_part = ObjCMissingSuperCallChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCPropertyChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ObjCPropertyChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ObjCPropertyChecker.cpp
+  source_name_part = ObjCPropertyChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCSelfInitChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ObjCSelfInitChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ObjCSelfInitChecker.cpp
+  source_name_part = ObjCSelfInitChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCSuperDeallocChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ObjCSuperDeallocChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ObjCSuperDeallocChecker.cpp
+  source_name_part = ObjCSuperDeallocChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCUnusedIVarsChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ObjCUnusedIVarsChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ObjCUnusedIVarsChecker.cpp
+  source_name_part = ObjCUnusedIVarsChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.PaddingChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/PaddingChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = PaddingChecker.cpp
+  source_name_part = PaddingChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.PointerArithChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/PointerArithChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = PointerArithChecker.cpp
+  source_name_part = PointerArithChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.PointerIterationChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/PointerIterationChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = PointerIterationChecker.cpp
+  source_name_part = PointerIterationChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.PointerSortingChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/PointerSortingChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = PointerSortingChecker.cpp
+  source_name_part = PointerSortingChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.PointerSubChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/PointerSubChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = PointerSubChecker.cpp
+  source_name_part = PointerSubChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.PthreadLockChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/PthreadLockChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = PthreadLockChecker.cpp
+  source_name_part = PthreadLockChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/RetainCountChecker/Checkers.RetainCountChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/RetainCountChecker/RetainCountChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = RetainCountChecker.cpp
+  source_name_part = RetainCountChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/RetainCountChecker/Checkers.RetainCountDiagnostics.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/RetainCountChecker/RetainCountDiagnostics.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = RetainCountDiagnostics.cpp
+  source_name_part = RetainCountDiagnostics
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ReturnPointerRangeChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ReturnPointerRangeChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ReturnPointerRangeChecker.cpp
+  source_name_part = ReturnPointerRangeChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ReturnUndefChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ReturnUndefChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ReturnUndefChecker.cpp
+  source_name_part = ReturnUndefChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ReturnValueChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ReturnValueChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ReturnValueChecker.cpp
+  source_name_part = ReturnValueChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.RunLoopAutoreleaseLeakChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/RunLoopAutoreleaseLeakChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = RunLoopAutoreleaseLeakChecker.cpp
+  source_name_part = RunLoopAutoreleaseLeakChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.STLAlgorithmModeling.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/STLAlgorithmModeling.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = STLAlgorithmModeling.cpp
+  source_name_part = STLAlgorithmModeling
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.SimpleStreamChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/SimpleStreamChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = SimpleStreamChecker.cpp
+  source_name_part = SimpleStreamChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.SmartPtrChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/SmartPtrChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = SmartPtrChecker.cpp
+  source_name_part = SmartPtrChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.SmartPtrModeling.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/SmartPtrModeling.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = SmartPtrModeling.cpp
+  source_name_part = SmartPtrModeling
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.StackAddrEscapeChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/StackAddrEscapeChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = StackAddrEscapeChecker.cpp
+  source_name_part = StackAddrEscapeChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.StdLibraryFunctionsChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/StdLibraryFunctionsChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = StdLibraryFunctionsChecker.cpp
+  source_name_part = StdLibraryFunctionsChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.StreamChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/StreamChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = StreamChecker.cpp
+  source_name_part = StreamChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.StringChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/StringChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = StringChecker.cpp
+  source_name_part = StringChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.Taint.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/Taint.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = Taint.cpp
+  source_name_part = Taint
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.TaintTesterChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/TaintTesterChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = TaintTesterChecker.cpp
+  source_name_part = TaintTesterChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.TestAfterDivZeroChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/TestAfterDivZeroChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = TestAfterDivZeroChecker.cpp
+  source_name_part = TestAfterDivZeroChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.TraversalChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/TraversalChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = TraversalChecker.cpp
+  source_name_part = TraversalChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.TrustNonnullChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/TrustNonnullChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = TrustNonnullChecker.cpp
+  source_name_part = TrustNonnullChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.TrustReturnsNonnullChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/TrustReturnsNonnullChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = TrustReturnsNonnullChecker.cpp
+  source_name_part = TrustReturnsNonnullChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UndefBranchChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/UndefBranchChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = UndefBranchChecker.cpp
+  source_name_part = UndefBranchChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UndefCapturedBlockVarChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/UndefCapturedBlockVarChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = UndefCapturedBlockVarChecker.cpp
+  source_name_part = UndefCapturedBlockVarChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UndefResultChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/UndefResultChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = UndefResultChecker.cpp
+  source_name_part = UndefResultChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UndefinedArraySubscriptChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/UndefinedArraySubscriptChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = UndefinedArraySubscriptChecker.cpp
+  source_name_part = UndefinedArraySubscriptChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UndefinedAssignmentChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/UndefinedAssignmentChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = UndefinedAssignmentChecker.cpp
+  source_name_part = UndefinedAssignmentChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UndefinedNewArraySizeChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/UndefinedNewArraySizeChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = UndefinedNewArraySizeChecker.cpp
+  source_name_part = UndefinedNewArraySizeChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/UninitializedObject/Checkers.UninitializedObjectChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/UninitializedObject/UninitializedObjectChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = UninitializedObjectChecker.cpp
+  source_name_part = UninitializedObjectChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/UninitializedObject/Checkers.UninitializedPointee.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/UninitializedObject/UninitializedPointee.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = UninitializedPointee.cpp
+  source_name_part = UninitializedPointee
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UnixAPIChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/UnixAPIChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = UnixAPIChecker.cpp
+  source_name_part = UnixAPIChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UnreachableCodeChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/UnreachableCodeChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = UnreachableCodeChecker.cpp
+  source_name_part = UnreachableCodeChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.VLASizeChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/VLASizeChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = VLASizeChecker.cpp
+  source_name_part = VLASizeChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ValistChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/ValistChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ValistChecker.cpp
+  source_name_part = ValistChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.VforkChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/VforkChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = VforkChecker.cpp
+  source_name_part = VforkChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/Checkers.VirtualCallChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/VirtualCallChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = VirtualCallChecker.cpp
+  source_name_part = VirtualCallChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/WebKit/Checkers.ASTUtils.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/WebKit/ASTUtils.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = ASTUtils.cpp
+  source_name_part = ASTUtils
+build obj/clang/lib/StaticAnalyzer/Checkers/WebKit/Checkers.NoUncountedMembersChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/WebKit/NoUncountedMembersChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = NoUncountedMembersChecker.cpp
+  source_name_part = NoUncountedMembersChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/WebKit/Checkers.PtrTypesSemantics.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/WebKit/PtrTypesSemantics.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = PtrTypesSemantics.cpp
+  source_name_part = PtrTypesSemantics
+build obj/clang/lib/StaticAnalyzer/Checkers/WebKit/Checkers.RefCntblBaseVirtualDtorChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/WebKit/RefCntblBaseVirtualDtorChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = RefCntblBaseVirtualDtorChecker.cpp
+  source_name_part = RefCntblBaseVirtualDtorChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/WebKit/Checkers.UncountedCallArgsChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/WebKit/UncountedCallArgsChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = UncountedCallArgsChecker.cpp
+  source_name_part = UncountedCallArgsChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/WebKit/Checkers.UncountedLambdaCapturesChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/WebKit/UncountedLambdaCapturesChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = UncountedLambdaCapturesChecker.cpp
+  source_name_part = UncountedLambdaCapturesChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/WebKit/Checkers.UncountedLocalVarsChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/WebKit/UncountedLocalVarsChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = UncountedLocalVarsChecker.cpp
+  source_name_part = UncountedLocalVarsChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/cert/Checkers.InvalidPtrChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/cert/InvalidPtrChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = InvalidPtrChecker.cpp
+  source_name_part = InvalidPtrChecker
+build obj/clang/lib/StaticAnalyzer/Checkers/cert/Checkers.PutenvWithAutoChecker.o: cxx ../../clang/lib/StaticAnalyzer/Checkers/cert/PutenvWithAutoChecker.cpp || obj/clang/lib/StaticAnalyzer/Checkers/Checkers.inputdeps.stamp
+  source_file_part = PutenvWithAutoChecker.cpp
+  source_name_part = PutenvWithAutoChecker
+
+build ./lib/libclangStaticAnalyzerCheckers.a: alink obj/clang/lib/StaticAnalyzer/Checkers/Checkers.AnalysisOrderChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.AnalyzerStatsChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ArrayBoundChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ArrayBoundCheckerV2.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.BasicObjCFoundationChecks.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.BlockInCriticalSectionChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.BoolAssignmentChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.BuiltinFunctionChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CStringChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CStringSyntaxChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CXXSelfAssignmentChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CallAndMessageChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CastSizeChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CastToStructChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CastValueChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CheckObjCDealloc.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CheckObjCInstMethSignature.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CheckPlacementNew.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CheckSecuritySyntaxOnly.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CheckSizeofPointer.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CheckerDocumentation.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ChrootChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.CloneChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ContainerModeling.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ConversionChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DeadStoresChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DebugCheckers.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DebugContainerModeling.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DebugIteratorModeling.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DeleteWithNonVirtualDtorChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DereferenceChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DirectIvarAssignment.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DivZeroChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DynamicTypeChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.DynamicTypePropagation.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.EnumCastOutOfRangeChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ErrnoChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ErrnoModeling.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ErrnoTesterChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ExprInspectionChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.FixedAddressChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.FuchsiaHandleChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.GCDAntipatternChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.GTestChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.GenericTaintChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.IdenticalExprChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.InnerPointerChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.InvalidatedIteratorChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.Iterator.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.IteratorModeling.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.IteratorRangeChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.IvarInvalidationChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.LLVMConventionsChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.LocalizationChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MIGChecker.o obj/clang/lib/StaticAnalyzer/Checkers/MPI-Checker/Checkers.MPIBugReporter.o obj/clang/lib/StaticAnalyzer/Checkers/MPI-Checker/Checkers.MPIChecker.o obj/clang/lib/StaticAnalyzer/Checkers/MPI-Checker/Checkers.MPIFunctionClassifier.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MacOSKeychainAPIChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MacOSXAPIChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MallocChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MallocOverflowSecurityChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MallocSizeofChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MismatchedIteratorChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MmapWriteExecChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.MoveChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.NSAutoreleasePoolChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.NSErrorChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.NoReturnFunctionChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.NonNullParamChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.NonnullGlobalConstantsChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.NullabilityChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.NumberObjectConversionChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.OSObjectCStyleCast.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCAtSyncChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCAutoreleaseWriteChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCContainersASTChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCContainersChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCMissingSuperCallChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCPropertyChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCSelfInitChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCSuperDeallocChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ObjCUnusedIVarsChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.PaddingChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.PointerArithChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.PointerIterationChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.PointerSortingChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.PointerSubChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.PthreadLockChecker.o obj/clang/lib/StaticAnalyzer/Checkers/RetainCountChecker/Checkers.RetainCountChecker.o obj/clang/lib/StaticAnalyzer/Checkers/RetainCountChecker/Checkers.RetainCountDiagnostics.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ReturnPointerRangeChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ReturnUndefChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ReturnValueChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.RunLoopAutoreleaseLeakChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.STLAlgorithmModeling.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.SimpleStreamChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.SmartPtrChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.SmartPtrModeling.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.StackAddrEscapeChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.StdLibraryFunctionsChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.StreamChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.StringChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.Taint.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.TaintTesterChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.TestAfterDivZeroChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.TraversalChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.TrustNonnullChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.TrustReturnsNonnullChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UndefBranchChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UndefCapturedBlockVarChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UndefResultChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UndefinedArraySubscriptChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UndefinedAssignmentChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UndefinedNewArraySizeChecker.o obj/clang/lib/StaticAnalyzer/Checkers/UninitializedObject/Checkers.UninitializedObjectChecker.o obj/clang/lib/StaticAnalyzer/Checkers/UninitializedObject/Checkers.UninitializedPointee.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UnixAPIChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.UnreachableCodeChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.VLASizeChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.ValistChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.VforkChecker.o obj/clang/lib/StaticAnalyzer/Checkers/Checkers.VirtualCallChecker.o obj/clang/lib/StaticAnalyzer/Checkers/WebKit/Checkers.ASTUtils.o obj/clang/lib/StaticAnalyzer/Checkers/WebKit/Checkers.NoUncountedMembersChecker.o obj/clang/lib/StaticAnalyzer/Checkers/WebKit/Checkers.PtrTypesSemantics.o obj/clang/lib/StaticAnalyzer/Checkers/WebKit/Checkers.RefCntblBaseVirtualDtorChecker.o obj/clang/lib/StaticAnalyzer/Checkers/WebKit/Checkers.UncountedCallArgsChecker.o obj/clang/lib/StaticAnalyzer/Checkers/WebKit/Checkers.UncountedLambdaCapturesChecker.o obj/clang/lib/StaticAnalyzer/Checkers/WebKit/Checkers.UncountedLocalVarsChecker.o obj/clang/lib/StaticAnalyzer/Checkers/cert/Checkers.InvalidPtrChecker.o obj/clang/lib/StaticAnalyzer/Checkers/cert/Checkers.PutenvWithAutoChecker.o || obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp ./lib/libclangAST.a ./lib/libclangASTMatchers.a ./lib/libclangAnalysis.a ./lib/libclangBasic.a ./lib/libclangLex.a ./lib/libclangStaticAnalyzerCore.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangCrossTU.a ./lib/libclangFrontend.a ./lib/libclangDriver.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libclangEdit.a ./lib/libclangParse.a ./lib/libclangSema.a ./lib/libclangSupport.a ./lib/libclangSerialization.a ./lib/libclangIndex.a ./lib/libclangFormat.a ./lib/libclangToolingCore.a ./lib/libclangRewrite.a ./lib/libclangToolingInclusions.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

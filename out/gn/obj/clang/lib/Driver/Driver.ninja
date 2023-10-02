@@ -1,0 +1,238 @@
+defines =
+include_dirs = -I../../clang/lib/Driver -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/Driver -Igen/clang/include/clang/StaticAnalyzer/Checkers -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Driver
+target_output_name = libclangDriver
+
+build obj/clang/lib/Driver/Driver.inputdeps.stamp: stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/clang/lib/Driver/Driver.Action.o: cxx ../../clang/lib/Driver/Action.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Action.cpp
+  source_name_part = Action
+build obj/clang/lib/Driver/Driver.Compilation.o: cxx ../../clang/lib/Driver/Compilation.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Compilation.cpp
+  source_name_part = Compilation
+build obj/clang/lib/Driver/Driver.Distro.o: cxx ../../clang/lib/Driver/Distro.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Distro.cpp
+  source_name_part = Distro
+build obj/clang/lib/Driver/Driver.Driver.o: cxx ../../clang/lib/Driver/Driver.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Driver.cpp
+  source_name_part = Driver
+build obj/clang/lib/Driver/Driver.DriverOptions.o: cxx ../../clang/lib/Driver/DriverOptions.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = DriverOptions.cpp
+  source_name_part = DriverOptions
+build obj/clang/lib/Driver/Driver.Job.o: cxx ../../clang/lib/Driver/Job.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Job.cpp
+  source_name_part = Job
+build obj/clang/lib/Driver/Driver.Multilib.o: cxx ../../clang/lib/Driver/Multilib.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Multilib.cpp
+  source_name_part = Multilib
+build obj/clang/lib/Driver/Driver.OffloadBundler.o: cxx ../../clang/lib/Driver/OffloadBundler.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = OffloadBundler.cpp
+  source_name_part = OffloadBundler
+build obj/clang/lib/Driver/Driver.OptionUtils.o: cxx ../../clang/lib/Driver/OptionUtils.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = OptionUtils.cpp
+  source_name_part = OptionUtils
+build obj/clang/lib/Driver/Driver.Phases.o: cxx ../../clang/lib/Driver/Phases.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Phases.cpp
+  source_name_part = Phases
+build obj/clang/lib/Driver/Driver.SanitizerArgs.o: cxx ../../clang/lib/Driver/SanitizerArgs.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = SanitizerArgs.cpp
+  source_name_part = SanitizerArgs
+build obj/clang/lib/Driver/Driver.Tool.o: cxx ../../clang/lib/Driver/Tool.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Tool.cpp
+  source_name_part = Tool
+build obj/clang/lib/Driver/Driver.ToolChain.o: cxx ../../clang/lib/Driver/ToolChain.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = ToolChain.cpp
+  source_name_part = ToolChain
+build obj/clang/lib/Driver/ToolChains/Driver.AIX.o: cxx ../../clang/lib/Driver/ToolChains/AIX.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = AIX.cpp
+  source_name_part = AIX
+build obj/clang/lib/Driver/ToolChains/Driver.AMDGPU.o: cxx ../../clang/lib/Driver/ToolChains/AMDGPU.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = AMDGPU.cpp
+  source_name_part = AMDGPU
+build obj/clang/lib/Driver/ToolChains/Driver.AMDGPUOpenMP.o: cxx ../../clang/lib/Driver/ToolChains/AMDGPUOpenMP.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = AMDGPUOpenMP.cpp
+  source_name_part = AMDGPUOpenMP
+build obj/clang/lib/Driver/ToolChains/Driver.AVR.o: cxx ../../clang/lib/Driver/ToolChains/AVR.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = AVR.cpp
+  source_name_part = AVR
+build obj/clang/lib/Driver/ToolChains/Driver.Ananas.o: cxx ../../clang/lib/Driver/ToolChains/Ananas.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Ananas.cpp
+  source_name_part = Ananas
+build obj/clang/lib/Driver/ToolChains/Arch/Driver.AArch64.o: cxx ../../clang/lib/Driver/ToolChains/Arch/AArch64.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = AArch64.cpp
+  source_name_part = AArch64
+build obj/clang/lib/Driver/ToolChains/Arch/Driver.ARM.o: cxx ../../clang/lib/Driver/ToolChains/Arch/ARM.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = ARM.cpp
+  source_name_part = ARM
+build obj/clang/lib/Driver/ToolChains/Arch/Driver.CSKY.o: cxx ../../clang/lib/Driver/ToolChains/Arch/CSKY.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = CSKY.cpp
+  source_name_part = CSKY
+build obj/clang/lib/Driver/ToolChains/Arch/Driver.LoongArch.o: cxx ../../clang/lib/Driver/ToolChains/Arch/LoongArch.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = LoongArch.cpp
+  source_name_part = LoongArch
+build obj/clang/lib/Driver/ToolChains/Arch/Driver.M68k.o: cxx ../../clang/lib/Driver/ToolChains/Arch/M68k.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = M68k.cpp
+  source_name_part = M68k
+build obj/clang/lib/Driver/ToolChains/Arch/Driver.Mips.o: cxx ../../clang/lib/Driver/ToolChains/Arch/Mips.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Mips.cpp
+  source_name_part = Mips
+build obj/clang/lib/Driver/ToolChains/Arch/Driver.PPC.o: cxx ../../clang/lib/Driver/ToolChains/Arch/PPC.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = PPC.cpp
+  source_name_part = PPC
+build obj/clang/lib/Driver/ToolChains/Arch/Driver.RISCV.o: cxx ../../clang/lib/Driver/ToolChains/Arch/RISCV.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = RISCV.cpp
+  source_name_part = RISCV
+build obj/clang/lib/Driver/ToolChains/Arch/Driver.Sparc.o: cxx ../../clang/lib/Driver/ToolChains/Arch/Sparc.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Sparc.cpp
+  source_name_part = Sparc
+build obj/clang/lib/Driver/ToolChains/Arch/Driver.SystemZ.o: cxx ../../clang/lib/Driver/ToolChains/Arch/SystemZ.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = SystemZ.cpp
+  source_name_part = SystemZ
+build obj/clang/lib/Driver/ToolChains/Arch/Driver.VE.o: cxx ../../clang/lib/Driver/ToolChains/Arch/VE.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = VE.cpp
+  source_name_part = VE
+build obj/clang/lib/Driver/ToolChains/Arch/Driver.X86.o: cxx ../../clang/lib/Driver/ToolChains/Arch/X86.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = X86.cpp
+  source_name_part = X86
+build obj/clang/lib/Driver/ToolChains/Driver.BareMetal.o: cxx ../../clang/lib/Driver/ToolChains/BareMetal.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = BareMetal.cpp
+  source_name_part = BareMetal
+build obj/clang/lib/Driver/ToolChains/Driver.CSKYToolChain.o: cxx ../../clang/lib/Driver/ToolChains/CSKYToolChain.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = CSKYToolChain.cpp
+  source_name_part = CSKYToolChain
+build obj/clang/lib/Driver/ToolChains/Driver.Clang.o: cxx ../../clang/lib/Driver/ToolChains/Clang.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Clang.cpp
+  source_name_part = Clang
+build obj/clang/lib/Driver/ToolChains/Driver.CloudABI.o: cxx ../../clang/lib/Driver/ToolChains/CloudABI.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = CloudABI.cpp
+  source_name_part = CloudABI
+build obj/clang/lib/Driver/ToolChains/Driver.CommonArgs.o: cxx ../../clang/lib/Driver/ToolChains/CommonArgs.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = CommonArgs.cpp
+  source_name_part = CommonArgs
+build obj/clang/lib/Driver/ToolChains/Driver.Contiki.o: cxx ../../clang/lib/Driver/ToolChains/Contiki.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Contiki.cpp
+  source_name_part = Contiki
+build obj/clang/lib/Driver/ToolChains/Driver.CrossWindows.o: cxx ../../clang/lib/Driver/ToolChains/CrossWindows.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = CrossWindows.cpp
+  source_name_part = CrossWindows
+build obj/clang/lib/Driver/ToolChains/Driver.Cuda.o: cxx ../../clang/lib/Driver/ToolChains/Cuda.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Cuda.cpp
+  source_name_part = Cuda
+build obj/clang/lib/Driver/ToolChains/Driver.Darwin.o: cxx ../../clang/lib/Driver/ToolChains/Darwin.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Darwin.cpp
+  source_name_part = Darwin
+build obj/clang/lib/Driver/ToolChains/Driver.DragonFly.o: cxx ../../clang/lib/Driver/ToolChains/DragonFly.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = DragonFly.cpp
+  source_name_part = DragonFly
+build obj/clang/lib/Driver/ToolChains/Driver.Flang.o: cxx ../../clang/lib/Driver/ToolChains/Flang.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Flang.cpp
+  source_name_part = Flang
+build obj/clang/lib/Driver/ToolChains/Driver.FreeBSD.o: cxx ../../clang/lib/Driver/ToolChains/FreeBSD.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = FreeBSD.cpp
+  source_name_part = FreeBSD
+build obj/clang/lib/Driver/ToolChains/Driver.Fuchsia.o: cxx ../../clang/lib/Driver/ToolChains/Fuchsia.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Fuchsia.cpp
+  source_name_part = Fuchsia
+build obj/clang/lib/Driver/ToolChains/Driver.Gnu.o: cxx ../../clang/lib/Driver/ToolChains/Gnu.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Gnu.cpp
+  source_name_part = Gnu
+build obj/clang/lib/Driver/ToolChains/Driver.HIPAMD.o: cxx ../../clang/lib/Driver/ToolChains/HIPAMD.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = HIPAMD.cpp
+  source_name_part = HIPAMD
+build obj/clang/lib/Driver/ToolChains/Driver.HIPSPV.o: cxx ../../clang/lib/Driver/ToolChains/HIPSPV.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = HIPSPV.cpp
+  source_name_part = HIPSPV
+build obj/clang/lib/Driver/ToolChains/Driver.HIPUtility.o: cxx ../../clang/lib/Driver/ToolChains/HIPUtility.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = HIPUtility.cpp
+  source_name_part = HIPUtility
+build obj/clang/lib/Driver/ToolChains/Driver.HLSL.o: cxx ../../clang/lib/Driver/ToolChains/HLSL.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = HLSL.cpp
+  source_name_part = HLSL
+build obj/clang/lib/Driver/ToolChains/Driver.Haiku.o: cxx ../../clang/lib/Driver/ToolChains/Haiku.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Haiku.cpp
+  source_name_part = Haiku
+build obj/clang/lib/Driver/ToolChains/Driver.Hexagon.o: cxx ../../clang/lib/Driver/ToolChains/Hexagon.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Hexagon.cpp
+  source_name_part = Hexagon
+build obj/clang/lib/Driver/ToolChains/Driver.Hurd.o: cxx ../../clang/lib/Driver/ToolChains/Hurd.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Hurd.cpp
+  source_name_part = Hurd
+build obj/clang/lib/Driver/ToolChains/Driver.InterfaceStubs.o: cxx ../../clang/lib/Driver/ToolChains/InterfaceStubs.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = InterfaceStubs.cpp
+  source_name_part = InterfaceStubs
+build obj/clang/lib/Driver/ToolChains/Driver.Linux.o: cxx ../../clang/lib/Driver/ToolChains/Linux.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Linux.cpp
+  source_name_part = Linux
+build obj/clang/lib/Driver/ToolChains/Driver.MSP430.o: cxx ../../clang/lib/Driver/ToolChains/MSP430.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = MSP430.cpp
+  source_name_part = MSP430
+build obj/clang/lib/Driver/ToolChains/Driver.MSVC.o: cxx ../../clang/lib/Driver/ToolChains/MSVC.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = MSVC.cpp
+  source_name_part = MSVC
+build obj/clang/lib/Driver/ToolChains/Driver.MinGW.o: cxx ../../clang/lib/Driver/ToolChains/MinGW.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = MinGW.cpp
+  source_name_part = MinGW
+build obj/clang/lib/Driver/ToolChains/Driver.Minix.o: cxx ../../clang/lib/Driver/ToolChains/Minix.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Minix.cpp
+  source_name_part = Minix
+build obj/clang/lib/Driver/ToolChains/Driver.MipsLinux.o: cxx ../../clang/lib/Driver/ToolChains/MipsLinux.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = MipsLinux.cpp
+  source_name_part = MipsLinux
+build obj/clang/lib/Driver/ToolChains/Driver.Myriad.o: cxx ../../clang/lib/Driver/ToolChains/Myriad.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Myriad.cpp
+  source_name_part = Myriad
+build obj/clang/lib/Driver/ToolChains/Driver.NaCl.o: cxx ../../clang/lib/Driver/ToolChains/NaCl.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = NaCl.cpp
+  source_name_part = NaCl
+build obj/clang/lib/Driver/ToolChains/Driver.NetBSD.o: cxx ../../clang/lib/Driver/ToolChains/NetBSD.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = NetBSD.cpp
+  source_name_part = NetBSD
+build obj/clang/lib/Driver/ToolChains/Driver.OpenBSD.o: cxx ../../clang/lib/Driver/ToolChains/OpenBSD.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = OpenBSD.cpp
+  source_name_part = OpenBSD
+build obj/clang/lib/Driver/ToolChains/Driver.PPCFreeBSD.o: cxx ../../clang/lib/Driver/ToolChains/PPCFreeBSD.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = PPCFreeBSD.cpp
+  source_name_part = PPCFreeBSD
+build obj/clang/lib/Driver/ToolChains/Driver.PPCLinux.o: cxx ../../clang/lib/Driver/ToolChains/PPCLinux.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = PPCLinux.cpp
+  source_name_part = PPCLinux
+build obj/clang/lib/Driver/ToolChains/Driver.PS4CPU.o: cxx ../../clang/lib/Driver/ToolChains/PS4CPU.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = PS4CPU.cpp
+  source_name_part = PS4CPU
+build obj/clang/lib/Driver/ToolChains/Driver.RISCVToolchain.o: cxx ../../clang/lib/Driver/ToolChains/RISCVToolchain.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = RISCVToolchain.cpp
+  source_name_part = RISCVToolchain
+build obj/clang/lib/Driver/ToolChains/Driver.SPIRV.o: cxx ../../clang/lib/Driver/ToolChains/SPIRV.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = SPIRV.cpp
+  source_name_part = SPIRV
+build obj/clang/lib/Driver/ToolChains/Driver.Solaris.o: cxx ../../clang/lib/Driver/ToolChains/Solaris.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Solaris.cpp
+  source_name_part = Solaris
+build obj/clang/lib/Driver/ToolChains/Driver.TCE.o: cxx ../../clang/lib/Driver/ToolChains/TCE.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = TCE.cpp
+  source_name_part = TCE
+build obj/clang/lib/Driver/ToolChains/Driver.VEToolchain.o: cxx ../../clang/lib/Driver/ToolChains/VEToolchain.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = VEToolchain.cpp
+  source_name_part = VEToolchain
+build obj/clang/lib/Driver/ToolChains/Driver.WebAssembly.o: cxx ../../clang/lib/Driver/ToolChains/WebAssembly.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = WebAssembly.cpp
+  source_name_part = WebAssembly
+build obj/clang/lib/Driver/ToolChains/Driver.XCore.o: cxx ../../clang/lib/Driver/ToolChains/XCore.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = XCore.cpp
+  source_name_part = XCore
+build obj/clang/lib/Driver/ToolChains/Driver.ZOS.o: cxx ../../clang/lib/Driver/ToolChains/ZOS.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = ZOS.cpp
+  source_name_part = ZOS
+build obj/clang/lib/Driver/Driver.Types.o: cxx ../../clang/lib/Driver/Types.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = Types.cpp
+  source_name_part = Types
+build obj/clang/lib/Driver/Driver.XRayArgs.o: cxx ../../clang/lib/Driver/XRayArgs.cpp || obj/clang/lib/Driver/Driver.inputdeps.stamp
+  source_file_part = XRayArgs.cpp
+  source_name_part = XRayArgs
+
+build ./lib/libclangDriver.a: alink obj/clang/lib/Driver/Driver.Action.o obj/clang/lib/Driver/Driver.Compilation.o obj/clang/lib/Driver/Driver.Distro.o obj/clang/lib/Driver/Driver.Driver.o obj/clang/lib/Driver/Driver.DriverOptions.o obj/clang/lib/Driver/Driver.Job.o obj/clang/lib/Driver/Driver.Multilib.o obj/clang/lib/Driver/Driver.OffloadBundler.o obj/clang/lib/Driver/Driver.OptionUtils.o obj/clang/lib/Driver/Driver.Phases.o obj/clang/lib/Driver/Driver.SanitizerArgs.o obj/clang/lib/Driver/Driver.Tool.o obj/clang/lib/Driver/Driver.ToolChain.o obj/clang/lib/Driver/ToolChains/Driver.AIX.o obj/clang/lib/Driver/ToolChains/Driver.AMDGPU.o obj/clang/lib/Driver/ToolChains/Driver.AMDGPUOpenMP.o obj/clang/lib/Driver/ToolChains/Driver.AVR.o obj/clang/lib/Driver/ToolChains/Driver.Ananas.o obj/clang/lib/Driver/ToolChains/Arch/Driver.AArch64.o obj/clang/lib/Driver/ToolChains/Arch/Driver.ARM.o obj/clang/lib/Driver/ToolChains/Arch/Driver.CSKY.o obj/clang/lib/Driver/ToolChains/Arch/Driver.LoongArch.o obj/clang/lib/Driver/ToolChains/Arch/Driver.M68k.o obj/clang/lib/Driver/ToolChains/Arch/Driver.Mips.o obj/clang/lib/Driver/ToolChains/Arch/Driver.PPC.o obj/clang/lib/Driver/ToolChains/Arch/Driver.RISCV.o obj/clang/lib/Driver/ToolChains/Arch/Driver.Sparc.o obj/clang/lib/Driver/ToolChains/Arch/Driver.SystemZ.o obj/clang/lib/Driver/ToolChains/Arch/Driver.VE.o obj/clang/lib/Driver/ToolChains/Arch/Driver.X86.o obj/clang/lib/Driver/ToolChains/Driver.BareMetal.o obj/clang/lib/Driver/ToolChains/Driver.CSKYToolChain.o obj/clang/lib/Driver/ToolChains/Driver.Clang.o obj/clang/lib/Driver/ToolChains/Driver.CloudABI.o obj/clang/lib/Driver/ToolChains/Driver.CommonArgs.o obj/clang/lib/Driver/ToolChains/Driver.Contiki.o obj/clang/lib/Driver/ToolChains/Driver.CrossWindows.o obj/clang/lib/Driver/ToolChains/Driver.Cuda.o obj/clang/lib/Driver/ToolChains/Driver.Darwin.o obj/clang/lib/Driver/ToolChains/Driver.DragonFly.o obj/clang/lib/Driver/ToolChains/Driver.Flang.o obj/clang/lib/Driver/ToolChains/Driver.FreeBSD.o obj/clang/lib/Driver/ToolChains/Driver.Fuchsia.o obj/clang/lib/Driver/ToolChains/Driver.Gnu.o obj/clang/lib/Driver/ToolChains/Driver.HIPAMD.o obj/clang/lib/Driver/ToolChains/Driver.HIPSPV.o obj/clang/lib/Driver/ToolChains/Driver.HIPUtility.o obj/clang/lib/Driver/ToolChains/Driver.HLSL.o obj/clang/lib/Driver/ToolChains/Driver.Haiku.o obj/clang/lib/Driver/ToolChains/Driver.Hexagon.o obj/clang/lib/Driver/ToolChains/Driver.Hurd.o obj/clang/lib/Driver/ToolChains/Driver.InterfaceStubs.o obj/clang/lib/Driver/ToolChains/Driver.Linux.o obj/clang/lib/Driver/ToolChains/Driver.MSP430.o obj/clang/lib/Driver/ToolChains/Driver.MSVC.o obj/clang/lib/Driver/ToolChains/Driver.MinGW.o obj/clang/lib/Driver/ToolChains/Driver.Minix.o obj/clang/lib/Driver/ToolChains/Driver.MipsLinux.o obj/clang/lib/Driver/ToolChains/Driver.Myriad.o obj/clang/lib/Driver/ToolChains/Driver.NaCl.o obj/clang/lib/Driver/ToolChains/Driver.NetBSD.o obj/clang/lib/Driver/ToolChains/Driver.OpenBSD.o obj/clang/lib/Driver/ToolChains/Driver.PPCFreeBSD.o obj/clang/lib/Driver/ToolChains/Driver.PPCLinux.o obj/clang/lib/Driver/ToolChains/Driver.PS4CPU.o obj/clang/lib/Driver/ToolChains/Driver.RISCVToolchain.o obj/clang/lib/Driver/ToolChains/Driver.SPIRV.o obj/clang/lib/Driver/ToolChains/Driver.Solaris.o obj/clang/lib/Driver/ToolChains/Driver.TCE.o obj/clang/lib/Driver/ToolChains/Driver.VEToolchain.o obj/clang/lib/Driver/ToolChains/Driver.WebAssembly.o obj/clang/lib/Driver/ToolChains/Driver.XCore.o obj/clang/lib/Driver/ToolChains/Driver.ZOS.o obj/clang/lib/Driver/Driver.Types.o obj/clang/lib/Driver/Driver.XRayArgs.o || obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp ./lib/libclangBasic.a obj/llvm/include/llvm/Config/llvm-config.stamp ./lib/libLLVMBinaryFormat.a ./lib/libLLVMOption.a ./lib/libLLVMSupport.a ./lib/libLLVMWindowsDriver.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

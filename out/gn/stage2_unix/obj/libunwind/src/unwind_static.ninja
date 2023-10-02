@@ -1,0 +1,45 @@
+defines = -D_LIBUNWIND_HIDE_SYMBOLS -D_LIBUNWIND_IS_NATIVE_ONLY
+include_dirs = -I../../llvm/include -Istage2_unix/gen/llvm/include -I../../libunwind/include
+asmflags = -mmacos-version-min=10.10
+cflags = -fvisibility=hidden -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -fPIC -Wcovered-switch-default -U__STRICT_ANSI__
+cflags_c = -std=c99
+cflags_cc = -fvisibility-global-new-delete-hidden -std=c++17 -fvisibility-inlines-hidden -fno-rtti
+label_name = unwind_static
+target_output_name = libunwind
+
+build stage2_unix/obj/libunwind/src/unwind_static.inputdeps.stamp: stage2_unix_stamp obj/clang.stamp obj/lld.stamp
+build stage2_unix/obj/libunwind/src/unwind_static.Unwind-EHABI.o: stage2_unix_cxx ../../libunwind/src/Unwind-EHABI.cpp || stage2_unix/obj/libunwind/src/unwind_static.inputdeps.stamp
+  source_file_part = Unwind-EHABI.cpp
+  source_name_part = Unwind-EHABI
+build stage2_unix/obj/libunwind/src/unwind_static.Unwind-seh.o: stage2_unix_cxx ../../libunwind/src/Unwind-seh.cpp || stage2_unix/obj/libunwind/src/unwind_static.inputdeps.stamp
+  source_file_part = Unwind-seh.cpp
+  source_name_part = Unwind-seh
+build stage2_unix/obj/libunwind/src/unwind_static.Unwind-sjlj.o: stage2_unix_cc ../../libunwind/src/Unwind-sjlj.c || stage2_unix/obj/libunwind/src/unwind_static.inputdeps.stamp
+  source_file_part = Unwind-sjlj.c
+  source_name_part = Unwind-sjlj
+build stage2_unix/obj/libunwind/src/unwind_static.UnwindLevel1-gcc-ext.o: stage2_unix_cc ../../libunwind/src/UnwindLevel1-gcc-ext.c || stage2_unix/obj/libunwind/src/unwind_static.inputdeps.stamp
+  source_file_part = UnwindLevel1-gcc-ext.c
+  source_name_part = UnwindLevel1-gcc-ext
+build stage2_unix/obj/libunwind/src/unwind_static.UnwindLevel1.o: stage2_unix_cc ../../libunwind/src/UnwindLevel1.c || stage2_unix/obj/libunwind/src/unwind_static.inputdeps.stamp
+  source_file_part = UnwindLevel1.c
+  source_name_part = UnwindLevel1
+build stage2_unix/obj/libunwind/src/unwind_static.UnwindRegistersRestore.o: stage2_unix_asm ../../libunwind/src/UnwindRegistersRestore.S || stage2_unix/obj/libunwind/src/unwind_static.inputdeps.stamp
+  source_file_part = UnwindRegistersRestore.S
+  source_name_part = UnwindRegistersRestore
+build stage2_unix/obj/libunwind/src/unwind_static.UnwindRegistersSave.o: stage2_unix_asm ../../libunwind/src/UnwindRegistersSave.S || stage2_unix/obj/libunwind/src/unwind_static.inputdeps.stamp
+  source_file_part = UnwindRegistersSave.S
+  source_name_part = UnwindRegistersSave
+build stage2_unix/obj/libunwind/src/unwind_static.Unwind_AIXExtras.o: stage2_unix_cxx ../../libunwind/src/Unwind_AIXExtras.cpp || stage2_unix/obj/libunwind/src/unwind_static.inputdeps.stamp
+  source_file_part = Unwind_AIXExtras.cpp
+  source_name_part = Unwind_AIXExtras
+build stage2_unix/obj/libunwind/src/unwind_static.libunwind.o: stage2_unix_cxx ../../libunwind/src/libunwind.cpp || stage2_unix/obj/libunwind/src/unwind_static.inputdeps.stamp
+  source_file_part = libunwind.cpp
+  source_name_part = libunwind
+build stage2_unix/obj/libunwind/src/unwind_static.Unwind_AppleExtras.o: stage2_unix_cxx ../../libunwind/src/Unwind_AppleExtras.cpp || stage2_unix/obj/libunwind/src/unwind_static.inputdeps.stamp
+  source_file_part = Unwind_AppleExtras.cpp
+  source_name_part = Unwind_AppleExtras
+
+build lib/libunwind.a: stage2_unix_alink stage2_unix/obj/libunwind/src/unwind_static.Unwind-EHABI.o stage2_unix/obj/libunwind/src/unwind_static.Unwind-seh.o stage2_unix/obj/libunwind/src/unwind_static.Unwind-sjlj.o stage2_unix/obj/libunwind/src/unwind_static.UnwindLevel1-gcc-ext.o stage2_unix/obj/libunwind/src/unwind_static.UnwindLevel1.o stage2_unix/obj/libunwind/src/unwind_static.UnwindRegistersRestore.o stage2_unix/obj/libunwind/src/unwind_static.UnwindRegistersSave.o stage2_unix/obj/libunwind/src/unwind_static.Unwind_AIXExtras.o stage2_unix/obj/libunwind/src/unwind_static.libunwind.o stage2_unix/obj/libunwind/src/unwind_static.Unwind_AppleExtras.o || lib/clang/16.0.0/lib/darwin/libclang_rt.osx.a
+  arflags =
+  output_extension = 
+  output_dir = lib

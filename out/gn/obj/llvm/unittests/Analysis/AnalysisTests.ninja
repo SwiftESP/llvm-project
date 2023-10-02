@@ -1,0 +1,133 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = AnalysisTests
+target_output_name = AnalysisTests
+
+build obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/unittests/Analysis/AnalysisTests.AliasAnalysisTest.o: cxx ../../llvm/unittests/Analysis/AliasAnalysisTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = AliasAnalysisTest.cpp
+  source_name_part = AliasAnalysisTest
+build obj/llvm/unittests/Analysis/AnalysisTests.AliasSetTrackerTest.o: cxx ../../llvm/unittests/Analysis/AliasSetTrackerTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = AliasSetTrackerTest.cpp
+  source_name_part = AliasSetTrackerTest
+build obj/llvm/unittests/Analysis/AnalysisTests.AssumeBundleQueriesTest.o: cxx ../../llvm/unittests/Analysis/AssumeBundleQueriesTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = AssumeBundleQueriesTest.cpp
+  source_name_part = AssumeBundleQueriesTest
+build obj/llvm/unittests/Analysis/AnalysisTests.BasicAliasAnalysisTest.o: cxx ../../llvm/unittests/Analysis/BasicAliasAnalysisTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = BasicAliasAnalysisTest.cpp
+  source_name_part = BasicAliasAnalysisTest
+build obj/llvm/unittests/Analysis/AnalysisTests.BlockFrequencyInfoTest.o: cxx ../../llvm/unittests/Analysis/BlockFrequencyInfoTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = BlockFrequencyInfoTest.cpp
+  source_name_part = BlockFrequencyInfoTest
+build obj/llvm/unittests/Analysis/AnalysisTests.BranchProbabilityInfoTest.o: cxx ../../llvm/unittests/Analysis/BranchProbabilityInfoTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = BranchProbabilityInfoTest.cpp
+  source_name_part = BranchProbabilityInfoTest
+build obj/llvm/unittests/Analysis/AnalysisTests.CFGTest.o: cxx ../../llvm/unittests/Analysis/CFGTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = CFGTest.cpp
+  source_name_part = CFGTest
+build obj/llvm/unittests/Analysis/AnalysisTests.CGSCCPassManagerTest.o: cxx ../../llvm/unittests/Analysis/CGSCCPassManagerTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = CGSCCPassManagerTest.cpp
+  source_name_part = CGSCCPassManagerTest
+build obj/llvm/unittests/Analysis/AnalysisTests.CallGraphTest.o: cxx ../../llvm/unittests/Analysis/CallGraphTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = CallGraphTest.cpp
+  source_name_part = CallGraphTest
+build obj/llvm/unittests/Analysis/AnalysisTests.CaptureTrackingTest.o: cxx ../../llvm/unittests/Analysis/CaptureTrackingTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = CaptureTrackingTest.cpp
+  source_name_part = CaptureTrackingTest
+build obj/llvm/unittests/Analysis/AnalysisTests.ConstraintSystemTest.o: cxx ../../llvm/unittests/Analysis/ConstraintSystemTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = ConstraintSystemTest.cpp
+  source_name_part = ConstraintSystemTest
+build obj/llvm/unittests/Analysis/AnalysisTests.DDGTest.o: cxx ../../llvm/unittests/Analysis/DDGTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = DDGTest.cpp
+  source_name_part = DDGTest
+build obj/llvm/unittests/Analysis/AnalysisTests.DivergenceAnalysisTest.o: cxx ../../llvm/unittests/Analysis/DivergenceAnalysisTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = DivergenceAnalysisTest.cpp
+  source_name_part = DivergenceAnalysisTest
+build obj/llvm/unittests/Analysis/AnalysisTests.DomTreeUpdaterTest.o: cxx ../../llvm/unittests/Analysis/DomTreeUpdaterTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = DomTreeUpdaterTest.cpp
+  source_name_part = DomTreeUpdaterTest
+build obj/llvm/unittests/Analysis/AnalysisTests.FunctionPropertiesAnalysisTest.o: cxx ../../llvm/unittests/Analysis/FunctionPropertiesAnalysisTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = FunctionPropertiesAnalysisTest.cpp
+  source_name_part = FunctionPropertiesAnalysisTest
+build obj/llvm/unittests/Analysis/AnalysisTests.GlobalsModRefTest.o: cxx ../../llvm/unittests/Analysis/GlobalsModRefTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = GlobalsModRefTest.cpp
+  source_name_part = GlobalsModRefTest
+build obj/llvm/unittests/Analysis/AnalysisTests.IRSimilarityIdentifierTest.o: cxx ../../llvm/unittests/Analysis/IRSimilarityIdentifierTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = IRSimilarityIdentifierTest.cpp
+  source_name_part = IRSimilarityIdentifierTest
+build obj/llvm/unittests/Analysis/AnalysisTests.IVDescriptorsTest.o: cxx ../../llvm/unittests/Analysis/IVDescriptorsTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = IVDescriptorsTest.cpp
+  source_name_part = IVDescriptorsTest
+build obj/llvm/unittests/Analysis/AnalysisTests.InlineCostTest.o: cxx ../../llvm/unittests/Analysis/InlineCostTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = InlineCostTest.cpp
+  source_name_part = InlineCostTest
+build obj/llvm/unittests/Analysis/AnalysisTests.LazyCallGraphTest.o: cxx ../../llvm/unittests/Analysis/LazyCallGraphTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = LazyCallGraphTest.cpp
+  source_name_part = LazyCallGraphTest
+build obj/llvm/unittests/Analysis/AnalysisTests.LoadsTest.o: cxx ../../llvm/unittests/Analysis/LoadsTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = LoadsTest.cpp
+  source_name_part = LoadsTest
+build obj/llvm/unittests/Analysis/AnalysisTests.LoopInfoTest.o: cxx ../../llvm/unittests/Analysis/LoopInfoTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = LoopInfoTest.cpp
+  source_name_part = LoopInfoTest
+build obj/llvm/unittests/Analysis/AnalysisTests.LoopNestTest.o: cxx ../../llvm/unittests/Analysis/LoopNestTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = LoopNestTest.cpp
+  source_name_part = LoopNestTest
+build obj/llvm/unittests/Analysis/AnalysisTests.MLModelRunnerTest.o: cxx ../../llvm/unittests/Analysis/MLModelRunnerTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = MLModelRunnerTest.cpp
+  source_name_part = MLModelRunnerTest
+build obj/llvm/unittests/Analysis/AnalysisTests.MemoryBuiltinsTest.o: cxx ../../llvm/unittests/Analysis/MemoryBuiltinsTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = MemoryBuiltinsTest.cpp
+  source_name_part = MemoryBuiltinsTest
+build obj/llvm/unittests/Analysis/AnalysisTests.MemoryProfileInfoTest.o: cxx ../../llvm/unittests/Analysis/MemoryProfileInfoTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = MemoryProfileInfoTest.cpp
+  source_name_part = MemoryProfileInfoTest
+build obj/llvm/unittests/Analysis/AnalysisTests.MemorySSATest.o: cxx ../../llvm/unittests/Analysis/MemorySSATest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = MemorySSATest.cpp
+  source_name_part = MemorySSATest
+build obj/llvm/unittests/Analysis/AnalysisTests.PhiValuesTest.o: cxx ../../llvm/unittests/Analysis/PhiValuesTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = PhiValuesTest.cpp
+  source_name_part = PhiValuesTest
+build obj/llvm/unittests/Analysis/AnalysisTests.ProfileSummaryInfoTest.o: cxx ../../llvm/unittests/Analysis/ProfileSummaryInfoTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = ProfileSummaryInfoTest.cpp
+  source_name_part = ProfileSummaryInfoTest
+build obj/llvm/unittests/Analysis/AnalysisTests.ScalarEvolutionTest.o: cxx ../../llvm/unittests/Analysis/ScalarEvolutionTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = ScalarEvolutionTest.cpp
+  source_name_part = ScalarEvolutionTest
+build obj/llvm/unittests/Analysis/AnalysisTests.SparsePropagation.o: cxx ../../llvm/unittests/Analysis/SparsePropagation.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = SparsePropagation.cpp
+  source_name_part = SparsePropagation
+build obj/llvm/unittests/Analysis/AnalysisTests.TBAATest.o: cxx ../../llvm/unittests/Analysis/TBAATest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = TBAATest.cpp
+  source_name_part = TBAATest
+build obj/llvm/unittests/Analysis/AnalysisTests.TargetLibraryInfoTest.o: cxx ../../llvm/unittests/Analysis/TargetLibraryInfoTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = TargetLibraryInfoTest.cpp
+  source_name_part = TargetLibraryInfoTest
+build obj/llvm/unittests/Analysis/AnalysisTests.TensorSpecTest.o: cxx ../../llvm/unittests/Analysis/TensorSpecTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = TensorSpecTest.cpp
+  source_name_part = TensorSpecTest
+build obj/llvm/unittests/Analysis/AnalysisTests.UnrollAnalyzerTest.o: cxx ../../llvm/unittests/Analysis/UnrollAnalyzerTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = UnrollAnalyzerTest.cpp
+  source_name_part = UnrollAnalyzerTest
+build obj/llvm/unittests/Analysis/AnalysisTests.ValueLatticeTest.o: cxx ../../llvm/unittests/Analysis/ValueLatticeTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = ValueLatticeTest.cpp
+  source_name_part = ValueLatticeTest
+build obj/llvm/unittests/Analysis/AnalysisTests.ValueTrackingTest.o: cxx ../../llvm/unittests/Analysis/ValueTrackingTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = ValueTrackingTest.cpp
+  source_name_part = ValueTrackingTest
+build obj/llvm/unittests/Analysis/AnalysisTests.VectorFunctionABITest.o: cxx ../../llvm/unittests/Analysis/VectorFunctionABITest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = VectorFunctionABITest.cpp
+  source_name_part = VectorFunctionABITest
+build obj/llvm/unittests/Analysis/AnalysisTests.VectorUtilsTest.o: cxx ../../llvm/unittests/Analysis/VectorUtilsTest.cpp || obj/llvm/unittests/Analysis/AnalysisTests.inputdeps.stamp
+  source_file_part = VectorUtilsTest.cpp
+  source_name_part = VectorUtilsTest
+
+build obj/llvm/unittests/Analysis/AnalysisTests: link obj/llvm/unittests/Analysis/AnalysisTests.AliasAnalysisTest.o obj/llvm/unittests/Analysis/AnalysisTests.AliasSetTrackerTest.o obj/llvm/unittests/Analysis/AnalysisTests.AssumeBundleQueriesTest.o obj/llvm/unittests/Analysis/AnalysisTests.BasicAliasAnalysisTest.o obj/llvm/unittests/Analysis/AnalysisTests.BlockFrequencyInfoTest.o obj/llvm/unittests/Analysis/AnalysisTests.BranchProbabilityInfoTest.o obj/llvm/unittests/Analysis/AnalysisTests.CFGTest.o obj/llvm/unittests/Analysis/AnalysisTests.CGSCCPassManagerTest.o obj/llvm/unittests/Analysis/AnalysisTests.CallGraphTest.o obj/llvm/unittests/Analysis/AnalysisTests.CaptureTrackingTest.o obj/llvm/unittests/Analysis/AnalysisTests.ConstraintSystemTest.o obj/llvm/unittests/Analysis/AnalysisTests.DDGTest.o obj/llvm/unittests/Analysis/AnalysisTests.DivergenceAnalysisTest.o obj/llvm/unittests/Analysis/AnalysisTests.DomTreeUpdaterTest.o obj/llvm/unittests/Analysis/AnalysisTests.FunctionPropertiesAnalysisTest.o obj/llvm/unittests/Analysis/AnalysisTests.GlobalsModRefTest.o obj/llvm/unittests/Analysis/AnalysisTests.IRSimilarityIdentifierTest.o obj/llvm/unittests/Analysis/AnalysisTests.IVDescriptorsTest.o obj/llvm/unittests/Analysis/AnalysisTests.InlineCostTest.o obj/llvm/unittests/Analysis/AnalysisTests.LazyCallGraphTest.o obj/llvm/unittests/Analysis/AnalysisTests.LoadsTest.o obj/llvm/unittests/Analysis/AnalysisTests.LoopInfoTest.o obj/llvm/unittests/Analysis/AnalysisTests.LoopNestTest.o obj/llvm/unittests/Analysis/AnalysisTests.MLModelRunnerTest.o obj/llvm/unittests/Analysis/AnalysisTests.MemoryBuiltinsTest.o obj/llvm/unittests/Analysis/AnalysisTests.MemoryProfileInfoTest.o obj/llvm/unittests/Analysis/AnalysisTests.MemorySSATest.o obj/llvm/unittests/Analysis/AnalysisTests.PhiValuesTest.o obj/llvm/unittests/Analysis/AnalysisTests.ProfileSummaryInfoTest.o obj/llvm/unittests/Analysis/AnalysisTests.ScalarEvolutionTest.o obj/llvm/unittests/Analysis/AnalysisTests.SparsePropagation.o obj/llvm/unittests/Analysis/AnalysisTests.TBAATest.o obj/llvm/unittests/Analysis/AnalysisTests.TargetLibraryInfoTest.o obj/llvm/unittests/Analysis/AnalysisTests.TensorSpecTest.o obj/llvm/unittests/Analysis/AnalysisTests.UnrollAnalyzerTest.o obj/llvm/unittests/Analysis/AnalysisTests.ValueLatticeTest.o obj/llvm/unittests/Analysis/AnalysisTests.ValueTrackingTest.o obj/llvm/unittests/Analysis/AnalysisTests.VectorFunctionABITest.o obj/llvm/unittests/Analysis/AnalysisTests.VectorUtilsTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMAnalysis.a ./lib/libLLVMAsmParser.a ./lib/libLLVMCore.a ./lib/libLLVMSupport.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libgtest.a || obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/Analysis

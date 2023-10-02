@@ -1,0 +1,12 @@
+defines =
+include_dirs = -I../../clang-tools-extra/clangd/unittests -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing -Wno-unused-label
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = DecisionForestRuntimeTest
+target_output_name = DecisionForestRuntimeTest
+
+build obj/BUILD_DIR/gen/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTest.DecisionForestRuntimeTest.o: cxx gen/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTest.cpp || obj/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTestCpp.stamp
+  source_file_part = DecisionForestRuntimeTest.cpp
+  source_name_part = DecisionForestRuntimeTest
+
+build obj/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTest.stamp: stamp obj/BUILD_DIR/gen/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTest.DecisionForestRuntimeTest.o || obj/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTestCpp.stamp

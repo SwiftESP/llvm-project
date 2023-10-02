@@ -1,0 +1,112 @@
+defines =
+include_dirs = -I../../lldb/source -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -I../../lldb/include -Igen/lldb/include -Igen/lldb/source/Plugins/SymbolFile/DWARF -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libxml2
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = DWARF
+target_output_name = liblldbPluginSymbolFileDWARF
+
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_cg.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_cg.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtin_cg.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_cg.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/lldb/include/lldb/Host/Config.stamp obj/lldb/include/lldb/Version/version.stamp obj/lldb/source/Commands/CommandOptions.stamp obj/lldb/source/Core/CoreProperties.stamp obj/lldb/source/Core/CorePropertiesEnum.stamp obj/lldb/source/Interpreter/InterpreterProperties.stamp obj/lldb/source/Interpreter/InterpreterPropertiesEnum.stamp obj/lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARFProperties.stamp obj/lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARFPropertiesEnum.stamp obj/lldb/source/Target/TargetProperties.stamp obj/lldb/source/Target/TargetPropertiesEnum.stamp obj/lldb/source/Version/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.AppleDWARFIndex.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/AppleDWARFIndex.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = AppleDWARFIndex.cpp
+  source_name_part = AppleDWARFIndex
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DIERef.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DIERef.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DIERef.cpp
+  source_name_part = DIERef
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFASTParser.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFASTParser.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFASTParser.cpp
+  source_name_part = DWARFASTParser
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFASTParserClang.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFASTParserClang.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFASTParserClang.cpp
+  source_name_part = DWARFASTParserClang
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFAbbreviationDeclaration.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFAbbreviationDeclaration.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFAbbreviationDeclaration.cpp
+  source_name_part = DWARFAbbreviationDeclaration
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFAttribute.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFAttribute.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFAttribute.cpp
+  source_name_part = DWARFAttribute
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFBaseDIE.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFBaseDIE.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFBaseDIE.cpp
+  source_name_part = DWARFBaseDIE
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFCompileUnit.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFCompileUnit.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFCompileUnit.cpp
+  source_name_part = DWARFCompileUnit
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFContext.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFContext.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFContext.cpp
+  source_name_part = DWARFContext
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDIE.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFDIE.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDIE.cpp
+  source_name_part = DWARFDIE
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDataExtractor.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFDataExtractor.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDataExtractor.cpp
+  source_name_part = DWARFDataExtractor
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDebugAbbrev.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFDebugAbbrev.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugAbbrev.cpp
+  source_name_part = DWARFDebugAbbrev
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDebugArangeSet.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFDebugArangeSet.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugArangeSet.cpp
+  source_name_part = DWARFDebugArangeSet
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDebugAranges.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFDebugAranges.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugAranges.cpp
+  source_name_part = DWARFDebugAranges
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDebugInfo.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFDebugInfo.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugInfo.cpp
+  source_name_part = DWARFDebugInfo
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDebugInfoEntry.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFDebugInfoEntry.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugInfoEntry.cpp
+  source_name_part = DWARFDebugInfoEntry
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDebugMacro.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFDebugMacro.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugMacro.cpp
+  source_name_part = DWARFDebugMacro
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDebugRanges.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFDebugRanges.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugRanges.cpp
+  source_name_part = DWARFDebugRanges
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDeclContext.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFDeclContext.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDeclContext.cpp
+  source_name_part = DWARFDeclContext
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDefines.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFDefines.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDefines.cpp
+  source_name_part = DWARFDefines
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFFormValue.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFFormValue.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFFormValue.cpp
+  source_name_part = DWARFFormValue
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFIndex.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFIndex.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFIndex.cpp
+  source_name_part = DWARFIndex
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFTypeUnit.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFTypeUnit.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFTypeUnit.cpp
+  source_name_part = DWARFTypeUnit
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFUnit.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DWARFUnit.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFUnit.cpp
+  source_name_part = DWARFUnit
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DebugNamesDWARFIndex.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/DebugNamesDWARFIndex.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DebugNamesDWARFIndex.cpp
+  source_name_part = DebugNamesDWARFIndex
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.HashedNameToDIE.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/HashedNameToDIE.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = HashedNameToDIE.cpp
+  source_name_part = HashedNameToDIE
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.LogChannelDWARF.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/LogChannelDWARF.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = LogChannelDWARF.cpp
+  source_name_part = LogChannelDWARF
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.ManualDWARFIndex.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/ManualDWARFIndex.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = ManualDWARFIndex.cpp
+  source_name_part = ManualDWARFIndex
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.NameToDIE.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/NameToDIE.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = NameToDIE.cpp
+  source_name_part = NameToDIE
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.SymbolFileDWARF.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARF.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = SymbolFileDWARF.cpp
+  source_name_part = SymbolFileDWARF
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.SymbolFileDWARFDebugMap.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARFDebugMap.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = SymbolFileDWARFDebugMap.cpp
+  source_name_part = SymbolFileDWARFDebugMap
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.SymbolFileDWARFDwo.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARFDwo.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = SymbolFileDWARFDwo.cpp
+  source_name_part = SymbolFileDWARFDwo
+build obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.UniqueDWARFASTType.o: cxx ../../lldb/source/Plugins/SymbolFile/DWARF/UniqueDWARFASTType.cpp || obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.inputdeps.stamp
+  source_file_part = UniqueDWARFASTType.cpp
+  source_name_part = UniqueDWARFASTType
+
+build ./lib/liblldbPluginSymbolFileDWARF.a: alink obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.AppleDWARFIndex.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DIERef.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFASTParser.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFASTParserClang.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFAbbreviationDeclaration.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFAttribute.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFBaseDIE.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFCompileUnit.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFContext.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDIE.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDataExtractor.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDebugAbbrev.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDebugArangeSet.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDebugAranges.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDebugInfo.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDebugInfoEntry.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDebugMacro.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDebugRanges.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDeclContext.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFDefines.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFFormValue.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFIndex.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFTypeUnit.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DWARFUnit.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.DebugNamesDWARFIndex.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.HashedNameToDIE.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.LogChannelDWARF.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.ManualDWARFIndex.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.NameToDIE.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.SymbolFileDWARF.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.SymbolFileDWARFDebugMap.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.SymbolFileDWARFDwo.o obj/lldb/source/Plugins/SymbolFile/DWARF/DWARF.UniqueDWARFASTType.o || obj/lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARFProperties.stamp obj/lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARFPropertiesEnum.stamp ./lib/libclangAST.a ./lib/libclangBasic.a ./lib/liblldbCore.a ./lib/liblldbExpression.a ./lib/liblldbHost.a ./lib/liblldbInterpreter.a ./lib/liblldbPluginExpressionParserClang.a ./lib/liblldbPluginObjCLanguage.a ./lib/liblldbSymbol.a ./lib/liblldbTarget.a ./lib/liblldbUtility.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libclangLex.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangDriver.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/liblldbHostMacOSXObjCXX.a ./lib/liblldbCommands.a ./lib/liblldbDataFormatters.a ./lib/liblldbVersion.a ./lib/liblldbPluginObjectFileJIT.a ./lib/libLLVMExecutionEngine.a ./lib/libLLVMOrcTargetProcess.a ./lib/libLLVMOrcShared.a ./lib/libLLVMTarget.a ./lib/libclangCodeGen.a ./lib/libclangAnalysis.a ./lib/libclangASTMatchers.a ./lib/libclangFrontend.a ./lib/libclangEdit.a ./lib/libclangParse.a ./lib/libclangSema.a ./lib/libclangSupport.a ./lib/libclangSerialization.a ./lib/libLLVMLTO.a ./lib/libLLVMBitWriter.a ./lib/libLLVMCodeGen.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMExtensions.a ./lib/libLLVMLinker.a ./lib/libLLVMPasses.a ./lib/libLLVMCoroutines.a ./lib/libLLVMipo.a ./lib/libLLVMInstrumentation.a ./lib/libLLVMVectorize.a ./lib/libLLVMObjCARCOpts.a ./lib/libLLVMCoverage.a ./lib/libclangRewriteFrontend.a ./lib/libclangRewrite.a ./lib/liblldbPluginCPPRuntime.a ./lib/liblldbPluginProcessUtility.a ./lib/liblldbPluginObjCRuntime.a ./lib/liblldbPluginRenderScriptRuntime.a ./lib/liblldbBreakpoint.a ./lib/libLLVMMCJIT.a ./lib/libLLVMRuntimeDyld.a ./lib/liblldbPluginClangCommon.a ./lib/liblldbPluginAppleObjCRuntime.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

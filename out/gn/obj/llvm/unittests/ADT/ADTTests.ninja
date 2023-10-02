@@ -1,0 +1,253 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = ADTTests
+target_output_name = ADTTests
+
+build obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/unittests/ADT/ADTTests.APFixedPointTest.o: cxx ../../llvm/unittests/ADT/APFixedPointTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = APFixedPointTest.cpp
+  source_name_part = APFixedPointTest
+build obj/llvm/unittests/ADT/ADTTests.APFloatTest.o: cxx ../../llvm/unittests/ADT/APFloatTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = APFloatTest.cpp
+  source_name_part = APFloatTest
+build obj/llvm/unittests/ADT/ADTTests.APIntTest.o: cxx ../../llvm/unittests/ADT/APIntTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = APIntTest.cpp
+  source_name_part = APIntTest
+build obj/llvm/unittests/ADT/ADTTests.APSIntTest.o: cxx ../../llvm/unittests/ADT/APSIntTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = APSIntTest.cpp
+  source_name_part = APSIntTest
+build obj/llvm/unittests/ADT/ADTTests.AnyTest.o: cxx ../../llvm/unittests/ADT/AnyTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = AnyTest.cpp
+  source_name_part = AnyTest
+build obj/llvm/unittests/ADT/ADTTests.ArrayRefTest.o: cxx ../../llvm/unittests/ADT/ArrayRefTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = ArrayRefTest.cpp
+  source_name_part = ArrayRefTest
+build obj/llvm/unittests/ADT/ADTTests.BitFieldsTest.o: cxx ../../llvm/unittests/ADT/BitFieldsTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = BitFieldsTest.cpp
+  source_name_part = BitFieldsTest
+build obj/llvm/unittests/ADT/ADTTests.BitTest.o: cxx ../../llvm/unittests/ADT/BitTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = BitTest.cpp
+  source_name_part = BitTest
+build obj/llvm/unittests/ADT/ADTTests.BitVectorTest.o: cxx ../../llvm/unittests/ADT/BitVectorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = BitVectorTest.cpp
+  source_name_part = BitVectorTest
+build obj/llvm/unittests/ADT/ADTTests.BitmaskEnumTest.o: cxx ../../llvm/unittests/ADT/BitmaskEnumTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = BitmaskEnumTest.cpp
+  source_name_part = BitmaskEnumTest
+build obj/llvm/unittests/ADT/ADTTests.BreadthFirstIteratorTest.o: cxx ../../llvm/unittests/ADT/BreadthFirstIteratorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = BreadthFirstIteratorTest.cpp
+  source_name_part = BreadthFirstIteratorTest
+build obj/llvm/unittests/ADT/ADTTests.BumpPtrListTest.o: cxx ../../llvm/unittests/ADT/BumpPtrListTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = BumpPtrListTest.cpp
+  source_name_part = BumpPtrListTest
+build obj/llvm/unittests/ADT/ADTTests.CoalescingBitVectorTest.o: cxx ../../llvm/unittests/ADT/CoalescingBitVectorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = CoalescingBitVectorTest.cpp
+  source_name_part = CoalescingBitVectorTest
+build obj/llvm/unittests/ADT/ADTTests.CombinationGeneratorTest.o: cxx ../../llvm/unittests/ADT/CombinationGeneratorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = CombinationGeneratorTest.cpp
+  source_name_part = CombinationGeneratorTest
+build obj/llvm/unittests/ADT/ADTTests.DAGDeltaAlgorithmTest.o: cxx ../../llvm/unittests/ADT/DAGDeltaAlgorithmTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = DAGDeltaAlgorithmTest.cpp
+  source_name_part = DAGDeltaAlgorithmTest
+build obj/llvm/unittests/ADT/ADTTests.DeltaAlgorithmTest.o: cxx ../../llvm/unittests/ADT/DeltaAlgorithmTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = DeltaAlgorithmTest.cpp
+  source_name_part = DeltaAlgorithmTest
+build obj/llvm/unittests/ADT/ADTTests.DenseMapTest.o: cxx ../../llvm/unittests/ADT/DenseMapTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = DenseMapTest.cpp
+  source_name_part = DenseMapTest
+build obj/llvm/unittests/ADT/ADTTests.DenseSetTest.o: cxx ../../llvm/unittests/ADT/DenseSetTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = DenseSetTest.cpp
+  source_name_part = DenseSetTest
+build obj/llvm/unittests/ADT/ADTTests.DepthFirstIteratorTest.o: cxx ../../llvm/unittests/ADT/DepthFirstIteratorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = DepthFirstIteratorTest.cpp
+  source_name_part = DepthFirstIteratorTest
+build obj/llvm/unittests/ADT/ADTTests.DirectedGraphTest.o: cxx ../../llvm/unittests/ADT/DirectedGraphTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = DirectedGraphTest.cpp
+  source_name_part = DirectedGraphTest
+build obj/llvm/unittests/ADT/ADTTests.EditDistanceTest.o: cxx ../../llvm/unittests/ADT/EditDistanceTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = EditDistanceTest.cpp
+  source_name_part = EditDistanceTest
+build obj/llvm/unittests/ADT/ADTTests.EnumeratedArrayTest.o: cxx ../../llvm/unittests/ADT/EnumeratedArrayTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = EnumeratedArrayTest.cpp
+  source_name_part = EnumeratedArrayTest
+build obj/llvm/unittests/ADT/ADTTests.EquivalenceClassesTest.o: cxx ../../llvm/unittests/ADT/EquivalenceClassesTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = EquivalenceClassesTest.cpp
+  source_name_part = EquivalenceClassesTest
+build obj/llvm/unittests/ADT/ADTTests.FallibleIteratorTest.o: cxx ../../llvm/unittests/ADT/FallibleIteratorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = FallibleIteratorTest.cpp
+  source_name_part = FallibleIteratorTest
+build obj/llvm/unittests/ADT/ADTTests.FloatingPointMode.o: cxx ../../llvm/unittests/ADT/FloatingPointMode.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = FloatingPointMode.cpp
+  source_name_part = FloatingPointMode
+build obj/llvm/unittests/ADT/ADTTests.FoldingSet.o: cxx ../../llvm/unittests/ADT/FoldingSet.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = FoldingSet.cpp
+  source_name_part = FoldingSet
+build obj/llvm/unittests/ADT/ADTTests.FunctionExtrasTest.o: cxx ../../llvm/unittests/ADT/FunctionExtrasTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = FunctionExtrasTest.cpp
+  source_name_part = FunctionExtrasTest
+build obj/llvm/unittests/ADT/ADTTests.FunctionRefTest.o: cxx ../../llvm/unittests/ADT/FunctionRefTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = FunctionRefTest.cpp
+  source_name_part = FunctionRefTest
+build obj/llvm/unittests/ADT/ADTTests.HashingTest.o: cxx ../../llvm/unittests/ADT/HashingTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = HashingTest.cpp
+  source_name_part = HashingTest
+build obj/llvm/unittests/ADT/ADTTests.IListBaseTest.o: cxx ../../llvm/unittests/ADT/IListBaseTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = IListBaseTest.cpp
+  source_name_part = IListBaseTest
+build obj/llvm/unittests/ADT/ADTTests.IListIteratorTest.o: cxx ../../llvm/unittests/ADT/IListIteratorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = IListIteratorTest.cpp
+  source_name_part = IListIteratorTest
+build obj/llvm/unittests/ADT/ADTTests.IListNodeBaseTest.o: cxx ../../llvm/unittests/ADT/IListNodeBaseTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = IListNodeBaseTest.cpp
+  source_name_part = IListNodeBaseTest
+build obj/llvm/unittests/ADT/ADTTests.IListNodeTest.o: cxx ../../llvm/unittests/ADT/IListNodeTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = IListNodeTest.cpp
+  source_name_part = IListNodeTest
+build obj/llvm/unittests/ADT/ADTTests.IListSentinelTest.o: cxx ../../llvm/unittests/ADT/IListSentinelTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = IListSentinelTest.cpp
+  source_name_part = IListSentinelTest
+build obj/llvm/unittests/ADT/ADTTests.IListTest.o: cxx ../../llvm/unittests/ADT/IListTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = IListTest.cpp
+  source_name_part = IListTest
+build obj/llvm/unittests/ADT/ADTTests.ImmutableListTest.o: cxx ../../llvm/unittests/ADT/ImmutableListTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = ImmutableListTest.cpp
+  source_name_part = ImmutableListTest
+build obj/llvm/unittests/ADT/ADTTests.ImmutableMapTest.o: cxx ../../llvm/unittests/ADT/ImmutableMapTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = ImmutableMapTest.cpp
+  source_name_part = ImmutableMapTest
+build obj/llvm/unittests/ADT/ADTTests.ImmutableSetTest.o: cxx ../../llvm/unittests/ADT/ImmutableSetTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = ImmutableSetTest.cpp
+  source_name_part = ImmutableSetTest
+build obj/llvm/unittests/ADT/ADTTests.IntEqClassesTest.o: cxx ../../llvm/unittests/ADT/IntEqClassesTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = IntEqClassesTest.cpp
+  source_name_part = IntEqClassesTest
+build obj/llvm/unittests/ADT/ADTTests.IntervalMapTest.o: cxx ../../llvm/unittests/ADT/IntervalMapTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = IntervalMapTest.cpp
+  source_name_part = IntervalMapTest
+build obj/llvm/unittests/ADT/ADTTests.IntervalTreeTest.o: cxx ../../llvm/unittests/ADT/IntervalTreeTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = IntervalTreeTest.cpp
+  source_name_part = IntervalTreeTest
+build obj/llvm/unittests/ADT/ADTTests.IntrusiveRefCntPtrTest.o: cxx ../../llvm/unittests/ADT/IntrusiveRefCntPtrTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = IntrusiveRefCntPtrTest.cpp
+  source_name_part = IntrusiveRefCntPtrTest
+build obj/llvm/unittests/ADT/ADTTests.IteratorTest.o: cxx ../../llvm/unittests/ADT/IteratorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = IteratorTest.cpp
+  source_name_part = IteratorTest
+build obj/llvm/unittests/ADT/ADTTests.MapVectorTest.o: cxx ../../llvm/unittests/ADT/MapVectorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = MapVectorTest.cpp
+  source_name_part = MapVectorTest
+build obj/llvm/unittests/ADT/ADTTests.MappedIteratorTest.o: cxx ../../llvm/unittests/ADT/MappedIteratorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = MappedIteratorTest.cpp
+  source_name_part = MappedIteratorTest
+build obj/llvm/unittests/ADT/ADTTests.OptionalTest.o: cxx ../../llvm/unittests/ADT/OptionalTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = OptionalTest.cpp
+  source_name_part = OptionalTest
+build obj/llvm/unittests/ADT/ADTTests.PackedVectorTest.o: cxx ../../llvm/unittests/ADT/PackedVectorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = PackedVectorTest.cpp
+  source_name_part = PackedVectorTest
+build obj/llvm/unittests/ADT/ADTTests.PointerEmbeddedIntTest.o: cxx ../../llvm/unittests/ADT/PointerEmbeddedIntTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = PointerEmbeddedIntTest.cpp
+  source_name_part = PointerEmbeddedIntTest
+build obj/llvm/unittests/ADT/ADTTests.PointerIntPairTest.o: cxx ../../llvm/unittests/ADT/PointerIntPairTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = PointerIntPairTest.cpp
+  source_name_part = PointerIntPairTest
+build obj/llvm/unittests/ADT/ADTTests.PointerSumTypeTest.o: cxx ../../llvm/unittests/ADT/PointerSumTypeTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = PointerSumTypeTest.cpp
+  source_name_part = PointerSumTypeTest
+build obj/llvm/unittests/ADT/ADTTests.PointerUnionTest.o: cxx ../../llvm/unittests/ADT/PointerUnionTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = PointerUnionTest.cpp
+  source_name_part = PointerUnionTest
+build obj/llvm/unittests/ADT/ADTTests.PostOrderIteratorTest.o: cxx ../../llvm/unittests/ADT/PostOrderIteratorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = PostOrderIteratorTest.cpp
+  source_name_part = PostOrderIteratorTest
+build obj/llvm/unittests/ADT/ADTTests.PriorityWorklistTest.o: cxx ../../llvm/unittests/ADT/PriorityWorklistTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = PriorityWorklistTest.cpp
+  source_name_part = PriorityWorklistTest
+build obj/llvm/unittests/ADT/ADTTests.RangeAdapterTest.o: cxx ../../llvm/unittests/ADT/RangeAdapterTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = RangeAdapterTest.cpp
+  source_name_part = RangeAdapterTest
+build obj/llvm/unittests/ADT/ADTTests.SCCIteratorTest.o: cxx ../../llvm/unittests/ADT/SCCIteratorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = SCCIteratorTest.cpp
+  source_name_part = SCCIteratorTest
+build obj/llvm/unittests/ADT/ADTTests.STLExtrasTest.o: cxx ../../llvm/unittests/ADT/STLExtrasTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = STLExtrasTest.cpp
+  source_name_part = STLExtrasTest
+build obj/llvm/unittests/ADT/ADTTests.STLForwardCompatTest.o: cxx ../../llvm/unittests/ADT/STLForwardCompatTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = STLForwardCompatTest.cpp
+  source_name_part = STLForwardCompatTest
+build obj/llvm/unittests/ADT/ADTTests.ScopeExitTest.o: cxx ../../llvm/unittests/ADT/ScopeExitTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = ScopeExitTest.cpp
+  source_name_part = ScopeExitTest
+build obj/llvm/unittests/ADT/ADTTests.SequenceTest.o: cxx ../../llvm/unittests/ADT/SequenceTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = SequenceTest.cpp
+  source_name_part = SequenceTest
+build obj/llvm/unittests/ADT/ADTTests.SetVectorTest.o: cxx ../../llvm/unittests/ADT/SetVectorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = SetVectorTest.cpp
+  source_name_part = SetVectorTest
+build obj/llvm/unittests/ADT/ADTTests.SimpleIListTest.o: cxx ../../llvm/unittests/ADT/SimpleIListTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = SimpleIListTest.cpp
+  source_name_part = SimpleIListTest
+build obj/llvm/unittests/ADT/ADTTests.SmallPtrSetTest.o: cxx ../../llvm/unittests/ADT/SmallPtrSetTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = SmallPtrSetTest.cpp
+  source_name_part = SmallPtrSetTest
+build obj/llvm/unittests/ADT/ADTTests.SmallSetTest.o: cxx ../../llvm/unittests/ADT/SmallSetTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = SmallSetTest.cpp
+  source_name_part = SmallSetTest
+build obj/llvm/unittests/ADT/ADTTests.SmallStringTest.o: cxx ../../llvm/unittests/ADT/SmallStringTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = SmallStringTest.cpp
+  source_name_part = SmallStringTest
+build obj/llvm/unittests/ADT/ADTTests.SmallVectorTest.o: cxx ../../llvm/unittests/ADT/SmallVectorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = SmallVectorTest.cpp
+  source_name_part = SmallVectorTest
+build obj/llvm/unittests/ADT/ADTTests.SparseBitVectorTest.o: cxx ../../llvm/unittests/ADT/SparseBitVectorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = SparseBitVectorTest.cpp
+  source_name_part = SparseBitVectorTest
+build obj/llvm/unittests/ADT/ADTTests.SparseMultiSetTest.o: cxx ../../llvm/unittests/ADT/SparseMultiSetTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = SparseMultiSetTest.cpp
+  source_name_part = SparseMultiSetTest
+build obj/llvm/unittests/ADT/ADTTests.SparseSetTest.o: cxx ../../llvm/unittests/ADT/SparseSetTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = SparseSetTest.cpp
+  source_name_part = SparseSetTest
+build obj/llvm/unittests/ADT/ADTTests.StatisticTest.o: cxx ../../llvm/unittests/ADT/StatisticTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = StatisticTest.cpp
+  source_name_part = StatisticTest
+build obj/llvm/unittests/ADT/ADTTests.StringExtrasTest.o: cxx ../../llvm/unittests/ADT/StringExtrasTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = StringExtrasTest.cpp
+  source_name_part = StringExtrasTest
+build obj/llvm/unittests/ADT/ADTTests.StringMapTest.o: cxx ../../llvm/unittests/ADT/StringMapTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = StringMapTest.cpp
+  source_name_part = StringMapTest
+build obj/llvm/unittests/ADT/ADTTests.StringRefTest.o: cxx ../../llvm/unittests/ADT/StringRefTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = StringRefTest.cpp
+  source_name_part = StringRefTest
+build obj/llvm/unittests/ADT/ADTTests.StringSetTest.o: cxx ../../llvm/unittests/ADT/StringSetTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = StringSetTest.cpp
+  source_name_part = StringSetTest
+build obj/llvm/unittests/ADT/ADTTests.StringSwitchTest.o: cxx ../../llvm/unittests/ADT/StringSwitchTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = StringSwitchTest.cpp
+  source_name_part = StringSwitchTest
+build obj/llvm/unittests/ADT/ADTTests.TinyPtrVectorTest.o: cxx ../../llvm/unittests/ADT/TinyPtrVectorTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = TinyPtrVectorTest.cpp
+  source_name_part = TinyPtrVectorTest
+build obj/llvm/unittests/ADT/ADTTests.TripleTest.o: cxx ../../llvm/unittests/ADT/TripleTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = TripleTest.cpp
+  source_name_part = TripleTest
+build obj/llvm/unittests/ADT/ADTTests.TwineTest.o: cxx ../../llvm/unittests/ADT/TwineTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = TwineTest.cpp
+  source_name_part = TwineTest
+build obj/llvm/unittests/ADT/ADTTests.TypeSwitchTest.o: cxx ../../llvm/unittests/ADT/TypeSwitchTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = TypeSwitchTest.cpp
+  source_name_part = TypeSwitchTest
+build obj/llvm/unittests/ADT/ADTTests.TypeTraitsTest.o: cxx ../../llvm/unittests/ADT/TypeTraitsTest.cpp || obj/llvm/unittests/ADT/ADTTests.inputdeps.stamp
+  source_file_part = TypeTraitsTest.cpp
+  source_name_part = TypeTraitsTest
+
+build obj/llvm/unittests/ADT/ADTTests: link obj/llvm/unittests/ADT/ADTTests.APFixedPointTest.o obj/llvm/unittests/ADT/ADTTests.APFloatTest.o obj/llvm/unittests/ADT/ADTTests.APIntTest.o obj/llvm/unittests/ADT/ADTTests.APSIntTest.o obj/llvm/unittests/ADT/ADTTests.AnyTest.o obj/llvm/unittests/ADT/ADTTests.ArrayRefTest.o obj/llvm/unittests/ADT/ADTTests.BitFieldsTest.o obj/llvm/unittests/ADT/ADTTests.BitTest.o obj/llvm/unittests/ADT/ADTTests.BitVectorTest.o obj/llvm/unittests/ADT/ADTTests.BitmaskEnumTest.o obj/llvm/unittests/ADT/ADTTests.BreadthFirstIteratorTest.o obj/llvm/unittests/ADT/ADTTests.BumpPtrListTest.o obj/llvm/unittests/ADT/ADTTests.CoalescingBitVectorTest.o obj/llvm/unittests/ADT/ADTTests.CombinationGeneratorTest.o obj/llvm/unittests/ADT/ADTTests.DAGDeltaAlgorithmTest.o obj/llvm/unittests/ADT/ADTTests.DeltaAlgorithmTest.o obj/llvm/unittests/ADT/ADTTests.DenseMapTest.o obj/llvm/unittests/ADT/ADTTests.DenseSetTest.o obj/llvm/unittests/ADT/ADTTests.DepthFirstIteratorTest.o obj/llvm/unittests/ADT/ADTTests.DirectedGraphTest.o obj/llvm/unittests/ADT/ADTTests.EditDistanceTest.o obj/llvm/unittests/ADT/ADTTests.EnumeratedArrayTest.o obj/llvm/unittests/ADT/ADTTests.EquivalenceClassesTest.o obj/llvm/unittests/ADT/ADTTests.FallibleIteratorTest.o obj/llvm/unittests/ADT/ADTTests.FloatingPointMode.o obj/llvm/unittests/ADT/ADTTests.FoldingSet.o obj/llvm/unittests/ADT/ADTTests.FunctionExtrasTest.o obj/llvm/unittests/ADT/ADTTests.FunctionRefTest.o obj/llvm/unittests/ADT/ADTTests.HashingTest.o obj/llvm/unittests/ADT/ADTTests.IListBaseTest.o obj/llvm/unittests/ADT/ADTTests.IListIteratorTest.o obj/llvm/unittests/ADT/ADTTests.IListNodeBaseTest.o obj/llvm/unittests/ADT/ADTTests.IListNodeTest.o obj/llvm/unittests/ADT/ADTTests.IListSentinelTest.o obj/llvm/unittests/ADT/ADTTests.IListTest.o obj/llvm/unittests/ADT/ADTTests.ImmutableListTest.o obj/llvm/unittests/ADT/ADTTests.ImmutableMapTest.o obj/llvm/unittests/ADT/ADTTests.ImmutableSetTest.o obj/llvm/unittests/ADT/ADTTests.IntEqClassesTest.o obj/llvm/unittests/ADT/ADTTests.IntervalMapTest.o obj/llvm/unittests/ADT/ADTTests.IntervalTreeTest.o obj/llvm/unittests/ADT/ADTTests.IntrusiveRefCntPtrTest.o obj/llvm/unittests/ADT/ADTTests.IteratorTest.o obj/llvm/unittests/ADT/ADTTests.MapVectorTest.o obj/llvm/unittests/ADT/ADTTests.MappedIteratorTest.o obj/llvm/unittests/ADT/ADTTests.OptionalTest.o obj/llvm/unittests/ADT/ADTTests.PackedVectorTest.o obj/llvm/unittests/ADT/ADTTests.PointerEmbeddedIntTest.o obj/llvm/unittests/ADT/ADTTests.PointerIntPairTest.o obj/llvm/unittests/ADT/ADTTests.PointerSumTypeTest.o obj/llvm/unittests/ADT/ADTTests.PointerUnionTest.o obj/llvm/unittests/ADT/ADTTests.PostOrderIteratorTest.o obj/llvm/unittests/ADT/ADTTests.PriorityWorklistTest.o obj/llvm/unittests/ADT/ADTTests.RangeAdapterTest.o obj/llvm/unittests/ADT/ADTTests.SCCIteratorTest.o obj/llvm/unittests/ADT/ADTTests.STLExtrasTest.o obj/llvm/unittests/ADT/ADTTests.STLForwardCompatTest.o obj/llvm/unittests/ADT/ADTTests.ScopeExitTest.o obj/llvm/unittests/ADT/ADTTests.SequenceTest.o obj/llvm/unittests/ADT/ADTTests.SetVectorTest.o obj/llvm/unittests/ADT/ADTTests.SimpleIListTest.o obj/llvm/unittests/ADT/ADTTests.SmallPtrSetTest.o obj/llvm/unittests/ADT/ADTTests.SmallSetTest.o obj/llvm/unittests/ADT/ADTTests.SmallStringTest.o obj/llvm/unittests/ADT/ADTTests.SmallVectorTest.o obj/llvm/unittests/ADT/ADTTests.SparseBitVectorTest.o obj/llvm/unittests/ADT/ADTTests.SparseMultiSetTest.o obj/llvm/unittests/ADT/ADTTests.SparseSetTest.o obj/llvm/unittests/ADT/ADTTests.StatisticTest.o obj/llvm/unittests/ADT/ADTTests.StringExtrasTest.o obj/llvm/unittests/ADT/ADTTests.StringMapTest.o obj/llvm/unittests/ADT/ADTTests.StringRefTest.o obj/llvm/unittests/ADT/ADTTests.StringSetTest.o obj/llvm/unittests/ADT/ADTTests.StringSwitchTest.o obj/llvm/unittests/ADT/ADTTests.TinyPtrVectorTest.o obj/llvm/unittests/ADT/ADTTests.TripleTest.o obj/llvm/unittests/ADT/ADTTests.TwineTest.o obj/llvm/unittests/ADT/ADTTests.TypeSwitchTest.o obj/llvm/unittests/ADT/ADTTests.TypeTraitsTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMSupport.a ./lib/libLLVMTestingSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libgtest.a || obj/llvm/include/llvm/IR/public_tablegen.stamp obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/ADT

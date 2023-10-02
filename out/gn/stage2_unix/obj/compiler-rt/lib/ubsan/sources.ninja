@@ -1,0 +1,28 @@
+defines = -DUBSAN_CAN_USE_CXXABI
+include_dirs = -I../../compiler-rt/lib
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -Wcovered-switch-default -fno-builtin -gline-tables-only -fPIC -funwind-tables -fvisibility=hidden -Werror=thread-safety -Werror=thread-safety-reference -Werror=thread-safety-beta
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = sources
+target_output_name = sources
+
+build stage2_unix/obj/compiler-rt/lib/ubsan/sources.inputdeps.stamp: stage2_unix_stamp obj/clang.stamp obj/lld.stamp
+build stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_diag.o: stage2_unix_cxx ../../compiler-rt/lib/ubsan/ubsan_diag.cpp || stage2_unix/obj/compiler-rt/lib/ubsan/sources.inputdeps.stamp
+  source_file_part = ubsan_diag.cpp
+  source_name_part = ubsan_diag
+build stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_flags.o: stage2_unix_cxx ../../compiler-rt/lib/ubsan/ubsan_flags.cpp || stage2_unix/obj/compiler-rt/lib/ubsan/sources.inputdeps.stamp
+  source_file_part = ubsan_flags.cpp
+  source_name_part = ubsan_flags
+build stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_handlers.o: stage2_unix_cxx ../../compiler-rt/lib/ubsan/ubsan_handlers.cpp || stage2_unix/obj/compiler-rt/lib/ubsan/sources.inputdeps.stamp
+  source_file_part = ubsan_handlers.cpp
+  source_name_part = ubsan_handlers
+build stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_init.o: stage2_unix_cxx ../../compiler-rt/lib/ubsan/ubsan_init.cpp || stage2_unix/obj/compiler-rt/lib/ubsan/sources.inputdeps.stamp
+  source_file_part = ubsan_init.cpp
+  source_name_part = ubsan_init
+build stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_monitor.o: stage2_unix_cxx ../../compiler-rt/lib/ubsan/ubsan_monitor.cpp || stage2_unix/obj/compiler-rt/lib/ubsan/sources.inputdeps.stamp
+  source_file_part = ubsan_monitor.cpp
+  source_name_part = ubsan_monitor
+build stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_value.o: stage2_unix_cxx ../../compiler-rt/lib/ubsan/ubsan_value.cpp || stage2_unix/obj/compiler-rt/lib/ubsan/sources.inputdeps.stamp
+  source_file_part = ubsan_value.cpp
+  source_name_part = ubsan_value
+
+build stage2_unix/obj/compiler-rt/lib/ubsan/sources.stamp: stage2_unix_stamp stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_diag.o stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_flags.o stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_handlers.o stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_init.o stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_monitor.o stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_value.o || stage2_unix/obj/compiler-rt/lib/interception/sources.stamp stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.stamp

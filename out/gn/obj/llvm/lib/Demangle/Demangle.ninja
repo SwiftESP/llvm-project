@@ -1,0 +1,30 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Demangle
+target_output_name = libLLVMDemangle
+
+build obj/llvm/lib/Demangle/Demangle.DLangDemangle.o: cxx ../../llvm/lib/Demangle/DLangDemangle.cpp
+  source_file_part = DLangDemangle.cpp
+  source_name_part = DLangDemangle
+build obj/llvm/lib/Demangle/Demangle.Demangle.o: cxx ../../llvm/lib/Demangle/Demangle.cpp
+  source_file_part = Demangle.cpp
+  source_name_part = Demangle
+build obj/llvm/lib/Demangle/Demangle.ItaniumDemangle.o: cxx ../../llvm/lib/Demangle/ItaniumDemangle.cpp
+  source_file_part = ItaniumDemangle.cpp
+  source_name_part = ItaniumDemangle
+build obj/llvm/lib/Demangle/Demangle.MicrosoftDemangle.o: cxx ../../llvm/lib/Demangle/MicrosoftDemangle.cpp
+  source_file_part = MicrosoftDemangle.cpp
+  source_name_part = MicrosoftDemangle
+build obj/llvm/lib/Demangle/Demangle.MicrosoftDemangleNodes.o: cxx ../../llvm/lib/Demangle/MicrosoftDemangleNodes.cpp
+  source_file_part = MicrosoftDemangleNodes.cpp
+  source_name_part = MicrosoftDemangleNodes
+build obj/llvm/lib/Demangle/Demangle.RustDemangle.o: cxx ../../llvm/lib/Demangle/RustDemangle.cpp
+  source_file_part = RustDemangle.cpp
+  source_name_part = RustDemangle
+
+build ./lib/libLLVMDemangle.a: alink obj/llvm/lib/Demangle/Demangle.DLangDemangle.o obj/llvm/lib/Demangle/Demangle.Demangle.o obj/llvm/lib/Demangle/Demangle.ItaniumDemangle.o obj/llvm/lib/Demangle/Demangle.MicrosoftDemangle.o obj/llvm/lib/Demangle/Demangle.MicrosoftDemangleNodes.o obj/llvm/lib/Demangle/Demangle.RustDemangle.o
+  arflags =
+  output_extension = 
+  output_dir = ./lib

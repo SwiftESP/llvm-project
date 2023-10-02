@@ -1,0 +1,2753 @@
+ninja_required_version = 1.7.2
+
+rule gn
+  command = ../../llvm/utils/gn/bin/mac-arm64/gn --root=../.. -q --dotfile=../../llvm/utils/gn/.gn --regeneration gen .
+  pool = console
+  description = Regenerating ninja files
+
+# The 'gn' rule also writes build.ninja, unbeknownst to ninja. The
+# build.ninja edge is separate to prevent ninja from deleting it
+# (due to depfile usage) if interrupted. gn uses atomic writes to
+# ensure that build.ninja is always valid even if interrupted.
+build build.ninja.stamp: gn
+  generator = 1
+  depfile = build.ninja.d
+
+build build.ninja: phony build.ninja.stamp
+  generator = 1
+
+subninja toolchain.ninja
+subninja stage2_baremetal_aarch64/toolchain.ninja
+subninja stage2_ios_aarch64/toolchain.ninja
+subninja stage2_unix/toolchain.ninja
+
+build clang: phony obj/clang.stamp
+build default: phony obj/default.stamp
+build lld: phony obj/lld.stamp
+build llvm-ar: phony obj/llvm-ar.stamp
+build llvm-cxxfilt: phony obj/llvm-cxxfilt.stamp
+build llvm-debuginfod: phony obj/llvm-debuginfod.stamp
+build llvm-debuginfod-find: phony obj/llvm-debuginfod-find.stamp
+build llvm-dwp: phony obj/llvm-dwp.stamp
+build llvm-libtool-darwin: phony obj/llvm-libtool-darwin.stamp
+build llvm-lipo: phony obj/llvm-lipo.stamp
+build llvm-nm: phony obj/llvm-nm.stamp
+build llvm-objcopy: phony obj/llvm-objcopy.stamp
+build llvm-objdump: phony obj/llvm-objdump.stamp
+build llvm-rc: phony obj/llvm-rc.stamp
+build llvm-readobj: phony obj/llvm-readobj.stamp
+build llvm-size: phony obj/llvm-size.stamp
+build llvm-strings: phony obj/llvm-strings.stamp
+build llvm-symbolizer: phony obj/llvm-symbolizer.stamp
+build compiler-rt: phony obj/compiler-rt/compiler-rt.stamp
+build libunwind: phony obj/libunwind/libunwind.stamp
+build AArch64Tests: phony obj/llvm/unittests/Target/AArch64/AArch64Tests
+build ADTTests: phony obj/llvm/unittests/ADT/ADTTests
+build ASTMatchersTests: phony obj/clang/unittests/ASTMatchers/ASTMatchersTests
+build ASTTests: phony obj/clang/unittests/AST/ASTTests
+build AnalysisTests: phony obj/llvm/unittests/Analysis/AnalysisTests
+build AsmParserTests: phony obj/llvm/unittests/AsmParser/AsmParserTests
+build BasicTests: phony obj/clang/unittests/Basic/BasicTests
+build BinaryFormatTests: phony obj/llvm/unittests/BinaryFormat/BinaryFormatTests
+build BitcodeTests: phony obj/llvm/unittests/Bitcode/BitcodeTests
+build BitstreamTests: phony obj/llvm/unittests/Bitstream/BitstreamTests
+build CFIVerifyTests: phony obj/llvm/unittests/tools/llvm-cfi-verify/CFIVerifyTests
+build ClangAnalysisFlowSensitiveTests: phony obj/clang/unittests/Analysis/FlowSensitive/ClangAnalysisFlowSensitiveTests
+build ClangAnalysisTests: phony obj/clang/unittests/Analysis/ClangAnalysisTests
+build ClangApplyReplacementsTests: phony obj/clang-tools-extra/unittests/clang-apply-replacements/ClangApplyReplacementsTests
+build ClangChangeNamespaceTests: phony obj/clang-tools-extra/unittests/clang-change-namespace/ClangChangeNamespaceTests
+build ClangCodeGenTests: phony obj/clang/unittests/CodeGen/ClangCodeGenTests
+build ClangDocTests: phony obj/clang-tools-extra/unittests/clang-doc/ClangDocTests
+build ClangDriverTests: phony obj/clang/unittests/Driver/ClangDriverTests
+build ClangIncludeFixerTests: phony obj/clang-tools-extra/unittests/clang-include-fixer/ClangIncludeFixerTests
+build ClangMoveTests: phony obj/clang-tools-extra/unittests/clang-move/ClangMoveTests
+build ClangPseudoTests: phony obj/clang-tools-extra/pseudo/unittests/ClangPseudoTests
+build ClangQueryTests: phony obj/clang-tools-extra/unittests/clang-query/ClangQueryTests
+build ClangRenameTests: phony obj/clang/unittests/Rename/ClangRenameTests
+build ClangReplInterpreterExceptionTests: phony obj/clang/unittests/Interpreter/ExceptionTests/ClangReplInterpreterExceptionTests
+build ClangReplInterpreterTests: phony obj/clang/unittests/Interpreter/ClangReplInterpreterTests
+build ClangTidyTests: phony obj/clang-tools-extra/unittests/clang-tidy/ClangTidyTests
+build ClangdTests: phony obj/clang-tools-extra/clangd/unittests/ClangdTests
+build ClangdXpcTests: phony obj/clang-tools-extra/clangd/unittests/xpc/ClangdXpcTests
+build CodeGenTests: phony obj/llvm/unittests/CodeGen/CodeGenTests
+build CrossTUTests: phony obj/clang/unittests/CrossTU/CrossTUTests
+build DebugInfoCodeViewTests: phony obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests
+build DebugInfoDWARFTests: phony obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests
+build DebugInfoGSYMTests: phony obj/llvm/unittests/DebugInfo/GSYM/DebugInfoGSYMTests
+build DebugInfoMSFTests: phony obj/llvm/unittests/DebugInfo/MSF/DebugInfoMSFTests
+build DebugInfoPDBTests: phony obj/llvm/unittests/DebugInfo/PDB/DebugInfoPDBTests
+build DebugInfoSymbolizerTests: phony obj/llvm/unittests/DebugInfo/Symbolizer/DebugInfoSymbolizerTests
+build DebuginfodTests: phony obj/llvm/unittests/Debuginfod/DebuginfodTests
+build DemangleTests: phony obj/llvm/unittests/Demangle/DemangleTests
+build DynamicASTMatchersTests: phony obj/clang/unittests/ASTMatchers/Dynamic/DynamicASTMatchersTests
+build DynamicLibraryTests: phony obj/llvm/unittests/Support/DynamicLibrary/DynamicLibraryTests
+build ExecutionEngineTests: phony obj/llvm/unittests/ExecutionEngine/ExecutionEngineTests
+build FileCheck: phony ./bin/FileCheck
+build FileCheckTests: phony obj/llvm/unittests/FileCheck/FileCheckTests
+build FindAllSymbolsTests: phony obj/clang-tools-extra/unittests/clang-include-fixer/find-all-symbols/FindAllSymbolsTests
+build FormatTests: phony obj/clang/unittests/Format/FormatTests
+build FrontendTests: phony obj/clang/unittests/Frontend/FrontendTests
+build FuzzMutateTests: phony obj/llvm/unittests/FuzzMutate/FuzzMutateTests
+build GlobalISelTests: phony obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests
+build IPOTests: phony obj/llvm/unittests/Transforms/IPO/IPOTests
+build IRTests: phony obj/llvm/unittests/IR/IRTests
+build IndexTests: phony obj/clang/unittests/Index/IndexTests
+build InterfaceStubTests: phony obj/llvm/unittests/InterfaceStub/InterfaceStubTests
+build IntrospectionTests: phony obj/clang/unittests/Introspection/IntrospectionTests
+build JITLinkTests: phony obj/llvm/unittests/ExecutionEngine/JITLink/JITLinkTests
+build LLVMExegesisAArch64Tests: phony obj/llvm/unittests/tools/llvm-exegesis/AArch64/LLVMExegesisAArch64Tests
+build LLVMExegesisTests: phony obj/llvm/unittests/tools/llvm-exegesis/LLVMExegesisTests
+build LLVMFrontendTests: phony obj/llvm/unittests/Frontend/LLVMFrontendTests
+build LLVMMCATests: phony obj/llvm/unittests/tools/llvm-mca/LLVMMCATests
+build LLVMProfgenTests: phony obj/llvm/unittests/tools/llvm-profgen/LLVMProfgenTests
+build LexTests: phony obj/clang/unittests/Lex/LexTests
+build LineEditorTests: phony obj/llvm/unittests/LineEditor/LineEditorTests
+build LinkerTests: phony obj/llvm/unittests/Linker/LinkerTests
+build MCJITTests: phony obj/llvm/unittests/ExecutionEngine/MCJIT/MCJITTests
+build MCTests: phony obj/llvm/unittests/MC/MCTests
+build MIRTests: phony obj/llvm/unittests/MIR/MIRTests
+build MITests: phony obj/llvm/unittests/MI/MITests
+build ObjCopyTests: phony obj/llvm/unittests/ObjCopy/ObjCopyTests
+build ObjectTests: phony obj/llvm/unittests/Object/ObjectTests
+build ObjectYAMLTests: phony obj/llvm/unittests/ObjectYAML/ObjectYAMLTests
+build OptionTests: phony obj/llvm/unittests/Option/OptionTests
+build OrcJITTests: phony obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests
+build PassesBindingsTests: phony obj/llvm/unittests/Passes/PassesBindingsTests
+build PluginsTests: phony obj/llvm/unittests/Passes/PluginsTests
+build ProfileDataTests: phony obj/llvm/unittests/ProfileData/ProfileDataTests
+build RemarksTests: phony obj/llvm/unittests/Remarks/RemarksTests
+build RewriteTests: phony obj/clang/unittests/Rewrite/RewriteTests
+build ScalarTests: phony obj/llvm/unittests/Transforms/Scalar/ScalarTests
+build SemaTests: phony obj/clang/unittests/Sema/SemaTests
+build SerializationTests: phony obj/clang/unittests/Serialization/SerializationTests
+build StaticAnalysisTests: phony obj/clang/unittests/StaticAnalyzer/StaticAnalysisTests
+build SupportTests: phony obj/llvm/unittests/Support/SupportTests
+build SyntaxTests: phony obj/clang/unittests/Tooling/Syntax/SyntaxTests
+build TableGenTests: phony obj/llvm/unittests/TableGen/TableGenTests
+build TestingADTTests: phony obj/llvm/unittests/Testing/ADT/TestingADTTests
+build TestingSupportTests: phony obj/llvm/unittests/Testing/Support/TestingSupportTests
+build TextAPITests: phony obj/llvm/unittests/TextAPI/TextAPITests
+build ToolingTests: phony obj/clang/unittests/Tooling/ToolingTests
+build UtilsTests: phony obj/llvm/unittests/Transforms/Utils/UtilsTests
+build VectorizeTests: phony obj/llvm/unittests/Transforms/Vectorize/VectorizeTests
+build XRayTests: phony obj/llvm/unittests/XRay/XRayTests
+build apinotes-test: phony ./bin/apinotes-test
+build arcmt-test: phony ./bin/arcmt-test
+build bugpoint: phony ./bin/bugpoint
+build c-arcmt-test: phony ./bin/c-arcmt-test
+build c-index-test: phony ./bin/c-index-test
+build clang-apply-replacements: phony ./bin/clang-apply-replacements
+build clang-change-namespace: phony ./bin/clang-change-namespace
+build clang-check: phony ./bin/clang-check
+build clang-diff: phony ./bin/clang-diff
+build clang-doc: phony ./bin/clang-doc
+build clang-extdef-mapping: phony ./bin/clang-extdef-mapping
+build clang-format: phony ./bin/clang-format
+build clang-fuzzer-dictionary: phony ./bin/clang-fuzzer-dictionary
+build clang-import-test: phony ./bin/clang-import-test
+build clang-include-fixer: phony ./bin/clang-include-fixer
+build clang-linker-wrapper: phony ./bin/clang-linker-wrapper
+build clang-move: phony ./bin/clang-move
+build clang-offload-bundler: phony ./bin/clang-offload-bundler
+build clang-offload-packager: phony ./bin/clang-offload-packager
+build clang-pseudo: phony ./bin/clang-pseudo
+build clang-pseudo-gen: phony ./bin/clang-pseudo-gen
+build clang-query: phony ./bin/clang-query
+build clang-refactor: phony ./bin/clang-refactor
+build clang-rename: phony ./bin/clang-rename
+build clang-reorder-fields: phony ./bin/clang-reorder-fields
+build clang-repl: phony ./bin/clang-repl
+build clang-scan-deps: phony ./bin/clang-scan-deps
+build clang-tblgen: phony ./bin/clang-tblgen
+build clang-tidy: phony ./bin/clang-tidy
+build clang-tidy-confusable-chars-gen: phony ./bin/clang-tidy-confusable-chars-gen
+build clangd: phony ./bin/clangd
+build clangd-indexer: phony ./bin/clangd-indexer
+build clangd-xpc-test-client: phony ./bin/clangd-xpc-test-client
+build count: phony ./bin/count
+build dexp: phony ./bin/dexp
+build diagtool: phony ./bin/diagtool
+build dsymutil: phony ./bin/dsymutil
+build find-all-symbols: phony ./bin/find-all-symbols
+build libclangCrashTests: phony obj/clang/unittests/libclang/CrashTests/libclangCrashTests
+build libclangTests: phony obj/clang/unittests/libclang/libclangTests
+build lit-cpuid: phony ./bin/lit-cpuid
+build llc: phony ./bin/llc
+build lldb: phony ./bin/lldb
+build lldb-argdumper: phony ./bin/lldb-argdumper
+build lldb-server: phony ./bin/lldb-server
+build lldb-tblgen: phony ./bin/lldb-tblgen
+build lldb-test: phony ./bin/lldb-test
+build lldb-vscode: phony ./bin/lldb-vscode
+build lli: phony ./bin/lli
+build lli-child-target: phony ./bin/lli-child-target
+build llvm-as: phony ./bin/llvm-as
+build llvm-bcanalyzer: phony ./bin/llvm-bcanalyzer
+build llvm-c-test: phony ./bin/llvm-c-test
+build llvm-cat: phony ./bin/llvm-cat
+build llvm-cfi-verify: phony ./bin/llvm-cfi-verify
+build llvm-config: phony ./bin/llvm-config
+build llvm-cov: phony ./bin/llvm-cov
+build llvm-cvtres: phony ./bin/llvm-cvtres
+build llvm-cxxdump: phony ./bin/llvm-cxxdump
+build llvm-cxxmap: phony ./bin/llvm-cxxmap
+build llvm-diff: phony ./bin/llvm-diff
+build llvm-dis: phony ./bin/llvm-dis
+build llvm-dwarfdump: phony ./bin/llvm-dwarfdump
+build llvm-dwarfutil: phony ./bin/llvm-dwarfutil
+build llvm-exegesis: phony ./bin/llvm-exegesis
+build llvm-extract: phony ./bin/llvm-extract
+build llvm-gsymutil: phony ./bin/llvm-gsymutil
+build llvm-ifs: phony ./bin/llvm-ifs
+build llvm-isel-fuzzer: phony ./bin/llvm-isel-fuzzer
+build llvm-jitlink: phony ./bin/llvm-jitlink
+build llvm-jitlink-executor: phony ./bin/llvm-jitlink-executor
+build llvm-link: phony ./bin/llvm-link
+build llvm-lto: phony ./bin/llvm-lto
+build llvm-lto2: phony ./bin/llvm-lto2
+build llvm-mc: phony ./bin/llvm-mc
+build llvm-mca: phony ./bin/llvm-mca
+build llvm-ml: phony ./bin/llvm-ml
+build llvm-modextract: phony ./bin/llvm-modextract
+build llvm-mt: phony ./bin/llvm-mt
+build llvm-opt-fuzzer: phony ./bin/llvm-opt-fuzzer
+build llvm-opt-report: phony ./bin/llvm-opt-report
+build llvm-pdbutil: phony ./bin/llvm-pdbutil
+build llvm-profdata: phony ./bin/llvm-profdata
+build llvm-profgen: phony ./bin/llvm-profgen
+build llvm-reduce: phony ./bin/llvm-reduce
+build llvm-remark-size-diff: phony ./bin/llvm-remark-size-diff
+build llvm-remarkutil: phony ./bin/llvm-remarkutil
+build llvm-rtdyld: phony ./bin/llvm-rtdyld
+build llvm-sim: phony ./bin/llvm-sim
+build llvm-split: phony ./bin/llvm-split
+build llvm-stress: phony ./bin/llvm-stress
+build llvm-tapi-diff: phony ./bin/llvm-tapi-diff
+build llvm-tblgen: phony ./bin/llvm-tblgen
+build llvm-tli-checker: phony ./bin/llvm-tli-checker
+build llvm-undname: phony ./bin/llvm-undname
+build llvm-xray: phony ./bin/llvm-xray
+build modularize: phony ./bin/modularize
+build not: phony ./bin/not
+build obj2yaml: phony ./bin/obj2yaml
+build opt: phony ./bin/opt
+build pp-trace: phony ./bin/pp-trace
+build sancov: phony ./bin/sancov
+build sanstats: phony ./bin/sanstats
+build split-file: phony ./bin/split-file
+build verify-uselistorder: phony ./bin/verify-uselistorder
+build yaml-bench: phony ./bin/yaml-bench
+build yaml2obj: phony ./bin/yaml2obj
+build AArch64GenAsmMatcher: phony obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp
+build AArch64GenAsmWriter: phony obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp
+build AArch64GenAsmWriter1: phony obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp
+build AArch64GenCallingConv: phony obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp
+build AArch64GenDAGISel: phony obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp
+build AArch64GenDisassemblerTables: phony obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp
+build AArch64GenExegesis: phony obj/llvm/tools/llvm-exegesis/lib/AArch64/AArch64GenExegesis.stamp
+build AArch64GenFastISel: phony obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp
+build AArch64GenGlobalISel: phony obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp
+build AArch64GenInstrInfo: phony obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp
+build AArch64GenMCCodeEmitter: phony obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp
+build AArch64GenMCPseudoLowering: phony obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp
+build AArch64GenO0PreLegalizeGICombiner: phony obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp
+build AArch64GenPostLegalizeGICombiner: phony obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp
+build AArch64GenPostLegalizeGILowering: phony obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp
+build AArch64GenPreLegalizeGICombiner: phony obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp
+build AArch64GenRegisterBank: phony obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp
+build AArch64GenRegisterInfo: phony obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp
+build AArch64GenSubtargetInfo: phony obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp
+build AArch64GenSystemOperands: phony obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build ACC: phony obj/llvm/include/llvm/Frontend/OpenACC/ACC.stamp
+build ACCcpp: phony obj/llvm/include/llvm/Frontend/OpenACC/ACCcpp.stamp
+build APINotes: phony ./lib/libclangAPINotes.a
+build ARCMigrate: phony ./lib/libclangARCMigrate.a
+build ARM: phony ./lib/liblldbPluginInstructionARM.a
+build AST: phony ./lib/libclangAST.a
+build ASTDiff: phony ./lib/libclangToolingASTDiff.a
+build ASTMatchers: phony ./lib/libclangASTMatchers.a
+build AbstractBasicReader: phony obj/clang/include/clang/AST/AbstractBasicReader.stamp
+build AbstractBasicWriter: phony obj/clang/include/clang/AST/AbstractBasicWriter.stamp
+build AbstractTypeReader: phony obj/clang/include/clang/AST/AbstractTypeReader.stamp
+build AbstractTypeWriter: phony obj/clang/include/clang/AST/AbstractTypeWriter.stamp
+build AggressiveInstCombine: phony ./lib/libLLVMAggressiveInstCombine.a
+build AllTargetsAsmParsers: phony obj/llvm/lib/Target/AllTargetsAsmParsers.stamp
+build AllTargetsCodeGens: phony obj/llvm/lib/Target/AllTargetsCodeGens.stamp
+build AllTargetsDescs: phony obj/llvm/lib/Target/AllTargetsDescs.stamp
+build AllTargetsDisassemblers: phony obj/llvm/lib/Target/AllTargetsDisassemblers.stamp
+build AllTargetsInfos: phony obj/llvm/lib/Target/AllTargetsInfos.stamp
+build AllTargetsMCAs: phony obj/llvm/lib/Target/AllTargetsMCAs.stamp
+build AppleObjCRuntime: phony ./lib/liblldbPluginAppleObjCRuntime.a
+build AsmParsers.def: phony obj/llvm/include/llvm/Config/AsmParsers.def.stamp
+build AsmPrinter: phony ./lib/libLLVMAsmPrinter.a
+build AsmPrinters.def: phony obj/llvm/include/llvm/Config/AsmPrinters.def.stamp
+build AttrDocTable: phony obj/clang/lib/AST/AttrDocTable.stamp
+build AttrHasAttributeImpl: phony obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp
+build AttrImpl: phony obj/clang/include/clang/AST/AttrImpl.stamp
+build AttrList: phony obj/clang/include/clang/Basic/AttrList.stamp
+build AttrNodeTraverse: phony obj/clang/include/clang/AST/AttrNodeTraverse.stamp
+build AttrPCHRead: phony obj/clang/include/clang/Serialization/AttrPCHRead.stamp
+build AttrPCHWrite: phony obj/clang/include/clang/Serialization/AttrPCHWrite.stamp
+build AttrParsedAttrImpl: phony obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp
+build AttrParsedAttrKinds: phony obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp
+build AttrParsedAttrList: phony obj/clang/include/clang/Sema/AttrParsedAttrList.stamp
+build AttrParserStringSwitches: phony obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp
+build AttrSpellingListIndex: phony obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp
+build AttrSubMatchRulesList: phony obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp
+build AttrSubMatchRulesParserStringSwitches: phony obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp
+build AttrTemplateInstantiate: phony obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp
+build AttrTextNodeDump: phony obj/clang/include/clang/AST/AttrTextNodeDump.stamp
+build AttrVisitor: phony obj/clang/include/clang/AST/AttrVisitor.stamp
+build Attributes: phony obj/llvm/include/llvm/IR/Attributes.stamp
+build Attrs: phony obj/clang/include/clang/AST/Attrs.stamp
+build AutomataAutomata: phony obj/llvm/unittests/TableGen/AutomataAutomata.stamp
+build AutomataTables: phony obj/llvm/unittests/TableGen/AutomataTables.stamp
+build BLAKE3: phony ./lib/libLLVMSupportBlake3.a
+build BSD-Archive: phony ./lib/liblldbPluginObjectContainerBSDArchive.a
+build Basic: phony ./lib/libclangBasic.a
+build BinaryFormat: phony ./lib/libLLVMBinaryFormat.a
+build BitcodeStripOpts: phony obj/llvm/tools/llvm-objcopy/BitcodeStripOpts.stamp
+build Breakpoint: phony ./lib/liblldbBreakpoint.a
+build BuildVariables.inc: phony obj/llvm/tools/llvm-config/BuildVariables.inc.stamp
+build CFGuard: phony ./lib/libLLVMCFGuard.a
+build COFF: phony ./lib/liblldCOFF.a
+build COFFOptions: phony obj/llvm/lib/ExecutionEngine/JITLink/COFFOptions.stamp
+build CXXBNF.inc: phony obj/clang-tools-extra/pseudo/include/CXXBNF.inc.stamp
+build CXXSymbols.inc: phony obj/clang-tools-extra/pseudo/include/CXXSymbols.inc.stamp
+build ClangCommon: phony ./lib/liblldbPluginClangCommon.a
+build ClangdXPC.framework: phony obj/clang-tools-extra/clangd/xpc/framework/ClangdXPC.framework.stamp
+build ClangdXPCLib: phony ./lib/libClangdXPCLib.dylib
+build CodeView: phony ./lib/libLLVMDebugInfoCodeView.a
+build CommandOptions: phony obj/lldb/source/Commands/CommandOptions.stamp
+build Commands: phony ./lib/liblldbCommands.a
+build CommentCommandInfo: phony obj/clang/include/clang/AST/CommentCommandInfo.stamp
+build CommentCommandList: phony obj/clang/include/clang/AST/CommentCommandList.stamp
+build CommentHTMLNamedCharacterReferences: phony obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp
+build CommentHTMLTags: phony obj/clang/include/clang/AST/CommentHTMLTags.stamp
+build CommentHTMLTagsProperties: phony obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp
+build CommentNodes: phony obj/clang/include/clang/AST/CommentNodes.stamp
+build Common: phony ./lib/liblldCommon.a
+build CompletionModel: phony obj/clang-tools-extra/clangd/CompletionModel.stamp
+build CompletionModelCpp: phony obj/clang-tools-extra/clangd/CompletionModelCpp.stamp
+build Confusables.inc: phony obj/clang-tools-extra/clang-tidy/misc/Confusables.inc.stamp
+build CoreProperties: phony obj/lldb/source/Core/CoreProperties.stamp
+build CorePropertiesEnum: phony obj/lldb/source/Core/CorePropertiesEnum.stamp
+build Coroutines: phony ./lib/libLLVMCoroutines.a
+build Coverage: phony ./lib/libLLVMCoverage.a
+build CrossTU: phony ./lib/libclangCrossTU.a
+build DWARFLinker: phony ./lib/libLLVMDWARFLinker.a
+build DWP: phony ./lib/libLLVMDWP.a
+build Darwin-Kernel: phony ./lib/liblldbPluginDynamicLoaderDarwinKernel.a
+build DataFormatters: phony ./lib/liblldbDataFormatters.a
+build Debuginfod: phony ./lib/libLLVMDebuginfod.a
+build DecisionForestRuntimeTest: phony obj/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTest.stamp
+build DecisionForestRuntimeTestCpp: phony obj/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTestCpp.stamp
+build DeclNodes: phony obj/clang/include/clang/AST/DeclNodes.stamp
+build Demangle: phony ./lib/libLLVMDemangle.a
+build DependencyScanning: phony ./lib/libclangToolingDependencyScanning.a
+build DiagnosticASTKinds: phony obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp
+build DiagnosticAnalysisKinds: phony obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp
+build DiagnosticCommentKinds: phony obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp
+build DiagnosticCommonKinds: phony obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp
+build DiagnosticCrossTUKinds: phony obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp
+build DiagnosticDriverKinds: phony obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp
+build DiagnosticFrontendKinds: phony obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp
+build DiagnosticGroups: phony obj/clang/include/clang/Basic/DiagnosticGroups.stamp
+build DiagnosticIndexName: phony obj/clang/include/clang/Basic/DiagnosticIndexName.stamp
+build DiagnosticLexKinds: phony obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp
+build DiagnosticParseKinds: phony obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp
+build DiagnosticRefactoringKinds: phony obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp
+build DiagnosticSemaKinds: phony obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp
+build DiagnosticSerializationKinds: phony obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp
+build Disassembler: phony ./lib/libLLVMAArch64Disassembler.a
+build Disassemblers.def: phony obj/llvm/include/llvm/Config/Disassemblers.def.stamp
+build DlltoolDriver: phony ./lib/libLLVMDlltoolDriver.a
+build DoublerPlugin: phony obj/llvm/unittests/Passes/DoublerPlugin.dylib
+build Driver: phony ./lib/libclangDriver.a
+build Dynamic: phony ./lib/libclangDynamicASTMatchers.a
+build DynamicLoaderDarwinKernelProperties: phony obj/lldb/source/Plugins/DynamicLoader/Darwin-Kernel/DynamicLoaderDarwinKernelProperties.stamp
+build DynamicLoaderDarwinKernelPropertiesEnum: phony obj/lldb/source/Plugins/DynamicLoader/Darwin-Kernel/DynamicLoaderDarwinKernelPropertiesEnum.stamp
+build Edit: phony ./lib/libclangEdit.a
+build ExecutionEngine: phony ./lib/libLLVMExecutionEngine.a
+build Expression: phony ./lib/liblldbExpression.a
+build Extensions: phony ./lib/libLLVMExtensions.a
+build ExtractAPI: phony ./lib/libclangExtractAPI.a
+build FlowSensitive: phony ./lib/libclangAnalysisFlowSensitive.a
+build Format: phony ./lib/libclangFormat.a
+build FrontendTool: phony ./lib/libclangFrontendTool.a
+build FuzzMutate: phony ./lib/libLLVMFuzzMutate.a
+build GDB: phony ./lib/liblldbPluginJITLoaderGDB.a
+build GSYM: phony ./lib/libLLVMDebugInfoGSYM.a
+build HTMLForestResources: phony obj/clang-tools-extra/pseudo/tool/HTMLForestResources.stamp
+build Headers: phony obj/clang/lib/Headers/Headers.stamp
+build Hello: phony ./lib/LLVMHello.dylib
+build Host: phony ./lib/liblldbHost.a
+build IPO: phony ./lib/libLLVMipo.a
+build IR: phony ./lib/libLLVMCore.a
+build IRReader: phony ./lib/libLLVMIRReader.a
+build Inclusions: phony ./lib/libclangToolingInclusions.a
+build Index: phony ./lib/libclangIndex.a
+build Info.plist: phony obj/clang-tools-extra/clangd/xpc/framework/Info.plist.stamp
+build Initialization: phony ./lib/liblldbInitialization.a
+build InstCombine: phony ./lib/libLLVMInstCombine.a
+build InstEmulation: phony ./lib/liblldbPluginUnwindAssemblyInstEmulation.a
+build InstallNameToolOpts: phony obj/llvm/tools/llvm-objcopy/InstallNameToolOpts.stamp
+build Instrumentation: phony ./lib/libLLVMInstrumentation.a
+build InterfaceStub: phony ./lib/libLLVMInterfaceStub.a
+build InterpreterProperties: phony obj/lldb/source/Interpreter/InterpreterProperties.stamp
+build InterpreterPropertiesEnum: phony obj/lldb/source/Interpreter/InterpreterPropertiesEnum.stamp
+build IntrinsicEnums: phony obj/llvm/include/llvm/IR/IntrinsicEnums.stamp
+build IntrinsicImpl: phony obj/llvm/include/llvm/IR/IntrinsicImpl.stamp
+build IntrinsicsAArch64: phony obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp
+build IntrinsicsAMDGPU: phony obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp
+build IntrinsicsARM: phony obj/llvm/include/llvm/IR/IntrinsicsARM.stamp
+build IntrinsicsBPF: phony obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp
+build IntrinsicsDirectX: phony obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp
+build IntrinsicsHexagon: phony obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp
+build IntrinsicsMips: phony obj/llvm/include/llvm/IR/IntrinsicsMips.stamp
+build IntrinsicsNVPTX: phony obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp
+build IntrinsicsPowerPC: phony obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp
+build IntrinsicsR600: phony obj/llvm/include/llvm/IR/IntrinsicsR600.stamp
+build IntrinsicsRISCV: phony obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp
+build IntrinsicsS390: phony obj/llvm/include/llvm/IR/IntrinsicsS390.stamp
+build IntrinsicsVE: phony obj/llvm/include/llvm/IR/IntrinsicsVE.stamp
+build IntrinsicsWebAssembly: phony obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp
+build IntrinsicsX86: phony obj/llvm/include/llvm/IR/IntrinsicsX86.stamp
+build IntrinsicsXCore: phony obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp
+build IntrinsicsXtensa: phony obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp
+build ItaniumABI: phony ./lib/liblldbPluginCXXItaniumABI.a
+build JIT: phony ./lib/liblldbPluginObjectFileJIT.a
+build JITLink: phony ./lib/libLLVMJITLink.a
+build JITLoaderGDBProperties: phony obj/lldb/source/Plugins/JITLoader/GDB/JITLoaderGDBProperties.stamp
+build JITLoaderGDBPropertiesEnum: phony obj/lldb/source/Plugins/JITLoader/GDB/JITLoaderGDBPropertiesEnum.stamp
+build LLGSOptions: phony obj/lldb/tools/lldb-server/LLGSOptions.stamp
+build LLVMAArch64CodeGen: phony ./lib/libLLVMAArch64CodeGen.a
+build LLVMC: phony ./lib/liblldbPluginDisassemblerLLVMC.a
+build LTO: phony ./lib/libLLVMLTO.a
+build Lex: phony ./lib/libclangLex.a
+build LibDriver: phony ./lib/libLLVMLibDriver.a
+build LibraryDependencies.inc: phony obj/llvm/tools/llvm-config/LibraryDependencies.inc.stamp
+build LineEditor: phony ./lib/libLLVMLineEditor.a
+build Linker: phony ./lib/libLLVMLinker.a
+build LinkerWrapperOpts: phony obj/clang/tools/clang-linker-wrapper/LinkerWrapperOpts.stamp
+build Linux: phony ./lib/liblldbPluginPlatformLinux.a
+build LipoOpts: phony obj/llvm/tools/llvm-lipo/LipoOpts.stamp
+build LldbAllPlugins: phony obj/lldb/source/Plugins/LldbAllPlugins.stamp
+build MC: phony ./lib/libLLVMMC.a
+build MCA: phony ./lib/libLLVMMCA.a
+build MCDisassembler: phony ./lib/libLLVMMCDisassembler.a
+build MCJIT: phony ./lib/libLLVMMCJIT.a
+build MCParser: phony ./lib/libLLVMMCParser.a
+build MCTargetDesc: phony ./lib/libLLVMAArch64Desc.a
+build MIRParser: phony ./lib/libLLVMMIRParser.a
+build MSF: phony ./lib/libLLVMDebugInfoMSF.a
+build MacOSX-DYLD: phony ./lib/liblldbPluginDynamicLoaderMacOSXDYLD.a
+build Mach-O: phony ./lib/liblldbPluginObjectFileMachO.a
+build Mach-O-Fileset: phony ./lib/liblldbPluginObjectContainerMachOFileset.a
+build MachO: phony ./lib/liblldMachO.a
+build MinGW: phony ./lib/liblldMinGW.a
+build Models: phony ./lib/libclangAnalysisFlowSensitiveModels.a
+build NativePDB: phony ./lib/liblldbPluginSymbolFileNativePDB.a
+build NativeTarget: phony obj/llvm/lib/Target/NativeTarget.stamp
+build NodeClasses: phony obj/clang/include/clang/Tooling/Syntax/NodeClasses.stamp
+build Nodes: phony obj/clang/include/clang/Tooling/Syntax/Nodes.stamp
+build None: phony ./lib/liblldbPluginScriptInterpreterNone.a
+build OMP: phony obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp
+build OMPh: phony obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp
+build ObjCARC: phony ./lib/libLLVMObjCARCOpts.a
+build ObjCPlusPlus: phony ./lib/liblldbPluginObjCPlusPlusLanguage.a
+build ObjCopy: phony ./lib/libLLVMObjCopy.a
+build ObjcopyOpts: phony obj/llvm/tools/llvm-objcopy/ObjcopyOpts.stamp
+build ObjdumpOpts: phony obj/llvm/tools/llvm-objdump/ObjdumpOpts.stamp
+build Object: phony ./lib/libLLVMObject.a
+build ObjectFilePECOFFProperties: phony obj/lldb/source/Plugins/ObjectFile/PECOFF/ObjectFilePECOFFProperties.stamp
+build ObjectFilePECOFFPropertiesEnum: phony obj/lldb/source/Plugins/ObjectFile/PECOFF/ObjectFilePECOFFPropertiesEnum.stamp
+build ObjectYAML: phony ./lib/libLLVMObjectYAML.a
+build Opcodes: phony obj/clang/lib/AST/Opcodes.stamp
+build OpenACC: phony ./lib/libLLVMFrontendOpenACC.a
+build OpenCLBuiltins: phony obj/clang/lib/Sema/OpenCLBuiltins.stamp
+build OpenMP: phony ./lib/libLLVMFrontendOpenMP.a
+build Option: phony ./lib/libLLVMOption.a
+build Orc: phony ./lib/libLLVMOrcJIT.a
+build OtoolOpts: phony obj/llvm/tools/llvm-objdump/OtoolOpts.stamp
+build POSIX: phony ./lib/liblldbPluginPlatformPOSIX.a
+build POSIX-DYLD: phony ./lib/liblldbPluginDynamicLoaderPosixDYLD.a
+build PPC64: phony ./lib/liblldbPluginArchitecturePPC64.a
+build Parse: phony ./lib/libclangParse.a
+build Passes: phony ./lib/libLLVMPasses.a
+build PipSqueak: phony obj/llvm/unittests/Support/DynamicLibrary/PipSqueak.dylib
+build PlatformMacOSXProperties: phony obj/lldb/source/Plugins/Platform/MacOSX/PlatformMacOSXProperties.stamp
+build PlatformMacOSXPropertiesEnum: phony obj/lldb/source/Plugins/Platform/MacOSX/PlatformMacOSXPropertiesEnum.stamp
+build Plugins.def: phony obj/lldb/source/Plugins/Plugins.def.stamp
+build ProcessGDBRemoteProperties: phony obj/lldb/source/Plugins/Process/gdb-remote/ProcessGDBRemoteProperties.stamp
+build ProcessGDBRemotePropertiesEnum: phony obj/lldb/source/Plugins/Process/gdb-remote/ProcessGDBRemotePropertiesEnum.stamp
+build ProfileData: phony ./lib/libLLVMProfileData.a
+build Refactoring: phony ./lib/libclangToolingRefactoring.a
+build Remarks: phony ./lib/libLLVMRemarks.a
+build RenderScriptRuntime: phony ./lib/liblldbPluginRenderScriptRuntime.a
+build RuntimeDyld: phony ./lib/libLLVMRuntimeDyld.a
+build Scalar: phony ./lib/libLLVMScalarOpts.a
+build SecondLib: phony obj/llvm/unittests/Support/DynamicLibrary/SecondLib.dylib
+build SelectionDAG: phony ./lib/libLLVMSelectionDAG.a
+build Sema: phony ./lib/libclangSema.a
+build Serialization: phony ./lib/libclangSerialization.a
+build Shared: phony ./lib/libLLVMOrcShared.a
+build Static: phony ./lib/liblldbPluginDynamicLoaderStatic.a
+build Stdlib: phony ./lib/libclangToolingInclusionsStdlib.a
+build StmtDataCollectors: phony obj/clang/include/clang/AST/StmtDataCollectors.stamp
+build StmtNodes: phony obj/clang/include/clang/AST/StmtNodes.stamp
+build StripOpts: phony obj/llvm/tools/llvm-objcopy/StripOpts.stamp
+build Symbol: phony ./lib/liblldbSymbol.a
+build SymbolFileDWARFProperties: phony obj/lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARFProperties.stamp
+build SymbolFileDWARFPropertiesEnum: phony obj/lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARFPropertiesEnum.stamp
+build Symbolize: phony ./lib/libLLVMSymbolize.a
+build Symtab: phony ./lib/liblldbPluginSymbolFileSymtab.a
+build Syntax: phony ./lib/libclangToolingSyntax.a
+build TableGen: phony ./lib/libLLVMTableGen.a
+build TargetExegesis.def: phony obj/llvm/include/llvm/Config/TargetExegesis.def.stamp
+build TargetInfo: phony ./lib/libLLVMAArch64Info.a
+build TargetMCAs.def: phony obj/llvm/include/llvm/Config/TargetMCAs.def.stamp
+build TargetProcess: phony ./lib/libLLVMOrcTargetProcess.a
+build TargetProperties: phony obj/lldb/source/Target/TargetProperties.stamp
+build TargetPropertiesEnum: phony obj/lldb/source/Target/TargetPropertiesEnum.stamp
+build Targets.def: phony obj/llvm/include/llvm/Config/Targets.def.stamp
+build TargetsToBuild: phony obj/llvm/lib/Target/TargetsToBuild.stamp
+build TestPlugin: phony obj/llvm/unittests/Passes/TestPlugin.dylib
+build Testing: phony ./lib/libclangTesting.a
+build TextAPI: phony ./lib/libLLVMTextAPI.a
+build Tooling: phony ./lib/libclangTooling.a
+build Transformer: phony ./lib/libclangToolingTransformer.a
+build TypeNodes: phony obj/clang/include/clang/AST/TypeNodes.stamp
+build UnitTestMain: phony obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+build Universal-Mach-O: phony ./lib/liblldbPluginObjectContainerMachOArchive.a
+build Vectorize: phony ./lib/libLLVMVectorize.a
+build Version: phony ./lib/liblldbVersion.a
+build Windows: phony ./lib/liblldbPluginPlatformWindows.a
+build Windows-DYLD: phony ./lib/liblldbPluginDynamicLoaderWindowsDYLD.a
+build WindowsDriver: phony ./lib/libLLVMWindowsDriver.a
+build WindowsManifest: phony ./lib/libLLVMWindowsManifest.a
+build WindresOpts: phony obj/llvm/tools/llvm-rc/WindresOpts.stamp
+build Writer: phony ./lib/libLLVMBitWriter.a
+build XPCServiceInfo.plist: phony obj/clang-tools-extra/clangd/xpc/framework/XPCServiceInfo.plist.stamp
+build XRay: phony ./lib/libLLVMXRay.a
+build _unused: phony obj/compiler-rt/include/_unused.stamp
+build abi-breaking: phony obj/llvm/include/llvm/Config/abi-breaking.stamp
+build abseil: phony ./lib/libclangTidyAbseilModule.a
+build acc_gen: phony obj/llvm/include/llvm/Frontend/OpenACC/acc_gen.stamp
+build all-checks: phony obj/clang-tools-extra/clang-tidy/all-checks.stamp
+build altera: phony ./lib/libclangTidyAlteraModule.a
+build android: phony ./lib/libclangTidyAndroidModule.a
+build arm_bf16: phony obj/clang/lib/Headers/arm_bf16.stamp
+build arm_cde: phony obj/clang/lib/Headers/arm_cde.stamp
+build arm_cde_builtin_aliases: phony obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp
+build arm_cde_builtin_cg: phony obj/clang/include/clang/Basic/arm_cde_builtin_cg.stamp
+build arm_cde_builtin_sema: phony obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp
+build arm_cde_builtins: phony obj/clang/include/clang/Basic/arm_cde_builtins.stamp
+build arm_mve: phony obj/clang/lib/Headers/arm_mve.stamp
+build arm_mve_builtin_aliases: phony obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp
+build arm_mve_builtin_cg: phony obj/clang/include/clang/Basic/arm_mve_builtin_cg.stamp
+build arm_mve_builtin_sema: phony obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp
+build arm_mve_builtins: phony obj/clang/include/clang/Basic/arm_mve_builtins.stamp
+build arm_sve: phony obj/clang/lib/Headers/arm_sve.stamp
+build arm_sve_builtin_cg: phony obj/clang/include/clang/Basic/arm_sve_builtin_cg.stamp
+build arm_sve_builtins: phony obj/clang/include/clang/Basic/arm_sve_builtins.stamp
+build arm_sve_sema_rangechecks: phony obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp
+build arm_sve_typeflags: phony obj/clang/include/clang/Basic/arm_sve_typeflags.stamp
+build atomic: phony obj/llvm/utils/gn/build/libs/atomic/atomic.stamp
+build bin: phony obj/clang/tools/scan-build/bin.stamp
+build boost: phony ./lib/libclangTidyBoostModule.a
+build bugpoint-passes: phony ./lib/BugpointPasses.dylib
+build bugprone: phony ./lib/libclangTidyBugproneModule.a
+build cert: phony ./lib/libclangTidyCERTModule.a
+build check-clang: phony obj/clang/test/check-clang.stamp
+build check-clang-pseudo: phony obj/clang-tools-extra/pseudo/test/check-clang-pseudo.stamp
+build check-clang-tools: phony obj/clang-tools-extra/test/check-clang-tools.stamp
+build check-clangd: phony obj/clang-tools-extra/clangd/test/check-clangd.stamp
+build check-lld: phony obj/lld/test/check-lld.stamp
+build check-lldb: phony obj/lldb/test/check-lldb.stamp
+build check-llvm: phony obj/llvm/test/check-llvm.stamp
+build clang-cl: phony obj/clang/tools/driver/clang-cl.stamp
+build clang-cpp: phony obj/clang/tools/driver/clang-cpp.stamp
+build clang-driver: phony obj/clang/tools/driver/clang-driver.stamp
+build clang-tidy-config: phony obj/clang-tools-extra/clang-tidy/clang-tidy-config.stamp
+build clangd.xpc: phony obj/clang-tools-extra/clangd/xpc/framework/clangd.xpc.stamp
+build clangdxpc_bundle_executable: phony obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_bundle_executable.stamp
+build clangdxpc_bundle_info_plist: phony obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_bundle_info_plist.stamp
+build clangdxpc_bundle_xpc: phony obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_bundle_xpc.stamp
+build clangdxpc_symlink_ClangdXPC: phony obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_symlink_ClangdXPC.stamp
+build clangdxpc_symlink_Resources: phony obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_symlink_Resources.stamp
+build clangdxpc_symlink_Versions_Current: phony obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_symlink_Versions_Current.stamp
+build clangdxpc_symlink_XPCServices: phony obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_symlink_XPCServices.stamp
+build clangxpc_bundle_xpc_service_executable: phony obj/clang-tools-extra/clangd/xpc/framework/clangxpc_bundle_xpc_service_executable.stamp
+build clangxpc_bundle_xpc_service_info_plist: phony obj/clang-tools-extra/clangd/xpc/framework/clangxpc_bundle_xpc_service_info_plist.stamp
+build clangxx: phony obj/clang/tools/driver/clangxx.stamp
+build cli: phony ./lib/libclangPseudoCLI.a
+build concurrency: phony ./lib/libclangTidyConcurrencyModule.a
+build config: phony obj/llvm/include/llvm/Config/config.stamp
+build conversions: phony ./lib/libclangdXpcJsonConversions.a
+build copy_headers: phony obj/libcxx/include/copy_headers.stamp
+build cppcoreguidelines: phony ./lib/libclangTidyCppCoreGuidelinesModule.a
+build curl: phony obj/llvm/utils/gn/build/libs/curl/curl.stamp
+build cxx: phony ./lib/libclangPseudoCXX.a
+build cxx_gen: phony obj/clang-tools-extra/pseudo/include/cxx_gen.stamp
+build darwin: phony ./lib/libclangTidyDarwinModule.a
+build diags_tablegen: phony obj/clang/include/clang/Basic/diags_tablegen.stamp
+build dsymutil-driver: phony obj/llvm/tools/dsymutil/dsymutil-driver.stamp
+build edit: phony obj/llvm/utils/gn/build/libs/edit/edit.stamp
+build elf-core: phony ./lib/liblldbPluginProcessElfCore.a
+build features: phony obj/clang-tools-extra/clangd/features.stamp
+build fuchsia: phony ./lib/libclangTidyFuchsiaModule.a
+build gdb-remote: phony ./lib/liblldbPluginProcessGDBRemote.a
+build gdb-server: phony ./lib/liblldbPluginPlatformGDB.a
+build google: phony ./lib/libclangTidyGoogleModule.a
+build grammar: phony ./lib/libclangPseudoGrammar.a
+build gtest: phony ./lib/libgtest.a
+build gtest_main: phony ./lib/libgtest_main.a
+build hack: phony obj/llvm/lib/Support/BLAKE3/hack.stamp
+build hicpp: phony ./lib/libclangTidyHICPPModule.a
+build hmaptool: phony obj/clang/utils/hmaptool/hmaptool.stamp
+build ld.lld: phony obj/lld/tools/lld/ld.lld.stamp
+build ld64.lld: phony obj/lld/tools/lld/ld64.lld.stamp
+build libclang: phony ./lib/libclang.dylib
+build libexec: phony obj/clang/tools/scan-build/libexec.stamp
+build liblldb: phony ./lib/liblldb.a
+build linker_script_to_exports: phony obj/clang/tools/libclang/linker_script_to_exports.stamp
+build linuxkernel: phony ./lib/libclangTidyLinuxKernelModule.a
+build lit-lldb-init: phony obj/lldb/test/lit-lldb-init.stamp
+build lit-lldb-init-quiet: phony obj/lldb/test/lit-lldb-init-quiet.stamp
+build lit_api_site_cfg: phony obj/lldb/test/lit_api_site_cfg.stamp
+build lit_shell_site_cfg: phony obj/lldb/test/lit_shell_site_cfg.stamp
+build lld-link: phony obj/lld/tools/lld/lld-link.stamp
+build llvm: phony ./lib/libclangTidyLLVMModule.a
+build llvm-addr2line: phony obj/llvm/tools/llvm-symbolizer/llvm-addr2line.stamp
+build llvm-bitcode-strip: phony obj/llvm/tools/llvm-objcopy/llvm-bitcode-strip.stamp
+build llvm-dlltool: phony obj/llvm/tools/llvm-ar/llvm-dlltool.stamp
+build llvm-install-name-tool: phony obj/llvm/tools/llvm-objcopy/llvm-install-name-tool.stamp
+build llvm-lib: phony obj/llvm/tools/llvm-ar/llvm-lib.stamp
+build llvm-lit: phony obj/llvm/utils/llvm-lit/llvm-lit.stamp
+build llvm-locstats: phony obj/llvm/utils/llvm-locstats/llvm-locstats.stamp
+build llvm-otool: phony obj/llvm/tools/llvm-objdump/llvm-otool.stamp
+build llvm-ranlib: phony obj/llvm/tools/llvm-ar/llvm-ranlib.stamp
+build llvm-readelf: phony obj/llvm/tools/llvm-readobj/llvm-readelf.stamp
+build llvm-strip: phony obj/llvm/tools/llvm-objcopy/llvm-strip.stamp
+build llvm-windres: phony obj/llvm/tools/llvm-rc/llvm-windres.stamp
+build llvm_ar-driver: phony obj/llvm/tools/llvm-ar/llvm_ar-driver.stamp
+build llvm_cxxfilt-driver: phony obj/llvm/tools/llvm-cxxfilt/llvm_cxxfilt-driver.stamp
+build llvm_ifs-driver: phony obj/llvm/tools/llvm-ifs/llvm_ifs-driver.stamp
+build llvm_lipo-driver: phony obj/llvm/tools/llvm-lipo/llvm_lipo-driver.stamp
+build llvm_mt-driver: phony obj/llvm/tools/llvm-mt/llvm_mt-driver.stamp
+build llvm_nm-driver: phony obj/llvm/tools/llvm-nm/llvm_nm-driver.stamp
+build llvm_objcopy-driver: phony obj/llvm/tools/llvm-objcopy/llvm_objcopy-driver.stamp
+build llvm_profdata-driver: phony obj/llvm/tools/llvm-profdata/llvm_profdata-driver.stamp
+build llvm_rc-driver: phony obj/llvm/tools/llvm-rc/llvm_rc-driver.stamp
+build llvm_readobj-driver: phony obj/llvm/tools/llvm-readobj/llvm_readobj-driver.stamp
+build llvm_size-driver: phony obj/llvm/tools/llvm-size/llvm_size-driver.stamp
+build llvmlibc: phony ./lib/libclangTidyLLVMLibcModule.a
+build lto: phony ./lib/libLTO.dylib
+build mach-core: phony ./lib/liblldbPluginProcessMachCore.a
+build man: phony obj/clang/tools/scan-build/man.stamp
+build minidump: phony ./lib/liblldbPluginProcessMinidump.a
+build misc: phony ./lib/libclangTidyMiscModule.a
+build modernize: phony ./lib/libclangTidyModernizeModule.a
+build mpi: phony ./lib/libclangTidyMPIModule.a
+build node_introspection_inc: phony obj/clang/lib/Tooling/node_introspection_inc.stamp
+build objc: phony ./lib/libclangTidyObjCModule.a
+build openmp: phony ./lib/libclangTidyOpenMPModule.a
+build performance: phony ./lib/libclangTidyPerformanceModule.a
+build portability: phony ./lib/libclangTidyPortabilityModule.a
+build pthread: phony obj/llvm/utils/gn/build/libs/pthread/pthread.stamp
+build readability: phony ./lib/libclangTidyReadabilityModule.a
+build riscv_vector: phony obj/clang/lib/Headers/riscv_vector.stamp
+build riscv_vector_builtin_cg: phony obj/clang/include/clang/Basic/riscv_vector_builtin_cg.stamp
+build riscv_vector_builtin_sema: phony obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp
+build riscv_vector_builtins: phony obj/clang/include/clang/Basic/riscv_vector_builtins.stamp
+build scan-build: phony obj/clang/tools/scan-build/scan-build.stamp
+build scudo: phony obj/compiler-rt/lib/scudo/scudo.stamp
+build share: phony obj/clang/tools/scan-build/share.stamp
+build support: phony ./lib/libclangdSupport.a
+build tablegen: phony obj/llvm/lib/Target/AArch64/MCTargetDesc/tablegen.stamp
+build tablegen_headers: phony obj/clang/lib/Headers/tablegen_headers.stamp
+build terminfo: phony obj/llvm/utils/gn/build/libs/terminfo/terminfo.stamp
+build transport: phony ./lib/libclangdXpcTransport.a
+build tweaks: phony obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.stamp
+build unimplemented: phony obj/clang-tools-extra/clangd/index/remote/unimplemented/unimplemented.stamp
+build utils: phony ./lib/libclangTidyUtils.a
+build wasm-ld: phony obj/lld/tools/lld/wasm-ld.stamp
+build write_config_site: phony obj/libcxx/include/write_config_site.stamp
+build write_extension_def: phony obj/llvm/include/llvm/Support/write_extension_def.stamp
+build write_extension_dependencies: phony obj/llvm/tools/llvm-config/write_extension_dependencies.stamp
+build write_modulemap: phony obj/libcxx/include/write_modulemap.stamp
+build write_target_def_files: phony obj/llvm/include/llvm/Config/write_target_def_files.stamp
+build write_vcsrevision: phony obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build x86: phony ./lib/liblldbPluginUnwindAssemblyX86.a
+build xar: phony obj/llvm/utils/gn/build/libs/xar/xar.stamp
+build xml: phony obj/llvm/utils/gn/build/libs/xml/xml.stamp
+build zircon: phony ./lib/libclangTidyZirconModule.a
+build zlib: phony obj/llvm/utils/gn/build/libs/zlib/zlib.stamp
+build $:clang: phony obj/clang.stamp
+build $:default: phony obj/default.stamp
+build $:lld: phony obj/lld.stamp
+build $:llvm-ar: phony obj/llvm-ar.stamp
+build $:llvm-cxxfilt: phony obj/llvm-cxxfilt.stamp
+build $:llvm-debuginfod: phony obj/llvm-debuginfod.stamp
+build $:llvm-debuginfod-find: phony obj/llvm-debuginfod-find.stamp
+build $:llvm-dwp: phony obj/llvm-dwp.stamp
+build $:llvm-libtool-darwin: phony obj/llvm-libtool-darwin.stamp
+build $:llvm-lipo: phony obj/llvm-lipo.stamp
+build $:llvm-nm: phony obj/llvm-nm.stamp
+build $:llvm-objcopy: phony obj/llvm-objcopy.stamp
+build $:llvm-objdump: phony obj/llvm-objdump.stamp
+build $:llvm-rc: phony obj/llvm-rc.stamp
+build $:llvm-readobj: phony obj/llvm-readobj.stamp
+build $:llvm-size: phony obj/llvm-size.stamp
+build $:llvm-strings: phony obj/llvm-strings.stamp
+build $:llvm-symbolizer: phony obj/llvm-symbolizer.stamp
+build clang-tools-extra/clang-apply-replacements$:clang-apply-replacements: phony ./lib/libclangApplyReplacements.a
+build clang-tools-extra/clang-apply-replacements: phony ./lib/libclangApplyReplacements.a
+build clang-tools-extra/clang-apply-replacements/tool$:clang-apply-replacements: phony ./bin/clang-apply-replacements
+build clang-tools-extra/clang-change-namespace$:clang-change-namespace: phony ./lib/libclangChangeNamespace.a
+build clang-tools-extra/clang-change-namespace: phony ./lib/libclangChangeNamespace.a
+build clang-tools-extra/clang-change-namespace/tool$:clang-change-namespace: phony ./bin/clang-change-namespace
+build clang-tools-extra/clang-doc$:clang-doc: phony ./lib/libclangDoc.a
+build clang-tools-extra/clang-doc: phony ./lib/libclangDoc.a
+build clang-tools-extra/clang-doc/tool$:clang-doc: phony ./bin/clang-doc
+build clang-tools-extra/clang-include-fixer$:clang-include-fixer: phony ./lib/libclangIncludeFixer.a
+build clang-tools-extra/clang-include-fixer: phony ./lib/libclangIncludeFixer.a
+build clang-tools-extra/clang-include-fixer/find-all-symbols$:find-all-symbols: phony ./lib/libfindAllSymbols.a
+build clang-tools-extra/clang-include-fixer/find-all-symbols: phony ./lib/libfindAllSymbols.a
+build clang-tools-extra/clang-include-fixer/find-all-symbols/tool$:find-all-symbols: phony ./bin/find-all-symbols
+build clang-tools-extra/clang-include-fixer/tool$:clang-include-fixer: phony ./bin/clang-include-fixer
+build clang-tools-extra/clang-move$:clang-move: phony ./lib/libclangMove.a
+build clang-tools-extra/clang-move: phony ./lib/libclangMove.a
+build clang-tools-extra/clang-move/tool$:clang-move: phony ./bin/clang-move
+build clang-tools-extra/clang-query$:clang-query: phony ./lib/libclangQuery.a
+build clang-tools-extra/clang-query: phony ./lib/libclangQuery.a
+build clang-tools-extra/clang-query/tool$:clang-query: phony ./bin/clang-query
+build clang-tools-extra/clang-reorder-fields$:clang-reorder-fields: phony ./lib/libclangReorderFields.a
+build clang-tools-extra/clang-reorder-fields: phony ./lib/libclangReorderFields.a
+build clang-tools-extra/clang-reorder-fields/tool$:clang-reorder-fields: phony ./bin/clang-reorder-fields
+build clang-tools-extra/clang-tidy$:all-checks: phony obj/clang-tools-extra/clang-tidy/all-checks.stamp
+build clang-tools-extra/clang-tidy$:clang-tidy: phony ./lib/libclangTidy.a
+build clang-tools-extra/clang-tidy: phony ./lib/libclangTidy.a
+build clang-tools-extra/clang-tidy$:clang-tidy-config: phony obj/clang-tools-extra/clang-tidy/clang-tidy-config.stamp
+build clang-tools-extra/clang-tidy/abseil$:abseil: phony ./lib/libclangTidyAbseilModule.a
+build clang-tools-extra/clang-tidy/abseil: phony ./lib/libclangTidyAbseilModule.a
+build clang-tools-extra/clang-tidy/altera$:altera: phony ./lib/libclangTidyAlteraModule.a
+build clang-tools-extra/clang-tidy/altera: phony ./lib/libclangTidyAlteraModule.a
+build clang-tools-extra/clang-tidy/android$:android: phony ./lib/libclangTidyAndroidModule.a
+build clang-tools-extra/clang-tidy/android: phony ./lib/libclangTidyAndroidModule.a
+build clang-tools-extra/clang-tidy/boost$:boost: phony ./lib/libclangTidyBoostModule.a
+build clang-tools-extra/clang-tidy/boost: phony ./lib/libclangTidyBoostModule.a
+build clang-tools-extra/clang-tidy/bugprone$:bugprone: phony ./lib/libclangTidyBugproneModule.a
+build clang-tools-extra/clang-tidy/bugprone: phony ./lib/libclangTidyBugproneModule.a
+build clang-tools-extra/clang-tidy/cert$:cert: phony ./lib/libclangTidyCERTModule.a
+build clang-tools-extra/clang-tidy/cert: phony ./lib/libclangTidyCERTModule.a
+build clang-tools-extra/clang-tidy/concurrency$:concurrency: phony ./lib/libclangTidyConcurrencyModule.a
+build clang-tools-extra/clang-tidy/concurrency: phony ./lib/libclangTidyConcurrencyModule.a
+build clang-tools-extra/clang-tidy/cppcoreguidelines$:cppcoreguidelines: phony ./lib/libclangTidyCppCoreGuidelinesModule.a
+build clang-tools-extra/clang-tidy/cppcoreguidelines: phony ./lib/libclangTidyCppCoreGuidelinesModule.a
+build clang-tools-extra/clang-tidy/darwin$:darwin: phony ./lib/libclangTidyDarwinModule.a
+build clang-tools-extra/clang-tidy/darwin: phony ./lib/libclangTidyDarwinModule.a
+build clang-tools-extra/clang-tidy/fuchsia$:fuchsia: phony ./lib/libclangTidyFuchsiaModule.a
+build clang-tools-extra/clang-tidy/fuchsia: phony ./lib/libclangTidyFuchsiaModule.a
+build clang-tools-extra/clang-tidy/google$:google: phony ./lib/libclangTidyGoogleModule.a
+build clang-tools-extra/clang-tidy/google: phony ./lib/libclangTidyGoogleModule.a
+build clang-tools-extra/clang-tidy/hicpp$:hicpp: phony ./lib/libclangTidyHICPPModule.a
+build clang-tools-extra/clang-tidy/hicpp: phony ./lib/libclangTidyHICPPModule.a
+build clang-tools-extra/clang-tidy/linuxkernel$:linuxkernel: phony ./lib/libclangTidyLinuxKernelModule.a
+build clang-tools-extra/clang-tidy/linuxkernel: phony ./lib/libclangTidyLinuxKernelModule.a
+build clang-tools-extra/clang-tidy/llvm$:llvm: phony ./lib/libclangTidyLLVMModule.a
+build clang-tools-extra/clang-tidy/llvm: phony ./lib/libclangTidyLLVMModule.a
+build clang-tools-extra/clang-tidy/llvmlibc$:llvmlibc: phony ./lib/libclangTidyLLVMLibcModule.a
+build clang-tools-extra/clang-tidy/llvmlibc: phony ./lib/libclangTidyLLVMLibcModule.a
+build clang-tools-extra/clang-tidy/misc$:Confusables.inc: phony obj/clang-tools-extra/clang-tidy/misc/Confusables.inc.stamp
+build clang-tools-extra/clang-tidy/misc$:misc: phony ./lib/libclangTidyMiscModule.a
+build clang-tools-extra/clang-tidy/misc: phony ./lib/libclangTidyMiscModule.a
+build clang-tools-extra/clang-tidy/misc/ConfusableTable$:clang-tidy-confusable-chars-gen: phony ./bin/clang-tidy-confusable-chars-gen
+build clang-tools-extra/clang-tidy/modernize$:modernize: phony ./lib/libclangTidyModernizeModule.a
+build clang-tools-extra/clang-tidy/modernize: phony ./lib/libclangTidyModernizeModule.a
+build clang-tools-extra/clang-tidy/mpi$:mpi: phony ./lib/libclangTidyMPIModule.a
+build clang-tools-extra/clang-tidy/mpi: phony ./lib/libclangTidyMPIModule.a
+build clang-tools-extra/clang-tidy/objc$:objc: phony ./lib/libclangTidyObjCModule.a
+build clang-tools-extra/clang-tidy/objc: phony ./lib/libclangTidyObjCModule.a
+build clang-tools-extra/clang-tidy/openmp$:openmp: phony ./lib/libclangTidyOpenMPModule.a
+build clang-tools-extra/clang-tidy/openmp: phony ./lib/libclangTidyOpenMPModule.a
+build clang-tools-extra/clang-tidy/performance$:performance: phony ./lib/libclangTidyPerformanceModule.a
+build clang-tools-extra/clang-tidy/performance: phony ./lib/libclangTidyPerformanceModule.a
+build clang-tools-extra/clang-tidy/portability$:portability: phony ./lib/libclangTidyPortabilityModule.a
+build clang-tools-extra/clang-tidy/portability: phony ./lib/libclangTidyPortabilityModule.a
+build clang-tools-extra/clang-tidy/readability$:readability: phony ./lib/libclangTidyReadabilityModule.a
+build clang-tools-extra/clang-tidy/readability: phony ./lib/libclangTidyReadabilityModule.a
+build clang-tools-extra/clang-tidy/tool$:clang-tidy: phony ./bin/clang-tidy
+build clang-tools-extra/clang-tidy/utils$:utils: phony ./lib/libclangTidyUtils.a
+build clang-tools-extra/clang-tidy/utils: phony ./lib/libclangTidyUtils.a
+build clang-tools-extra/clang-tidy/zircon$:zircon: phony ./lib/libclangTidyZirconModule.a
+build clang-tools-extra/clang-tidy/zircon: phony ./lib/libclangTidyZirconModule.a
+build clang-tools-extra/clangd$:CompletionModel: phony obj/clang-tools-extra/clangd/CompletionModel.stamp
+build clang-tools-extra/clangd$:CompletionModelCpp: phony obj/clang-tools-extra/clangd/CompletionModelCpp.stamp
+build clang-tools-extra/clangd$:clangd: phony ./lib/libclangDaemon.a
+build clang-tools-extra/clangd: phony ./lib/libclangDaemon.a
+build clang-tools-extra/clangd$:features: phony obj/clang-tools-extra/clangd/features.stamp
+build clang-tools-extra/clangd/index/dex/dexp$:dexp: phony ./bin/dexp
+build clang-tools-extra/clangd/index/dex/dexp: phony ./bin/dexp
+build clang-tools-extra/clangd/index/remote/unimplemented$:unimplemented: phony obj/clang-tools-extra/clangd/index/remote/unimplemented/unimplemented.stamp
+build clang-tools-extra/clangd/index/remote/unimplemented: phony obj/clang-tools-extra/clangd/index/remote/unimplemented/unimplemented.stamp
+build clang-tools-extra/clangd/indexer$:clangd-indexer: phony ./bin/clangd-indexer
+build clang-tools-extra/clangd/refactor/tweaks$:tweaks: phony obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.stamp
+build clang-tools-extra/clangd/refactor/tweaks: phony obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.stamp
+build clang-tools-extra/clangd/support$:support: phony ./lib/libclangdSupport.a
+build clang-tools-extra/clangd/support: phony ./lib/libclangdSupport.a
+build clang-tools-extra/clangd/test$:check-clangd: phony obj/clang-tools-extra/clangd/test/check-clangd.stamp
+build clang-tools-extra/clangd/test$:lit_site_cfg: phony obj/clang-tools-extra/clangd/test/lit_site_cfg.stamp
+build clang-tools-extra/clangd/test$:lit_unit_site_cfg: phony obj/clang-tools-extra/clangd/test/lit_unit_site_cfg.stamp
+build clang-tools-extra/clangd/test$:test: phony obj/clang-tools-extra/clangd/test/test.stamp
+build clang-tools-extra/clangd/test: phony obj/clang-tools-extra/clangd/test/test.stamp
+build clang-tools-extra/clangd/tool$:clangd: phony ./bin/clangd
+build clang-tools-extra/clangd/unittests$:ClangdTests: phony obj/clang-tools-extra/clangd/unittests/ClangdTests
+build clang-tools-extra/clangd/unittests$:DecisionForestRuntimeTest: phony obj/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTest.stamp
+build clang-tools-extra/clangd/unittests$:DecisionForestRuntimeTestCpp: phony obj/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTestCpp.stamp
+build clang-tools-extra/clangd/unittests/xpc$:ClangdXpcTests: phony obj/clang-tools-extra/clangd/unittests/xpc/ClangdXpcTests
+build clang-tools-extra/clangd/xpc$:conversions: phony ./lib/libclangdXpcJsonConversions.a
+build clang-tools-extra/clangd/xpc$:transport: phony ./lib/libclangdXpcTransport.a
+build clang-tools-extra/clangd/xpc/framework$:ClangdXPC.framework: phony obj/clang-tools-extra/clangd/xpc/framework/ClangdXPC.framework.stamp
+build clang-tools-extra/clangd/xpc/framework$:ClangdXPCLib: phony ./lib/libClangdXPCLib.dylib
+build clang-tools-extra/clangd/xpc/framework$:Info.plist: phony obj/clang-tools-extra/clangd/xpc/framework/Info.plist.stamp
+build clang-tools-extra/clangd/xpc/framework$:XPCServiceInfo.plist: phony obj/clang-tools-extra/clangd/xpc/framework/XPCServiceInfo.plist.stamp
+build clang-tools-extra/clangd/xpc/framework$:clangd.xpc: phony obj/clang-tools-extra/clangd/xpc/framework/clangd.xpc.stamp
+build clang-tools-extra/clangd/xpc/framework$:clangdxpc_bundle_executable: phony obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_bundle_executable.stamp
+build clang-tools-extra/clangd/xpc/framework$:clangdxpc_bundle_info_plist: phony obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_bundle_info_plist.stamp
+build clang-tools-extra/clangd/xpc/framework$:clangdxpc_bundle_xpc: phony obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_bundle_xpc.stamp
+build clang-tools-extra/clangd/xpc/framework$:clangdxpc_symlink_ClangdXPC: phony obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_symlink_ClangdXPC.stamp
+build clang-tools-extra/clangd/xpc/framework$:clangdxpc_symlink_Resources: phony obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_symlink_Resources.stamp
+build clang-tools-extra/clangd/xpc/framework$:clangdxpc_symlink_Versions_Current: phony obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_symlink_Versions_Current.stamp
+build clang-tools-extra/clangd/xpc/framework$:clangdxpc_symlink_XPCServices: phony obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_symlink_XPCServices.stamp
+build clang-tools-extra/clangd/xpc/framework$:clangxpc_bundle_xpc_service_executable: phony obj/clang-tools-extra/clangd/xpc/framework/clangxpc_bundle_xpc_service_executable.stamp
+build clang-tools-extra/clangd/xpc/framework$:clangxpc_bundle_xpc_service_info_plist: phony obj/clang-tools-extra/clangd/xpc/framework/clangxpc_bundle_xpc_service_info_plist.stamp
+build clang-tools-extra/clangd/xpc/test-client$:clangd-xpc-test-client: phony ./bin/clangd-xpc-test-client
+build clang-tools-extra/modularize$:modularize: phony ./bin/modularize
+build clang-tools-extra/modularize: phony ./bin/modularize
+build clang-tools-extra/pp-trace$:pp-trace: phony ./bin/pp-trace
+build clang-tools-extra/pp-trace: phony ./bin/pp-trace
+build clang-tools-extra/pseudo/gen$:clang-pseudo-gen: phony ./bin/clang-pseudo-gen
+build clang-tools-extra/pseudo/include$:CXXBNF.inc: phony obj/clang-tools-extra/pseudo/include/CXXBNF.inc.stamp
+build clang-tools-extra/pseudo/include$:CXXSymbols.inc: phony obj/clang-tools-extra/pseudo/include/CXXSymbols.inc.stamp
+build clang-tools-extra/pseudo/include$:cxx_gen: phony obj/clang-tools-extra/pseudo/include/cxx_gen.stamp
+build clang-tools-extra/pseudo/lib$:lib: phony ./lib/libclangPseudo.a
+build clang-tools-extra/pseudo/lib: phony ./lib/libclangPseudo.a
+build clang-tools-extra/pseudo/lib/cli$:cli: phony ./lib/libclangPseudoCLI.a
+build clang-tools-extra/pseudo/lib/cli: phony ./lib/libclangPseudoCLI.a
+build clang-tools-extra/pseudo/lib/cxx$:cxx: phony ./lib/libclangPseudoCXX.a
+build clang-tools-extra/pseudo/lib/cxx: phony ./lib/libclangPseudoCXX.a
+build clang-tools-extra/pseudo/lib/grammar$:grammar: phony ./lib/libclangPseudoGrammar.a
+build clang-tools-extra/pseudo/lib/grammar: phony ./lib/libclangPseudoGrammar.a
+build clang-tools-extra/pseudo/test$:check-clang-pseudo: phony obj/clang-tools-extra/pseudo/test/check-clang-pseudo.stamp
+build clang-tools-extra/pseudo/test$:lit_site_cfg: phony obj/clang-tools-extra/pseudo/test/lit_site_cfg.stamp
+build clang-tools-extra/pseudo/test$:lit_unit_site_cfg: phony obj/clang-tools-extra/pseudo/test/lit_unit_site_cfg.stamp
+build clang-tools-extra/pseudo/test$:test: phony obj/clang-tools-extra/pseudo/test/test.stamp
+build clang-tools-extra/pseudo/test: phony obj/clang-tools-extra/pseudo/test/test.stamp
+build clang-tools-extra/pseudo/tool$:HTMLForestResources: phony obj/clang-tools-extra/pseudo/tool/HTMLForestResources.stamp
+build clang-tools-extra/pseudo/tool$:clang-pseudo: phony ./bin/clang-pseudo
+build clang-tools-extra/pseudo/unittests$:ClangPseudoTests: phony obj/clang-tools-extra/pseudo/unittests/ClangPseudoTests
+build clang-tools-extra/test$:check-clang-tools: phony obj/clang-tools-extra/test/check-clang-tools.stamp
+build clang-tools-extra/test$:lit_site_cfg: phony obj/clang-tools-extra/test/lit_site_cfg.stamp
+build clang-tools-extra/test$:lit_unit_site_cfg: phony obj/clang-tools-extra/test/lit_unit_site_cfg.stamp
+build clang-tools-extra/test$:test: phony obj/clang-tools-extra/test/test.stamp
+build clang-tools-extra/test: phony obj/clang-tools-extra/test/test.stamp
+build clang-tools-extra/unittests$:unittests: phony obj/clang-tools-extra/unittests/unittests.stamp
+build clang-tools-extra/unittests: phony obj/clang-tools-extra/unittests/unittests.stamp
+build clang-tools-extra/unittests/clang-apply-replacements$:ClangApplyReplacementsTests: phony obj/clang-tools-extra/unittests/clang-apply-replacements/ClangApplyReplacementsTests
+build clang-tools-extra/unittests/clang-change-namespace$:ClangChangeNamespaceTests: phony obj/clang-tools-extra/unittests/clang-change-namespace/ClangChangeNamespaceTests
+build clang-tools-extra/unittests/clang-doc$:ClangDocTests: phony obj/clang-tools-extra/unittests/clang-doc/ClangDocTests
+build clang-tools-extra/unittests/clang-include-fixer$:ClangIncludeFixerTests: phony obj/clang-tools-extra/unittests/clang-include-fixer/ClangIncludeFixerTests
+build clang-tools-extra/unittests/clang-include-fixer/find-all-symbols$:FindAllSymbolsTests: phony obj/clang-tools-extra/unittests/clang-include-fixer/find-all-symbols/FindAllSymbolsTests
+build clang-tools-extra/unittests/clang-move$:ClangMoveTests: phony obj/clang-tools-extra/unittests/clang-move/ClangMoveTests
+build clang-tools-extra/unittests/clang-query$:ClangQueryTests: phony obj/clang-tools-extra/unittests/clang-query/ClangQueryTests
+build clang-tools-extra/unittests/clang-tidy$:ClangTidyTests: phony obj/clang-tools-extra/unittests/clang-tidy/ClangTidyTests
+build clang/include/clang/AST$:AbstractBasicReader: phony obj/clang/include/clang/AST/AbstractBasicReader.stamp
+build clang/include/clang/AST$:AbstractBasicWriter: phony obj/clang/include/clang/AST/AbstractBasicWriter.stamp
+build clang/include/clang/AST$:AbstractTypeReader: phony obj/clang/include/clang/AST/AbstractTypeReader.stamp
+build clang/include/clang/AST$:AbstractTypeWriter: phony obj/clang/include/clang/AST/AbstractTypeWriter.stamp
+build clang/include/clang/AST$:AttrImpl: phony obj/clang/include/clang/AST/AttrImpl.stamp
+build clang/include/clang/AST$:AttrNodeTraverse: phony obj/clang/include/clang/AST/AttrNodeTraverse.stamp
+build clang/include/clang/AST$:AttrTextNodeDump: phony obj/clang/include/clang/AST/AttrTextNodeDump.stamp
+build clang/include/clang/AST$:AttrVisitor: phony obj/clang/include/clang/AST/AttrVisitor.stamp
+build clang/include/clang/AST$:Attrs: phony obj/clang/include/clang/AST/Attrs.stamp
+build clang/include/clang/AST$:CommentCommandInfo: phony obj/clang/include/clang/AST/CommentCommandInfo.stamp
+build clang/include/clang/AST$:CommentCommandList: phony obj/clang/include/clang/AST/CommentCommandList.stamp
+build clang/include/clang/AST$:CommentHTMLNamedCharacterReferences: phony obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp
+build clang/include/clang/AST$:CommentHTMLTags: phony obj/clang/include/clang/AST/CommentHTMLTags.stamp
+build clang/include/clang/AST$:CommentHTMLTagsProperties: phony obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp
+build clang/include/clang/AST$:CommentNodes: phony obj/clang/include/clang/AST/CommentNodes.stamp
+build clang/include/clang/AST$:DeclNodes: phony obj/clang/include/clang/AST/DeclNodes.stamp
+build clang/include/clang/AST$:StmtDataCollectors: phony obj/clang/include/clang/AST/StmtDataCollectors.stamp
+build clang/include/clang/AST$:StmtNodes: phony obj/clang/include/clang/AST/StmtNodes.stamp
+build clang/include/clang/AST$:TypeNodes: phony obj/clang/include/clang/AST/TypeNodes.stamp
+build clang/include/clang/Basic$:AttrHasAttributeImpl: phony obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp
+build clang/include/clang/Basic$:AttrList: phony obj/clang/include/clang/Basic/AttrList.stamp
+build clang/include/clang/Basic$:AttrSubMatchRulesList: phony obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp
+build clang/include/clang/Basic$:DiagnosticASTKinds: phony obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp
+build clang/include/clang/Basic$:DiagnosticAnalysisKinds: phony obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp
+build clang/include/clang/Basic$:DiagnosticCommentKinds: phony obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp
+build clang/include/clang/Basic$:DiagnosticCommonKinds: phony obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp
+build clang/include/clang/Basic$:DiagnosticCrossTUKinds: phony obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp
+build clang/include/clang/Basic$:DiagnosticDriverKinds: phony obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp
+build clang/include/clang/Basic$:DiagnosticFrontendKinds: phony obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp
+build clang/include/clang/Basic$:DiagnosticGroups: phony obj/clang/include/clang/Basic/DiagnosticGroups.stamp
+build clang/include/clang/Basic$:DiagnosticIndexName: phony obj/clang/include/clang/Basic/DiagnosticIndexName.stamp
+build clang/include/clang/Basic$:DiagnosticLexKinds: phony obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp
+build clang/include/clang/Basic$:DiagnosticParseKinds: phony obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp
+build clang/include/clang/Basic$:DiagnosticRefactoringKinds: phony obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp
+build clang/include/clang/Basic$:DiagnosticSemaKinds: phony obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp
+build clang/include/clang/Basic$:DiagnosticSerializationKinds: phony obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp
+build clang/include/clang/Basic$:arm_cde_builtin_aliases: phony obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp
+build clang/include/clang/Basic$:arm_cde_builtin_cg: phony obj/clang/include/clang/Basic/arm_cde_builtin_cg.stamp
+build clang/include/clang/Basic$:arm_cde_builtin_sema: phony obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp
+build clang/include/clang/Basic$:arm_cde_builtins: phony obj/clang/include/clang/Basic/arm_cde_builtins.stamp
+build clang/include/clang/Basic$:arm_fp16: phony obj/clang/include/clang/Basic/arm_fp16.stamp
+build clang/include/clang/Basic$:arm_mve_builtin_aliases: phony obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp
+build clang/include/clang/Basic$:arm_mve_builtin_cg: phony obj/clang/include/clang/Basic/arm_mve_builtin_cg.stamp
+build clang/include/clang/Basic$:arm_mve_builtin_sema: phony obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp
+build clang/include/clang/Basic$:arm_mve_builtins: phony obj/clang/include/clang/Basic/arm_mve_builtins.stamp
+build clang/include/clang/Basic$:arm_neon: phony obj/clang/include/clang/Basic/arm_neon.stamp
+build clang/include/clang/Basic$:arm_sve_builtin_cg: phony obj/clang/include/clang/Basic/arm_sve_builtin_cg.stamp
+build clang/include/clang/Basic$:arm_sve_builtins: phony obj/clang/include/clang/Basic/arm_sve_builtins.stamp
+build clang/include/clang/Basic$:arm_sve_sema_rangechecks: phony obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp
+build clang/include/clang/Basic$:arm_sve_typeflags: phony obj/clang/include/clang/Basic/arm_sve_typeflags.stamp
+build clang/include/clang/Basic$:diags_tablegen: phony obj/clang/include/clang/Basic/diags_tablegen.stamp
+build clang/include/clang/Basic$:riscv_vector_builtin_cg: phony obj/clang/include/clang/Basic/riscv_vector_builtin_cg.stamp
+build clang/include/clang/Basic$:riscv_vector_builtin_sema: phony obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp
+build clang/include/clang/Basic$:riscv_vector_builtins: phony obj/clang/include/clang/Basic/riscv_vector_builtins.stamp
+build clang/include/clang/Basic$:version: phony obj/clang/include/clang/Basic/version.stamp
+build clang/include/clang/Config$:Config: phony obj/clang/include/clang/Config/Config.stamp
+build clang/include/clang/Config: phony obj/clang/include/clang/Config/Config.stamp
+build clang/include/clang/Driver$:Options: phony obj/clang/include/clang/Driver/Options.stamp
+build clang/include/clang/Parse$:AttrParserStringSwitches: phony obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp
+build clang/include/clang/Parse$:AttrSubMatchRulesParserStringSwitches: phony obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp
+build clang/include/clang/Sema$:AttrParsedAttrImpl: phony obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp
+build clang/include/clang/Sema$:AttrParsedAttrKinds: phony obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp
+build clang/include/clang/Sema$:AttrParsedAttrList: phony obj/clang/include/clang/Sema/AttrParsedAttrList.stamp
+build clang/include/clang/Sema$:AttrSpellingListIndex: phony obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp
+build clang/include/clang/Sema$:AttrTemplateInstantiate: phony obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp
+build clang/include/clang/Serialization$:AttrPCHRead: phony obj/clang/include/clang/Serialization/AttrPCHRead.stamp
+build clang/include/clang/Serialization$:AttrPCHWrite: phony obj/clang/include/clang/Serialization/AttrPCHWrite.stamp
+build clang/include/clang/StaticAnalyzer/Checkers$:Checkers: phony obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp
+build clang/include/clang/StaticAnalyzer/Checkers: phony obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp
+build clang/include/clang/Tooling/Syntax$:NodeClasses: phony obj/clang/include/clang/Tooling/Syntax/NodeClasses.stamp
+build clang/include/clang/Tooling/Syntax$:Nodes: phony obj/clang/include/clang/Tooling/Syntax/Nodes.stamp
+build clang/lib/APINotes$:APINotes: phony ./lib/libclangAPINotes.a
+build clang/lib/APINotes: phony ./lib/libclangAPINotes.a
+build clang/lib/ARCMigrate$:ARCMigrate: phony ./lib/libclangARCMigrate.a
+build clang/lib/ARCMigrate: phony ./lib/libclangARCMigrate.a
+build clang/lib/AST$:AST: phony ./lib/libclangAST.a
+build clang/lib/AST: phony ./lib/libclangAST.a
+build clang/lib/AST$:AttrDocTable: phony obj/clang/lib/AST/AttrDocTable.stamp
+build clang/lib/AST$:Opcodes: phony obj/clang/lib/AST/Opcodes.stamp
+build clang/lib/ASTMatchers$:ASTMatchers: phony ./lib/libclangASTMatchers.a
+build clang/lib/ASTMatchers: phony ./lib/libclangASTMatchers.a
+build clang/lib/ASTMatchers/Dynamic$:Dynamic: phony ./lib/libclangDynamicASTMatchers.a
+build clang/lib/ASTMatchers/Dynamic: phony ./lib/libclangDynamicASTMatchers.a
+build clang/lib/Analysis$:Analysis: phony ./lib/libclangAnalysis.a
+build clang/lib/Analysis: phony ./lib/libclangAnalysis.a
+build clang/lib/Analysis/FlowSensitive$:FlowSensitive: phony ./lib/libclangAnalysisFlowSensitive.a
+build clang/lib/Analysis/FlowSensitive: phony ./lib/libclangAnalysisFlowSensitive.a
+build clang/lib/Analysis/FlowSensitive/Models$:Models: phony ./lib/libclangAnalysisFlowSensitiveModels.a
+build clang/lib/Analysis/FlowSensitive/Models: phony ./lib/libclangAnalysisFlowSensitiveModels.a
+build clang/lib/Basic$:Basic: phony ./lib/libclangBasic.a
+build clang/lib/Basic: phony ./lib/libclangBasic.a
+build clang/lib/Basic$:write_vcsversion: phony obj/clang/lib/Basic/write_vcsversion.stamp
+build clang/lib/CodeGen$:CodeGen: phony ./lib/libclangCodeGen.a
+build clang/lib/CodeGen: phony ./lib/libclangCodeGen.a
+build clang/lib/CrossTU$:CrossTU: phony ./lib/libclangCrossTU.a
+build clang/lib/CrossTU: phony ./lib/libclangCrossTU.a
+build clang/lib/Driver$:Driver: phony ./lib/libclangDriver.a
+build clang/lib/Driver: phony ./lib/libclangDriver.a
+build clang/lib/Edit$:Edit: phony ./lib/libclangEdit.a
+build clang/lib/Edit: phony ./lib/libclangEdit.a
+build clang/lib/ExtractAPI$:ExtractAPI: phony ./lib/libclangExtractAPI.a
+build clang/lib/ExtractAPI: phony ./lib/libclangExtractAPI.a
+build clang/lib/Format$:Format: phony ./lib/libclangFormat.a
+build clang/lib/Format: phony ./lib/libclangFormat.a
+build clang/lib/Frontend$:Frontend: phony ./lib/libclangFrontend.a
+build clang/lib/Frontend: phony ./lib/libclangFrontend.a
+build clang/lib/Frontend/Rewrite$:Rewrite: phony ./lib/libclangRewriteFrontend.a
+build clang/lib/Frontend/Rewrite: phony ./lib/libclangRewriteFrontend.a
+build clang/lib/FrontendTool$:FrontendTool: phony ./lib/libclangFrontendTool.a
+build clang/lib/FrontendTool: phony ./lib/libclangFrontendTool.a
+build clang/lib/Headers$:Headers: phony obj/clang/lib/Headers/Headers.stamp
+build clang/lib/Headers: phony obj/clang/lib/Headers/Headers.stamp
+build clang/lib/Headers$:arm_bf16: phony obj/clang/lib/Headers/arm_bf16.stamp
+build clang/lib/Headers$:arm_cde: phony obj/clang/lib/Headers/arm_cde.stamp
+build clang/lib/Headers$:arm_fp16: phony obj/clang/lib/Headers/arm_fp16.stamp
+build clang/lib/Headers$:arm_mve: phony obj/clang/lib/Headers/arm_mve.stamp
+build clang/lib/Headers$:arm_neon: phony obj/clang/lib/Headers/arm_neon.stamp
+build clang/lib/Headers$:arm_sve: phony obj/clang/lib/Headers/arm_sve.stamp
+build clang/lib/Headers$:riscv_vector: phony obj/clang/lib/Headers/riscv_vector.stamp
+build clang/lib/Headers$:tablegen_headers: phony obj/clang/lib/Headers/tablegen_headers.stamp
+build clang/lib/Index$:Index: phony ./lib/libclangIndex.a
+build clang/lib/Index: phony ./lib/libclangIndex.a
+build clang/lib/Interpreter$:Interpreter: phony ./lib/libclangInterpreter.a
+build clang/lib/Interpreter: phony ./lib/libclangInterpreter.a
+build clang/lib/Lex$:Lex: phony ./lib/libclangLex.a
+build clang/lib/Lex: phony ./lib/libclangLex.a
+build clang/lib/Parse$:Parse: phony ./lib/libclangParse.a
+build clang/lib/Parse: phony ./lib/libclangParse.a
+build clang/lib/Rewrite$:Rewrite: phony ./lib/libclangRewrite.a
+build clang/lib/Rewrite: phony ./lib/libclangRewrite.a
+build clang/lib/Sema$:OpenCLBuiltins: phony obj/clang/lib/Sema/OpenCLBuiltins.stamp
+build clang/lib/Sema$:Sema: phony ./lib/libclangSema.a
+build clang/lib/Sema: phony ./lib/libclangSema.a
+build clang/lib/Serialization$:Serialization: phony ./lib/libclangSerialization.a
+build clang/lib/Serialization: phony ./lib/libclangSerialization.a
+build clang/lib/StaticAnalyzer/Checkers$:Checkers: phony ./lib/libclangStaticAnalyzerCheckers.a
+build clang/lib/StaticAnalyzer/Checkers: phony ./lib/libclangStaticAnalyzerCheckers.a
+build clang/lib/StaticAnalyzer/Core$:Core: phony ./lib/libclangStaticAnalyzerCore.a
+build clang/lib/StaticAnalyzer/Core: phony ./lib/libclangStaticAnalyzerCore.a
+build clang/lib/StaticAnalyzer/Frontend$:Frontend: phony ./lib/libclangStaticAnalyzerFrontend.a
+build clang/lib/StaticAnalyzer/Frontend: phony ./lib/libclangStaticAnalyzerFrontend.a
+build clang/lib/Support$:Support: phony ./lib/libclangSupport.a
+build clang/lib/Support: phony ./lib/libclangSupport.a
+build clang/lib/Testing$:Testing: phony ./lib/libclangTesting.a
+build clang/lib/Testing: phony ./lib/libclangTesting.a
+build clang/lib/Tooling$:Tooling: phony ./lib/libclangTooling.a
+build clang/lib/Tooling: phony ./lib/libclangTooling.a
+build clang/lib/Tooling$:node_introspection_inc: phony obj/clang/lib/Tooling/node_introspection_inc.stamp
+build clang/lib/Tooling/ASTDiff$:ASTDiff: phony ./lib/libclangToolingASTDiff.a
+build clang/lib/Tooling/ASTDiff: phony ./lib/libclangToolingASTDiff.a
+build clang/lib/Tooling/Core$:Core: phony ./lib/libclangToolingCore.a
+build clang/lib/Tooling/Core: phony ./lib/libclangToolingCore.a
+build clang/lib/Tooling/DependencyScanning$:DependencyScanning: phony ./lib/libclangToolingDependencyScanning.a
+build clang/lib/Tooling/DependencyScanning: phony ./lib/libclangToolingDependencyScanning.a
+build clang/lib/Tooling/Inclusions$:Inclusions: phony ./lib/libclangToolingInclusions.a
+build clang/lib/Tooling/Inclusions: phony ./lib/libclangToolingInclusions.a
+build clang/lib/Tooling/Inclusions/Stdlib$:Stdlib: phony ./lib/libclangToolingInclusionsStdlib.a
+build clang/lib/Tooling/Inclusions/Stdlib: phony ./lib/libclangToolingInclusionsStdlib.a
+build clang/lib/Tooling/Refactoring$:Refactoring: phony ./lib/libclangToolingRefactoring.a
+build clang/lib/Tooling/Refactoring: phony ./lib/libclangToolingRefactoring.a
+build clang/lib/Tooling/Syntax$:Syntax: phony ./lib/libclangToolingSyntax.a
+build clang/lib/Tooling/Syntax: phony ./lib/libclangToolingSyntax.a
+build clang/lib/Tooling/Transformer$:Transformer: phony ./lib/libclangToolingTransformer.a
+build clang/lib/Tooling/Transformer: phony ./lib/libclangToolingTransformer.a
+build clang/test$:check-clang: phony obj/clang/test/check-clang.stamp
+build clang/test$:lit_site_cfg: phony obj/clang/test/lit_site_cfg.stamp
+build clang/test$:lit_unit_site_cfg: phony obj/clang/test/lit_unit_site_cfg.stamp
+build clang/test$:test: phony obj/clang/test/test.stamp
+build clang/test: phony obj/clang/test/test.stamp
+build clang/tools/apinotes-test$:apinotes-test: phony ./bin/apinotes-test
+build clang/tools/apinotes-test: phony ./bin/apinotes-test
+build clang/tools/arcmt-test$:arcmt-test: phony ./bin/arcmt-test
+build clang/tools/arcmt-test: phony ./bin/arcmt-test
+build clang/tools/c-arcmt-test$:c-arcmt-test: phony ./bin/c-arcmt-test
+build clang/tools/c-arcmt-test: phony ./bin/c-arcmt-test
+build clang/tools/c-index-test$:c-index-test: phony ./bin/c-index-test
+build clang/tools/c-index-test: phony ./bin/c-index-test
+build clang/tools/clang-check$:clang-check: phony ./bin/clang-check
+build clang/tools/clang-check: phony ./bin/clang-check
+build clang/tools/clang-diff$:clang-diff: phony ./bin/clang-diff
+build clang/tools/clang-diff: phony ./bin/clang-diff
+build clang/tools/clang-extdef-mapping$:clang-extdef-mapping: phony ./bin/clang-extdef-mapping
+build clang/tools/clang-extdef-mapping: phony ./bin/clang-extdef-mapping
+build clang/tools/clang-format$:clang-format: phony ./bin/clang-format
+build clang/tools/clang-format: phony ./bin/clang-format
+build clang/tools/clang-fuzzer/dictionary$:clang-fuzzer-dictionary: phony ./bin/clang-fuzzer-dictionary
+build clang/tools/clang-import-test$:clang-import-test: phony ./bin/clang-import-test
+build clang/tools/clang-import-test: phony ./bin/clang-import-test
+build clang/tools/clang-linker-wrapper$:LinkerWrapperOpts: phony obj/clang/tools/clang-linker-wrapper/LinkerWrapperOpts.stamp
+build clang/tools/clang-linker-wrapper$:clang-linker-wrapper: phony ./bin/clang-linker-wrapper
+build clang/tools/clang-linker-wrapper: phony ./bin/clang-linker-wrapper
+build clang/tools/clang-offload-bundler$:clang-offload-bundler: phony ./bin/clang-offload-bundler
+build clang/tools/clang-offload-bundler: phony ./bin/clang-offload-bundler
+build clang/tools/clang-offload-packager$:clang-offload-packager: phony ./bin/clang-offload-packager
+build clang/tools/clang-offload-packager: phony ./bin/clang-offload-packager
+build clang/tools/clang-refactor$:clang-refactor: phony ./bin/clang-refactor
+build clang/tools/clang-refactor: phony ./bin/clang-refactor
+build clang/tools/clang-rename$:clang-rename: phony ./bin/clang-rename
+build clang/tools/clang-rename: phony ./bin/clang-rename
+build clang/tools/clang-repl$:clang-repl: phony ./bin/clang-repl
+build clang/tools/clang-repl: phony ./bin/clang-repl
+build clang/tools/clang-scan-deps$:clang-scan-deps: phony ./bin/clang-scan-deps
+build clang/tools/clang-scan-deps: phony ./bin/clang-scan-deps
+build clang/tools/diagtool$:diagtool: phony ./bin/diagtool
+build clang/tools/diagtool: phony ./bin/diagtool
+build clang/tools/driver$:clang: phony ./bin/clang
+build clang/tools/driver$:clang-cl: phony obj/clang/tools/driver/clang-cl.stamp
+build clang/tools/driver$:clang-cpp: phony obj/clang/tools/driver/clang-cpp.stamp
+build clang/tools/driver$:clang-driver: phony obj/clang/tools/driver/clang-driver.stamp
+build clang/tools/driver$:clangxx: phony obj/clang/tools/driver/clangxx.stamp
+build clang/tools/driver$:symlinks: phony obj/clang/tools/driver/symlinks.stamp
+build clang/tools/driver$:write_info_plist: phony obj/clang/tools/driver/write_info_plist.stamp
+build clang/tools/libclang$:exports: phony obj/clang/tools/libclang/exports.stamp
+build clang/tools/libclang$:libclang: phony ./lib/libclang.dylib
+build clang/tools/libclang: phony ./lib/libclang.dylib
+build clang/tools/libclang$:linker_script_to_exports: phony obj/clang/tools/libclang/linker_script_to_exports.stamp
+build clang/tools/scan-build$:bin: phony obj/clang/tools/scan-build/bin.stamp
+build clang/tools/scan-build$:libexec: phony obj/clang/tools/scan-build/libexec.stamp
+build clang/tools/scan-build$:man: phony obj/clang/tools/scan-build/man.stamp
+build clang/tools/scan-build$:scan-build: phony obj/clang/tools/scan-build/scan-build.stamp
+build clang/tools/scan-build: phony obj/clang/tools/scan-build/scan-build.stamp
+build clang/tools/scan-build$:share: phony obj/clang/tools/scan-build/share.stamp
+build clang/unittests$:unittests: phony obj/clang/unittests/unittests.stamp
+build clang/unittests: phony obj/clang/unittests/unittests.stamp
+build clang/unittests/AST$:ASTTests: phony obj/clang/unittests/AST/ASTTests
+build clang/unittests/ASTMatchers$:ASTMatchersTests: phony obj/clang/unittests/ASTMatchers/ASTMatchersTests
+build clang/unittests/ASTMatchers/Dynamic$:DynamicASTMatchersTests: phony obj/clang/unittests/ASTMatchers/Dynamic/DynamicASTMatchersTests
+build clang/unittests/Analysis$:ClangAnalysisTests: phony obj/clang/unittests/Analysis/ClangAnalysisTests
+build clang/unittests/Analysis/FlowSensitive$:ClangAnalysisFlowSensitiveTests: phony obj/clang/unittests/Analysis/FlowSensitive/ClangAnalysisFlowSensitiveTests
+build clang/unittests/Basic$:BasicTests: phony obj/clang/unittests/Basic/BasicTests
+build clang/unittests/CodeGen$:ClangCodeGenTests: phony obj/clang/unittests/CodeGen/ClangCodeGenTests
+build clang/unittests/CrossTU$:CrossTUTests: phony obj/clang/unittests/CrossTU/CrossTUTests
+build clang/unittests/Driver$:ClangDriverTests: phony obj/clang/unittests/Driver/ClangDriverTests
+build clang/unittests/Format$:FormatTests: phony obj/clang/unittests/Format/FormatTests
+build clang/unittests/Frontend$:FrontendTests: phony obj/clang/unittests/Frontend/FrontendTests
+build clang/unittests/Index$:IndexTests: phony obj/clang/unittests/Index/IndexTests
+build clang/unittests/Interpreter$:ClangReplInterpreterTests: phony obj/clang/unittests/Interpreter/ClangReplInterpreterTests
+build clang/unittests/Interpreter/ExceptionTests$:ClangReplInterpreterExceptionTests: phony obj/clang/unittests/Interpreter/ExceptionTests/ClangReplInterpreterExceptionTests
+build clang/unittests/Introspection$:IntrospectionTests: phony obj/clang/unittests/Introspection/IntrospectionTests
+build clang/unittests/Lex$:LexTests: phony obj/clang/unittests/Lex/LexTests
+build clang/unittests/Rename$:ClangRenameTests: phony obj/clang/unittests/Rename/ClangRenameTests
+build clang/unittests/Rewrite$:RewriteTests: phony obj/clang/unittests/Rewrite/RewriteTests
+build clang/unittests/Sema$:SemaTests: phony obj/clang/unittests/Sema/SemaTests
+build clang/unittests/Serialization$:SerializationTests: phony obj/clang/unittests/Serialization/SerializationTests
+build clang/unittests/StaticAnalyzer$:StaticAnalysisTests: phony obj/clang/unittests/StaticAnalyzer/StaticAnalysisTests
+build clang/unittests/Tooling$:ToolingTests: phony obj/clang/unittests/Tooling/ToolingTests
+build clang/unittests/Tooling/Syntax$:SyntaxTests: phony obj/clang/unittests/Tooling/Syntax/SyntaxTests
+build clang/unittests/libclang$:libclangTests: phony obj/clang/unittests/libclang/libclangTests
+build clang/unittests/libclang/CrashTests$:libclangCrashTests: phony obj/clang/unittests/libclang/CrashTests/libclangCrashTests
+build clang/utils/TableGen$:clang-tblgen: phony ./bin/clang-tblgen
+build clang/utils/hmaptool$:hmaptool: phony obj/clang/utils/hmaptool/hmaptool.stamp
+build clang/utils/hmaptool: phony obj/clang/utils/hmaptool/hmaptool.stamp
+build compiler-rt$:compiler-rt: phony obj/compiler-rt/compiler-rt.stamp
+build compiler-rt/include$:_unused: phony obj/compiler-rt/include/_unused.stamp
+build compiler-rt/include$:include: phony obj/compiler-rt/include/include.stamp
+build compiler-rt/include: phony obj/compiler-rt/include/include.stamp
+build compiler-rt/lib/asan$:ignorelist: phony obj/compiler-rt/lib/asan/ignorelist.stamp
+build compiler-rt/lib/cfi$:ignorelist: phony obj/compiler-rt/lib/cfi/ignorelist.stamp
+build compiler-rt/lib/cfi$:sources: phony obj/compiler-rt/lib/cfi/sources.stamp
+build compiler-rt/lib/scudo$:scudo: phony obj/compiler-rt/lib/scudo/scudo.stamp
+build compiler-rt/lib/scudo: phony obj/compiler-rt/lib/scudo/scudo.stamp
+build compiler-rt/lib/scudo$:sources: phony obj/compiler-rt/lib/scudo/sources.stamp
+build libcxx/include$:copy_headers: phony obj/libcxx/include/copy_headers.stamp
+build libcxx/include$:include: phony obj/libcxx/include/include.stamp
+build libcxx/include: phony obj/libcxx/include/include.stamp
+build libcxx/include$:write_config_site: phony obj/libcxx/include/write_config_site.stamp
+build libcxx/include$:write_modulemap: phony obj/libcxx/include/write_modulemap.stamp
+build libunwind$:libunwind: phony obj/libunwind/libunwind.stamp
+build lld/COFF$:COFF: phony ./lib/liblldCOFF.a
+build lld/COFF: phony ./lib/liblldCOFF.a
+build lld/COFF$:Options: phony obj/lld/COFF/Options.stamp
+build lld/Common$:Common: phony ./lib/liblldCommon.a
+build lld/Common: phony ./lib/liblldCommon.a
+build lld/Common$:write_vcsversion: phony obj/lld/Common/write_vcsversion.stamp
+build lld/ELF$:ELF: phony ./lib/liblldELF.a
+build lld/ELF: phony ./lib/liblldELF.a
+build lld/ELF$:Options: phony obj/lld/ELF/Options.stamp
+build lld/MachO$:MachO: phony ./lib/liblldMachO.a
+build lld/MachO: phony ./lib/liblldMachO.a
+build lld/MachO$:Options: phony obj/lld/MachO/Options.stamp
+build lld/MinGW$:MinGW: phony ./lib/liblldMinGW.a
+build lld/MinGW: phony ./lib/liblldMinGW.a
+build lld/MinGW$:Options: phony obj/lld/MinGW/Options.stamp
+build lld/include/lld/Common$:version: phony obj/lld/include/lld/Common/version.stamp
+build lld/test$:check-lld: phony obj/lld/test/check-lld.stamp
+build lld/test$:lit_site_cfg: phony obj/lld/test/lit_site_cfg.stamp
+build lld/test$:test: phony obj/lld/test/test.stamp
+build lld/test: phony obj/lld/test/test.stamp
+build lld/tools/lld$:ld.lld: phony obj/lld/tools/lld/ld.lld.stamp
+build lld/tools/lld$:ld64.lld: phony obj/lld/tools/lld/ld64.lld.stamp
+build lld/tools/lld$:lld: phony ./bin/lld
+build lld/tools/lld: phony ./bin/lld
+build lld/tools/lld$:lld-link: phony obj/lld/tools/lld/lld-link.stamp
+build lld/tools/lld$:symlinks: phony obj/lld/tools/lld/symlinks.stamp
+build lld/tools/lld$:wasm-ld: phony obj/lld/tools/lld/wasm-ld.stamp
+build lld/wasm$:Options: phony obj/lld/wasm/Options.stamp
+build lld/wasm$:wasm: phony ./lib/liblldWasm.a
+build lld/wasm: phony ./lib/liblldWasm.a
+build lldb/include/lldb/Host$:Config: phony obj/lldb/include/lldb/Host/Config.stamp
+build lldb/include/lldb/Version$:version: phony obj/lldb/include/lldb/Version/version.stamp
+build lldb/source/API$:liblldb: phony ./lib/liblldb.a
+build lldb/source/Breakpoint$:Breakpoint: phony ./lib/liblldbBreakpoint.a
+build lldb/source/Breakpoint: phony ./lib/liblldbBreakpoint.a
+build lldb/source/Commands$:CommandOptions: phony obj/lldb/source/Commands/CommandOptions.stamp
+build lldb/source/Commands$:Commands: phony ./lib/liblldbCommands.a
+build lldb/source/Commands: phony ./lib/liblldbCommands.a
+build lldb/source/Core$:Core: phony ./lib/liblldbCore.a
+build lldb/source/Core: phony ./lib/liblldbCore.a
+build lldb/source/Core$:CoreProperties: phony obj/lldb/source/Core/CoreProperties.stamp
+build lldb/source/Core$:CorePropertiesEnum: phony obj/lldb/source/Core/CorePropertiesEnum.stamp
+build lldb/source/DataFormatters$:DataFormatters: phony ./lib/liblldbDataFormatters.a
+build lldb/source/DataFormatters: phony ./lib/liblldbDataFormatters.a
+build lldb/source/Expression$:Expression: phony ./lib/liblldbExpression.a
+build lldb/source/Expression: phony ./lib/liblldbExpression.a
+build lldb/source/Host$:Host: phony ./lib/liblldbHost.a
+build lldb/source/Host: phony ./lib/liblldbHost.a
+build lldb/source/Host/macosx/objcxx$:objcxx: phony ./lib/liblldbHostMacOSXObjCXX.a
+build lldb/source/Host/macosx/objcxx: phony ./lib/liblldbHostMacOSXObjCXX.a
+build lldb/source/Initialization$:Initialization: phony ./lib/liblldbInitialization.a
+build lldb/source/Initialization: phony ./lib/liblldbInitialization.a
+build lldb/source/Interpreter$:Interpreter: phony ./lib/liblldbInterpreter.a
+build lldb/source/Interpreter: phony ./lib/liblldbInterpreter.a
+build lldb/source/Interpreter$:InterpreterProperties: phony obj/lldb/source/Interpreter/InterpreterProperties.stamp
+build lldb/source/Interpreter$:InterpreterPropertiesEnum: phony obj/lldb/source/Interpreter/InterpreterPropertiesEnum.stamp
+build lldb/source/Plugins$:LldbAllPlugins: phony obj/lldb/source/Plugins/LldbAllPlugins.stamp
+build lldb/source/Plugins$:Plugins.def: phony obj/lldb/source/Plugins/Plugins.def.stamp
+build lldb/source/Plugins/Architecture/PPC64$:PPC64: phony ./lib/liblldbPluginArchitecturePPC64.a
+build lldb/source/Plugins/Architecture/PPC64: phony ./lib/liblldbPluginArchitecturePPC64.a
+build lldb/source/Plugins/Disassembler/LLVMC$:LLVMC: phony ./lib/liblldbPluginDisassemblerLLVMC.a
+build lldb/source/Plugins/Disassembler/LLVMC: phony ./lib/liblldbPluginDisassemblerLLVMC.a
+build lldb/source/Plugins/DynamicLoader/Darwin-Kernel$:Darwin-Kernel: phony ./lib/liblldbPluginDynamicLoaderDarwinKernel.a
+build lldb/source/Plugins/DynamicLoader/Darwin-Kernel: phony ./lib/liblldbPluginDynamicLoaderDarwinKernel.a
+build lldb/source/Plugins/DynamicLoader/Darwin-Kernel$:DynamicLoaderDarwinKernelProperties: phony obj/lldb/source/Plugins/DynamicLoader/Darwin-Kernel/DynamicLoaderDarwinKernelProperties.stamp
+build lldb/source/Plugins/DynamicLoader/Darwin-Kernel$:DynamicLoaderDarwinKernelPropertiesEnum: phony obj/lldb/source/Plugins/DynamicLoader/Darwin-Kernel/DynamicLoaderDarwinKernelPropertiesEnum.stamp
+build lldb/source/Plugins/DynamicLoader/MacOSX-DYLD$:MacOSX-DYLD: phony ./lib/liblldbPluginDynamicLoaderMacOSXDYLD.a
+build lldb/source/Plugins/DynamicLoader/MacOSX-DYLD: phony ./lib/liblldbPluginDynamicLoaderMacOSXDYLD.a
+build lldb/source/Plugins/DynamicLoader/POSIX-DYLD$:POSIX-DYLD: phony ./lib/liblldbPluginDynamicLoaderPosixDYLD.a
+build lldb/source/Plugins/DynamicLoader/POSIX-DYLD: phony ./lib/liblldbPluginDynamicLoaderPosixDYLD.a
+build lldb/source/Plugins/DynamicLoader/Static$:Static: phony ./lib/liblldbPluginDynamicLoaderStatic.a
+build lldb/source/Plugins/DynamicLoader/Static: phony ./lib/liblldbPluginDynamicLoaderStatic.a
+build lldb/source/Plugins/DynamicLoader/Windows-DYLD$:Windows-DYLD: phony ./lib/liblldbPluginDynamicLoaderWindowsDYLD.a
+build lldb/source/Plugins/DynamicLoader/Windows-DYLD: phony ./lib/liblldbPluginDynamicLoaderWindowsDYLD.a
+build lldb/source/Plugins/ExpressionParser/Clang$:Clang: phony ./lib/liblldbPluginExpressionParserClang.a
+build lldb/source/Plugins/ExpressionParser/Clang: phony ./lib/liblldbPluginExpressionParserClang.a
+build lldb/source/Plugins/Instruction/ARM$:ARM: phony ./lib/liblldbPluginInstructionARM.a
+build lldb/source/Plugins/Instruction/ARM: phony ./lib/liblldbPluginInstructionARM.a
+build lldb/source/Plugins/JITLoader/GDB$:GDB: phony ./lib/liblldbPluginJITLoaderGDB.a
+build lldb/source/Plugins/JITLoader/GDB: phony ./lib/liblldbPluginJITLoaderGDB.a
+build lldb/source/Plugins/JITLoader/GDB$:JITLoaderGDBProperties: phony obj/lldb/source/Plugins/JITLoader/GDB/JITLoaderGDBProperties.stamp
+build lldb/source/Plugins/JITLoader/GDB$:JITLoaderGDBPropertiesEnum: phony obj/lldb/source/Plugins/JITLoader/GDB/JITLoaderGDBPropertiesEnum.stamp
+build lldb/source/Plugins/Language/CPlusPlus$:CPlusPlus: phony ./lib/liblldbPluginCPlusPlusLanguage.a
+build lldb/source/Plugins/Language/CPlusPlus: phony ./lib/liblldbPluginCPlusPlusLanguage.a
+build lldb/source/Plugins/Language/ClangCommon$:ClangCommon: phony ./lib/liblldbPluginClangCommon.a
+build lldb/source/Plugins/Language/ClangCommon: phony ./lib/liblldbPluginClangCommon.a
+build lldb/source/Plugins/Language/ObjC$:ObjC: phony ./lib/liblldbPluginObjCLanguage.a
+build lldb/source/Plugins/Language/ObjC: phony ./lib/liblldbPluginObjCLanguage.a
+build lldb/source/Plugins/Language/ObjCPlusPlus$:ObjCPlusPlus: phony ./lib/liblldbPluginObjCPlusPlusLanguage.a
+build lldb/source/Plugins/Language/ObjCPlusPlus: phony ./lib/liblldbPluginObjCPlusPlusLanguage.a
+build lldb/source/Plugins/LanguageRuntime/CPlusPlus$:CPlusPlus: phony ./lib/liblldbPluginCPPRuntime.a
+build lldb/source/Plugins/LanguageRuntime/CPlusPlus: phony ./lib/liblldbPluginCPPRuntime.a
+build lldb/source/Plugins/LanguageRuntime/CPlusPlus/ItaniumABI$:ItaniumABI: phony ./lib/liblldbPluginCXXItaniumABI.a
+build lldb/source/Plugins/LanguageRuntime/CPlusPlus/ItaniumABI: phony ./lib/liblldbPluginCXXItaniumABI.a
+build lldb/source/Plugins/LanguageRuntime/ObjC$:ObjC: phony ./lib/liblldbPluginObjCRuntime.a
+build lldb/source/Plugins/LanguageRuntime/ObjC: phony ./lib/liblldbPluginObjCRuntime.a
+build lldb/source/Plugins/LanguageRuntime/ObjC/AppleObjCRuntime$:AppleObjCRuntime: phony ./lib/liblldbPluginAppleObjCRuntime.a
+build lldb/source/Plugins/LanguageRuntime/ObjC/AppleObjCRuntime: phony ./lib/liblldbPluginAppleObjCRuntime.a
+build lldb/source/Plugins/LanguageRuntime/RenderScript/RenderScriptRuntime$:RenderScriptRuntime: phony ./lib/liblldbPluginRenderScriptRuntime.a
+build lldb/source/Plugins/LanguageRuntime/RenderScript/RenderScriptRuntime: phony ./lib/liblldbPluginRenderScriptRuntime.a
+build lldb/source/Plugins/ObjectContainer/BSD-Archive$:BSD-Archive: phony ./lib/liblldbPluginObjectContainerBSDArchive.a
+build lldb/source/Plugins/ObjectContainer/BSD-Archive: phony ./lib/liblldbPluginObjectContainerBSDArchive.a
+build lldb/source/Plugins/ObjectContainer/Mach-O-Fileset$:Mach-O-Fileset: phony ./lib/liblldbPluginObjectContainerMachOFileset.a
+build lldb/source/Plugins/ObjectContainer/Mach-O-Fileset: phony ./lib/liblldbPluginObjectContainerMachOFileset.a
+build lldb/source/Plugins/ObjectContainer/Universal-Mach-O$:Universal-Mach-O: phony ./lib/liblldbPluginObjectContainerMachOArchive.a
+build lldb/source/Plugins/ObjectContainer/Universal-Mach-O: phony ./lib/liblldbPluginObjectContainerMachOArchive.a
+build lldb/source/Plugins/ObjectFile/Breakpad$:Breakpad: phony ./lib/liblldbPluginObjectFileBreakpad.a
+build lldb/source/Plugins/ObjectFile/Breakpad: phony ./lib/liblldbPluginObjectFileBreakpad.a
+build lldb/source/Plugins/ObjectFile/ELF$:ELF: phony ./lib/liblldbPluginObjectFileELF.a
+build lldb/source/Plugins/ObjectFile/ELF: phony ./lib/liblldbPluginObjectFileELF.a
+build lldb/source/Plugins/ObjectFile/JIT$:JIT: phony ./lib/liblldbPluginObjectFileJIT.a
+build lldb/source/Plugins/ObjectFile/JIT: phony ./lib/liblldbPluginObjectFileJIT.a
+build lldb/source/Plugins/ObjectFile/Mach-O$:Mach-O: phony ./lib/liblldbPluginObjectFileMachO.a
+build lldb/source/Plugins/ObjectFile/Mach-O: phony ./lib/liblldbPluginObjectFileMachO.a
+build lldb/source/Plugins/ObjectFile/PDB$:PDB: phony ./lib/liblldbPluginObjectFilePDB.a
+build lldb/source/Plugins/ObjectFile/PDB: phony ./lib/liblldbPluginObjectFilePDB.a
+build lldb/source/Plugins/ObjectFile/PECOFF$:ObjectFilePECOFFProperties: phony obj/lldb/source/Plugins/ObjectFile/PECOFF/ObjectFilePECOFFProperties.stamp
+build lldb/source/Plugins/ObjectFile/PECOFF$:ObjectFilePECOFFPropertiesEnum: phony obj/lldb/source/Plugins/ObjectFile/PECOFF/ObjectFilePECOFFPropertiesEnum.stamp
+build lldb/source/Plugins/ObjectFile/PECOFF$:PECOFF: phony ./lib/liblldbPluginObjectFilePECOFF.a
+build lldb/source/Plugins/ObjectFile/PECOFF: phony ./lib/liblldbPluginObjectFilePECOFF.a
+build lldb/source/Plugins/ObjectFile/wasm$:wasm: phony ./lib/liblldbPluginObjectFileWasm.a
+build lldb/source/Plugins/ObjectFile/wasm: phony ./lib/liblldbPluginObjectFileWasm.a
+build lldb/source/Plugins/Platform/Linux$:Linux: phony ./lib/liblldbPluginPlatformLinux.a
+build lldb/source/Plugins/Platform/Linux: phony ./lib/liblldbPluginPlatformLinux.a
+build lldb/source/Plugins/Platform/MacOSX$:MacOSX: phony ./lib/liblldbPluginPlatformMacOSX.a
+build lldb/source/Plugins/Platform/MacOSX: phony ./lib/liblldbPluginPlatformMacOSX.a
+build lldb/source/Plugins/Platform/MacOSX$:PlatformMacOSXProperties: phony obj/lldb/source/Plugins/Platform/MacOSX/PlatformMacOSXProperties.stamp
+build lldb/source/Plugins/Platform/MacOSX$:PlatformMacOSXPropertiesEnum: phony obj/lldb/source/Plugins/Platform/MacOSX/PlatformMacOSXPropertiesEnum.stamp
+build lldb/source/Plugins/Platform/MacOSX/objcxx$:objcxx: phony ./lib/liblldbPluginPlatformMacOSXObjCXX.a
+build lldb/source/Plugins/Platform/MacOSX/objcxx: phony ./lib/liblldbPluginPlatformMacOSXObjCXX.a
+build lldb/source/Plugins/Platform/POSIX$:POSIX: phony ./lib/liblldbPluginPlatformPOSIX.a
+build lldb/source/Plugins/Platform/POSIX: phony ./lib/liblldbPluginPlatformPOSIX.a
+build lldb/source/Plugins/Platform/Windows$:Windows: phony ./lib/liblldbPluginPlatformWindows.a
+build lldb/source/Plugins/Platform/Windows: phony ./lib/liblldbPluginPlatformWindows.a
+build lldb/source/Plugins/Platform/gdb-server$:gdb-server: phony ./lib/liblldbPluginPlatformGDB.a
+build lldb/source/Plugins/Platform/gdb-server: phony ./lib/liblldbPluginPlatformGDB.a
+build lldb/source/Plugins/Process/Utility$:Utility: phony ./lib/liblldbPluginProcessUtility.a
+build lldb/source/Plugins/Process/Utility: phony ./lib/liblldbPluginProcessUtility.a
+build lldb/source/Plugins/Process/elf-core$:elf-core: phony ./lib/liblldbPluginProcessElfCore.a
+build lldb/source/Plugins/Process/elf-core: phony ./lib/liblldbPluginProcessElfCore.a
+build lldb/source/Plugins/Process/gdb-remote$:ProcessGDBRemoteProperties: phony obj/lldb/source/Plugins/Process/gdb-remote/ProcessGDBRemoteProperties.stamp
+build lldb/source/Plugins/Process/gdb-remote$:ProcessGDBRemotePropertiesEnum: phony obj/lldb/source/Plugins/Process/gdb-remote/ProcessGDBRemotePropertiesEnum.stamp
+build lldb/source/Plugins/Process/gdb-remote$:gdb-remote: phony ./lib/liblldbPluginProcessGDBRemote.a
+build lldb/source/Plugins/Process/gdb-remote: phony ./lib/liblldbPluginProcessGDBRemote.a
+build lldb/source/Plugins/Process/mach-core$:mach-core: phony ./lib/liblldbPluginProcessMachCore.a
+build lldb/source/Plugins/Process/mach-core: phony ./lib/liblldbPluginProcessMachCore.a
+build lldb/source/Plugins/Process/minidump$:minidump: phony ./lib/liblldbPluginProcessMinidump.a
+build lldb/source/Plugins/Process/minidump: phony ./lib/liblldbPluginProcessMinidump.a
+build lldb/source/Plugins/REPL/Clang$:Clang: phony ./lib/liblldbPluginClangREPL.a
+build lldb/source/Plugins/REPL/Clang: phony ./lib/liblldbPluginClangREPL.a
+build lldb/source/Plugins/ScriptInterpreter/None$:None: phony ./lib/liblldbPluginScriptInterpreterNone.a
+build lldb/source/Plugins/ScriptInterpreter/None: phony ./lib/liblldbPluginScriptInterpreterNone.a
+build lldb/source/Plugins/SymbolFile/Breakpad$:Breakpad: phony ./lib/liblldbPluginSymbolFileBreakpad.a
+build lldb/source/Plugins/SymbolFile/Breakpad: phony ./lib/liblldbPluginSymbolFileBreakpad.a
+build lldb/source/Plugins/SymbolFile/DWARF$:DWARF: phony ./lib/liblldbPluginSymbolFileDWARF.a
+build lldb/source/Plugins/SymbolFile/DWARF: phony ./lib/liblldbPluginSymbolFileDWARF.a
+build lldb/source/Plugins/SymbolFile/DWARF$:SymbolFileDWARFProperties: phony obj/lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARFProperties.stamp
+build lldb/source/Plugins/SymbolFile/DWARF$:SymbolFileDWARFPropertiesEnum: phony obj/lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARFPropertiesEnum.stamp
+build lldb/source/Plugins/SymbolFile/NativePDB$:NativePDB: phony ./lib/liblldbPluginSymbolFileNativePDB.a
+build lldb/source/Plugins/SymbolFile/NativePDB: phony ./lib/liblldbPluginSymbolFileNativePDB.a
+build lldb/source/Plugins/SymbolFile/PDB$:PDB: phony ./lib/liblldbPluginSymbolFilePDB.a
+build lldb/source/Plugins/SymbolFile/PDB: phony ./lib/liblldbPluginSymbolFilePDB.a
+build lldb/source/Plugins/SymbolFile/Symtab$:Symtab: phony ./lib/liblldbPluginSymbolFileSymtab.a
+build lldb/source/Plugins/SymbolFile/Symtab: phony ./lib/liblldbPluginSymbolFileSymtab.a
+build lldb/source/Plugins/SymbolVendor/ELF$:ELF: phony ./lib/liblldbPluginSymbolVendorELF.a
+build lldb/source/Plugins/SymbolVendor/ELF: phony ./lib/liblldbPluginSymbolVendorELF.a
+build lldb/source/Plugins/SymbolVendor/MacOSX$:MacOSX: phony ./lib/liblldbPluginSymbolVendorMacOSX.a
+build lldb/source/Plugins/SymbolVendor/MacOSX: phony ./lib/liblldbPluginSymbolVendorMacOSX.a
+build lldb/source/Plugins/SymbolVendor/PECOFF$:PECOFF: phony ./lib/liblldbPluginSymbolVendorPECOFF.a
+build lldb/source/Plugins/SymbolVendor/PECOFF: phony ./lib/liblldbPluginSymbolVendorPECOFF.a
+build lldb/source/Plugins/SymbolVendor/wasm$:wasm: phony ./lib/liblldbPluginSymbolVendorWasm.a
+build lldb/source/Plugins/SymbolVendor/wasm: phony ./lib/liblldbPluginSymbolVendorWasm.a
+build lldb/source/Plugins/TypeSystem/Clang$:Clang: phony ./lib/liblldbPluginTypeSystemClang.a
+build lldb/source/Plugins/TypeSystem/Clang: phony ./lib/liblldbPluginTypeSystemClang.a
+build lldb/source/Plugins/UnwindAssembly/InstEmulation$:InstEmulation: phony ./lib/liblldbPluginUnwindAssemblyInstEmulation.a
+build lldb/source/Plugins/UnwindAssembly/InstEmulation: phony ./lib/liblldbPluginUnwindAssemblyInstEmulation.a
+build lldb/source/Plugins/UnwindAssembly/x86$:x86: phony ./lib/liblldbPluginUnwindAssemblyX86.a
+build lldb/source/Plugins/UnwindAssembly/x86: phony ./lib/liblldbPluginUnwindAssemblyX86.a
+build lldb/source/Symbol$:Symbol: phony ./lib/liblldbSymbol.a
+build lldb/source/Symbol: phony ./lib/liblldbSymbol.a
+build lldb/source/Target$:Target: phony ./lib/liblldbTarget.a
+build lldb/source/Target: phony ./lib/liblldbTarget.a
+build lldb/source/Target$:TargetProperties: phony obj/lldb/source/Target/TargetProperties.stamp
+build lldb/source/Target$:TargetPropertiesEnum: phony obj/lldb/source/Target/TargetPropertiesEnum.stamp
+build lldb/source/Utility$:Utility: phony ./lib/liblldbUtility.a
+build lldb/source/Utility: phony ./lib/liblldbUtility.a
+build lldb/source/Version$:Version: phony ./lib/liblldbVersion.a
+build lldb/source/Version: phony ./lib/liblldbVersion.a
+build lldb/source/Version$:write_vcsversion: phony obj/lldb/source/Version/write_vcsversion.stamp
+build lldb/test$:check-lldb: phony obj/lldb/test/check-lldb.stamp
+build lldb/test$:lit-lldb-init: phony obj/lldb/test/lit-lldb-init.stamp
+build lldb/test$:lit-lldb-init-quiet: phony obj/lldb/test/lit-lldb-init-quiet.stamp
+build lldb/test$:lit_api_site_cfg: phony obj/lldb/test/lit_api_site_cfg.stamp
+build lldb/test$:lit_shell_site_cfg: phony obj/lldb/test/lit_shell_site_cfg.stamp
+build lldb/test$:lit_site_cfg: phony obj/lldb/test/lit_site_cfg.stamp
+build lldb/test$:lit_unit_site_cfg: phony obj/lldb/test/lit_unit_site_cfg.stamp
+build lldb/test$:test: phony obj/lldb/test/test.stamp
+build lldb/test: phony obj/lldb/test/test.stamp
+build lldb/tools/argdumper$:lldb-argdumper: phony ./bin/lldb-argdumper
+build lldb/tools/driver$:Options: phony obj/lldb/tools/driver/Options.stamp
+build lldb/tools/driver$:lldb: phony ./bin/lldb
+build lldb/tools/driver$:write_info_plist: phony obj/lldb/tools/driver/write_info_plist.stamp
+build lldb/tools/lldb-server$:LLGSOptions: phony obj/lldb/tools/lldb-server/LLGSOptions.stamp
+build lldb/tools/lldb-server$:lldb-server: phony ./bin/lldb-server
+build lldb/tools/lldb-server: phony ./bin/lldb-server
+build lldb/tools/lldb-test$:lldb-test: phony ./bin/lldb-test
+build lldb/tools/lldb-test: phony ./bin/lldb-test
+build lldb/tools/lldb-vscode$:Options: phony obj/lldb/tools/lldb-vscode/Options.stamp
+build lldb/tools/lldb-vscode$:lldb-vscode: phony ./bin/lldb-vscode
+build lldb/tools/lldb-vscode: phony ./bin/lldb-vscode
+build lldb/tools/lldb-vscode$:write_info_plist: phony obj/lldb/tools/lldb-vscode/write_info_plist.stamp
+build lldb/utils/TableGen$:lldb-tblgen: phony ./bin/lldb-tblgen
+build lldb/utils/lit-cpuid$:lit-cpuid: phony ./bin/lit-cpuid
+build lldb/utils/lit-cpuid: phony ./bin/lit-cpuid
+build llvm/include/llvm/Config$:AsmParsers.def: phony obj/llvm/include/llvm/Config/AsmParsers.def.stamp
+build llvm/include/llvm/Config$:AsmPrinters.def: phony obj/llvm/include/llvm/Config/AsmPrinters.def.stamp
+build llvm/include/llvm/Config$:Disassemblers.def: phony obj/llvm/include/llvm/Config/Disassemblers.def.stamp
+build llvm/include/llvm/Config$:TargetExegesis.def: phony obj/llvm/include/llvm/Config/TargetExegesis.def.stamp
+build llvm/include/llvm/Config$:TargetMCAs.def: phony obj/llvm/include/llvm/Config/TargetMCAs.def.stamp
+build llvm/include/llvm/Config$:Targets.def: phony obj/llvm/include/llvm/Config/Targets.def.stamp
+build llvm/include/llvm/Config$:abi-breaking: phony obj/llvm/include/llvm/Config/abi-breaking.stamp
+build llvm/include/llvm/Config$:config: phony obj/llvm/include/llvm/Config/config.stamp
+build llvm/include/llvm/Config$:llvm-config: phony obj/llvm/include/llvm/Config/llvm-config.stamp
+build llvm/include/llvm/Config$:write_target_def_files: phony obj/llvm/include/llvm/Config/write_target_def_files.stamp
+build llvm/include/llvm/Frontend/OpenACC$:ACC: phony obj/llvm/include/llvm/Frontend/OpenACC/ACC.stamp
+build llvm/include/llvm/Frontend/OpenACC$:ACCcpp: phony obj/llvm/include/llvm/Frontend/OpenACC/ACCcpp.stamp
+build llvm/include/llvm/Frontend/OpenACC$:acc_gen: phony obj/llvm/include/llvm/Frontend/OpenACC/acc_gen.stamp
+build llvm/include/llvm/Frontend/OpenMP$:OMP: phony obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp
+build llvm/include/llvm/Frontend/OpenMP$:OMPh: phony obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp
+build llvm/include/llvm/Frontend/OpenMP$:public_tablegen: phony obj/llvm/include/llvm/Frontend/OpenMP/public_tablegen.stamp
+build llvm/include/llvm/IR$:Attributes: phony obj/llvm/include/llvm/IR/Attributes.stamp
+build llvm/include/llvm/IR$:IntrinsicEnums: phony obj/llvm/include/llvm/IR/IntrinsicEnums.stamp
+build llvm/include/llvm/IR$:IntrinsicImpl: phony obj/llvm/include/llvm/IR/IntrinsicImpl.stamp
+build llvm/include/llvm/IR$:IntrinsicsAArch64: phony obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp
+build llvm/include/llvm/IR$:IntrinsicsAMDGPU: phony obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp
+build llvm/include/llvm/IR$:IntrinsicsARM: phony obj/llvm/include/llvm/IR/IntrinsicsARM.stamp
+build llvm/include/llvm/IR$:IntrinsicsBPF: phony obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp
+build llvm/include/llvm/IR$:IntrinsicsDirectX: phony obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp
+build llvm/include/llvm/IR$:IntrinsicsHexagon: phony obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp
+build llvm/include/llvm/IR$:IntrinsicsMips: phony obj/llvm/include/llvm/IR/IntrinsicsMips.stamp
+build llvm/include/llvm/IR$:IntrinsicsNVPTX: phony obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp
+build llvm/include/llvm/IR$:IntrinsicsPowerPC: phony obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp
+build llvm/include/llvm/IR$:IntrinsicsR600: phony obj/llvm/include/llvm/IR/IntrinsicsR600.stamp
+build llvm/include/llvm/IR$:IntrinsicsRISCV: phony obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp
+build llvm/include/llvm/IR$:IntrinsicsS390: phony obj/llvm/include/llvm/IR/IntrinsicsS390.stamp
+build llvm/include/llvm/IR$:IntrinsicsVE: phony obj/llvm/include/llvm/IR/IntrinsicsVE.stamp
+build llvm/include/llvm/IR$:IntrinsicsWebAssembly: phony obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp
+build llvm/include/llvm/IR$:IntrinsicsX86: phony obj/llvm/include/llvm/IR/IntrinsicsX86.stamp
+build llvm/include/llvm/IR$:IntrinsicsXCore: phony obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp
+build llvm/include/llvm/IR$:IntrinsicsXtensa: phony obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp
+build llvm/include/llvm/IR$:public_tablegen: phony obj/llvm/include/llvm/IR/public_tablegen.stamp
+build llvm/include/llvm/Support$:write_extension_def: phony obj/llvm/include/llvm/Support/write_extension_def.stamp
+build llvm/include/llvm/Support$:write_vcsrevision: phony obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build llvm/lib/Analysis$:Analysis: phony ./lib/libLLVMAnalysis.a
+build llvm/lib/Analysis: phony ./lib/libLLVMAnalysis.a
+build llvm/lib/AsmParser$:AsmParser: phony ./lib/libLLVMAsmParser.a
+build llvm/lib/AsmParser: phony ./lib/libLLVMAsmParser.a
+build llvm/lib/BinaryFormat$:BinaryFormat: phony ./lib/libLLVMBinaryFormat.a
+build llvm/lib/BinaryFormat: phony ./lib/libLLVMBinaryFormat.a
+build llvm/lib/Bitcode/Reader$:Reader: phony ./lib/libLLVMBitReader.a
+build llvm/lib/Bitcode/Reader: phony ./lib/libLLVMBitReader.a
+build llvm/lib/Bitcode/Writer$:Writer: phony ./lib/libLLVMBitWriter.a
+build llvm/lib/Bitcode/Writer: phony ./lib/libLLVMBitWriter.a
+build llvm/lib/Bitstream/Reader$:Reader: phony ./lib/libLLVMBitstreamReader.a
+build llvm/lib/Bitstream/Reader: phony ./lib/libLLVMBitstreamReader.a
+build llvm/lib/CodeGen$:CodeGen: phony ./lib/libLLVMCodeGen.a
+build llvm/lib/CodeGen: phony ./lib/libLLVMCodeGen.a
+build llvm/lib/CodeGen/AsmPrinter$:AsmPrinter: phony ./lib/libLLVMAsmPrinter.a
+build llvm/lib/CodeGen/AsmPrinter: phony ./lib/libLLVMAsmPrinter.a
+build llvm/lib/CodeGen/GlobalISel$:GlobalISel: phony ./lib/libLLVMGlobalISel.a
+build llvm/lib/CodeGen/GlobalISel: phony ./lib/libLLVMGlobalISel.a
+build llvm/lib/CodeGen/MIRParser$:MIRParser: phony ./lib/libLLVMMIRParser.a
+build llvm/lib/CodeGen/MIRParser: phony ./lib/libLLVMMIRParser.a
+build llvm/lib/CodeGen/SelectionDAG$:SelectionDAG: phony ./lib/libLLVMSelectionDAG.a
+build llvm/lib/CodeGen/SelectionDAG: phony ./lib/libLLVMSelectionDAG.a
+build llvm/lib/DWARFLinker$:DWARFLinker: phony ./lib/libLLVMDWARFLinker.a
+build llvm/lib/DWARFLinker: phony ./lib/libLLVMDWARFLinker.a
+build llvm/lib/DWP$:DWP: phony ./lib/libLLVMDWP.a
+build llvm/lib/DWP: phony ./lib/libLLVMDWP.a
+build llvm/lib/DebugInfo/CodeView$:CodeView: phony ./lib/libLLVMDebugInfoCodeView.a
+build llvm/lib/DebugInfo/CodeView: phony ./lib/libLLVMDebugInfoCodeView.a
+build llvm/lib/DebugInfo/DWARF$:DWARF: phony ./lib/libLLVMDebugInfoDWARF.a
+build llvm/lib/DebugInfo/DWARF: phony ./lib/libLLVMDebugInfoDWARF.a
+build llvm/lib/DebugInfo/GSYM$:GSYM: phony ./lib/libLLVMDebugInfoGSYM.a
+build llvm/lib/DebugInfo/GSYM: phony ./lib/libLLVMDebugInfoGSYM.a
+build llvm/lib/DebugInfo/MSF$:MSF: phony ./lib/libLLVMDebugInfoMSF.a
+build llvm/lib/DebugInfo/MSF: phony ./lib/libLLVMDebugInfoMSF.a
+build llvm/lib/DebugInfo/PDB$:PDB: phony ./lib/libLLVMDebugInfoPDB.a
+build llvm/lib/DebugInfo/PDB: phony ./lib/libLLVMDebugInfoPDB.a
+build llvm/lib/DebugInfo/Symbolize$:Symbolize: phony ./lib/libLLVMSymbolize.a
+build llvm/lib/DebugInfo/Symbolize: phony ./lib/libLLVMSymbolize.a
+build llvm/lib/Debuginfod$:Debuginfod: phony ./lib/libLLVMDebuginfod.a
+build llvm/lib/Debuginfod: phony ./lib/libLLVMDebuginfod.a
+build llvm/lib/Demangle$:Demangle: phony ./lib/libLLVMDemangle.a
+build llvm/lib/Demangle: phony ./lib/libLLVMDemangle.a
+build llvm/lib/ExecutionEngine$:ExecutionEngine: phony ./lib/libLLVMExecutionEngine.a
+build llvm/lib/ExecutionEngine: phony ./lib/libLLVMExecutionEngine.a
+build llvm/lib/ExecutionEngine/Interpreter$:Interpreter: phony ./lib/libLLVMInterpreter.a
+build llvm/lib/ExecutionEngine/Interpreter: phony ./lib/libLLVMInterpreter.a
+build llvm/lib/ExecutionEngine/JITLink$:COFFOptions: phony obj/llvm/lib/ExecutionEngine/JITLink/COFFOptions.stamp
+build llvm/lib/ExecutionEngine/JITLink$:JITLink: phony ./lib/libLLVMJITLink.a
+build llvm/lib/ExecutionEngine/JITLink: phony ./lib/libLLVMJITLink.a
+build llvm/lib/ExecutionEngine/MCJIT$:MCJIT: phony ./lib/libLLVMMCJIT.a
+build llvm/lib/ExecutionEngine/MCJIT: phony ./lib/libLLVMMCJIT.a
+build llvm/lib/ExecutionEngine/Orc$:Orc: phony ./lib/libLLVMOrcJIT.a
+build llvm/lib/ExecutionEngine/Orc: phony ./lib/libLLVMOrcJIT.a
+build llvm/lib/ExecutionEngine/Orc/Shared$:Shared: phony ./lib/libLLVMOrcShared.a
+build llvm/lib/ExecutionEngine/Orc/Shared: phony ./lib/libLLVMOrcShared.a
+build llvm/lib/ExecutionEngine/Orc/TargetProcess$:TargetProcess: phony ./lib/libLLVMOrcTargetProcess.a
+build llvm/lib/ExecutionEngine/Orc/TargetProcess: phony ./lib/libLLVMOrcTargetProcess.a
+build llvm/lib/ExecutionEngine/RuntimeDyld$:RuntimeDyld: phony ./lib/libLLVMRuntimeDyld.a
+build llvm/lib/ExecutionEngine/RuntimeDyld: phony ./lib/libLLVMRuntimeDyld.a
+build llvm/lib/Extensions$:Extensions: phony ./lib/libLLVMExtensions.a
+build llvm/lib/Extensions: phony ./lib/libLLVMExtensions.a
+build llvm/lib/FileCheck$:FileCheck: phony ./lib/libLLVMFileCheck.a
+build llvm/lib/FileCheck: phony ./lib/libLLVMFileCheck.a
+build llvm/lib/Frontend/OpenACC$:OpenACC: phony ./lib/libLLVMFrontendOpenACC.a
+build llvm/lib/Frontend/OpenACC: phony ./lib/libLLVMFrontendOpenACC.a
+build llvm/lib/Frontend/OpenMP$:OpenMP: phony ./lib/libLLVMFrontendOpenMP.a
+build llvm/lib/Frontend/OpenMP: phony ./lib/libLLVMFrontendOpenMP.a
+build llvm/lib/FuzzMutate$:FuzzMutate: phony ./lib/libLLVMFuzzMutate.a
+build llvm/lib/FuzzMutate: phony ./lib/libLLVMFuzzMutate.a
+build llvm/lib/IR$:IR: phony ./lib/libLLVMCore.a
+build llvm/lib/IR: phony ./lib/libLLVMCore.a
+build llvm/lib/IRReader$:IRReader: phony ./lib/libLLVMIRReader.a
+build llvm/lib/IRReader: phony ./lib/libLLVMIRReader.a
+build llvm/lib/InterfaceStub$:InterfaceStub: phony ./lib/libLLVMInterfaceStub.a
+build llvm/lib/InterfaceStub: phony ./lib/libLLVMInterfaceStub.a
+build llvm/lib/LTO$:LTO: phony ./lib/libLLVMLTO.a
+build llvm/lib/LTO: phony ./lib/libLLVMLTO.a
+build llvm/lib/LineEditor$:LineEditor: phony ./lib/libLLVMLineEditor.a
+build llvm/lib/LineEditor: phony ./lib/libLLVMLineEditor.a
+build llvm/lib/Linker$:Linker: phony ./lib/libLLVMLinker.a
+build llvm/lib/Linker: phony ./lib/libLLVMLinker.a
+build llvm/lib/MC$:MC: phony ./lib/libLLVMMC.a
+build llvm/lib/MC: phony ./lib/libLLVMMC.a
+build llvm/lib/MC/MCDisassembler$:MCDisassembler: phony ./lib/libLLVMMCDisassembler.a
+build llvm/lib/MC/MCDisassembler: phony ./lib/libLLVMMCDisassembler.a
+build llvm/lib/MC/MCParser$:MCParser: phony ./lib/libLLVMMCParser.a
+build llvm/lib/MC/MCParser: phony ./lib/libLLVMMCParser.a
+build llvm/lib/MCA$:MCA: phony ./lib/libLLVMMCA.a
+build llvm/lib/MCA: phony ./lib/libLLVMMCA.a
+build llvm/lib/ObjCopy$:ObjCopy: phony ./lib/libLLVMObjCopy.a
+build llvm/lib/ObjCopy: phony ./lib/libLLVMObjCopy.a
+build llvm/lib/Object$:Object: phony ./lib/libLLVMObject.a
+build llvm/lib/Object: phony ./lib/libLLVMObject.a
+build llvm/lib/ObjectYAML$:ObjectYAML: phony ./lib/libLLVMObjectYAML.a
+build llvm/lib/ObjectYAML: phony ./lib/libLLVMObjectYAML.a
+build llvm/lib/Option$:Option: phony ./lib/libLLVMOption.a
+build llvm/lib/Option: phony ./lib/libLLVMOption.a
+build llvm/lib/Passes$:Passes: phony ./lib/libLLVMPasses.a
+build llvm/lib/Passes: phony ./lib/libLLVMPasses.a
+build llvm/lib/ProfileData$:ProfileData: phony ./lib/libLLVMProfileData.a
+build llvm/lib/ProfileData: phony ./lib/libLLVMProfileData.a
+build llvm/lib/ProfileData/Coverage$:Coverage: phony ./lib/libLLVMCoverage.a
+build llvm/lib/ProfileData/Coverage: phony ./lib/libLLVMCoverage.a
+build llvm/lib/Remarks$:Remarks: phony ./lib/libLLVMRemarks.a
+build llvm/lib/Remarks: phony ./lib/libLLVMRemarks.a
+build llvm/lib/Support$:Support: phony ./lib/libLLVMSupport.a
+build llvm/lib/Support: phony ./lib/libLLVMSupport.a
+build llvm/lib/Support/BLAKE3$:BLAKE3: phony ./lib/libLLVMSupportBlake3.a
+build llvm/lib/Support/BLAKE3: phony ./lib/libLLVMSupportBlake3.a
+build llvm/lib/Support/BLAKE3$:hack: phony obj/llvm/lib/Support/BLAKE3/hack.stamp
+build llvm/lib/TableGen$:TableGen: phony ./lib/libLLVMTableGen.a
+build llvm/lib/TableGen: phony ./lib/libLLVMTableGen.a
+build llvm/lib/Target$:AllTargetsAsmParsers: phony obj/llvm/lib/Target/AllTargetsAsmParsers.stamp
+build llvm/lib/Target$:AllTargetsCodeGens: phony obj/llvm/lib/Target/AllTargetsCodeGens.stamp
+build llvm/lib/Target$:AllTargetsDescs: phony obj/llvm/lib/Target/AllTargetsDescs.stamp
+build llvm/lib/Target$:AllTargetsDisassemblers: phony obj/llvm/lib/Target/AllTargetsDisassemblers.stamp
+build llvm/lib/Target$:AllTargetsInfos: phony obj/llvm/lib/Target/AllTargetsInfos.stamp
+build llvm/lib/Target$:AllTargetsMCAs: phony obj/llvm/lib/Target/AllTargetsMCAs.stamp
+build llvm/lib/Target$:NativeTarget: phony obj/llvm/lib/Target/NativeTarget.stamp
+build llvm/lib/Target$:Target: phony ./lib/libLLVMTarget.a
+build llvm/lib/Target: phony ./lib/libLLVMTarget.a
+build llvm/lib/Target$:TargetsToBuild: phony obj/llvm/lib/Target/TargetsToBuild.stamp
+build llvm/lib/Target/AArch64$:AArch64: phony obj/llvm/lib/Target/AArch64/AArch64.stamp
+build llvm/lib/Target/AArch64: phony obj/llvm/lib/Target/AArch64/AArch64.stamp
+build llvm/lib/Target/AArch64$:AArch64GenCallingConv: phony obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp
+build llvm/lib/Target/AArch64$:AArch64GenDAGISel: phony obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp
+build llvm/lib/Target/AArch64$:AArch64GenFastISel: phony obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp
+build llvm/lib/Target/AArch64$:AArch64GenGlobalISel: phony obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp
+build llvm/lib/Target/AArch64$:AArch64GenMCPseudoLowering: phony obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp
+build llvm/lib/Target/AArch64$:AArch64GenO0PreLegalizeGICombiner: phony obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp
+build llvm/lib/Target/AArch64$:AArch64GenPostLegalizeGICombiner: phony obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp
+build llvm/lib/Target/AArch64$:AArch64GenPostLegalizeGILowering: phony obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp
+build llvm/lib/Target/AArch64$:AArch64GenPreLegalizeGICombiner: phony obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp
+build llvm/lib/Target/AArch64$:AArch64GenRegisterBank: phony obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp
+build llvm/lib/Target/AArch64$:LLVMAArch64CodeGen: phony ./lib/libLLVMAArch64CodeGen.a
+build llvm/lib/Target/AArch64/AsmParser$:AArch64GenAsmMatcher: phony obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp
+build llvm/lib/Target/AArch64/AsmParser$:AsmParser: phony ./lib/libLLVMAArch64AsmParser.a
+build llvm/lib/Target/AArch64/AsmParser: phony ./lib/libLLVMAArch64AsmParser.a
+build llvm/lib/Target/AArch64/Disassembler$:AArch64GenDisassemblerTables: phony obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp
+build llvm/lib/Target/AArch64/Disassembler$:Disassembler: phony ./lib/libLLVMAArch64Disassembler.a
+build llvm/lib/Target/AArch64/Disassembler: phony ./lib/libLLVMAArch64Disassembler.a
+build llvm/lib/Target/AArch64/MCTargetDesc$:AArch64GenAsmWriter: phony obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp
+build llvm/lib/Target/AArch64/MCTargetDesc$:AArch64GenAsmWriter1: phony obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp
+build llvm/lib/Target/AArch64/MCTargetDesc$:AArch64GenInstrInfo: phony obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp
+build llvm/lib/Target/AArch64/MCTargetDesc$:AArch64GenMCCodeEmitter: phony obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp
+build llvm/lib/Target/AArch64/MCTargetDesc$:AArch64GenRegisterInfo: phony obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp
+build llvm/lib/Target/AArch64/MCTargetDesc$:AArch64GenSubtargetInfo: phony obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp
+build llvm/lib/Target/AArch64/MCTargetDesc$:MCTargetDesc: phony ./lib/libLLVMAArch64Desc.a
+build llvm/lib/Target/AArch64/MCTargetDesc: phony ./lib/libLLVMAArch64Desc.a
+build llvm/lib/Target/AArch64/MCTargetDesc$:tablegen: phony obj/llvm/lib/Target/AArch64/MCTargetDesc/tablegen.stamp
+build llvm/lib/Target/AArch64/TargetInfo$:TargetInfo: phony ./lib/libLLVMAArch64Info.a
+build llvm/lib/Target/AArch64/TargetInfo: phony ./lib/libLLVMAArch64Info.a
+build llvm/lib/Target/AArch64/Utils$:AArch64GenSystemOperands: phony obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build llvm/lib/Target/AArch64/Utils$:Utils: phony ./lib/libLLVMAArch64Utils.a
+build llvm/lib/Target/AArch64/Utils: phony ./lib/libLLVMAArch64Utils.a
+build llvm/lib/Testing/Support$:Support: phony ./lib/libLLVMTestingSupport.a
+build llvm/lib/Testing/Support: phony ./lib/libLLVMTestingSupport.a
+build llvm/lib/TextAPI$:TextAPI: phony ./lib/libLLVMTextAPI.a
+build llvm/lib/TextAPI: phony ./lib/libLLVMTextAPI.a
+build llvm/lib/ToolDrivers/llvm-dlltool$:DlltoolDriver: phony ./lib/libLLVMDlltoolDriver.a
+build llvm/lib/ToolDrivers/llvm-dlltool$:Options: phony obj/llvm/lib/ToolDrivers/llvm-dlltool/Options.stamp
+build llvm/lib/ToolDrivers/llvm-lib$:LibDriver: phony ./lib/libLLVMLibDriver.a
+build llvm/lib/ToolDrivers/llvm-lib$:Options: phony obj/llvm/lib/ToolDrivers/llvm-lib/Options.stamp
+build llvm/lib/Transforms/AggressiveInstCombine$:AggressiveInstCombine: phony ./lib/libLLVMAggressiveInstCombine.a
+build llvm/lib/Transforms/AggressiveInstCombine: phony ./lib/libLLVMAggressiveInstCombine.a
+build llvm/lib/Transforms/CFGuard$:CFGuard: phony ./lib/libLLVMCFGuard.a
+build llvm/lib/Transforms/CFGuard: phony ./lib/libLLVMCFGuard.a
+build llvm/lib/Transforms/Coroutines$:Coroutines: phony ./lib/libLLVMCoroutines.a
+build llvm/lib/Transforms/Coroutines: phony ./lib/libLLVMCoroutines.a
+build llvm/lib/Transforms/Hello$:Hello: phony ./lib/LLVMHello.dylib
+build llvm/lib/Transforms/Hello: phony ./lib/LLVMHello.dylib
+build llvm/lib/Transforms/Hello$:exports: phony obj/llvm/lib/Transforms/Hello/exports.stamp
+build llvm/lib/Transforms/IPO$:IPO: phony ./lib/libLLVMipo.a
+build llvm/lib/Transforms/IPO: phony ./lib/libLLVMipo.a
+build llvm/lib/Transforms/InstCombine$:InstCombine: phony ./lib/libLLVMInstCombine.a
+build llvm/lib/Transforms/InstCombine: phony ./lib/libLLVMInstCombine.a
+build llvm/lib/Transforms/Instrumentation$:Instrumentation: phony ./lib/libLLVMInstrumentation.a
+build llvm/lib/Transforms/Instrumentation: phony ./lib/libLLVMInstrumentation.a
+build llvm/lib/Transforms/ObjCARC$:ObjCARC: phony ./lib/libLLVMObjCARCOpts.a
+build llvm/lib/Transforms/ObjCARC: phony ./lib/libLLVMObjCARCOpts.a
+build llvm/lib/Transforms/Scalar$:Scalar: phony ./lib/libLLVMScalarOpts.a
+build llvm/lib/Transforms/Scalar: phony ./lib/libLLVMScalarOpts.a
+build llvm/lib/Transforms/Utils$:Utils: phony ./lib/libLLVMTransformUtils.a
+build llvm/lib/Transforms/Utils: phony ./lib/libLLVMTransformUtils.a
+build llvm/lib/Transforms/Vectorize$:Vectorize: phony ./lib/libLLVMVectorize.a
+build llvm/lib/Transforms/Vectorize: phony ./lib/libLLVMVectorize.a
+build llvm/lib/WindowsDriver$:WindowsDriver: phony ./lib/libLLVMWindowsDriver.a
+build llvm/lib/WindowsDriver: phony ./lib/libLLVMWindowsDriver.a
+build llvm/lib/WindowsManifest$:WindowsManifest: phony ./lib/libLLVMWindowsManifest.a
+build llvm/lib/WindowsManifest: phony ./lib/libLLVMWindowsManifest.a
+build llvm/lib/XRay$:XRay: phony ./lib/libLLVMXRay.a
+build llvm/lib/XRay: phony ./lib/libLLVMXRay.a
+build llvm/test$:check-llvm: phony obj/llvm/test/check-llvm.stamp
+build llvm/test$:lit_site_cfg: phony obj/llvm/test/lit_site_cfg.stamp
+build llvm/test$:lit_unit_site_cfg: phony obj/llvm/test/lit_unit_site_cfg.stamp
+build llvm/test$:test: phony obj/llvm/test/test.stamp
+build llvm/test: phony obj/llvm/test/test.stamp
+build llvm/tools/bugpoint-passes$:bugpoint-passes: phony ./lib/BugpointPasses.dylib
+build llvm/tools/bugpoint-passes: phony ./lib/BugpointPasses.dylib
+build llvm/tools/bugpoint-passes$:exports: phony obj/llvm/tools/bugpoint-passes/exports.stamp
+build llvm/tools/bugpoint$:bugpoint: phony ./bin/bugpoint
+build llvm/tools/bugpoint: phony ./bin/bugpoint
+build llvm/tools/dsymutil$:Options: phony obj/llvm/tools/dsymutil/Options.stamp
+build llvm/tools/dsymutil$:dsymutil: phony ./bin/dsymutil
+build llvm/tools/dsymutil: phony ./bin/dsymutil
+build llvm/tools/dsymutil$:dsymutil-driver: phony obj/llvm/tools/dsymutil/dsymutil-driver.stamp
+build llvm/tools/llc$:llc: phony ./bin/llc
+build llvm/tools/llc: phony ./bin/llc
+build llvm/tools/lli$:lli: phony ./bin/lli
+build llvm/tools/lli: phony ./bin/lli
+build llvm/tools/lli/ChildTarget$:lli-child-target: phony ./bin/lli-child-target
+build llvm/tools/llvm-ar$:llvm-ar: phony ./bin/llvm-ar
+build llvm/tools/llvm-ar: phony ./bin/llvm-ar
+build llvm/tools/llvm-ar$:llvm-dlltool: phony obj/llvm/tools/llvm-ar/llvm-dlltool.stamp
+build llvm/tools/llvm-ar$:llvm-lib: phony obj/llvm/tools/llvm-ar/llvm-lib.stamp
+build llvm/tools/llvm-ar$:llvm-ranlib: phony obj/llvm/tools/llvm-ar/llvm-ranlib.stamp
+build llvm/tools/llvm-ar$:llvm_ar-driver: phony obj/llvm/tools/llvm-ar/llvm_ar-driver.stamp
+build llvm/tools/llvm-ar$:symlinks: phony obj/llvm/tools/llvm-ar/symlinks.stamp
+build llvm/tools/llvm-as$:llvm-as: phony ./bin/llvm-as
+build llvm/tools/llvm-as: phony ./bin/llvm-as
+build llvm/tools/llvm-bcanalyzer$:llvm-bcanalyzer: phony ./bin/llvm-bcanalyzer
+build llvm/tools/llvm-bcanalyzer: phony ./bin/llvm-bcanalyzer
+build llvm/tools/llvm-c-test$:llvm-c-test: phony ./bin/llvm-c-test
+build llvm/tools/llvm-c-test: phony ./bin/llvm-c-test
+build llvm/tools/llvm-cat$:llvm-cat: phony ./bin/llvm-cat
+build llvm/tools/llvm-cat: phony ./bin/llvm-cat
+build llvm/tools/llvm-cfi-verify$:llvm-cfi-verify: phony ./bin/llvm-cfi-verify
+build llvm/tools/llvm-cfi-verify: phony ./bin/llvm-cfi-verify
+build llvm/tools/llvm-cfi-verify/lib$:lib: phony ./lib/libLLVMCFIVerify.a
+build llvm/tools/llvm-cfi-verify/lib: phony ./lib/libLLVMCFIVerify.a
+build llvm/tools/llvm-config$:BuildVariables.inc: phony obj/llvm/tools/llvm-config/BuildVariables.inc.stamp
+build llvm/tools/llvm-config$:LibraryDependencies.inc: phony obj/llvm/tools/llvm-config/LibraryDependencies.inc.stamp
+build llvm/tools/llvm-config$:llvm-config: phony ./bin/llvm-config
+build llvm/tools/llvm-config: phony ./bin/llvm-config
+build llvm/tools/llvm-config$:write_extension_dependencies: phony obj/llvm/tools/llvm-config/write_extension_dependencies.stamp
+build llvm/tools/llvm-cov$:llvm-cov: phony ./bin/llvm-cov
+build llvm/tools/llvm-cov: phony ./bin/llvm-cov
+build llvm/tools/llvm-cvtres$:Opts: phony obj/llvm/tools/llvm-cvtres/Opts.stamp
+build llvm/tools/llvm-cvtres$:llvm-cvtres: phony ./bin/llvm-cvtres
+build llvm/tools/llvm-cvtres: phony ./bin/llvm-cvtres
+build llvm/tools/llvm-cxxdump$:llvm-cxxdump: phony ./bin/llvm-cxxdump
+build llvm/tools/llvm-cxxdump: phony ./bin/llvm-cxxdump
+build llvm/tools/llvm-cxxfilt$:Opts: phony obj/llvm/tools/llvm-cxxfilt/Opts.stamp
+build llvm/tools/llvm-cxxfilt$:llvm-cxxfilt: phony ./bin/llvm-cxxfilt
+build llvm/tools/llvm-cxxfilt: phony ./bin/llvm-cxxfilt
+build llvm/tools/llvm-cxxfilt$:llvm_cxxfilt-driver: phony obj/llvm/tools/llvm-cxxfilt/llvm_cxxfilt-driver.stamp
+build llvm/tools/llvm-cxxfilt$:symlinks: phony obj/llvm/tools/llvm-cxxfilt/symlinks.stamp
+build llvm/tools/llvm-cxxmap$:llvm-cxxmap: phony ./bin/llvm-cxxmap
+build llvm/tools/llvm-cxxmap: phony ./bin/llvm-cxxmap
+build llvm/tools/llvm-debuginfod-find$:llvm-debuginfod-find: phony ./bin/llvm-debuginfod-find
+build llvm/tools/llvm-debuginfod-find: phony ./bin/llvm-debuginfod-find
+build llvm/tools/llvm-debuginfod-find$:symlinks: phony obj/llvm/tools/llvm-debuginfod-find/symlinks.stamp
+build llvm/tools/llvm-debuginfod$:llvm-debuginfod: phony ./bin/llvm-debuginfod
+build llvm/tools/llvm-debuginfod: phony ./bin/llvm-debuginfod
+build llvm/tools/llvm-debuginfod$:symlinks: phony obj/llvm/tools/llvm-debuginfod/symlinks.stamp
+build llvm/tools/llvm-diff$:llvm-diff: phony ./bin/llvm-diff
+build llvm/tools/llvm-diff: phony ./bin/llvm-diff
+build llvm/tools/llvm-diff/lib$:lib: phony ./lib/libLLVMDiff.a
+build llvm/tools/llvm-diff/lib: phony ./lib/libLLVMDiff.a
+build llvm/tools/llvm-dis$:llvm-dis: phony ./bin/llvm-dis
+build llvm/tools/llvm-dis: phony ./bin/llvm-dis
+build llvm/tools/llvm-dwarfdump$:llvm-dwarfdump: phony ./bin/llvm-dwarfdump
+build llvm/tools/llvm-dwarfdump: phony ./bin/llvm-dwarfdump
+build llvm/tools/llvm-dwarfutil$:Options: phony obj/llvm/tools/llvm-dwarfutil/Options.stamp
+build llvm/tools/llvm-dwarfutil$:llvm-dwarfutil: phony ./bin/llvm-dwarfutil
+build llvm/tools/llvm-dwarfutil: phony ./bin/llvm-dwarfutil
+build llvm/tools/llvm-dwp$:llvm-dwp: phony ./bin/llvm-dwp
+build llvm/tools/llvm-dwp: phony ./bin/llvm-dwp
+build llvm/tools/llvm-dwp$:symlinks: phony obj/llvm/tools/llvm-dwp/symlinks.stamp
+build llvm/tools/llvm-exegesis$:llvm-exegesis: phony ./bin/llvm-exegesis
+build llvm/tools/llvm-exegesis: phony ./bin/llvm-exegesis
+build llvm/tools/llvm-exegesis/lib$:lib: phony ./lib/libLLVMExegesis.a
+build llvm/tools/llvm-exegesis/lib: phony ./lib/libLLVMExegesis.a
+build llvm/tools/llvm-exegesis/lib/AArch64$:AArch64: phony ./lib/libLLVMExegesisAArch64.a
+build llvm/tools/llvm-exegesis/lib/AArch64: phony ./lib/libLLVMExegesisAArch64.a
+build llvm/tools/llvm-exegesis/lib/AArch64$:AArch64GenExegesis: phony obj/llvm/tools/llvm-exegesis/lib/AArch64/AArch64GenExegesis.stamp
+build llvm/tools/llvm-extract$:llvm-extract: phony ./bin/llvm-extract
+build llvm/tools/llvm-extract: phony ./bin/llvm-extract
+build llvm/tools/llvm-gsymutil$:llvm-gsymutil: phony ./bin/llvm-gsymutil
+build llvm/tools/llvm-gsymutil: phony ./bin/llvm-gsymutil
+build llvm/tools/llvm-ifs$:Opts: phony obj/llvm/tools/llvm-ifs/Opts.stamp
+build llvm/tools/llvm-ifs$:llvm-ifs: phony ./bin/llvm-ifs
+build llvm/tools/llvm-ifs: phony ./bin/llvm-ifs
+build llvm/tools/llvm-ifs$:llvm_ifs-driver: phony obj/llvm/tools/llvm-ifs/llvm_ifs-driver.stamp
+build llvm/tools/llvm-isel-fuzzer$:llvm-isel-fuzzer: phony ./bin/llvm-isel-fuzzer
+build llvm/tools/llvm-isel-fuzzer: phony ./bin/llvm-isel-fuzzer
+build llvm/tools/llvm-jitlink$:llvm-jitlink: phony ./bin/llvm-jitlink
+build llvm/tools/llvm-jitlink: phony ./bin/llvm-jitlink
+build llvm/tools/llvm-jitlink/llvm-jitlink-executor$:llvm-jitlink-executor: phony ./bin/llvm-jitlink-executor
+build llvm/tools/llvm-jitlink/llvm-jitlink-executor: phony ./bin/llvm-jitlink-executor
+build llvm/tools/llvm-libtool-darwin$:llvm-libtool-darwin: phony ./bin/llvm-libtool-darwin
+build llvm/tools/llvm-libtool-darwin: phony ./bin/llvm-libtool-darwin
+build llvm/tools/llvm-libtool-darwin$:symlinks: phony obj/llvm/tools/llvm-libtool-darwin/symlinks.stamp
+build llvm/tools/llvm-link$:llvm-link: phony ./bin/llvm-link
+build llvm/tools/llvm-link: phony ./bin/llvm-link
+build llvm/tools/llvm-lipo$:LipoOpts: phony obj/llvm/tools/llvm-lipo/LipoOpts.stamp
+build llvm/tools/llvm-lipo$:llvm-lipo: phony ./bin/llvm-lipo
+build llvm/tools/llvm-lipo: phony ./bin/llvm-lipo
+build llvm/tools/llvm-lipo$:llvm_lipo-driver: phony obj/llvm/tools/llvm-lipo/llvm_lipo-driver.stamp
+build llvm/tools/llvm-lipo$:symlinks: phony obj/llvm/tools/llvm-lipo/symlinks.stamp
+build llvm/tools/llvm-lto$:llvm-lto: phony ./bin/llvm-lto
+build llvm/tools/llvm-lto: phony ./bin/llvm-lto
+build llvm/tools/llvm-lto2$:llvm-lto2: phony ./bin/llvm-lto2
+build llvm/tools/llvm-lto2: phony ./bin/llvm-lto2
+build llvm/tools/llvm-mc$:llvm-mc: phony ./bin/llvm-mc
+build llvm/tools/llvm-mc: phony ./bin/llvm-mc
+build llvm/tools/llvm-mca$:llvm-mca: phony ./bin/llvm-mca
+build llvm/tools/llvm-mca: phony ./bin/llvm-mca
+build llvm/tools/llvm-ml$:Opts: phony obj/llvm/tools/llvm-ml/Opts.stamp
+build llvm/tools/llvm-ml$:llvm-ml: phony ./bin/llvm-ml
+build llvm/tools/llvm-ml: phony ./bin/llvm-ml
+build llvm/tools/llvm-modextract$:llvm-modextract: phony ./bin/llvm-modextract
+build llvm/tools/llvm-modextract: phony ./bin/llvm-modextract
+build llvm/tools/llvm-mt$:Opts: phony obj/llvm/tools/llvm-mt/Opts.stamp
+build llvm/tools/llvm-mt$:llvm-mt: phony ./bin/llvm-mt
+build llvm/tools/llvm-mt: phony ./bin/llvm-mt
+build llvm/tools/llvm-mt$:llvm_mt-driver: phony obj/llvm/tools/llvm-mt/llvm_mt-driver.stamp
+build llvm/tools/llvm-nm$:Opts: phony obj/llvm/tools/llvm-nm/Opts.stamp
+build llvm/tools/llvm-nm$:llvm-nm: phony ./bin/llvm-nm
+build llvm/tools/llvm-nm: phony ./bin/llvm-nm
+build llvm/tools/llvm-nm$:llvm_nm-driver: phony obj/llvm/tools/llvm-nm/llvm_nm-driver.stamp
+build llvm/tools/llvm-nm$:symlinks: phony obj/llvm/tools/llvm-nm/symlinks.stamp
+build llvm/tools/llvm-objcopy$:BitcodeStripOpts: phony obj/llvm/tools/llvm-objcopy/BitcodeStripOpts.stamp
+build llvm/tools/llvm-objcopy$:InstallNameToolOpts: phony obj/llvm/tools/llvm-objcopy/InstallNameToolOpts.stamp
+build llvm/tools/llvm-objcopy$:ObjcopyOpts: phony obj/llvm/tools/llvm-objcopy/ObjcopyOpts.stamp
+build llvm/tools/llvm-objcopy$:StripOpts: phony obj/llvm/tools/llvm-objcopy/StripOpts.stamp
+build llvm/tools/llvm-objcopy$:llvm-bitcode-strip: phony obj/llvm/tools/llvm-objcopy/llvm-bitcode-strip.stamp
+build llvm/tools/llvm-objcopy$:llvm-install-name-tool: phony obj/llvm/tools/llvm-objcopy/llvm-install-name-tool.stamp
+build llvm/tools/llvm-objcopy$:llvm-objcopy: phony ./bin/llvm-objcopy
+build llvm/tools/llvm-objcopy: phony ./bin/llvm-objcopy
+build llvm/tools/llvm-objcopy$:llvm-strip: phony obj/llvm/tools/llvm-objcopy/llvm-strip.stamp
+build llvm/tools/llvm-objcopy$:llvm_objcopy-driver: phony obj/llvm/tools/llvm-objcopy/llvm_objcopy-driver.stamp
+build llvm/tools/llvm-objcopy$:symlinks: phony obj/llvm/tools/llvm-objcopy/symlinks.stamp
+build llvm/tools/llvm-objdump$:ObjdumpOpts: phony obj/llvm/tools/llvm-objdump/ObjdumpOpts.stamp
+build llvm/tools/llvm-objdump$:OtoolOpts: phony obj/llvm/tools/llvm-objdump/OtoolOpts.stamp
+build llvm/tools/llvm-objdump$:llvm-objdump: phony ./bin/llvm-objdump
+build llvm/tools/llvm-objdump: phony ./bin/llvm-objdump
+build llvm/tools/llvm-objdump$:llvm-otool: phony obj/llvm/tools/llvm-objdump/llvm-otool.stamp
+build llvm/tools/llvm-objdump$:symlinks: phony obj/llvm/tools/llvm-objdump/symlinks.stamp
+build llvm/tools/llvm-opt-fuzzer$:llvm-opt-fuzzer: phony ./bin/llvm-opt-fuzzer
+build llvm/tools/llvm-opt-fuzzer: phony ./bin/llvm-opt-fuzzer
+build llvm/tools/llvm-opt-report$:llvm-opt-report: phony ./bin/llvm-opt-report
+build llvm/tools/llvm-opt-report: phony ./bin/llvm-opt-report
+build llvm/tools/llvm-pdbutil$:llvm-pdbutil: phony ./bin/llvm-pdbutil
+build llvm/tools/llvm-pdbutil: phony ./bin/llvm-pdbutil
+build llvm/tools/llvm-profdata$:llvm-profdata: phony ./bin/llvm-profdata
+build llvm/tools/llvm-profdata: phony ./bin/llvm-profdata
+build llvm/tools/llvm-profdata$:llvm_profdata-driver: phony obj/llvm/tools/llvm-profdata/llvm_profdata-driver.stamp
+build llvm/tools/llvm-profgen$:llvm-profgen: phony ./bin/llvm-profgen
+build llvm/tools/llvm-profgen: phony ./bin/llvm-profgen
+build llvm/tools/llvm-rc$:Opts: phony obj/llvm/tools/llvm-rc/Opts.stamp
+build llvm/tools/llvm-rc$:WindresOpts: phony obj/llvm/tools/llvm-rc/WindresOpts.stamp
+build llvm/tools/llvm-rc$:llvm-rc: phony ./bin/llvm-rc
+build llvm/tools/llvm-rc: phony ./bin/llvm-rc
+build llvm/tools/llvm-rc$:llvm-windres: phony obj/llvm/tools/llvm-rc/llvm-windres.stamp
+build llvm/tools/llvm-rc$:llvm_rc-driver: phony obj/llvm/tools/llvm-rc/llvm_rc-driver.stamp
+build llvm/tools/llvm-rc$:symlinks: phony obj/llvm/tools/llvm-rc/symlinks.stamp
+build llvm/tools/llvm-readobj$:Opts: phony obj/llvm/tools/llvm-readobj/Opts.stamp
+build llvm/tools/llvm-readobj$:llvm-readelf: phony obj/llvm/tools/llvm-readobj/llvm-readelf.stamp
+build llvm/tools/llvm-readobj$:llvm-readobj: phony ./bin/llvm-readobj
+build llvm/tools/llvm-readobj: phony ./bin/llvm-readobj
+build llvm/tools/llvm-readobj$:llvm_readobj-driver: phony obj/llvm/tools/llvm-readobj/llvm_readobj-driver.stamp
+build llvm/tools/llvm-readobj$:symlinks: phony obj/llvm/tools/llvm-readobj/symlinks.stamp
+build llvm/tools/llvm-reduce$:llvm-reduce: phony ./bin/llvm-reduce
+build llvm/tools/llvm-reduce: phony ./bin/llvm-reduce
+build llvm/tools/llvm-remark-size-diff$:llvm-remark-size-diff: phony ./bin/llvm-remark-size-diff
+build llvm/tools/llvm-remark-size-diff: phony ./bin/llvm-remark-size-diff
+build llvm/tools/llvm-remarkutil$:llvm-remarkutil: phony ./bin/llvm-remarkutil
+build llvm/tools/llvm-remarkutil: phony ./bin/llvm-remarkutil
+build llvm/tools/llvm-rtdyld$:llvm-rtdyld: phony ./bin/llvm-rtdyld
+build llvm/tools/llvm-rtdyld: phony ./bin/llvm-rtdyld
+build llvm/tools/llvm-sim$:llvm-sim: phony ./bin/llvm-sim
+build llvm/tools/llvm-sim: phony ./bin/llvm-sim
+build llvm/tools/llvm-size$:Opts: phony obj/llvm/tools/llvm-size/Opts.stamp
+build llvm/tools/llvm-size$:llvm-size: phony ./bin/llvm-size
+build llvm/tools/llvm-size: phony ./bin/llvm-size
+build llvm/tools/llvm-size$:llvm_size-driver: phony obj/llvm/tools/llvm-size/llvm_size-driver.stamp
+build llvm/tools/llvm-size$:symlinks: phony obj/llvm/tools/llvm-size/symlinks.stamp
+build llvm/tools/llvm-split$:llvm-split: phony ./bin/llvm-split
+build llvm/tools/llvm-split: phony ./bin/llvm-split
+build llvm/tools/llvm-stress$:llvm-stress: phony ./bin/llvm-stress
+build llvm/tools/llvm-stress: phony ./bin/llvm-stress
+build llvm/tools/llvm-strings$:Opts: phony obj/llvm/tools/llvm-strings/Opts.stamp
+build llvm/tools/llvm-strings$:llvm-strings: phony ./bin/llvm-strings
+build llvm/tools/llvm-strings: phony ./bin/llvm-strings
+build llvm/tools/llvm-strings$:symlinks: phony obj/llvm/tools/llvm-strings/symlinks.stamp
+build llvm/tools/llvm-symbolizer$:Opts: phony obj/llvm/tools/llvm-symbolizer/Opts.stamp
+build llvm/tools/llvm-symbolizer$:llvm-addr2line: phony obj/llvm/tools/llvm-symbolizer/llvm-addr2line.stamp
+build llvm/tools/llvm-symbolizer$:llvm-symbolizer: phony ./bin/llvm-symbolizer
+build llvm/tools/llvm-symbolizer: phony ./bin/llvm-symbolizer
+build llvm/tools/llvm-symbolizer$:symlinks: phony obj/llvm/tools/llvm-symbolizer/symlinks.stamp
+build llvm/tools/llvm-tapi-diff$:llvm-tapi-diff: phony ./bin/llvm-tapi-diff
+build llvm/tools/llvm-tapi-diff: phony ./bin/llvm-tapi-diff
+build llvm/tools/llvm-tli-checker$:Opts: phony obj/llvm/tools/llvm-tli-checker/Opts.stamp
+build llvm/tools/llvm-tli-checker$:llvm-tli-checker: phony ./bin/llvm-tli-checker
+build llvm/tools/llvm-tli-checker: phony ./bin/llvm-tli-checker
+build llvm/tools/llvm-undname$:llvm-undname: phony ./bin/llvm-undname
+build llvm/tools/llvm-undname: phony ./bin/llvm-undname
+build llvm/tools/llvm-xray$:llvm-xray: phony ./bin/llvm-xray
+build llvm/tools/llvm-xray: phony ./bin/llvm-xray
+build llvm/tools/lto$:exports: phony obj/llvm/tools/lto/exports.stamp
+build llvm/tools/lto$:lto: phony ./lib/libLTO.dylib
+build llvm/tools/lto: phony ./lib/libLTO.dylib
+build llvm/tools/obj2yaml$:obj2yaml: phony ./bin/obj2yaml
+build llvm/tools/obj2yaml: phony ./bin/obj2yaml
+build llvm/tools/opt$:opt: phony ./bin/opt
+build llvm/tools/opt: phony ./bin/opt
+build llvm/tools/sancov$:sancov: phony ./bin/sancov
+build llvm/tools/sancov: phony ./bin/sancov
+build llvm/tools/sanstats$:sanstats: phony ./bin/sanstats
+build llvm/tools/sanstats: phony ./bin/sanstats
+build llvm/tools/verify-uselistorder$:verify-uselistorder: phony ./bin/verify-uselistorder
+build llvm/tools/verify-uselistorder: phony ./bin/verify-uselistorder
+build llvm/tools/yaml2obj$:yaml2obj: phony ./bin/yaml2obj
+build llvm/tools/yaml2obj: phony ./bin/yaml2obj
+build llvm/unittests$:unittests: phony obj/llvm/unittests/unittests.stamp
+build llvm/unittests: phony obj/llvm/unittests/unittests.stamp
+build llvm/unittests/ADT$:ADTTests: phony obj/llvm/unittests/ADT/ADTTests
+build llvm/unittests/Analysis$:AnalysisTests: phony obj/llvm/unittests/Analysis/AnalysisTests
+build llvm/unittests/AsmParser$:AsmParserTests: phony obj/llvm/unittests/AsmParser/AsmParserTests
+build llvm/unittests/BinaryFormat$:BinaryFormatTests: phony obj/llvm/unittests/BinaryFormat/BinaryFormatTests
+build llvm/unittests/Bitcode$:BitcodeTests: phony obj/llvm/unittests/Bitcode/BitcodeTests
+build llvm/unittests/Bitstream$:BitstreamTests: phony obj/llvm/unittests/Bitstream/BitstreamTests
+build llvm/unittests/CodeGen$:CodeGenTests: phony obj/llvm/unittests/CodeGen/CodeGenTests
+build llvm/unittests/CodeGen/GlobalISel$:GlobalISelTests: phony obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests
+build llvm/unittests/DebugInfo/CodeView$:DebugInfoCodeViewTests: phony obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests
+build llvm/unittests/DebugInfo/DWARF$:DebugInfoDWARFTests: phony obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests
+build llvm/unittests/DebugInfo/GSYM$:DebugInfoGSYMTests: phony obj/llvm/unittests/DebugInfo/GSYM/DebugInfoGSYMTests
+build llvm/unittests/DebugInfo/MSF$:DebugInfoMSFTests: phony obj/llvm/unittests/DebugInfo/MSF/DebugInfoMSFTests
+build llvm/unittests/DebugInfo/PDB$:DebugInfoPDBTests: phony obj/llvm/unittests/DebugInfo/PDB/DebugInfoPDBTests
+build llvm/unittests/DebugInfo/Symbolizer$:DebugInfoSymbolizerTests: phony obj/llvm/unittests/DebugInfo/Symbolizer/DebugInfoSymbolizerTests
+build llvm/unittests/Debuginfod$:DebuginfodTests: phony obj/llvm/unittests/Debuginfod/DebuginfodTests
+build llvm/unittests/Demangle$:DemangleTests: phony obj/llvm/unittests/Demangle/DemangleTests
+build llvm/unittests/ExecutionEngine$:ExecutionEngineTests: phony obj/llvm/unittests/ExecutionEngine/ExecutionEngineTests
+build llvm/unittests/ExecutionEngine/JITLink$:JITLinkTests: phony obj/llvm/unittests/ExecutionEngine/JITLink/JITLinkTests
+build llvm/unittests/ExecutionEngine/MCJIT$:MCJITTests: phony obj/llvm/unittests/ExecutionEngine/MCJIT/MCJITTests
+build llvm/unittests/ExecutionEngine/Orc$:OrcJITTests: phony obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests
+build llvm/unittests/FileCheck$:FileCheckTests: phony obj/llvm/unittests/FileCheck/FileCheckTests
+build llvm/unittests/Frontend$:LLVMFrontendTests: phony obj/llvm/unittests/Frontend/LLVMFrontendTests
+build llvm/unittests/FuzzMutate$:FuzzMutateTests: phony obj/llvm/unittests/FuzzMutate/FuzzMutateTests
+build llvm/unittests/IR$:IRTests: phony obj/llvm/unittests/IR/IRTests
+build llvm/unittests/InterfaceStub$:InterfaceStubTests: phony obj/llvm/unittests/InterfaceStub/InterfaceStubTests
+build llvm/unittests/LineEditor$:LineEditorTests: phony obj/llvm/unittests/LineEditor/LineEditorTests
+build llvm/unittests/Linker$:LinkerTests: phony obj/llvm/unittests/Linker/LinkerTests
+build llvm/unittests/MC$:MCTests: phony obj/llvm/unittests/MC/MCTests
+build llvm/unittests/MI$:MITests: phony obj/llvm/unittests/MI/MITests
+build llvm/unittests/MIR$:MIRTests: phony obj/llvm/unittests/MIR/MIRTests
+build llvm/unittests/ObjCopy$:ObjCopyTests: phony obj/llvm/unittests/ObjCopy/ObjCopyTests
+build llvm/unittests/Object$:ObjectTests: phony obj/llvm/unittests/Object/ObjectTests
+build llvm/unittests/ObjectYAML$:ObjectYAMLTests: phony obj/llvm/unittests/ObjectYAML/ObjectYAMLTests
+build llvm/unittests/Option$:OptionTests: phony obj/llvm/unittests/Option/OptionTests
+build llvm/unittests/Option$:Opts: phony obj/llvm/unittests/Option/Opts.stamp
+build llvm/unittests/Passes$:DoublerPlugin: phony obj/llvm/unittests/Passes/DoublerPlugin.dylib
+build llvm/unittests/Passes$:PassesBindingsTests: phony obj/llvm/unittests/Passes/PassesBindingsTests
+build llvm/unittests/Passes$:PluginsTests: phony obj/llvm/unittests/Passes/PluginsTests
+build llvm/unittests/Passes$:TestPlugin: phony obj/llvm/unittests/Passes/TestPlugin.dylib
+build llvm/unittests/ProfileData$:ProfileDataTests: phony obj/llvm/unittests/ProfileData/ProfileDataTests
+build llvm/unittests/Remarks$:RemarksTests: phony obj/llvm/unittests/Remarks/RemarksTests
+build llvm/unittests/Support$:SupportTests: phony obj/llvm/unittests/Support/SupportTests
+build llvm/unittests/Support/DynamicLibrary$:DynamicLibraryTests: phony obj/llvm/unittests/Support/DynamicLibrary/DynamicLibraryTests
+build llvm/unittests/Support/DynamicLibrary$:PipSqueak: phony obj/llvm/unittests/Support/DynamicLibrary/PipSqueak.dylib
+build llvm/unittests/Support/DynamicLibrary$:SecondLib: phony obj/llvm/unittests/Support/DynamicLibrary/SecondLib.dylib
+build llvm/unittests/TableGen$:AutomataAutomata: phony obj/llvm/unittests/TableGen/AutomataAutomata.stamp
+build llvm/unittests/TableGen$:AutomataTables: phony obj/llvm/unittests/TableGen/AutomataTables.stamp
+build llvm/unittests/TableGen$:TableGenTests: phony obj/llvm/unittests/TableGen/TableGenTests
+build llvm/unittests/Target/AArch64$:AArch64Tests: phony obj/llvm/unittests/Target/AArch64/AArch64Tests
+build llvm/unittests/Testing/ADT$:TestingADTTests: phony obj/llvm/unittests/Testing/ADT/TestingADTTests
+build llvm/unittests/Testing/Support$:TestingSupportTests: phony obj/llvm/unittests/Testing/Support/TestingSupportTests
+build llvm/unittests/TextAPI$:TextAPITests: phony obj/llvm/unittests/TextAPI/TextAPITests
+build llvm/unittests/Transforms/IPO$:IPOTests: phony obj/llvm/unittests/Transforms/IPO/IPOTests
+build llvm/unittests/Transforms/Scalar$:ScalarTests: phony obj/llvm/unittests/Transforms/Scalar/ScalarTests
+build llvm/unittests/Transforms/Utils$:UtilsTests: phony obj/llvm/unittests/Transforms/Utils/UtilsTests
+build llvm/unittests/Transforms/Vectorize$:VectorizeTests: phony obj/llvm/unittests/Transforms/Vectorize/VectorizeTests
+build llvm/unittests/XRay$:XRayTests: phony obj/llvm/unittests/XRay/XRayTests
+build llvm/unittests/tools/llvm-cfi-verify$:CFIVerifyTests: phony obj/llvm/unittests/tools/llvm-cfi-verify/CFIVerifyTests
+build llvm/unittests/tools/llvm-exegesis$:LLVMExegesisTests: phony obj/llvm/unittests/tools/llvm-exegesis/LLVMExegesisTests
+build llvm/unittests/tools/llvm-exegesis/AArch64$:LLVMExegesisAArch64Tests: phony obj/llvm/unittests/tools/llvm-exegesis/AArch64/LLVMExegesisAArch64Tests
+build llvm/unittests/tools/llvm-mca$:LLVMMCATests: phony obj/llvm/unittests/tools/llvm-mca/LLVMMCATests
+build llvm/unittests/tools/llvm-profgen$:LLVMProfgenTests: phony obj/llvm/unittests/tools/llvm-profgen/LLVMProfgenTests
+build llvm/utils/FileCheck$:FileCheck: phony ./bin/FileCheck
+build llvm/utils/FileCheck: phony ./bin/FileCheck
+build llvm/utils/TableGen$:llvm-tblgen: phony ./bin/llvm-tblgen
+build llvm/utils/TableGen/GlobalISel$:GlobalISel: phony ./lib/libGlobalISel.a
+build llvm/utils/TableGen/GlobalISel: phony ./lib/libGlobalISel.a
+build llvm/utils/count$:count: phony ./bin/count
+build llvm/utils/count: phony ./bin/count
+build llvm/utils/gn/build/libs/atomic$:atomic: phony obj/llvm/utils/gn/build/libs/atomic/atomic.stamp
+build llvm/utils/gn/build/libs/atomic: phony obj/llvm/utils/gn/build/libs/atomic/atomic.stamp
+build llvm/utils/gn/build/libs/curl$:curl: phony obj/llvm/utils/gn/build/libs/curl/curl.stamp
+build llvm/utils/gn/build/libs/curl: phony obj/llvm/utils/gn/build/libs/curl/curl.stamp
+build llvm/utils/gn/build/libs/edit$:edit: phony obj/llvm/utils/gn/build/libs/edit/edit.stamp
+build llvm/utils/gn/build/libs/edit: phony obj/llvm/utils/gn/build/libs/edit/edit.stamp
+build llvm/utils/gn/build/libs/pthread$:pthread: phony obj/llvm/utils/gn/build/libs/pthread/pthread.stamp
+build llvm/utils/gn/build/libs/pthread: phony obj/llvm/utils/gn/build/libs/pthread/pthread.stamp
+build llvm/utils/gn/build/libs/terminfo$:terminfo: phony obj/llvm/utils/gn/build/libs/terminfo/terminfo.stamp
+build llvm/utils/gn/build/libs/terminfo: phony obj/llvm/utils/gn/build/libs/terminfo/terminfo.stamp
+build llvm/utils/gn/build/libs/xar$:xar: phony obj/llvm/utils/gn/build/libs/xar/xar.stamp
+build llvm/utils/gn/build/libs/xar: phony obj/llvm/utils/gn/build/libs/xar/xar.stamp
+build llvm/utils/gn/build/libs/xml$:xml: phony obj/llvm/utils/gn/build/libs/xml/xml.stamp
+build llvm/utils/gn/build/libs/xml: phony obj/llvm/utils/gn/build/libs/xml/xml.stamp
+build llvm/utils/gn/build/libs/zlib$:zlib: phony obj/llvm/utils/gn/build/libs/zlib/zlib.stamp
+build llvm/utils/gn/build/libs/zlib: phony obj/llvm/utils/gn/build/libs/zlib/zlib.stamp
+build llvm/utils/llvm-lit$:llvm-lit: phony obj/llvm/utils/llvm-lit/llvm-lit.stamp
+build llvm/utils/llvm-lit: phony obj/llvm/utils/llvm-lit/llvm-lit.stamp
+build llvm/utils/llvm-locstats$:llvm-locstats: phony obj/llvm/utils/llvm-locstats/llvm-locstats.stamp
+build llvm/utils/llvm-locstats: phony obj/llvm/utils/llvm-locstats/llvm-locstats.stamp
+build llvm/utils/not$:not: phony ./bin/not
+build llvm/utils/not: phony ./bin/not
+build llvm/utils/split-file$:split-file: phony ./bin/split-file
+build llvm/utils/split-file: phony ./bin/split-file
+build llvm/utils/unittest$:gtest: phony ./lib/libgtest.a
+build llvm/utils/unittest/UnitTestMain$:UnitTestMain: phony obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+build llvm/utils/unittest/UnitTestMain: phony obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+build llvm/utils/unittest/UnitTestMain$:gtest_main: phony ./lib/libgtest_main.a
+build llvm/utils/yaml-bench$:yaml-bench: phony ./bin/yaml-bench
+build llvm/utils/yaml-bench: phony ./bin/yaml-bench
+
+build all: phony $
+    obj/clang.stamp $
+    obj/default.stamp $
+    obj/lld.stamp $
+    obj/llvm-ar.stamp $
+    obj/llvm-cxxfilt.stamp $
+    obj/llvm-debuginfod.stamp $
+    obj/llvm-debuginfod-find.stamp $
+    obj/llvm-dwp.stamp $
+    obj/llvm-libtool-darwin.stamp $
+    obj/llvm-lipo.stamp $
+    obj/llvm-nm.stamp $
+    obj/llvm-objcopy.stamp $
+    obj/llvm-objdump.stamp $
+    obj/llvm-rc.stamp $
+    obj/llvm-readobj.stamp $
+    obj/llvm-size.stamp $
+    obj/llvm-strings.stamp $
+    obj/llvm-symbolizer.stamp $
+    ./lib/libclangApplyReplacements.a $
+    ./bin/clang-apply-replacements $
+    ./lib/libclangChangeNamespace.a $
+    ./bin/clang-change-namespace $
+    ./lib/libclangDoc.a $
+    ./bin/clang-doc $
+    ./lib/libclangIncludeFixer.a $
+    ./lib/libfindAllSymbols.a $
+    ./bin/find-all-symbols $
+    ./bin/clang-include-fixer $
+    ./lib/libclangMove.a $
+    ./bin/clang-move $
+    ./lib/libclangQuery.a $
+    ./bin/clang-query $
+    ./lib/libclangReorderFields.a $
+    ./bin/clang-reorder-fields $
+    obj/clang-tools-extra/clang-tidy/all-checks.stamp $
+    ./lib/libclangTidy.a $
+    obj/clang-tools-extra/clang-tidy/clang-tidy-config.stamp $
+    ./lib/libclangTidyAbseilModule.a $
+    ./lib/libclangTidyAlteraModule.a $
+    ./lib/libclangTidyAndroidModule.a $
+    ./lib/libclangTidyBoostModule.a $
+    ./lib/libclangTidyBugproneModule.a $
+    ./lib/libclangTidyCERTModule.a $
+    ./lib/libclangTidyConcurrencyModule.a $
+    ./lib/libclangTidyCppCoreGuidelinesModule.a $
+    ./lib/libclangTidyDarwinModule.a $
+    ./lib/libclangTidyFuchsiaModule.a $
+    ./lib/libclangTidyGoogleModule.a $
+    ./lib/libclangTidyHICPPModule.a $
+    ./lib/libclangTidyLinuxKernelModule.a $
+    ./lib/libclangTidyLLVMModule.a $
+    ./lib/libclangTidyLLVMLibcModule.a $
+    obj/clang-tools-extra/clang-tidy/misc/Confusables.inc.stamp $
+    ./lib/libclangTidyMiscModule.a $
+    ./bin/clang-tidy-confusable-chars-gen $
+    ./lib/libclangTidyModernizeModule.a $
+    ./lib/libclangTidyMPIModule.a $
+    ./lib/libclangTidyObjCModule.a $
+    ./lib/libclangTidyOpenMPModule.a $
+    ./lib/libclangTidyPerformanceModule.a $
+    ./lib/libclangTidyPortabilityModule.a $
+    ./lib/libclangTidyReadabilityModule.a $
+    ./bin/clang-tidy $
+    ./lib/libclangTidyUtils.a $
+    ./lib/libclangTidyZirconModule.a $
+    obj/clang-tools-extra/clangd/CompletionModel.stamp $
+    obj/clang-tools-extra/clangd/CompletionModelCpp.stamp $
+    ./lib/libclangDaemon.a $
+    obj/clang-tools-extra/clangd/features.stamp $
+    ./bin/dexp $
+    obj/clang-tools-extra/clangd/index/remote/unimplemented/unimplemented.stamp $
+    ./bin/clangd-indexer $
+    obj/clang-tools-extra/clangd/refactor/tweaks/tweaks.stamp $
+    ./lib/libclangdSupport.a $
+    obj/clang-tools-extra/clangd/test/check-clangd.stamp $
+    obj/clang-tools-extra/clangd/test/lit_site_cfg.stamp $
+    obj/clang-tools-extra/clangd/test/lit_unit_site_cfg.stamp $
+    obj/clang-tools-extra/clangd/test/test.stamp $
+    ./bin/clangd $
+    obj/clang-tools-extra/clangd/unittests/ClangdTests $
+    obj/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTest.stamp $
+    obj/clang-tools-extra/clangd/unittests/DecisionForestRuntimeTestCpp.stamp $
+    obj/clang-tools-extra/clangd/unittests/xpc/ClangdXpcTests $
+    ./lib/libclangdXpcJsonConversions.a $
+    ./lib/libclangdXpcTransport.a $
+    obj/clang-tools-extra/clangd/xpc/framework/ClangdXPC.framework.stamp $
+    ./lib/libClangdXPCLib.dylib $
+    obj/clang-tools-extra/clangd/xpc/framework/Info.plist.stamp $
+    obj/clang-tools-extra/clangd/xpc/framework/XPCServiceInfo.plist.stamp $
+    obj/clang-tools-extra/clangd/xpc/framework/clangd.xpc.stamp $
+    obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_bundle_executable.stamp $
+    obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_bundle_info_plist.stamp $
+    obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_bundle_xpc.stamp $
+    obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_symlink_ClangdXPC.stamp $
+    obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_symlink_Resources.stamp $
+    obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_symlink_Versions_Current.stamp $
+    obj/clang-tools-extra/clangd/xpc/framework/clangdxpc_symlink_XPCServices.stamp $
+    obj/clang-tools-extra/clangd/xpc/framework/clangxpc_bundle_xpc_service_executable.stamp $
+    obj/clang-tools-extra/clangd/xpc/framework/clangxpc_bundle_xpc_service_info_plist.stamp $
+    ./bin/clangd-xpc-test-client $
+    ./bin/modularize $
+    ./bin/pp-trace $
+    ./bin/clang-pseudo-gen $
+    obj/clang-tools-extra/pseudo/include/CXXBNF.inc.stamp $
+    obj/clang-tools-extra/pseudo/include/CXXSymbols.inc.stamp $
+    obj/clang-tools-extra/pseudo/include/cxx_gen.stamp $
+    ./lib/libclangPseudo.a $
+    ./lib/libclangPseudoCLI.a $
+    ./lib/libclangPseudoCXX.a $
+    ./lib/libclangPseudoGrammar.a $
+    obj/clang-tools-extra/pseudo/test/check-clang-pseudo.stamp $
+    obj/clang-tools-extra/pseudo/test/lit_site_cfg.stamp $
+    obj/clang-tools-extra/pseudo/test/lit_unit_site_cfg.stamp $
+    obj/clang-tools-extra/pseudo/test/test.stamp $
+    obj/clang-tools-extra/pseudo/tool/HTMLForestResources.stamp $
+    ./bin/clang-pseudo $
+    obj/clang-tools-extra/pseudo/unittests/ClangPseudoTests $
+    obj/clang-tools-extra/test/check-clang-tools.stamp $
+    obj/clang-tools-extra/test/lit_site_cfg.stamp $
+    obj/clang-tools-extra/test/lit_unit_site_cfg.stamp $
+    obj/clang-tools-extra/test/test.stamp $
+    obj/clang-tools-extra/unittests/unittests.stamp $
+    obj/clang-tools-extra/unittests/clang-apply-replacements/ClangApplyReplacementsTests $
+    obj/clang-tools-extra/unittests/clang-change-namespace/ClangChangeNamespaceTests $
+    obj/clang-tools-extra/unittests/clang-doc/ClangDocTests $
+    obj/clang-tools-extra/unittests/clang-include-fixer/ClangIncludeFixerTests $
+    obj/clang-tools-extra/unittests/clang-include-fixer/find-all-symbols/FindAllSymbolsTests $
+    obj/clang-tools-extra/unittests/clang-move/ClangMoveTests $
+    obj/clang-tools-extra/unittests/clang-query/ClangQueryTests $
+    obj/clang-tools-extra/unittests/clang-tidy/ClangTidyTests $
+    obj/clang/include/clang/AST/AbstractBasicReader.stamp $
+    obj/clang/include/clang/AST/AbstractBasicWriter.stamp $
+    obj/clang/include/clang/AST/AbstractTypeReader.stamp $
+    obj/clang/include/clang/AST/AbstractTypeWriter.stamp $
+    obj/clang/include/clang/AST/AttrImpl.stamp $
+    obj/clang/include/clang/AST/AttrNodeTraverse.stamp $
+    obj/clang/include/clang/AST/AttrTextNodeDump.stamp $
+    obj/clang/include/clang/AST/AttrVisitor.stamp $
+    obj/clang/include/clang/AST/Attrs.stamp $
+    obj/clang/include/clang/AST/CommentCommandInfo.stamp $
+    obj/clang/include/clang/AST/CommentCommandList.stamp $
+    obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp $
+    obj/clang/include/clang/AST/CommentHTMLTags.stamp $
+    obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp $
+    obj/clang/include/clang/AST/CommentNodes.stamp $
+    obj/clang/include/clang/AST/DeclNodes.stamp $
+    obj/clang/include/clang/AST/StmtDataCollectors.stamp $
+    obj/clang/include/clang/AST/StmtNodes.stamp $
+    obj/clang/include/clang/AST/TypeNodes.stamp $
+    obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp $
+    obj/clang/include/clang/Basic/AttrList.stamp $
+    obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp $
+    obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp $
+    obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp $
+    obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp $
+    obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp $
+    obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp $
+    obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp $
+    obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp $
+    obj/clang/include/clang/Basic/DiagnosticGroups.stamp $
+    obj/clang/include/clang/Basic/DiagnosticIndexName.stamp $
+    obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp $
+    obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp $
+    obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp $
+    obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp $
+    obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp $
+    obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp $
+    obj/clang/include/clang/Basic/arm_cde_builtin_cg.stamp $
+    obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp $
+    obj/clang/include/clang/Basic/arm_cde_builtins.stamp $
+    obj/clang/include/clang/Basic/arm_fp16.stamp $
+    obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp $
+    obj/clang/include/clang/Basic/arm_mve_builtin_cg.stamp $
+    obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp $
+    obj/clang/include/clang/Basic/arm_mve_builtins.stamp $
+    obj/clang/include/clang/Basic/arm_neon.stamp $
+    obj/clang/include/clang/Basic/arm_sve_builtin_cg.stamp $
+    obj/clang/include/clang/Basic/arm_sve_builtins.stamp $
+    obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp $
+    obj/clang/include/clang/Basic/arm_sve_typeflags.stamp $
+    obj/clang/include/clang/Basic/diags_tablegen.stamp $
+    obj/clang/include/clang/Basic/riscv_vector_builtin_cg.stamp $
+    obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp $
+    obj/clang/include/clang/Basic/riscv_vector_builtins.stamp $
+    obj/clang/include/clang/Basic/version.stamp $
+    obj/clang/include/clang/Config/Config.stamp $
+    obj/clang/include/clang/Driver/Options.stamp $
+    obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp $
+    obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp $
+    obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp $
+    obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp $
+    obj/clang/include/clang/Sema/AttrParsedAttrList.stamp $
+    obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp $
+    obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp $
+    obj/clang/include/clang/Serialization/AttrPCHRead.stamp $
+    obj/clang/include/clang/Serialization/AttrPCHWrite.stamp $
+    obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp $
+    obj/clang/include/clang/Tooling/Syntax/NodeClasses.stamp $
+    obj/clang/include/clang/Tooling/Syntax/Nodes.stamp $
+    ./lib/libclangAPINotes.a $
+    ./lib/libclangARCMigrate.a $
+    ./lib/libclangAST.a $
+    obj/clang/lib/AST/AttrDocTable.stamp $
+    obj/clang/lib/AST/Opcodes.stamp $
+    ./lib/libclangASTMatchers.a $
+    ./lib/libclangDynamicASTMatchers.a $
+    ./lib/libclangAnalysis.a $
+    ./lib/libclangAnalysisFlowSensitive.a $
+    ./lib/libclangAnalysisFlowSensitiveModels.a $
+    ./lib/libclangBasic.a $
+    obj/clang/lib/Basic/write_vcsversion.stamp $
+    ./lib/libclangCodeGen.a $
+    ./lib/libclangCrossTU.a $
+    ./lib/libclangDriver.a $
+    ./lib/libclangEdit.a $
+    ./lib/libclangExtractAPI.a $
+    ./lib/libclangFormat.a $
+    ./lib/libclangFrontend.a $
+    ./lib/libclangRewriteFrontend.a $
+    ./lib/libclangFrontendTool.a $
+    obj/clang/lib/Headers/Headers.stamp $
+    obj/clang/lib/Headers/arm_bf16.stamp $
+    obj/clang/lib/Headers/arm_cde.stamp $
+    obj/clang/lib/Headers/arm_fp16.stamp $
+    obj/clang/lib/Headers/arm_mve.stamp $
+    obj/clang/lib/Headers/arm_neon.stamp $
+    obj/clang/lib/Headers/arm_sve.stamp $
+    obj/clang/lib/Headers/riscv_vector.stamp $
+    obj/clang/lib/Headers/tablegen_headers.stamp $
+    ./lib/libclangIndex.a $
+    ./lib/libclangInterpreter.a $
+    ./lib/libclangLex.a $
+    ./lib/libclangParse.a $
+    ./lib/libclangRewrite.a $
+    obj/clang/lib/Sema/OpenCLBuiltins.stamp $
+    ./lib/libclangSema.a $
+    ./lib/libclangSerialization.a $
+    ./lib/libclangStaticAnalyzerCheckers.a $
+    ./lib/libclangStaticAnalyzerCore.a $
+    ./lib/libclangStaticAnalyzerFrontend.a $
+    ./lib/libclangSupport.a $
+    ./lib/libclangTesting.a $
+    ./lib/libclangTooling.a $
+    obj/clang/lib/Tooling/node_introspection_inc.stamp $
+    ./lib/libclangToolingASTDiff.a $
+    ./lib/libclangToolingCore.a $
+    ./lib/libclangToolingDependencyScanning.a $
+    ./lib/libclangToolingInclusions.a $
+    ./lib/libclangToolingInclusionsStdlib.a $
+    ./lib/libclangToolingRefactoring.a $
+    ./lib/libclangToolingSyntax.a $
+    ./lib/libclangToolingTransformer.a $
+    obj/clang/test/check-clang.stamp $
+    obj/clang/test/lit_site_cfg.stamp $
+    obj/clang/test/lit_unit_site_cfg.stamp $
+    obj/clang/test/test.stamp $
+    ./bin/apinotes-test $
+    ./bin/arcmt-test $
+    ./bin/c-arcmt-test $
+    ./bin/c-index-test $
+    ./bin/clang-check $
+    ./bin/clang-diff $
+    ./bin/clang-extdef-mapping $
+    ./bin/clang-format $
+    ./bin/clang-fuzzer-dictionary $
+    ./bin/clang-import-test $
+    obj/clang/tools/clang-linker-wrapper/LinkerWrapperOpts.stamp $
+    ./bin/clang-linker-wrapper $
+    ./bin/clang-offload-bundler $
+    ./bin/clang-offload-packager $
+    ./bin/clang-refactor $
+    ./bin/clang-rename $
+    ./bin/clang-repl $
+    ./bin/clang-scan-deps $
+    ./bin/diagtool $
+    ./bin/clang $
+    obj/clang/tools/driver/clang-cl.stamp $
+    obj/clang/tools/driver/clang-cpp.stamp $
+    obj/clang/tools/driver/clang-driver.stamp $
+    obj/clang/tools/driver/clangxx.stamp $
+    obj/clang/tools/driver/symlinks.stamp $
+    obj/clang/tools/driver/write_info_plist.stamp $
+    obj/clang/tools/libclang/exports.stamp $
+    ./lib/libclang.dylib $
+    obj/clang/tools/libclang/linker_script_to_exports.stamp $
+    obj/clang/tools/scan-build/bin.stamp $
+    obj/clang/tools/scan-build/libexec.stamp $
+    obj/clang/tools/scan-build/man.stamp $
+    obj/clang/tools/scan-build/scan-build.stamp $
+    obj/clang/tools/scan-build/share.stamp $
+    obj/clang/unittests/unittests.stamp $
+    obj/clang/unittests/AST/ASTTests $
+    obj/clang/unittests/ASTMatchers/ASTMatchersTests $
+    obj/clang/unittests/ASTMatchers/Dynamic/DynamicASTMatchersTests $
+    obj/clang/unittests/Analysis/ClangAnalysisTests $
+    obj/clang/unittests/Analysis/FlowSensitive/ClangAnalysisFlowSensitiveTests $
+    obj/clang/unittests/Basic/BasicTests $
+    obj/clang/unittests/CodeGen/ClangCodeGenTests $
+    obj/clang/unittests/CrossTU/CrossTUTests $
+    obj/clang/unittests/Driver/ClangDriverTests $
+    obj/clang/unittests/Format/FormatTests $
+    obj/clang/unittests/Frontend/FrontendTests $
+    obj/clang/unittests/Index/IndexTests $
+    obj/clang/unittests/Interpreter/ClangReplInterpreterTests $
+    obj/clang/unittests/Interpreter/ExceptionTests/ClangReplInterpreterExceptionTests $
+    obj/clang/unittests/Introspection/IntrospectionTests $
+    obj/clang/unittests/Lex/LexTests $
+    obj/clang/unittests/Rename/ClangRenameTests $
+    obj/clang/unittests/Rewrite/RewriteTests $
+    obj/clang/unittests/Sema/SemaTests $
+    obj/clang/unittests/Serialization/SerializationTests $
+    obj/clang/unittests/StaticAnalyzer/StaticAnalysisTests $
+    obj/clang/unittests/Tooling/ToolingTests $
+    obj/clang/unittests/Tooling/Syntax/SyntaxTests $
+    obj/clang/unittests/libclang/libclangTests $
+    obj/clang/unittests/libclang/CrashTests/libclangCrashTests $
+    ./bin/clang-tblgen $
+    obj/clang/utils/hmaptool/hmaptool.stamp $
+    obj/compiler-rt/compiler-rt.stamp $
+    obj/compiler-rt/include/_unused.stamp $
+    obj/compiler-rt/include/include.stamp $
+    obj/compiler-rt/lib/asan/ignorelist.stamp $
+    obj/compiler-rt/lib/cfi/ignorelist.stamp $
+    obj/compiler-rt/lib/cfi/sources.stamp $
+    obj/compiler-rt/lib/scudo/scudo.stamp $
+    obj/compiler-rt/lib/scudo/sources.stamp $
+    obj/libcxx/include/copy_headers.stamp $
+    obj/libcxx/include/include.stamp $
+    obj/libcxx/include/write_config_site.stamp $
+    obj/libcxx/include/write_modulemap.stamp $
+    obj/libunwind/libunwind.stamp $
+    ./lib/liblldCOFF.a $
+    obj/lld/COFF/Options.stamp $
+    ./lib/liblldCommon.a $
+    obj/lld/Common/write_vcsversion.stamp $
+    ./lib/liblldELF.a $
+    obj/lld/ELF/Options.stamp $
+    ./lib/liblldMachO.a $
+    obj/lld/MachO/Options.stamp $
+    ./lib/liblldMinGW.a $
+    obj/lld/MinGW/Options.stamp $
+    obj/lld/include/lld/Common/version.stamp $
+    obj/lld/test/check-lld.stamp $
+    obj/lld/test/lit_site_cfg.stamp $
+    obj/lld/test/test.stamp $
+    obj/lld/tools/lld/ld.lld.stamp $
+    obj/lld/tools/lld/ld64.lld.stamp $
+    ./bin/lld $
+    obj/lld/tools/lld/lld-link.stamp $
+    obj/lld/tools/lld/symlinks.stamp $
+    obj/lld/tools/lld/wasm-ld.stamp $
+    obj/lld/wasm/Options.stamp $
+    ./lib/liblldWasm.a $
+    obj/lldb/include/lldb/Host/Config.stamp $
+    obj/lldb/include/lldb/Version/version.stamp $
+    ./lib/liblldb.a $
+    ./lib/liblldbBreakpoint.a $
+    obj/lldb/source/Commands/CommandOptions.stamp $
+    ./lib/liblldbCommands.a $
+    ./lib/liblldbCore.a $
+    obj/lldb/source/Core/CoreProperties.stamp $
+    obj/lldb/source/Core/CorePropertiesEnum.stamp $
+    ./lib/liblldbDataFormatters.a $
+    ./lib/liblldbExpression.a $
+    ./lib/liblldbHost.a $
+    ./lib/liblldbHostMacOSXObjCXX.a $
+    ./lib/liblldbInitialization.a $
+    ./lib/liblldbInterpreter.a $
+    obj/lldb/source/Interpreter/InterpreterProperties.stamp $
+    obj/lldb/source/Interpreter/InterpreterPropertiesEnum.stamp $
+    obj/lldb/source/Plugins/LldbAllPlugins.stamp $
+    obj/lldb/source/Plugins/Plugins.def.stamp $
+    ./lib/liblldbPluginArchitecturePPC64.a $
+    ./lib/liblldbPluginDisassemblerLLVMC.a $
+    ./lib/liblldbPluginDynamicLoaderDarwinKernel.a $
+    obj/lldb/source/Plugins/DynamicLoader/Darwin-Kernel/DynamicLoaderDarwinKernelProperties.stamp $
+    obj/lldb/source/Plugins/DynamicLoader/Darwin-Kernel/DynamicLoaderDarwinKernelPropertiesEnum.stamp $
+    ./lib/liblldbPluginDynamicLoaderMacOSXDYLD.a $
+    ./lib/liblldbPluginDynamicLoaderPosixDYLD.a $
+    ./lib/liblldbPluginDynamicLoaderStatic.a $
+    ./lib/liblldbPluginDynamicLoaderWindowsDYLD.a $
+    ./lib/liblldbPluginExpressionParserClang.a $
+    ./lib/liblldbPluginInstructionARM.a $
+    ./lib/liblldbPluginJITLoaderGDB.a $
+    obj/lldb/source/Plugins/JITLoader/GDB/JITLoaderGDBProperties.stamp $
+    obj/lldb/source/Plugins/JITLoader/GDB/JITLoaderGDBPropertiesEnum.stamp $
+    ./lib/liblldbPluginCPlusPlusLanguage.a $
+    ./lib/liblldbPluginClangCommon.a $
+    ./lib/liblldbPluginObjCLanguage.a $
+    ./lib/liblldbPluginObjCPlusPlusLanguage.a $
+    ./lib/liblldbPluginCPPRuntime.a $
+    ./lib/liblldbPluginCXXItaniumABI.a $
+    ./lib/liblldbPluginObjCRuntime.a $
+    ./lib/liblldbPluginAppleObjCRuntime.a $
+    ./lib/liblldbPluginRenderScriptRuntime.a $
+    ./lib/liblldbPluginObjectContainerBSDArchive.a $
+    ./lib/liblldbPluginObjectContainerMachOFileset.a $
+    ./lib/liblldbPluginObjectContainerMachOArchive.a $
+    ./lib/liblldbPluginObjectFileBreakpad.a $
+    ./lib/liblldbPluginObjectFileELF.a $
+    ./lib/liblldbPluginObjectFileJIT.a $
+    ./lib/liblldbPluginObjectFileMachO.a $
+    ./lib/liblldbPluginObjectFilePDB.a $
+    obj/lldb/source/Plugins/ObjectFile/PECOFF/ObjectFilePECOFFProperties.stamp $
+    obj/lldb/source/Plugins/ObjectFile/PECOFF/ObjectFilePECOFFPropertiesEnum.stamp $
+    ./lib/liblldbPluginObjectFilePECOFF.a $
+    ./lib/liblldbPluginObjectFileWasm.a $
+    ./lib/liblldbPluginPlatformLinux.a $
+    ./lib/liblldbPluginPlatformMacOSX.a $
+    obj/lldb/source/Plugins/Platform/MacOSX/PlatformMacOSXProperties.stamp $
+    obj/lldb/source/Plugins/Platform/MacOSX/PlatformMacOSXPropertiesEnum.stamp $
+    ./lib/liblldbPluginPlatformMacOSXObjCXX.a $
+    ./lib/liblldbPluginPlatformPOSIX.a $
+    ./lib/liblldbPluginPlatformWindows.a $
+    ./lib/liblldbPluginPlatformGDB.a $
+    ./lib/liblldbPluginProcessUtility.a $
+    ./lib/liblldbPluginProcessElfCore.a $
+    obj/lldb/source/Plugins/Process/gdb-remote/ProcessGDBRemoteProperties.stamp $
+    obj/lldb/source/Plugins/Process/gdb-remote/ProcessGDBRemotePropertiesEnum.stamp $
+    ./lib/liblldbPluginProcessGDBRemote.a $
+    ./lib/liblldbPluginProcessMachCore.a $
+    ./lib/liblldbPluginProcessMinidump.a $
+    ./lib/liblldbPluginClangREPL.a $
+    ./lib/liblldbPluginScriptInterpreterNone.a $
+    ./lib/liblldbPluginSymbolFileBreakpad.a $
+    ./lib/liblldbPluginSymbolFileDWARF.a $
+    obj/lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARFProperties.stamp $
+    obj/lldb/source/Plugins/SymbolFile/DWARF/SymbolFileDWARFPropertiesEnum.stamp $
+    ./lib/liblldbPluginSymbolFileNativePDB.a $
+    ./lib/liblldbPluginSymbolFilePDB.a $
+    ./lib/liblldbPluginSymbolFileSymtab.a $
+    ./lib/liblldbPluginSymbolVendorELF.a $
+    ./lib/liblldbPluginSymbolVendorMacOSX.a $
+    ./lib/liblldbPluginSymbolVendorPECOFF.a $
+    ./lib/liblldbPluginSymbolVendorWasm.a $
+    ./lib/liblldbPluginTypeSystemClang.a $
+    ./lib/liblldbPluginUnwindAssemblyInstEmulation.a $
+    ./lib/liblldbPluginUnwindAssemblyX86.a $
+    ./lib/liblldbSymbol.a $
+    ./lib/liblldbTarget.a $
+    obj/lldb/source/Target/TargetProperties.stamp $
+    obj/lldb/source/Target/TargetPropertiesEnum.stamp $
+    ./lib/liblldbUtility.a $
+    ./lib/liblldbVersion.a $
+    obj/lldb/source/Version/write_vcsversion.stamp $
+    obj/lldb/test/check-lldb.stamp $
+    obj/lldb/test/lit-lldb-init.stamp $
+    obj/lldb/test/lit-lldb-init-quiet.stamp $
+    obj/lldb/test/lit_api_site_cfg.stamp $
+    obj/lldb/test/lit_shell_site_cfg.stamp $
+    obj/lldb/test/lit_site_cfg.stamp $
+    obj/lldb/test/lit_unit_site_cfg.stamp $
+    obj/lldb/test/test.stamp $
+    ./bin/lldb-argdumper $
+    obj/lldb/tools/driver/Options.stamp $
+    ./bin/lldb $
+    obj/lldb/tools/driver/write_info_plist.stamp $
+    obj/lldb/tools/lldb-server/LLGSOptions.stamp $
+    ./bin/lldb-server $
+    ./bin/lldb-test $
+    obj/lldb/tools/lldb-vscode/Options.stamp $
+    ./bin/lldb-vscode $
+    obj/lldb/tools/lldb-vscode/write_info_plist.stamp $
+    ./bin/lldb-tblgen $
+    ./bin/lit-cpuid $
+    obj/llvm/include/llvm/Config/AsmParsers.def.stamp $
+    obj/llvm/include/llvm/Config/AsmPrinters.def.stamp $
+    obj/llvm/include/llvm/Config/Disassemblers.def.stamp $
+    obj/llvm/include/llvm/Config/TargetExegesis.def.stamp $
+    obj/llvm/include/llvm/Config/TargetMCAs.def.stamp $
+    obj/llvm/include/llvm/Config/Targets.def.stamp $
+    obj/llvm/include/llvm/Config/abi-breaking.stamp $
+    obj/llvm/include/llvm/Config/config.stamp $
+    obj/llvm/include/llvm/Config/llvm-config.stamp $
+    obj/llvm/include/llvm/Config/write_target_def_files.stamp $
+    obj/llvm/include/llvm/Frontend/OpenACC/ACC.stamp $
+    obj/llvm/include/llvm/Frontend/OpenACC/ACCcpp.stamp $
+    obj/llvm/include/llvm/Frontend/OpenACC/acc_gen.stamp $
+    obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp $
+    obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp $
+    obj/llvm/include/llvm/Frontend/OpenMP/public_tablegen.stamp $
+    obj/llvm/include/llvm/IR/Attributes.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicEnums.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicImpl.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsARM.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsMips.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsR600.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsS390.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsVE.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsX86.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp $
+    obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp $
+    obj/llvm/include/llvm/IR/public_tablegen.stamp $
+    obj/llvm/include/llvm/Support/write_extension_def.stamp $
+    obj/llvm/include/llvm/Support/write_vcsrevision.stamp $
+    ./lib/libLLVMAnalysis.a $
+    ./lib/libLLVMAsmParser.a $
+    ./lib/libLLVMBinaryFormat.a $
+    ./lib/libLLVMBitReader.a $
+    ./lib/libLLVMBitWriter.a $
+    ./lib/libLLVMBitstreamReader.a $
+    ./lib/libLLVMCodeGen.a $
+    ./lib/libLLVMAsmPrinter.a $
+    ./lib/libLLVMGlobalISel.a $
+    ./lib/libLLVMMIRParser.a $
+    ./lib/libLLVMSelectionDAG.a $
+    ./lib/libLLVMDWARFLinker.a $
+    ./lib/libLLVMDWP.a $
+    ./lib/libLLVMDebugInfoCodeView.a $
+    ./lib/libLLVMDebugInfoDWARF.a $
+    ./lib/libLLVMDebugInfoGSYM.a $
+    ./lib/libLLVMDebugInfoMSF.a $
+    ./lib/libLLVMDebugInfoPDB.a $
+    ./lib/libLLVMSymbolize.a $
+    ./lib/libLLVMDebuginfod.a $
+    ./lib/libLLVMDemangle.a $
+    ./lib/libLLVMExecutionEngine.a $
+    ./lib/libLLVMInterpreter.a $
+    obj/llvm/lib/ExecutionEngine/JITLink/COFFOptions.stamp $
+    ./lib/libLLVMJITLink.a $
+    ./lib/libLLVMMCJIT.a $
+    ./lib/libLLVMOrcJIT.a $
+    ./lib/libLLVMOrcShared.a $
+    ./lib/libLLVMOrcTargetProcess.a $
+    ./lib/libLLVMRuntimeDyld.a $
+    ./lib/libLLVMExtensions.a $
+    ./lib/libLLVMFileCheck.a $
+    ./lib/libLLVMFrontendOpenACC.a $
+    ./lib/libLLVMFrontendOpenMP.a $
+    ./lib/libLLVMFuzzMutate.a $
+    ./lib/libLLVMCore.a $
+    ./lib/libLLVMIRReader.a $
+    ./lib/libLLVMInterfaceStub.a $
+    ./lib/libLLVMLTO.a $
+    ./lib/libLLVMLineEditor.a $
+    ./lib/libLLVMLinker.a $
+    ./lib/libLLVMMC.a $
+    ./lib/libLLVMMCDisassembler.a $
+    ./lib/libLLVMMCParser.a $
+    ./lib/libLLVMMCA.a $
+    ./lib/libLLVMObjCopy.a $
+    ./lib/libLLVMObject.a $
+    ./lib/libLLVMObjectYAML.a $
+    ./lib/libLLVMOption.a $
+    ./lib/libLLVMPasses.a $
+    ./lib/libLLVMProfileData.a $
+    ./lib/libLLVMCoverage.a $
+    ./lib/libLLVMRemarks.a $
+    ./lib/libLLVMSupport.a $
+    ./lib/libLLVMSupportBlake3.a $
+    obj/llvm/lib/Support/BLAKE3/hack.stamp $
+    ./lib/libLLVMTableGen.a $
+    obj/llvm/lib/Target/AllTargetsAsmParsers.stamp $
+    obj/llvm/lib/Target/AllTargetsCodeGens.stamp $
+    obj/llvm/lib/Target/AllTargetsDescs.stamp $
+    obj/llvm/lib/Target/AllTargetsDisassemblers.stamp $
+    obj/llvm/lib/Target/AllTargetsInfos.stamp $
+    obj/llvm/lib/Target/AllTargetsMCAs.stamp $
+    obj/llvm/lib/Target/NativeTarget.stamp $
+    ./lib/libLLVMTarget.a $
+    obj/llvm/lib/Target/TargetsToBuild.stamp $
+    obj/llvm/lib/Target/AArch64/AArch64.stamp $
+    obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp $
+    obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp $
+    obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp $
+    obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp $
+    obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp $
+    obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp $
+    obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp $
+    obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp $
+    obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp $
+    obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp $
+    ./lib/libLLVMAArch64CodeGen.a $
+    obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp $
+    ./lib/libLLVMAArch64AsmParser.a $
+    obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp $
+    ./lib/libLLVMAArch64Disassembler.a $
+    obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp $
+    obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp $
+    obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp $
+    obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp $
+    obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp $
+    obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp $
+    ./lib/libLLVMAArch64Desc.a $
+    obj/llvm/lib/Target/AArch64/MCTargetDesc/tablegen.stamp $
+    ./lib/libLLVMAArch64Info.a $
+    obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp $
+    ./lib/libLLVMAArch64Utils.a $
+    ./lib/libLLVMTestingSupport.a $
+    ./lib/libLLVMTextAPI.a $
+    ./lib/libLLVMDlltoolDriver.a $
+    obj/llvm/lib/ToolDrivers/llvm-dlltool/Options.stamp $
+    ./lib/libLLVMLibDriver.a $
+    obj/llvm/lib/ToolDrivers/llvm-lib/Options.stamp $
+    ./lib/libLLVMAggressiveInstCombine.a $
+    ./lib/libLLVMCFGuard.a $
+    ./lib/libLLVMCoroutines.a $
+    ./lib/LLVMHello.dylib $
+    obj/llvm/lib/Transforms/Hello/exports.stamp $
+    ./lib/libLLVMipo.a $
+    ./lib/libLLVMInstCombine.a $
+    ./lib/libLLVMInstrumentation.a $
+    ./lib/libLLVMObjCARCOpts.a $
+    ./lib/libLLVMScalarOpts.a $
+    ./lib/libLLVMTransformUtils.a $
+    ./lib/libLLVMVectorize.a $
+    ./lib/libLLVMWindowsDriver.a $
+    ./lib/libLLVMWindowsManifest.a $
+    ./lib/libLLVMXRay.a $
+    obj/llvm/test/check-llvm.stamp $
+    obj/llvm/test/lit_site_cfg.stamp $
+    obj/llvm/test/lit_unit_site_cfg.stamp $
+    obj/llvm/test/test.stamp $
+    ./lib/BugpointPasses.dylib $
+    obj/llvm/tools/bugpoint-passes/exports.stamp $
+    ./bin/bugpoint $
+    obj/llvm/tools/dsymutil/Options.stamp $
+    ./bin/dsymutil $
+    obj/llvm/tools/dsymutil/dsymutil-driver.stamp $
+    ./bin/llc $
+    ./bin/lli $
+    ./bin/lli-child-target $
+    ./bin/llvm-ar $
+    obj/llvm/tools/llvm-ar/llvm-dlltool.stamp $
+    obj/llvm/tools/llvm-ar/llvm-lib.stamp $
+    obj/llvm/tools/llvm-ar/llvm-ranlib.stamp $
+    obj/llvm/tools/llvm-ar/llvm_ar-driver.stamp $
+    obj/llvm/tools/llvm-ar/symlinks.stamp $
+    ./bin/llvm-as $
+    ./bin/llvm-bcanalyzer $
+    ./bin/llvm-c-test $
+    ./bin/llvm-cat $
+    ./bin/llvm-cfi-verify $
+    ./lib/libLLVMCFIVerify.a $
+    obj/llvm/tools/llvm-config/BuildVariables.inc.stamp $
+    obj/llvm/tools/llvm-config/LibraryDependencies.inc.stamp $
+    ./bin/llvm-config $
+    obj/llvm/tools/llvm-config/write_extension_dependencies.stamp $
+    ./bin/llvm-cov $
+    obj/llvm/tools/llvm-cvtres/Opts.stamp $
+    ./bin/llvm-cvtres $
+    ./bin/llvm-cxxdump $
+    obj/llvm/tools/llvm-cxxfilt/Opts.stamp $
+    ./bin/llvm-cxxfilt $
+    obj/llvm/tools/llvm-cxxfilt/llvm_cxxfilt-driver.stamp $
+    obj/llvm/tools/llvm-cxxfilt/symlinks.stamp $
+    ./bin/llvm-cxxmap $
+    ./bin/llvm-debuginfod-find $
+    obj/llvm/tools/llvm-debuginfod-find/symlinks.stamp $
+    ./bin/llvm-debuginfod $
+    obj/llvm/tools/llvm-debuginfod/symlinks.stamp $
+    ./bin/llvm-diff $
+    ./lib/libLLVMDiff.a $
+    ./bin/llvm-dis $
+    ./bin/llvm-dwarfdump $
+    obj/llvm/tools/llvm-dwarfutil/Options.stamp $
+    ./bin/llvm-dwarfutil $
+    ./bin/llvm-dwp $
+    obj/llvm/tools/llvm-dwp/symlinks.stamp $
+    ./bin/llvm-exegesis $
+    ./lib/libLLVMExegesis.a $
+    ./lib/libLLVMExegesisAArch64.a $
+    obj/llvm/tools/llvm-exegesis/lib/AArch64/AArch64GenExegesis.stamp $
+    ./bin/llvm-extract $
+    ./bin/llvm-gsymutil $
+    obj/llvm/tools/llvm-ifs/Opts.stamp $
+    ./bin/llvm-ifs $
+    obj/llvm/tools/llvm-ifs/llvm_ifs-driver.stamp $
+    ./bin/llvm-isel-fuzzer $
+    ./bin/llvm-jitlink $
+    ./bin/llvm-jitlink-executor $
+    ./bin/llvm-libtool-darwin $
+    obj/llvm/tools/llvm-libtool-darwin/symlinks.stamp $
+    ./bin/llvm-link $
+    obj/llvm/tools/llvm-lipo/LipoOpts.stamp $
+    ./bin/llvm-lipo $
+    obj/llvm/tools/llvm-lipo/llvm_lipo-driver.stamp $
+    obj/llvm/tools/llvm-lipo/symlinks.stamp $
+    ./bin/llvm-lto $
+    ./bin/llvm-lto2 $
+    ./bin/llvm-mc $
+    ./bin/llvm-mca $
+    obj/llvm/tools/llvm-ml/Opts.stamp $
+    ./bin/llvm-ml $
+    ./bin/llvm-modextract $
+    obj/llvm/tools/llvm-mt/Opts.stamp $
+    ./bin/llvm-mt $
+    obj/llvm/tools/llvm-mt/llvm_mt-driver.stamp $
+    obj/llvm/tools/llvm-nm/Opts.stamp $
+    ./bin/llvm-nm $
+    obj/llvm/tools/llvm-nm/llvm_nm-driver.stamp $
+    obj/llvm/tools/llvm-nm/symlinks.stamp $
+    obj/llvm/tools/llvm-objcopy/BitcodeStripOpts.stamp $
+    obj/llvm/tools/llvm-objcopy/InstallNameToolOpts.stamp $
+    obj/llvm/tools/llvm-objcopy/ObjcopyOpts.stamp $
+    obj/llvm/tools/llvm-objcopy/StripOpts.stamp $
+    obj/llvm/tools/llvm-objcopy/llvm-bitcode-strip.stamp $
+    obj/llvm/tools/llvm-objcopy/llvm-install-name-tool.stamp $
+    ./bin/llvm-objcopy $
+    obj/llvm/tools/llvm-objcopy/llvm-strip.stamp $
+    obj/llvm/tools/llvm-objcopy/llvm_objcopy-driver.stamp $
+    obj/llvm/tools/llvm-objcopy/symlinks.stamp $
+    obj/llvm/tools/llvm-objdump/ObjdumpOpts.stamp $
+    obj/llvm/tools/llvm-objdump/OtoolOpts.stamp $
+    ./bin/llvm-objdump $
+    obj/llvm/tools/llvm-objdump/llvm-otool.stamp $
+    obj/llvm/tools/llvm-objdump/symlinks.stamp $
+    ./bin/llvm-opt-fuzzer $
+    ./bin/llvm-opt-report $
+    ./bin/llvm-pdbutil $
+    ./bin/llvm-profdata $
+    obj/llvm/tools/llvm-profdata/llvm_profdata-driver.stamp $
+    ./bin/llvm-profgen $
+    obj/llvm/tools/llvm-rc/Opts.stamp $
+    obj/llvm/tools/llvm-rc/WindresOpts.stamp $
+    ./bin/llvm-rc $
+    obj/llvm/tools/llvm-rc/llvm-windres.stamp $
+    obj/llvm/tools/llvm-rc/llvm_rc-driver.stamp $
+    obj/llvm/tools/llvm-rc/symlinks.stamp $
+    obj/llvm/tools/llvm-readobj/Opts.stamp $
+    obj/llvm/tools/llvm-readobj/llvm-readelf.stamp $
+    ./bin/llvm-readobj $
+    obj/llvm/tools/llvm-readobj/llvm_readobj-driver.stamp $
+    obj/llvm/tools/llvm-readobj/symlinks.stamp $
+    ./bin/llvm-reduce $
+    ./bin/llvm-remark-size-diff $
+    ./bin/llvm-remarkutil $
+    ./bin/llvm-rtdyld $
+    ./bin/llvm-sim $
+    obj/llvm/tools/llvm-size/Opts.stamp $
+    ./bin/llvm-size $
+    obj/llvm/tools/llvm-size/llvm_size-driver.stamp $
+    obj/llvm/tools/llvm-size/symlinks.stamp $
+    ./bin/llvm-split $
+    ./bin/llvm-stress $
+    obj/llvm/tools/llvm-strings/Opts.stamp $
+    ./bin/llvm-strings $
+    obj/llvm/tools/llvm-strings/symlinks.stamp $
+    obj/llvm/tools/llvm-symbolizer/Opts.stamp $
+    obj/llvm/tools/llvm-symbolizer/llvm-addr2line.stamp $
+    ./bin/llvm-symbolizer $
+    obj/llvm/tools/llvm-symbolizer/symlinks.stamp $
+    ./bin/llvm-tapi-diff $
+    obj/llvm/tools/llvm-tli-checker/Opts.stamp $
+    ./bin/llvm-tli-checker $
+    ./bin/llvm-undname $
+    ./bin/llvm-xray $
+    obj/llvm/tools/lto/exports.stamp $
+    ./lib/libLTO.dylib $
+    ./bin/obj2yaml $
+    ./bin/opt $
+    ./bin/sancov $
+    ./bin/sanstats $
+    ./bin/verify-uselistorder $
+    ./bin/yaml2obj $
+    obj/llvm/unittests/unittests.stamp $
+    obj/llvm/unittests/ADT/ADTTests $
+    obj/llvm/unittests/Analysis/AnalysisTests $
+    obj/llvm/unittests/AsmParser/AsmParserTests $
+    obj/llvm/unittests/BinaryFormat/BinaryFormatTests $
+    obj/llvm/unittests/Bitcode/BitcodeTests $
+    obj/llvm/unittests/Bitstream/BitstreamTests $
+    obj/llvm/unittests/CodeGen/CodeGenTests $
+    obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests $
+    obj/llvm/unittests/DebugInfo/CodeView/DebugInfoCodeViewTests $
+    obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests $
+    obj/llvm/unittests/DebugInfo/GSYM/DebugInfoGSYMTests $
+    obj/llvm/unittests/DebugInfo/MSF/DebugInfoMSFTests $
+    obj/llvm/unittests/DebugInfo/PDB/DebugInfoPDBTests $
+    obj/llvm/unittests/DebugInfo/Symbolizer/DebugInfoSymbolizerTests $
+    obj/llvm/unittests/Debuginfod/DebuginfodTests $
+    obj/llvm/unittests/Demangle/DemangleTests $
+    obj/llvm/unittests/ExecutionEngine/ExecutionEngineTests $
+    obj/llvm/unittests/ExecutionEngine/JITLink/JITLinkTests $
+    obj/llvm/unittests/ExecutionEngine/MCJIT/MCJITTests $
+    obj/llvm/unittests/ExecutionEngine/Orc/OrcJITTests $
+    obj/llvm/unittests/FileCheck/FileCheckTests $
+    obj/llvm/unittests/Frontend/LLVMFrontendTests $
+    obj/llvm/unittests/FuzzMutate/FuzzMutateTests $
+    obj/llvm/unittests/IR/IRTests $
+    obj/llvm/unittests/InterfaceStub/InterfaceStubTests $
+    obj/llvm/unittests/LineEditor/LineEditorTests $
+    obj/llvm/unittests/Linker/LinkerTests $
+    obj/llvm/unittests/MC/MCTests $
+    obj/llvm/unittests/MI/MITests $
+    obj/llvm/unittests/MIR/MIRTests $
+    obj/llvm/unittests/ObjCopy/ObjCopyTests $
+    obj/llvm/unittests/Object/ObjectTests $
+    obj/llvm/unittests/ObjectYAML/ObjectYAMLTests $
+    obj/llvm/unittests/Option/OptionTests $
+    obj/llvm/unittests/Option/Opts.stamp $
+    obj/llvm/unittests/Passes/DoublerPlugin.dylib $
+    obj/llvm/unittests/Passes/PassesBindingsTests $
+    obj/llvm/unittests/Passes/PluginsTests $
+    obj/llvm/unittests/Passes/TestPlugin.dylib $
+    obj/llvm/unittests/ProfileData/ProfileDataTests $
+    obj/llvm/unittests/Remarks/RemarksTests $
+    obj/llvm/unittests/Support/SupportTests $
+    obj/llvm/unittests/Support/DynamicLibrary/DynamicLibraryTests $
+    obj/llvm/unittests/Support/DynamicLibrary/PipSqueak.dylib $
+    obj/llvm/unittests/Support/DynamicLibrary/SecondLib.dylib $
+    obj/llvm/unittests/TableGen/AutomataAutomata.stamp $
+    obj/llvm/unittests/TableGen/AutomataTables.stamp $
+    obj/llvm/unittests/TableGen/TableGenTests $
+    obj/llvm/unittests/Target/AArch64/AArch64Tests $
+    obj/llvm/unittests/Testing/ADT/TestingADTTests $
+    obj/llvm/unittests/Testing/Support/TestingSupportTests $
+    obj/llvm/unittests/TextAPI/TextAPITests $
+    obj/llvm/unittests/Transforms/IPO/IPOTests $
+    obj/llvm/unittests/Transforms/Scalar/ScalarTests $
+    obj/llvm/unittests/Transforms/Utils/UtilsTests $
+    obj/llvm/unittests/Transforms/Vectorize/VectorizeTests $
+    obj/llvm/unittests/XRay/XRayTests $
+    obj/llvm/unittests/tools/llvm-cfi-verify/CFIVerifyTests $
+    obj/llvm/unittests/tools/llvm-exegesis/LLVMExegesisTests $
+    obj/llvm/unittests/tools/llvm-exegesis/AArch64/LLVMExegesisAArch64Tests $
+    obj/llvm/unittests/tools/llvm-mca/LLVMMCATests $
+    obj/llvm/unittests/tools/llvm-profgen/LLVMProfgenTests $
+    ./bin/FileCheck $
+    ./bin/llvm-tblgen $
+    ./lib/libGlobalISel.a $
+    ./bin/count $
+    obj/llvm/utils/gn/build/libs/atomic/atomic.stamp $
+    obj/llvm/utils/gn/build/libs/curl/curl.stamp $
+    obj/llvm/utils/gn/build/libs/edit/edit.stamp $
+    obj/llvm/utils/gn/build/libs/pthread/pthread.stamp $
+    obj/llvm/utils/gn/build/libs/terminfo/terminfo.stamp $
+    obj/llvm/utils/gn/build/libs/xar/xar.stamp $
+    obj/llvm/utils/gn/build/libs/xml/xml.stamp $
+    obj/llvm/utils/gn/build/libs/zlib/zlib.stamp $
+    obj/llvm/utils/llvm-lit/llvm-lit.stamp $
+    obj/llvm/utils/llvm-locstats/llvm-locstats.stamp $
+    ./bin/not $
+    ./bin/split-file $
+    ./lib/libgtest.a $
+    obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp $
+    ./lib/libgtest_main.a $
+    ./bin/yaml-bench
+
+default default

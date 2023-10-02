@@ -1,0 +1,11 @@
+defines = -DL_ldadd -DSIZE=4 -DMODEL=2
+include_dirs = -I../../compiler-rt/lib/builtins -I../../llvm/include -Istage2_baremetal_aarch64/gen/llvm/include
+asmflags = --target=aarch64-elf
+label_name = lse_ldadd_4_2
+target_output_name = lse_ldadd_4_2
+
+build stage2_baremetal_aarch64/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_4_2.lse.o: stage2_baremetal_aarch64_asm ../../compiler-rt/lib/builtins/aarch64/lse.S || obj/clang.stamp obj/lld.stamp obj/llvm-ar.stamp
+  source_file_part = lse.S
+  source_name_part = lse
+
+build stage2_baremetal_aarch64/obj/compiler-rt/lib/builtins/lse_ldadd_4_2.stamp: stage2_baremetal_aarch64_stamp stage2_baremetal_aarch64/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_4_2.lse.o

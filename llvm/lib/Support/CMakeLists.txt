@@ -252,6 +252,7 @@ add_llvm_component_library(LLVMSupport
   VirtualOutputFile.cpp
   WithColor.cpp
   X86TargetParser.cpp
+  XtensaTargetParser.cpp
   YAMLParser.cpp
   YAMLTraits.cpp
   raw_os_ostream.cpp

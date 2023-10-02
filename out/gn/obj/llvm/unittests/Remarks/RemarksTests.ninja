@@ -1,0 +1,40 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = RemarksTests
+target_output_name = RemarksTests
+
+build obj/llvm/unittests/Remarks/RemarksTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/unittests/Remarks/RemarksTests.BitstreamRemarksFormatTest.o: cxx ../../llvm/unittests/Remarks/BitstreamRemarksFormatTest.cpp || obj/llvm/unittests/Remarks/RemarksTests.inputdeps.stamp
+  source_file_part = BitstreamRemarksFormatTest.cpp
+  source_name_part = BitstreamRemarksFormatTest
+build obj/llvm/unittests/Remarks/RemarksTests.BitstreamRemarksParsingTest.o: cxx ../../llvm/unittests/Remarks/BitstreamRemarksParsingTest.cpp || obj/llvm/unittests/Remarks/RemarksTests.inputdeps.stamp
+  source_file_part = BitstreamRemarksParsingTest.cpp
+  source_name_part = BitstreamRemarksParsingTest
+build obj/llvm/unittests/Remarks/RemarksTests.BitstreamRemarksSerializerTest.o: cxx ../../llvm/unittests/Remarks/BitstreamRemarksSerializerTest.cpp || obj/llvm/unittests/Remarks/RemarksTests.inputdeps.stamp
+  source_file_part = BitstreamRemarksSerializerTest.cpp
+  source_name_part = BitstreamRemarksSerializerTest
+build obj/llvm/unittests/Remarks/RemarksTests.RemarksAPITest.o: cxx ../../llvm/unittests/Remarks/RemarksAPITest.cpp || obj/llvm/unittests/Remarks/RemarksTests.inputdeps.stamp
+  source_file_part = RemarksAPITest.cpp
+  source_name_part = RemarksAPITest
+build obj/llvm/unittests/Remarks/RemarksTests.RemarksLinkingTest.o: cxx ../../llvm/unittests/Remarks/RemarksLinkingTest.cpp || obj/llvm/unittests/Remarks/RemarksTests.inputdeps.stamp
+  source_file_part = RemarksLinkingTest.cpp
+  source_name_part = RemarksLinkingTest
+build obj/llvm/unittests/Remarks/RemarksTests.RemarksStrTabParsingTest.o: cxx ../../llvm/unittests/Remarks/RemarksStrTabParsingTest.cpp || obj/llvm/unittests/Remarks/RemarksTests.inputdeps.stamp
+  source_file_part = RemarksStrTabParsingTest.cpp
+  source_name_part = RemarksStrTabParsingTest
+build obj/llvm/unittests/Remarks/RemarksTests.YAMLRemarksParsingTest.o: cxx ../../llvm/unittests/Remarks/YAMLRemarksParsingTest.cpp || obj/llvm/unittests/Remarks/RemarksTests.inputdeps.stamp
+  source_file_part = YAMLRemarksParsingTest.cpp
+  source_name_part = YAMLRemarksParsingTest
+build obj/llvm/unittests/Remarks/RemarksTests.YAMLRemarksSerializerTest.o: cxx ../../llvm/unittests/Remarks/YAMLRemarksSerializerTest.cpp || obj/llvm/unittests/Remarks/RemarksTests.inputdeps.stamp
+  source_file_part = YAMLRemarksSerializerTest.cpp
+  source_name_part = YAMLRemarksSerializerTest
+
+build obj/llvm/unittests/Remarks/RemarksTests: link obj/llvm/unittests/Remarks/RemarksTests.BitstreamRemarksFormatTest.o obj/llvm/unittests/Remarks/RemarksTests.BitstreamRemarksParsingTest.o obj/llvm/unittests/Remarks/RemarksTests.BitstreamRemarksSerializerTest.o obj/llvm/unittests/Remarks/RemarksTests.RemarksAPITest.o obj/llvm/unittests/Remarks/RemarksTests.RemarksLinkingTest.o obj/llvm/unittests/Remarks/RemarksTests.RemarksStrTabParsingTest.o obj/llvm/unittests/Remarks/RemarksTests.YAMLRemarksParsingTest.o obj/llvm/unittests/Remarks/RemarksTests.YAMLRemarksSerializerTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMBitReader.a ./lib/libLLVMRemarks.a ./lib/libLLVMSupport.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMCore.a ./lib/libLLVMBinaryFormat.a ./lib/libgtest.a || obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/Remarks

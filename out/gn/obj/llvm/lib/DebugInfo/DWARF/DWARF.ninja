@@ -1,0 +1,100 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = DWARF
+target_output_name = libLLVMDebugInfoDWARF
+
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFAbbreviationDeclaration.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFAbbreviationDeclaration.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFAbbreviationDeclaration.cpp
+  source_name_part = DWARFAbbreviationDeclaration
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFAcceleratorTable.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFAcceleratorTable.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFAcceleratorTable.cpp
+  source_name_part = DWARFAcceleratorTable
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFAddressRange.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFAddressRange.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFAddressRange.cpp
+  source_name_part = DWARFAddressRange
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFCompileUnit.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFCompileUnit.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFCompileUnit.cpp
+  source_name_part = DWARFCompileUnit
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFContext.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFContext.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFContext.cpp
+  source_name_part = DWARFContext
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDataExtractor.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFDataExtractor.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDataExtractor.cpp
+  source_name_part = DWARFDataExtractor
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugAbbrev.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFDebugAbbrev.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugAbbrev.cpp
+  source_name_part = DWARFDebugAbbrev
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugAddr.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFDebugAddr.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugAddr.cpp
+  source_name_part = DWARFDebugAddr
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugArangeSet.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFDebugArangeSet.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugArangeSet.cpp
+  source_name_part = DWARFDebugArangeSet
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugAranges.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFDebugAranges.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugAranges.cpp
+  source_name_part = DWARFDebugAranges
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugFrame.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFDebugFrame.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugFrame.cpp
+  source_name_part = DWARFDebugFrame
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugInfoEntry.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFDebugInfoEntry.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugInfoEntry.cpp
+  source_name_part = DWARFDebugInfoEntry
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugLine.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFDebugLine.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugLine.cpp
+  source_name_part = DWARFDebugLine
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugLoc.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFDebugLoc.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugLoc.cpp
+  source_name_part = DWARFDebugLoc
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugMacro.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFDebugMacro.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugMacro.cpp
+  source_name_part = DWARFDebugMacro
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugPubTable.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFDebugPubTable.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugPubTable.cpp
+  source_name_part = DWARFDebugPubTable
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugRangeList.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFDebugRangeList.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugRangeList.cpp
+  source_name_part = DWARFDebugRangeList
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugRnglists.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFDebugRnglists.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDebugRnglists.cpp
+  source_name_part = DWARFDebugRnglists
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDie.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFDie.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFDie.cpp
+  source_name_part = DWARFDie
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFExpression.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFExpression.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFExpression.cpp
+  source_name_part = DWARFExpression
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFFormValue.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFFormValue.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFFormValue.cpp
+  source_name_part = DWARFFormValue
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFGdbIndex.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFGdbIndex.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFGdbIndex.cpp
+  source_name_part = DWARFGdbIndex
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFListTable.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFListTable.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFListTable.cpp
+  source_name_part = DWARFListTable
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFLocationExpression.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFLocationExpression.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFLocationExpression.cpp
+  source_name_part = DWARFLocationExpression
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFTypePrinter.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFTypePrinter.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFTypePrinter.cpp
+  source_name_part = DWARFTypePrinter
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFTypeUnit.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFTypeUnit.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFTypeUnit.cpp
+  source_name_part = DWARFTypeUnit
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFUnit.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFUnit.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFUnit.cpp
+  source_name_part = DWARFUnit
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFUnitIndex.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFUnitIndex.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFUnitIndex.cpp
+  source_name_part = DWARFUnitIndex
+build obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFVerifier.o: cxx ../../llvm/lib/DebugInfo/DWARF/DWARFVerifier.cpp || obj/llvm/lib/DebugInfo/DWARF/DWARF.inputdeps.stamp
+  source_file_part = DWARFVerifier.cpp
+  source_name_part = DWARFVerifier
+
+build ./lib/libLLVMDebugInfoDWARF.a: alink obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFAbbreviationDeclaration.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFAcceleratorTable.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFAddressRange.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFCompileUnit.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFContext.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDataExtractor.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugAbbrev.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugAddr.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugArangeSet.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugAranges.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugFrame.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugInfoEntry.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugLine.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugLoc.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugMacro.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugPubTable.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugRangeList.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDebugRnglists.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFDie.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFExpression.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFFormValue.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFGdbIndex.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFListTable.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFLocationExpression.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFTypePrinter.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFTypeUnit.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFUnit.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFUnitIndex.o obj/llvm/lib/DebugInfo/DWARF/DWARF.DWARFVerifier.o || ./lib/libLLVMBinaryFormat.a ./lib/libLLVMMC.a ./lib/libLLVMObject.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

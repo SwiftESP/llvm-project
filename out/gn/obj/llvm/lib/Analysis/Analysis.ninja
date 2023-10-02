@@ -1,0 +1,376 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Analysis
+target_output_name = libLLVMAnalysis
+
+build obj/llvm/lib/Analysis/Analysis.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/Analysis/Analysis.AliasAnalysis.o: cxx ../../llvm/lib/Analysis/AliasAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = AliasAnalysis.cpp
+  source_name_part = AliasAnalysis
+build obj/llvm/lib/Analysis/Analysis.AliasAnalysisEvaluator.o: cxx ../../llvm/lib/Analysis/AliasAnalysisEvaluator.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = AliasAnalysisEvaluator.cpp
+  source_name_part = AliasAnalysisEvaluator
+build obj/llvm/lib/Analysis/Analysis.AliasAnalysisSummary.o: cxx ../../llvm/lib/Analysis/AliasAnalysisSummary.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = AliasAnalysisSummary.cpp
+  source_name_part = AliasAnalysisSummary
+build obj/llvm/lib/Analysis/Analysis.AliasSetTracker.o: cxx ../../llvm/lib/Analysis/AliasSetTracker.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = AliasSetTracker.cpp
+  source_name_part = AliasSetTracker
+build obj/llvm/lib/Analysis/Analysis.Analysis.o: cxx ../../llvm/lib/Analysis/Analysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = Analysis.cpp
+  source_name_part = Analysis
+build obj/llvm/lib/Analysis/Analysis.AssumeBundleQueries.o: cxx ../../llvm/lib/Analysis/AssumeBundleQueries.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = AssumeBundleQueries.cpp
+  source_name_part = AssumeBundleQueries
+build obj/llvm/lib/Analysis/Analysis.AssumptionCache.o: cxx ../../llvm/lib/Analysis/AssumptionCache.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = AssumptionCache.cpp
+  source_name_part = AssumptionCache
+build obj/llvm/lib/Analysis/Analysis.BasicAliasAnalysis.o: cxx ../../llvm/lib/Analysis/BasicAliasAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = BasicAliasAnalysis.cpp
+  source_name_part = BasicAliasAnalysis
+build obj/llvm/lib/Analysis/Analysis.BlockFrequencyInfo.o: cxx ../../llvm/lib/Analysis/BlockFrequencyInfo.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = BlockFrequencyInfo.cpp
+  source_name_part = BlockFrequencyInfo
+build obj/llvm/lib/Analysis/Analysis.BlockFrequencyInfoImpl.o: cxx ../../llvm/lib/Analysis/BlockFrequencyInfoImpl.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = BlockFrequencyInfoImpl.cpp
+  source_name_part = BlockFrequencyInfoImpl
+build obj/llvm/lib/Analysis/Analysis.BranchProbabilityInfo.o: cxx ../../llvm/lib/Analysis/BranchProbabilityInfo.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = BranchProbabilityInfo.cpp
+  source_name_part = BranchProbabilityInfo
+build obj/llvm/lib/Analysis/Analysis.CFG.o: cxx ../../llvm/lib/Analysis/CFG.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CFG.cpp
+  source_name_part = CFG
+build obj/llvm/lib/Analysis/Analysis.CFGPrinter.o: cxx ../../llvm/lib/Analysis/CFGPrinter.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CFGPrinter.cpp
+  source_name_part = CFGPrinter
+build obj/llvm/lib/Analysis/Analysis.CFLAndersAliasAnalysis.o: cxx ../../llvm/lib/Analysis/CFLAndersAliasAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CFLAndersAliasAnalysis.cpp
+  source_name_part = CFLAndersAliasAnalysis
+build obj/llvm/lib/Analysis/Analysis.CFLSteensAliasAnalysis.o: cxx ../../llvm/lib/Analysis/CFLSteensAliasAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CFLSteensAliasAnalysis.cpp
+  source_name_part = CFLSteensAliasAnalysis
+build obj/llvm/lib/Analysis/Analysis.CGSCCPassManager.o: cxx ../../llvm/lib/Analysis/CGSCCPassManager.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CGSCCPassManager.cpp
+  source_name_part = CGSCCPassManager
+build obj/llvm/lib/Analysis/Analysis.CallGraph.o: cxx ../../llvm/lib/Analysis/CallGraph.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CallGraph.cpp
+  source_name_part = CallGraph
+build obj/llvm/lib/Analysis/Analysis.CallGraphSCCPass.o: cxx ../../llvm/lib/Analysis/CallGraphSCCPass.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CallGraphSCCPass.cpp
+  source_name_part = CallGraphSCCPass
+build obj/llvm/lib/Analysis/Analysis.CallPrinter.o: cxx ../../llvm/lib/Analysis/CallPrinter.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CallPrinter.cpp
+  source_name_part = CallPrinter
+build obj/llvm/lib/Analysis/Analysis.CaptureTracking.o: cxx ../../llvm/lib/Analysis/CaptureTracking.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CaptureTracking.cpp
+  source_name_part = CaptureTracking
+build obj/llvm/lib/Analysis/Analysis.CmpInstAnalysis.o: cxx ../../llvm/lib/Analysis/CmpInstAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CmpInstAnalysis.cpp
+  source_name_part = CmpInstAnalysis
+build obj/llvm/lib/Analysis/Analysis.CodeMetrics.o: cxx ../../llvm/lib/Analysis/CodeMetrics.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CodeMetrics.cpp
+  source_name_part = CodeMetrics
+build obj/llvm/lib/Analysis/Analysis.ConstantFolding.o: cxx ../../llvm/lib/Analysis/ConstantFolding.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ConstantFolding.cpp
+  source_name_part = ConstantFolding
+build obj/llvm/lib/Analysis/Analysis.ConstraintSystem.o: cxx ../../llvm/lib/Analysis/ConstraintSystem.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ConstraintSystem.cpp
+  source_name_part = ConstraintSystem
+build obj/llvm/lib/Analysis/Analysis.CostModel.o: cxx ../../llvm/lib/Analysis/CostModel.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CostModel.cpp
+  source_name_part = CostModel
+build obj/llvm/lib/Analysis/Analysis.CycleAnalysis.o: cxx ../../llvm/lib/Analysis/CycleAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = CycleAnalysis.cpp
+  source_name_part = CycleAnalysis
+build obj/llvm/lib/Analysis/Analysis.DDG.o: cxx ../../llvm/lib/Analysis/DDG.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = DDG.cpp
+  source_name_part = DDG
+build obj/llvm/lib/Analysis/Analysis.DDGPrinter.o: cxx ../../llvm/lib/Analysis/DDGPrinter.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = DDGPrinter.cpp
+  source_name_part = DDGPrinter
+build obj/llvm/lib/Analysis/Analysis.Delinearization.o: cxx ../../llvm/lib/Analysis/Delinearization.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = Delinearization.cpp
+  source_name_part = Delinearization
+build obj/llvm/lib/Analysis/Analysis.DemandedBits.o: cxx ../../llvm/lib/Analysis/DemandedBits.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = DemandedBits.cpp
+  source_name_part = DemandedBits
+build obj/llvm/lib/Analysis/Analysis.DependenceAnalysis.o: cxx ../../llvm/lib/Analysis/DependenceAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = DependenceAnalysis.cpp
+  source_name_part = DependenceAnalysis
+build obj/llvm/lib/Analysis/Analysis.DependenceGraphBuilder.o: cxx ../../llvm/lib/Analysis/DependenceGraphBuilder.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = DependenceGraphBuilder.cpp
+  source_name_part = DependenceGraphBuilder
+build obj/llvm/lib/Analysis/Analysis.DevelopmentModeInlineAdvisor.o: cxx ../../llvm/lib/Analysis/DevelopmentModeInlineAdvisor.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = DevelopmentModeInlineAdvisor.cpp
+  source_name_part = DevelopmentModeInlineAdvisor
+build obj/llvm/lib/Analysis/Analysis.DivergenceAnalysis.o: cxx ../../llvm/lib/Analysis/DivergenceAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = DivergenceAnalysis.cpp
+  source_name_part = DivergenceAnalysis
+build obj/llvm/lib/Analysis/Analysis.DomPrinter.o: cxx ../../llvm/lib/Analysis/DomPrinter.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = DomPrinter.cpp
+  source_name_part = DomPrinter
+build obj/llvm/lib/Analysis/Analysis.DomTreeUpdater.o: cxx ../../llvm/lib/Analysis/DomTreeUpdater.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = DomTreeUpdater.cpp
+  source_name_part = DomTreeUpdater
+build obj/llvm/lib/Analysis/Analysis.DominanceFrontier.o: cxx ../../llvm/lib/Analysis/DominanceFrontier.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = DominanceFrontier.cpp
+  source_name_part = DominanceFrontier
+build obj/llvm/lib/Analysis/Analysis.EHPersonalities.o: cxx ../../llvm/lib/Analysis/EHPersonalities.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = EHPersonalities.cpp
+  source_name_part = EHPersonalities
+build obj/llvm/lib/Analysis/Analysis.FunctionPropertiesAnalysis.o: cxx ../../llvm/lib/Analysis/FunctionPropertiesAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = FunctionPropertiesAnalysis.cpp
+  source_name_part = FunctionPropertiesAnalysis
+build obj/llvm/lib/Analysis/Analysis.GlobalsModRef.o: cxx ../../llvm/lib/Analysis/GlobalsModRef.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = GlobalsModRef.cpp
+  source_name_part = GlobalsModRef
+build obj/llvm/lib/Analysis/Analysis.GuardUtils.o: cxx ../../llvm/lib/Analysis/GuardUtils.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = GuardUtils.cpp
+  source_name_part = GuardUtils
+build obj/llvm/lib/Analysis/Analysis.HeatUtils.o: cxx ../../llvm/lib/Analysis/HeatUtils.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = HeatUtils.cpp
+  source_name_part = HeatUtils
+build obj/llvm/lib/Analysis/Analysis.IRSimilarityIdentifier.o: cxx ../../llvm/lib/Analysis/IRSimilarityIdentifier.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = IRSimilarityIdentifier.cpp
+  source_name_part = IRSimilarityIdentifier
+build obj/llvm/lib/Analysis/Analysis.IVDescriptors.o: cxx ../../llvm/lib/Analysis/IVDescriptors.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = IVDescriptors.cpp
+  source_name_part = IVDescriptors
+build obj/llvm/lib/Analysis/Analysis.IVUsers.o: cxx ../../llvm/lib/Analysis/IVUsers.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = IVUsers.cpp
+  source_name_part = IVUsers
+build obj/llvm/lib/Analysis/Analysis.ImportedFunctionsInliningStatistics.o: cxx ../../llvm/lib/Analysis/ImportedFunctionsInliningStatistics.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ImportedFunctionsInliningStatistics.cpp
+  source_name_part = ImportedFunctionsInliningStatistics
+build obj/llvm/lib/Analysis/Analysis.IndirectCallPromotionAnalysis.o: cxx ../../llvm/lib/Analysis/IndirectCallPromotionAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = IndirectCallPromotionAnalysis.cpp
+  source_name_part = IndirectCallPromotionAnalysis
+build obj/llvm/lib/Analysis/Analysis.InlineAdvisor.o: cxx ../../llvm/lib/Analysis/InlineAdvisor.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = InlineAdvisor.cpp
+  source_name_part = InlineAdvisor
+build obj/llvm/lib/Analysis/Analysis.InlineCost.o: cxx ../../llvm/lib/Analysis/InlineCost.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = InlineCost.cpp
+  source_name_part = InlineCost
+build obj/llvm/lib/Analysis/Analysis.InlineOrder.o: cxx ../../llvm/lib/Analysis/InlineOrder.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = InlineOrder.cpp
+  source_name_part = InlineOrder
+build obj/llvm/lib/Analysis/Analysis.InlineSizeEstimatorAnalysis.o: cxx ../../llvm/lib/Analysis/InlineSizeEstimatorAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = InlineSizeEstimatorAnalysis.cpp
+  source_name_part = InlineSizeEstimatorAnalysis
+build obj/llvm/lib/Analysis/Analysis.InstCount.o: cxx ../../llvm/lib/Analysis/InstCount.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = InstCount.cpp
+  source_name_part = InstCount
+build obj/llvm/lib/Analysis/Analysis.InstructionPrecedenceTracking.o: cxx ../../llvm/lib/Analysis/InstructionPrecedenceTracking.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = InstructionPrecedenceTracking.cpp
+  source_name_part = InstructionPrecedenceTracking
+build obj/llvm/lib/Analysis/Analysis.InstructionSimplify.o: cxx ../../llvm/lib/Analysis/InstructionSimplify.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = InstructionSimplify.cpp
+  source_name_part = InstructionSimplify
+build obj/llvm/lib/Analysis/Analysis.Interval.o: cxx ../../llvm/lib/Analysis/Interval.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = Interval.cpp
+  source_name_part = Interval
+build obj/llvm/lib/Analysis/Analysis.IntervalPartition.o: cxx ../../llvm/lib/Analysis/IntervalPartition.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = IntervalPartition.cpp
+  source_name_part = IntervalPartition
+build obj/llvm/lib/Analysis/Analysis.LazyBlockFrequencyInfo.o: cxx ../../llvm/lib/Analysis/LazyBlockFrequencyInfo.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = LazyBlockFrequencyInfo.cpp
+  source_name_part = LazyBlockFrequencyInfo
+build obj/llvm/lib/Analysis/Analysis.LazyBranchProbabilityInfo.o: cxx ../../llvm/lib/Analysis/LazyBranchProbabilityInfo.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = LazyBranchProbabilityInfo.cpp
+  source_name_part = LazyBranchProbabilityInfo
+build obj/llvm/lib/Analysis/Analysis.LazyCallGraph.o: cxx ../../llvm/lib/Analysis/LazyCallGraph.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = LazyCallGraph.cpp
+  source_name_part = LazyCallGraph
+build obj/llvm/lib/Analysis/Analysis.LazyValueInfo.o: cxx ../../llvm/lib/Analysis/LazyValueInfo.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = LazyValueInfo.cpp
+  source_name_part = LazyValueInfo
+build obj/llvm/lib/Analysis/Analysis.LegacyDivergenceAnalysis.o: cxx ../../llvm/lib/Analysis/LegacyDivergenceAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = LegacyDivergenceAnalysis.cpp
+  source_name_part = LegacyDivergenceAnalysis
+build obj/llvm/lib/Analysis/Analysis.Lint.o: cxx ../../llvm/lib/Analysis/Lint.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = Lint.cpp
+  source_name_part = Lint
+build obj/llvm/lib/Analysis/Analysis.Loads.o: cxx ../../llvm/lib/Analysis/Loads.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = Loads.cpp
+  source_name_part = Loads
+build obj/llvm/lib/Analysis/Analysis.LoopAccessAnalysis.o: cxx ../../llvm/lib/Analysis/LoopAccessAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = LoopAccessAnalysis.cpp
+  source_name_part = LoopAccessAnalysis
+build obj/llvm/lib/Analysis/Analysis.LoopAnalysisManager.o: cxx ../../llvm/lib/Analysis/LoopAnalysisManager.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = LoopAnalysisManager.cpp
+  source_name_part = LoopAnalysisManager
+build obj/llvm/lib/Analysis/Analysis.LoopCacheAnalysis.o: cxx ../../llvm/lib/Analysis/LoopCacheAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = LoopCacheAnalysis.cpp
+  source_name_part = LoopCacheAnalysis
+build obj/llvm/lib/Analysis/Analysis.LoopInfo.o: cxx ../../llvm/lib/Analysis/LoopInfo.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = LoopInfo.cpp
+  source_name_part = LoopInfo
+build obj/llvm/lib/Analysis/Analysis.LoopNestAnalysis.o: cxx ../../llvm/lib/Analysis/LoopNestAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = LoopNestAnalysis.cpp
+  source_name_part = LoopNestAnalysis
+build obj/llvm/lib/Analysis/Analysis.LoopPass.o: cxx ../../llvm/lib/Analysis/LoopPass.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = LoopPass.cpp
+  source_name_part = LoopPass
+build obj/llvm/lib/Analysis/Analysis.LoopUnrollAnalyzer.o: cxx ../../llvm/lib/Analysis/LoopUnrollAnalyzer.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = LoopUnrollAnalyzer.cpp
+  source_name_part = LoopUnrollAnalyzer
+build obj/llvm/lib/Analysis/Analysis.MLInlineAdvisor.o: cxx ../../llvm/lib/Analysis/MLInlineAdvisor.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = MLInlineAdvisor.cpp
+  source_name_part = MLInlineAdvisor
+build obj/llvm/lib/Analysis/Analysis.MemDepPrinter.o: cxx ../../llvm/lib/Analysis/MemDepPrinter.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = MemDepPrinter.cpp
+  source_name_part = MemDepPrinter
+build obj/llvm/lib/Analysis/Analysis.MemDerefPrinter.o: cxx ../../llvm/lib/Analysis/MemDerefPrinter.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = MemDerefPrinter.cpp
+  source_name_part = MemDerefPrinter
+build obj/llvm/lib/Analysis/Analysis.MemoryBuiltins.o: cxx ../../llvm/lib/Analysis/MemoryBuiltins.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = MemoryBuiltins.cpp
+  source_name_part = MemoryBuiltins
+build obj/llvm/lib/Analysis/Analysis.MemoryDependenceAnalysis.o: cxx ../../llvm/lib/Analysis/MemoryDependenceAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = MemoryDependenceAnalysis.cpp
+  source_name_part = MemoryDependenceAnalysis
+build obj/llvm/lib/Analysis/Analysis.MemoryLocation.o: cxx ../../llvm/lib/Analysis/MemoryLocation.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = MemoryLocation.cpp
+  source_name_part = MemoryLocation
+build obj/llvm/lib/Analysis/Analysis.MemoryProfileInfo.o: cxx ../../llvm/lib/Analysis/MemoryProfileInfo.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = MemoryProfileInfo.cpp
+  source_name_part = MemoryProfileInfo
+build obj/llvm/lib/Analysis/Analysis.MemorySSA.o: cxx ../../llvm/lib/Analysis/MemorySSA.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = MemorySSA.cpp
+  source_name_part = MemorySSA
+build obj/llvm/lib/Analysis/Analysis.MemorySSAUpdater.o: cxx ../../llvm/lib/Analysis/MemorySSAUpdater.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = MemorySSAUpdater.cpp
+  source_name_part = MemorySSAUpdater
+build obj/llvm/lib/Analysis/Analysis.ModelUnderTrainingRunner.o: cxx ../../llvm/lib/Analysis/ModelUnderTrainingRunner.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ModelUnderTrainingRunner.cpp
+  source_name_part = ModelUnderTrainingRunner
+build obj/llvm/lib/Analysis/Analysis.ModuleDebugInfoPrinter.o: cxx ../../llvm/lib/Analysis/ModuleDebugInfoPrinter.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ModuleDebugInfoPrinter.cpp
+  source_name_part = ModuleDebugInfoPrinter
+build obj/llvm/lib/Analysis/Analysis.ModuleSummaryAnalysis.o: cxx ../../llvm/lib/Analysis/ModuleSummaryAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ModuleSummaryAnalysis.cpp
+  source_name_part = ModuleSummaryAnalysis
+build obj/llvm/lib/Analysis/Analysis.MustExecute.o: cxx ../../llvm/lib/Analysis/MustExecute.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = MustExecute.cpp
+  source_name_part = MustExecute
+build obj/llvm/lib/Analysis/Analysis.NoInferenceModelRunner.o: cxx ../../llvm/lib/Analysis/NoInferenceModelRunner.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = NoInferenceModelRunner.cpp
+  source_name_part = NoInferenceModelRunner
+build obj/llvm/lib/Analysis/Analysis.ObjCARCAliasAnalysis.o: cxx ../../llvm/lib/Analysis/ObjCARCAliasAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ObjCARCAliasAnalysis.cpp
+  source_name_part = ObjCARCAliasAnalysis
+build obj/llvm/lib/Analysis/Analysis.ObjCARCAnalysisUtils.o: cxx ../../llvm/lib/Analysis/ObjCARCAnalysisUtils.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ObjCARCAnalysisUtils.cpp
+  source_name_part = ObjCARCAnalysisUtils
+build obj/llvm/lib/Analysis/Analysis.ObjCARCInstKind.o: cxx ../../llvm/lib/Analysis/ObjCARCInstKind.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ObjCARCInstKind.cpp
+  source_name_part = ObjCARCInstKind
+build obj/llvm/lib/Analysis/Analysis.OptimizationRemarkEmitter.o: cxx ../../llvm/lib/Analysis/OptimizationRemarkEmitter.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = OptimizationRemarkEmitter.cpp
+  source_name_part = OptimizationRemarkEmitter
+build obj/llvm/lib/Analysis/Analysis.OverflowInstAnalysis.o: cxx ../../llvm/lib/Analysis/OverflowInstAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = OverflowInstAnalysis.cpp
+  source_name_part = OverflowInstAnalysis
+build obj/llvm/lib/Analysis/Analysis.PHITransAddr.o: cxx ../../llvm/lib/Analysis/PHITransAddr.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = PHITransAddr.cpp
+  source_name_part = PHITransAddr
+build obj/llvm/lib/Analysis/Analysis.PhiValues.o: cxx ../../llvm/lib/Analysis/PhiValues.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = PhiValues.cpp
+  source_name_part = PhiValues
+build obj/llvm/lib/Analysis/Analysis.PostDominators.o: cxx ../../llvm/lib/Analysis/PostDominators.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = PostDominators.cpp
+  source_name_part = PostDominators
+build obj/llvm/lib/Analysis/Analysis.ProfileSummaryInfo.o: cxx ../../llvm/lib/Analysis/ProfileSummaryInfo.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ProfileSummaryInfo.cpp
+  source_name_part = ProfileSummaryInfo
+build obj/llvm/lib/Analysis/Analysis.PtrUseVisitor.o: cxx ../../llvm/lib/Analysis/PtrUseVisitor.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = PtrUseVisitor.cpp
+  source_name_part = PtrUseVisitor
+build obj/llvm/lib/Analysis/Analysis.RegionInfo.o: cxx ../../llvm/lib/Analysis/RegionInfo.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = RegionInfo.cpp
+  source_name_part = RegionInfo
+build obj/llvm/lib/Analysis/Analysis.RegionPass.o: cxx ../../llvm/lib/Analysis/RegionPass.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = RegionPass.cpp
+  source_name_part = RegionPass
+build obj/llvm/lib/Analysis/Analysis.RegionPrinter.o: cxx ../../llvm/lib/Analysis/RegionPrinter.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = RegionPrinter.cpp
+  source_name_part = RegionPrinter
+build obj/llvm/lib/Analysis/Analysis.ReplayInlineAdvisor.o: cxx ../../llvm/lib/Analysis/ReplayInlineAdvisor.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ReplayInlineAdvisor.cpp
+  source_name_part = ReplayInlineAdvisor
+build obj/llvm/lib/Analysis/Analysis.ScalarEvolution.o: cxx ../../llvm/lib/Analysis/ScalarEvolution.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ScalarEvolution.cpp
+  source_name_part = ScalarEvolution
+build obj/llvm/lib/Analysis/Analysis.ScalarEvolutionAliasAnalysis.o: cxx ../../llvm/lib/Analysis/ScalarEvolutionAliasAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ScalarEvolutionAliasAnalysis.cpp
+  source_name_part = ScalarEvolutionAliasAnalysis
+build obj/llvm/lib/Analysis/Analysis.ScalarEvolutionDivision.o: cxx ../../llvm/lib/Analysis/ScalarEvolutionDivision.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ScalarEvolutionDivision.cpp
+  source_name_part = ScalarEvolutionDivision
+build obj/llvm/lib/Analysis/Analysis.ScalarEvolutionNormalization.o: cxx ../../llvm/lib/Analysis/ScalarEvolutionNormalization.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ScalarEvolutionNormalization.cpp
+  source_name_part = ScalarEvolutionNormalization
+build obj/llvm/lib/Analysis/Analysis.ScopedNoAliasAA.o: cxx ../../llvm/lib/Analysis/ScopedNoAliasAA.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ScopedNoAliasAA.cpp
+  source_name_part = ScopedNoAliasAA
+build obj/llvm/lib/Analysis/Analysis.StackLifetime.o: cxx ../../llvm/lib/Analysis/StackLifetime.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = StackLifetime.cpp
+  source_name_part = StackLifetime
+build obj/llvm/lib/Analysis/Analysis.StackSafetyAnalysis.o: cxx ../../llvm/lib/Analysis/StackSafetyAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = StackSafetyAnalysis.cpp
+  source_name_part = StackSafetyAnalysis
+build obj/llvm/lib/Analysis/Analysis.SyncDependenceAnalysis.o: cxx ../../llvm/lib/Analysis/SyncDependenceAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = SyncDependenceAnalysis.cpp
+  source_name_part = SyncDependenceAnalysis
+build obj/llvm/lib/Analysis/Analysis.SyntheticCountsUtils.o: cxx ../../llvm/lib/Analysis/SyntheticCountsUtils.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = SyntheticCountsUtils.cpp
+  source_name_part = SyntheticCountsUtils
+build obj/llvm/lib/Analysis/Analysis.TFLiteUtils.o: cxx ../../llvm/lib/Analysis/TFLiteUtils.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = TFLiteUtils.cpp
+  source_name_part = TFLiteUtils
+build obj/llvm/lib/Analysis/Analysis.TFUtils.o: cxx ../../llvm/lib/Analysis/TFUtils.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = TFUtils.cpp
+  source_name_part = TFUtils
+build obj/llvm/lib/Analysis/Analysis.TargetLibraryInfo.o: cxx ../../llvm/lib/Analysis/TargetLibraryInfo.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = TargetLibraryInfo.cpp
+  source_name_part = TargetLibraryInfo
+build obj/llvm/lib/Analysis/Analysis.TargetTransformInfo.o: cxx ../../llvm/lib/Analysis/TargetTransformInfo.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = TargetTransformInfo.cpp
+  source_name_part = TargetTransformInfo
+build obj/llvm/lib/Analysis/Analysis.TensorSpec.o: cxx ../../llvm/lib/Analysis/TensorSpec.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = TensorSpec.cpp
+  source_name_part = TensorSpec
+build obj/llvm/lib/Analysis/Analysis.Trace.o: cxx ../../llvm/lib/Analysis/Trace.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = Trace.cpp
+  source_name_part = Trace
+build obj/llvm/lib/Analysis/Analysis.TrainingLogger.o: cxx ../../llvm/lib/Analysis/TrainingLogger.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = TrainingLogger.cpp
+  source_name_part = TrainingLogger
+build obj/llvm/lib/Analysis/Analysis.TypeBasedAliasAnalysis.o: cxx ../../llvm/lib/Analysis/TypeBasedAliasAnalysis.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = TypeBasedAliasAnalysis.cpp
+  source_name_part = TypeBasedAliasAnalysis
+build obj/llvm/lib/Analysis/Analysis.TypeMetadataUtils.o: cxx ../../llvm/lib/Analysis/TypeMetadataUtils.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = TypeMetadataUtils.cpp
+  source_name_part = TypeMetadataUtils
+build obj/llvm/lib/Analysis/Analysis.VFABIDemangling.o: cxx ../../llvm/lib/Analysis/VFABIDemangling.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = VFABIDemangling.cpp
+  source_name_part = VFABIDemangling
+build obj/llvm/lib/Analysis/Analysis.ValueLattice.o: cxx ../../llvm/lib/Analysis/ValueLattice.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ValueLattice.cpp
+  source_name_part = ValueLattice
+build obj/llvm/lib/Analysis/Analysis.ValueLatticeUtils.o: cxx ../../llvm/lib/Analysis/ValueLatticeUtils.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ValueLatticeUtils.cpp
+  source_name_part = ValueLatticeUtils
+build obj/llvm/lib/Analysis/Analysis.ValueTracking.o: cxx ../../llvm/lib/Analysis/ValueTracking.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = ValueTracking.cpp
+  source_name_part = ValueTracking
+build obj/llvm/lib/Analysis/Analysis.VectorUtils.o: cxx ../../llvm/lib/Analysis/VectorUtils.cpp || obj/llvm/lib/Analysis/Analysis.inputdeps.stamp
+  source_file_part = VectorUtils.cpp
+  source_name_part = VectorUtils
+
+build ./lib/libLLVMAnalysis.a: alink obj/llvm/lib/Analysis/Analysis.AliasAnalysis.o obj/llvm/lib/Analysis/Analysis.AliasAnalysisEvaluator.o obj/llvm/lib/Analysis/Analysis.AliasAnalysisSummary.o obj/llvm/lib/Analysis/Analysis.AliasSetTracker.o obj/llvm/lib/Analysis/Analysis.Analysis.o obj/llvm/lib/Analysis/Analysis.AssumeBundleQueries.o obj/llvm/lib/Analysis/Analysis.AssumptionCache.o obj/llvm/lib/Analysis/Analysis.BasicAliasAnalysis.o obj/llvm/lib/Analysis/Analysis.BlockFrequencyInfo.o obj/llvm/lib/Analysis/Analysis.BlockFrequencyInfoImpl.o obj/llvm/lib/Analysis/Analysis.BranchProbabilityInfo.o obj/llvm/lib/Analysis/Analysis.CFG.o obj/llvm/lib/Analysis/Analysis.CFGPrinter.o obj/llvm/lib/Analysis/Analysis.CFLAndersAliasAnalysis.o obj/llvm/lib/Analysis/Analysis.CFLSteensAliasAnalysis.o obj/llvm/lib/Analysis/Analysis.CGSCCPassManager.o obj/llvm/lib/Analysis/Analysis.CallGraph.o obj/llvm/lib/Analysis/Analysis.CallGraphSCCPass.o obj/llvm/lib/Analysis/Analysis.CallPrinter.o obj/llvm/lib/Analysis/Analysis.CaptureTracking.o obj/llvm/lib/Analysis/Analysis.CmpInstAnalysis.o obj/llvm/lib/Analysis/Analysis.CodeMetrics.o obj/llvm/lib/Analysis/Analysis.ConstantFolding.o obj/llvm/lib/Analysis/Analysis.ConstraintSystem.o obj/llvm/lib/Analysis/Analysis.CostModel.o obj/llvm/lib/Analysis/Analysis.CycleAnalysis.o obj/llvm/lib/Analysis/Analysis.DDG.o obj/llvm/lib/Analysis/Analysis.DDGPrinter.o obj/llvm/lib/Analysis/Analysis.Delinearization.o obj/llvm/lib/Analysis/Analysis.DemandedBits.o obj/llvm/lib/Analysis/Analysis.DependenceAnalysis.o obj/llvm/lib/Analysis/Analysis.DependenceGraphBuilder.o obj/llvm/lib/Analysis/Analysis.DevelopmentModeInlineAdvisor.o obj/llvm/lib/Analysis/Analysis.DivergenceAnalysis.o obj/llvm/lib/Analysis/Analysis.DomPrinter.o obj/llvm/lib/Analysis/Analysis.DomTreeUpdater.o obj/llvm/lib/Analysis/Analysis.DominanceFrontier.o obj/llvm/lib/Analysis/Analysis.EHPersonalities.o obj/llvm/lib/Analysis/Analysis.FunctionPropertiesAnalysis.o obj/llvm/lib/Analysis/Analysis.GlobalsModRef.o obj/llvm/lib/Analysis/Analysis.GuardUtils.o obj/llvm/lib/Analysis/Analysis.HeatUtils.o obj/llvm/lib/Analysis/Analysis.IRSimilarityIdentifier.o obj/llvm/lib/Analysis/Analysis.IVDescriptors.o obj/llvm/lib/Analysis/Analysis.IVUsers.o obj/llvm/lib/Analysis/Analysis.ImportedFunctionsInliningStatistics.o obj/llvm/lib/Analysis/Analysis.IndirectCallPromotionAnalysis.o obj/llvm/lib/Analysis/Analysis.InlineAdvisor.o obj/llvm/lib/Analysis/Analysis.InlineCost.o obj/llvm/lib/Analysis/Analysis.InlineOrder.o obj/llvm/lib/Analysis/Analysis.InlineSizeEstimatorAnalysis.o obj/llvm/lib/Analysis/Analysis.InstCount.o obj/llvm/lib/Analysis/Analysis.InstructionPrecedenceTracking.o obj/llvm/lib/Analysis/Analysis.InstructionSimplify.o obj/llvm/lib/Analysis/Analysis.Interval.o obj/llvm/lib/Analysis/Analysis.IntervalPartition.o obj/llvm/lib/Analysis/Analysis.LazyBlockFrequencyInfo.o obj/llvm/lib/Analysis/Analysis.LazyBranchProbabilityInfo.o obj/llvm/lib/Analysis/Analysis.LazyCallGraph.o obj/llvm/lib/Analysis/Analysis.LazyValueInfo.o obj/llvm/lib/Analysis/Analysis.LegacyDivergenceAnalysis.o obj/llvm/lib/Analysis/Analysis.Lint.o obj/llvm/lib/Analysis/Analysis.Loads.o obj/llvm/lib/Analysis/Analysis.LoopAccessAnalysis.o obj/llvm/lib/Analysis/Analysis.LoopAnalysisManager.o obj/llvm/lib/Analysis/Analysis.LoopCacheAnalysis.o obj/llvm/lib/Analysis/Analysis.LoopInfo.o obj/llvm/lib/Analysis/Analysis.LoopNestAnalysis.o obj/llvm/lib/Analysis/Analysis.LoopPass.o obj/llvm/lib/Analysis/Analysis.LoopUnrollAnalyzer.o obj/llvm/lib/Analysis/Analysis.MLInlineAdvisor.o obj/llvm/lib/Analysis/Analysis.MemDepPrinter.o obj/llvm/lib/Analysis/Analysis.MemDerefPrinter.o obj/llvm/lib/Analysis/Analysis.MemoryBuiltins.o obj/llvm/lib/Analysis/Analysis.MemoryDependenceAnalysis.o obj/llvm/lib/Analysis/Analysis.MemoryLocation.o obj/llvm/lib/Analysis/Analysis.MemoryProfileInfo.o obj/llvm/lib/Analysis/Analysis.MemorySSA.o obj/llvm/lib/Analysis/Analysis.MemorySSAUpdater.o obj/llvm/lib/Analysis/Analysis.ModelUnderTrainingRunner.o obj/llvm/lib/Analysis/Analysis.ModuleDebugInfoPrinter.o obj/llvm/lib/Analysis/Analysis.ModuleSummaryAnalysis.o obj/llvm/lib/Analysis/Analysis.MustExecute.o obj/llvm/lib/Analysis/Analysis.NoInferenceModelRunner.o obj/llvm/lib/Analysis/Analysis.ObjCARCAliasAnalysis.o obj/llvm/lib/Analysis/Analysis.ObjCARCAnalysisUtils.o obj/llvm/lib/Analysis/Analysis.ObjCARCInstKind.o obj/llvm/lib/Analysis/Analysis.OptimizationRemarkEmitter.o obj/llvm/lib/Analysis/Analysis.OverflowInstAnalysis.o obj/llvm/lib/Analysis/Analysis.PHITransAddr.o obj/llvm/lib/Analysis/Analysis.PhiValues.o obj/llvm/lib/Analysis/Analysis.PostDominators.o obj/llvm/lib/Analysis/Analysis.ProfileSummaryInfo.o obj/llvm/lib/Analysis/Analysis.PtrUseVisitor.o obj/llvm/lib/Analysis/Analysis.RegionInfo.o obj/llvm/lib/Analysis/Analysis.RegionPass.o obj/llvm/lib/Analysis/Analysis.RegionPrinter.o obj/llvm/lib/Analysis/Analysis.ReplayInlineAdvisor.o obj/llvm/lib/Analysis/Analysis.ScalarEvolution.o obj/llvm/lib/Analysis/Analysis.ScalarEvolutionAliasAnalysis.o obj/llvm/lib/Analysis/Analysis.ScalarEvolutionDivision.o obj/llvm/lib/Analysis/Analysis.ScalarEvolutionNormalization.o obj/llvm/lib/Analysis/Analysis.ScopedNoAliasAA.o obj/llvm/lib/Analysis/Analysis.StackLifetime.o obj/llvm/lib/Analysis/Analysis.StackSafetyAnalysis.o obj/llvm/lib/Analysis/Analysis.SyncDependenceAnalysis.o obj/llvm/lib/Analysis/Analysis.SyntheticCountsUtils.o obj/llvm/lib/Analysis/Analysis.TFLiteUtils.o obj/llvm/lib/Analysis/Analysis.TFUtils.o obj/llvm/lib/Analysis/Analysis.TargetLibraryInfo.o obj/llvm/lib/Analysis/Analysis.TargetTransformInfo.o obj/llvm/lib/Analysis/Analysis.TensorSpec.o obj/llvm/lib/Analysis/Analysis.Trace.o obj/llvm/lib/Analysis/Analysis.TrainingLogger.o obj/llvm/lib/Analysis/Analysis.TypeBasedAliasAnalysis.o obj/llvm/lib/Analysis/Analysis.TypeMetadataUtils.o obj/llvm/lib/Analysis/Analysis.VFABIDemangling.o obj/llvm/lib/Analysis/Analysis.ValueLattice.o obj/llvm/lib/Analysis/Analysis.ValueLatticeUtils.o obj/llvm/lib/Analysis/Analysis.ValueTracking.o obj/llvm/lib/Analysis/Analysis.VectorUtils.o || obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Config/config.stamp ./lib/libLLVMBinaryFormat.a ./lib/libLLVMCore.a ./lib/libLLVMProfileData.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

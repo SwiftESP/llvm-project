@@ -1,0 +1,214 @@
+defines =
+include_dirs = -I../../compiler-rt/lib
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -Wcovered-switch-default -fno-builtin -gline-tables-only -fPIC -funwind-tables -fvisibility=hidden -Werror=thread-safety -Werror=thread-safety-reference -Werror=thread-safety-beta
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = sources
+target_output_name = sources
+
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp: stage2_unix_stamp obj/clang.stamp obj/lld.stamp
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sancov_flags.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sancov_flags.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sancov_flags.cpp
+  source_name_part = sancov_flags
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_allocator.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_allocator.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_allocator.cpp
+  source_name_part = sanitizer_allocator
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_allocator_checks.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_allocator_checks.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_allocator_checks.cpp
+  source_name_part = sanitizer_allocator_checks
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_allocator_report.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_allocator_report.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_allocator_report.cpp
+  source_name_part = sanitizer_allocator_report
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_chained_origin_depot.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_chained_origin_depot.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_chained_origin_depot.cpp
+  source_name_part = sanitizer_chained_origin_depot
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_common.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_common.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_common.cpp
+  source_name_part = sanitizer_common
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_common_libcdep.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_common_libcdep.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_common_libcdep.cpp
+  source_name_part = sanitizer_common_libcdep
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_coverage_fuchsia.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_coverage_fuchsia.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_coverage_fuchsia.cpp
+  source_name_part = sanitizer_coverage_fuchsia
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_coverage_libcdep_new.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_coverage_libcdep_new.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_coverage_libcdep_new.cpp
+  source_name_part = sanitizer_coverage_libcdep_new
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_coverage_win_sections.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_coverage_win_sections.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_coverage_win_sections.cpp
+  source_name_part = sanitizer_coverage_win_sections
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_deadlock_detector1.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_deadlock_detector1.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_deadlock_detector1.cpp
+  source_name_part = sanitizer_deadlock_detector1
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_deadlock_detector2.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_deadlock_detector2.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_deadlock_detector2.cpp
+  source_name_part = sanitizer_deadlock_detector2
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_errno.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_errno.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_errno.cpp
+  source_name_part = sanitizer_errno
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_file.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_file.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_file.cpp
+  source_name_part = sanitizer_file
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_flag_parser.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_flag_parser.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_flag_parser.cpp
+  source_name_part = sanitizer_flag_parser
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_flags.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_flags.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_flags.cpp
+  source_name_part = sanitizer_flags
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_fuchsia.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_fuchsia.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_fuchsia.cpp
+  source_name_part = sanitizer_fuchsia
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_libc.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_libc.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_libc.cpp
+  source_name_part = sanitizer_libc
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_libignore.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_libignore.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_libignore.cpp
+  source_name_part = sanitizer_libignore
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_linux.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_linux.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_linux.cpp
+  source_name_part = sanitizer_linux
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_linux_libcdep.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_linux_libcdep.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_linux_libcdep.cpp
+  source_name_part = sanitizer_linux_libcdep
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_linux_s390.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_linux_s390.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_linux_s390.cpp
+  source_name_part = sanitizer_linux_s390
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_mac.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_mac.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_mac.cpp
+  source_name_part = sanitizer_mac
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_mac_libcdep.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_mac_libcdep.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_mac_libcdep.cpp
+  source_name_part = sanitizer_mac_libcdep
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_mutex.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_mutex.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_mutex.cpp
+  source_name_part = sanitizer_mutex
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_netbsd.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_netbsd.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_netbsd.cpp
+  source_name_part = sanitizer_netbsd
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_freebsd.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_platform_limits_freebsd.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_platform_limits_freebsd.cpp
+  source_name_part = sanitizer_platform_limits_freebsd
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_linux.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_platform_limits_linux.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_platform_limits_linux.cpp
+  source_name_part = sanitizer_platform_limits_linux
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_netbsd.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_platform_limits_netbsd.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_platform_limits_netbsd.cpp
+  source_name_part = sanitizer_platform_limits_netbsd
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_posix.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_platform_limits_posix.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_platform_limits_posix.cpp
+  source_name_part = sanitizer_platform_limits_posix
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_solaris.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_platform_limits_solaris.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_platform_limits_solaris.cpp
+  source_name_part = sanitizer_platform_limits_solaris
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_posix.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_posix.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_posix.cpp
+  source_name_part = sanitizer_posix
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_posix_libcdep.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_posix_libcdep.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_posix_libcdep.cpp
+  source_name_part = sanitizer_posix_libcdep
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_printf.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_printf.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_printf.cpp
+  source_name_part = sanitizer_printf
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_bsd.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_procmaps_bsd.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_procmaps_bsd.cpp
+  source_name_part = sanitizer_procmaps_bsd
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_common.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_procmaps_common.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_procmaps_common.cpp
+  source_name_part = sanitizer_procmaps_common
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_fuchsia.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_procmaps_fuchsia.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_procmaps_fuchsia.cpp
+  source_name_part = sanitizer_procmaps_fuchsia
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_linux.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_procmaps_linux.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_procmaps_linux.cpp
+  source_name_part = sanitizer_procmaps_linux
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_mac.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_procmaps_mac.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_procmaps_mac.cpp
+  source_name_part = sanitizer_procmaps_mac
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_solaris.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_procmaps_solaris.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_procmaps_solaris.cpp
+  source_name_part = sanitizer_procmaps_solaris
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_solaris.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_solaris.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_solaris.cpp
+  source_name_part = sanitizer_solaris
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stack_store.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_stack_store.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_stack_store.cpp
+  source_name_part = sanitizer_stack_store
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stackdepot.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_stackdepot.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_stackdepot.cpp
+  source_name_part = sanitizer_stackdepot
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stacktrace.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_stacktrace.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_stacktrace.cpp
+  source_name_part = sanitizer_stacktrace
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stacktrace_libcdep.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_stacktrace_libcdep.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_stacktrace_libcdep.cpp
+  source_name_part = sanitizer_stacktrace_libcdep
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stacktrace_printer.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_stacktrace_printer.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_stacktrace_printer.cpp
+  source_name_part = sanitizer_stacktrace_printer
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stacktrace_sparc.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_stacktrace_sparc.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_stacktrace_sparc.cpp
+  source_name_part = sanitizer_stacktrace_sparc
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_fuchsia.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_stoptheworld_fuchsia.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_stoptheworld_fuchsia.cpp
+  source_name_part = sanitizer_stoptheworld_fuchsia
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_linux_libcdep.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_stoptheworld_linux_libcdep.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_stoptheworld_linux_libcdep.cpp
+  source_name_part = sanitizer_stoptheworld_linux_libcdep
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_mac.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_stoptheworld_mac.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_stoptheworld_mac.cpp
+  source_name_part = sanitizer_stoptheworld_mac
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_netbsd_libcdep.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_stoptheworld_netbsd_libcdep.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_stoptheworld_netbsd_libcdep.cpp
+  source_name_part = sanitizer_stoptheworld_netbsd_libcdep
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_win.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_stoptheworld_win.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_stoptheworld_win.cpp
+  source_name_part = sanitizer_stoptheworld_win
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_suppressions.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_suppressions.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_suppressions.cpp
+  source_name_part = sanitizer_suppressions
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_symbolizer.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_symbolizer.cpp
+  source_name_part = sanitizer_symbolizer
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_libbacktrace.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_symbolizer_libbacktrace.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_symbolizer_libbacktrace.cpp
+  source_name_part = sanitizer_symbolizer_libbacktrace
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_libcdep.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_symbolizer_libcdep.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_symbolizer_libcdep.cpp
+  source_name_part = sanitizer_symbolizer_libcdep
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_mac.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_symbolizer_mac.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_symbolizer_mac.cpp
+  source_name_part = sanitizer_symbolizer_mac
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_markup.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_symbolizer_markup.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_symbolizer_markup.cpp
+  source_name_part = sanitizer_symbolizer_markup
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_posix_libcdep.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_symbolizer_posix_libcdep.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_symbolizer_posix_libcdep.cpp
+  source_name_part = sanitizer_symbolizer_posix_libcdep
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_report.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_symbolizer_report.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_symbolizer_report.cpp
+  source_name_part = sanitizer_symbolizer_report
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_win.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_symbolizer_win.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_symbolizer_win.cpp
+  source_name_part = sanitizer_symbolizer_win
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_termination.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_termination.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_termination.cpp
+  source_name_part = sanitizer_termination
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_thread_registry.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_thread_registry.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_thread_registry.cpp
+  source_name_part = sanitizer_thread_registry
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_tls_get_addr.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_tls_get_addr.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_tls_get_addr.cpp
+  source_name_part = sanitizer_tls_get_addr
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_type_traits.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_type_traits.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_type_traits.cpp
+  source_name_part = sanitizer_type_traits
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_unwind_linux_libcdep.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_unwind_linux_libcdep.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_unwind_linux_libcdep.cpp
+  source_name_part = sanitizer_unwind_linux_libcdep
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_unwind_win.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_unwind_win.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_unwind_win.cpp
+  source_name_part = sanitizer_unwind_win
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_win.o: stage2_unix_cxx ../../compiler-rt/lib/sanitizer_common/sanitizer_win.cpp || stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.inputdeps.stamp
+  source_file_part = sanitizer_win.cpp
+  source_name_part = sanitizer_win
+
+build stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.stamp: stage2_unix_stamp stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sancov_flags.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_allocator.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_allocator_checks.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_allocator_report.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_chained_origin_depot.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_common.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_common_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_coverage_fuchsia.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_coverage_libcdep_new.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_coverage_win_sections.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_deadlock_detector1.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_deadlock_detector2.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_errno.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_file.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_flag_parser.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_flags.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_fuchsia.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_libc.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_libignore.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_linux.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_linux_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_linux_s390.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_mac.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_mac_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_mutex.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_netbsd.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_freebsd.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_linux.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_netbsd.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_posix.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_solaris.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_posix.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_posix_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_printf.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_bsd.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_common.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_fuchsia.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_linux.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_mac.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_solaris.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_solaris.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stack_store.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stackdepot.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stacktrace.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stacktrace_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stacktrace_printer.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stacktrace_sparc.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_fuchsia.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_linux_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_mac.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_netbsd_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_win.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_suppressions.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_libbacktrace.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_mac.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_markup.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_posix_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_report.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_win.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_termination.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_thread_registry.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_tls_get_addr.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_type_traits.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_unwind_linux_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_unwind_win.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_win.o || stage2_unix/obj/llvm/utils/gn/build/libs/pthread/pthread.stamp

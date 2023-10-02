@@ -1,0 +1,28 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = MCDisassembler
+target_output_name = libLLVMMCDisassembler
+
+build obj/llvm/lib/MC/MCDisassembler/MCDisassembler.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/MC/MCDisassembler/MCDisassembler.Disassembler.o: cxx ../../llvm/lib/MC/MCDisassembler/Disassembler.cpp || obj/llvm/lib/MC/MCDisassembler/MCDisassembler.inputdeps.stamp
+  source_file_part = Disassembler.cpp
+  source_name_part = Disassembler
+build obj/llvm/lib/MC/MCDisassembler/MCDisassembler.MCDisassembler.o: cxx ../../llvm/lib/MC/MCDisassembler/MCDisassembler.cpp || obj/llvm/lib/MC/MCDisassembler/MCDisassembler.inputdeps.stamp
+  source_file_part = MCDisassembler.cpp
+  source_name_part = MCDisassembler
+build obj/llvm/lib/MC/MCDisassembler/MCDisassembler.MCExternalSymbolizer.o: cxx ../../llvm/lib/MC/MCDisassembler/MCExternalSymbolizer.cpp || obj/llvm/lib/MC/MCDisassembler/MCDisassembler.inputdeps.stamp
+  source_file_part = MCExternalSymbolizer.cpp
+  source_name_part = MCExternalSymbolizer
+build obj/llvm/lib/MC/MCDisassembler/MCDisassembler.MCRelocationInfo.o: cxx ../../llvm/lib/MC/MCDisassembler/MCRelocationInfo.cpp || obj/llvm/lib/MC/MCDisassembler/MCDisassembler.inputdeps.stamp
+  source_file_part = MCRelocationInfo.cpp
+  source_name_part = MCRelocationInfo
+build obj/llvm/lib/MC/MCDisassembler/MCDisassembler.MCSymbolizer.o: cxx ../../llvm/lib/MC/MCDisassembler/MCSymbolizer.cpp || obj/llvm/lib/MC/MCDisassembler/MCDisassembler.inputdeps.stamp
+  source_file_part = MCSymbolizer.cpp
+  source_name_part = MCSymbolizer
+
+build ./lib/libLLVMMCDisassembler.a: alink obj/llvm/lib/MC/MCDisassembler/MCDisassembler.Disassembler.o obj/llvm/lib/MC/MCDisassembler/MCDisassembler.MCDisassembler.o obj/llvm/lib/MC/MCDisassembler/MCDisassembler.MCExternalSymbolizer.o obj/llvm/lib/MC/MCDisassembler/MCDisassembler.MCRelocationInfo.o obj/llvm/lib/MC/MCDisassembler/MCDisassembler.MCSymbolizer.o || ./lib/libLLVMMC.a ./lib/libLLVMSupport.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

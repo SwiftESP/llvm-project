@@ -1,0 +1,322 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = SupportTests
+target_output_name = SupportTests
+
+build obj/llvm/unittests/Support/SupportTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/unittests/Support/SupportTests.ARMAttributeParser.o: cxx ../../llvm/unittests/Support/ARMAttributeParser.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ARMAttributeParser.cpp
+  source_name_part = ARMAttributeParser
+build obj/llvm/unittests/Support/SupportTests.AddressRangeTest.o: cxx ../../llvm/unittests/Support/AddressRangeTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = AddressRangeTest.cpp
+  source_name_part = AddressRangeTest
+build obj/llvm/unittests/Support/SupportTests.AlignOfTest.o: cxx ../../llvm/unittests/Support/AlignOfTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = AlignOfTest.cpp
+  source_name_part = AlignOfTest
+build obj/llvm/unittests/Support/SupportTests.AlignmentTest.o: cxx ../../llvm/unittests/Support/AlignmentTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = AlignmentTest.cpp
+  source_name_part = AlignmentTest
+build obj/llvm/unittests/Support/SupportTests.AllocatorTest.o: cxx ../../llvm/unittests/Support/AllocatorTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = AllocatorTest.cpp
+  source_name_part = AllocatorTest
+build obj/llvm/unittests/Support/SupportTests.AnnotationsTest.o: cxx ../../llvm/unittests/Support/AnnotationsTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = AnnotationsTest.cpp
+  source_name_part = AnnotationsTest
+build obj/llvm/unittests/Support/SupportTests.ArrayRecyclerTest.o: cxx ../../llvm/unittests/Support/ArrayRecyclerTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ArrayRecyclerTest.cpp
+  source_name_part = ArrayRecyclerTest
+build obj/llvm/unittests/Support/SupportTests.BLAKE3Test.o: cxx ../../llvm/unittests/Support/BLAKE3Test.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = BLAKE3Test.cpp
+  source_name_part = BLAKE3Test
+build obj/llvm/unittests/Support/SupportTests.Base64Test.o: cxx ../../llvm/unittests/Support/Base64Test.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = Base64Test.cpp
+  source_name_part = Base64Test
+build obj/llvm/unittests/Support/SupportTests.BinaryStreamTest.o: cxx ../../llvm/unittests/Support/BinaryStreamTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = BinaryStreamTest.cpp
+  source_name_part = BinaryStreamTest
+build obj/llvm/unittests/Support/SupportTests.BlockFrequencyTest.o: cxx ../../llvm/unittests/Support/BlockFrequencyTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = BlockFrequencyTest.cpp
+  source_name_part = BlockFrequencyTest
+build obj/llvm/unittests/Support/SupportTests.BranchProbabilityTest.o: cxx ../../llvm/unittests/Support/BranchProbabilityTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = BranchProbabilityTest.cpp
+  source_name_part = BranchProbabilityTest
+build obj/llvm/unittests/Support/SupportTests.CRCTest.o: cxx ../../llvm/unittests/Support/CRCTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = CRCTest.cpp
+  source_name_part = CRCTest
+build obj/llvm/unittests/Support/SupportTests.CSKYAttributeParserTest.o: cxx ../../llvm/unittests/Support/CSKYAttributeParserTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = CSKYAttributeParserTest.cpp
+  source_name_part = CSKYAttributeParserTest
+build obj/llvm/unittests/Support/SupportTests.CSKYTargetParserTest.o: cxx ../../llvm/unittests/Support/CSKYTargetParserTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = CSKYTargetParserTest.cpp
+  source_name_part = CSKYTargetParserTest
+build obj/llvm/unittests/Support/SupportTests.CachePruningTest.o: cxx ../../llvm/unittests/Support/CachePruningTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = CachePruningTest.cpp
+  source_name_part = CachePruningTest
+build obj/llvm/unittests/Support/SupportTests.Casting.o: cxx ../../llvm/unittests/Support/Casting.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = Casting.cpp
+  source_name_part = Casting
+build obj/llvm/unittests/Support/SupportTests.CheckedArithmeticTest.o: cxx ../../llvm/unittests/Support/CheckedArithmeticTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = CheckedArithmeticTest.cpp
+  source_name_part = CheckedArithmeticTest
+build obj/llvm/unittests/Support/SupportTests.Chrono.o: cxx ../../llvm/unittests/Support/Chrono.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = Chrono.cpp
+  source_name_part = Chrono
+build obj/llvm/unittests/Support/SupportTests.CommandLineTest.o: cxx ../../llvm/unittests/Support/CommandLineTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = CommandLineTest.cpp
+  source_name_part = CommandLineTest
+build obj/llvm/unittests/Support/SupportTests.CompressionTest.o: cxx ../../llvm/unittests/Support/CompressionTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = CompressionTest.cpp
+  source_name_part = CompressionTest
+build obj/llvm/unittests/Support/SupportTests.ConvertUTFTest.o: cxx ../../llvm/unittests/Support/ConvertUTFTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ConvertUTFTest.cpp
+  source_name_part = ConvertUTFTest
+build obj/llvm/unittests/Support/SupportTests.CrashRecoveryTest.o: cxx ../../llvm/unittests/Support/CrashRecoveryTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = CrashRecoveryTest.cpp
+  source_name_part = CrashRecoveryTest
+build obj/llvm/unittests/Support/SupportTests.DJBTest.o: cxx ../../llvm/unittests/Support/DJBTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = DJBTest.cpp
+  source_name_part = DJBTest
+build obj/llvm/unittests/Support/SupportTests.DataExtractorTest.o: cxx ../../llvm/unittests/Support/DataExtractorTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = DataExtractorTest.cpp
+  source_name_part = DataExtractorTest
+build obj/llvm/unittests/Support/SupportTests.DebugCounterTest.o: cxx ../../llvm/unittests/Support/DebugCounterTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = DebugCounterTest.cpp
+  source_name_part = DebugCounterTest
+build obj/llvm/unittests/Support/SupportTests.DebugTest.o: cxx ../../llvm/unittests/Support/DebugTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = DebugTest.cpp
+  source_name_part = DebugTest
+build obj/llvm/unittests/Support/SupportTests.ELFAttributeParserTest.o: cxx ../../llvm/unittests/Support/ELFAttributeParserTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ELFAttributeParserTest.cpp
+  source_name_part = ELFAttributeParserTest
+build obj/llvm/unittests/Support/SupportTests.EndianStreamTest.o: cxx ../../llvm/unittests/Support/EndianStreamTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = EndianStreamTest.cpp
+  source_name_part = EndianStreamTest
+build obj/llvm/unittests/Support/SupportTests.EndianTest.o: cxx ../../llvm/unittests/Support/EndianTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = EndianTest.cpp
+  source_name_part = EndianTest
+build obj/llvm/unittests/Support/SupportTests.ErrnoTest.o: cxx ../../llvm/unittests/Support/ErrnoTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ErrnoTest.cpp
+  source_name_part = ErrnoTest
+build obj/llvm/unittests/Support/SupportTests.ErrorOrTest.o: cxx ../../llvm/unittests/Support/ErrorOrTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ErrorOrTest.cpp
+  source_name_part = ErrorOrTest
+build obj/llvm/unittests/Support/SupportTests.ErrorTest.o: cxx ../../llvm/unittests/Support/ErrorTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ErrorTest.cpp
+  source_name_part = ErrorTest
+build obj/llvm/unittests/Support/SupportTests.ExtensibleRTTITest.o: cxx ../../llvm/unittests/Support/ExtensibleRTTITest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ExtensibleRTTITest.cpp
+  source_name_part = ExtensibleRTTITest
+build obj/llvm/unittests/Support/SupportTests.FSUniqueIDTest.o: cxx ../../llvm/unittests/Support/FSUniqueIDTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = FSUniqueIDTest.cpp
+  source_name_part = FSUniqueIDTest
+build obj/llvm/unittests/Support/SupportTests.FileCollectorTest.o: cxx ../../llvm/unittests/Support/FileCollectorTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = FileCollectorTest.cpp
+  source_name_part = FileCollectorTest
+build obj/llvm/unittests/Support/SupportTests.FileOutputBufferTest.o: cxx ../../llvm/unittests/Support/FileOutputBufferTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = FileOutputBufferTest.cpp
+  source_name_part = FileOutputBufferTest
+build obj/llvm/unittests/Support/SupportTests.FileUtilitiesTest.o: cxx ../../llvm/unittests/Support/FileUtilitiesTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = FileUtilitiesTest.cpp
+  source_name_part = FileUtilitiesTest
+build obj/llvm/unittests/Support/SupportTests.FormatVariadicTest.o: cxx ../../llvm/unittests/Support/FormatVariadicTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = FormatVariadicTest.cpp
+  source_name_part = FormatVariadicTest
+build obj/llvm/unittests/Support/SupportTests.GlobPatternTest.o: cxx ../../llvm/unittests/Support/GlobPatternTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = GlobPatternTest.cpp
+  source_name_part = GlobPatternTest
+build obj/llvm/unittests/Support/SupportTests.HashBuilderTest.o: cxx ../../llvm/unittests/Support/HashBuilderTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = HashBuilderTest.cpp
+  source_name_part = HashBuilderTest
+build obj/llvm/unittests/Support/SupportTests.Host.o: cxx ../../llvm/unittests/Support/Host.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = Host.cpp
+  source_name_part = Host
+build obj/llvm/unittests/Support/SupportTests.IndexedAccessorTest.o: cxx ../../llvm/unittests/Support/IndexedAccessorTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = IndexedAccessorTest.cpp
+  source_name_part = IndexedAccessorTest
+build obj/llvm/unittests/Support/SupportTests.InstructionCostTest.o: cxx ../../llvm/unittests/Support/InstructionCostTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = InstructionCostTest.cpp
+  source_name_part = InstructionCostTest
+build obj/llvm/unittests/Support/SupportTests.ItaniumManglingCanonicalizerTest.o: cxx ../../llvm/unittests/Support/ItaniumManglingCanonicalizerTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ItaniumManglingCanonicalizerTest.cpp
+  source_name_part = ItaniumManglingCanonicalizerTest
+build obj/llvm/unittests/Support/SupportTests.JSONTest.o: cxx ../../llvm/unittests/Support/JSONTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = JSONTest.cpp
+  source_name_part = JSONTest
+build obj/llvm/unittests/Support/SupportTests.KnownBitsTest.o: cxx ../../llvm/unittests/Support/KnownBitsTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = KnownBitsTest.cpp
+  source_name_part = KnownBitsTest
+build obj/llvm/unittests/Support/SupportTests.LEB128Test.o: cxx ../../llvm/unittests/Support/LEB128Test.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = LEB128Test.cpp
+  source_name_part = LEB128Test
+build obj/llvm/unittests/Support/SupportTests.LineIteratorTest.o: cxx ../../llvm/unittests/Support/LineIteratorTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = LineIteratorTest.cpp
+  source_name_part = LineIteratorTest
+build obj/llvm/unittests/Support/SupportTests.LinearPolyBaseTest.o: cxx ../../llvm/unittests/Support/LinearPolyBaseTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = LinearPolyBaseTest.cpp
+  source_name_part = LinearPolyBaseTest
+build obj/llvm/unittests/Support/SupportTests.LockFileManagerTest.o: cxx ../../llvm/unittests/Support/LockFileManagerTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = LockFileManagerTest.cpp
+  source_name_part = LockFileManagerTest
+build obj/llvm/unittests/Support/SupportTests.MD5Test.o: cxx ../../llvm/unittests/Support/MD5Test.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = MD5Test.cpp
+  source_name_part = MD5Test
+build obj/llvm/unittests/Support/SupportTests.ManagedStatic.o: cxx ../../llvm/unittests/Support/ManagedStatic.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ManagedStatic.cpp
+  source_name_part = ManagedStatic
+build obj/llvm/unittests/Support/SupportTests.MatchersTest.o: cxx ../../llvm/unittests/Support/MatchersTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = MatchersTest.cpp
+  source_name_part = MatchersTest
+build obj/llvm/unittests/Support/SupportTests.MathExtrasTest.o: cxx ../../llvm/unittests/Support/MathExtrasTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = MathExtrasTest.cpp
+  source_name_part = MathExtrasTest
+build obj/llvm/unittests/Support/SupportTests.MemoryBufferRefTest.o: cxx ../../llvm/unittests/Support/MemoryBufferRefTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = MemoryBufferRefTest.cpp
+  source_name_part = MemoryBufferRefTest
+build obj/llvm/unittests/Support/SupportTests.MemoryBufferTest.o: cxx ../../llvm/unittests/Support/MemoryBufferTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = MemoryBufferTest.cpp
+  source_name_part = MemoryBufferTest
+build obj/llvm/unittests/Support/SupportTests.MemoryTest.o: cxx ../../llvm/unittests/Support/MemoryTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = MemoryTest.cpp
+  source_name_part = MemoryTest
+build obj/llvm/unittests/Support/SupportTests.NativeFormatTests.o: cxx ../../llvm/unittests/Support/NativeFormatTests.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = NativeFormatTests.cpp
+  source_name_part = NativeFormatTests
+build obj/llvm/unittests/Support/SupportTests.OptimizedStructLayoutTest.o: cxx ../../llvm/unittests/Support/OptimizedStructLayoutTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = OptimizedStructLayoutTest.cpp
+  source_name_part = OptimizedStructLayoutTest
+build obj/llvm/unittests/Support/SupportTests.ParallelTest.o: cxx ../../llvm/unittests/Support/ParallelTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ParallelTest.cpp
+  source_name_part = ParallelTest
+build obj/llvm/unittests/Support/SupportTests.Path.o: cxx ../../llvm/unittests/Support/Path.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = Path.cpp
+  source_name_part = Path
+build obj/llvm/unittests/Support/SupportTests.ProcessTest.o: cxx ../../llvm/unittests/Support/ProcessTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ProcessTest.cpp
+  source_name_part = ProcessTest
+build obj/llvm/unittests/Support/SupportTests.ProgramTest.o: cxx ../../llvm/unittests/Support/ProgramTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ProgramTest.cpp
+  source_name_part = ProgramTest
+build obj/llvm/unittests/Support/SupportTests.RISCVAttributeParserTest.o: cxx ../../llvm/unittests/Support/RISCVAttributeParserTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = RISCVAttributeParserTest.cpp
+  source_name_part = RISCVAttributeParserTest
+build obj/llvm/unittests/Support/SupportTests.RegexTest.o: cxx ../../llvm/unittests/Support/RegexTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = RegexTest.cpp
+  source_name_part = RegexTest
+build obj/llvm/unittests/Support/SupportTests.ReplaceFileTest.o: cxx ../../llvm/unittests/Support/ReplaceFileTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ReplaceFileTest.cpp
+  source_name_part = ReplaceFileTest
+build obj/llvm/unittests/Support/SupportTests.ReverseIterationTest.o: cxx ../../llvm/unittests/Support/ReverseIterationTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ReverseIterationTest.cpp
+  source_name_part = ReverseIterationTest
+build obj/llvm/unittests/Support/SupportTests.SHA256.o: cxx ../../llvm/unittests/Support/SHA256.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = SHA256.cpp
+  source_name_part = SHA256
+build obj/llvm/unittests/Support/SupportTests.ScaledNumberTest.o: cxx ../../llvm/unittests/Support/ScaledNumberTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ScaledNumberTest.cpp
+  source_name_part = ScaledNumberTest
+build obj/llvm/unittests/Support/SupportTests.ScopedPrinterTest.o: cxx ../../llvm/unittests/Support/ScopedPrinterTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ScopedPrinterTest.cpp
+  source_name_part = ScopedPrinterTest
+build obj/llvm/unittests/Support/SupportTests.SourceMgrTest.o: cxx ../../llvm/unittests/Support/SourceMgrTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = SourceMgrTest.cpp
+  source_name_part = SourceMgrTest
+build obj/llvm/unittests/Support/SupportTests.SpecialCaseListTest.o: cxx ../../llvm/unittests/Support/SpecialCaseListTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = SpecialCaseListTest.cpp
+  source_name_part = SpecialCaseListTest
+build obj/llvm/unittests/Support/SupportTests.SuffixTreeTest.o: cxx ../../llvm/unittests/Support/SuffixTreeTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = SuffixTreeTest.cpp
+  source_name_part = SuffixTreeTest
+build obj/llvm/unittests/Support/SupportTests.SwapByteOrderTest.o: cxx ../../llvm/unittests/Support/SwapByteOrderTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = SwapByteOrderTest.cpp
+  source_name_part = SwapByteOrderTest
+build obj/llvm/unittests/Support/SupportTests.SymbolRemappingReaderTest.o: cxx ../../llvm/unittests/Support/SymbolRemappingReaderTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = SymbolRemappingReaderTest.cpp
+  source_name_part = SymbolRemappingReaderTest
+build obj/llvm/unittests/Support/SupportTests.TarWriterTest.o: cxx ../../llvm/unittests/Support/TarWriterTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = TarWriterTest.cpp
+  source_name_part = TarWriterTest
+build obj/llvm/unittests/Support/SupportTests.TargetParserTest.o: cxx ../../llvm/unittests/Support/TargetParserTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = TargetParserTest.cpp
+  source_name_part = TargetParserTest
+build obj/llvm/unittests/Support/SupportTests.TaskQueueTest.o: cxx ../../llvm/unittests/Support/TaskQueueTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = TaskQueueTest.cpp
+  source_name_part = TaskQueueTest
+build obj/llvm/unittests/Support/SupportTests.ThreadLocalTest.o: cxx ../../llvm/unittests/Support/ThreadLocalTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ThreadLocalTest.cpp
+  source_name_part = ThreadLocalTest
+build obj/llvm/unittests/Support/SupportTests.ThreadPool.o: cxx ../../llvm/unittests/Support/ThreadPool.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ThreadPool.cpp
+  source_name_part = ThreadPool
+build obj/llvm/unittests/Support/SupportTests.Threading.o: cxx ../../llvm/unittests/Support/Threading.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = Threading.cpp
+  source_name_part = Threading
+build obj/llvm/unittests/Support/SupportTests.TimeProfilerTest.o: cxx ../../llvm/unittests/Support/TimeProfilerTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = TimeProfilerTest.cpp
+  source_name_part = TimeProfilerTest
+build obj/llvm/unittests/Support/SupportTests.TimerTest.o: cxx ../../llvm/unittests/Support/TimerTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = TimerTest.cpp
+  source_name_part = TimerTest
+build obj/llvm/unittests/Support/SupportTests.ToolOutputFileTest.o: cxx ../../llvm/unittests/Support/ToolOutputFileTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = ToolOutputFileTest.cpp
+  source_name_part = ToolOutputFileTest
+build obj/llvm/unittests/Support/SupportTests.TrailingObjectsTest.o: cxx ../../llvm/unittests/Support/TrailingObjectsTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = TrailingObjectsTest.cpp
+  source_name_part = TrailingObjectsTest
+build obj/llvm/unittests/Support/SupportTests.TrigramIndexTest.o: cxx ../../llvm/unittests/Support/TrigramIndexTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = TrigramIndexTest.cpp
+  source_name_part = TrigramIndexTest
+build obj/llvm/unittests/Support/SupportTests.TypeNameTest.o: cxx ../../llvm/unittests/Support/TypeNameTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = TypeNameTest.cpp
+  source_name_part = TypeNameTest
+build obj/llvm/unittests/Support/SupportTests.TypeTraitsTest.o: cxx ../../llvm/unittests/Support/TypeTraitsTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = TypeTraitsTest.cpp
+  source_name_part = TypeTraitsTest
+build obj/llvm/unittests/Support/SupportTests.UnicodeTest.o: cxx ../../llvm/unittests/Support/UnicodeTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = UnicodeTest.cpp
+  source_name_part = UnicodeTest
+build obj/llvm/unittests/Support/SupportTests.VersionTupleTest.o: cxx ../../llvm/unittests/Support/VersionTupleTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = VersionTupleTest.cpp
+  source_name_part = VersionTupleTest
+build obj/llvm/unittests/Support/SupportTests.VirtualFileSystemTest.o: cxx ../../llvm/unittests/Support/VirtualFileSystemTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = VirtualFileSystemTest.cpp
+  source_name_part = VirtualFileSystemTest
+build obj/llvm/unittests/Support/SupportTests.WithColorTest.o: cxx ../../llvm/unittests/Support/WithColorTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = WithColorTest.cpp
+  source_name_part = WithColorTest
+build obj/llvm/unittests/Support/SupportTests.YAMLIOTest.o: cxx ../../llvm/unittests/Support/YAMLIOTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = YAMLIOTest.cpp
+  source_name_part = YAMLIOTest
+build obj/llvm/unittests/Support/SupportTests.YAMLParserTest.o: cxx ../../llvm/unittests/Support/YAMLParserTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = YAMLParserTest.cpp
+  source_name_part = YAMLParserTest
+build obj/llvm/unittests/Support/SupportTests.buffer_ostream_test.o: cxx ../../llvm/unittests/Support/buffer_ostream_test.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = buffer_ostream_test.cpp
+  source_name_part = buffer_ostream_test
+build obj/llvm/unittests/Support/SupportTests.formatted_raw_ostream_test.o: cxx ../../llvm/unittests/Support/formatted_raw_ostream_test.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = formatted_raw_ostream_test.cpp
+  source_name_part = formatted_raw_ostream_test
+build obj/llvm/unittests/Support/SupportTests.raw_fd_stream_test.o: cxx ../../llvm/unittests/Support/raw_fd_stream_test.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = raw_fd_stream_test.cpp
+  source_name_part = raw_fd_stream_test
+build obj/llvm/unittests/Support/SupportTests.raw_ostream_test.o: cxx ../../llvm/unittests/Support/raw_ostream_test.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = raw_ostream_test.cpp
+  source_name_part = raw_ostream_test
+build obj/llvm/unittests/Support/SupportTests.raw_pwrite_stream_test.o: cxx ../../llvm/unittests/Support/raw_pwrite_stream_test.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = raw_pwrite_stream_test.cpp
+  source_name_part = raw_pwrite_stream_test
+build obj/llvm/unittests/Support/SupportTests.raw_sha1_ostream_test.o: cxx ../../llvm/unittests/Support/raw_sha1_ostream_test.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = raw_sha1_ostream_test.cpp
+  source_name_part = raw_sha1_ostream_test
+build obj/llvm/unittests/Support/SupportTests.xxhashTest.o: cxx ../../llvm/unittests/Support/xxhashTest.cpp || obj/llvm/unittests/Support/SupportTests.inputdeps.stamp
+  source_file_part = xxhashTest.cpp
+  source_name_part = xxhashTest
+
+build obj/llvm/unittests/Support/SupportTests: link obj/llvm/unittests/Support/SupportTests.ARMAttributeParser.o obj/llvm/unittests/Support/SupportTests.AddressRangeTest.o obj/llvm/unittests/Support/SupportTests.AlignOfTest.o obj/llvm/unittests/Support/SupportTests.AlignmentTest.o obj/llvm/unittests/Support/SupportTests.AllocatorTest.o obj/llvm/unittests/Support/SupportTests.AnnotationsTest.o obj/llvm/unittests/Support/SupportTests.ArrayRecyclerTest.o obj/llvm/unittests/Support/SupportTests.BLAKE3Test.o obj/llvm/unittests/Support/SupportTests.Base64Test.o obj/llvm/unittests/Support/SupportTests.BinaryStreamTest.o obj/llvm/unittests/Support/SupportTests.BlockFrequencyTest.o obj/llvm/unittests/Support/SupportTests.BranchProbabilityTest.o obj/llvm/unittests/Support/SupportTests.CRCTest.o obj/llvm/unittests/Support/SupportTests.CSKYAttributeParserTest.o obj/llvm/unittests/Support/SupportTests.CSKYTargetParserTest.o obj/llvm/unittests/Support/SupportTests.CachePruningTest.o obj/llvm/unittests/Support/SupportTests.Casting.o obj/llvm/unittests/Support/SupportTests.CheckedArithmeticTest.o obj/llvm/unittests/Support/SupportTests.Chrono.o obj/llvm/unittests/Support/SupportTests.CommandLineTest.o obj/llvm/unittests/Support/SupportTests.CompressionTest.o obj/llvm/unittests/Support/SupportTests.ConvertUTFTest.o obj/llvm/unittests/Support/SupportTests.CrashRecoveryTest.o obj/llvm/unittests/Support/SupportTests.DJBTest.o obj/llvm/unittests/Support/SupportTests.DataExtractorTest.o obj/llvm/unittests/Support/SupportTests.DebugCounterTest.o obj/llvm/unittests/Support/SupportTests.DebugTest.o obj/llvm/unittests/Support/SupportTests.ELFAttributeParserTest.o obj/llvm/unittests/Support/SupportTests.EndianStreamTest.o obj/llvm/unittests/Support/SupportTests.EndianTest.o obj/llvm/unittests/Support/SupportTests.ErrnoTest.o obj/llvm/unittests/Support/SupportTests.ErrorOrTest.o obj/llvm/unittests/Support/SupportTests.ErrorTest.o obj/llvm/unittests/Support/SupportTests.ExtensibleRTTITest.o obj/llvm/unittests/Support/SupportTests.FSUniqueIDTest.o obj/llvm/unittests/Support/SupportTests.FileCollectorTest.o obj/llvm/unittests/Support/SupportTests.FileOutputBufferTest.o obj/llvm/unittests/Support/SupportTests.FileUtilitiesTest.o obj/llvm/unittests/Support/SupportTests.FormatVariadicTest.o obj/llvm/unittests/Support/SupportTests.GlobPatternTest.o obj/llvm/unittests/Support/SupportTests.HashBuilderTest.o obj/llvm/unittests/Support/SupportTests.Host.o obj/llvm/unittests/Support/SupportTests.IndexedAccessorTest.o obj/llvm/unittests/Support/SupportTests.InstructionCostTest.o obj/llvm/unittests/Support/SupportTests.ItaniumManglingCanonicalizerTest.o obj/llvm/unittests/Support/SupportTests.JSONTest.o obj/llvm/unittests/Support/SupportTests.KnownBitsTest.o obj/llvm/unittests/Support/SupportTests.LEB128Test.o obj/llvm/unittests/Support/SupportTests.LineIteratorTest.o obj/llvm/unittests/Support/SupportTests.LinearPolyBaseTest.o obj/llvm/unittests/Support/SupportTests.LockFileManagerTest.o obj/llvm/unittests/Support/SupportTests.MD5Test.o obj/llvm/unittests/Support/SupportTests.ManagedStatic.o obj/llvm/unittests/Support/SupportTests.MatchersTest.o obj/llvm/unittests/Support/SupportTests.MathExtrasTest.o obj/llvm/unittests/Support/SupportTests.MemoryBufferRefTest.o obj/llvm/unittests/Support/SupportTests.MemoryBufferTest.o obj/llvm/unittests/Support/SupportTests.MemoryTest.o obj/llvm/unittests/Support/SupportTests.NativeFormatTests.o obj/llvm/unittests/Support/SupportTests.OptimizedStructLayoutTest.o obj/llvm/unittests/Support/SupportTests.ParallelTest.o obj/llvm/unittests/Support/SupportTests.Path.o obj/llvm/unittests/Support/SupportTests.ProcessTest.o obj/llvm/unittests/Support/SupportTests.ProgramTest.o obj/llvm/unittests/Support/SupportTests.RISCVAttributeParserTest.o obj/llvm/unittests/Support/SupportTests.RegexTest.o obj/llvm/unittests/Support/SupportTests.ReplaceFileTest.o obj/llvm/unittests/Support/SupportTests.ReverseIterationTest.o obj/llvm/unittests/Support/SupportTests.SHA256.o obj/llvm/unittests/Support/SupportTests.ScaledNumberTest.o obj/llvm/unittests/Support/SupportTests.ScopedPrinterTest.o obj/llvm/unittests/Support/SupportTests.SourceMgrTest.o obj/llvm/unittests/Support/SupportTests.SpecialCaseListTest.o obj/llvm/unittests/Support/SupportTests.SuffixTreeTest.o obj/llvm/unittests/Support/SupportTests.SwapByteOrderTest.o obj/llvm/unittests/Support/SupportTests.SymbolRemappingReaderTest.o obj/llvm/unittests/Support/SupportTests.TarWriterTest.o obj/llvm/unittests/Support/SupportTests.TargetParserTest.o obj/llvm/unittests/Support/SupportTests.TaskQueueTest.o obj/llvm/unittests/Support/SupportTests.ThreadLocalTest.o obj/llvm/unittests/Support/SupportTests.ThreadPool.o obj/llvm/unittests/Support/SupportTests.Threading.o obj/llvm/unittests/Support/SupportTests.TimeProfilerTest.o obj/llvm/unittests/Support/SupportTests.TimerTest.o obj/llvm/unittests/Support/SupportTests.ToolOutputFileTest.o obj/llvm/unittests/Support/SupportTests.TrailingObjectsTest.o obj/llvm/unittests/Support/SupportTests.TrigramIndexTest.o obj/llvm/unittests/Support/SupportTests.TypeNameTest.o obj/llvm/unittests/Support/SupportTests.TypeTraitsTest.o obj/llvm/unittests/Support/SupportTests.UnicodeTest.o obj/llvm/unittests/Support/SupportTests.VersionTupleTest.o obj/llvm/unittests/Support/SupportTests.VirtualFileSystemTest.o obj/llvm/unittests/Support/SupportTests.WithColorTest.o obj/llvm/unittests/Support/SupportTests.YAMLIOTest.o obj/llvm/unittests/Support/SupportTests.YAMLParserTest.o obj/llvm/unittests/Support/SupportTests.buffer_ostream_test.o obj/llvm/unittests/Support/SupportTests.formatted_raw_ostream_test.o obj/llvm/unittests/Support/SupportTests.raw_fd_stream_test.o obj/llvm/unittests/Support/SupportTests.raw_ostream_test.o obj/llvm/unittests/Support/SupportTests.raw_pwrite_stream_test.o obj/llvm/unittests/Support/SupportTests.raw_sha1_ostream_test.o obj/llvm/unittests/Support/SupportTests.xxhashTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMSupport.a ./lib/libLLVMTestingSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libgtest.a || obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/Support

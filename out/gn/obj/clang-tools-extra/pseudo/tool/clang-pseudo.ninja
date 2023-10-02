@@ -1,0 +1,22 @@
+defines =
+include_dirs = -I../../clang-tools-extra/pseudo/include -Igen/clang-tools-extra/pseudo/tool -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = clang-pseudo
+target_output_name = clang-pseudo
+
+build obj/clang-tools-extra/pseudo/tool/clang-pseudo.inputdeps.stamp: stamp obj/clang-tools-extra/pseudo/include/CXXBNF.inc.stamp obj/clang-tools-extra/pseudo/include/CXXSymbols.inc.stamp obj/clang-tools-extra/pseudo/tool/HTMLForestResources.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/clang-tools-extra/pseudo/tool/clang-pseudo.ClangPseudo.o: cxx ../../clang-tools-extra/pseudo/tool/ClangPseudo.cpp || obj/clang-tools-extra/pseudo/tool/clang-pseudo.inputdeps.stamp
+  source_file_part = ClangPseudo.cpp
+  source_name_part = ClangPseudo
+build obj/clang-tools-extra/pseudo/tool/clang-pseudo.HTMLForest.o: cxx ../../clang-tools-extra/pseudo/tool/HTMLForest.cpp || obj/clang-tools-extra/pseudo/tool/clang-pseudo.inputdeps.stamp
+  source_file_part = HTMLForest.cpp
+  source_name_part = HTMLForest
+
+build ./bin/clang-pseudo: link obj/clang-tools-extra/pseudo/tool/clang-pseudo.ClangPseudo.o obj/clang-tools-extra/pseudo/tool/clang-pseudo.HTMLForest.o ./lib/libclangPseudo.a ./lib/libclangPseudoCLI.a ./lib/libclangBasic.a ./lib/libLLVMSupport.a ./lib/libclangPseudoGrammar.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libclangLex.a ./lib/libclangPseudoCXX.a || obj/clang-tools-extra/pseudo/tool/HTMLForestResources.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

@@ -1,0 +1,19 @@
+defines =
+include_dirs = -I../../llvm/lib/Target/AArch64 -I../../llvm/include -Igen/llvm/include -Igen/llvm/lib/Target/AArch64/Utils -Igen/llvm/lib/Target/AArch64/MCTargetDesc
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Utils
+target_output_name = libLLVMAArch64Utils
+
+build obj/llvm/lib/Target/AArch64/Utils/Utils.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build obj/llvm/lib/Target/AArch64/Utils/Utils.AArch64BaseInfo.o: cxx ../../llvm/lib/Target/AArch64/Utils/AArch64BaseInfo.cpp || obj/llvm/lib/Target/AArch64/Utils/Utils.inputdeps.stamp
+  source_file_part = AArch64BaseInfo.cpp
+  source_name_part = AArch64BaseInfo
+build obj/llvm/lib/Target/AArch64/Utils/Utils.AArch64SMEAttributes.o: cxx ../../llvm/lib/Target/AArch64/Utils/AArch64SMEAttributes.cpp || obj/llvm/lib/Target/AArch64/Utils/Utils.inputdeps.stamp
+  source_file_part = AArch64SMEAttributes.cpp
+  source_name_part = AArch64SMEAttributes
+
+build ./lib/libLLVMAArch64Utils.a: alink obj/llvm/lib/Target/AArch64/Utils/Utils.AArch64BaseInfo.o obj/llvm/lib/Target/AArch64/Utils/Utils.AArch64SMEAttributes.o || obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp ./lib/libLLVMSupport.a obj/llvm/lib/Target/AArch64/MCTargetDesc/tablegen.stamp ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

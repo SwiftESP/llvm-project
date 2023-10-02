@@ -1,0 +1,76 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = llvm-pdbutil
+target_output_name = llvm-pdbutil
+
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.BytesOutputStyle.o: cxx ../../llvm/tools/llvm-pdbutil/BytesOutputStyle.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = BytesOutputStyle.cpp
+  source_name_part = BytesOutputStyle
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.DumpOutputStyle.o: cxx ../../llvm/tools/llvm-pdbutil/DumpOutputStyle.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = DumpOutputStyle.cpp
+  source_name_part = DumpOutputStyle
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.ExplainOutputStyle.o: cxx ../../llvm/tools/llvm-pdbutil/ExplainOutputStyle.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = ExplainOutputStyle.cpp
+  source_name_part = ExplainOutputStyle
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.MinimalSymbolDumper.o: cxx ../../llvm/tools/llvm-pdbutil/MinimalSymbolDumper.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = MinimalSymbolDumper.cpp
+  source_name_part = MinimalSymbolDumper
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.MinimalTypeDumper.o: cxx ../../llvm/tools/llvm-pdbutil/MinimalTypeDumper.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = MinimalTypeDumper.cpp
+  source_name_part = MinimalTypeDumper
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PdbYaml.o: cxx ../../llvm/tools/llvm-pdbutil/PdbYaml.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = PdbYaml.cpp
+  source_name_part = PdbYaml
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyBuiltinDumper.o: cxx ../../llvm/tools/llvm-pdbutil/PrettyBuiltinDumper.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = PrettyBuiltinDumper.cpp
+  source_name_part = PrettyBuiltinDumper
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyClassDefinitionDumper.o: cxx ../../llvm/tools/llvm-pdbutil/PrettyClassDefinitionDumper.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = PrettyClassDefinitionDumper.cpp
+  source_name_part = PrettyClassDefinitionDumper
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyClassLayoutGraphicalDumper.o: cxx ../../llvm/tools/llvm-pdbutil/PrettyClassLayoutGraphicalDumper.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = PrettyClassLayoutGraphicalDumper.cpp
+  source_name_part = PrettyClassLayoutGraphicalDumper
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyCompilandDumper.o: cxx ../../llvm/tools/llvm-pdbutil/PrettyCompilandDumper.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = PrettyCompilandDumper.cpp
+  source_name_part = PrettyCompilandDumper
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyEnumDumper.o: cxx ../../llvm/tools/llvm-pdbutil/PrettyEnumDumper.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = PrettyEnumDumper.cpp
+  source_name_part = PrettyEnumDumper
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyExternalSymbolDumper.o: cxx ../../llvm/tools/llvm-pdbutil/PrettyExternalSymbolDumper.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = PrettyExternalSymbolDumper.cpp
+  source_name_part = PrettyExternalSymbolDumper
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyFunctionDumper.o: cxx ../../llvm/tools/llvm-pdbutil/PrettyFunctionDumper.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = PrettyFunctionDumper.cpp
+  source_name_part = PrettyFunctionDumper
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyTypeDumper.o: cxx ../../llvm/tools/llvm-pdbutil/PrettyTypeDumper.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = PrettyTypeDumper.cpp
+  source_name_part = PrettyTypeDumper
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyTypedefDumper.o: cxx ../../llvm/tools/llvm-pdbutil/PrettyTypedefDumper.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = PrettyTypedefDumper.cpp
+  source_name_part = PrettyTypedefDumper
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyVariableDumper.o: cxx ../../llvm/tools/llvm-pdbutil/PrettyVariableDumper.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = PrettyVariableDumper.cpp
+  source_name_part = PrettyVariableDumper
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.StreamUtil.o: cxx ../../llvm/tools/llvm-pdbutil/StreamUtil.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = StreamUtil.cpp
+  source_name_part = StreamUtil
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.TypeReferenceTracker.o: cxx ../../llvm/tools/llvm-pdbutil/TypeReferenceTracker.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = TypeReferenceTracker.cpp
+  source_name_part = TypeReferenceTracker
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.YAMLOutputStyle.o: cxx ../../llvm/tools/llvm-pdbutil/YAMLOutputStyle.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = YAMLOutputStyle.cpp
+  source_name_part = YAMLOutputStyle
+build obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.llvm-pdbutil.o: cxx ../../llvm/tools/llvm-pdbutil/llvm-pdbutil.cpp || obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.inputdeps.stamp
+  source_file_part = llvm-pdbutil.cpp
+  source_name_part = llvm-pdbutil
+
+build ./bin/llvm-pdbutil: link obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.BytesOutputStyle.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.DumpOutputStyle.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.ExplainOutputStyle.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.MinimalSymbolDumper.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.MinimalTypeDumper.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PdbYaml.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyBuiltinDumper.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyClassDefinitionDumper.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyClassLayoutGraphicalDumper.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyCompilandDumper.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyEnumDumper.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyExternalSymbolDumper.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyFunctionDumper.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyTypeDumper.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyTypedefDumper.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.PrettyVariableDumper.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.StreamUtil.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.TypeReferenceTracker.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.YAMLOutputStyle.o obj/llvm/tools/llvm-pdbutil/llvm-pdbutil.llvm-pdbutil.o ./lib/libLLVMBinaryFormat.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMObject.a ./lib/libLLVMObjectYAML.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMC.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

@@ -1,0 +1,28 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = FuzzMutate
+target_output_name = libLLVMFuzzMutate
+
+build obj/llvm/lib/FuzzMutate/FuzzMutate.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/FuzzMutate/FuzzMutate.FuzzerCLI.o: cxx ../../llvm/lib/FuzzMutate/FuzzerCLI.cpp || obj/llvm/lib/FuzzMutate/FuzzMutate.inputdeps.stamp
+  source_file_part = FuzzerCLI.cpp
+  source_name_part = FuzzerCLI
+build obj/llvm/lib/FuzzMutate/FuzzMutate.IRMutator.o: cxx ../../llvm/lib/FuzzMutate/IRMutator.cpp || obj/llvm/lib/FuzzMutate/FuzzMutate.inputdeps.stamp
+  source_file_part = IRMutator.cpp
+  source_name_part = IRMutator
+build obj/llvm/lib/FuzzMutate/FuzzMutate.OpDescriptor.o: cxx ../../llvm/lib/FuzzMutate/OpDescriptor.cpp || obj/llvm/lib/FuzzMutate/FuzzMutate.inputdeps.stamp
+  source_file_part = OpDescriptor.cpp
+  source_name_part = OpDescriptor
+build obj/llvm/lib/FuzzMutate/FuzzMutate.Operations.o: cxx ../../llvm/lib/FuzzMutate/Operations.cpp || obj/llvm/lib/FuzzMutate/FuzzMutate.inputdeps.stamp
+  source_file_part = Operations.cpp
+  source_name_part = Operations
+build obj/llvm/lib/FuzzMutate/FuzzMutate.RandomIRBuilder.o: cxx ../../llvm/lib/FuzzMutate/RandomIRBuilder.cpp || obj/llvm/lib/FuzzMutate/FuzzMutate.inputdeps.stamp
+  source_file_part = RandomIRBuilder.cpp
+  source_name_part = RandomIRBuilder
+
+build ./lib/libLLVMFuzzMutate.a: alink obj/llvm/lib/FuzzMutate/FuzzMutate.FuzzerCLI.o obj/llvm/lib/FuzzMutate/FuzzMutate.IRMutator.o obj/llvm/lib/FuzzMutate/FuzzMutate.OpDescriptor.o obj/llvm/lib/FuzzMutate/FuzzMutate.Operations.o obj/llvm/lib/FuzzMutate/FuzzMutate.RandomIRBuilder.o || ./lib/libLLVMAnalysis.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitWriter.a ./lib/libLLVMCore.a ./lib/libLLVMSupport.a ./lib/libLLVMTarget.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

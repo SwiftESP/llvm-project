@@ -1,0 +1,15 @@
+defines =
+include_dirs = -I../../llvm/lib/Target/AArch64 -I../../llvm/include -Igen/llvm/include -Igen/llvm/lib/Target/AArch64/AsmParser -Igen/llvm/lib/Target/AArch64/MCTargetDesc -Igen/llvm/lib/Target/AArch64/Utils
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = AsmParser
+target_output_name = libLLVMAArch64AsmParser
+
+build obj/llvm/lib/Target/AArch64/AsmParser/AsmParser.AArch64AsmParser.o: cxx ../../llvm/lib/Target/AArch64/AsmParser/AArch64AsmParser.cpp || obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+  source_file_part = AArch64AsmParser.cpp
+  source_name_part = AArch64AsmParser
+
+build ./lib/libLLVMAArch64AsmParser.a: alink obj/llvm/lib/Target/AArch64/AsmParser/AsmParser.AArch64AsmParser.o || obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp ./lib/libLLVMMC.a ./lib/libLLVMMCParser.a ./lib/libLLVMSupport.a ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

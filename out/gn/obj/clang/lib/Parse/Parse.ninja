@@ -1,0 +1,61 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/Parse -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Parse
+target_output_name = libclangParse
+
+build obj/clang/lib/Parse/Parse.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang/lib/Parse/Parse.ParseAST.o: cxx ../../clang/lib/Parse/ParseAST.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParseAST.cpp
+  source_name_part = ParseAST
+build obj/clang/lib/Parse/Parse.ParseCXXInlineMethods.o: cxx ../../clang/lib/Parse/ParseCXXInlineMethods.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParseCXXInlineMethods.cpp
+  source_name_part = ParseCXXInlineMethods
+build obj/clang/lib/Parse/Parse.ParseDecl.o: cxx ../../clang/lib/Parse/ParseDecl.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParseDecl.cpp
+  source_name_part = ParseDecl
+build obj/clang/lib/Parse/Parse.ParseDeclCXX.o: cxx ../../clang/lib/Parse/ParseDeclCXX.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParseDeclCXX.cpp
+  source_name_part = ParseDeclCXX
+build obj/clang/lib/Parse/Parse.ParseExpr.o: cxx ../../clang/lib/Parse/ParseExpr.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParseExpr.cpp
+  source_name_part = ParseExpr
+build obj/clang/lib/Parse/Parse.ParseExprCXX.o: cxx ../../clang/lib/Parse/ParseExprCXX.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParseExprCXX.cpp
+  source_name_part = ParseExprCXX
+build obj/clang/lib/Parse/Parse.ParseHLSL.o: cxx ../../clang/lib/Parse/ParseHLSL.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParseHLSL.cpp
+  source_name_part = ParseHLSL
+build obj/clang/lib/Parse/Parse.ParseInit.o: cxx ../../clang/lib/Parse/ParseInit.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParseInit.cpp
+  source_name_part = ParseInit
+build obj/clang/lib/Parse/Parse.ParseObjc.o: cxx ../../clang/lib/Parse/ParseObjc.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParseObjc.cpp
+  source_name_part = ParseObjc
+build obj/clang/lib/Parse/Parse.ParseOpenMP.o: cxx ../../clang/lib/Parse/ParseOpenMP.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParseOpenMP.cpp
+  source_name_part = ParseOpenMP
+build obj/clang/lib/Parse/Parse.ParsePragma.o: cxx ../../clang/lib/Parse/ParsePragma.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParsePragma.cpp
+  source_name_part = ParsePragma
+build obj/clang/lib/Parse/Parse.ParseStmt.o: cxx ../../clang/lib/Parse/ParseStmt.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParseStmt.cpp
+  source_name_part = ParseStmt
+build obj/clang/lib/Parse/Parse.ParseStmtAsm.o: cxx ../../clang/lib/Parse/ParseStmtAsm.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParseStmtAsm.cpp
+  source_name_part = ParseStmtAsm
+build obj/clang/lib/Parse/Parse.ParseTemplate.o: cxx ../../clang/lib/Parse/ParseTemplate.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParseTemplate.cpp
+  source_name_part = ParseTemplate
+build obj/clang/lib/Parse/Parse.ParseTentative.o: cxx ../../clang/lib/Parse/ParseTentative.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = ParseTentative.cpp
+  source_name_part = ParseTentative
+build obj/clang/lib/Parse/Parse.Parser.o: cxx ../../clang/lib/Parse/Parser.cpp || obj/clang/lib/Parse/Parse.inputdeps.stamp
+  source_file_part = Parser.cpp
+  source_name_part = Parser
+
+build ./lib/libclangParse.a: alink obj/clang/lib/Parse/Parse.ParseAST.o obj/clang/lib/Parse/Parse.ParseCXXInlineMethods.o obj/clang/lib/Parse/Parse.ParseDecl.o obj/clang/lib/Parse/Parse.ParseDeclCXX.o obj/clang/lib/Parse/Parse.ParseExpr.o obj/clang/lib/Parse/Parse.ParseExprCXX.o obj/clang/lib/Parse/Parse.ParseHLSL.o obj/clang/lib/Parse/Parse.ParseInit.o obj/clang/lib/Parse/Parse.ParseObjc.o obj/clang/lib/Parse/Parse.ParseOpenMP.o obj/clang/lib/Parse/Parse.ParsePragma.o obj/clang/lib/Parse/Parse.ParseStmt.o obj/clang/lib/Parse/Parse.ParseStmtAsm.o obj/clang/lib/Parse/Parse.ParseTemplate.o obj/clang/lib/Parse/Parse.ParseTentative.o obj/clang/lib/Parse/Parse.Parser.o || obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp ./lib/libclangAST.a ./lib/libclangBasic.a ./lib/libclangLex.a ./lib/libclangSema.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMMC.a ./lib/libLLVMMCParser.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangAnalysis.a ./lib/libclangASTMatchers.a ./lib/libclangEdit.a ./lib/libclangSupport.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

@@ -1,0 +1,55 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = BinaryFormat
+target_output_name = libLLVMBinaryFormat
+
+build obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/BinaryFormat/BinaryFormat.AMDGPUMetadataVerifier.o: cxx ../../llvm/lib/BinaryFormat/AMDGPUMetadataVerifier.cpp || obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp
+  source_file_part = AMDGPUMetadataVerifier.cpp
+  source_name_part = AMDGPUMetadataVerifier
+build obj/llvm/lib/BinaryFormat/BinaryFormat.COFF.o: cxx ../../llvm/lib/BinaryFormat/COFF.cpp || obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp
+  source_file_part = COFF.cpp
+  source_name_part = COFF
+build obj/llvm/lib/BinaryFormat/BinaryFormat.DXContainer.o: cxx ../../llvm/lib/BinaryFormat/DXContainer.cpp || obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp
+  source_file_part = DXContainer.cpp
+  source_name_part = DXContainer
+build obj/llvm/lib/BinaryFormat/BinaryFormat.Dwarf.o: cxx ../../llvm/lib/BinaryFormat/Dwarf.cpp || obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp
+  source_file_part = Dwarf.cpp
+  source_name_part = Dwarf
+build obj/llvm/lib/BinaryFormat/BinaryFormat.ELF.o: cxx ../../llvm/lib/BinaryFormat/ELF.cpp || obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp
+  source_file_part = ELF.cpp
+  source_name_part = ELF
+build obj/llvm/lib/BinaryFormat/BinaryFormat.MachO.o: cxx ../../llvm/lib/BinaryFormat/MachO.cpp || obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp
+  source_file_part = MachO.cpp
+  source_name_part = MachO
+build obj/llvm/lib/BinaryFormat/BinaryFormat.Magic.o: cxx ../../llvm/lib/BinaryFormat/Magic.cpp || obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp
+  source_file_part = Magic.cpp
+  source_name_part = Magic
+build obj/llvm/lib/BinaryFormat/BinaryFormat.Minidump.o: cxx ../../llvm/lib/BinaryFormat/Minidump.cpp || obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp
+  source_file_part = Minidump.cpp
+  source_name_part = Minidump
+build obj/llvm/lib/BinaryFormat/BinaryFormat.MsgPackDocument.o: cxx ../../llvm/lib/BinaryFormat/MsgPackDocument.cpp || obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp
+  source_file_part = MsgPackDocument.cpp
+  source_name_part = MsgPackDocument
+build obj/llvm/lib/BinaryFormat/BinaryFormat.MsgPackDocumentYAML.o: cxx ../../llvm/lib/BinaryFormat/MsgPackDocumentYAML.cpp || obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp
+  source_file_part = MsgPackDocumentYAML.cpp
+  source_name_part = MsgPackDocumentYAML
+build obj/llvm/lib/BinaryFormat/BinaryFormat.MsgPackReader.o: cxx ../../llvm/lib/BinaryFormat/MsgPackReader.cpp || obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp
+  source_file_part = MsgPackReader.cpp
+  source_name_part = MsgPackReader
+build obj/llvm/lib/BinaryFormat/BinaryFormat.MsgPackWriter.o: cxx ../../llvm/lib/BinaryFormat/MsgPackWriter.cpp || obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp
+  source_file_part = MsgPackWriter.cpp
+  source_name_part = MsgPackWriter
+build obj/llvm/lib/BinaryFormat/BinaryFormat.Wasm.o: cxx ../../llvm/lib/BinaryFormat/Wasm.cpp || obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp
+  source_file_part = Wasm.cpp
+  source_name_part = Wasm
+build obj/llvm/lib/BinaryFormat/BinaryFormat.XCOFF.o: cxx ../../llvm/lib/BinaryFormat/XCOFF.cpp || obj/llvm/lib/BinaryFormat/BinaryFormat.inputdeps.stamp
+  source_file_part = XCOFF.cpp
+  source_name_part = XCOFF
+
+build ./lib/libLLVMBinaryFormat.a: alink obj/llvm/lib/BinaryFormat/BinaryFormat.AMDGPUMetadataVerifier.o obj/llvm/lib/BinaryFormat/BinaryFormat.COFF.o obj/llvm/lib/BinaryFormat/BinaryFormat.DXContainer.o obj/llvm/lib/BinaryFormat/BinaryFormat.Dwarf.o obj/llvm/lib/BinaryFormat/BinaryFormat.ELF.o obj/llvm/lib/BinaryFormat/BinaryFormat.MachO.o obj/llvm/lib/BinaryFormat/BinaryFormat.Magic.o obj/llvm/lib/BinaryFormat/BinaryFormat.Minidump.o obj/llvm/lib/BinaryFormat/BinaryFormat.MsgPackDocument.o obj/llvm/lib/BinaryFormat/BinaryFormat.MsgPackDocumentYAML.o obj/llvm/lib/BinaryFormat/BinaryFormat.MsgPackReader.o obj/llvm/lib/BinaryFormat/BinaryFormat.MsgPackWriter.o obj/llvm/lib/BinaryFormat/BinaryFormat.Wasm.o obj/llvm/lib/BinaryFormat/BinaryFormat.XCOFF.o || ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

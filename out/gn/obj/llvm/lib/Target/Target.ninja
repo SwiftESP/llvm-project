@@ -1,0 +1,28 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Target
+target_output_name = libLLVMTarget
+
+build obj/llvm/lib/Target/Target.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/Target/Target.Target.o: cxx ../../llvm/lib/Target/Target.cpp || obj/llvm/lib/Target/Target.inputdeps.stamp
+  source_file_part = Target.cpp
+  source_name_part = Target
+build obj/llvm/lib/Target/Target.TargetIntrinsicInfo.o: cxx ../../llvm/lib/Target/TargetIntrinsicInfo.cpp || obj/llvm/lib/Target/Target.inputdeps.stamp
+  source_file_part = TargetIntrinsicInfo.cpp
+  source_name_part = TargetIntrinsicInfo
+build obj/llvm/lib/Target/Target.TargetLoweringObjectFile.o: cxx ../../llvm/lib/Target/TargetLoweringObjectFile.cpp || obj/llvm/lib/Target/Target.inputdeps.stamp
+  source_file_part = TargetLoweringObjectFile.cpp
+  source_name_part = TargetLoweringObjectFile
+build obj/llvm/lib/Target/Target.TargetMachine.o: cxx ../../llvm/lib/Target/TargetMachine.cpp || obj/llvm/lib/Target/Target.inputdeps.stamp
+  source_file_part = TargetMachine.cpp
+  source_name_part = TargetMachine
+build obj/llvm/lib/Target/Target.TargetMachineC.o: cxx ../../llvm/lib/Target/TargetMachineC.cpp || obj/llvm/lib/Target/Target.inputdeps.stamp
+  source_file_part = TargetMachineC.cpp
+  source_name_part = TargetMachineC
+
+build ./lib/libLLVMTarget.a: alink obj/llvm/lib/Target/Target.Target.o obj/llvm/lib/Target/Target.TargetIntrinsicInfo.o obj/llvm/lib/Target/Target.TargetLoweringObjectFile.o obj/llvm/lib/Target/Target.TargetMachine.o obj/llvm/lib/Target/Target.TargetMachineC.o || obj/llvm/include/llvm/Config/write_target_def_files.stamp ./lib/libLLVMAnalysis.a ./lib/libLLVMCore.a ./lib/libLLVMMC.a ./lib/libLLVMSupport.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

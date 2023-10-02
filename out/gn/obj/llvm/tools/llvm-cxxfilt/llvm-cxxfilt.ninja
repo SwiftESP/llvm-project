@@ -1,0 +1,22 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/tools/llvm-cxxfilt
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = llvm-cxxfilt
+target_output_name = llvm-cxxfilt
+
+build obj/llvm/tools/llvm-cxxfilt/llvm-cxxfilt.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/tools/llvm-cxxfilt/Opts.stamp obj/llvm/tools/llvm-cxxfilt/llvm_cxxfilt-driver.stamp
+build obj/llvm/tools/llvm-cxxfilt/llvm-cxxfilt.llvm-cxxfilt.o: cxx ../../llvm/tools/llvm-cxxfilt/llvm-cxxfilt.cpp || obj/llvm/tools/llvm-cxxfilt/llvm-cxxfilt.inputdeps.stamp
+  source_file_part = llvm-cxxfilt.cpp
+  source_name_part = llvm-cxxfilt
+build obj/BUILD_DIR/gen/llvm/tools/llvm-cxxfilt/llvm-cxxfilt.llvm_cxxfilt-driver.o: cxx gen/llvm/tools/llvm-cxxfilt/llvm_cxxfilt-driver.cpp || obj/llvm/tools/llvm-cxxfilt/llvm-cxxfilt.inputdeps.stamp
+  source_file_part = llvm_cxxfilt-driver.cpp
+  source_name_part = llvm_cxxfilt-driver
+
+build ./bin/llvm-cxxfilt: link obj/llvm/tools/llvm-cxxfilt/llvm-cxxfilt.llvm-cxxfilt.o obj/BUILD_DIR/gen/llvm/tools/llvm-cxxfilt/llvm-cxxfilt.llvm_cxxfilt-driver.o ./lib/libLLVMDemangle.a ./lib/libLLVMOption.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a || obj/llvm/tools/llvm-cxxfilt/Opts.stamp obj/llvm/tools/llvm-cxxfilt/llvm_cxxfilt-driver.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

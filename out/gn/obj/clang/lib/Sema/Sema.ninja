@@ -1,0 +1,175 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/lib/Sema -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/clang/include/clang/AST -Igen/llvm/include/llvm/Frontend/OpenMP
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Sema
+target_output_name = libclangSema
+
+build obj/clang/lib/Sema/Sema.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang/lib/Sema/Sema.AnalysisBasedWarnings.o: cxx ../../clang/lib/Sema/AnalysisBasedWarnings.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = AnalysisBasedWarnings.cpp
+  source_name_part = AnalysisBasedWarnings
+build obj/clang/lib/Sema/Sema.CodeCompleteConsumer.o: cxx ../../clang/lib/Sema/CodeCompleteConsumer.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = CodeCompleteConsumer.cpp
+  source_name_part = CodeCompleteConsumer
+build obj/clang/lib/Sema/Sema.DeclSpec.o: cxx ../../clang/lib/Sema/DeclSpec.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = DeclSpec.cpp
+  source_name_part = DeclSpec
+build obj/clang/lib/Sema/Sema.DelayedDiagnostic.o: cxx ../../clang/lib/Sema/DelayedDiagnostic.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = DelayedDiagnostic.cpp
+  source_name_part = DelayedDiagnostic
+build obj/clang/lib/Sema/Sema.HLSLExternalSemaSource.o: cxx ../../clang/lib/Sema/HLSLExternalSemaSource.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = HLSLExternalSemaSource.cpp
+  source_name_part = HLSLExternalSemaSource
+build obj/clang/lib/Sema/Sema.IdentifierResolver.o: cxx ../../clang/lib/Sema/IdentifierResolver.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = IdentifierResolver.cpp
+  source_name_part = IdentifierResolver
+build obj/clang/lib/Sema/Sema.JumpDiagnostics.o: cxx ../../clang/lib/Sema/JumpDiagnostics.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = JumpDiagnostics.cpp
+  source_name_part = JumpDiagnostics
+build obj/clang/lib/Sema/Sema.MultiplexExternalSemaSource.o: cxx ../../clang/lib/Sema/MultiplexExternalSemaSource.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = MultiplexExternalSemaSource.cpp
+  source_name_part = MultiplexExternalSemaSource
+build obj/clang/lib/Sema/Sema.ParsedAttr.o: cxx ../../clang/lib/Sema/ParsedAttr.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = ParsedAttr.cpp
+  source_name_part = ParsedAttr
+build obj/clang/lib/Sema/Sema.Scope.o: cxx ../../clang/lib/Sema/Scope.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = Scope.cpp
+  source_name_part = Scope
+build obj/clang/lib/Sema/Sema.ScopeInfo.o: cxx ../../clang/lib/Sema/ScopeInfo.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = ScopeInfo.cpp
+  source_name_part = ScopeInfo
+build obj/clang/lib/Sema/Sema.Sema.o: cxx ../../clang/lib/Sema/Sema.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = Sema.cpp
+  source_name_part = Sema
+build obj/clang/lib/Sema/Sema.SemaAccess.o: cxx ../../clang/lib/Sema/SemaAccess.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaAccess.cpp
+  source_name_part = SemaAccess
+build obj/clang/lib/Sema/Sema.SemaAttr.o: cxx ../../clang/lib/Sema/SemaAttr.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaAttr.cpp
+  source_name_part = SemaAttr
+build obj/clang/lib/Sema/Sema.SemaAvailability.o: cxx ../../clang/lib/Sema/SemaAvailability.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaAvailability.cpp
+  source_name_part = SemaAvailability
+build obj/clang/lib/Sema/Sema.SemaCUDA.o: cxx ../../clang/lib/Sema/SemaCUDA.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaCUDA.cpp
+  source_name_part = SemaCUDA
+build obj/clang/lib/Sema/Sema.SemaCXXScopeSpec.o: cxx ../../clang/lib/Sema/SemaCXXScopeSpec.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaCXXScopeSpec.cpp
+  source_name_part = SemaCXXScopeSpec
+build obj/clang/lib/Sema/Sema.SemaCast.o: cxx ../../clang/lib/Sema/SemaCast.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaCast.cpp
+  source_name_part = SemaCast
+build obj/clang/lib/Sema/Sema.SemaChecking.o: cxx ../../clang/lib/Sema/SemaChecking.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaChecking.cpp
+  source_name_part = SemaChecking
+build obj/clang/lib/Sema/Sema.SemaCodeComplete.o: cxx ../../clang/lib/Sema/SemaCodeComplete.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaCodeComplete.cpp
+  source_name_part = SemaCodeComplete
+build obj/clang/lib/Sema/Sema.SemaConcept.o: cxx ../../clang/lib/Sema/SemaConcept.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaConcept.cpp
+  source_name_part = SemaConcept
+build obj/clang/lib/Sema/Sema.SemaConsumer.o: cxx ../../clang/lib/Sema/SemaConsumer.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaConsumer.cpp
+  source_name_part = SemaConsumer
+build obj/clang/lib/Sema/Sema.SemaCoroutine.o: cxx ../../clang/lib/Sema/SemaCoroutine.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaCoroutine.cpp
+  source_name_part = SemaCoroutine
+build obj/clang/lib/Sema/Sema.SemaDecl.o: cxx ../../clang/lib/Sema/SemaDecl.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaDecl.cpp
+  source_name_part = SemaDecl
+build obj/clang/lib/Sema/Sema.SemaDeclAttr.o: cxx ../../clang/lib/Sema/SemaDeclAttr.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaDeclAttr.cpp
+  source_name_part = SemaDeclAttr
+build obj/clang/lib/Sema/Sema.SemaDeclCXX.o: cxx ../../clang/lib/Sema/SemaDeclCXX.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaDeclCXX.cpp
+  source_name_part = SemaDeclCXX
+build obj/clang/lib/Sema/Sema.SemaDeclObjC.o: cxx ../../clang/lib/Sema/SemaDeclObjC.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaDeclObjC.cpp
+  source_name_part = SemaDeclObjC
+build obj/clang/lib/Sema/Sema.SemaExceptionSpec.o: cxx ../../clang/lib/Sema/SemaExceptionSpec.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaExceptionSpec.cpp
+  source_name_part = SemaExceptionSpec
+build obj/clang/lib/Sema/Sema.SemaExpr.o: cxx ../../clang/lib/Sema/SemaExpr.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaExpr.cpp
+  source_name_part = SemaExpr
+build obj/clang/lib/Sema/Sema.SemaExprCXX.o: cxx ../../clang/lib/Sema/SemaExprCXX.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaExprCXX.cpp
+  source_name_part = SemaExprCXX
+build obj/clang/lib/Sema/Sema.SemaExprMember.o: cxx ../../clang/lib/Sema/SemaExprMember.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaExprMember.cpp
+  source_name_part = SemaExprMember
+build obj/clang/lib/Sema/Sema.SemaExprObjC.o: cxx ../../clang/lib/Sema/SemaExprObjC.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaExprObjC.cpp
+  source_name_part = SemaExprObjC
+build obj/clang/lib/Sema/Sema.SemaFixItUtils.o: cxx ../../clang/lib/Sema/SemaFixItUtils.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaFixItUtils.cpp
+  source_name_part = SemaFixItUtils
+build obj/clang/lib/Sema/Sema.SemaHLSL.o: cxx ../../clang/lib/Sema/SemaHLSL.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaHLSL.cpp
+  source_name_part = SemaHLSL
+build obj/clang/lib/Sema/Sema.SemaInit.o: cxx ../../clang/lib/Sema/SemaInit.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaInit.cpp
+  source_name_part = SemaInit
+build obj/clang/lib/Sema/Sema.SemaLambda.o: cxx ../../clang/lib/Sema/SemaLambda.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaLambda.cpp
+  source_name_part = SemaLambda
+build obj/clang/lib/Sema/Sema.SemaLookup.o: cxx ../../clang/lib/Sema/SemaLookup.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaLookup.cpp
+  source_name_part = SemaLookup
+build obj/clang/lib/Sema/Sema.SemaModule.o: cxx ../../clang/lib/Sema/SemaModule.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaModule.cpp
+  source_name_part = SemaModule
+build obj/clang/lib/Sema/Sema.SemaObjCProperty.o: cxx ../../clang/lib/Sema/SemaObjCProperty.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaObjCProperty.cpp
+  source_name_part = SemaObjCProperty
+build obj/clang/lib/Sema/Sema.SemaOpenMP.o: cxx ../../clang/lib/Sema/SemaOpenMP.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaOpenMP.cpp
+  source_name_part = SemaOpenMP
+build obj/clang/lib/Sema/Sema.SemaOverload.o: cxx ../../clang/lib/Sema/SemaOverload.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaOverload.cpp
+  source_name_part = SemaOverload
+build obj/clang/lib/Sema/Sema.SemaPseudoObject.o: cxx ../../clang/lib/Sema/SemaPseudoObject.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaPseudoObject.cpp
+  source_name_part = SemaPseudoObject
+build obj/clang/lib/Sema/Sema.SemaRISCVVectorLookup.o: cxx ../../clang/lib/Sema/SemaRISCVVectorLookup.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaRISCVVectorLookup.cpp
+  source_name_part = SemaRISCVVectorLookup
+build obj/clang/lib/Sema/Sema.SemaSYCL.o: cxx ../../clang/lib/Sema/SemaSYCL.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaSYCL.cpp
+  source_name_part = SemaSYCL
+build obj/clang/lib/Sema/Sema.SemaStmt.o: cxx ../../clang/lib/Sema/SemaStmt.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaStmt.cpp
+  source_name_part = SemaStmt
+build obj/clang/lib/Sema/Sema.SemaStmtAsm.o: cxx ../../clang/lib/Sema/SemaStmtAsm.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaStmtAsm.cpp
+  source_name_part = SemaStmtAsm
+build obj/clang/lib/Sema/Sema.SemaStmtAttr.o: cxx ../../clang/lib/Sema/SemaStmtAttr.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaStmtAttr.cpp
+  source_name_part = SemaStmtAttr
+build obj/clang/lib/Sema/Sema.SemaTemplate.o: cxx ../../clang/lib/Sema/SemaTemplate.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaTemplate.cpp
+  source_name_part = SemaTemplate
+build obj/clang/lib/Sema/Sema.SemaTemplateDeduction.o: cxx ../../clang/lib/Sema/SemaTemplateDeduction.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaTemplateDeduction.cpp
+  source_name_part = SemaTemplateDeduction
+build obj/clang/lib/Sema/Sema.SemaTemplateInstantiate.o: cxx ../../clang/lib/Sema/SemaTemplateInstantiate.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaTemplateInstantiate.cpp
+  source_name_part = SemaTemplateInstantiate
+build obj/clang/lib/Sema/Sema.SemaTemplateInstantiateDecl.o: cxx ../../clang/lib/Sema/SemaTemplateInstantiateDecl.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaTemplateInstantiateDecl.cpp
+  source_name_part = SemaTemplateInstantiateDecl
+build obj/clang/lib/Sema/Sema.SemaTemplateVariadic.o: cxx ../../clang/lib/Sema/SemaTemplateVariadic.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaTemplateVariadic.cpp
+  source_name_part = SemaTemplateVariadic
+build obj/clang/lib/Sema/Sema.SemaType.o: cxx ../../clang/lib/Sema/SemaType.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = SemaType.cpp
+  source_name_part = SemaType
+build obj/clang/lib/Sema/Sema.TypeLocBuilder.o: cxx ../../clang/lib/Sema/TypeLocBuilder.cpp || obj/clang/lib/Sema/Sema.inputdeps.stamp
+  source_file_part = TypeLocBuilder.cpp
+  source_name_part = TypeLocBuilder
+
+build ./lib/libclangSema.a: alink obj/clang/lib/Sema/Sema.AnalysisBasedWarnings.o obj/clang/lib/Sema/Sema.CodeCompleteConsumer.o obj/clang/lib/Sema/Sema.DeclSpec.o obj/clang/lib/Sema/Sema.DelayedDiagnostic.o obj/clang/lib/Sema/Sema.HLSLExternalSemaSource.o obj/clang/lib/Sema/Sema.IdentifierResolver.o obj/clang/lib/Sema/Sema.JumpDiagnostics.o obj/clang/lib/Sema/Sema.MultiplexExternalSemaSource.o obj/clang/lib/Sema/Sema.ParsedAttr.o obj/clang/lib/Sema/Sema.Scope.o obj/clang/lib/Sema/Sema.ScopeInfo.o obj/clang/lib/Sema/Sema.Sema.o obj/clang/lib/Sema/Sema.SemaAccess.o obj/clang/lib/Sema/Sema.SemaAttr.o obj/clang/lib/Sema/Sema.SemaAvailability.o obj/clang/lib/Sema/Sema.SemaCUDA.o obj/clang/lib/Sema/Sema.SemaCXXScopeSpec.o obj/clang/lib/Sema/Sema.SemaCast.o obj/clang/lib/Sema/Sema.SemaChecking.o obj/clang/lib/Sema/Sema.SemaCodeComplete.o obj/clang/lib/Sema/Sema.SemaConcept.o obj/clang/lib/Sema/Sema.SemaConsumer.o obj/clang/lib/Sema/Sema.SemaCoroutine.o obj/clang/lib/Sema/Sema.SemaDecl.o obj/clang/lib/Sema/Sema.SemaDeclAttr.o obj/clang/lib/Sema/Sema.SemaDeclCXX.o obj/clang/lib/Sema/Sema.SemaDeclObjC.o obj/clang/lib/Sema/Sema.SemaExceptionSpec.o obj/clang/lib/Sema/Sema.SemaExpr.o obj/clang/lib/Sema/Sema.SemaExprCXX.o obj/clang/lib/Sema/Sema.SemaExprMember.o obj/clang/lib/Sema/Sema.SemaExprObjC.o obj/clang/lib/Sema/Sema.SemaFixItUtils.o obj/clang/lib/Sema/Sema.SemaHLSL.o obj/clang/lib/Sema/Sema.SemaInit.o obj/clang/lib/Sema/Sema.SemaLambda.o obj/clang/lib/Sema/Sema.SemaLookup.o obj/clang/lib/Sema/Sema.SemaModule.o obj/clang/lib/Sema/Sema.SemaObjCProperty.o obj/clang/lib/Sema/Sema.SemaOpenMP.o obj/clang/lib/Sema/Sema.SemaOverload.o obj/clang/lib/Sema/Sema.SemaPseudoObject.o obj/clang/lib/Sema/Sema.SemaRISCVVectorLookup.o obj/clang/lib/Sema/Sema.SemaSYCL.o obj/clang/lib/Sema/Sema.SemaStmt.o obj/clang/lib/Sema/Sema.SemaStmtAsm.o obj/clang/lib/Sema/Sema.SemaStmtAttr.o obj/clang/lib/Sema/Sema.SemaTemplate.o obj/clang/lib/Sema/Sema.SemaTemplateDeduction.o obj/clang/lib/Sema/Sema.SemaTemplateInstantiate.o obj/clang/lib/Sema/Sema.SemaTemplateInstantiateDecl.o obj/clang/lib/Sema/Sema.SemaTemplateVariadic.o obj/clang/lib/Sema/Sema.SemaType.o obj/clang/lib/Sema/Sema.TypeLocBuilder.o || obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp ./lib/libclangAST.a ./lib/libclangAnalysis.a ./lib/libclangBasic.a ./lib/libclangEdit.a ./lib/libclangLex.a ./lib/libclangSupport.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMMC.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangASTMatchers.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

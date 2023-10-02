@@ -1,0 +1,11 @@
+defines = -DL_swp -DSIZE=2 -DMODEL=2
+include_dirs = -I../../compiler-rt/lib/builtins -I../../llvm/include -Istage2_ios_aarch64/gen/llvm/include
+asmflags = -arch arm64 -miphoneos-version-min=8.0
+label_name = lse_swp_2_2
+target_output_name = lse_swp_2_2
+
+build stage2_ios_aarch64/obj/compiler-rt/lib/builtins/aarch64/lse_swp_2_2.lse.o: stage2_ios_aarch64_asm ../../compiler-rt/lib/builtins/aarch64/lse.S || obj/clang.stamp obj/lld.stamp
+  source_file_part = lse.S
+  source_name_part = lse
+
+build stage2_ios_aarch64/obj/compiler-rt/lib/builtins/lse_swp_2_2.stamp: stage2_ios_aarch64_stamp stage2_ios_aarch64/obj/compiler-rt/lib/builtins/aarch64/lse_swp_2_2.lse.o

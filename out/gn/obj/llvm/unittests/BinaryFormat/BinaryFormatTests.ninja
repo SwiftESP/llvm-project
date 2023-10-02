@@ -1,0 +1,34 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = BinaryFormatTests
+target_output_name = BinaryFormatTests
+
+build obj/llvm/unittests/BinaryFormat/BinaryFormatTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/unittests/BinaryFormat/BinaryFormatTests.DwarfTest.o: cxx ../../llvm/unittests/BinaryFormat/DwarfTest.cpp || obj/llvm/unittests/BinaryFormat/BinaryFormatTests.inputdeps.stamp
+  source_file_part = DwarfTest.cpp
+  source_name_part = DwarfTest
+build obj/llvm/unittests/BinaryFormat/BinaryFormatTests.MachOTest.o: cxx ../../llvm/unittests/BinaryFormat/MachOTest.cpp || obj/llvm/unittests/BinaryFormat/BinaryFormatTests.inputdeps.stamp
+  source_file_part = MachOTest.cpp
+  source_name_part = MachOTest
+build obj/llvm/unittests/BinaryFormat/BinaryFormatTests.MsgPackDocumentTest.o: cxx ../../llvm/unittests/BinaryFormat/MsgPackDocumentTest.cpp || obj/llvm/unittests/BinaryFormat/BinaryFormatTests.inputdeps.stamp
+  source_file_part = MsgPackDocumentTest.cpp
+  source_name_part = MsgPackDocumentTest
+build obj/llvm/unittests/BinaryFormat/BinaryFormatTests.MsgPackReaderTest.o: cxx ../../llvm/unittests/BinaryFormat/MsgPackReaderTest.cpp || obj/llvm/unittests/BinaryFormat/BinaryFormatTests.inputdeps.stamp
+  source_file_part = MsgPackReaderTest.cpp
+  source_name_part = MsgPackReaderTest
+build obj/llvm/unittests/BinaryFormat/BinaryFormatTests.MsgPackWriterTest.o: cxx ../../llvm/unittests/BinaryFormat/MsgPackWriterTest.cpp || obj/llvm/unittests/BinaryFormat/BinaryFormatTests.inputdeps.stamp
+  source_file_part = MsgPackWriterTest.cpp
+  source_name_part = MsgPackWriterTest
+build obj/llvm/unittests/BinaryFormat/BinaryFormatTests.TestFileMagic.o: cxx ../../llvm/unittests/BinaryFormat/TestFileMagic.cpp || obj/llvm/unittests/BinaryFormat/BinaryFormatTests.inputdeps.stamp
+  source_file_part = TestFileMagic.cpp
+  source_name_part = TestFileMagic
+
+build obj/llvm/unittests/BinaryFormat/BinaryFormatTests: link obj/llvm/unittests/BinaryFormat/BinaryFormatTests.DwarfTest.o obj/llvm/unittests/BinaryFormat/BinaryFormatTests.MachOTest.o obj/llvm/unittests/BinaryFormat/BinaryFormatTests.MsgPackDocumentTest.o obj/llvm/unittests/BinaryFormat/BinaryFormatTests.MsgPackReaderTest.o obj/llvm/unittests/BinaryFormat/BinaryFormatTests.MsgPackWriterTest.o obj/llvm/unittests/BinaryFormat/BinaryFormatTests.TestFileMagic.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libgtest.a || obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/BinaryFormat

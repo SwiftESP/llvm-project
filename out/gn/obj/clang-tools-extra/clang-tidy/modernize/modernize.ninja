@@ -1,0 +1,121 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = modernize
+target_output_name = libclangTidyModernizeModule
+
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp: stamp obj/clang-tools-extra/clang-tidy/clang-tidy-config.stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/clang/lib/Tooling/node_introspection_inc.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.AvoidBindCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/AvoidBindCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = AvoidBindCheck.cpp
+  source_name_part = AvoidBindCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.AvoidCArraysCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/AvoidCArraysCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = AvoidCArraysCheck.cpp
+  source_name_part = AvoidCArraysCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.ConcatNestedNamespacesCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/ConcatNestedNamespacesCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = ConcatNestedNamespacesCheck.cpp
+  source_name_part = ConcatNestedNamespacesCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.DeprecatedHeadersCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/DeprecatedHeadersCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = DeprecatedHeadersCheck.cpp
+  source_name_part = DeprecatedHeadersCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.DeprecatedIosBaseAliasesCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/DeprecatedIosBaseAliasesCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = DeprecatedIosBaseAliasesCheck.cpp
+  source_name_part = DeprecatedIosBaseAliasesCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.IntegralLiteralExpressionMatcher.o: cxx ../../clang-tools-extra/clang-tidy/modernize/IntegralLiteralExpressionMatcher.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = IntegralLiteralExpressionMatcher.cpp
+  source_name_part = IntegralLiteralExpressionMatcher
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.LoopConvertCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/LoopConvertCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = LoopConvertCheck.cpp
+  source_name_part = LoopConvertCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.LoopConvertUtils.o: cxx ../../clang-tools-extra/clang-tidy/modernize/LoopConvertUtils.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = LoopConvertUtils.cpp
+  source_name_part = LoopConvertUtils
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.MacroToEnumCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/MacroToEnumCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = MacroToEnumCheck.cpp
+  source_name_part = MacroToEnumCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.MakeSharedCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/MakeSharedCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = MakeSharedCheck.cpp
+  source_name_part = MakeSharedCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.MakeSmartPtrCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/MakeSmartPtrCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = MakeSmartPtrCheck.cpp
+  source_name_part = MakeSmartPtrCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.MakeUniqueCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/MakeUniqueCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = MakeUniqueCheck.cpp
+  source_name_part = MakeUniqueCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.ModernizeTidyModule.o: cxx ../../clang-tools-extra/clang-tidy/modernize/ModernizeTidyModule.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = ModernizeTidyModule.cpp
+  source_name_part = ModernizeTidyModule
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.PassByValueCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/PassByValueCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = PassByValueCheck.cpp
+  source_name_part = PassByValueCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.RawStringLiteralCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/RawStringLiteralCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = RawStringLiteralCheck.cpp
+  source_name_part = RawStringLiteralCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.RedundantVoidArgCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/RedundantVoidArgCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = RedundantVoidArgCheck.cpp
+  source_name_part = RedundantVoidArgCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.ReplaceAutoPtrCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/ReplaceAutoPtrCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = ReplaceAutoPtrCheck.cpp
+  source_name_part = ReplaceAutoPtrCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.ReplaceDisallowCopyAndAssignMacroCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/ReplaceDisallowCopyAndAssignMacroCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = ReplaceDisallowCopyAndAssignMacroCheck.cpp
+  source_name_part = ReplaceDisallowCopyAndAssignMacroCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.ReplaceRandomShuffleCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/ReplaceRandomShuffleCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = ReplaceRandomShuffleCheck.cpp
+  source_name_part = ReplaceRandomShuffleCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.ReturnBracedInitListCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/ReturnBracedInitListCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = ReturnBracedInitListCheck.cpp
+  source_name_part = ReturnBracedInitListCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.ShrinkToFitCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/ShrinkToFitCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = ShrinkToFitCheck.cpp
+  source_name_part = ShrinkToFitCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UnaryStaticAssertCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UnaryStaticAssertCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UnaryStaticAssertCheck.cpp
+  source_name_part = UnaryStaticAssertCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UseAutoCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UseAutoCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UseAutoCheck.cpp
+  source_name_part = UseAutoCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UseBoolLiteralsCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UseBoolLiteralsCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UseBoolLiteralsCheck.cpp
+  source_name_part = UseBoolLiteralsCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UseDefaultMemberInitCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UseDefaultMemberInitCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UseDefaultMemberInitCheck.cpp
+  source_name_part = UseDefaultMemberInitCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UseEmplaceCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UseEmplaceCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UseEmplaceCheck.cpp
+  source_name_part = UseEmplaceCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UseEqualsDefaultCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UseEqualsDefaultCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UseEqualsDefaultCheck.cpp
+  source_name_part = UseEqualsDefaultCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UseEqualsDeleteCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UseEqualsDeleteCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UseEqualsDeleteCheck.cpp
+  source_name_part = UseEqualsDeleteCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UseNodiscardCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UseNodiscardCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UseNodiscardCheck.cpp
+  source_name_part = UseNodiscardCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UseNoexceptCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UseNoexceptCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UseNoexceptCheck.cpp
+  source_name_part = UseNoexceptCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UseNullptrCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UseNullptrCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UseNullptrCheck.cpp
+  source_name_part = UseNullptrCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UseOverrideCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UseOverrideCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UseOverrideCheck.cpp
+  source_name_part = UseOverrideCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UseTrailingReturnTypeCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UseTrailingReturnTypeCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UseTrailingReturnTypeCheck.cpp
+  source_name_part = UseTrailingReturnTypeCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UseTransparentFunctorsCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UseTransparentFunctorsCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UseTransparentFunctorsCheck.cpp
+  source_name_part = UseTransparentFunctorsCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UseUncaughtExceptionsCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UseUncaughtExceptionsCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UseUncaughtExceptionsCheck.cpp
+  source_name_part = UseUncaughtExceptionsCheck
+build obj/clang-tools-extra/clang-tidy/modernize/modernize.UseUsingCheck.o: cxx ../../clang-tools-extra/clang-tidy/modernize/UseUsingCheck.cpp || obj/clang-tools-extra/clang-tidy/modernize/modernize.inputdeps.stamp
+  source_file_part = UseUsingCheck.cpp
+  source_name_part = UseUsingCheck
+
+build ./lib/libclangTidyModernizeModule.a: alink obj/clang-tools-extra/clang-tidy/modernize/modernize.AvoidBindCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.AvoidCArraysCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.ConcatNestedNamespacesCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.DeprecatedHeadersCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.DeprecatedIosBaseAliasesCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.IntegralLiteralExpressionMatcher.o obj/clang-tools-extra/clang-tidy/modernize/modernize.LoopConvertCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.LoopConvertUtils.o obj/clang-tools-extra/clang-tidy/modernize/modernize.MacroToEnumCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.MakeSharedCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.MakeSmartPtrCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.MakeUniqueCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.ModernizeTidyModule.o obj/clang-tools-extra/clang-tidy/modernize/modernize.PassByValueCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.RawStringLiteralCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.RedundantVoidArgCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.ReplaceAutoPtrCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.ReplaceDisallowCopyAndAssignMacroCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.ReplaceRandomShuffleCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.ReturnBracedInitListCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.ShrinkToFitCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UnaryStaticAssertCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UseAutoCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UseBoolLiteralsCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UseDefaultMemberInitCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UseEmplaceCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UseEqualsDefaultCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UseEqualsDeleteCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UseNodiscardCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UseNoexceptCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UseNullptrCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UseOverrideCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UseTrailingReturnTypeCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UseTransparentFunctorsCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UseUncaughtExceptionsCheck.o obj/clang-tools-extra/clang-tidy/modernize/modernize.UseUsingCheck.o || ./lib/libclangTidy.a ./lib/libclangTidyReadabilityModule.a ./lib/libclangTidyUtils.a ./lib/libclangAST.a ./lib/libclangASTMatchers.a ./lib/libclangBasic.a ./lib/libclangLex.a ./lib/libclangTooling.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangFormat.a ./lib/libclangToolingCore.a ./lib/libclangRewrite.a ./lib/libclangToolingInclusions.a ./lib/libclangFrontend.a ./lib/libclangDriver.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libclangEdit.a ./lib/libclangParse.a ./lib/libclangSema.a ./lib/libclangAnalysis.a ./lib/libclangSupport.a ./lib/libclangSerialization.a ./lib/libclangStaticAnalyzerCore.a ./lib/libclangCrossTU.a ./lib/libclangIndex.a ./lib/libclangStaticAnalyzerFrontend.a ./lib/libclangStaticAnalyzerCheckers.a ./lib/libclangToolingTransformer.a ./lib/libclangToolingRefactoring.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

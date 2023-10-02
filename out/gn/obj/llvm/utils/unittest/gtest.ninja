@@ -1,0 +1,19 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/utils/unittest/googletest -I../../llvm/utils/unittest/googlemock -I../../llvm/include -Igen/llvm/include -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions
+label_name = gtest
+target_output_name = libgtest
+
+build obj/llvm/utils/unittest/gtest.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/utils/unittest/googlemock/src/gtest.gmock-all.o: cxx ../../llvm/utils/unittest/googlemock/src/gmock-all.cc || obj/llvm/utils/unittest/gtest.inputdeps.stamp
+  source_file_part = gmock-all.cc
+  source_name_part = gmock-all
+build obj/llvm/utils/unittest/googletest/src/gtest.gtest-all.o: cxx ../../llvm/utils/unittest/googletest/src/gtest-all.cc || obj/llvm/utils/unittest/gtest.inputdeps.stamp
+  source_file_part = gtest-all.cc
+  source_name_part = gtest-all
+
+build ./lib/libgtest.a: alink obj/llvm/utils/unittest/googlemock/src/gtest.gmock-all.o obj/llvm/utils/unittest/googletest/src/gtest.gtest-all.o || ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

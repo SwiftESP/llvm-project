@@ -1,0 +1,46 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../lld/include -Igen/lld/include -Igen/lld/Common -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Common
+target_output_name = liblldCommon
+
+build obj/lld/Common/Common.inputdeps.stamp: stamp obj/lld/Common/write_vcsversion.stamp obj/lld/include/lld/Common/version.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/lld/Common/Common.Args.o: cxx ../../lld/Common/Args.cpp || obj/lld/Common/Common.inputdeps.stamp
+  source_file_part = Args.cpp
+  source_name_part = Args
+build obj/lld/Common/Common.CommonLinkerContext.o: cxx ../../lld/Common/CommonLinkerContext.cpp || obj/lld/Common/Common.inputdeps.stamp
+  source_file_part = CommonLinkerContext.cpp
+  source_name_part = CommonLinkerContext
+build obj/lld/Common/Common.DWARF.o: cxx ../../lld/Common/DWARF.cpp || obj/lld/Common/Common.inputdeps.stamp
+  source_file_part = DWARF.cpp
+  source_name_part = DWARF
+build obj/lld/Common/Common.ErrorHandler.o: cxx ../../lld/Common/ErrorHandler.cpp || obj/lld/Common/Common.inputdeps.stamp
+  source_file_part = ErrorHandler.cpp
+  source_name_part = ErrorHandler
+build obj/lld/Common/Common.Filesystem.o: cxx ../../lld/Common/Filesystem.cpp || obj/lld/Common/Common.inputdeps.stamp
+  source_file_part = Filesystem.cpp
+  source_name_part = Filesystem
+build obj/lld/Common/Common.Memory.o: cxx ../../lld/Common/Memory.cpp || obj/lld/Common/Common.inputdeps.stamp
+  source_file_part = Memory.cpp
+  source_name_part = Memory
+build obj/lld/Common/Common.Reproduce.o: cxx ../../lld/Common/Reproduce.cpp || obj/lld/Common/Common.inputdeps.stamp
+  source_file_part = Reproduce.cpp
+  source_name_part = Reproduce
+build obj/lld/Common/Common.Strings.o: cxx ../../lld/Common/Strings.cpp || obj/lld/Common/Common.inputdeps.stamp
+  source_file_part = Strings.cpp
+  source_name_part = Strings
+build obj/lld/Common/Common.TargetOptionsCommandFlags.o: cxx ../../lld/Common/TargetOptionsCommandFlags.cpp || obj/lld/Common/Common.inputdeps.stamp
+  source_file_part = TargetOptionsCommandFlags.cpp
+  source_name_part = TargetOptionsCommandFlags
+build obj/lld/Common/Common.Timer.o: cxx ../../lld/Common/Timer.cpp || obj/lld/Common/Common.inputdeps.stamp
+  source_file_part = Timer.cpp
+  source_name_part = Timer
+build obj/lld/Common/Common.Version.o: cxx ../../lld/Common/Version.cpp || obj/lld/Common/Common.inputdeps.stamp
+  source_file_part = Version.cpp
+  source_name_part = Version
+
+build ./lib/liblldCommon.a: alink obj/lld/Common/Common.Args.o obj/lld/Common/Common.CommonLinkerContext.o obj/lld/Common/Common.DWARF.o obj/lld/Common/Common.ErrorHandler.o obj/lld/Common/Common.Filesystem.o obj/lld/Common/Common.Memory.o obj/lld/Common/Common.Reproduce.o obj/lld/Common/Common.Strings.o obj/lld/Common/Common.TargetOptionsCommandFlags.o obj/lld/Common/Common.Timer.o obj/lld/Common/Common.Version.o || obj/lld/include/lld/Common/version.stamp obj/lld/Common/write_vcsversion.stamp ./lib/libLLVMCodeGen.a ./lib/libLLVMDemangle.a ./lib/libLLVMCore.a ./lib/libLLVMMC.a ./lib/libLLVMOption.a ./lib/libLLVMSupport.a ./lib/libLLVMTarget.a ./lib/libLLVMAnalysis.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

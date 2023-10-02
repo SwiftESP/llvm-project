@@ -1,0 +1,184 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../clang/unittests/Tooling -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = ToolingTests
+target_output_name = ToolingTests
+
+build obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_cg.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_cg.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtin_cg.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_cg.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/clang/lib/Tooling/node_introspection_inc.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build obj/clang/unittests/Tooling/ToolingTests.ASTSelectionTest.o: cxx ../../clang/unittests/Tooling/ASTSelectionTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = ASTSelectionTest.cpp
+  source_name_part = ASTSelectionTest
+build obj/clang/unittests/Tooling/ToolingTests.CastExprTest.o: cxx ../../clang/unittests/Tooling/CastExprTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = CastExprTest.cpp
+  source_name_part = CastExprTest
+build obj/clang/unittests/Tooling/ToolingTests.CommentHandlerTest.o: cxx ../../clang/unittests/Tooling/CommentHandlerTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = CommentHandlerTest.cpp
+  source_name_part = CommentHandlerTest
+build obj/clang/unittests/Tooling/ToolingTests.CompilationDatabaseTest.o: cxx ../../clang/unittests/Tooling/CompilationDatabaseTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = CompilationDatabaseTest.cpp
+  source_name_part = CompilationDatabaseTest
+build obj/clang/unittests/Tooling/ToolingTests.DependencyScannerTest.o: cxx ../../clang/unittests/Tooling/DependencyScannerTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = DependencyScannerTest.cpp
+  source_name_part = DependencyScannerTest
+build obj/clang/unittests/Tooling/ToolingTests.DiagnosticsYamlTest.o: cxx ../../clang/unittests/Tooling/DiagnosticsYamlTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = DiagnosticsYamlTest.cpp
+  source_name_part = DiagnosticsYamlTest
+build obj/clang/unittests/Tooling/ToolingTests.ExecutionTest.o: cxx ../../clang/unittests/Tooling/ExecutionTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = ExecutionTest.cpp
+  source_name_part = ExecutionTest
+build obj/clang/unittests/Tooling/ToolingTests.FixItTest.o: cxx ../../clang/unittests/Tooling/FixItTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = FixItTest.cpp
+  source_name_part = FixItTest
+build obj/clang/unittests/Tooling/ToolingTests.HeaderIncludesTest.o: cxx ../../clang/unittests/Tooling/HeaderIncludesTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = HeaderIncludesTest.cpp
+  source_name_part = HeaderIncludesTest
+build obj/clang/unittests/Tooling/ToolingTests.LexicallyOrderedRecursiveASTVisitorTest.o: cxx ../../clang/unittests/Tooling/LexicallyOrderedRecursiveASTVisitorTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = LexicallyOrderedRecursiveASTVisitorTest.cpp
+  source_name_part = LexicallyOrderedRecursiveASTVisitorTest
+build obj/clang/unittests/Tooling/ToolingTests.LookupTest.o: cxx ../../clang/unittests/Tooling/LookupTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = LookupTest.cpp
+  source_name_part = LookupTest
+build obj/clang/unittests/Tooling/ToolingTests.QualTypeNamesTest.o: cxx ../../clang/unittests/Tooling/QualTypeNamesTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = QualTypeNamesTest.cpp
+  source_name_part = QualTypeNamesTest
+build obj/clang/unittests/Tooling/ToolingTests.RangeSelectorTest.o: cxx ../../clang/unittests/Tooling/RangeSelectorTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = RangeSelectorTest.cpp
+  source_name_part = RangeSelectorTest
+build obj/clang/unittests/Tooling/ToolingTests.RecursiveASTVisitorTestDeclVisitor.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTestDeclVisitor.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = RecursiveASTVisitorTestDeclVisitor.cpp
+  source_name_part = RecursiveASTVisitorTestDeclVisitor
+build obj/clang/unittests/Tooling/ToolingTests.RecursiveASTVisitorTestPostOrderVisitor.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTestPostOrderVisitor.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = RecursiveASTVisitorTestPostOrderVisitor.cpp
+  source_name_part = RecursiveASTVisitorTestPostOrderVisitor
+build obj/clang/unittests/Tooling/ToolingTests.RecursiveASTVisitorTestTypeLocVisitor.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTestTypeLocVisitor.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = RecursiveASTVisitorTestTypeLocVisitor.cpp
+  source_name_part = RecursiveASTVisitorTestTypeLocVisitor
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.Attr.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/Attr.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = Attr.cpp
+  source_name_part = Attr
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CXXBoolLiteralExpr.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/CXXBoolLiteralExpr.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = CXXBoolLiteralExpr.cpp
+  source_name_part = CXXBoolLiteralExpr
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CXXMemberCall.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/CXXMemberCall.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = CXXMemberCall.cpp
+  source_name_part = CXXMemberCall
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CXXMethodDecl.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/CXXMethodDecl.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = CXXMethodDecl.cpp
+  source_name_part = CXXMethodDecl
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CXXOperatorCallExprTraverser.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/CXXOperatorCallExprTraverser.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = CXXOperatorCallExprTraverser.cpp
+  source_name_part = CXXOperatorCallExprTraverser
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CallbacksBinaryOperator.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/CallbacksBinaryOperator.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = CallbacksBinaryOperator.cpp
+  source_name_part = CallbacksBinaryOperator
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CallbacksCallExpr.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/CallbacksCallExpr.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = CallbacksCallExpr.cpp
+  source_name_part = CallbacksCallExpr
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CallbacksCompoundAssignOperator.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/CallbacksCompoundAssignOperator.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = CallbacksCompoundAssignOperator.cpp
+  source_name_part = CallbacksCompoundAssignOperator
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CallbacksLeaf.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/CallbacksLeaf.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = CallbacksLeaf.cpp
+  source_name_part = CallbacksLeaf
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CallbacksUnaryOperator.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/CallbacksUnaryOperator.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = CallbacksUnaryOperator.cpp
+  source_name_part = CallbacksUnaryOperator
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.Class.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/Class.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = Class.cpp
+  source_name_part = Class
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.Concept.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/Concept.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = Concept.cpp
+  source_name_part = Concept
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.ConstructExpr.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/ConstructExpr.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = ConstructExpr.cpp
+  source_name_part = ConstructExpr
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.DeclRefExpr.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/DeclRefExpr.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = DeclRefExpr.cpp
+  source_name_part = DeclRefExpr
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.ImplicitCtor.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/ImplicitCtor.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = ImplicitCtor.cpp
+  source_name_part = ImplicitCtor
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.ImplicitCtorInitializer.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/ImplicitCtorInitializer.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = ImplicitCtorInitializer.cpp
+  source_name_part = ImplicitCtorInitializer
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.InitListExprPostOrder.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/InitListExprPostOrder.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = InitListExprPostOrder.cpp
+  source_name_part = InitListExprPostOrder
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.InitListExprPostOrderNoQueue.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/InitListExprPostOrderNoQueue.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = InitListExprPostOrderNoQueue.cpp
+  source_name_part = InitListExprPostOrderNoQueue
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.InitListExprPreOrder.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/InitListExprPreOrder.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = InitListExprPreOrder.cpp
+  source_name_part = InitListExprPreOrder
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.InitListExprPreOrderNoQueue.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/InitListExprPreOrderNoQueue.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = InitListExprPreOrderNoQueue.cpp
+  source_name_part = InitListExprPreOrderNoQueue
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.IntegerLiteral.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/IntegerLiteral.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = IntegerLiteral.cpp
+  source_name_part = IntegerLiteral
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.LambdaDefaultCapture.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/LambdaDefaultCapture.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = LambdaDefaultCapture.cpp
+  source_name_part = LambdaDefaultCapture
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.LambdaExpr.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/LambdaExpr.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = LambdaExpr.cpp
+  source_name_part = LambdaExpr
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.LambdaTemplateParams.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/LambdaTemplateParams.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = LambdaTemplateParams.cpp
+  source_name_part = LambdaTemplateParams
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.MemberPointerTypeLoc.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/MemberPointerTypeLoc.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = MemberPointerTypeLoc.cpp
+  source_name_part = MemberPointerTypeLoc
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.NestedNameSpecifiers.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/NestedNameSpecifiers.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = NestedNameSpecifiers.cpp
+  source_name_part = NestedNameSpecifiers
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.ParenExpr.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/ParenExpr.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = ParenExpr.cpp
+  source_name_part = ParenExpr
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.TemplateArgumentLocTraverser.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/TemplateArgumentLocTraverser.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = TemplateArgumentLocTraverser.cpp
+  source_name_part = TemplateArgumentLocTraverser
+build obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.TraversalScope.o: cxx ../../clang/unittests/Tooling/RecursiveASTVisitorTests/TraversalScope.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = TraversalScope.cpp
+  source_name_part = TraversalScope
+build obj/clang/unittests/Tooling/ToolingTests.RefactoringActionRulesTest.o: cxx ../../clang/unittests/Tooling/RefactoringActionRulesTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = RefactoringActionRulesTest.cpp
+  source_name_part = RefactoringActionRulesTest
+build obj/clang/unittests/Tooling/ToolingTests.RefactoringCallbacksTest.o: cxx ../../clang/unittests/Tooling/RefactoringCallbacksTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = RefactoringCallbacksTest.cpp
+  source_name_part = RefactoringCallbacksTest
+build obj/clang/unittests/Tooling/ToolingTests.RefactoringTest.o: cxx ../../clang/unittests/Tooling/RefactoringTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = RefactoringTest.cpp
+  source_name_part = RefactoringTest
+build obj/clang/unittests/Tooling/ToolingTests.ReplacementsYamlTest.o: cxx ../../clang/unittests/Tooling/ReplacementsYamlTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = ReplacementsYamlTest.cpp
+  source_name_part = ReplacementsYamlTest
+build obj/clang/unittests/Tooling/ToolingTests.RewriterTest.o: cxx ../../clang/unittests/Tooling/RewriterTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = RewriterTest.cpp
+  source_name_part = RewriterTest
+build obj/clang/unittests/Tooling/ToolingTests.SourceCodeBuildersTest.o: cxx ../../clang/unittests/Tooling/SourceCodeBuildersTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = SourceCodeBuildersTest.cpp
+  source_name_part = SourceCodeBuildersTest
+build obj/clang/unittests/Tooling/ToolingTests.SourceCodeTest.o: cxx ../../clang/unittests/Tooling/SourceCodeTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = SourceCodeTest.cpp
+  source_name_part = SourceCodeTest
+build obj/clang/unittests/Tooling/ToolingTests.StandardLibraryTest.o: cxx ../../clang/unittests/Tooling/StandardLibraryTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = StandardLibraryTest.cpp
+  source_name_part = StandardLibraryTest
+build obj/clang/unittests/Tooling/ToolingTests.StencilTest.o: cxx ../../clang/unittests/Tooling/StencilTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = StencilTest.cpp
+  source_name_part = StencilTest
+build obj/clang/unittests/Tooling/ToolingTests.ToolingTest.o: cxx ../../clang/unittests/Tooling/ToolingTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = ToolingTest.cpp
+  source_name_part = ToolingTest
+build obj/clang/unittests/Tooling/ToolingTests.TransformerTest.o: cxx ../../clang/unittests/Tooling/TransformerTest.cpp || obj/clang/unittests/Tooling/ToolingTests.inputdeps.stamp
+  source_file_part = TransformerTest.cpp
+  source_name_part = TransformerTest
+
+build obj/clang/unittests/Tooling/ToolingTests: link obj/clang/unittests/Tooling/ToolingTests.ASTSelectionTest.o obj/clang/unittests/Tooling/ToolingTests.CastExprTest.o obj/clang/unittests/Tooling/ToolingTests.CommentHandlerTest.o obj/clang/unittests/Tooling/ToolingTests.CompilationDatabaseTest.o obj/clang/unittests/Tooling/ToolingTests.DependencyScannerTest.o obj/clang/unittests/Tooling/ToolingTests.DiagnosticsYamlTest.o obj/clang/unittests/Tooling/ToolingTests.ExecutionTest.o obj/clang/unittests/Tooling/ToolingTests.FixItTest.o obj/clang/unittests/Tooling/ToolingTests.HeaderIncludesTest.o obj/clang/unittests/Tooling/ToolingTests.LexicallyOrderedRecursiveASTVisitorTest.o obj/clang/unittests/Tooling/ToolingTests.LookupTest.o obj/clang/unittests/Tooling/ToolingTests.QualTypeNamesTest.o obj/clang/unittests/Tooling/ToolingTests.RangeSelectorTest.o obj/clang/unittests/Tooling/ToolingTests.RecursiveASTVisitorTestDeclVisitor.o obj/clang/unittests/Tooling/ToolingTests.RecursiveASTVisitorTestPostOrderVisitor.o obj/clang/unittests/Tooling/ToolingTests.RecursiveASTVisitorTestTypeLocVisitor.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.Attr.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CXXBoolLiteralExpr.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CXXMemberCall.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CXXMethodDecl.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CXXOperatorCallExprTraverser.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CallbacksBinaryOperator.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CallbacksCallExpr.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CallbacksCompoundAssignOperator.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CallbacksLeaf.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.CallbacksUnaryOperator.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.Class.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.Concept.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.ConstructExpr.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.DeclRefExpr.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.ImplicitCtor.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.ImplicitCtorInitializer.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.InitListExprPostOrder.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.InitListExprPostOrderNoQueue.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.InitListExprPreOrder.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.InitListExprPreOrderNoQueue.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.IntegerLiteral.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.LambdaDefaultCapture.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.LambdaExpr.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.LambdaTemplateParams.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.MemberPointerTypeLoc.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.NestedNameSpecifiers.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.ParenExpr.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.TemplateArgumentLocTraverser.o obj/clang/unittests/Tooling/RecursiveASTVisitorTests/ToolingTests.TraversalScope.o obj/clang/unittests/Tooling/ToolingTests.RefactoringActionRulesTest.o obj/clang/unittests/Tooling/ToolingTests.RefactoringCallbacksTest.o obj/clang/unittests/Tooling/ToolingTests.RefactoringTest.o obj/clang/unittests/Tooling/ToolingTests.ReplacementsYamlTest.o obj/clang/unittests/Tooling/ToolingTests.RewriterTest.o obj/clang/unittests/Tooling/ToolingTests.SourceCodeBuildersTest.o obj/clang/unittests/Tooling/ToolingTests.SourceCodeTest.o obj/clang/unittests/Tooling/ToolingTests.StandardLibraryTest.o obj/clang/unittests/Tooling/ToolingTests.StencilTest.o obj/clang/unittests/Tooling/ToolingTests.ToolingTest.o obj/clang/unittests/Tooling/ToolingTests.TransformerTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libclangAST.a ./lib/libclangASTMatchers.a ./lib/libclangBasic.a ./lib/libclangFormat.a ./lib/libclangFrontend.a ./lib/libclangLex.a ./lib/libclangRewrite.a ./lib/libclangTesting.a ./lib/libclangTooling.a ./lib/libclangToolingCore.a ./lib/libclangToolingDependencyScanning.a ./lib/libclangToolingInclusions.a ./lib/libclangToolingInclusionsStdlib.a ./lib/libclangToolingRefactoring.a ./lib/libclangToolingTransformer.a ./lib/libLLVMSupport.a ./lib/libLLVMTestingSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangDriver.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libclangEdit.a ./lib/libclangParse.a ./lib/libclangSema.a ./lib/libclangAnalysis.a ./lib/libclangSupport.a ./lib/libclangSerialization.a ./lib/libgtest.a ./lib/libclangCodeGen.a ./lib/libLLVMLTO.a ./lib/libLLVMBitWriter.a ./lib/libLLVMCodeGen.a ./lib/libLLVMTarget.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMExtensions.a ./lib/libLLVMLinker.a ./lib/libLLVMPasses.a ./lib/libLLVMCoroutines.a ./lib/libLLVMipo.a ./lib/libLLVMInstrumentation.a ./lib/libLLVMVectorize.a ./lib/libLLVMObjCARCOpts.a ./lib/libLLVMCoverage.a ./lib/libclangFrontendTool.a ./lib/libclangExtractAPI.a ./lib/libclangIndex.a ./lib/libclangRewriteFrontend.a ./lib/libclangARCMigrate.a ./lib/libclangStaticAnalyzerFrontend.a ./lib/libclangCrossTU.a ./lib/libclangStaticAnalyzerCheckers.a ./lib/libclangStaticAnalyzerCore.a ./lib/libLLVMAArch64CodeGen.a ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMAsmPrinter.a ./lib/libLLVMGlobalISel.a ./lib/libLLVMSelectionDAG.a ./lib/libLLVMCFGuard.a ./lib/libLLVMAArch64AsmParser.a ./lib/libLLVMAArch64Disassembler.a ./lib/libLLVMMCDisassembler.a || obj/llvm/lib/Target/TargetsToBuild.stamp obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/clang/unittests/Tooling

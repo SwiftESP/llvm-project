@@ -1,0 +1,166 @@
+defines =
+include_dirs = -I../../lldb/source -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -I../../lldb/include -Igen/lldb/include -Igen/lldb/source/Core -Igen/clang/include/clang/Driver -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libxml2
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Core
+target_output_name = liblldbCore
+
+build obj/lldb/source/Core/Core.inputdeps.stamp: stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/lldb/include/lldb/Host/Config.stamp obj/lldb/source/Core/CoreProperties.stamp obj/lldb/source/Core/CorePropertiesEnum.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/lldb/source/Core/Core.Address.o: cxx ../../lldb/source/Core/Address.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = Address.cpp
+  source_name_part = Address
+build obj/lldb/source/Core/Core.AddressRange.o: cxx ../../lldb/source/Core/AddressRange.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = AddressRange.cpp
+  source_name_part = AddressRange
+build obj/lldb/source/Core/Core.AddressResolver.o: cxx ../../lldb/source/Core/AddressResolver.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = AddressResolver.cpp
+  source_name_part = AddressResolver
+build obj/lldb/source/Core/Core.AddressResolverFileLine.o: cxx ../../lldb/source/Core/AddressResolverFileLine.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = AddressResolverFileLine.cpp
+  source_name_part = AddressResolverFileLine
+build obj/lldb/source/Core/Core.Communication.o: cxx ../../lldb/source/Core/Communication.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = Communication.cpp
+  source_name_part = Communication
+build obj/lldb/source/Core/Core.DataFileCache.o: cxx ../../lldb/source/Core/DataFileCache.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = DataFileCache.cpp
+  source_name_part = DataFileCache
+build obj/lldb/source/Core/Core.Debugger.o: cxx ../../lldb/source/Core/Debugger.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = Debugger.cpp
+  source_name_part = Debugger
+build obj/lldb/source/Core/Core.DebuggerEvents.o: cxx ../../lldb/source/Core/DebuggerEvents.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = DebuggerEvents.cpp
+  source_name_part = DebuggerEvents
+build obj/lldb/source/Core/Core.Declaration.o: cxx ../../lldb/source/Core/Declaration.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = Declaration.cpp
+  source_name_part = Declaration
+build obj/lldb/source/Core/Core.Disassembler.o: cxx ../../lldb/source/Core/Disassembler.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = Disassembler.cpp
+  source_name_part = Disassembler
+build obj/lldb/source/Core/Core.DumpDataExtractor.o: cxx ../../lldb/source/Core/DumpDataExtractor.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = DumpDataExtractor.cpp
+  source_name_part = DumpDataExtractor
+build obj/lldb/source/Core/Core.DumpRegisterValue.o: cxx ../../lldb/source/Core/DumpRegisterValue.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = DumpRegisterValue.cpp
+  source_name_part = DumpRegisterValue
+build obj/lldb/source/Core/Core.DynamicLoader.o: cxx ../../lldb/source/Core/DynamicLoader.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = DynamicLoader.cpp
+  source_name_part = DynamicLoader
+build obj/lldb/source/Core/Core.EmulateInstruction.o: cxx ../../lldb/source/Core/EmulateInstruction.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = EmulateInstruction.cpp
+  source_name_part = EmulateInstruction
+build obj/lldb/source/Core/Core.FileLineResolver.o: cxx ../../lldb/source/Core/FileLineResolver.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = FileLineResolver.cpp
+  source_name_part = FileLineResolver
+build obj/lldb/source/Core/Core.FileSpecList.o: cxx ../../lldb/source/Core/FileSpecList.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = FileSpecList.cpp
+  source_name_part = FileSpecList
+build obj/lldb/source/Core/Core.FormatEntity.o: cxx ../../lldb/source/Core/FormatEntity.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = FormatEntity.cpp
+  source_name_part = FormatEntity
+build obj/lldb/source/Core/Core.Highlighter.o: cxx ../../lldb/source/Core/Highlighter.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = Highlighter.cpp
+  source_name_part = Highlighter
+build obj/lldb/source/Core/Core.IOHandler.o: cxx ../../lldb/source/Core/IOHandler.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = IOHandler.cpp
+  source_name_part = IOHandler
+build obj/lldb/source/Core/Core.IOHandlerCursesGUI.o: cxx ../../lldb/source/Core/IOHandlerCursesGUI.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = IOHandlerCursesGUI.cpp
+  source_name_part = IOHandlerCursesGUI
+build obj/lldb/source/Core/Core.Mangled.o: cxx ../../lldb/source/Core/Mangled.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = Mangled.cpp
+  source_name_part = Mangled
+build obj/lldb/source/Core/Core.Module.o: cxx ../../lldb/source/Core/Module.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = Module.cpp
+  source_name_part = Module
+build obj/lldb/source/Core/Core.ModuleChild.o: cxx ../../lldb/source/Core/ModuleChild.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ModuleChild.cpp
+  source_name_part = ModuleChild
+build obj/lldb/source/Core/Core.ModuleList.o: cxx ../../lldb/source/Core/ModuleList.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ModuleList.cpp
+  source_name_part = ModuleList
+build obj/lldb/source/Core/Core.Opcode.o: cxx ../../lldb/source/Core/Opcode.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = Opcode.cpp
+  source_name_part = Opcode
+build obj/lldb/source/Core/Core.PluginManager.o: cxx ../../lldb/source/Core/PluginManager.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = PluginManager.cpp
+  source_name_part = PluginManager
+build obj/lldb/source/Core/Core.Progress.o: cxx ../../lldb/source/Core/Progress.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = Progress.cpp
+  source_name_part = Progress
+build obj/lldb/source/Core/Core.RichManglingContext.o: cxx ../../lldb/source/Core/RichManglingContext.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = RichManglingContext.cpp
+  source_name_part = RichManglingContext
+build obj/lldb/source/Core/Core.SearchFilter.o: cxx ../../lldb/source/Core/SearchFilter.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = SearchFilter.cpp
+  source_name_part = SearchFilter
+build obj/lldb/source/Core/Core.Section.o: cxx ../../lldb/source/Core/Section.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = Section.cpp
+  source_name_part = Section
+build obj/lldb/source/Core/Core.SourceLocationSpec.o: cxx ../../lldb/source/Core/SourceLocationSpec.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = SourceLocationSpec.cpp
+  source_name_part = SourceLocationSpec
+build obj/lldb/source/Core/Core.SourceManager.o: cxx ../../lldb/source/Core/SourceManager.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = SourceManager.cpp
+  source_name_part = SourceManager
+build obj/lldb/source/Core/Core.StreamAsynchronousIO.o: cxx ../../lldb/source/Core/StreamAsynchronousIO.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = StreamAsynchronousIO.cpp
+  source_name_part = StreamAsynchronousIO
+build obj/lldb/source/Core/Core.StreamFile.o: cxx ../../lldb/source/Core/StreamFile.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = StreamFile.cpp
+  source_name_part = StreamFile
+build obj/lldb/source/Core/Core.ThreadedCommunication.o: cxx ../../lldb/source/Core/ThreadedCommunication.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ThreadedCommunication.cpp
+  source_name_part = ThreadedCommunication
+build obj/lldb/source/Core/Core.UserSettingsController.o: cxx ../../lldb/source/Core/UserSettingsController.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = UserSettingsController.cpp
+  source_name_part = UserSettingsController
+build obj/lldb/source/Core/Core.Value.o: cxx ../../lldb/source/Core/Value.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = Value.cpp
+  source_name_part = Value
+build obj/lldb/source/Core/Core.ValueObject.o: cxx ../../lldb/source/Core/ValueObject.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ValueObject.cpp
+  source_name_part = ValueObject
+build obj/lldb/source/Core/Core.ValueObjectCast.o: cxx ../../lldb/source/Core/ValueObjectCast.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ValueObjectCast.cpp
+  source_name_part = ValueObjectCast
+build obj/lldb/source/Core/Core.ValueObjectChild.o: cxx ../../lldb/source/Core/ValueObjectChild.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ValueObjectChild.cpp
+  source_name_part = ValueObjectChild
+build obj/lldb/source/Core/Core.ValueObjectConstResult.o: cxx ../../lldb/source/Core/ValueObjectConstResult.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ValueObjectConstResult.cpp
+  source_name_part = ValueObjectConstResult
+build obj/lldb/source/Core/Core.ValueObjectConstResultCast.o: cxx ../../lldb/source/Core/ValueObjectConstResultCast.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ValueObjectConstResultCast.cpp
+  source_name_part = ValueObjectConstResultCast
+build obj/lldb/source/Core/Core.ValueObjectConstResultChild.o: cxx ../../lldb/source/Core/ValueObjectConstResultChild.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ValueObjectConstResultChild.cpp
+  source_name_part = ValueObjectConstResultChild
+build obj/lldb/source/Core/Core.ValueObjectConstResultImpl.o: cxx ../../lldb/source/Core/ValueObjectConstResultImpl.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ValueObjectConstResultImpl.cpp
+  source_name_part = ValueObjectConstResultImpl
+build obj/lldb/source/Core/Core.ValueObjectDynamicValue.o: cxx ../../lldb/source/Core/ValueObjectDynamicValue.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ValueObjectDynamicValue.cpp
+  source_name_part = ValueObjectDynamicValue
+build obj/lldb/source/Core/Core.ValueObjectList.o: cxx ../../lldb/source/Core/ValueObjectList.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ValueObjectList.cpp
+  source_name_part = ValueObjectList
+build obj/lldb/source/Core/Core.ValueObjectMemory.o: cxx ../../lldb/source/Core/ValueObjectMemory.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ValueObjectMemory.cpp
+  source_name_part = ValueObjectMemory
+build obj/lldb/source/Core/Core.ValueObjectRegister.o: cxx ../../lldb/source/Core/ValueObjectRegister.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ValueObjectRegister.cpp
+  source_name_part = ValueObjectRegister
+build obj/lldb/source/Core/Core.ValueObjectSyntheticFilter.o: cxx ../../lldb/source/Core/ValueObjectSyntheticFilter.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ValueObjectSyntheticFilter.cpp
+  source_name_part = ValueObjectSyntheticFilter
+build obj/lldb/source/Core/Core.ValueObjectUpdater.o: cxx ../../lldb/source/Core/ValueObjectUpdater.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ValueObjectUpdater.cpp
+  source_name_part = ValueObjectUpdater
+build obj/lldb/source/Core/Core.ValueObjectVariable.o: cxx ../../lldb/source/Core/ValueObjectVariable.cpp || obj/lldb/source/Core/Core.inputdeps.stamp
+  source_file_part = ValueObjectVariable.cpp
+  source_name_part = ValueObjectVariable
+
+build ./lib/liblldbCore.a: alink obj/lldb/source/Core/Core.Address.o obj/lldb/source/Core/Core.AddressRange.o obj/lldb/source/Core/Core.AddressResolver.o obj/lldb/source/Core/Core.AddressResolverFileLine.o obj/lldb/source/Core/Core.Communication.o obj/lldb/source/Core/Core.DataFileCache.o obj/lldb/source/Core/Core.Debugger.o obj/lldb/source/Core/Core.DebuggerEvents.o obj/lldb/source/Core/Core.Declaration.o obj/lldb/source/Core/Core.Disassembler.o obj/lldb/source/Core/Core.DumpDataExtractor.o obj/lldb/source/Core/Core.DumpRegisterValue.o obj/lldb/source/Core/Core.DynamicLoader.o obj/lldb/source/Core/Core.EmulateInstruction.o obj/lldb/source/Core/Core.FileLineResolver.o obj/lldb/source/Core/Core.FileSpecList.o obj/lldb/source/Core/Core.FormatEntity.o obj/lldb/source/Core/Core.Highlighter.o obj/lldb/source/Core/Core.IOHandler.o obj/lldb/source/Core/Core.IOHandlerCursesGUI.o obj/lldb/source/Core/Core.Mangled.o obj/lldb/source/Core/Core.Module.o obj/lldb/source/Core/Core.ModuleChild.o obj/lldb/source/Core/Core.ModuleList.o obj/lldb/source/Core/Core.Opcode.o obj/lldb/source/Core/Core.PluginManager.o obj/lldb/source/Core/Core.Progress.o obj/lldb/source/Core/Core.RichManglingContext.o obj/lldb/source/Core/Core.SearchFilter.o obj/lldb/source/Core/Core.Section.o obj/lldb/source/Core/Core.SourceLocationSpec.o obj/lldb/source/Core/Core.SourceManager.o obj/lldb/source/Core/Core.StreamAsynchronousIO.o obj/lldb/source/Core/Core.StreamFile.o obj/lldb/source/Core/Core.ThreadedCommunication.o obj/lldb/source/Core/Core.UserSettingsController.o obj/lldb/source/Core/Core.Value.o obj/lldb/source/Core/Core.ValueObject.o obj/lldb/source/Core/Core.ValueObjectCast.o obj/lldb/source/Core/Core.ValueObjectChild.o obj/lldb/source/Core/Core.ValueObjectConstResult.o obj/lldb/source/Core/Core.ValueObjectConstResultCast.o obj/lldb/source/Core/Core.ValueObjectConstResultChild.o obj/lldb/source/Core/Core.ValueObjectConstResultImpl.o obj/lldb/source/Core/Core.ValueObjectDynamicValue.o obj/lldb/source/Core/Core.ValueObjectList.o obj/lldb/source/Core/Core.ValueObjectMemory.o obj/lldb/source/Core/Core.ValueObjectRegister.o obj/lldb/source/Core/Core.ValueObjectSyntheticFilter.o obj/lldb/source/Core/Core.ValueObjectUpdater.o obj/lldb/source/Core/Core.ValueObjectVariable.o || obj/lldb/source/Core/CoreProperties.stamp obj/lldb/source/Core/CorePropertiesEnum.stamp ./lib/libclangDriver.a ./lib/liblldbHost.a ./lib/liblldbUtility.a ./lib/libLLVMDemangle.a ./lib/libLLVMSupport.a ./lib/libclangBasic.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/liblldbHostMacOSXObjCXX.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

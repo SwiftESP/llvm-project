@@ -1,0 +1,49 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = ObjectTests
+target_output_name = ObjectTests
+
+build obj/llvm/unittests/Object/ObjectTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/unittests/Object/ObjectTests.ArchiveTest.o: cxx ../../llvm/unittests/Object/ArchiveTest.cpp || obj/llvm/unittests/Object/ObjectTests.inputdeps.stamp
+  source_file_part = ArchiveTest.cpp
+  source_name_part = ArchiveTest
+build obj/llvm/unittests/Object/ObjectTests.DXContainerTest.o: cxx ../../llvm/unittests/Object/DXContainerTest.cpp || obj/llvm/unittests/Object/ObjectTests.inputdeps.stamp
+  source_file_part = DXContainerTest.cpp
+  source_name_part = DXContainerTest
+build obj/llvm/unittests/Object/ObjectTests.ELFObjectFileTest.o: cxx ../../llvm/unittests/Object/ELFObjectFileTest.cpp || obj/llvm/unittests/Object/ObjectTests.inputdeps.stamp
+  source_file_part = ELFObjectFileTest.cpp
+  source_name_part = ELFObjectFileTest
+build obj/llvm/unittests/Object/ObjectTests.ELFTest.o: cxx ../../llvm/unittests/Object/ELFTest.cpp || obj/llvm/unittests/Object/ObjectTests.inputdeps.stamp
+  source_file_part = ELFTest.cpp
+  source_name_part = ELFTest
+build obj/llvm/unittests/Object/ObjectTests.ELFTypesTest.o: cxx ../../llvm/unittests/Object/ELFTypesTest.cpp || obj/llvm/unittests/Object/ObjectTests.inputdeps.stamp
+  source_file_part = ELFTypesTest.cpp
+  source_name_part = ELFTypesTest
+build obj/llvm/unittests/Object/ObjectTests.MinidumpTest.o: cxx ../../llvm/unittests/Object/MinidumpTest.cpp || obj/llvm/unittests/Object/ObjectTests.inputdeps.stamp
+  source_file_part = MinidumpTest.cpp
+  source_name_part = MinidumpTest
+build obj/llvm/unittests/Object/ObjectTests.ObjectFileTest.o: cxx ../../llvm/unittests/Object/ObjectFileTest.cpp || obj/llvm/unittests/Object/ObjectTests.inputdeps.stamp
+  source_file_part = ObjectFileTest.cpp
+  source_name_part = ObjectFileTest
+build obj/llvm/unittests/Object/ObjectTests.OffloadingTest.o: cxx ../../llvm/unittests/Object/OffloadingTest.cpp || obj/llvm/unittests/Object/ObjectTests.inputdeps.stamp
+  source_file_part = OffloadingTest.cpp
+  source_name_part = OffloadingTest
+build obj/llvm/unittests/Object/ObjectTests.SymbolSizeTest.o: cxx ../../llvm/unittests/Object/SymbolSizeTest.cpp || obj/llvm/unittests/Object/ObjectTests.inputdeps.stamp
+  source_file_part = SymbolSizeTest.cpp
+  source_name_part = SymbolSizeTest
+build obj/llvm/unittests/Object/ObjectTests.SymbolicFileTest.o: cxx ../../llvm/unittests/Object/SymbolicFileTest.cpp || obj/llvm/unittests/Object/ObjectTests.inputdeps.stamp
+  source_file_part = SymbolicFileTest.cpp
+  source_name_part = SymbolicFileTest
+build obj/llvm/unittests/Object/ObjectTests.XCOFFObjectFileTest.o: cxx ../../llvm/unittests/Object/XCOFFObjectFileTest.cpp || obj/llvm/unittests/Object/ObjectTests.inputdeps.stamp
+  source_file_part = XCOFFObjectFileTest.cpp
+  source_name_part = XCOFFObjectFileTest
+
+build obj/llvm/unittests/Object/ObjectTests: link obj/llvm/unittests/Object/ObjectTests.ArchiveTest.o obj/llvm/unittests/Object/ObjectTests.DXContainerTest.o obj/llvm/unittests/Object/ObjectTests.ELFObjectFileTest.o obj/llvm/unittests/Object/ObjectTests.ELFTest.o obj/llvm/unittests/Object/ObjectTests.ELFTypesTest.o obj/llvm/unittests/Object/ObjectTests.MinidumpTest.o obj/llvm/unittests/Object/ObjectTests.ObjectFileTest.o obj/llvm/unittests/Object/ObjectTests.OffloadingTest.o obj/llvm/unittests/Object/ObjectTests.SymbolSizeTest.o obj/llvm/unittests/Object/ObjectTests.SymbolicFileTest.o obj/llvm/unittests/Object/ObjectTests.XCOFFObjectFileTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMBinaryFormat.a ./lib/libLLVMObject.a ./lib/libLLVMObjectYAML.a ./lib/libLLVMTestingSupport.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libgtest.a || obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/Object

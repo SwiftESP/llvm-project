@@ -1,0 +1,61 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = DebugInfoDWARFTests
+target_output_name = DebugInfoDWARFTests
+
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFAcceleratorTableTest.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DWARFAcceleratorTableTest.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DWARFAcceleratorTableTest.cpp
+  source_name_part = DWARFAcceleratorTableTest
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFDataExtractorTest.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DWARFDataExtractorTest.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DWARFDataExtractorTest.cpp
+  source_name_part = DWARFDataExtractorTest
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFDebugArangeSetTest.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DWARFDebugArangeSetTest.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DWARFDebugArangeSetTest.cpp
+  source_name_part = DWARFDebugArangeSetTest
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFDebugFrameTest.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DWARFDebugFrameTest.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DWARFDebugFrameTest.cpp
+  source_name_part = DWARFDebugFrameTest
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFDebugInfoTest.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DWARFDebugInfoTest.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DWARFDebugInfoTest.cpp
+  source_name_part = DWARFDebugInfoTest
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFDebugLineTest.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DWARFDebugLineTest.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DWARFDebugLineTest.cpp
+  source_name_part = DWARFDebugLineTest
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFDieManualExtractTest.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DWARFDieManualExtractTest.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DWARFDieManualExtractTest.cpp
+  source_name_part = DWARFDieManualExtractTest
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFDieTest.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DWARFDieTest.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DWARFDieTest.cpp
+  source_name_part = DWARFDieTest
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFExpressionCompactPrinterTest.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DWARFExpressionCompactPrinterTest.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DWARFExpressionCompactPrinterTest.cpp
+  source_name_part = DWARFExpressionCompactPrinterTest
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFExpressionCopyBytesTest.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DWARFExpressionCopyBytesTest.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DWARFExpressionCopyBytesTest.cpp
+  source_name_part = DWARFExpressionCopyBytesTest
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFFormValueTest.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DWARFFormValueTest.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DWARFFormValueTest.cpp
+  source_name_part = DWARFFormValueTest
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFListTableTest.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DWARFListTableTest.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DWARFListTableTest.cpp
+  source_name_part = DWARFListTableTest
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFLocationExpressionTest.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DWARFLocationExpressionTest.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DWARFLocationExpressionTest.cpp
+  source_name_part = DWARFLocationExpressionTest
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DwarfGenerator.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DwarfGenerator.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DwarfGenerator.cpp
+  source_name_part = DwarfGenerator
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DwarfUtils.o: cxx ../../llvm/unittests/DebugInfo/DWARF/DwarfUtils.cpp || obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.inputdeps.stamp
+  source_file_part = DwarfUtils.cpp
+  source_name_part = DwarfUtils
+
+build obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests: link obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFAcceleratorTableTest.o obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFDataExtractorTest.o obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFDebugArangeSetTest.o obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFDebugFrameTest.o obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFDebugInfoTest.o obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFDebugLineTest.o obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFDieManualExtractTest.o obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFDieTest.o obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFExpressionCompactPrinterTest.o obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFExpressionCopyBytesTest.o obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFFormValueTest.o obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFListTableTest.o obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DWARFLocationExpressionTest.o obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DwarfGenerator.o obj/llvm/unittests/DebugInfo/DWARF/DebugInfoDWARFTests.DwarfUtils.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMAsmPrinter.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMObject.a ./lib/libLLVMObjectYAML.a ./lib/libLLVMSupport.a ./lib/libLLVMTestingSupport.a ./lib/libLLVMAnalysis.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMCodeGen.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMTarget.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMAArch64CodeGen.a ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMGlobalISel.a ./lib/libLLVMSelectionDAG.a ./lib/libLLVMCFGuard.a ./lib/libLLVMAArch64AsmParser.a ./lib/libLLVMAArch64Disassembler.a ./lib/libLLVMMCDisassembler.a ./lib/libgtest.a || obj/llvm/lib/Target/TargetsToBuild.stamp obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/DebugInfo/DWARF

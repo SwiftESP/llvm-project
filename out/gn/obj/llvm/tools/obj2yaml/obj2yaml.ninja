@@ -1,0 +1,49 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = obj2yaml
+target_output_name = obj2yaml
+
+build obj/llvm/tools/obj2yaml/obj2yaml.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/tools/obj2yaml/obj2yaml.archive2yaml.o: cxx ../../llvm/tools/obj2yaml/archive2yaml.cpp || obj/llvm/tools/obj2yaml/obj2yaml.inputdeps.stamp
+  source_file_part = archive2yaml.cpp
+  source_name_part = archive2yaml
+build obj/llvm/tools/obj2yaml/obj2yaml.coff2yaml.o: cxx ../../llvm/tools/obj2yaml/coff2yaml.cpp || obj/llvm/tools/obj2yaml/obj2yaml.inputdeps.stamp
+  source_file_part = coff2yaml.cpp
+  source_name_part = coff2yaml
+build obj/llvm/tools/obj2yaml/obj2yaml.dwarf2yaml.o: cxx ../../llvm/tools/obj2yaml/dwarf2yaml.cpp || obj/llvm/tools/obj2yaml/obj2yaml.inputdeps.stamp
+  source_file_part = dwarf2yaml.cpp
+  source_name_part = dwarf2yaml
+build obj/llvm/tools/obj2yaml/obj2yaml.dxcontainer2yaml.o: cxx ../../llvm/tools/obj2yaml/dxcontainer2yaml.cpp || obj/llvm/tools/obj2yaml/obj2yaml.inputdeps.stamp
+  source_file_part = dxcontainer2yaml.cpp
+  source_name_part = dxcontainer2yaml
+build obj/llvm/tools/obj2yaml/obj2yaml.elf2yaml.o: cxx ../../llvm/tools/obj2yaml/elf2yaml.cpp || obj/llvm/tools/obj2yaml/obj2yaml.inputdeps.stamp
+  source_file_part = elf2yaml.cpp
+  source_name_part = elf2yaml
+build obj/llvm/tools/obj2yaml/obj2yaml.macho2yaml.o: cxx ../../llvm/tools/obj2yaml/macho2yaml.cpp || obj/llvm/tools/obj2yaml/obj2yaml.inputdeps.stamp
+  source_file_part = macho2yaml.cpp
+  source_name_part = macho2yaml
+build obj/llvm/tools/obj2yaml/obj2yaml.minidump2yaml.o: cxx ../../llvm/tools/obj2yaml/minidump2yaml.cpp || obj/llvm/tools/obj2yaml/obj2yaml.inputdeps.stamp
+  source_file_part = minidump2yaml.cpp
+  source_name_part = minidump2yaml
+build obj/llvm/tools/obj2yaml/obj2yaml.obj2yaml.o: cxx ../../llvm/tools/obj2yaml/obj2yaml.cpp || obj/llvm/tools/obj2yaml/obj2yaml.inputdeps.stamp
+  source_file_part = obj2yaml.cpp
+  source_name_part = obj2yaml
+build obj/llvm/tools/obj2yaml/obj2yaml.offload2yaml.o: cxx ../../llvm/tools/obj2yaml/offload2yaml.cpp || obj/llvm/tools/obj2yaml/obj2yaml.inputdeps.stamp
+  source_file_part = offload2yaml.cpp
+  source_name_part = offload2yaml
+build obj/llvm/tools/obj2yaml/obj2yaml.wasm2yaml.o: cxx ../../llvm/tools/obj2yaml/wasm2yaml.cpp || obj/llvm/tools/obj2yaml/obj2yaml.inputdeps.stamp
+  source_file_part = wasm2yaml.cpp
+  source_name_part = wasm2yaml
+build obj/llvm/tools/obj2yaml/obj2yaml.xcoff2yaml.o: cxx ../../llvm/tools/obj2yaml/xcoff2yaml.cpp || obj/llvm/tools/obj2yaml/obj2yaml.inputdeps.stamp
+  source_file_part = xcoff2yaml.cpp
+  source_name_part = xcoff2yaml
+
+build ./bin/obj2yaml: link obj/llvm/tools/obj2yaml/obj2yaml.archive2yaml.o obj/llvm/tools/obj2yaml/obj2yaml.coff2yaml.o obj/llvm/tools/obj2yaml/obj2yaml.dwarf2yaml.o obj/llvm/tools/obj2yaml/obj2yaml.dxcontainer2yaml.o obj/llvm/tools/obj2yaml/obj2yaml.elf2yaml.o obj/llvm/tools/obj2yaml/obj2yaml.macho2yaml.o obj/llvm/tools/obj2yaml/obj2yaml.minidump2yaml.o obj/llvm/tools/obj2yaml/obj2yaml.obj2yaml.o obj/llvm/tools/obj2yaml/obj2yaml.offload2yaml.o obj/llvm/tools/obj2yaml/obj2yaml.wasm2yaml.o obj/llvm/tools/obj2yaml/obj2yaml.xcoff2yaml.o ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMObject.a ./lib/libLLVMObjectYAML.a ./lib/libLLVMSupport.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMMC.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

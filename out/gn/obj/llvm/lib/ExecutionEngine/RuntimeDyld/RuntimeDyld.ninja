@@ -1,0 +1,37 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = RuntimeDyld
+target_output_name = libLLVMRuntimeDyld
+
+build obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.JITSymbol.o: cxx ../../llvm/lib/ExecutionEngine/RuntimeDyld/JITSymbol.cpp || obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.inputdeps.stamp
+  source_file_part = JITSymbol.cpp
+  source_name_part = JITSymbol
+build obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.RTDyldMemoryManager.o: cxx ../../llvm/lib/ExecutionEngine/RuntimeDyld/RTDyldMemoryManager.cpp || obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.inputdeps.stamp
+  source_file_part = RTDyldMemoryManager.cpp
+  source_name_part = RTDyldMemoryManager
+build obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.RuntimeDyld.o: cxx ../../llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.cpp || obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.inputdeps.stamp
+  source_file_part = RuntimeDyld.cpp
+  source_name_part = RuntimeDyld
+build obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.RuntimeDyldCOFF.o: cxx ../../llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyldCOFF.cpp || obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.inputdeps.stamp
+  source_file_part = RuntimeDyldCOFF.cpp
+  source_name_part = RuntimeDyldCOFF
+build obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.RuntimeDyldChecker.o: cxx ../../llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyldChecker.cpp || obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.inputdeps.stamp
+  source_file_part = RuntimeDyldChecker.cpp
+  source_name_part = RuntimeDyldChecker
+build obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.RuntimeDyldELF.o: cxx ../../llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyldELF.cpp || obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.inputdeps.stamp
+  source_file_part = RuntimeDyldELF.cpp
+  source_name_part = RuntimeDyldELF
+build obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.RuntimeDyldMachO.o: cxx ../../llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyldMachO.cpp || obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.inputdeps.stamp
+  source_file_part = RuntimeDyldMachO.cpp
+  source_name_part = RuntimeDyldMachO
+build obj/llvm/lib/ExecutionEngine/RuntimeDyld/Targets/RuntimeDyld.RuntimeDyldELFMips.o: cxx ../../llvm/lib/ExecutionEngine/RuntimeDyld/Targets/RuntimeDyldELFMips.cpp || obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.inputdeps.stamp
+  source_file_part = RuntimeDyldELFMips.cpp
+  source_name_part = RuntimeDyldELFMips
+
+build ./lib/libLLVMRuntimeDyld.a: alink obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.JITSymbol.o obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.RTDyldMemoryManager.o obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.RuntimeDyld.o obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.RuntimeDyldCOFF.o obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.RuntimeDyldChecker.o obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.RuntimeDyldELF.o obj/llvm/lib/ExecutionEngine/RuntimeDyld/RuntimeDyld.RuntimeDyldMachO.o obj/llvm/lib/ExecutionEngine/RuntimeDyld/Targets/RuntimeDyld.RuntimeDyldELFMips.o || obj/llvm/include/llvm/Config/config.stamp ./lib/libLLVMMC.a ./lib/libLLVMObject.a ./lib/libLLVMSupport.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

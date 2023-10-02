@@ -1,0 +1,109 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP -Igen/clang/include/clang/Driver
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Frontend
+target_output_name = libclangFrontend
+
+build obj/clang/lib/Frontend/Frontend.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang/lib/Frontend/Frontend.ASTConsumers.o: cxx ../../clang/lib/Frontend/ASTConsumers.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = ASTConsumers.cpp
+  source_name_part = ASTConsumers
+build obj/clang/lib/Frontend/Frontend.ASTMerge.o: cxx ../../clang/lib/Frontend/ASTMerge.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = ASTMerge.cpp
+  source_name_part = ASTMerge
+build obj/clang/lib/Frontend/Frontend.ASTUnit.o: cxx ../../clang/lib/Frontend/ASTUnit.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = ASTUnit.cpp
+  source_name_part = ASTUnit
+build obj/clang/lib/Frontend/Frontend.ChainedDiagnosticConsumer.o: cxx ../../clang/lib/Frontend/ChainedDiagnosticConsumer.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = ChainedDiagnosticConsumer.cpp
+  source_name_part = ChainedDiagnosticConsumer
+build obj/clang/lib/Frontend/Frontend.ChainedIncludesSource.o: cxx ../../clang/lib/Frontend/ChainedIncludesSource.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = ChainedIncludesSource.cpp
+  source_name_part = ChainedIncludesSource
+build obj/clang/lib/Frontend/Frontend.CompilerInstance.o: cxx ../../clang/lib/Frontend/CompilerInstance.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = CompilerInstance.cpp
+  source_name_part = CompilerInstance
+build obj/clang/lib/Frontend/Frontend.CompilerInvocation.o: cxx ../../clang/lib/Frontend/CompilerInvocation.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = CompilerInvocation.cpp
+  source_name_part = CompilerInvocation
+build obj/clang/lib/Frontend/Frontend.CreateInvocationFromCommandLine.o: cxx ../../clang/lib/Frontend/CreateInvocationFromCommandLine.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = CreateInvocationFromCommandLine.cpp
+  source_name_part = CreateInvocationFromCommandLine
+build obj/clang/lib/Frontend/Frontend.DependencyFile.o: cxx ../../clang/lib/Frontend/DependencyFile.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = DependencyFile.cpp
+  source_name_part = DependencyFile
+build obj/clang/lib/Frontend/Frontend.DependencyGraph.o: cxx ../../clang/lib/Frontend/DependencyGraph.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = DependencyGraph.cpp
+  source_name_part = DependencyGraph
+build obj/clang/lib/Frontend/Frontend.DiagnosticRenderer.o: cxx ../../clang/lib/Frontend/DiagnosticRenderer.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = DiagnosticRenderer.cpp
+  source_name_part = DiagnosticRenderer
+build obj/clang/lib/Frontend/Frontend.FrontendAction.o: cxx ../../clang/lib/Frontend/FrontendAction.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = FrontendAction.cpp
+  source_name_part = FrontendAction
+build obj/clang/lib/Frontend/Frontend.FrontendActions.o: cxx ../../clang/lib/Frontend/FrontendActions.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = FrontendActions.cpp
+  source_name_part = FrontendActions
+build obj/clang/lib/Frontend/Frontend.FrontendOptions.o: cxx ../../clang/lib/Frontend/FrontendOptions.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = FrontendOptions.cpp
+  source_name_part = FrontendOptions
+build obj/clang/lib/Frontend/Frontend.HeaderIncludeGen.o: cxx ../../clang/lib/Frontend/HeaderIncludeGen.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = HeaderIncludeGen.cpp
+  source_name_part = HeaderIncludeGen
+build obj/clang/lib/Frontend/Frontend.InitPreprocessor.o: cxx ../../clang/lib/Frontend/InitPreprocessor.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = InitPreprocessor.cpp
+  source_name_part = InitPreprocessor
+build obj/clang/lib/Frontend/Frontend.InterfaceStubFunctionsConsumer.o: cxx ../../clang/lib/Frontend/InterfaceStubFunctionsConsumer.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = InterfaceStubFunctionsConsumer.cpp
+  source_name_part = InterfaceStubFunctionsConsumer
+build obj/clang/lib/Frontend/Frontend.LayoutOverrideSource.o: cxx ../../clang/lib/Frontend/LayoutOverrideSource.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = LayoutOverrideSource.cpp
+  source_name_part = LayoutOverrideSource
+build obj/clang/lib/Frontend/Frontend.LogDiagnosticPrinter.o: cxx ../../clang/lib/Frontend/LogDiagnosticPrinter.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = LogDiagnosticPrinter.cpp
+  source_name_part = LogDiagnosticPrinter
+build obj/clang/lib/Frontend/Frontend.ModuleDependencyCollector.o: cxx ../../clang/lib/Frontend/ModuleDependencyCollector.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = ModuleDependencyCollector.cpp
+  source_name_part = ModuleDependencyCollector
+build obj/clang/lib/Frontend/Frontend.MultiplexConsumer.o: cxx ../../clang/lib/Frontend/MultiplexConsumer.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = MultiplexConsumer.cpp
+  source_name_part = MultiplexConsumer
+build obj/clang/lib/Frontend/Frontend.PrecompiledPreamble.o: cxx ../../clang/lib/Frontend/PrecompiledPreamble.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = PrecompiledPreamble.cpp
+  source_name_part = PrecompiledPreamble
+build obj/clang/lib/Frontend/Frontend.PrintPreprocessedOutput.o: cxx ../../clang/lib/Frontend/PrintPreprocessedOutput.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = PrintPreprocessedOutput.cpp
+  source_name_part = PrintPreprocessedOutput
+build obj/clang/lib/Frontend/Frontend.SARIFDiagnostic.o: cxx ../../clang/lib/Frontend/SARIFDiagnostic.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = SARIFDiagnostic.cpp
+  source_name_part = SARIFDiagnostic
+build obj/clang/lib/Frontend/Frontend.SARIFDiagnosticPrinter.o: cxx ../../clang/lib/Frontend/SARIFDiagnosticPrinter.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = SARIFDiagnosticPrinter.cpp
+  source_name_part = SARIFDiagnosticPrinter
+build obj/clang/lib/Frontend/Frontend.SerializedDiagnosticPrinter.o: cxx ../../clang/lib/Frontend/SerializedDiagnosticPrinter.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = SerializedDiagnosticPrinter.cpp
+  source_name_part = SerializedDiagnosticPrinter
+build obj/clang/lib/Frontend/Frontend.SerializedDiagnosticReader.o: cxx ../../clang/lib/Frontend/SerializedDiagnosticReader.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = SerializedDiagnosticReader.cpp
+  source_name_part = SerializedDiagnosticReader
+build obj/clang/lib/Frontend/Frontend.TestModuleFileExtension.o: cxx ../../clang/lib/Frontend/TestModuleFileExtension.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = TestModuleFileExtension.cpp
+  source_name_part = TestModuleFileExtension
+build obj/clang/lib/Frontend/Frontend.TextDiagnostic.o: cxx ../../clang/lib/Frontend/TextDiagnostic.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = TextDiagnostic.cpp
+  source_name_part = TextDiagnostic
+build obj/clang/lib/Frontend/Frontend.TextDiagnosticBuffer.o: cxx ../../clang/lib/Frontend/TextDiagnosticBuffer.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = TextDiagnosticBuffer.cpp
+  source_name_part = TextDiagnosticBuffer
+build obj/clang/lib/Frontend/Frontend.TextDiagnosticPrinter.o: cxx ../../clang/lib/Frontend/TextDiagnosticPrinter.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = TextDiagnosticPrinter.cpp
+  source_name_part = TextDiagnosticPrinter
+build obj/clang/lib/Frontend/Frontend.VerifyDiagnosticConsumer.o: cxx ../../clang/lib/Frontend/VerifyDiagnosticConsumer.cpp || obj/clang/lib/Frontend/Frontend.inputdeps.stamp
+  source_file_part = VerifyDiagnosticConsumer.cpp
+  source_name_part = VerifyDiagnosticConsumer
+
+build ./lib/libclangFrontend.a: alink obj/clang/lib/Frontend/Frontend.ASTConsumers.o obj/clang/lib/Frontend/Frontend.ASTMerge.o obj/clang/lib/Frontend/Frontend.ASTUnit.o obj/clang/lib/Frontend/Frontend.ChainedDiagnosticConsumer.o obj/clang/lib/Frontend/Frontend.ChainedIncludesSource.o obj/clang/lib/Frontend/Frontend.CompilerInstance.o obj/clang/lib/Frontend/Frontend.CompilerInvocation.o obj/clang/lib/Frontend/Frontend.CreateInvocationFromCommandLine.o obj/clang/lib/Frontend/Frontend.DependencyFile.o obj/clang/lib/Frontend/Frontend.DependencyGraph.o obj/clang/lib/Frontend/Frontend.DiagnosticRenderer.o obj/clang/lib/Frontend/Frontend.FrontendAction.o obj/clang/lib/Frontend/Frontend.FrontendActions.o obj/clang/lib/Frontend/Frontend.FrontendOptions.o obj/clang/lib/Frontend/Frontend.HeaderIncludeGen.o obj/clang/lib/Frontend/Frontend.InitPreprocessor.o obj/clang/lib/Frontend/Frontend.InterfaceStubFunctionsConsumer.o obj/clang/lib/Frontend/Frontend.LayoutOverrideSource.o obj/clang/lib/Frontend/Frontend.LogDiagnosticPrinter.o obj/clang/lib/Frontend/Frontend.ModuleDependencyCollector.o obj/clang/lib/Frontend/Frontend.MultiplexConsumer.o obj/clang/lib/Frontend/Frontend.PrecompiledPreamble.o obj/clang/lib/Frontend/Frontend.PrintPreprocessedOutput.o obj/clang/lib/Frontend/Frontend.SARIFDiagnostic.o obj/clang/lib/Frontend/Frontend.SARIFDiagnosticPrinter.o obj/clang/lib/Frontend/Frontend.SerializedDiagnosticPrinter.o obj/clang/lib/Frontend/Frontend.SerializedDiagnosticReader.o obj/clang/lib/Frontend/Frontend.TestModuleFileExtension.o obj/clang/lib/Frontend/Frontend.TextDiagnostic.o obj/clang/lib/Frontend/Frontend.TextDiagnosticBuffer.o obj/clang/lib/Frontend/Frontend.TextDiagnosticPrinter.o obj/clang/lib/Frontend/Frontend.VerifyDiagnosticConsumer.o || obj/clang/include/clang/Config/Config.stamp ./lib/libclangAST.a ./lib/libclangBasic.a ./lib/libclangDriver.a ./lib/libclangEdit.a ./lib/libclangLex.a ./lib/libclangParse.a ./lib/libclangSema.a ./lib/libclangSerialization.a obj/llvm/include/llvm/Config/llvm-config.stamp ./lib/libLLVMBitReader.a ./lib/libLLVMOption.a ./lib/libLLVMProfileData.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMWindowsDriver.a ./lib/libclangAnalysis.a ./lib/libclangASTMatchers.a ./lib/libclangSupport.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

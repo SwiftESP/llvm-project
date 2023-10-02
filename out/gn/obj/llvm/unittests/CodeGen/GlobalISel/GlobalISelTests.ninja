@@ -1,0 +1,52 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = GlobalISelTests
+target_output_name = GlobalISelTests
+
+build obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.CSETest.o: cxx ../../llvm/unittests/CodeGen/GlobalISel/CSETest.cpp || obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.inputdeps.stamp
+  source_file_part = CSETest.cpp
+  source_name_part = CSETest
+build obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.ConstantFoldingTest.o: cxx ../../llvm/unittests/CodeGen/GlobalISel/ConstantFoldingTest.cpp || obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.inputdeps.stamp
+  source_file_part = ConstantFoldingTest.cpp
+  source_name_part = ConstantFoldingTest
+build obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.GISelAliasTest.o: cxx ../../llvm/unittests/CodeGen/GlobalISel/GISelAliasTest.cpp || obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.inputdeps.stamp
+  source_file_part = GISelAliasTest.cpp
+  source_name_part = GISelAliasTest
+build obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.GISelMITest.o: cxx ../../llvm/unittests/CodeGen/GlobalISel/GISelMITest.cpp || obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.inputdeps.stamp
+  source_file_part = GISelMITest.cpp
+  source_name_part = GISelMITest
+build obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.GISelUtilsTest.o: cxx ../../llvm/unittests/CodeGen/GlobalISel/GISelUtilsTest.cpp || obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.inputdeps.stamp
+  source_file_part = GISelUtilsTest.cpp
+  source_name_part = GISelUtilsTest
+build obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.KnownBitsTest.o: cxx ../../llvm/unittests/CodeGen/GlobalISel/KnownBitsTest.cpp || obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.inputdeps.stamp
+  source_file_part = KnownBitsTest.cpp
+  source_name_part = KnownBitsTest
+build obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.KnownBitsVectorTest.o: cxx ../../llvm/unittests/CodeGen/GlobalISel/KnownBitsVectorTest.cpp || obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.inputdeps.stamp
+  source_file_part = KnownBitsVectorTest.cpp
+  source_name_part = KnownBitsVectorTest
+build obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.LegalizerHelperTest.o: cxx ../../llvm/unittests/CodeGen/GlobalISel/LegalizerHelperTest.cpp || obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.inputdeps.stamp
+  source_file_part = LegalizerHelperTest.cpp
+  source_name_part = LegalizerHelperTest
+build obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.LegalizerInfoTest.o: cxx ../../llvm/unittests/CodeGen/GlobalISel/LegalizerInfoTest.cpp || obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.inputdeps.stamp
+  source_file_part = LegalizerInfoTest.cpp
+  source_name_part = LegalizerInfoTest
+build obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.LegalizerTest.o: cxx ../../llvm/unittests/CodeGen/GlobalISel/LegalizerTest.cpp || obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.inputdeps.stamp
+  source_file_part = LegalizerTest.cpp
+  source_name_part = LegalizerTest
+build obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.MachineIRBuilderTest.o: cxx ../../llvm/unittests/CodeGen/GlobalISel/MachineIRBuilderTest.cpp || obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.inputdeps.stamp
+  source_file_part = MachineIRBuilderTest.cpp
+  source_name_part = MachineIRBuilderTest
+build obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.PatternMatchTest.o: cxx ../../llvm/unittests/CodeGen/GlobalISel/PatternMatchTest.cpp || obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.inputdeps.stamp
+  source_file_part = PatternMatchTest.cpp
+  source_name_part = PatternMatchTest
+
+build obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests: link obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.CSETest.o obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.ConstantFoldingTest.o obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.GISelAliasTest.o obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.GISelMITest.o obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.GISelUtilsTest.o obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.KnownBitsTest.o obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.KnownBitsVectorTest.o obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.LegalizerHelperTest.o obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.LegalizerInfoTest.o obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.LegalizerTest.o obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.MachineIRBuilderTest.o obj/llvm/unittests/CodeGen/GlobalISel/GlobalISelTests.PatternMatchTest.o ./lib/libLLVMCodeGen.a ./lib/libLLVMGlobalISel.a ./lib/libLLVMMIRParser.a ./lib/libLLVMFileCheck.a ./lib/libLLVMCore.a ./lib/libLLVMMC.a ./lib/libLLVMSupport.a ./lib/libLLVMTarget.a ./lib/libgtest.a ./lib/libLLVMAnalysis.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMAArch64CodeGen.a ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMAsmPrinter.a ./lib/libLLVMSelectionDAG.a ./lib/libLLVMCFGuard.a ./lib/libLLVMAArch64AsmParser.a ./lib/libLLVMAArch64Disassembler.a ./lib/libLLVMMCDisassembler.a || obj/llvm/lib/Target/TargetsToBuild.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/CodeGen/GlobalISel

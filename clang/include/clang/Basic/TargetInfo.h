@@ -332,6 +332,9 @@ public:
     //    void *__overflow_area_pointer;
     //} va_list;
     HexagonBuiltinVaList
+    
+    // Tensilica Xtensa
+    XtensaABIBuiltinVaList
   };
 
 protected:

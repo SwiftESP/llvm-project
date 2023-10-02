@@ -1,0 +1,76 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = clang-tblgen
+target_output_name = clang-tblgen
+
+build obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/clang/utils/TableGen/clang-tblgen.ASTTableGen.o: cxx ../../clang/utils/TableGen/ASTTableGen.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ASTTableGen.cpp
+  source_name_part = ASTTableGen
+build obj/clang/utils/TableGen/clang-tblgen.ClangASTNodesEmitter.o: cxx ../../clang/utils/TableGen/ClangASTNodesEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ClangASTNodesEmitter.cpp
+  source_name_part = ClangASTNodesEmitter
+build obj/clang/utils/TableGen/clang-tblgen.ClangASTPropertiesEmitter.o: cxx ../../clang/utils/TableGen/ClangASTPropertiesEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ClangASTPropertiesEmitter.cpp
+  source_name_part = ClangASTPropertiesEmitter
+build obj/clang/utils/TableGen/clang-tblgen.ClangAttrEmitter.o: cxx ../../clang/utils/TableGen/ClangAttrEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ClangAttrEmitter.cpp
+  source_name_part = ClangAttrEmitter
+build obj/clang/utils/TableGen/clang-tblgen.ClangCommentCommandInfoEmitter.o: cxx ../../clang/utils/TableGen/ClangCommentCommandInfoEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ClangCommentCommandInfoEmitter.cpp
+  source_name_part = ClangCommentCommandInfoEmitter
+build obj/clang/utils/TableGen/clang-tblgen.ClangCommentHTMLNamedCharacterReferenceEmitter.o: cxx ../../clang/utils/TableGen/ClangCommentHTMLNamedCharacterReferenceEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ClangCommentHTMLNamedCharacterReferenceEmitter.cpp
+  source_name_part = ClangCommentHTMLNamedCharacterReferenceEmitter
+build obj/clang/utils/TableGen/clang-tblgen.ClangCommentHTMLTagsEmitter.o: cxx ../../clang/utils/TableGen/ClangCommentHTMLTagsEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ClangCommentHTMLTagsEmitter.cpp
+  source_name_part = ClangCommentHTMLTagsEmitter
+build obj/clang/utils/TableGen/clang-tblgen.ClangDataCollectorsEmitter.o: cxx ../../clang/utils/TableGen/ClangDataCollectorsEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ClangDataCollectorsEmitter.cpp
+  source_name_part = ClangDataCollectorsEmitter
+build obj/clang/utils/TableGen/clang-tblgen.ClangDiagnosticsEmitter.o: cxx ../../clang/utils/TableGen/ClangDiagnosticsEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ClangDiagnosticsEmitter.cpp
+  source_name_part = ClangDiagnosticsEmitter
+build obj/clang/utils/TableGen/clang-tblgen.ClangOpcodesEmitter.o: cxx ../../clang/utils/TableGen/ClangOpcodesEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ClangOpcodesEmitter.cpp
+  source_name_part = ClangOpcodesEmitter
+build obj/clang/utils/TableGen/clang-tblgen.ClangOpenCLBuiltinEmitter.o: cxx ../../clang/utils/TableGen/ClangOpenCLBuiltinEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ClangOpenCLBuiltinEmitter.cpp
+  source_name_part = ClangOpenCLBuiltinEmitter
+build obj/clang/utils/TableGen/clang-tblgen.ClangOptionDocEmitter.o: cxx ../../clang/utils/TableGen/ClangOptionDocEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ClangOptionDocEmitter.cpp
+  source_name_part = ClangOptionDocEmitter
+build obj/clang/utils/TableGen/clang-tblgen.ClangSACheckersEmitter.o: cxx ../../clang/utils/TableGen/ClangSACheckersEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ClangSACheckersEmitter.cpp
+  source_name_part = ClangSACheckersEmitter
+build obj/clang/utils/TableGen/clang-tblgen.ClangSyntaxEmitter.o: cxx ../../clang/utils/TableGen/ClangSyntaxEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ClangSyntaxEmitter.cpp
+  source_name_part = ClangSyntaxEmitter
+build obj/clang/utils/TableGen/clang-tblgen.ClangTypeNodesEmitter.o: cxx ../../clang/utils/TableGen/ClangTypeNodesEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = ClangTypeNodesEmitter.cpp
+  source_name_part = ClangTypeNodesEmitter
+build obj/clang/utils/TableGen/clang-tblgen.MveEmitter.o: cxx ../../clang/utils/TableGen/MveEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = MveEmitter.cpp
+  source_name_part = MveEmitter
+build obj/clang/utils/TableGen/clang-tblgen.NeonEmitter.o: cxx ../../clang/utils/TableGen/NeonEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = NeonEmitter.cpp
+  source_name_part = NeonEmitter
+build obj/clang/utils/TableGen/clang-tblgen.RISCVVEmitter.o: cxx ../../clang/utils/TableGen/RISCVVEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = RISCVVEmitter.cpp
+  source_name_part = RISCVVEmitter
+build obj/clang/utils/TableGen/clang-tblgen.SveEmitter.o: cxx ../../clang/utils/TableGen/SveEmitter.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = SveEmitter.cpp
+  source_name_part = SveEmitter
+build obj/clang/utils/TableGen/clang-tblgen.TableGen.o: cxx ../../clang/utils/TableGen/TableGen.cpp || obj/clang/utils/TableGen/clang-tblgen.inputdeps.stamp
+  source_file_part = TableGen.cpp
+  source_name_part = TableGen
+
+build ./bin/clang-tblgen: link obj/clang/utils/TableGen/clang-tblgen.ASTTableGen.o obj/clang/utils/TableGen/clang-tblgen.ClangASTNodesEmitter.o obj/clang/utils/TableGen/clang-tblgen.ClangASTPropertiesEmitter.o obj/clang/utils/TableGen/clang-tblgen.ClangAttrEmitter.o obj/clang/utils/TableGen/clang-tblgen.ClangCommentCommandInfoEmitter.o obj/clang/utils/TableGen/clang-tblgen.ClangCommentHTMLNamedCharacterReferenceEmitter.o obj/clang/utils/TableGen/clang-tblgen.ClangCommentHTMLTagsEmitter.o obj/clang/utils/TableGen/clang-tblgen.ClangDataCollectorsEmitter.o obj/clang/utils/TableGen/clang-tblgen.ClangDiagnosticsEmitter.o obj/clang/utils/TableGen/clang-tblgen.ClangOpcodesEmitter.o obj/clang/utils/TableGen/clang-tblgen.ClangOpenCLBuiltinEmitter.o obj/clang/utils/TableGen/clang-tblgen.ClangOptionDocEmitter.o obj/clang/utils/TableGen/clang-tblgen.ClangSACheckersEmitter.o obj/clang/utils/TableGen/clang-tblgen.ClangSyntaxEmitter.o obj/clang/utils/TableGen/clang-tblgen.ClangTypeNodesEmitter.o obj/clang/utils/TableGen/clang-tblgen.MveEmitter.o obj/clang/utils/TableGen/clang-tblgen.NeonEmitter.o obj/clang/utils/TableGen/clang-tblgen.RISCVVEmitter.o obj/clang/utils/TableGen/clang-tblgen.SveEmitter.o obj/clang/utils/TableGen/clang-tblgen.TableGen.o ./lib/libclangSupport.a ./lib/libLLVMSupport.a ./lib/libLLVMTableGen.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

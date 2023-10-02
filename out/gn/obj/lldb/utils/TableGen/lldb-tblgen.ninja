@@ -1,0 +1,28 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = lldb-tblgen
+target_output_name = lldb-tblgen
+
+build obj/lldb/utils/TableGen/lldb-tblgen.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/lldb/utils/TableGen/lldb-tblgen.LLDBOptionDefEmitter.o: cxx ../../lldb/utils/TableGen/LLDBOptionDefEmitter.cpp || obj/lldb/utils/TableGen/lldb-tblgen.inputdeps.stamp
+  source_file_part = LLDBOptionDefEmitter.cpp
+  source_name_part = LLDBOptionDefEmitter
+build obj/lldb/utils/TableGen/lldb-tblgen.LLDBPropertyDefEmitter.o: cxx ../../lldb/utils/TableGen/LLDBPropertyDefEmitter.cpp || obj/lldb/utils/TableGen/lldb-tblgen.inputdeps.stamp
+  source_file_part = LLDBPropertyDefEmitter.cpp
+  source_name_part = LLDBPropertyDefEmitter
+build obj/lldb/utils/TableGen/lldb-tblgen.LLDBTableGen.o: cxx ../../lldb/utils/TableGen/LLDBTableGen.cpp || obj/lldb/utils/TableGen/lldb-tblgen.inputdeps.stamp
+  source_file_part = LLDBTableGen.cpp
+  source_name_part = LLDBTableGen
+build obj/lldb/utils/TableGen/lldb-tblgen.LLDBTableGenUtils.o: cxx ../../lldb/utils/TableGen/LLDBTableGenUtils.cpp || obj/lldb/utils/TableGen/lldb-tblgen.inputdeps.stamp
+  source_file_part = LLDBTableGenUtils.cpp
+  source_name_part = LLDBTableGenUtils
+
+build ./bin/lldb-tblgen: link obj/lldb/utils/TableGen/lldb-tblgen.LLDBOptionDefEmitter.o obj/lldb/utils/TableGen/lldb-tblgen.LLDBPropertyDefEmitter.o obj/lldb/utils/TableGen/lldb-tblgen.LLDBTableGen.o obj/lldb/utils/TableGen/lldb-tblgen.LLDBTableGenUtils.o ./lib/libLLVMSupport.a ./lib/libLLVMTableGen.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

@@ -1,0 +1,184 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/Basic -Igen/clang/include/clang/AST -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = CodeGen
+target_output_name = libclangCodeGen
+
+build obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_cg.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_cg.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtin_cg.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_cg.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang/lib/CodeGen/CodeGen.BackendUtil.o: cxx ../../clang/lib/CodeGen/BackendUtil.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = BackendUtil.cpp
+  source_name_part = BackendUtil
+build obj/clang/lib/CodeGen/CodeGen.CGAtomic.o: cxx ../../clang/lib/CodeGen/CGAtomic.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGAtomic.cpp
+  source_name_part = CGAtomic
+build obj/clang/lib/CodeGen/CodeGen.CGBlocks.o: cxx ../../clang/lib/CodeGen/CGBlocks.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGBlocks.cpp
+  source_name_part = CGBlocks
+build obj/clang/lib/CodeGen/CodeGen.CGBuiltin.o: cxx ../../clang/lib/CodeGen/CGBuiltin.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGBuiltin.cpp
+  source_name_part = CGBuiltin
+build obj/clang/lib/CodeGen/CodeGen.CGCUDANV.o: cxx ../../clang/lib/CodeGen/CGCUDANV.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGCUDANV.cpp
+  source_name_part = CGCUDANV
+build obj/clang/lib/CodeGen/CodeGen.CGCUDARuntime.o: cxx ../../clang/lib/CodeGen/CGCUDARuntime.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGCUDARuntime.cpp
+  source_name_part = CGCUDARuntime
+build obj/clang/lib/CodeGen/CodeGen.CGCXX.o: cxx ../../clang/lib/CodeGen/CGCXX.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGCXX.cpp
+  source_name_part = CGCXX
+build obj/clang/lib/CodeGen/CodeGen.CGCXXABI.o: cxx ../../clang/lib/CodeGen/CGCXXABI.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGCXXABI.cpp
+  source_name_part = CGCXXABI
+build obj/clang/lib/CodeGen/CodeGen.CGCall.o: cxx ../../clang/lib/CodeGen/CGCall.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGCall.cpp
+  source_name_part = CGCall
+build obj/clang/lib/CodeGen/CodeGen.CGClass.o: cxx ../../clang/lib/CodeGen/CGClass.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGClass.cpp
+  source_name_part = CGClass
+build obj/clang/lib/CodeGen/CodeGen.CGCleanup.o: cxx ../../clang/lib/CodeGen/CGCleanup.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGCleanup.cpp
+  source_name_part = CGCleanup
+build obj/clang/lib/CodeGen/CodeGen.CGCoroutine.o: cxx ../../clang/lib/CodeGen/CGCoroutine.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGCoroutine.cpp
+  source_name_part = CGCoroutine
+build obj/clang/lib/CodeGen/CodeGen.CGDebugInfo.o: cxx ../../clang/lib/CodeGen/CGDebugInfo.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGDebugInfo.cpp
+  source_name_part = CGDebugInfo
+build obj/clang/lib/CodeGen/CodeGen.CGDecl.o: cxx ../../clang/lib/CodeGen/CGDecl.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGDecl.cpp
+  source_name_part = CGDecl
+build obj/clang/lib/CodeGen/CodeGen.CGDeclCXX.o: cxx ../../clang/lib/CodeGen/CGDeclCXX.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGDeclCXX.cpp
+  source_name_part = CGDeclCXX
+build obj/clang/lib/CodeGen/CodeGen.CGException.o: cxx ../../clang/lib/CodeGen/CGException.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGException.cpp
+  source_name_part = CGException
+build obj/clang/lib/CodeGen/CodeGen.CGExpr.o: cxx ../../clang/lib/CodeGen/CGExpr.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGExpr.cpp
+  source_name_part = CGExpr
+build obj/clang/lib/CodeGen/CodeGen.CGExprAgg.o: cxx ../../clang/lib/CodeGen/CGExprAgg.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGExprAgg.cpp
+  source_name_part = CGExprAgg
+build obj/clang/lib/CodeGen/CodeGen.CGExprCXX.o: cxx ../../clang/lib/CodeGen/CGExprCXX.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGExprCXX.cpp
+  source_name_part = CGExprCXX
+build obj/clang/lib/CodeGen/CodeGen.CGExprComplex.o: cxx ../../clang/lib/CodeGen/CGExprComplex.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGExprComplex.cpp
+  source_name_part = CGExprComplex
+build obj/clang/lib/CodeGen/CodeGen.CGExprConstant.o: cxx ../../clang/lib/CodeGen/CGExprConstant.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGExprConstant.cpp
+  source_name_part = CGExprConstant
+build obj/clang/lib/CodeGen/CodeGen.CGExprScalar.o: cxx ../../clang/lib/CodeGen/CGExprScalar.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGExprScalar.cpp
+  source_name_part = CGExprScalar
+build obj/clang/lib/CodeGen/CodeGen.CGGPUBuiltin.o: cxx ../../clang/lib/CodeGen/CGGPUBuiltin.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGGPUBuiltin.cpp
+  source_name_part = CGGPUBuiltin
+build obj/clang/lib/CodeGen/CodeGen.CGHLSLRuntime.o: cxx ../../clang/lib/CodeGen/CGHLSLRuntime.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGHLSLRuntime.cpp
+  source_name_part = CGHLSLRuntime
+build obj/clang/lib/CodeGen/CodeGen.CGLoopInfo.o: cxx ../../clang/lib/CodeGen/CGLoopInfo.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGLoopInfo.cpp
+  source_name_part = CGLoopInfo
+build obj/clang/lib/CodeGen/CodeGen.CGNonTrivialStruct.o: cxx ../../clang/lib/CodeGen/CGNonTrivialStruct.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGNonTrivialStruct.cpp
+  source_name_part = CGNonTrivialStruct
+build obj/clang/lib/CodeGen/CodeGen.CGObjC.o: cxx ../../clang/lib/CodeGen/CGObjC.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGObjC.cpp
+  source_name_part = CGObjC
+build obj/clang/lib/CodeGen/CodeGen.CGObjCGNU.o: cxx ../../clang/lib/CodeGen/CGObjCGNU.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGObjCGNU.cpp
+  source_name_part = CGObjCGNU
+build obj/clang/lib/CodeGen/CodeGen.CGObjCMac.o: cxx ../../clang/lib/CodeGen/CGObjCMac.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGObjCMac.cpp
+  source_name_part = CGObjCMac
+build obj/clang/lib/CodeGen/CodeGen.CGObjCRuntime.o: cxx ../../clang/lib/CodeGen/CGObjCRuntime.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGObjCRuntime.cpp
+  source_name_part = CGObjCRuntime
+build obj/clang/lib/CodeGen/CodeGen.CGOpenCLRuntime.o: cxx ../../clang/lib/CodeGen/CGOpenCLRuntime.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGOpenCLRuntime.cpp
+  source_name_part = CGOpenCLRuntime
+build obj/clang/lib/CodeGen/CodeGen.CGOpenMPRuntime.o: cxx ../../clang/lib/CodeGen/CGOpenMPRuntime.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGOpenMPRuntime.cpp
+  source_name_part = CGOpenMPRuntime
+build obj/clang/lib/CodeGen/CodeGen.CGOpenMPRuntimeGPU.o: cxx ../../clang/lib/CodeGen/CGOpenMPRuntimeGPU.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGOpenMPRuntimeGPU.cpp
+  source_name_part = CGOpenMPRuntimeGPU
+build obj/clang/lib/CodeGen/CodeGen.CGRecordLayoutBuilder.o: cxx ../../clang/lib/CodeGen/CGRecordLayoutBuilder.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGRecordLayoutBuilder.cpp
+  source_name_part = CGRecordLayoutBuilder
+build obj/clang/lib/CodeGen/CodeGen.CGStmt.o: cxx ../../clang/lib/CodeGen/CGStmt.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGStmt.cpp
+  source_name_part = CGStmt
+build obj/clang/lib/CodeGen/CodeGen.CGStmtOpenMP.o: cxx ../../clang/lib/CodeGen/CGStmtOpenMP.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGStmtOpenMP.cpp
+  source_name_part = CGStmtOpenMP
+build obj/clang/lib/CodeGen/CodeGen.CGVTT.o: cxx ../../clang/lib/CodeGen/CGVTT.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGVTT.cpp
+  source_name_part = CGVTT
+build obj/clang/lib/CodeGen/CodeGen.CGVTables.o: cxx ../../clang/lib/CodeGen/CGVTables.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CGVTables.cpp
+  source_name_part = CGVTables
+build obj/clang/lib/CodeGen/CodeGen.CodeGenABITypes.o: cxx ../../clang/lib/CodeGen/CodeGenABITypes.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CodeGenABITypes.cpp
+  source_name_part = CodeGenABITypes
+build obj/clang/lib/CodeGen/CodeGen.CodeGenAction.o: cxx ../../clang/lib/CodeGen/CodeGenAction.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CodeGenAction.cpp
+  source_name_part = CodeGenAction
+build obj/clang/lib/CodeGen/CodeGen.CodeGenFunction.o: cxx ../../clang/lib/CodeGen/CodeGenFunction.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CodeGenFunction.cpp
+  source_name_part = CodeGenFunction
+build obj/clang/lib/CodeGen/CodeGen.CodeGenModule.o: cxx ../../clang/lib/CodeGen/CodeGenModule.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CodeGenModule.cpp
+  source_name_part = CodeGenModule
+build obj/clang/lib/CodeGen/CodeGen.CodeGenPGO.o: cxx ../../clang/lib/CodeGen/CodeGenPGO.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CodeGenPGO.cpp
+  source_name_part = CodeGenPGO
+build obj/clang/lib/CodeGen/CodeGen.CodeGenTBAA.o: cxx ../../clang/lib/CodeGen/CodeGenTBAA.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CodeGenTBAA.cpp
+  source_name_part = CodeGenTBAA
+build obj/clang/lib/CodeGen/CodeGen.CodeGenTypes.o: cxx ../../clang/lib/CodeGen/CodeGenTypes.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CodeGenTypes.cpp
+  source_name_part = CodeGenTypes
+build obj/clang/lib/CodeGen/CodeGen.ConstantInitBuilder.o: cxx ../../clang/lib/CodeGen/ConstantInitBuilder.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ConstantInitBuilder.cpp
+  source_name_part = ConstantInitBuilder
+build obj/clang/lib/CodeGen/CodeGen.CoverageMappingGen.o: cxx ../../clang/lib/CodeGen/CoverageMappingGen.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = CoverageMappingGen.cpp
+  source_name_part = CoverageMappingGen
+build obj/clang/lib/CodeGen/CodeGen.ItaniumCXXABI.o: cxx ../../clang/lib/CodeGen/ItaniumCXXABI.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ItaniumCXXABI.cpp
+  source_name_part = ItaniumCXXABI
+build obj/clang/lib/CodeGen/CodeGen.MacroPPCallbacks.o: cxx ../../clang/lib/CodeGen/MacroPPCallbacks.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MacroPPCallbacks.cpp
+  source_name_part = MacroPPCallbacks
+build obj/clang/lib/CodeGen/CodeGen.MicrosoftCXXABI.o: cxx ../../clang/lib/CodeGen/MicrosoftCXXABI.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = MicrosoftCXXABI.cpp
+  source_name_part = MicrosoftCXXABI
+build obj/clang/lib/CodeGen/CodeGen.ModuleBuilder.o: cxx ../../clang/lib/CodeGen/ModuleBuilder.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ModuleBuilder.cpp
+  source_name_part = ModuleBuilder
+build obj/clang/lib/CodeGen/CodeGen.ObjectFilePCHContainerOperations.o: cxx ../../clang/lib/CodeGen/ObjectFilePCHContainerOperations.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = ObjectFilePCHContainerOperations.cpp
+  source_name_part = ObjectFilePCHContainerOperations
+build obj/clang/lib/CodeGen/CodeGen.PatternInit.o: cxx ../../clang/lib/CodeGen/PatternInit.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = PatternInit.cpp
+  source_name_part = PatternInit
+build obj/clang/lib/CodeGen/CodeGen.SanitizerMetadata.o: cxx ../../clang/lib/CodeGen/SanitizerMetadata.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = SanitizerMetadata.cpp
+  source_name_part = SanitizerMetadata
+build obj/clang/lib/CodeGen/CodeGen.SwiftCallingConv.o: cxx ../../clang/lib/CodeGen/SwiftCallingConv.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = SwiftCallingConv.cpp
+  source_name_part = SwiftCallingConv
+build obj/clang/lib/CodeGen/CodeGen.TargetInfo.o: cxx ../../clang/lib/CodeGen/TargetInfo.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = TargetInfo.cpp
+  source_name_part = TargetInfo
+build obj/clang/lib/CodeGen/CodeGen.VarBypassDetector.o: cxx ../../clang/lib/CodeGen/VarBypassDetector.cpp || obj/clang/lib/CodeGen/CodeGen.inputdeps.stamp
+  source_file_part = VarBypassDetector.cpp
+  source_name_part = VarBypassDetector
+
+build ./lib/libclangCodeGen.a: alink obj/clang/lib/CodeGen/CodeGen.BackendUtil.o obj/clang/lib/CodeGen/CodeGen.CGAtomic.o obj/clang/lib/CodeGen/CodeGen.CGBlocks.o obj/clang/lib/CodeGen/CodeGen.CGBuiltin.o obj/clang/lib/CodeGen/CodeGen.CGCUDANV.o obj/clang/lib/CodeGen/CodeGen.CGCUDARuntime.o obj/clang/lib/CodeGen/CodeGen.CGCXX.o obj/clang/lib/CodeGen/CodeGen.CGCXXABI.o obj/clang/lib/CodeGen/CodeGen.CGCall.o obj/clang/lib/CodeGen/CodeGen.CGClass.o obj/clang/lib/CodeGen/CodeGen.CGCleanup.o obj/clang/lib/CodeGen/CodeGen.CGCoroutine.o obj/clang/lib/CodeGen/CodeGen.CGDebugInfo.o obj/clang/lib/CodeGen/CodeGen.CGDecl.o obj/clang/lib/CodeGen/CodeGen.CGDeclCXX.o obj/clang/lib/CodeGen/CodeGen.CGException.o obj/clang/lib/CodeGen/CodeGen.CGExpr.o obj/clang/lib/CodeGen/CodeGen.CGExprAgg.o obj/clang/lib/CodeGen/CodeGen.CGExprCXX.o obj/clang/lib/CodeGen/CodeGen.CGExprComplex.o obj/clang/lib/CodeGen/CodeGen.CGExprConstant.o obj/clang/lib/CodeGen/CodeGen.CGExprScalar.o obj/clang/lib/CodeGen/CodeGen.CGGPUBuiltin.o obj/clang/lib/CodeGen/CodeGen.CGHLSLRuntime.o obj/clang/lib/CodeGen/CodeGen.CGLoopInfo.o obj/clang/lib/CodeGen/CodeGen.CGNonTrivialStruct.o obj/clang/lib/CodeGen/CodeGen.CGObjC.o obj/clang/lib/CodeGen/CodeGen.CGObjCGNU.o obj/clang/lib/CodeGen/CodeGen.CGObjCMac.o obj/clang/lib/CodeGen/CodeGen.CGObjCRuntime.o obj/clang/lib/CodeGen/CodeGen.CGOpenCLRuntime.o obj/clang/lib/CodeGen/CodeGen.CGOpenMPRuntime.o obj/clang/lib/CodeGen/CodeGen.CGOpenMPRuntimeGPU.o obj/clang/lib/CodeGen/CodeGen.CGRecordLayoutBuilder.o obj/clang/lib/CodeGen/CodeGen.CGStmt.o obj/clang/lib/CodeGen/CodeGen.CGStmtOpenMP.o obj/clang/lib/CodeGen/CodeGen.CGVTT.o obj/clang/lib/CodeGen/CodeGen.CGVTables.o obj/clang/lib/CodeGen/CodeGen.CodeGenABITypes.o obj/clang/lib/CodeGen/CodeGen.CodeGenAction.o obj/clang/lib/CodeGen/CodeGen.CodeGenFunction.o obj/clang/lib/CodeGen/CodeGen.CodeGenModule.o obj/clang/lib/CodeGen/CodeGen.CodeGenPGO.o obj/clang/lib/CodeGen/CodeGen.CodeGenTBAA.o obj/clang/lib/CodeGen/CodeGen.CodeGenTypes.o obj/clang/lib/CodeGen/CodeGen.ConstantInitBuilder.o obj/clang/lib/CodeGen/CodeGen.CoverageMappingGen.o obj/clang/lib/CodeGen/CodeGen.ItaniumCXXABI.o obj/clang/lib/CodeGen/CodeGen.MacroPPCallbacks.o obj/clang/lib/CodeGen/CodeGen.MicrosoftCXXABI.o obj/clang/lib/CodeGen/CodeGen.ModuleBuilder.o obj/clang/lib/CodeGen/CodeGen.ObjectFilePCHContainerOperations.o obj/clang/lib/CodeGen/CodeGen.PatternInit.o obj/clang/lib/CodeGen/CodeGen.SanitizerMetadata.o obj/clang/lib/CodeGen/CodeGen.SwiftCallingConv.o obj/clang/lib/CodeGen/CodeGen.TargetInfo.o obj/clang/lib/CodeGen/CodeGen.VarBypassDetector.o || obj/clang/include/clang/Basic/arm_cde_builtin_cg.stamp obj/clang/include/clang/Basic/arm_mve_builtin_cg.stamp obj/clang/include/clang/Basic/arm_sve_builtin_cg.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_cg.stamp ./lib/libclangAST.a ./lib/libclangAnalysis.a ./lib/libclangBasic.a ./lib/libclangFrontend.a ./lib/libclangLex.a ./lib/libLLVMAnalysis.a ./lib/libLLVMBitReader.a ./lib/libLLVMDemangle.a ./lib/libLLVMCore.a ./lib/libLLVMIRReader.a ./lib/libLLVMLTO.a ./lib/libLLVMLinker.a ./lib/libLLVMMC.a ./lib/libLLVMObject.a ./lib/libLLVMPasses.a ./lib/libLLVMProfileData.a ./lib/libLLVMCoverage.a ./lib/libLLVMSupport.a ./lib/libLLVMTarget.a ./lib/libLLVMCoroutines.a ./lib/libLLVMipo.a ./lib/libLLVMInstCombine.a ./lib/libLLVMInstrumentation.a ./lib/libLLVMObjCARCOpts.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangASTMatchers.a ./lib/libclangDriver.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libclangEdit.a ./lib/libclangParse.a ./lib/libclangSema.a ./lib/libclangSupport.a ./lib/libclangSerialization.a ./lib/libLLVMBitWriter.a ./lib/libLLVMCodeGen.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMExtensions.a ./lib/libLLVMVectorize.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

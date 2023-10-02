@@ -1,0 +1,484 @@
+defines =
+include_dirs = -I../../llvm/include -Istage2_unix/gen/llvm/include
+cflags = -fPIC -fno-builtin -fvisibility=hidden -fomit-frame-pointer -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -fPIC -Wcovered-switch-default
+cflags_c = -std=c11
+label_name = builtins
+target_output_name = libclang_rt.osx
+
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp: stage2_unix_stamp obj/clang.stamp obj/lld.stamp
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.absvdi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/absvdi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = absvdi2.c
+  source_name_part = absvdi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.absvsi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/absvsi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = absvsi2.c
+  source_name_part = absvsi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.absvti2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/absvti2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = absvti2.c
+  source_name_part = absvti2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.adddf3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/adddf3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = adddf3.c
+  source_name_part = adddf3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.addsf3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/addsf3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = addsf3.c
+  source_name_part = addsf3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.addtf3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/addtf3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = addtf3.c
+  source_name_part = addtf3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.addvdi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/addvdi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = addvdi3.c
+  source_name_part = addvdi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.addvsi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/addvsi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = addvsi3.c
+  source_name_part = addvsi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.addvti3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/addvti3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = addvti3.c
+  source_name_part = addvti3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.apple_versioning.o: stage2_unix_cc ../../compiler-rt/lib/builtins/apple_versioning.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = apple_versioning.c
+  source_name_part = apple_versioning
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.ashldi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/ashldi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = ashldi3.c
+  source_name_part = ashldi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.ashlti3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/ashlti3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = ashlti3.c
+  source_name_part = ashlti3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.ashrdi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/ashrdi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = ashrdi3.c
+  source_name_part = ashrdi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.ashrti3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/ashrti3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = ashrti3.c
+  source_name_part = ashrti3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.bswapdi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/bswapdi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = bswapdi2.c
+  source_name_part = bswapdi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.bswapsi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/bswapsi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = bswapsi2.c
+  source_name_part = bswapsi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.clzdi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/clzdi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = clzdi2.c
+  source_name_part = clzdi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.clzsi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/clzsi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = clzsi2.c
+  source_name_part = clzsi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.clzti2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/clzti2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = clzti2.c
+  source_name_part = clzti2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.cmpdi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/cmpdi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = cmpdi2.c
+  source_name_part = cmpdi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.cmpti2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/cmpti2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = cmpti2.c
+  source_name_part = cmpti2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.comparedf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/comparedf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = comparedf2.c
+  source_name_part = comparedf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.comparesf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/comparesf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = comparesf2.c
+  source_name_part = comparesf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.ctzdi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/ctzdi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = ctzdi2.c
+  source_name_part = ctzdi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.ctzsi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/ctzsi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = ctzsi2.c
+  source_name_part = ctzsi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.ctzti2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/ctzti2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = ctzti2.c
+  source_name_part = ctzti2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.divdc3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/divdc3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = divdc3.c
+  source_name_part = divdc3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.divdf3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/divdf3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = divdf3.c
+  source_name_part = divdf3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.divdi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/divdi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = divdi3.c
+  source_name_part = divdi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.divmoddi4.o: stage2_unix_cc ../../compiler-rt/lib/builtins/divmoddi4.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = divmoddi4.c
+  source_name_part = divmoddi4
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.divmodsi4.o: stage2_unix_cc ../../compiler-rt/lib/builtins/divmodsi4.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = divmodsi4.c
+  source_name_part = divmodsi4
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.divmodti4.o: stage2_unix_cc ../../compiler-rt/lib/builtins/divmodti4.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = divmodti4.c
+  source_name_part = divmodti4
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.divsc3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/divsc3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = divsc3.c
+  source_name_part = divsc3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.divsf3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/divsf3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = divsf3.c
+  source_name_part = divsf3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.divsi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/divsi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = divsi3.c
+  source_name_part = divsi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.divtc3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/divtc3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = divtc3.c
+  source_name_part = divtc3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.divtf3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/divtf3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = divtf3.c
+  source_name_part = divtf3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.divti3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/divti3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = divti3.c
+  source_name_part = divti3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.extendhfsf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/extendhfsf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = extendhfsf2.c
+  source_name_part = extendhfsf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.extendsfdf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/extendsfdf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = extendsfdf2.c
+  source_name_part = extendsfdf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.ffsdi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/ffsdi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = ffsdi2.c
+  source_name_part = ffsdi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.ffssi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/ffssi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = ffssi2.c
+  source_name_part = ffssi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.ffsti2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/ffsti2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = ffsti2.c
+  source_name_part = ffsti2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixdfdi.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixdfdi.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixdfdi.c
+  source_name_part = fixdfdi
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixdfsi.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixdfsi.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixdfsi.c
+  source_name_part = fixdfsi
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixdfti.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixdfti.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixdfti.c
+  source_name_part = fixdfti
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixsfdi.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixsfdi.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixsfdi.c
+  source_name_part = fixsfdi
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixsfsi.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixsfsi.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixsfsi.c
+  source_name_part = fixsfsi
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixsfti.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixsfti.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixsfti.c
+  source_name_part = fixsfti
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunsdfdi.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixunsdfdi.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixunsdfdi.c
+  source_name_part = fixunsdfdi
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunsdfsi.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixunsdfsi.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixunsdfsi.c
+  source_name_part = fixunsdfsi
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunsdfti.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixunsdfti.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixunsdfti.c
+  source_name_part = fixunsdfti
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunssfdi.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixunssfdi.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixunssfdi.c
+  source_name_part = fixunssfdi
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunssfsi.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixunssfsi.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixunssfsi.c
+  source_name_part = fixunssfsi
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunssfti.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixunssfti.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixunssfti.c
+  source_name_part = fixunssfti
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatdidf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatdidf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatdidf.c
+  source_name_part = floatdidf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatdisf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatdisf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatdisf.c
+  source_name_part = floatdisf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatsidf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatsidf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatsidf.c
+  source_name_part = floatsidf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatsisf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatsisf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatsisf.c
+  source_name_part = floatsisf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floattidf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floattidf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floattidf.c
+  source_name_part = floattidf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floattisf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floattisf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floattisf.c
+  source_name_part = floattisf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatundidf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatundidf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatundidf.c
+  source_name_part = floatundidf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatundisf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatundisf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatundisf.c
+  source_name_part = floatundisf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatunsidf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatunsidf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatunsidf.c
+  source_name_part = floatunsidf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatunsisf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatunsisf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatunsisf.c
+  source_name_part = floatunsisf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatuntidf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatuntidf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatuntidf.c
+  source_name_part = floatuntidf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatuntisf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatuntisf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatuntisf.c
+  source_name_part = floatuntisf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.int_util.o: stage2_unix_cc ../../compiler-rt/lib/builtins/int_util.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = int_util.c
+  source_name_part = int_util
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.lshrdi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/lshrdi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = lshrdi3.c
+  source_name_part = lshrdi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.lshrti3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/lshrti3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = lshrti3.c
+  source_name_part = lshrti3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.moddi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/moddi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = moddi3.c
+  source_name_part = moddi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.modsi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/modsi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = modsi3.c
+  source_name_part = modsi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.modti3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/modti3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = modti3.c
+  source_name_part = modti3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.muldc3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/muldc3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = muldc3.c
+  source_name_part = muldc3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.muldf3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/muldf3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = muldf3.c
+  source_name_part = muldf3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.muldi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/muldi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = muldi3.c
+  source_name_part = muldi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.mulodi4.o: stage2_unix_cc ../../compiler-rt/lib/builtins/mulodi4.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = mulodi4.c
+  source_name_part = mulodi4
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.mulosi4.o: stage2_unix_cc ../../compiler-rt/lib/builtins/mulosi4.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = mulosi4.c
+  source_name_part = mulosi4
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.muloti4.o: stage2_unix_cc ../../compiler-rt/lib/builtins/muloti4.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = muloti4.c
+  source_name_part = muloti4
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.mulsc3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/mulsc3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = mulsc3.c
+  source_name_part = mulsc3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.mulsf3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/mulsf3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = mulsf3.c
+  source_name_part = mulsf3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.multf3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/multf3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = multf3.c
+  source_name_part = multf3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.multi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/multi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = multi3.c
+  source_name_part = multi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.mulvdi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/mulvdi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = mulvdi3.c
+  source_name_part = mulvdi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.mulvsi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/mulvsi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = mulvsi3.c
+  source_name_part = mulvsi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.mulvti3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/mulvti3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = mulvti3.c
+  source_name_part = mulvti3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.negdf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/negdf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = negdf2.c
+  source_name_part = negdf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.negdi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/negdi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = negdi2.c
+  source_name_part = negdi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.negsf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/negsf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = negsf2.c
+  source_name_part = negsf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.negti2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/negti2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = negti2.c
+  source_name_part = negti2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.negvdi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/negvdi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = negvdi2.c
+  source_name_part = negvdi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.negvsi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/negvsi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = negvsi2.c
+  source_name_part = negvsi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.negvti2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/negvti2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = negvti2.c
+  source_name_part = negvti2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.os_version_check.o: stage2_unix_cc ../../compiler-rt/lib/builtins/os_version_check.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = os_version_check.c
+  source_name_part = os_version_check
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.paritydi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/paritydi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = paritydi2.c
+  source_name_part = paritydi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.paritysi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/paritysi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = paritysi2.c
+  source_name_part = paritysi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.parityti2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/parityti2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = parityti2.c
+  source_name_part = parityti2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.popcountdi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/popcountdi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = popcountdi2.c
+  source_name_part = popcountdi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.popcountsi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/popcountsi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = popcountsi2.c
+  source_name_part = popcountsi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.popcountti2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/popcountti2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = popcountti2.c
+  source_name_part = popcountti2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.powidf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/powidf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = powidf2.c
+  source_name_part = powidf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.powisf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/powisf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = powisf2.c
+  source_name_part = powisf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.powitf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/powitf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = powitf2.c
+  source_name_part = powitf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.subdf3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/subdf3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = subdf3.c
+  source_name_part = subdf3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.subsf3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/subsf3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = subsf3.c
+  source_name_part = subsf3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.subtf3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/subtf3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = subtf3.c
+  source_name_part = subtf3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.subvdi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/subvdi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = subvdi3.c
+  source_name_part = subvdi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.subvsi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/subvsi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = subvsi3.c
+  source_name_part = subvsi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.subvti3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/subvti3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = subvti3.c
+  source_name_part = subvti3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.trampoline_setup.o: stage2_unix_cc ../../compiler-rt/lib/builtins/trampoline_setup.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = trampoline_setup.c
+  source_name_part = trampoline_setup
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.truncdfhf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/truncdfhf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = truncdfhf2.c
+  source_name_part = truncdfhf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.truncdfsf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/truncdfsf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = truncdfsf2.c
+  source_name_part = truncdfsf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.truncsfhf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/truncsfhf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = truncsfhf2.c
+  source_name_part = truncsfhf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.ucmpdi2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/ucmpdi2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = ucmpdi2.c
+  source_name_part = ucmpdi2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.ucmpti2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/ucmpti2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = ucmpti2.c
+  source_name_part = ucmpti2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.udivdi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/udivdi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = udivdi3.c
+  source_name_part = udivdi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.udivmoddi4.o: stage2_unix_cc ../../compiler-rt/lib/builtins/udivmoddi4.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = udivmoddi4.c
+  source_name_part = udivmoddi4
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.udivmodsi4.o: stage2_unix_cc ../../compiler-rt/lib/builtins/udivmodsi4.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = udivmodsi4.c
+  source_name_part = udivmodsi4
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.udivmodti4.o: stage2_unix_cc ../../compiler-rt/lib/builtins/udivmodti4.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = udivmodti4.c
+  source_name_part = udivmodti4
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.udivsi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/udivsi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = udivsi3.c
+  source_name_part = udivsi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.udivti3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/udivti3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = udivti3.c
+  source_name_part = udivti3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.umoddi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/umoddi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = umoddi3.c
+  source_name_part = umoddi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.umodsi3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/umodsi3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = umodsi3.c
+  source_name_part = umodsi3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.umodti3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/umodti3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = umodti3.c
+  source_name_part = umodti3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.gcc_personality_v0.o: stage2_unix_cc ../../compiler-rt/lib/builtins/gcc_personality_v0.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = gcc_personality_v0.c
+  source_name_part = gcc_personality_v0
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.clear_cache.o: stage2_unix_cc ../../compiler-rt/lib/builtins/clear_cache.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = clear_cache.c
+  source_name_part = clear_cache
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.emutls.o: stage2_unix_cc ../../compiler-rt/lib/builtins/emutls.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = emutls.c
+  source_name_part = emutls
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.enable_execute_stack.o: stage2_unix_cc ../../compiler-rt/lib/builtins/enable_execute_stack.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = enable_execute_stack.c
+  source_name_part = enable_execute_stack
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.eprintf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/eprintf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = eprintf.c
+  source_name_part = eprintf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.atomic_flag_clear.o: stage2_unix_cc ../../compiler-rt/lib/builtins/atomic_flag_clear.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = atomic_flag_clear.c
+  source_name_part = atomic_flag_clear
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.atomic_flag_clear_explicit.o: stage2_unix_cc ../../compiler-rt/lib/builtins/atomic_flag_clear_explicit.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = atomic_flag_clear_explicit.c
+  source_name_part = atomic_flag_clear_explicit
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.atomic_flag_test_and_set.o: stage2_unix_cc ../../compiler-rt/lib/builtins/atomic_flag_test_and_set.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = atomic_flag_test_and_set.c
+  source_name_part = atomic_flag_test_and_set
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.atomic_flag_test_and_set_explicit.o: stage2_unix_cc ../../compiler-rt/lib/builtins/atomic_flag_test_and_set_explicit.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = atomic_flag_test_and_set_explicit.c
+  source_name_part = atomic_flag_test_and_set_explicit
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.atomic_signal_fence.o: stage2_unix_cc ../../compiler-rt/lib/builtins/atomic_signal_fence.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = atomic_signal_fence.c
+  source_name_part = atomic_signal_fence
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.atomic_thread_fence.o: stage2_unix_cc ../../compiler-rt/lib/builtins/atomic_thread_fence.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = atomic_thread_fence.c
+  source_name_part = atomic_thread_fence
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.comparetf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/comparetf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = comparetf2.c
+  source_name_part = comparetf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.extenddftf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/extenddftf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = extenddftf2.c
+  source_name_part = extenddftf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.extendhftf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/extendhftf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = extendhftf2.c
+  source_name_part = extendhftf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.extendsftf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/extendsftf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = extendsftf2.c
+  source_name_part = extendsftf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixtfdi.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixtfdi.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixtfdi.c
+  source_name_part = fixtfdi
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixtfsi.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixtfsi.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixtfsi.c
+  source_name_part = fixtfsi
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixtfti.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixtfti.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixtfti.c
+  source_name_part = fixtfti
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunstfdi.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixunstfdi.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixunstfdi.c
+  source_name_part = fixunstfdi
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunstfsi.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixunstfsi.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixunstfsi.c
+  source_name_part = fixunstfsi
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunstfti.o: stage2_unix_cc ../../compiler-rt/lib/builtins/fixunstfti.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fixunstfti.c
+  source_name_part = fixunstfti
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatditf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatditf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatditf.c
+  source_name_part = floatditf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatsitf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatsitf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatsitf.c
+  source_name_part = floatsitf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floattitf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floattitf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floattitf.c
+  source_name_part = floattitf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatunditf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatunditf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatunditf.c
+  source_name_part = floatunditf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatunsitf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatunsitf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatunsitf.c
+  source_name_part = floatunsitf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatuntitf.o: stage2_unix_cc ../../compiler-rt/lib/builtins/floatuntitf.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = floatuntitf.c
+  source_name_part = floatuntitf
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.multc3.o: stage2_unix_cc ../../compiler-rt/lib/builtins/multc3.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = multc3.c
+  source_name_part = multc3
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.trunctfdf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/trunctfdf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = trunctfdf2.c
+  source_name_part = trunctfdf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.trunctfhf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/trunctfhf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = trunctfhf2.c
+  source_name_part = trunctfhf2
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.trunctfsf2.o: stage2_unix_cc ../../compiler-rt/lib/builtins/trunctfsf2.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = trunctfsf2.c
+  source_name_part = trunctfsf2
+build stage2_unix/obj/compiler-rt/lib/builtins/aarch64/builtins.fp_mode.o: stage2_unix_cc ../../compiler-rt/lib/builtins/aarch64/fp_mode.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = fp_mode.c
+  source_name_part = fp_mode
+build stage2_unix/obj/compiler-rt/lib/builtins/builtins.cpu_model.o: stage2_unix_cc ../../compiler-rt/lib/builtins/cpu_model.c || stage2_unix/obj/compiler-rt/lib/builtins/builtins.inputdeps.stamp
+  source_file_part = cpu_model.c
+  source_name_part = cpu_model
+
+build lib/clang/16.0.0/lib/darwin/libclang_rt.osx.a: stage2_unix_alink stage2_unix/obj/compiler-rt/lib/builtins/builtins.absvdi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.absvsi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.absvti2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.adddf3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.addsf3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.addtf3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.addvdi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.addvsi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.addvti3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.apple_versioning.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.ashldi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.ashlti3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.ashrdi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.ashrti3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.bswapdi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.bswapsi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.clzdi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.clzsi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.clzti2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.cmpdi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.cmpti2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.comparedf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.comparesf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.ctzdi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.ctzsi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.ctzti2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.divdc3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.divdf3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.divdi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.divmoddi4.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.divmodsi4.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.divmodti4.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.divsc3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.divsf3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.divsi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.divtc3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.divtf3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.divti3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.extendhfsf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.extendsfdf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.ffsdi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.ffssi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.ffsti2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixdfdi.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixdfsi.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixdfti.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixsfdi.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixsfsi.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixsfti.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunsdfdi.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunsdfsi.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunsdfti.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunssfdi.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunssfsi.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunssfti.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatdidf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatdisf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatsidf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatsisf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floattidf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floattisf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatundidf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatundisf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatunsidf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatunsisf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatuntidf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatuntisf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.int_util.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.lshrdi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.lshrti3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.moddi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.modsi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.modti3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.muldc3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.muldf3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.muldi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.mulodi4.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.mulosi4.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.muloti4.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.mulsc3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.mulsf3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.multf3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.multi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.mulvdi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.mulvsi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.mulvti3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.negdf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.negdi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.negsf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.negti2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.negvdi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.negvsi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.negvti2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.os_version_check.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.paritydi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.paritysi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.parityti2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.popcountdi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.popcountsi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.popcountti2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.powidf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.powisf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.powitf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.subdf3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.subsf3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.subtf3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.subvdi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.subvsi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.subvti3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.trampoline_setup.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.truncdfhf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.truncdfsf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.truncsfhf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.ucmpdi2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.ucmpti2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.udivdi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.udivmoddi4.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.udivmodsi4.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.udivmodti4.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.udivsi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.udivti3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.umoddi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.umodsi3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.umodti3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.gcc_personality_v0.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.clear_cache.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.emutls.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.enable_execute_stack.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.eprintf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.atomic_flag_clear.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.atomic_flag_clear_explicit.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.atomic_flag_test_and_set.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.atomic_flag_test_and_set_explicit.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.atomic_signal_fence.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.atomic_thread_fence.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.comparetf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.extenddftf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.extendhftf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.extendsftf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixtfdi.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixtfsi.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixtfti.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunstfdi.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunstfsi.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.fixunstfti.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatditf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatsitf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floattitf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatunditf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatunsitf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.floatuntitf.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.multc3.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.trunctfdf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.trunctfhf2.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.trunctfsf2.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/builtins.fp_mode.o stage2_unix/obj/compiler-rt/lib/builtins/builtins.cpu_model.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_1_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_1_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_1_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_1_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_2_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_2_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_2_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_2_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_4_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_4_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_4_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_4_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_8_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_8_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_8_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_8_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_16_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_16_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_16_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_cas_16_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_1_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_1_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_1_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_1_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_2_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_2_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_2_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_2_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_4_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_4_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_4_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_4_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_8_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_8_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_8_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_swp_8_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_1_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_1_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_1_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_1_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_2_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_2_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_2_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_2_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_4_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_4_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_4_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_4_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_8_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_8_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_8_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldadd_8_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_1_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_1_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_1_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_1_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_2_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_2_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_2_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_2_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_4_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_4_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_4_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_4_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_8_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_8_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_8_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_8_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_1_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_1_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_1_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_1_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_2_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_2_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_2_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_2_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_4_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_4_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_4_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_4_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_8_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_8_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_8_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldeor_8_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_1_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_1_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_1_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_1_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_2_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_2_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_2_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_2_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_4_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_4_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_4_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_4_4.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_8_1.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_8_2.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_8_3.lse.o stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldset_8_4.lse.o || stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_1_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_1_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_1_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_1_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_2_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_2_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_2_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_2_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_4_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_4_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_4_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_4_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_8_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_8_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_8_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_8_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_16_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_16_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_16_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_16_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_1_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_1_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_1_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_1_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_2_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_2_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_2_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_2_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_4_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_4_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_4_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_4_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_8_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_8_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_8_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_8_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_1_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_1_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_1_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_1_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_2_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_2_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_2_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_2_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_4_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_4_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_4_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_4_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_8_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_8_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_8_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_8_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_1_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_1_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_1_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_1_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_2_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_2_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_2_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_2_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_4_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_4_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_4_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_4_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_8_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_8_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_8_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_8_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_1_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_1_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_1_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_1_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_2_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_2_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_2_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_2_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_4_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_4_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_4_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_4_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_8_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_8_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_8_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_8_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_1_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_1_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_1_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_1_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_2_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_2_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_2_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_2_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_4_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_4_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_4_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_4_4.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_8_1.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_8_2.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_8_3.stamp stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_8_4.stamp
+  arflags =
+  output_extension = 
+  output_dir = lib/clang/16.0.0/lib/darwin

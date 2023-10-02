@@ -1,0 +1,15 @@
+# ninja log v5
+89	122	1696219253653744237	gen/clang-tools-extra/clangd/test/lit.site.cfg.py	7963371daf996b12
+89	122	1696219253654908356	gen/clang-tools-extra/clangd/unittests/lit.site.cfg.py	cb976b84fbbb4271
+90	122	1696219253654898356	gen/clang-tools-extra/test/lit.site.cfg.py	d93767093ae9c048
+90	124	1696219253657406176	gen/clang-tools-extra/pseudo/test/Unit/lit.site.cfg.py	1bcfc65da2ece6fe
+90	126	1696219253659309041	gen/lld/include/lld/Common/Version.inc	de43238daf62a8b5
+122	128	1696219253663014813	obj/clang-tools-extra/clangd/test/lit_unit_site_cfg.stamp	22d4ca32a2f7406d
+90	128	1696219253661050865	gen/clang-tools-extra/test/Unit/lit.site.cfg.py	255bdefa7ca322ae
+122	128	1696219253663511102	obj/clang-tools-extra/clangd/test/lit_site_cfg.stamp	145d320c75936752
+90	128	1696219253660560784	gen/clang/test/Unit/lit.site.cfg.py	a887de9a2a84b7d3
+91	129	1696219253662224817	gen/lldb/test/lit.site.cfg.py	5e18f46d3fba30aa
+122	129	1696219253664682971	obj/clang-tools-extra/test/lit_site_cfg.stamp	2c19c459ef339ce3
+91	129	1696219253662459857	gen/lld/test/lit.site.cfg.py	9a420de6a68f521a
+89	130	1696219253663322853	gen/clang-tools-extra/pseudo/test/lit.site.cfg.py	2bf41249310d38b
+90	132	1696219253665025427	gen/lld/Common/VCSVersion.inc	9597526509d541e0

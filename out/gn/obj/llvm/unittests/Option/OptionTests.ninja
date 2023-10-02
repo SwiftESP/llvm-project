@@ -1,0 +1,22 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/unittests/Option -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = OptionTests
+target_output_name = OptionTests
+
+build obj/llvm/unittests/Option/OptionTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/unittests/Option/Opts.stamp
+build obj/llvm/unittests/Option/OptionTests.OptionMarshallingTest.o: cxx ../../llvm/unittests/Option/OptionMarshallingTest.cpp || obj/llvm/unittests/Option/OptionTests.inputdeps.stamp
+  source_file_part = OptionMarshallingTest.cpp
+  source_name_part = OptionMarshallingTest
+build obj/llvm/unittests/Option/OptionTests.OptionParsingTest.o: cxx ../../llvm/unittests/Option/OptionParsingTest.cpp || obj/llvm/unittests/Option/OptionTests.inputdeps.stamp
+  source_file_part = OptionParsingTest.cpp
+  source_name_part = OptionParsingTest
+
+build obj/llvm/unittests/Option/OptionTests: link obj/llvm/unittests/Option/OptionTests.OptionMarshallingTest.o obj/llvm/unittests/Option/OptionTests.OptionParsingTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMOption.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libgtest.a || obj/llvm/unittests/Option/Opts.stamp obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/Option

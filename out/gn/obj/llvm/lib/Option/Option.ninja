@@ -1,0 +1,25 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Option
+target_output_name = libLLVMOption
+
+build obj/llvm/lib/Option/Option.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/Option/Option.Arg.o: cxx ../../llvm/lib/Option/Arg.cpp || obj/llvm/lib/Option/Option.inputdeps.stamp
+  source_file_part = Arg.cpp
+  source_name_part = Arg
+build obj/llvm/lib/Option/Option.ArgList.o: cxx ../../llvm/lib/Option/ArgList.cpp || obj/llvm/lib/Option/Option.inputdeps.stamp
+  source_file_part = ArgList.cpp
+  source_name_part = ArgList
+build obj/llvm/lib/Option/Option.OptTable.o: cxx ../../llvm/lib/Option/OptTable.cpp || obj/llvm/lib/Option/Option.inputdeps.stamp
+  source_file_part = OptTable.cpp
+  source_name_part = OptTable
+build obj/llvm/lib/Option/Option.Option.o: cxx ../../llvm/lib/Option/Option.cpp || obj/llvm/lib/Option/Option.inputdeps.stamp
+  source_file_part = Option.cpp
+  source_name_part = Option
+
+build ./lib/libLLVMOption.a: alink obj/llvm/lib/Option/Option.Arg.o obj/llvm/lib/Option/Option.ArgList.o obj/llvm/lib/Option/Option.OptTable.o obj/llvm/lib/Option/Option.Option.o || ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

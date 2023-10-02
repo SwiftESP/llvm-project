@@ -1,0 +1,46 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Remarks
+target_output_name = libLLVMRemarks
+
+build obj/llvm/lib/Remarks/Remarks.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/Remarks/Remarks.BitstreamRemarkParser.o: cxx ../../llvm/lib/Remarks/BitstreamRemarkParser.cpp || obj/llvm/lib/Remarks/Remarks.inputdeps.stamp
+  source_file_part = BitstreamRemarkParser.cpp
+  source_name_part = BitstreamRemarkParser
+build obj/llvm/lib/Remarks/Remarks.BitstreamRemarkSerializer.o: cxx ../../llvm/lib/Remarks/BitstreamRemarkSerializer.cpp || obj/llvm/lib/Remarks/Remarks.inputdeps.stamp
+  source_file_part = BitstreamRemarkSerializer.cpp
+  source_name_part = BitstreamRemarkSerializer
+build obj/llvm/lib/Remarks/Remarks.Remark.o: cxx ../../llvm/lib/Remarks/Remark.cpp || obj/llvm/lib/Remarks/Remarks.inputdeps.stamp
+  source_file_part = Remark.cpp
+  source_name_part = Remark
+build obj/llvm/lib/Remarks/Remarks.RemarkFormat.o: cxx ../../llvm/lib/Remarks/RemarkFormat.cpp || obj/llvm/lib/Remarks/Remarks.inputdeps.stamp
+  source_file_part = RemarkFormat.cpp
+  source_name_part = RemarkFormat
+build obj/llvm/lib/Remarks/Remarks.RemarkLinker.o: cxx ../../llvm/lib/Remarks/RemarkLinker.cpp || obj/llvm/lib/Remarks/Remarks.inputdeps.stamp
+  source_file_part = RemarkLinker.cpp
+  source_name_part = RemarkLinker
+build obj/llvm/lib/Remarks/Remarks.RemarkParser.o: cxx ../../llvm/lib/Remarks/RemarkParser.cpp || obj/llvm/lib/Remarks/Remarks.inputdeps.stamp
+  source_file_part = RemarkParser.cpp
+  source_name_part = RemarkParser
+build obj/llvm/lib/Remarks/Remarks.RemarkSerializer.o: cxx ../../llvm/lib/Remarks/RemarkSerializer.cpp || obj/llvm/lib/Remarks/Remarks.inputdeps.stamp
+  source_file_part = RemarkSerializer.cpp
+  source_name_part = RemarkSerializer
+build obj/llvm/lib/Remarks/Remarks.RemarkStreamer.o: cxx ../../llvm/lib/Remarks/RemarkStreamer.cpp || obj/llvm/lib/Remarks/Remarks.inputdeps.stamp
+  source_file_part = RemarkStreamer.cpp
+  source_name_part = RemarkStreamer
+build obj/llvm/lib/Remarks/Remarks.RemarkStringTable.o: cxx ../../llvm/lib/Remarks/RemarkStringTable.cpp || obj/llvm/lib/Remarks/Remarks.inputdeps.stamp
+  source_file_part = RemarkStringTable.cpp
+  source_name_part = RemarkStringTable
+build obj/llvm/lib/Remarks/Remarks.YAMLRemarkParser.o: cxx ../../llvm/lib/Remarks/YAMLRemarkParser.cpp || obj/llvm/lib/Remarks/Remarks.inputdeps.stamp
+  source_file_part = YAMLRemarkParser.cpp
+  source_name_part = YAMLRemarkParser
+build obj/llvm/lib/Remarks/Remarks.YAMLRemarkSerializer.o: cxx ../../llvm/lib/Remarks/YAMLRemarkSerializer.cpp || obj/llvm/lib/Remarks/Remarks.inputdeps.stamp
+  source_file_part = YAMLRemarkSerializer.cpp
+  source_name_part = YAMLRemarkSerializer
+
+build ./lib/libLLVMRemarks.a: alink obj/llvm/lib/Remarks/Remarks.BitstreamRemarkParser.o obj/llvm/lib/Remarks/Remarks.BitstreamRemarkSerializer.o obj/llvm/lib/Remarks/Remarks.Remark.o obj/llvm/lib/Remarks/Remarks.RemarkFormat.o obj/llvm/lib/Remarks/Remarks.RemarkLinker.o obj/llvm/lib/Remarks/Remarks.RemarkParser.o obj/llvm/lib/Remarks/Remarks.RemarkSerializer.o obj/llvm/lib/Remarks/Remarks.RemarkStreamer.o obj/llvm/lib/Remarks/Remarks.RemarkStringTable.o obj/llvm/lib/Remarks/Remarks.YAMLRemarkParser.o obj/llvm/lib/Remarks/Remarks.YAMLRemarkSerializer.o || ./lib/libLLVMBitstreamReader.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

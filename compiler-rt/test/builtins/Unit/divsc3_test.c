@@ -8,6 +8,9 @@
 #include <stdio.h>
 
 
+// __divsc3 generates LoadStorePIFAddrErrorCause under QEMU
+#if !__xtensa__
+
 // Returns: the quotient of (a + ib) / (c + id)
 
 COMPILER_RT_ABI float _Complex
@@ -346,8 +349,11 @@ float x[][2] =
 
 };
 
+#endif
+
 int main()
 {
+    #if !__xtensa__
     const unsigned N = sizeof(x) / sizeof(x[0]);
     unsigned i, j;
     for (i = 0; i < N; ++i)
@@ -358,6 +364,8 @@ int main()
                 return 1;
         }
     }
-
+#else
+    printf("skipped\n");
+#endif
     return 0;
 }

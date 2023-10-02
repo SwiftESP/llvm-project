@@ -1,0 +1,292 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = PDB
+target_output_name = libLLVMDebugInfoPDB
+
+build obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/DebugInfo/PDB/PDB.GenericError.o: cxx ../../llvm/lib/DebugInfo/PDB/GenericError.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = GenericError.cpp
+  source_name_part = GenericError
+build obj/llvm/lib/DebugInfo/PDB/PDB.IPDBSourceFile.o: cxx ../../llvm/lib/DebugInfo/PDB/IPDBSourceFile.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = IPDBSourceFile.cpp
+  source_name_part = IPDBSourceFile
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.DbiModuleDescriptor.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/DbiModuleDescriptor.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = DbiModuleDescriptor.cpp
+  source_name_part = DbiModuleDescriptor
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.DbiModuleDescriptorBuilder.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/DbiModuleDescriptorBuilder.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = DbiModuleDescriptorBuilder.cpp
+  source_name_part = DbiModuleDescriptorBuilder
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.DbiModuleList.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/DbiModuleList.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = DbiModuleList.cpp
+  source_name_part = DbiModuleList
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.DbiStream.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/DbiStream.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = DbiStream.cpp
+  source_name_part = DbiStream
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.DbiStreamBuilder.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/DbiStreamBuilder.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = DbiStreamBuilder.cpp
+  source_name_part = DbiStreamBuilder
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.EnumTables.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/EnumTables.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = EnumTables.cpp
+  source_name_part = EnumTables
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.FormatUtil.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/FormatUtil.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = FormatUtil.cpp
+  source_name_part = FormatUtil
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.GSIStreamBuilder.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/GSIStreamBuilder.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = GSIStreamBuilder.cpp
+  source_name_part = GSIStreamBuilder
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.GlobalsStream.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/GlobalsStream.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = GlobalsStream.cpp
+  source_name_part = GlobalsStream
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.Hash.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/Hash.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = Hash.cpp
+  source_name_part = Hash
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.HashTable.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/HashTable.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = HashTable.cpp
+  source_name_part = HashTable
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.InfoStream.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/InfoStream.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = InfoStream.cpp
+  source_name_part = InfoStream
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.InfoStreamBuilder.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/InfoStreamBuilder.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = InfoStreamBuilder.cpp
+  source_name_part = InfoStreamBuilder
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.InjectedSourceStream.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/InjectedSourceStream.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = InjectedSourceStream.cpp
+  source_name_part = InjectedSourceStream
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.InputFile.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/InputFile.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = InputFile.cpp
+  source_name_part = InputFile
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.LinePrinter.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/LinePrinter.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = LinePrinter.cpp
+  source_name_part = LinePrinter
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.ModuleDebugStream.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/ModuleDebugStream.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = ModuleDebugStream.cpp
+  source_name_part = ModuleDebugStream
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NamedStreamMap.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NamedStreamMap.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NamedStreamMap.cpp
+  source_name_part = NamedStreamMap
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeCompilandSymbol.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeCompilandSymbol.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeCompilandSymbol.cpp
+  source_name_part = NativeCompilandSymbol
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeEnumGlobals.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeEnumGlobals.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeEnumGlobals.cpp
+  source_name_part = NativeEnumGlobals
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeEnumInjectedSources.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeEnumInjectedSources.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeEnumInjectedSources.cpp
+  source_name_part = NativeEnumInjectedSources
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeEnumLineNumbers.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeEnumLineNumbers.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeEnumLineNumbers.cpp
+  source_name_part = NativeEnumLineNumbers
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeEnumModules.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeEnumModules.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeEnumModules.cpp
+  source_name_part = NativeEnumModules
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeEnumSymbols.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeEnumSymbols.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeEnumSymbols.cpp
+  source_name_part = NativeEnumSymbols
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeEnumTypes.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeEnumTypes.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeEnumTypes.cpp
+  source_name_part = NativeEnumTypes
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeExeSymbol.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeExeSymbol.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeExeSymbol.cpp
+  source_name_part = NativeExeSymbol
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeFunctionSymbol.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeFunctionSymbol.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeFunctionSymbol.cpp
+  source_name_part = NativeFunctionSymbol
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeInlineSiteSymbol.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeInlineSiteSymbol.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeInlineSiteSymbol.cpp
+  source_name_part = NativeInlineSiteSymbol
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeLineNumber.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeLineNumber.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeLineNumber.cpp
+  source_name_part = NativeLineNumber
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativePublicSymbol.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativePublicSymbol.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativePublicSymbol.cpp
+  source_name_part = NativePublicSymbol
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeRawSymbol.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeRawSymbol.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeRawSymbol.cpp
+  source_name_part = NativeRawSymbol
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeSession.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeSession.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeSession.cpp
+  source_name_part = NativeSession
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeSourceFile.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeSourceFile.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeSourceFile.cpp
+  source_name_part = NativeSourceFile
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeSymbolEnumerator.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeSymbolEnumerator.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeSymbolEnumerator.cpp
+  source_name_part = NativeSymbolEnumerator
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypeArray.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeTypeArray.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeTypeArray.cpp
+  source_name_part = NativeTypeArray
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypeBuiltin.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeTypeBuiltin.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeTypeBuiltin.cpp
+  source_name_part = NativeTypeBuiltin
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypeEnum.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeTypeEnum.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeTypeEnum.cpp
+  source_name_part = NativeTypeEnum
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypeFunctionSig.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeTypeFunctionSig.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeTypeFunctionSig.cpp
+  source_name_part = NativeTypeFunctionSig
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypePointer.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeTypePointer.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeTypePointer.cpp
+  source_name_part = NativeTypePointer
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypeTypedef.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeTypeTypedef.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeTypeTypedef.cpp
+  source_name_part = NativeTypeTypedef
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypeUDT.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeTypeUDT.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeTypeUDT.cpp
+  source_name_part = NativeTypeUDT
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypeVTShape.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/NativeTypeVTShape.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = NativeTypeVTShape.cpp
+  source_name_part = NativeTypeVTShape
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.PDBFile.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/PDBFile.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBFile.cpp
+  source_name_part = PDBFile
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.PDBFileBuilder.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/PDBFileBuilder.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBFileBuilder.cpp
+  source_name_part = PDBFileBuilder
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.PDBStringTable.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/PDBStringTable.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBStringTable.cpp
+  source_name_part = PDBStringTable
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.PDBStringTableBuilder.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/PDBStringTableBuilder.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBStringTableBuilder.cpp
+  source_name_part = PDBStringTableBuilder
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.PublicsStream.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/PublicsStream.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PublicsStream.cpp
+  source_name_part = PublicsStream
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.RawError.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/RawError.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = RawError.cpp
+  source_name_part = RawError
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.SymbolCache.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/SymbolCache.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = SymbolCache.cpp
+  source_name_part = SymbolCache
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.SymbolStream.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/SymbolStream.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = SymbolStream.cpp
+  source_name_part = SymbolStream
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.TpiHashing.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/TpiHashing.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = TpiHashing.cpp
+  source_name_part = TpiHashing
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.TpiStream.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/TpiStream.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = TpiStream.cpp
+  source_name_part = TpiStream
+build obj/llvm/lib/DebugInfo/PDB/Native/PDB.TpiStreamBuilder.o: cxx ../../llvm/lib/DebugInfo/PDB/Native/TpiStreamBuilder.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = TpiStreamBuilder.cpp
+  source_name_part = TpiStreamBuilder
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDB.o: cxx ../../llvm/lib/DebugInfo/PDB/PDB.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDB.cpp
+  source_name_part = PDB
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBContext.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBContext.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBContext.cpp
+  source_name_part = PDBContext
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBExtras.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBExtras.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBExtras.cpp
+  source_name_part = PDBExtras
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBInterfaceAnchors.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBInterfaceAnchors.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBInterfaceAnchors.cpp
+  source_name_part = PDBInterfaceAnchors
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymDumper.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymDumper.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymDumper.cpp
+  source_name_part = PDBSymDumper
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbol.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbol.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbol.cpp
+  source_name_part = PDBSymbol
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolAnnotation.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolAnnotation.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolAnnotation.cpp
+  source_name_part = PDBSymbolAnnotation
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolBlock.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolBlock.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolBlock.cpp
+  source_name_part = PDBSymbolBlock
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolCompiland.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolCompiland.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolCompiland.cpp
+  source_name_part = PDBSymbolCompiland
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolCompilandDetails.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolCompilandDetails.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolCompilandDetails.cpp
+  source_name_part = PDBSymbolCompilandDetails
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolCompilandEnv.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolCompilandEnv.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolCompilandEnv.cpp
+  source_name_part = PDBSymbolCompilandEnv
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolCustom.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolCustom.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolCustom.cpp
+  source_name_part = PDBSymbolCustom
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolData.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolData.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolData.cpp
+  source_name_part = PDBSymbolData
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolExe.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolExe.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolExe.cpp
+  source_name_part = PDBSymbolExe
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolFunc.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolFunc.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolFunc.cpp
+  source_name_part = PDBSymbolFunc
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolFuncDebugEnd.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolFuncDebugEnd.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolFuncDebugEnd.cpp
+  source_name_part = PDBSymbolFuncDebugEnd
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolFuncDebugStart.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolFuncDebugStart.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolFuncDebugStart.cpp
+  source_name_part = PDBSymbolFuncDebugStart
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolLabel.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolLabel.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolLabel.cpp
+  source_name_part = PDBSymbolLabel
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolPublicSymbol.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolPublicSymbol.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolPublicSymbol.cpp
+  source_name_part = PDBSymbolPublicSymbol
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolThunk.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolThunk.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolThunk.cpp
+  source_name_part = PDBSymbolThunk
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeArray.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypeArray.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypeArray.cpp
+  source_name_part = PDBSymbolTypeArray
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeBaseClass.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypeBaseClass.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypeBaseClass.cpp
+  source_name_part = PDBSymbolTypeBaseClass
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeBuiltin.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypeBuiltin.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypeBuiltin.cpp
+  source_name_part = PDBSymbolTypeBuiltin
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeCustom.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypeCustom.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypeCustom.cpp
+  source_name_part = PDBSymbolTypeCustom
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeDimension.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypeDimension.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypeDimension.cpp
+  source_name_part = PDBSymbolTypeDimension
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeEnum.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypeEnum.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypeEnum.cpp
+  source_name_part = PDBSymbolTypeEnum
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeFriend.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypeFriend.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypeFriend.cpp
+  source_name_part = PDBSymbolTypeFriend
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeFunctionArg.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypeFunctionArg.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypeFunctionArg.cpp
+  source_name_part = PDBSymbolTypeFunctionArg
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeFunctionSig.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypeFunctionSig.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypeFunctionSig.cpp
+  source_name_part = PDBSymbolTypeFunctionSig
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeManaged.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypeManaged.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypeManaged.cpp
+  source_name_part = PDBSymbolTypeManaged
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypePointer.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypePointer.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypePointer.cpp
+  source_name_part = PDBSymbolTypePointer
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeTypedef.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypeTypedef.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypeTypedef.cpp
+  source_name_part = PDBSymbolTypeTypedef
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeUDT.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypeUDT.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypeUDT.cpp
+  source_name_part = PDBSymbolTypeUDT
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeVTable.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypeVTable.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypeVTable.cpp
+  source_name_part = PDBSymbolTypeVTable
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeVTableShape.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolTypeVTableShape.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolTypeVTableShape.cpp
+  source_name_part = PDBSymbolTypeVTableShape
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolUnknown.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolUnknown.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolUnknown.cpp
+  source_name_part = PDBSymbolUnknown
+build obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolUsingNamespace.o: cxx ../../llvm/lib/DebugInfo/PDB/PDBSymbolUsingNamespace.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = PDBSymbolUsingNamespace.cpp
+  source_name_part = PDBSymbolUsingNamespace
+build obj/llvm/lib/DebugInfo/PDB/PDB.UDTLayout.o: cxx ../../llvm/lib/DebugInfo/PDB/UDTLayout.cpp || obj/llvm/lib/DebugInfo/PDB/PDB.inputdeps.stamp
+  source_file_part = UDTLayout.cpp
+  source_name_part = UDTLayout
+
+build ./lib/libLLVMDebugInfoPDB.a: alink obj/llvm/lib/DebugInfo/PDB/PDB.GenericError.o obj/llvm/lib/DebugInfo/PDB/PDB.IPDBSourceFile.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.DbiModuleDescriptor.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.DbiModuleDescriptorBuilder.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.DbiModuleList.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.DbiStream.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.DbiStreamBuilder.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.EnumTables.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.FormatUtil.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.GSIStreamBuilder.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.GlobalsStream.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.Hash.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.HashTable.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.InfoStream.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.InfoStreamBuilder.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.InjectedSourceStream.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.InputFile.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.LinePrinter.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.ModuleDebugStream.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NamedStreamMap.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeCompilandSymbol.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeEnumGlobals.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeEnumInjectedSources.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeEnumLineNumbers.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeEnumModules.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeEnumSymbols.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeEnumTypes.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeExeSymbol.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeFunctionSymbol.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeInlineSiteSymbol.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeLineNumber.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativePublicSymbol.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeRawSymbol.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeSession.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeSourceFile.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeSymbolEnumerator.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypeArray.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypeBuiltin.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypeEnum.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypeFunctionSig.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypePointer.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypeTypedef.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypeUDT.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.NativeTypeVTShape.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.PDBFile.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.PDBFileBuilder.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.PDBStringTable.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.PDBStringTableBuilder.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.PublicsStream.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.RawError.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.SymbolCache.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.SymbolStream.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.TpiHashing.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.TpiStream.o obj/llvm/lib/DebugInfo/PDB/Native/PDB.TpiStreamBuilder.o obj/llvm/lib/DebugInfo/PDB/PDB.PDB.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBContext.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBExtras.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBInterfaceAnchors.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymDumper.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbol.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolAnnotation.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolBlock.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolCompiland.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolCompilandDetails.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolCompilandEnv.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolCustom.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolData.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolExe.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolFunc.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolFuncDebugEnd.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolFuncDebugStart.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolLabel.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolPublicSymbol.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolThunk.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeArray.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeBaseClass.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeBuiltin.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeCustom.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeDimension.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeEnum.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeFriend.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeFunctionArg.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeFunctionSig.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeManaged.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypePointer.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeTypedef.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeUDT.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeVTable.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolTypeVTableShape.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolUnknown.o obj/llvm/lib/DebugInfo/PDB/PDB.PDBSymbolUsingNamespace.o obj/llvm/lib/DebugInfo/PDB/PDB.UDTLayout.o || obj/llvm/include/llvm/Config/config.stamp ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMC.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

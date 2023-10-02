@@ -1,0 +1,25 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Shared
+target_output_name = libLLVMOrcShared
+
+build obj/llvm/lib/ExecutionEngine/Orc/Shared/Shared.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/ExecutionEngine/Orc/Shared/Shared.AllocationActions.o: cxx ../../llvm/lib/ExecutionEngine/Orc/Shared/AllocationActions.cpp || obj/llvm/lib/ExecutionEngine/Orc/Shared/Shared.inputdeps.stamp
+  source_file_part = AllocationActions.cpp
+  source_name_part = AllocationActions
+build obj/llvm/lib/ExecutionEngine/Orc/Shared/Shared.OrcError.o: cxx ../../llvm/lib/ExecutionEngine/Orc/Shared/OrcError.cpp || obj/llvm/lib/ExecutionEngine/Orc/Shared/Shared.inputdeps.stamp
+  source_file_part = OrcError.cpp
+  source_name_part = OrcError
+build obj/llvm/lib/ExecutionEngine/Orc/Shared/Shared.OrcRTBridge.o: cxx ../../llvm/lib/ExecutionEngine/Orc/Shared/OrcRTBridge.cpp || obj/llvm/lib/ExecutionEngine/Orc/Shared/Shared.inputdeps.stamp
+  source_file_part = OrcRTBridge.cpp
+  source_name_part = OrcRTBridge
+build obj/llvm/lib/ExecutionEngine/Orc/Shared/Shared.SimpleRemoteEPCUtils.o: cxx ../../llvm/lib/ExecutionEngine/Orc/Shared/SimpleRemoteEPCUtils.cpp || obj/llvm/lib/ExecutionEngine/Orc/Shared/Shared.inputdeps.stamp
+  source_file_part = SimpleRemoteEPCUtils.cpp
+  source_name_part = SimpleRemoteEPCUtils
+
+build ./lib/libLLVMOrcShared.a: alink obj/llvm/lib/ExecutionEngine/Orc/Shared/Shared.AllocationActions.o obj/llvm/lib/ExecutionEngine/Orc/Shared/Shared.OrcError.o obj/llvm/lib/ExecutionEngine/Orc/Shared/Shared.OrcRTBridge.o obj/llvm/lib/ExecutionEngine/Orc/Shared/Shared.SimpleRemoteEPCUtils.o || ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

@@ -1,0 +1,25 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = DebugInfoMSFTests
+target_output_name = DebugInfoMSFTests
+
+build obj/llvm/unittests/DebugInfo/MSF/DebugInfoMSFTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/unittests/DebugInfo/MSF/DebugInfoMSFTests.MSFBuilderTest.o: cxx ../../llvm/unittests/DebugInfo/MSF/MSFBuilderTest.cpp || obj/llvm/unittests/DebugInfo/MSF/DebugInfoMSFTests.inputdeps.stamp
+  source_file_part = MSFBuilderTest.cpp
+  source_name_part = MSFBuilderTest
+build obj/llvm/unittests/DebugInfo/MSF/DebugInfoMSFTests.MSFCommonTest.o: cxx ../../llvm/unittests/DebugInfo/MSF/MSFCommonTest.cpp || obj/llvm/unittests/DebugInfo/MSF/DebugInfoMSFTests.inputdeps.stamp
+  source_file_part = MSFCommonTest.cpp
+  source_name_part = MSFCommonTest
+build obj/llvm/unittests/DebugInfo/MSF/DebugInfoMSFTests.MappedBlockStreamTest.o: cxx ../../llvm/unittests/DebugInfo/MSF/MappedBlockStreamTest.cpp || obj/llvm/unittests/DebugInfo/MSF/DebugInfoMSFTests.inputdeps.stamp
+  source_file_part = MappedBlockStreamTest.cpp
+  source_name_part = MappedBlockStreamTest
+
+build obj/llvm/unittests/DebugInfo/MSF/DebugInfoMSFTests: link obj/llvm/unittests/DebugInfo/MSF/DebugInfoMSFTests.MSFBuilderTest.o obj/llvm/unittests/DebugInfo/MSF/DebugInfoMSFTests.MSFCommonTest.o obj/llvm/unittests/DebugInfo/MSF/DebugInfoMSFTests.MappedBlockStreamTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMTestingSupport.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libgtest.a || obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/DebugInfo/MSF

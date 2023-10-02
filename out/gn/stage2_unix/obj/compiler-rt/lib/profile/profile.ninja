@@ -1,0 +1,68 @@
+defines = -DCOMPILER_RT_HAS_UNAME -DCOMPILER_RT_HAS_ATOMICS -DCOMPILER_RT_HAS_FCNTL_LCK
+include_dirs = -I../../compiler-rt/include -I../../llvm/include -Istage2_unix/gen/llvm/include
+cflags = -fPIC -Wno-pedantic -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -fPIC -Wcovered-switch-default
+cflags_c =
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = profile
+target_output_name = libclang_rt.profile_osx
+
+build stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp: stage2_unix_stamp obj/clang.stamp obj/lld.stamp
+build stage2_unix/obj/compiler-rt/lib/profile/profile.GCDAProfiling.o: stage2_unix_cc ../../compiler-rt/lib/profile/GCDAProfiling.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = GCDAProfiling.c
+  source_name_part = GCDAProfiling
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfiling.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfiling.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfiling.c
+  source_name_part = InstrProfiling
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingBuffer.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingBuffer.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingBuffer.c
+  source_name_part = InstrProfilingBuffer
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingFile.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingFile.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingFile.c
+  source_name_part = InstrProfilingFile
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingInternal.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingInternal.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingInternal.c
+  source_name_part = InstrProfilingInternal
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingMerge.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingMerge.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingMerge.c
+  source_name_part = InstrProfilingMerge
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingMergeFile.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingMergeFile.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingMergeFile.c
+  source_name_part = InstrProfilingMergeFile
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingNameVar.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingNameVar.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingNameVar.c
+  source_name_part = InstrProfilingNameVar
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingPlatformDarwin.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingPlatformDarwin.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingPlatformDarwin.c
+  source_name_part = InstrProfilingPlatformDarwin
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingPlatformFuchsia.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingPlatformFuchsia.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingPlatformFuchsia.c
+  source_name_part = InstrProfilingPlatformFuchsia
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingPlatformLinux.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingPlatformLinux.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingPlatformLinux.c
+  source_name_part = InstrProfilingPlatformLinux
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingPlatformOther.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingPlatformOther.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingPlatformOther.c
+  source_name_part = InstrProfilingPlatformOther
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingPlatformWindows.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingPlatformWindows.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingPlatformWindows.c
+  source_name_part = InstrProfilingPlatformWindows
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingRuntime.o: stage2_unix_cxx ../../compiler-rt/lib/profile/InstrProfilingRuntime.cpp || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingRuntime.cpp
+  source_name_part = InstrProfilingRuntime
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingUtil.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingUtil.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingUtil.c
+  source_name_part = InstrProfilingUtil
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingValue.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingValue.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingValue.c
+  source_name_part = InstrProfilingValue
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingVersionVar.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingVersionVar.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingVersionVar.c
+  source_name_part = InstrProfilingVersionVar
+build stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingWriter.o: stage2_unix_cc ../../compiler-rt/lib/profile/InstrProfilingWriter.c || stage2_unix/obj/compiler-rt/lib/profile/profile.inputdeps.stamp
+  source_file_part = InstrProfilingWriter.c
+  source_name_part = InstrProfilingWriter
+
+build lib/clang/16.0.0/lib/darwin/libclang_rt.profile_osx.a: stage2_unix_alink stage2_unix/obj/compiler-rt/lib/profile/profile.GCDAProfiling.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfiling.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingBuffer.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingFile.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingInternal.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingMerge.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingMergeFile.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingNameVar.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingPlatformDarwin.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingPlatformFuchsia.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingPlatformLinux.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingPlatformOther.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingPlatformWindows.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingRuntime.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingUtil.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingValue.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingVersionVar.o stage2_unix/obj/compiler-rt/lib/profile/profile.InstrProfilingWriter.o
+  arflags =
+  output_extension = 
+  output_dir = lib/clang/16.0.0/lib/darwin

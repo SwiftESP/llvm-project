@@ -1,0 +1,61 @@
+defines =
+include_dirs = -Igen/clang/lib/Tooling -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/Driver -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Tooling
+target_output_name = libclangTooling
+
+build obj/clang/lib/Tooling/Tooling.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/clang/lib/Tooling/node_introspection_inc.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang/lib/Tooling/Tooling.AllTUsExecution.o: cxx ../../clang/lib/Tooling/AllTUsExecution.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = AllTUsExecution.cpp
+  source_name_part = AllTUsExecution
+build obj/clang/lib/Tooling/Tooling.ArgumentsAdjusters.o: cxx ../../clang/lib/Tooling/ArgumentsAdjusters.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = ArgumentsAdjusters.cpp
+  source_name_part = ArgumentsAdjusters
+build obj/clang/lib/Tooling/Tooling.CommonOptionsParser.o: cxx ../../clang/lib/Tooling/CommonOptionsParser.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = CommonOptionsParser.cpp
+  source_name_part = CommonOptionsParser
+build obj/clang/lib/Tooling/Tooling.CompilationDatabase.o: cxx ../../clang/lib/Tooling/CompilationDatabase.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = CompilationDatabase.cpp
+  source_name_part = CompilationDatabase
+build obj/clang/lib/Tooling/Tooling.Execution.o: cxx ../../clang/lib/Tooling/Execution.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = Execution.cpp
+  source_name_part = Execution
+build obj/clang/lib/Tooling/Tooling.ExpandResponseFilesCompilationDatabase.o: cxx ../../clang/lib/Tooling/ExpandResponseFilesCompilationDatabase.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = ExpandResponseFilesCompilationDatabase.cpp
+  source_name_part = ExpandResponseFilesCompilationDatabase
+build obj/clang/lib/Tooling/Tooling.FileMatchTrie.o: cxx ../../clang/lib/Tooling/FileMatchTrie.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = FileMatchTrie.cpp
+  source_name_part = FileMatchTrie
+build obj/clang/lib/Tooling/Tooling.FixIt.o: cxx ../../clang/lib/Tooling/FixIt.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = FixIt.cpp
+  source_name_part = FixIt
+build obj/clang/lib/Tooling/Tooling.GuessTargetAndModeCompilationDatabase.o: cxx ../../clang/lib/Tooling/GuessTargetAndModeCompilationDatabase.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = GuessTargetAndModeCompilationDatabase.cpp
+  source_name_part = GuessTargetAndModeCompilationDatabase
+build obj/clang/lib/Tooling/Tooling.InterpolatingCompilationDatabase.o: cxx ../../clang/lib/Tooling/InterpolatingCompilationDatabase.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = InterpolatingCompilationDatabase.cpp
+  source_name_part = InterpolatingCompilationDatabase
+build obj/clang/lib/Tooling/Tooling.JSONCompilationDatabase.o: cxx ../../clang/lib/Tooling/JSONCompilationDatabase.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = JSONCompilationDatabase.cpp
+  source_name_part = JSONCompilationDatabase
+build obj/clang/lib/Tooling/Tooling.NodeIntrospection.o: cxx ../../clang/lib/Tooling/NodeIntrospection.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = NodeIntrospection.cpp
+  source_name_part = NodeIntrospection
+build obj/clang/lib/Tooling/Tooling.Refactoring.o: cxx ../../clang/lib/Tooling/Refactoring.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = Refactoring.cpp
+  source_name_part = Refactoring
+build obj/clang/lib/Tooling/Tooling.RefactoringCallbacks.o: cxx ../../clang/lib/Tooling/RefactoringCallbacks.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = RefactoringCallbacks.cpp
+  source_name_part = RefactoringCallbacks
+build obj/clang/lib/Tooling/Tooling.StandaloneExecution.o: cxx ../../clang/lib/Tooling/StandaloneExecution.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = StandaloneExecution.cpp
+  source_name_part = StandaloneExecution
+build obj/clang/lib/Tooling/Tooling.Tooling.o: cxx ../../clang/lib/Tooling/Tooling.cpp || obj/clang/lib/Tooling/Tooling.inputdeps.stamp
+  source_file_part = Tooling.cpp
+  source_name_part = Tooling
+
+build ./lib/libclangTooling.a: alink obj/clang/lib/Tooling/Tooling.AllTUsExecution.o obj/clang/lib/Tooling/Tooling.ArgumentsAdjusters.o obj/clang/lib/Tooling/Tooling.CommonOptionsParser.o obj/clang/lib/Tooling/Tooling.CompilationDatabase.o obj/clang/lib/Tooling/Tooling.Execution.o obj/clang/lib/Tooling/Tooling.ExpandResponseFilesCompilationDatabase.o obj/clang/lib/Tooling/Tooling.FileMatchTrie.o obj/clang/lib/Tooling/Tooling.FixIt.o obj/clang/lib/Tooling/Tooling.GuessTargetAndModeCompilationDatabase.o obj/clang/lib/Tooling/Tooling.InterpolatingCompilationDatabase.o obj/clang/lib/Tooling/Tooling.JSONCompilationDatabase.o obj/clang/lib/Tooling/Tooling.NodeIntrospection.o obj/clang/lib/Tooling/Tooling.Refactoring.o obj/clang/lib/Tooling/Tooling.RefactoringCallbacks.o obj/clang/lib/Tooling/Tooling.StandaloneExecution.o obj/clang/lib/Tooling/Tooling.Tooling.o || obj/clang/lib/Tooling/node_introspection_inc.stamp obj/clang/include/clang/Driver/Options.stamp ./lib/libclangAST.a ./lib/libclangASTMatchers.a ./lib/libclangBasic.a ./lib/libclangDriver.a ./lib/libclangFormat.a ./lib/libclangFrontend.a ./lib/libclangLex.a ./lib/libclangRewrite.a ./lib/libclangToolingCore.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libclangToolingInclusions.a ./lib/libclangEdit.a ./lib/libclangParse.a ./lib/libclangSema.a ./lib/libclangAnalysis.a ./lib/libclangSupport.a ./lib/libclangSerialization.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

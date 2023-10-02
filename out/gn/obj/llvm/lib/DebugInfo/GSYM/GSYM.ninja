@@ -1,0 +1,46 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = GSYM
+target_output_name = libLLVMDebugInfoGSYM
+
+build obj/llvm/lib/DebugInfo/GSYM/GSYM.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/DebugInfo/GSYM/GSYM.DwarfTransformer.o: cxx ../../llvm/lib/DebugInfo/GSYM/DwarfTransformer.cpp || obj/llvm/lib/DebugInfo/GSYM/GSYM.inputdeps.stamp
+  source_file_part = DwarfTransformer.cpp
+  source_name_part = DwarfTransformer
+build obj/llvm/lib/DebugInfo/GSYM/GSYM.ExtractRanges.o: cxx ../../llvm/lib/DebugInfo/GSYM/ExtractRanges.cpp || obj/llvm/lib/DebugInfo/GSYM/GSYM.inputdeps.stamp
+  source_file_part = ExtractRanges.cpp
+  source_name_part = ExtractRanges
+build obj/llvm/lib/DebugInfo/GSYM/GSYM.FileWriter.o: cxx ../../llvm/lib/DebugInfo/GSYM/FileWriter.cpp || obj/llvm/lib/DebugInfo/GSYM/GSYM.inputdeps.stamp
+  source_file_part = FileWriter.cpp
+  source_name_part = FileWriter
+build obj/llvm/lib/DebugInfo/GSYM/GSYM.FunctionInfo.o: cxx ../../llvm/lib/DebugInfo/GSYM/FunctionInfo.cpp || obj/llvm/lib/DebugInfo/GSYM/GSYM.inputdeps.stamp
+  source_file_part = FunctionInfo.cpp
+  source_name_part = FunctionInfo
+build obj/llvm/lib/DebugInfo/GSYM/GSYM.GsymCreator.o: cxx ../../llvm/lib/DebugInfo/GSYM/GsymCreator.cpp || obj/llvm/lib/DebugInfo/GSYM/GSYM.inputdeps.stamp
+  source_file_part = GsymCreator.cpp
+  source_name_part = GsymCreator
+build obj/llvm/lib/DebugInfo/GSYM/GSYM.GsymReader.o: cxx ../../llvm/lib/DebugInfo/GSYM/GsymReader.cpp || obj/llvm/lib/DebugInfo/GSYM/GSYM.inputdeps.stamp
+  source_file_part = GsymReader.cpp
+  source_name_part = GsymReader
+build obj/llvm/lib/DebugInfo/GSYM/GSYM.Header.o: cxx ../../llvm/lib/DebugInfo/GSYM/Header.cpp || obj/llvm/lib/DebugInfo/GSYM/GSYM.inputdeps.stamp
+  source_file_part = Header.cpp
+  source_name_part = Header
+build obj/llvm/lib/DebugInfo/GSYM/GSYM.InlineInfo.o: cxx ../../llvm/lib/DebugInfo/GSYM/InlineInfo.cpp || obj/llvm/lib/DebugInfo/GSYM/GSYM.inputdeps.stamp
+  source_file_part = InlineInfo.cpp
+  source_name_part = InlineInfo
+build obj/llvm/lib/DebugInfo/GSYM/GSYM.LineTable.o: cxx ../../llvm/lib/DebugInfo/GSYM/LineTable.cpp || obj/llvm/lib/DebugInfo/GSYM/GSYM.inputdeps.stamp
+  source_file_part = LineTable.cpp
+  source_name_part = LineTable
+build obj/llvm/lib/DebugInfo/GSYM/GSYM.LookupResult.o: cxx ../../llvm/lib/DebugInfo/GSYM/LookupResult.cpp || obj/llvm/lib/DebugInfo/GSYM/GSYM.inputdeps.stamp
+  source_file_part = LookupResult.cpp
+  source_name_part = LookupResult
+build obj/llvm/lib/DebugInfo/GSYM/GSYM.ObjectFileTransformer.o: cxx ../../llvm/lib/DebugInfo/GSYM/ObjectFileTransformer.cpp || obj/llvm/lib/DebugInfo/GSYM/GSYM.inputdeps.stamp
+  source_file_part = ObjectFileTransformer.cpp
+  source_name_part = ObjectFileTransformer
+
+build ./lib/libLLVMDebugInfoGSYM.a: alink obj/llvm/lib/DebugInfo/GSYM/GSYM.DwarfTransformer.o obj/llvm/lib/DebugInfo/GSYM/GSYM.ExtractRanges.o obj/llvm/lib/DebugInfo/GSYM/GSYM.FileWriter.o obj/llvm/lib/DebugInfo/GSYM/GSYM.FunctionInfo.o obj/llvm/lib/DebugInfo/GSYM/GSYM.GsymCreator.o obj/llvm/lib/DebugInfo/GSYM/GSYM.GsymReader.o obj/llvm/lib/DebugInfo/GSYM/GSYM.Header.o obj/llvm/lib/DebugInfo/GSYM/GSYM.InlineInfo.o obj/llvm/lib/DebugInfo/GSYM/GSYM.LineTable.o obj/llvm/lib/DebugInfo/GSYM/GSYM.LookupResult.o obj/llvm/lib/DebugInfo/GSYM/GSYM.ObjectFileTransformer.o || ./lib/libLLVMMC.a ./lib/libLLVMSupport.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

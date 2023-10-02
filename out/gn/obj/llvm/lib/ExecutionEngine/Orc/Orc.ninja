@@ -1,0 +1,136 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Orc
+target_output_name = libLLVMOrcJIT
+
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/ExecutionEngine/JITLink/COFFOptions.stamp
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.COFFPlatform.o: cxx ../../llvm/lib/ExecutionEngine/Orc/COFFPlatform.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = COFFPlatform.cpp
+  source_name_part = COFFPlatform
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.COFFVCRuntimeSupport.o: cxx ../../llvm/lib/ExecutionEngine/Orc/COFFVCRuntimeSupport.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = COFFVCRuntimeSupport.cpp
+  source_name_part = COFFVCRuntimeSupport
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.CompileOnDemandLayer.o: cxx ../../llvm/lib/ExecutionEngine/Orc/CompileOnDemandLayer.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = CompileOnDemandLayer.cpp
+  source_name_part = CompileOnDemandLayer
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.CompileUtils.o: cxx ../../llvm/lib/ExecutionEngine/Orc/CompileUtils.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = CompileUtils.cpp
+  source_name_part = CompileUtils
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.Core.o: cxx ../../llvm/lib/ExecutionEngine/Orc/Core.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = Core.cpp
+  source_name_part = Core
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.DebugObjectManagerPlugin.o: cxx ../../llvm/lib/ExecutionEngine/Orc/DebugObjectManagerPlugin.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = DebugObjectManagerPlugin.cpp
+  source_name_part = DebugObjectManagerPlugin
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.DebugUtils.o: cxx ../../llvm/lib/ExecutionEngine/Orc/DebugUtils.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = DebugUtils.cpp
+  source_name_part = DebugUtils
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.DebuggerSupportPlugin.o: cxx ../../llvm/lib/ExecutionEngine/Orc/DebuggerSupportPlugin.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = DebuggerSupportPlugin.cpp
+  source_name_part = DebuggerSupportPlugin
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.ELFNixPlatform.o: cxx ../../llvm/lib/ExecutionEngine/Orc/ELFNixPlatform.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = ELFNixPlatform.cpp
+  source_name_part = ELFNixPlatform
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.EPCDebugObjectRegistrar.o: cxx ../../llvm/lib/ExecutionEngine/Orc/EPCDebugObjectRegistrar.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = EPCDebugObjectRegistrar.cpp
+  source_name_part = EPCDebugObjectRegistrar
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.EPCDynamicLibrarySearchGenerator.o: cxx ../../llvm/lib/ExecutionEngine/Orc/EPCDynamicLibrarySearchGenerator.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = EPCDynamicLibrarySearchGenerator.cpp
+  source_name_part = EPCDynamicLibrarySearchGenerator
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.EPCEHFrameRegistrar.o: cxx ../../llvm/lib/ExecutionEngine/Orc/EPCEHFrameRegistrar.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = EPCEHFrameRegistrar.cpp
+  source_name_part = EPCEHFrameRegistrar
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.EPCGenericDylibManager.o: cxx ../../llvm/lib/ExecutionEngine/Orc/EPCGenericDylibManager.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = EPCGenericDylibManager.cpp
+  source_name_part = EPCGenericDylibManager
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.EPCGenericJITLinkMemoryManager.o: cxx ../../llvm/lib/ExecutionEngine/Orc/EPCGenericJITLinkMemoryManager.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = EPCGenericJITLinkMemoryManager.cpp
+  source_name_part = EPCGenericJITLinkMemoryManager
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.EPCGenericRTDyldMemoryManager.o: cxx ../../llvm/lib/ExecutionEngine/Orc/EPCGenericRTDyldMemoryManager.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = EPCGenericRTDyldMemoryManager.cpp
+  source_name_part = EPCGenericRTDyldMemoryManager
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.EPCIndirectionUtils.o: cxx ../../llvm/lib/ExecutionEngine/Orc/EPCIndirectionUtils.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = EPCIndirectionUtils.cpp
+  source_name_part = EPCIndirectionUtils
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.ExecutionUtils.o: cxx ../../llvm/lib/ExecutionEngine/Orc/ExecutionUtils.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = ExecutionUtils.cpp
+  source_name_part = ExecutionUtils
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.ExecutorProcessControl.o: cxx ../../llvm/lib/ExecutionEngine/Orc/ExecutorProcessControl.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = ExecutorProcessControl.cpp
+  source_name_part = ExecutorProcessControl
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.IRCompileLayer.o: cxx ../../llvm/lib/ExecutionEngine/Orc/IRCompileLayer.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = IRCompileLayer.cpp
+  source_name_part = IRCompileLayer
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.IRTransformLayer.o: cxx ../../llvm/lib/ExecutionEngine/Orc/IRTransformLayer.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = IRTransformLayer.cpp
+  source_name_part = IRTransformLayer
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.IndirectionUtils.o: cxx ../../llvm/lib/ExecutionEngine/Orc/IndirectionUtils.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = IndirectionUtils.cpp
+  source_name_part = IndirectionUtils
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.JITTargetMachineBuilder.o: cxx ../../llvm/lib/ExecutionEngine/Orc/JITTargetMachineBuilder.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = JITTargetMachineBuilder.cpp
+  source_name_part = JITTargetMachineBuilder
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.LLJIT.o: cxx ../../llvm/lib/ExecutionEngine/Orc/LLJIT.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = LLJIT.cpp
+  source_name_part = LLJIT
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.Layer.o: cxx ../../llvm/lib/ExecutionEngine/Orc/Layer.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = Layer.cpp
+  source_name_part = Layer
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.LazyReexports.o: cxx ../../llvm/lib/ExecutionEngine/Orc/LazyReexports.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = LazyReexports.cpp
+  source_name_part = LazyReexports
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.LookupAndRecordAddrs.o: cxx ../../llvm/lib/ExecutionEngine/Orc/LookupAndRecordAddrs.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = LookupAndRecordAddrs.cpp
+  source_name_part = LookupAndRecordAddrs
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.MachOPlatform.o: cxx ../../llvm/lib/ExecutionEngine/Orc/MachOPlatform.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = MachOPlatform.cpp
+  source_name_part = MachOPlatform
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.Mangling.o: cxx ../../llvm/lib/ExecutionEngine/Orc/Mangling.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = Mangling.cpp
+  source_name_part = Mangling
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.MapperJITLinkMemoryManager.o: cxx ../../llvm/lib/ExecutionEngine/Orc/MapperJITLinkMemoryManager.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = MapperJITLinkMemoryManager.cpp
+  source_name_part = MapperJITLinkMemoryManager
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.MemoryMapper.o: cxx ../../llvm/lib/ExecutionEngine/Orc/MemoryMapper.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = MemoryMapper.cpp
+  source_name_part = MemoryMapper
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.ObjectFileInterface.o: cxx ../../llvm/lib/ExecutionEngine/Orc/ObjectFileInterface.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = ObjectFileInterface.cpp
+  source_name_part = ObjectFileInterface
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.ObjectLinkingLayer.o: cxx ../../llvm/lib/ExecutionEngine/Orc/ObjectLinkingLayer.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = ObjectLinkingLayer.cpp
+  source_name_part = ObjectLinkingLayer
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.ObjectTransformLayer.o: cxx ../../llvm/lib/ExecutionEngine/Orc/ObjectTransformLayer.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = ObjectTransformLayer.cpp
+  source_name_part = ObjectTransformLayer
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.OrcABISupport.o: cxx ../../llvm/lib/ExecutionEngine/Orc/OrcABISupport.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = OrcABISupport.cpp
+  source_name_part = OrcABISupport
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.OrcV2CBindings.o: cxx ../../llvm/lib/ExecutionEngine/Orc/OrcV2CBindings.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = OrcV2CBindings.cpp
+  source_name_part = OrcV2CBindings
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.RTDyldObjectLinkingLayer.o: cxx ../../llvm/lib/ExecutionEngine/Orc/RTDyldObjectLinkingLayer.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = RTDyldObjectLinkingLayer.cpp
+  source_name_part = RTDyldObjectLinkingLayer
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.SimpleRemoteEPC.o: cxx ../../llvm/lib/ExecutionEngine/Orc/SimpleRemoteEPC.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = SimpleRemoteEPC.cpp
+  source_name_part = SimpleRemoteEPC
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.SpeculateAnalyses.o: cxx ../../llvm/lib/ExecutionEngine/Orc/SpeculateAnalyses.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = SpeculateAnalyses.cpp
+  source_name_part = SpeculateAnalyses
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.Speculation.o: cxx ../../llvm/lib/ExecutionEngine/Orc/Speculation.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = Speculation.cpp
+  source_name_part = Speculation
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.TaskDispatch.o: cxx ../../llvm/lib/ExecutionEngine/Orc/TaskDispatch.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = TaskDispatch.cpp
+  source_name_part = TaskDispatch
+build obj/llvm/lib/ExecutionEngine/Orc/Orc.ThreadSafeModule.o: cxx ../../llvm/lib/ExecutionEngine/Orc/ThreadSafeModule.cpp || obj/llvm/lib/ExecutionEngine/Orc/Orc.inputdeps.stamp
+  source_file_part = ThreadSafeModule.cpp
+  source_name_part = ThreadSafeModule
+
+build ./lib/libLLVMOrcJIT.a: alink obj/llvm/lib/ExecutionEngine/Orc/Orc.COFFPlatform.o obj/llvm/lib/ExecutionEngine/Orc/Orc.COFFVCRuntimeSupport.o obj/llvm/lib/ExecutionEngine/Orc/Orc.CompileOnDemandLayer.o obj/llvm/lib/ExecutionEngine/Orc/Orc.CompileUtils.o obj/llvm/lib/ExecutionEngine/Orc/Orc.Core.o obj/llvm/lib/ExecutionEngine/Orc/Orc.DebugObjectManagerPlugin.o obj/llvm/lib/ExecutionEngine/Orc/Orc.DebugUtils.o obj/llvm/lib/ExecutionEngine/Orc/Orc.DebuggerSupportPlugin.o obj/llvm/lib/ExecutionEngine/Orc/Orc.ELFNixPlatform.o obj/llvm/lib/ExecutionEngine/Orc/Orc.EPCDebugObjectRegistrar.o obj/llvm/lib/ExecutionEngine/Orc/Orc.EPCDynamicLibrarySearchGenerator.o obj/llvm/lib/ExecutionEngine/Orc/Orc.EPCEHFrameRegistrar.o obj/llvm/lib/ExecutionEngine/Orc/Orc.EPCGenericDylibManager.o obj/llvm/lib/ExecutionEngine/Orc/Orc.EPCGenericJITLinkMemoryManager.o obj/llvm/lib/ExecutionEngine/Orc/Orc.EPCGenericRTDyldMemoryManager.o obj/llvm/lib/ExecutionEngine/Orc/Orc.EPCIndirectionUtils.o obj/llvm/lib/ExecutionEngine/Orc/Orc.ExecutionUtils.o obj/llvm/lib/ExecutionEngine/Orc/Orc.ExecutorProcessControl.o obj/llvm/lib/ExecutionEngine/Orc/Orc.IRCompileLayer.o obj/llvm/lib/ExecutionEngine/Orc/Orc.IRTransformLayer.o obj/llvm/lib/ExecutionEngine/Orc/Orc.IndirectionUtils.o obj/llvm/lib/ExecutionEngine/Orc/Orc.JITTargetMachineBuilder.o obj/llvm/lib/ExecutionEngine/Orc/Orc.LLJIT.o obj/llvm/lib/ExecutionEngine/Orc/Orc.Layer.o obj/llvm/lib/ExecutionEngine/Orc/Orc.LazyReexports.o obj/llvm/lib/ExecutionEngine/Orc/Orc.LookupAndRecordAddrs.o obj/llvm/lib/ExecutionEngine/Orc/Orc.MachOPlatform.o obj/llvm/lib/ExecutionEngine/Orc/Orc.Mangling.o obj/llvm/lib/ExecutionEngine/Orc/Orc.MapperJITLinkMemoryManager.o obj/llvm/lib/ExecutionEngine/Orc/Orc.MemoryMapper.o obj/llvm/lib/ExecutionEngine/Orc/Orc.ObjectFileInterface.o obj/llvm/lib/ExecutionEngine/Orc/Orc.ObjectLinkingLayer.o obj/llvm/lib/ExecutionEngine/Orc/Orc.ObjectTransformLayer.o obj/llvm/lib/ExecutionEngine/Orc/Orc.OrcABISupport.o obj/llvm/lib/ExecutionEngine/Orc/Orc.OrcV2CBindings.o obj/llvm/lib/ExecutionEngine/Orc/Orc.RTDyldObjectLinkingLayer.o obj/llvm/lib/ExecutionEngine/Orc/Orc.SimpleRemoteEPC.o obj/llvm/lib/ExecutionEngine/Orc/Orc.SpeculateAnalyses.o obj/llvm/lib/ExecutionEngine/Orc/Orc.Speculation.o obj/llvm/lib/ExecutionEngine/Orc/Orc.TaskDispatch.o obj/llvm/lib/ExecutionEngine/Orc/Orc.ThreadSafeModule.o || ./lib/libLLVMExecutionEngine.a ./lib/libLLVMJITLink.a ./lib/libLLVMOrcShared.a ./lib/libLLVMOrcTargetProcess.a ./lib/libLLVMRuntimeDyld.a ./lib/libLLVMCore.a ./lib/libLLVMObject.a ./lib/libLLVMPasses.a ./lib/libLLVMSupport.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMWindowsDriver.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMTarget.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMOption.a ./lib/libLLVMCodeGen.a ./lib/libLLVMBitWriter.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMCoroutines.a ./lib/libLLVMipo.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMLinker.a ./lib/libLLVMInstrumentation.a ./lib/libLLVMVectorize.a ./lib/libLLVMObjCARCOpts.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

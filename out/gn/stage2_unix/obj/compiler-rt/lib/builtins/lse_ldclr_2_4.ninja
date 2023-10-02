@@ -1,0 +1,11 @@
+defines = -DL_ldclr -DSIZE=2 -DMODEL=4
+include_dirs = -I../../compiler-rt/lib/builtins -I../../llvm/include -Istage2_unix/gen/llvm/include
+asmflags = -mmacos-version-min=10.10
+label_name = lse_ldclr_2_4
+target_output_name = lse_ldclr_2_4
+
+build stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_2_4.lse.o: stage2_unix_asm ../../compiler-rt/lib/builtins/aarch64/lse.S || obj/clang.stamp obj/lld.stamp
+  source_file_part = lse.S
+  source_name_part = lse
+
+build stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_2_4.stamp: stage2_unix_stamp stage2_unix/obj/compiler-rt/lib/builtins/aarch64/lse_ldclr_2_4.lse.o

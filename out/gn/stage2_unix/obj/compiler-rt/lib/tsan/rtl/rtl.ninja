@@ -1,0 +1,116 @@
+defines =
+include_dirs = -I../../compiler-rt/lib
+asmflags = -mmacos-version-min=10.10
+cflags = -fPIE -fblocks -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk -Wcovered-switch-default -fno-builtin -gline-tables-only -fPIC -funwind-tables -fvisibility=hidden -Werror=thread-safety -Werror=thread-safety-reference -Werror=thread-safety-beta
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = rtl
+target_output_name = libclang_rt.tsan_osx_dynamic
+
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp: stage2_unix_stamp obj/clang.stamp obj/lld.stamp
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_debugging.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_debugging.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_debugging.cpp
+  source_name_part = tsan_debugging
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_external.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_external.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_external.cpp
+  source_name_part = tsan_external
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_fd.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_fd.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_fd.cpp
+  source_name_part = tsan_fd
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_flags.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_flags.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_flags.cpp
+  source_name_part = tsan_flags
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_ignoreset.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_ignoreset.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_ignoreset.cpp
+  source_name_part = tsan_ignoreset
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interceptors_posix.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_interceptors_posix.cpp
+  source_name_part = tsan_interceptors_posix
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interface.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_interface.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_interface.cpp
+  source_name_part = tsan_interface
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interface_ann.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_interface_ann.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_interface_ann.cpp
+  source_name_part = tsan_interface_ann
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interface_atomic.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_interface_atomic.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_interface_atomic.cpp
+  source_name_part = tsan_interface_atomic
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interface_java.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_interface_java.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_interface_java.cpp
+  source_name_part = tsan_interface_java
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_malloc_mac.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_malloc_mac.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_malloc_mac.cpp
+  source_name_part = tsan_malloc_mac
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_md5.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_md5.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_md5.cpp
+  source_name_part = tsan_md5
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_mman.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_mman.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_mman.cpp
+  source_name_part = tsan_mman
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_mutexset.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_mutexset.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_mutexset.cpp
+  source_name_part = tsan_mutexset
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_preinit.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_preinit.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_preinit.cpp
+  source_name_part = tsan_preinit
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_report.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_report.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_report.cpp
+  source_name_part = tsan_report
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_rtl.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_rtl.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_rtl.cpp
+  source_name_part = tsan_rtl
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_rtl_access.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_rtl_access.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_rtl_access.cpp
+  source_name_part = tsan_rtl_access
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_rtl_mutex.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_rtl_mutex.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_rtl_mutex.cpp
+  source_name_part = tsan_rtl_mutex
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_rtl_proc.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_rtl_proc.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_rtl_proc.cpp
+  source_name_part = tsan_rtl_proc
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_rtl_report.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_rtl_report.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_rtl_report.cpp
+  source_name_part = tsan_rtl_report
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_rtl_thread.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_rtl_thread.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_rtl_thread.cpp
+  source_name_part = tsan_rtl_thread
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_stack_trace.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_stack_trace.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_stack_trace.cpp
+  source_name_part = tsan_stack_trace
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_suppressions.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_suppressions.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_suppressions.cpp
+  source_name_part = tsan_suppressions
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_symbolize.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_symbolize.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_symbolize.cpp
+  source_name_part = tsan_symbolize
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_sync.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_sync.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_sync.cpp
+  source_name_part = tsan_sync
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_vector_clock.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_vector_clock.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_vector_clock.cpp
+  source_name_part = tsan_vector_clock
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interceptors_libdispatch.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_interceptors_libdispatch.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_interceptors_libdispatch.cpp
+  source_name_part = tsan_interceptors_libdispatch
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interceptors_mac.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_interceptors_mac.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_interceptors_mac.cpp
+  source_name_part = tsan_interceptors_mac
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interceptors_mach_vm.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_interceptors_mach_vm.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_interceptors_mach_vm.cpp
+  source_name_part = tsan_interceptors_mach_vm
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_platform_mac.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_platform_mac.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_platform_mac.cpp
+  source_name_part = tsan_platform_mac
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_platform_posix.o: stage2_unix_cxx ../../compiler-rt/lib/tsan/rtl/tsan_platform_posix.cpp || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_platform_posix.cpp
+  source_name_part = tsan_platform_posix
+build stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_rtl_aarch64.o: stage2_unix_asm ../../compiler-rt/lib/tsan/rtl/tsan_rtl_aarch64.S || stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.inputdeps.stamp
+  source_file_part = tsan_rtl_aarch64.S
+  source_name_part = tsan_rtl_aarch64
+
+build lib/clang/16.0.0/lib/darwin/libclang_rt.tsan_osx_dynamic.dylib: stage2_unix_solink stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_debugging.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_external.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_fd.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_flags.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_ignoreset.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interceptors_posix.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interface.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interface_ann.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interface_atomic.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interface_java.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_malloc_mac.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_md5.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_mman.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_mutexset.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_preinit.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_report.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_rtl.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_rtl_access.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_rtl_mutex.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_rtl_proc.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_rtl_report.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_rtl_thread.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_stack_trace.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_suppressions.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_symbolize.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_sync.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_vector_clock.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interceptors_libdispatch.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interceptors_mac.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_interceptors_mach_vm.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_platform_mac.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_platform_posix.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.tsan_rtl_aarch64.o stage2_unix/obj/compiler-rt/lib/interception/sources.interception_linux.o stage2_unix/obj/compiler-rt/lib/interception/sources.interception_mac.o stage2_unix/obj/compiler-rt/lib/interception/sources.interception_type_test.o stage2_unix/obj/compiler-rt/lib/interception/sources.interception_win.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sancov_flags.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_allocator.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_allocator_checks.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_allocator_report.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_chained_origin_depot.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_common.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_common_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_coverage_fuchsia.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_coverage_libcdep_new.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_coverage_win_sections.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_deadlock_detector1.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_deadlock_detector2.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_errno.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_file.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_flag_parser.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_flags.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_fuchsia.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_libc.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_libignore.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_linux.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_linux_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_linux_s390.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_mac.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_mac_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_mutex.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_netbsd.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_freebsd.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_linux.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_netbsd.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_posix.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_platform_limits_solaris.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_posix.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_posix_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_printf.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_bsd.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_common.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_fuchsia.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_linux.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_mac.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_procmaps_solaris.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_solaris.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stack_store.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stackdepot.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stacktrace.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stacktrace_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stacktrace_printer.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stacktrace_sparc.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_fuchsia.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_linux_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_mac.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_netbsd_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_stoptheworld_win.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_suppressions.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_libbacktrace.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_mac.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_markup.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_posix_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_report.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_symbolizer_win.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_termination.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_thread_registry.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_tls_get_addr.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_type_traits.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_unwind_linux_libcdep.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_unwind_win.o stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.sanitizer_win.o stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_diag.o stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_flags.o stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_handlers.o stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_init.o stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_monitor.o stage2_unix/obj/compiler-rt/lib/ubsan/sources.ubsan_value.o stage2_unix/obj/compiler-rt/lib/tsan/rtl/cxx_sources.tsan_new_delete.o stage2_unix/obj/compiler-rt/lib/ubsan/cxx_sources.ubsan_handlers_cxx.o stage2_unix/obj/compiler-rt/lib/ubsan/cxx_sources.ubsan_type_hash.o stage2_unix/obj/compiler-rt/lib/ubsan/cxx_sources.ubsan_type_hash_itanium.o stage2_unix/obj/compiler-rt/lib/ubsan/cxx_sources.ubsan_type_hash_win.o || stage2_unix/obj/compiler-rt/lib/interception/sources.stamp stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.stamp stage2_unix/obj/compiler-rt/lib/ubsan/sources.stamp stage2_unix/obj/compiler-rt/lib/tsan/rtl/cxx_sources.stamp stage2_unix/obj/compiler-rt/lib/ubsan/cxx_sources.stamp
+  ldflags = -lc++ -lc++abi -lobjc -Wl,-U,___sanitizer_free_hook -Wl,-U,___sanitizer_malloc_hook -Wl,-U,___sanitizer_report_error_summary -Wl,-U,___sanitizer_sandbox_on_notify -Wl,-U,___sanitizer_symbolize_code -Wl,-U,___sanitizer_symbolize_data -Wl,-U,___sanitizer_symbolize_demangle -Wl,-U,___sanitizer_symbolize_flush -Wl,-U,___sanitizer_symbolize_set_demangle -Wl,-U,___sanitizer_symbolize_set_inline_frames -Wl,-install_name,@rpath/libclang_rt.tsan_osx_dynamic.dylib -mmacos-version-min=10.10 -Wl,--color-diagnostics -fuse-ld=lld -isysroot ../../../../../../Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk
+  libs = -lpthread
+  frameworks =
+  swiftmodules =
+  output_extension = .dylib
+  output_dir = lib/clang/16.0.0/lib/darwin

@@ -1,0 +1,28 @@
+defines =
+include_dirs = -I../../clang-tools-extra/pseudo/include -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = grammar
+target_output_name = libclangPseudoGrammar
+
+build obj/clang-tools-extra/pseudo/lib/grammar/grammar.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/clang-tools-extra/pseudo/lib/grammar/grammar.Grammar.o: cxx ../../clang-tools-extra/pseudo/lib/grammar/Grammar.cpp || obj/clang-tools-extra/pseudo/lib/grammar/grammar.inputdeps.stamp
+  source_file_part = Grammar.cpp
+  source_name_part = Grammar
+build obj/clang-tools-extra/pseudo/lib/grammar/grammar.GrammarBNF.o: cxx ../../clang-tools-extra/pseudo/lib/grammar/GrammarBNF.cpp || obj/clang-tools-extra/pseudo/lib/grammar/grammar.inputdeps.stamp
+  source_file_part = GrammarBNF.cpp
+  source_name_part = GrammarBNF
+build obj/clang-tools-extra/pseudo/lib/grammar/grammar.LRGraph.o: cxx ../../clang-tools-extra/pseudo/lib/grammar/LRGraph.cpp || obj/clang-tools-extra/pseudo/lib/grammar/grammar.inputdeps.stamp
+  source_file_part = LRGraph.cpp
+  source_name_part = LRGraph
+build obj/clang-tools-extra/pseudo/lib/grammar/grammar.LRTable.o: cxx ../../clang-tools-extra/pseudo/lib/grammar/LRTable.cpp || obj/clang-tools-extra/pseudo/lib/grammar/grammar.inputdeps.stamp
+  source_file_part = LRTable.cpp
+  source_name_part = LRTable
+build obj/clang-tools-extra/pseudo/lib/grammar/grammar.LRTableBuild.o: cxx ../../clang-tools-extra/pseudo/lib/grammar/LRTableBuild.cpp || obj/clang-tools-extra/pseudo/lib/grammar/grammar.inputdeps.stamp
+  source_file_part = LRTableBuild.cpp
+  source_name_part = LRTableBuild
+
+build ./lib/libclangPseudoGrammar.a: alink obj/clang-tools-extra/pseudo/lib/grammar/grammar.Grammar.o obj/clang-tools-extra/pseudo/lib/grammar/grammar.GrammarBNF.o obj/clang-tools-extra/pseudo/lib/grammar/grammar.LRGraph.o obj/clang-tools-extra/pseudo/lib/grammar/grammar.LRTable.o obj/clang-tools-extra/pseudo/lib/grammar/grammar.LRTableBuild.o || ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

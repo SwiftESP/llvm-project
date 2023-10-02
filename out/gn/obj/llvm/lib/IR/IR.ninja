@@ -1,0 +1,211 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = IR
+target_output_name = libLLVMCore
+
+build obj/llvm/lib/IR/IR.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/lib/IR/IR.AbstractCallSite.o: cxx ../../llvm/lib/IR/AbstractCallSite.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = AbstractCallSite.cpp
+  source_name_part = AbstractCallSite
+build obj/llvm/lib/IR/IR.AsmWriter.o: cxx ../../llvm/lib/IR/AsmWriter.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = AsmWriter.cpp
+  source_name_part = AsmWriter
+build obj/llvm/lib/IR/IR.Assumptions.o: cxx ../../llvm/lib/IR/Assumptions.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Assumptions.cpp
+  source_name_part = Assumptions
+build obj/llvm/lib/IR/IR.Attributes.o: cxx ../../llvm/lib/IR/Attributes.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Attributes.cpp
+  source_name_part = Attributes
+build obj/llvm/lib/IR/IR.AutoUpgrade.o: cxx ../../llvm/lib/IR/AutoUpgrade.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = AutoUpgrade.cpp
+  source_name_part = AutoUpgrade
+build obj/llvm/lib/IR/IR.BasicBlock.o: cxx ../../llvm/lib/IR/BasicBlock.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = BasicBlock.cpp
+  source_name_part = BasicBlock
+build obj/llvm/lib/IR/IR.BuiltinGCs.o: cxx ../../llvm/lib/IR/BuiltinGCs.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = BuiltinGCs.cpp
+  source_name_part = BuiltinGCs
+build obj/llvm/lib/IR/IR.Comdat.o: cxx ../../llvm/lib/IR/Comdat.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Comdat.cpp
+  source_name_part = Comdat
+build obj/llvm/lib/IR/IR.ConstantFold.o: cxx ../../llvm/lib/IR/ConstantFold.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = ConstantFold.cpp
+  source_name_part = ConstantFold
+build obj/llvm/lib/IR/IR.ConstantRange.o: cxx ../../llvm/lib/IR/ConstantRange.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = ConstantRange.cpp
+  source_name_part = ConstantRange
+build obj/llvm/lib/IR/IR.Constants.o: cxx ../../llvm/lib/IR/Constants.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Constants.cpp
+  source_name_part = Constants
+build obj/llvm/lib/IR/IR.Core.o: cxx ../../llvm/lib/IR/Core.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Core.cpp
+  source_name_part = Core
+build obj/llvm/lib/IR/IR.DIBuilder.o: cxx ../../llvm/lib/IR/DIBuilder.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = DIBuilder.cpp
+  source_name_part = DIBuilder
+build obj/llvm/lib/IR/IR.DataLayout.o: cxx ../../llvm/lib/IR/DataLayout.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = DataLayout.cpp
+  source_name_part = DataLayout
+build obj/llvm/lib/IR/IR.DebugInfo.o: cxx ../../llvm/lib/IR/DebugInfo.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = DebugInfo.cpp
+  source_name_part = DebugInfo
+build obj/llvm/lib/IR/IR.DebugInfoMetadata.o: cxx ../../llvm/lib/IR/DebugInfoMetadata.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = DebugInfoMetadata.cpp
+  source_name_part = DebugInfoMetadata
+build obj/llvm/lib/IR/IR.DebugLoc.o: cxx ../../llvm/lib/IR/DebugLoc.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = DebugLoc.cpp
+  source_name_part = DebugLoc
+build obj/llvm/lib/IR/IR.DiagnosticHandler.o: cxx ../../llvm/lib/IR/DiagnosticHandler.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = DiagnosticHandler.cpp
+  source_name_part = DiagnosticHandler
+build obj/llvm/lib/IR/IR.DiagnosticInfo.o: cxx ../../llvm/lib/IR/DiagnosticInfo.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = DiagnosticInfo.cpp
+  source_name_part = DiagnosticInfo
+build obj/llvm/lib/IR/IR.DiagnosticPrinter.o: cxx ../../llvm/lib/IR/DiagnosticPrinter.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = DiagnosticPrinter.cpp
+  source_name_part = DiagnosticPrinter
+build obj/llvm/lib/IR/IR.Dominators.o: cxx ../../llvm/lib/IR/Dominators.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Dominators.cpp
+  source_name_part = Dominators
+build obj/llvm/lib/IR/IR.FPEnv.o: cxx ../../llvm/lib/IR/FPEnv.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = FPEnv.cpp
+  source_name_part = FPEnv
+build obj/llvm/lib/IR/IR.Function.o: cxx ../../llvm/lib/IR/Function.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Function.cpp
+  source_name_part = Function
+build obj/llvm/lib/IR/IR.GCStrategy.o: cxx ../../llvm/lib/IR/GCStrategy.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = GCStrategy.cpp
+  source_name_part = GCStrategy
+build obj/llvm/lib/IR/IR.GVMaterializer.o: cxx ../../llvm/lib/IR/GVMaterializer.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = GVMaterializer.cpp
+  source_name_part = GVMaterializer
+build obj/llvm/lib/IR/IR.Globals.o: cxx ../../llvm/lib/IR/Globals.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Globals.cpp
+  source_name_part = Globals
+build obj/llvm/lib/IR/IR.IRBuilder.o: cxx ../../llvm/lib/IR/IRBuilder.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = IRBuilder.cpp
+  source_name_part = IRBuilder
+build obj/llvm/lib/IR/IR.IRPrintingPasses.o: cxx ../../llvm/lib/IR/IRPrintingPasses.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = IRPrintingPasses.cpp
+  source_name_part = IRPrintingPasses
+build obj/llvm/lib/IR/IR.InlineAsm.o: cxx ../../llvm/lib/IR/InlineAsm.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = InlineAsm.cpp
+  source_name_part = InlineAsm
+build obj/llvm/lib/IR/IR.Instruction.o: cxx ../../llvm/lib/IR/Instruction.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Instruction.cpp
+  source_name_part = Instruction
+build obj/llvm/lib/IR/IR.Instructions.o: cxx ../../llvm/lib/IR/Instructions.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Instructions.cpp
+  source_name_part = Instructions
+build obj/llvm/lib/IR/IR.IntrinsicInst.o: cxx ../../llvm/lib/IR/IntrinsicInst.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = IntrinsicInst.cpp
+  source_name_part = IntrinsicInst
+build obj/llvm/lib/IR/IR.LLVMContext.o: cxx ../../llvm/lib/IR/LLVMContext.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = LLVMContext.cpp
+  source_name_part = LLVMContext
+build obj/llvm/lib/IR/IR.LLVMContextImpl.o: cxx ../../llvm/lib/IR/LLVMContextImpl.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = LLVMContextImpl.cpp
+  source_name_part = LLVMContextImpl
+build obj/llvm/lib/IR/IR.LLVMRemarkStreamer.o: cxx ../../llvm/lib/IR/LLVMRemarkStreamer.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = LLVMRemarkStreamer.cpp
+  source_name_part = LLVMRemarkStreamer
+build obj/llvm/lib/IR/IR.LegacyPassManager.o: cxx ../../llvm/lib/IR/LegacyPassManager.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = LegacyPassManager.cpp
+  source_name_part = LegacyPassManager
+build obj/llvm/lib/IR/IR.MDBuilder.o: cxx ../../llvm/lib/IR/MDBuilder.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = MDBuilder.cpp
+  source_name_part = MDBuilder
+build obj/llvm/lib/IR/IR.Mangler.o: cxx ../../llvm/lib/IR/Mangler.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Mangler.cpp
+  source_name_part = Mangler
+build obj/llvm/lib/IR/IR.Metadata.o: cxx ../../llvm/lib/IR/Metadata.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Metadata.cpp
+  source_name_part = Metadata
+build obj/llvm/lib/IR/IR.Module.o: cxx ../../llvm/lib/IR/Module.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Module.cpp
+  source_name_part = Module
+build obj/llvm/lib/IR/IR.ModuleSummaryIndex.o: cxx ../../llvm/lib/IR/ModuleSummaryIndex.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = ModuleSummaryIndex.cpp
+  source_name_part = ModuleSummaryIndex
+build obj/llvm/lib/IR/IR.Operator.o: cxx ../../llvm/lib/IR/Operator.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Operator.cpp
+  source_name_part = Operator
+build obj/llvm/lib/IR/IR.OptBisect.o: cxx ../../llvm/lib/IR/OptBisect.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = OptBisect.cpp
+  source_name_part = OptBisect
+build obj/llvm/lib/IR/IR.Pass.o: cxx ../../llvm/lib/IR/Pass.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Pass.cpp
+  source_name_part = Pass
+build obj/llvm/lib/IR/IR.PassInstrumentation.o: cxx ../../llvm/lib/IR/PassInstrumentation.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = PassInstrumentation.cpp
+  source_name_part = PassInstrumentation
+build obj/llvm/lib/IR/IR.PassManager.o: cxx ../../llvm/lib/IR/PassManager.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = PassManager.cpp
+  source_name_part = PassManager
+build obj/llvm/lib/IR/IR.PassRegistry.o: cxx ../../llvm/lib/IR/PassRegistry.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = PassRegistry.cpp
+  source_name_part = PassRegistry
+build obj/llvm/lib/IR/IR.PassTimingInfo.o: cxx ../../llvm/lib/IR/PassTimingInfo.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = PassTimingInfo.cpp
+  source_name_part = PassTimingInfo
+build obj/llvm/lib/IR/IR.PrintPasses.o: cxx ../../llvm/lib/IR/PrintPasses.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = PrintPasses.cpp
+  source_name_part = PrintPasses
+build obj/llvm/lib/IR/IR.ProfDataUtils.o: cxx ../../llvm/lib/IR/ProfDataUtils.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = ProfDataUtils.cpp
+  source_name_part = ProfDataUtils
+build obj/llvm/lib/IR/IR.ProfileSummary.o: cxx ../../llvm/lib/IR/ProfileSummary.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = ProfileSummary.cpp
+  source_name_part = ProfileSummary
+build obj/llvm/lib/IR/IR.PseudoProbe.o: cxx ../../llvm/lib/IR/PseudoProbe.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = PseudoProbe.cpp
+  source_name_part = PseudoProbe
+build obj/llvm/lib/IR/IR.ReplaceConstant.o: cxx ../../llvm/lib/IR/ReplaceConstant.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = ReplaceConstant.cpp
+  source_name_part = ReplaceConstant
+build obj/llvm/lib/IR/IR.SSAContext.o: cxx ../../llvm/lib/IR/SSAContext.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = SSAContext.cpp
+  source_name_part = SSAContext
+build obj/llvm/lib/IR/IR.SafepointIRVerifier.o: cxx ../../llvm/lib/IR/SafepointIRVerifier.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = SafepointIRVerifier.cpp
+  source_name_part = SafepointIRVerifier
+build obj/llvm/lib/IR/IR.Statepoint.o: cxx ../../llvm/lib/IR/Statepoint.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Statepoint.cpp
+  source_name_part = Statepoint
+build obj/llvm/lib/IR/IR.StructuralHash.o: cxx ../../llvm/lib/IR/StructuralHash.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = StructuralHash.cpp
+  source_name_part = StructuralHash
+build obj/llvm/lib/IR/IR.Type.o: cxx ../../llvm/lib/IR/Type.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Type.cpp
+  source_name_part = Type
+build obj/llvm/lib/IR/IR.TypeFinder.o: cxx ../../llvm/lib/IR/TypeFinder.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = TypeFinder.cpp
+  source_name_part = TypeFinder
+build obj/llvm/lib/IR/IR.TypedPointerType.o: cxx ../../llvm/lib/IR/TypedPointerType.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = TypedPointerType.cpp
+  source_name_part = TypedPointerType
+build obj/llvm/lib/IR/IR.Use.o: cxx ../../llvm/lib/IR/Use.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Use.cpp
+  source_name_part = Use
+build obj/llvm/lib/IR/IR.User.o: cxx ../../llvm/lib/IR/User.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = User.cpp
+  source_name_part = User
+build obj/llvm/lib/IR/IR.Value.o: cxx ../../llvm/lib/IR/Value.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Value.cpp
+  source_name_part = Value
+build obj/llvm/lib/IR/IR.ValueSymbolTable.o: cxx ../../llvm/lib/IR/ValueSymbolTable.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = ValueSymbolTable.cpp
+  source_name_part = ValueSymbolTable
+build obj/llvm/lib/IR/IR.VectorBuilder.o: cxx ../../llvm/lib/IR/VectorBuilder.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = VectorBuilder.cpp
+  source_name_part = VectorBuilder
+build obj/llvm/lib/IR/IR.Verifier.o: cxx ../../llvm/lib/IR/Verifier.cpp || obj/llvm/lib/IR/IR.inputdeps.stamp
+  source_file_part = Verifier.cpp
+  source_name_part = Verifier
+
+build ./lib/libLLVMCore.a: alink obj/llvm/lib/IR/IR.AbstractCallSite.o obj/llvm/lib/IR/IR.AsmWriter.o obj/llvm/lib/IR/IR.Assumptions.o obj/llvm/lib/IR/IR.Attributes.o obj/llvm/lib/IR/IR.AutoUpgrade.o obj/llvm/lib/IR/IR.BasicBlock.o obj/llvm/lib/IR/IR.BuiltinGCs.o obj/llvm/lib/IR/IR.Comdat.o obj/llvm/lib/IR/IR.ConstantFold.o obj/llvm/lib/IR/IR.ConstantRange.o obj/llvm/lib/IR/IR.Constants.o obj/llvm/lib/IR/IR.Core.o obj/llvm/lib/IR/IR.DIBuilder.o obj/llvm/lib/IR/IR.DataLayout.o obj/llvm/lib/IR/IR.DebugInfo.o obj/llvm/lib/IR/IR.DebugInfoMetadata.o obj/llvm/lib/IR/IR.DebugLoc.o obj/llvm/lib/IR/IR.DiagnosticHandler.o obj/llvm/lib/IR/IR.DiagnosticInfo.o obj/llvm/lib/IR/IR.DiagnosticPrinter.o obj/llvm/lib/IR/IR.Dominators.o obj/llvm/lib/IR/IR.FPEnv.o obj/llvm/lib/IR/IR.Function.o obj/llvm/lib/IR/IR.GCStrategy.o obj/llvm/lib/IR/IR.GVMaterializer.o obj/llvm/lib/IR/IR.Globals.o obj/llvm/lib/IR/IR.IRBuilder.o obj/llvm/lib/IR/IR.IRPrintingPasses.o obj/llvm/lib/IR/IR.InlineAsm.o obj/llvm/lib/IR/IR.Instruction.o obj/llvm/lib/IR/IR.Instructions.o obj/llvm/lib/IR/IR.IntrinsicInst.o obj/llvm/lib/IR/IR.LLVMContext.o obj/llvm/lib/IR/IR.LLVMContextImpl.o obj/llvm/lib/IR/IR.LLVMRemarkStreamer.o obj/llvm/lib/IR/IR.LegacyPassManager.o obj/llvm/lib/IR/IR.MDBuilder.o obj/llvm/lib/IR/IR.Mangler.o obj/llvm/lib/IR/IR.Metadata.o obj/llvm/lib/IR/IR.Module.o obj/llvm/lib/IR/IR.ModuleSummaryIndex.o obj/llvm/lib/IR/IR.Operator.o obj/llvm/lib/IR/IR.OptBisect.o obj/llvm/lib/IR/IR.Pass.o obj/llvm/lib/IR/IR.PassInstrumentation.o obj/llvm/lib/IR/IR.PassManager.o obj/llvm/lib/IR/IR.PassRegistry.o obj/llvm/lib/IR/IR.PassTimingInfo.o obj/llvm/lib/IR/IR.PrintPasses.o obj/llvm/lib/IR/IR.ProfDataUtils.o obj/llvm/lib/IR/IR.ProfileSummary.o obj/llvm/lib/IR/IR.PseudoProbe.o obj/llvm/lib/IR/IR.ReplaceConstant.o obj/llvm/lib/IR/IR.SSAContext.o obj/llvm/lib/IR/IR.SafepointIRVerifier.o obj/llvm/lib/IR/IR.Statepoint.o obj/llvm/lib/IR/IR.StructuralHash.o obj/llvm/lib/IR/IR.Type.o obj/llvm/lib/IR/IR.TypeFinder.o obj/llvm/lib/IR/IR.TypedPointerType.o obj/llvm/lib/IR/IR.Use.o obj/llvm/lib/IR/IR.User.o obj/llvm/lib/IR/IR.Value.o obj/llvm/lib/IR/IR.ValueSymbolTable.o obj/llvm/lib/IR/IR.VectorBuilder.o obj/llvm/lib/IR/IR.Verifier.o || obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/public_tablegen.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp ./lib/libLLVMBinaryFormat.a ./lib/libLLVMRemarks.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBitstreamReader.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

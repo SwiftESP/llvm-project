@@ -1,0 +1,256 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Utils
+target_output_name = libLLVMTransformUtils
+
+build obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/Transforms/Utils/Utils.AMDGPUEmitPrintf.o: cxx ../../llvm/lib/Transforms/Utils/AMDGPUEmitPrintf.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = AMDGPUEmitPrintf.cpp
+  source_name_part = AMDGPUEmitPrintf
+build obj/llvm/lib/Transforms/Utils/Utils.ASanStackFrameLayout.o: cxx ../../llvm/lib/Transforms/Utils/ASanStackFrameLayout.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = ASanStackFrameLayout.cpp
+  source_name_part = ASanStackFrameLayout
+build obj/llvm/lib/Transforms/Utils/Utils.AddDiscriminators.o: cxx ../../llvm/lib/Transforms/Utils/AddDiscriminators.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = AddDiscriminators.cpp
+  source_name_part = AddDiscriminators
+build obj/llvm/lib/Transforms/Utils/Utils.AssumeBundleBuilder.o: cxx ../../llvm/lib/Transforms/Utils/AssumeBundleBuilder.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = AssumeBundleBuilder.cpp
+  source_name_part = AssumeBundleBuilder
+build obj/llvm/lib/Transforms/Utils/Utils.BasicBlockUtils.o: cxx ../../llvm/lib/Transforms/Utils/BasicBlockUtils.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = BasicBlockUtils.cpp
+  source_name_part = BasicBlockUtils
+build obj/llvm/lib/Transforms/Utils/Utils.BreakCriticalEdges.o: cxx ../../llvm/lib/Transforms/Utils/BreakCriticalEdges.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = BreakCriticalEdges.cpp
+  source_name_part = BreakCriticalEdges
+build obj/llvm/lib/Transforms/Utils/Utils.BuildLibCalls.o: cxx ../../llvm/lib/Transforms/Utils/BuildLibCalls.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = BuildLibCalls.cpp
+  source_name_part = BuildLibCalls
+build obj/llvm/lib/Transforms/Utils/Utils.BypassSlowDivision.o: cxx ../../llvm/lib/Transforms/Utils/BypassSlowDivision.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = BypassSlowDivision.cpp
+  source_name_part = BypassSlowDivision
+build obj/llvm/lib/Transforms/Utils/Utils.CallGraphUpdater.o: cxx ../../llvm/lib/Transforms/Utils/CallGraphUpdater.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = CallGraphUpdater.cpp
+  source_name_part = CallGraphUpdater
+build obj/llvm/lib/Transforms/Utils/Utils.CallPromotionUtils.o: cxx ../../llvm/lib/Transforms/Utils/CallPromotionUtils.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = CallPromotionUtils.cpp
+  source_name_part = CallPromotionUtils
+build obj/llvm/lib/Transforms/Utils/Utils.CanonicalizeAliases.o: cxx ../../llvm/lib/Transforms/Utils/CanonicalizeAliases.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = CanonicalizeAliases.cpp
+  source_name_part = CanonicalizeAliases
+build obj/llvm/lib/Transforms/Utils/Utils.CanonicalizeFreezeInLoops.o: cxx ../../llvm/lib/Transforms/Utils/CanonicalizeFreezeInLoops.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = CanonicalizeFreezeInLoops.cpp
+  source_name_part = CanonicalizeFreezeInLoops
+build obj/llvm/lib/Transforms/Utils/Utils.CloneFunction.o: cxx ../../llvm/lib/Transforms/Utils/CloneFunction.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = CloneFunction.cpp
+  source_name_part = CloneFunction
+build obj/llvm/lib/Transforms/Utils/Utils.CloneModule.o: cxx ../../llvm/lib/Transforms/Utils/CloneModule.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = CloneModule.cpp
+  source_name_part = CloneModule
+build obj/llvm/lib/Transforms/Utils/Utils.CodeExtractor.o: cxx ../../llvm/lib/Transforms/Utils/CodeExtractor.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = CodeExtractor.cpp
+  source_name_part = CodeExtractor
+build obj/llvm/lib/Transforms/Utils/Utils.CodeLayout.o: cxx ../../llvm/lib/Transforms/Utils/CodeLayout.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = CodeLayout.cpp
+  source_name_part = CodeLayout
+build obj/llvm/lib/Transforms/Utils/Utils.CodeMoverUtils.o: cxx ../../llvm/lib/Transforms/Utils/CodeMoverUtils.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = CodeMoverUtils.cpp
+  source_name_part = CodeMoverUtils
+build obj/llvm/lib/Transforms/Utils/Utils.CtorUtils.o: cxx ../../llvm/lib/Transforms/Utils/CtorUtils.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = CtorUtils.cpp
+  source_name_part = CtorUtils
+build obj/llvm/lib/Transforms/Utils/Utils.Debugify.o: cxx ../../llvm/lib/Transforms/Utils/Debugify.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = Debugify.cpp
+  source_name_part = Debugify
+build obj/llvm/lib/Transforms/Utils/Utils.DemoteRegToStack.o: cxx ../../llvm/lib/Transforms/Utils/DemoteRegToStack.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = DemoteRegToStack.cpp
+  source_name_part = DemoteRegToStack
+build obj/llvm/lib/Transforms/Utils/Utils.EntryExitInstrumenter.o: cxx ../../llvm/lib/Transforms/Utils/EntryExitInstrumenter.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = EntryExitInstrumenter.cpp
+  source_name_part = EntryExitInstrumenter
+build obj/llvm/lib/Transforms/Utils/Utils.EscapeEnumerator.o: cxx ../../llvm/lib/Transforms/Utils/EscapeEnumerator.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = EscapeEnumerator.cpp
+  source_name_part = EscapeEnumerator
+build obj/llvm/lib/Transforms/Utils/Utils.Evaluator.o: cxx ../../llvm/lib/Transforms/Utils/Evaluator.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = Evaluator.cpp
+  source_name_part = Evaluator
+build obj/llvm/lib/Transforms/Utils/Utils.FixIrreducible.o: cxx ../../llvm/lib/Transforms/Utils/FixIrreducible.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = FixIrreducible.cpp
+  source_name_part = FixIrreducible
+build obj/llvm/lib/Transforms/Utils/Utils.FlattenCFG.o: cxx ../../llvm/lib/Transforms/Utils/FlattenCFG.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = FlattenCFG.cpp
+  source_name_part = FlattenCFG
+build obj/llvm/lib/Transforms/Utils/Utils.FunctionComparator.o: cxx ../../llvm/lib/Transforms/Utils/FunctionComparator.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = FunctionComparator.cpp
+  source_name_part = FunctionComparator
+build obj/llvm/lib/Transforms/Utils/Utils.FunctionImportUtils.o: cxx ../../llvm/lib/Transforms/Utils/FunctionImportUtils.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = FunctionImportUtils.cpp
+  source_name_part = FunctionImportUtils
+build obj/llvm/lib/Transforms/Utils/Utils.GlobalStatus.o: cxx ../../llvm/lib/Transforms/Utils/GlobalStatus.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = GlobalStatus.cpp
+  source_name_part = GlobalStatus
+build obj/llvm/lib/Transforms/Utils/Utils.GuardUtils.o: cxx ../../llvm/lib/Transforms/Utils/GuardUtils.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = GuardUtils.cpp
+  source_name_part = GuardUtils
+build obj/llvm/lib/Transforms/Utils/Utils.HelloWorld.o: cxx ../../llvm/lib/Transforms/Utils/HelloWorld.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = HelloWorld.cpp
+  source_name_part = HelloWorld
+build obj/llvm/lib/Transforms/Utils/Utils.InjectTLIMappings.o: cxx ../../llvm/lib/Transforms/Utils/InjectTLIMappings.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = InjectTLIMappings.cpp
+  source_name_part = InjectTLIMappings
+build obj/llvm/lib/Transforms/Utils/Utils.InlineFunction.o: cxx ../../llvm/lib/Transforms/Utils/InlineFunction.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = InlineFunction.cpp
+  source_name_part = InlineFunction
+build obj/llvm/lib/Transforms/Utils/Utils.InstructionNamer.o: cxx ../../llvm/lib/Transforms/Utils/InstructionNamer.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = InstructionNamer.cpp
+  source_name_part = InstructionNamer
+build obj/llvm/lib/Transforms/Utils/Utils.IntegerDivision.o: cxx ../../llvm/lib/Transforms/Utils/IntegerDivision.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = IntegerDivision.cpp
+  source_name_part = IntegerDivision
+build obj/llvm/lib/Transforms/Utils/Utils.LCSSA.o: cxx ../../llvm/lib/Transforms/Utils/LCSSA.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LCSSA.cpp
+  source_name_part = LCSSA
+build obj/llvm/lib/Transforms/Utils/Utils.LibCallsShrinkWrap.o: cxx ../../llvm/lib/Transforms/Utils/LibCallsShrinkWrap.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LibCallsShrinkWrap.cpp
+  source_name_part = LibCallsShrinkWrap
+build obj/llvm/lib/Transforms/Utils/Utils.Local.o: cxx ../../llvm/lib/Transforms/Utils/Local.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = Local.cpp
+  source_name_part = Local
+build obj/llvm/lib/Transforms/Utils/Utils.LoopPeel.o: cxx ../../llvm/lib/Transforms/Utils/LoopPeel.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LoopPeel.cpp
+  source_name_part = LoopPeel
+build obj/llvm/lib/Transforms/Utils/Utils.LoopRotationUtils.o: cxx ../../llvm/lib/Transforms/Utils/LoopRotationUtils.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LoopRotationUtils.cpp
+  source_name_part = LoopRotationUtils
+build obj/llvm/lib/Transforms/Utils/Utils.LoopSimplify.o: cxx ../../llvm/lib/Transforms/Utils/LoopSimplify.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LoopSimplify.cpp
+  source_name_part = LoopSimplify
+build obj/llvm/lib/Transforms/Utils/Utils.LoopUnroll.o: cxx ../../llvm/lib/Transforms/Utils/LoopUnroll.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LoopUnroll.cpp
+  source_name_part = LoopUnroll
+build obj/llvm/lib/Transforms/Utils/Utils.LoopUnrollAndJam.o: cxx ../../llvm/lib/Transforms/Utils/LoopUnrollAndJam.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LoopUnrollAndJam.cpp
+  source_name_part = LoopUnrollAndJam
+build obj/llvm/lib/Transforms/Utils/Utils.LoopUnrollRuntime.o: cxx ../../llvm/lib/Transforms/Utils/LoopUnrollRuntime.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LoopUnrollRuntime.cpp
+  source_name_part = LoopUnrollRuntime
+build obj/llvm/lib/Transforms/Utils/Utils.LoopUtils.o: cxx ../../llvm/lib/Transforms/Utils/LoopUtils.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LoopUtils.cpp
+  source_name_part = LoopUtils
+build obj/llvm/lib/Transforms/Utils/Utils.LoopVersioning.o: cxx ../../llvm/lib/Transforms/Utils/LoopVersioning.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LoopVersioning.cpp
+  source_name_part = LoopVersioning
+build obj/llvm/lib/Transforms/Utils/Utils.LowerAtomic.o: cxx ../../llvm/lib/Transforms/Utils/LowerAtomic.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LowerAtomic.cpp
+  source_name_part = LowerAtomic
+build obj/llvm/lib/Transforms/Utils/Utils.LowerGlobalDtors.o: cxx ../../llvm/lib/Transforms/Utils/LowerGlobalDtors.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LowerGlobalDtors.cpp
+  source_name_part = LowerGlobalDtors
+build obj/llvm/lib/Transforms/Utils/Utils.LowerInvoke.o: cxx ../../llvm/lib/Transforms/Utils/LowerInvoke.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LowerInvoke.cpp
+  source_name_part = LowerInvoke
+build obj/llvm/lib/Transforms/Utils/Utils.LowerMemIntrinsics.o: cxx ../../llvm/lib/Transforms/Utils/LowerMemIntrinsics.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LowerMemIntrinsics.cpp
+  source_name_part = LowerMemIntrinsics
+build obj/llvm/lib/Transforms/Utils/Utils.LowerSwitch.o: cxx ../../llvm/lib/Transforms/Utils/LowerSwitch.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = LowerSwitch.cpp
+  source_name_part = LowerSwitch
+build obj/llvm/lib/Transforms/Utils/Utils.MatrixUtils.o: cxx ../../llvm/lib/Transforms/Utils/MatrixUtils.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = MatrixUtils.cpp
+  source_name_part = MatrixUtils
+build obj/llvm/lib/Transforms/Utils/Utils.Mem2Reg.o: cxx ../../llvm/lib/Transforms/Utils/Mem2Reg.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = Mem2Reg.cpp
+  source_name_part = Mem2Reg
+build obj/llvm/lib/Transforms/Utils/Utils.MemoryOpRemark.o: cxx ../../llvm/lib/Transforms/Utils/MemoryOpRemark.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = MemoryOpRemark.cpp
+  source_name_part = MemoryOpRemark
+build obj/llvm/lib/Transforms/Utils/Utils.MemoryTaggingSupport.o: cxx ../../llvm/lib/Transforms/Utils/MemoryTaggingSupport.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = MemoryTaggingSupport.cpp
+  source_name_part = MemoryTaggingSupport
+build obj/llvm/lib/Transforms/Utils/Utils.MetaRenamer.o: cxx ../../llvm/lib/Transforms/Utils/MetaRenamer.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = MetaRenamer.cpp
+  source_name_part = MetaRenamer
+build obj/llvm/lib/Transforms/Utils/Utils.MisExpect.o: cxx ../../llvm/lib/Transforms/Utils/MisExpect.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = MisExpect.cpp
+  source_name_part = MisExpect
+build obj/llvm/lib/Transforms/Utils/Utils.ModuleUtils.o: cxx ../../llvm/lib/Transforms/Utils/ModuleUtils.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = ModuleUtils.cpp
+  source_name_part = ModuleUtils
+build obj/llvm/lib/Transforms/Utils/Utils.NameAnonGlobals.o: cxx ../../llvm/lib/Transforms/Utils/NameAnonGlobals.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = NameAnonGlobals.cpp
+  source_name_part = NameAnonGlobals
+build obj/llvm/lib/Transforms/Utils/Utils.PredicateInfo.o: cxx ../../llvm/lib/Transforms/Utils/PredicateInfo.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = PredicateInfo.cpp
+  source_name_part = PredicateInfo
+build obj/llvm/lib/Transforms/Utils/Utils.PromoteMemoryToRegister.o: cxx ../../llvm/lib/Transforms/Utils/PromoteMemoryToRegister.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = PromoteMemoryToRegister.cpp
+  source_name_part = PromoteMemoryToRegister
+build obj/llvm/lib/Transforms/Utils/Utils.RelLookupTableConverter.o: cxx ../../llvm/lib/Transforms/Utils/RelLookupTableConverter.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = RelLookupTableConverter.cpp
+  source_name_part = RelLookupTableConverter
+build obj/llvm/lib/Transforms/Utils/Utils.SCCPSolver.o: cxx ../../llvm/lib/Transforms/Utils/SCCPSolver.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = SCCPSolver.cpp
+  source_name_part = SCCPSolver
+build obj/llvm/lib/Transforms/Utils/Utils.SSAUpdater.o: cxx ../../llvm/lib/Transforms/Utils/SSAUpdater.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = SSAUpdater.cpp
+  source_name_part = SSAUpdater
+build obj/llvm/lib/Transforms/Utils/Utils.SSAUpdaterBulk.o: cxx ../../llvm/lib/Transforms/Utils/SSAUpdaterBulk.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = SSAUpdaterBulk.cpp
+  source_name_part = SSAUpdaterBulk
+build obj/llvm/lib/Transforms/Utils/Utils.SampleProfileInference.o: cxx ../../llvm/lib/Transforms/Utils/SampleProfileInference.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = SampleProfileInference.cpp
+  source_name_part = SampleProfileInference
+build obj/llvm/lib/Transforms/Utils/Utils.SampleProfileLoaderBaseUtil.o: cxx ../../llvm/lib/Transforms/Utils/SampleProfileLoaderBaseUtil.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = SampleProfileLoaderBaseUtil.cpp
+  source_name_part = SampleProfileLoaderBaseUtil
+build obj/llvm/lib/Transforms/Utils/Utils.SanitizerStats.o: cxx ../../llvm/lib/Transforms/Utils/SanitizerStats.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = SanitizerStats.cpp
+  source_name_part = SanitizerStats
+build obj/llvm/lib/Transforms/Utils/Utils.ScalarEvolutionExpander.o: cxx ../../llvm/lib/Transforms/Utils/ScalarEvolutionExpander.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = ScalarEvolutionExpander.cpp
+  source_name_part = ScalarEvolutionExpander
+build obj/llvm/lib/Transforms/Utils/Utils.SimplifyCFG.o: cxx ../../llvm/lib/Transforms/Utils/SimplifyCFG.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = SimplifyCFG.cpp
+  source_name_part = SimplifyCFG
+build obj/llvm/lib/Transforms/Utils/Utils.SimplifyIndVar.o: cxx ../../llvm/lib/Transforms/Utils/SimplifyIndVar.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = SimplifyIndVar.cpp
+  source_name_part = SimplifyIndVar
+build obj/llvm/lib/Transforms/Utils/Utils.SimplifyLibCalls.o: cxx ../../llvm/lib/Transforms/Utils/SimplifyLibCalls.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = SimplifyLibCalls.cpp
+  source_name_part = SimplifyLibCalls
+build obj/llvm/lib/Transforms/Utils/Utils.SizeOpts.o: cxx ../../llvm/lib/Transforms/Utils/SizeOpts.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = SizeOpts.cpp
+  source_name_part = SizeOpts
+build obj/llvm/lib/Transforms/Utils/Utils.SplitModule.o: cxx ../../llvm/lib/Transforms/Utils/SplitModule.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = SplitModule.cpp
+  source_name_part = SplitModule
+build obj/llvm/lib/Transforms/Utils/Utils.StripGCRelocates.o: cxx ../../llvm/lib/Transforms/Utils/StripGCRelocates.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = StripGCRelocates.cpp
+  source_name_part = StripGCRelocates
+build obj/llvm/lib/Transforms/Utils/Utils.StripNonLineTableDebugInfo.o: cxx ../../llvm/lib/Transforms/Utils/StripNonLineTableDebugInfo.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = StripNonLineTableDebugInfo.cpp
+  source_name_part = StripNonLineTableDebugInfo
+build obj/llvm/lib/Transforms/Utils/Utils.SymbolRewriter.o: cxx ../../llvm/lib/Transforms/Utils/SymbolRewriter.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = SymbolRewriter.cpp
+  source_name_part = SymbolRewriter
+build obj/llvm/lib/Transforms/Utils/Utils.UnifyFunctionExitNodes.o: cxx ../../llvm/lib/Transforms/Utils/UnifyFunctionExitNodes.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = UnifyFunctionExitNodes.cpp
+  source_name_part = UnifyFunctionExitNodes
+build obj/llvm/lib/Transforms/Utils/Utils.UnifyLoopExits.o: cxx ../../llvm/lib/Transforms/Utils/UnifyLoopExits.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = UnifyLoopExits.cpp
+  source_name_part = UnifyLoopExits
+build obj/llvm/lib/Transforms/Utils/Utils.Utils.o: cxx ../../llvm/lib/Transforms/Utils/Utils.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = Utils.cpp
+  source_name_part = Utils
+build obj/llvm/lib/Transforms/Utils/Utils.VNCoercion.o: cxx ../../llvm/lib/Transforms/Utils/VNCoercion.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = VNCoercion.cpp
+  source_name_part = VNCoercion
+build obj/llvm/lib/Transforms/Utils/Utils.ValueMapper.o: cxx ../../llvm/lib/Transforms/Utils/ValueMapper.cpp || obj/llvm/lib/Transforms/Utils/Utils.inputdeps.stamp
+  source_file_part = ValueMapper.cpp
+  source_name_part = ValueMapper
+
+build ./lib/libLLVMTransformUtils.a: alink obj/llvm/lib/Transforms/Utils/Utils.AMDGPUEmitPrintf.o obj/llvm/lib/Transforms/Utils/Utils.ASanStackFrameLayout.o obj/llvm/lib/Transforms/Utils/Utils.AddDiscriminators.o obj/llvm/lib/Transforms/Utils/Utils.AssumeBundleBuilder.o obj/llvm/lib/Transforms/Utils/Utils.BasicBlockUtils.o obj/llvm/lib/Transforms/Utils/Utils.BreakCriticalEdges.o obj/llvm/lib/Transforms/Utils/Utils.BuildLibCalls.o obj/llvm/lib/Transforms/Utils/Utils.BypassSlowDivision.o obj/llvm/lib/Transforms/Utils/Utils.CallGraphUpdater.o obj/llvm/lib/Transforms/Utils/Utils.CallPromotionUtils.o obj/llvm/lib/Transforms/Utils/Utils.CanonicalizeAliases.o obj/llvm/lib/Transforms/Utils/Utils.CanonicalizeFreezeInLoops.o obj/llvm/lib/Transforms/Utils/Utils.CloneFunction.o obj/llvm/lib/Transforms/Utils/Utils.CloneModule.o obj/llvm/lib/Transforms/Utils/Utils.CodeExtractor.o obj/llvm/lib/Transforms/Utils/Utils.CodeLayout.o obj/llvm/lib/Transforms/Utils/Utils.CodeMoverUtils.o obj/llvm/lib/Transforms/Utils/Utils.CtorUtils.o obj/llvm/lib/Transforms/Utils/Utils.Debugify.o obj/llvm/lib/Transforms/Utils/Utils.DemoteRegToStack.o obj/llvm/lib/Transforms/Utils/Utils.EntryExitInstrumenter.o obj/llvm/lib/Transforms/Utils/Utils.EscapeEnumerator.o obj/llvm/lib/Transforms/Utils/Utils.Evaluator.o obj/llvm/lib/Transforms/Utils/Utils.FixIrreducible.o obj/llvm/lib/Transforms/Utils/Utils.FlattenCFG.o obj/llvm/lib/Transforms/Utils/Utils.FunctionComparator.o obj/llvm/lib/Transforms/Utils/Utils.FunctionImportUtils.o obj/llvm/lib/Transforms/Utils/Utils.GlobalStatus.o obj/llvm/lib/Transforms/Utils/Utils.GuardUtils.o obj/llvm/lib/Transforms/Utils/Utils.HelloWorld.o obj/llvm/lib/Transforms/Utils/Utils.InjectTLIMappings.o obj/llvm/lib/Transforms/Utils/Utils.InlineFunction.o obj/llvm/lib/Transforms/Utils/Utils.InstructionNamer.o obj/llvm/lib/Transforms/Utils/Utils.IntegerDivision.o obj/llvm/lib/Transforms/Utils/Utils.LCSSA.o obj/llvm/lib/Transforms/Utils/Utils.LibCallsShrinkWrap.o obj/llvm/lib/Transforms/Utils/Utils.Local.o obj/llvm/lib/Transforms/Utils/Utils.LoopPeel.o obj/llvm/lib/Transforms/Utils/Utils.LoopRotationUtils.o obj/llvm/lib/Transforms/Utils/Utils.LoopSimplify.o obj/llvm/lib/Transforms/Utils/Utils.LoopUnroll.o obj/llvm/lib/Transforms/Utils/Utils.LoopUnrollAndJam.o obj/llvm/lib/Transforms/Utils/Utils.LoopUnrollRuntime.o obj/llvm/lib/Transforms/Utils/Utils.LoopUtils.o obj/llvm/lib/Transforms/Utils/Utils.LoopVersioning.o obj/llvm/lib/Transforms/Utils/Utils.LowerAtomic.o obj/llvm/lib/Transforms/Utils/Utils.LowerGlobalDtors.o obj/llvm/lib/Transforms/Utils/Utils.LowerInvoke.o obj/llvm/lib/Transforms/Utils/Utils.LowerMemIntrinsics.o obj/llvm/lib/Transforms/Utils/Utils.LowerSwitch.o obj/llvm/lib/Transforms/Utils/Utils.MatrixUtils.o obj/llvm/lib/Transforms/Utils/Utils.Mem2Reg.o obj/llvm/lib/Transforms/Utils/Utils.MemoryOpRemark.o obj/llvm/lib/Transforms/Utils/Utils.MemoryTaggingSupport.o obj/llvm/lib/Transforms/Utils/Utils.MetaRenamer.o obj/llvm/lib/Transforms/Utils/Utils.MisExpect.o obj/llvm/lib/Transforms/Utils/Utils.ModuleUtils.o obj/llvm/lib/Transforms/Utils/Utils.NameAnonGlobals.o obj/llvm/lib/Transforms/Utils/Utils.PredicateInfo.o obj/llvm/lib/Transforms/Utils/Utils.PromoteMemoryToRegister.o obj/llvm/lib/Transforms/Utils/Utils.RelLookupTableConverter.o obj/llvm/lib/Transforms/Utils/Utils.SCCPSolver.o obj/llvm/lib/Transforms/Utils/Utils.SSAUpdater.o obj/llvm/lib/Transforms/Utils/Utils.SSAUpdaterBulk.o obj/llvm/lib/Transforms/Utils/Utils.SampleProfileInference.o obj/llvm/lib/Transforms/Utils/Utils.SampleProfileLoaderBaseUtil.o obj/llvm/lib/Transforms/Utils/Utils.SanitizerStats.o obj/llvm/lib/Transforms/Utils/Utils.ScalarEvolutionExpander.o obj/llvm/lib/Transforms/Utils/Utils.SimplifyCFG.o obj/llvm/lib/Transforms/Utils/Utils.SimplifyIndVar.o obj/llvm/lib/Transforms/Utils/Utils.SimplifyLibCalls.o obj/llvm/lib/Transforms/Utils/Utils.SizeOpts.o obj/llvm/lib/Transforms/Utils/Utils.SplitModule.o obj/llvm/lib/Transforms/Utils/Utils.StripGCRelocates.o obj/llvm/lib/Transforms/Utils/Utils.StripNonLineTableDebugInfo.o obj/llvm/lib/Transforms/Utils/Utils.SymbolRewriter.o obj/llvm/lib/Transforms/Utils/Utils.UnifyFunctionExitNodes.o obj/llvm/lib/Transforms/Utils/Utils.UnifyLoopExits.o obj/llvm/lib/Transforms/Utils/Utils.Utils.o obj/llvm/lib/Transforms/Utils/Utils.VNCoercion.o obj/llvm/lib/Transforms/Utils/Utils.ValueMapper.o || ./lib/libLLVMAnalysis.a ./lib/libLLVMCore.a ./lib/libLLVMSupport.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

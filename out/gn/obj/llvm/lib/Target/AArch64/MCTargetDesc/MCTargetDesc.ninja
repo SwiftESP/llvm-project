@@ -1,0 +1,49 @@
+defines =
+include_dirs = -I../../llvm/lib/Target/AArch64 -I../../llvm/include -Igen/llvm/include -Igen/llvm/lib/Target/AArch64/MCTargetDesc -Igen/llvm/lib/Target/AArch64/Utils
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = MCTargetDesc
+target_output_name = libLLVMAArch64Desc
+
+build obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64AsmBackend.o: cxx ../../llvm/lib/Target/AArch64/MCTargetDesc/AArch64AsmBackend.cpp || obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.inputdeps.stamp
+  source_file_part = AArch64AsmBackend.cpp
+  source_name_part = AArch64AsmBackend
+build obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64ELFObjectWriter.o: cxx ../../llvm/lib/Target/AArch64/MCTargetDesc/AArch64ELFObjectWriter.cpp || obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.inputdeps.stamp
+  source_file_part = AArch64ELFObjectWriter.cpp
+  source_name_part = AArch64ELFObjectWriter
+build obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64ELFStreamer.o: cxx ../../llvm/lib/Target/AArch64/MCTargetDesc/AArch64ELFStreamer.cpp || obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.inputdeps.stamp
+  source_file_part = AArch64ELFStreamer.cpp
+  source_name_part = AArch64ELFStreamer
+build obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64InstPrinter.o: cxx ../../llvm/lib/Target/AArch64/MCTargetDesc/AArch64InstPrinter.cpp || obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.inputdeps.stamp
+  source_file_part = AArch64InstPrinter.cpp
+  source_name_part = AArch64InstPrinter
+build obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64MCAsmInfo.o: cxx ../../llvm/lib/Target/AArch64/MCTargetDesc/AArch64MCAsmInfo.cpp || obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.inputdeps.stamp
+  source_file_part = AArch64MCAsmInfo.cpp
+  source_name_part = AArch64MCAsmInfo
+build obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64MCCodeEmitter.o: cxx ../../llvm/lib/Target/AArch64/MCTargetDesc/AArch64MCCodeEmitter.cpp || obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.inputdeps.stamp
+  source_file_part = AArch64MCCodeEmitter.cpp
+  source_name_part = AArch64MCCodeEmitter
+build obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64MCExpr.o: cxx ../../llvm/lib/Target/AArch64/MCTargetDesc/AArch64MCExpr.cpp || obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.inputdeps.stamp
+  source_file_part = AArch64MCExpr.cpp
+  source_name_part = AArch64MCExpr
+build obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64MCTargetDesc.o: cxx ../../llvm/lib/Target/AArch64/MCTargetDesc/AArch64MCTargetDesc.cpp || obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.inputdeps.stamp
+  source_file_part = AArch64MCTargetDesc.cpp
+  source_name_part = AArch64MCTargetDesc
+build obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64MachObjectWriter.o: cxx ../../llvm/lib/Target/AArch64/MCTargetDesc/AArch64MachObjectWriter.cpp || obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.inputdeps.stamp
+  source_file_part = AArch64MachObjectWriter.cpp
+  source_name_part = AArch64MachObjectWriter
+build obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64TargetStreamer.o: cxx ../../llvm/lib/Target/AArch64/MCTargetDesc/AArch64TargetStreamer.cpp || obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.inputdeps.stamp
+  source_file_part = AArch64TargetStreamer.cpp
+  source_name_part = AArch64TargetStreamer
+build obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64WinCOFFObjectWriter.o: cxx ../../llvm/lib/Target/AArch64/MCTargetDesc/AArch64WinCOFFObjectWriter.cpp || obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.inputdeps.stamp
+  source_file_part = AArch64WinCOFFObjectWriter.cpp
+  source_name_part = AArch64WinCOFFObjectWriter
+build obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64WinCOFFStreamer.o: cxx ../../llvm/lib/Target/AArch64/MCTargetDesc/AArch64WinCOFFStreamer.cpp || obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.inputdeps.stamp
+  source_file_part = AArch64WinCOFFStreamer.cpp
+  source_name_part = AArch64WinCOFFStreamer
+
+build ./lib/libLLVMAArch64Desc.a: alink obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64AsmBackend.o obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64ELFObjectWriter.o obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64ELFStreamer.o obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64InstPrinter.o obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64MCAsmInfo.o obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64MCCodeEmitter.o obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64MCExpr.o obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64MCTargetDesc.o obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64MachObjectWriter.o obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64TargetStreamer.o obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64WinCOFFObjectWriter.o obj/llvm/lib/Target/AArch64/MCTargetDesc/MCTargetDesc.AArch64WinCOFFStreamer.o || obj/llvm/lib/Target/AArch64/MCTargetDesc/tablegen.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp ./lib/libLLVMMC.a ./lib/libLLVMSupport.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

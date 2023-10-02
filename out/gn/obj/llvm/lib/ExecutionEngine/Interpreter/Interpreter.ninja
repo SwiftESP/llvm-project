@@ -1,0 +1,22 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Interpreter
+target_output_name = libLLVMInterpreter
+
+build obj/llvm/lib/ExecutionEngine/Interpreter/Interpreter.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/ExecutionEngine/Interpreter/Interpreter.Execution.o: cxx ../../llvm/lib/ExecutionEngine/Interpreter/Execution.cpp || obj/llvm/lib/ExecutionEngine/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = Execution.cpp
+  source_name_part = Execution
+build obj/llvm/lib/ExecutionEngine/Interpreter/Interpreter.ExternalFunctions.o: cxx ../../llvm/lib/ExecutionEngine/Interpreter/ExternalFunctions.cpp || obj/llvm/lib/ExecutionEngine/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = ExternalFunctions.cpp
+  source_name_part = ExternalFunctions
+build obj/llvm/lib/ExecutionEngine/Interpreter/Interpreter.Interpreter.o: cxx ../../llvm/lib/ExecutionEngine/Interpreter/Interpreter.cpp || obj/llvm/lib/ExecutionEngine/Interpreter/Interpreter.inputdeps.stamp
+  source_file_part = Interpreter.cpp
+  source_name_part = Interpreter
+
+build ./lib/libLLVMInterpreter.a: alink obj/llvm/lib/ExecutionEngine/Interpreter/Interpreter.Execution.o obj/llvm/lib/ExecutionEngine/Interpreter/Interpreter.ExternalFunctions.o obj/llvm/lib/ExecutionEngine/Interpreter/Interpreter.Interpreter.o || obj/llvm/include/llvm/Config/config.stamp ./lib/libLLVMCodeGen.a ./lib/libLLVMExecutionEngine.a ./lib/libLLVMCore.a ./lib/libLLVMSupport.a ./lib/libLLVMAnalysis.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMTarget.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMOrcTargetProcess.a ./lib/libLLVMOrcShared.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

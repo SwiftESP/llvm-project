@@ -1,0 +1,247 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Scalar
+target_output_name = libLLVMScalarOpts
+
+build obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/Transforms/Scalar/Scalar.ADCE.o: cxx ../../llvm/lib/Transforms/Scalar/ADCE.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = ADCE.cpp
+  source_name_part = ADCE
+build obj/llvm/lib/Transforms/Scalar/Scalar.AlignmentFromAssumptions.o: cxx ../../llvm/lib/Transforms/Scalar/AlignmentFromAssumptions.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = AlignmentFromAssumptions.cpp
+  source_name_part = AlignmentFromAssumptions
+build obj/llvm/lib/Transforms/Scalar/Scalar.AnnotationRemarks.o: cxx ../../llvm/lib/Transforms/Scalar/AnnotationRemarks.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = AnnotationRemarks.cpp
+  source_name_part = AnnotationRemarks
+build obj/llvm/lib/Transforms/Scalar/Scalar.BDCE.o: cxx ../../llvm/lib/Transforms/Scalar/BDCE.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = BDCE.cpp
+  source_name_part = BDCE
+build obj/llvm/lib/Transforms/Scalar/Scalar.CallSiteSplitting.o: cxx ../../llvm/lib/Transforms/Scalar/CallSiteSplitting.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = CallSiteSplitting.cpp
+  source_name_part = CallSiteSplitting
+build obj/llvm/lib/Transforms/Scalar/Scalar.ConstantHoisting.o: cxx ../../llvm/lib/Transforms/Scalar/ConstantHoisting.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = ConstantHoisting.cpp
+  source_name_part = ConstantHoisting
+build obj/llvm/lib/Transforms/Scalar/Scalar.ConstraintElimination.o: cxx ../../llvm/lib/Transforms/Scalar/ConstraintElimination.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = ConstraintElimination.cpp
+  source_name_part = ConstraintElimination
+build obj/llvm/lib/Transforms/Scalar/Scalar.CorrelatedValuePropagation.o: cxx ../../llvm/lib/Transforms/Scalar/CorrelatedValuePropagation.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = CorrelatedValuePropagation.cpp
+  source_name_part = CorrelatedValuePropagation
+build obj/llvm/lib/Transforms/Scalar/Scalar.DCE.o: cxx ../../llvm/lib/Transforms/Scalar/DCE.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = DCE.cpp
+  source_name_part = DCE
+build obj/llvm/lib/Transforms/Scalar/Scalar.DFAJumpThreading.o: cxx ../../llvm/lib/Transforms/Scalar/DFAJumpThreading.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = DFAJumpThreading.cpp
+  source_name_part = DFAJumpThreading
+build obj/llvm/lib/Transforms/Scalar/Scalar.DeadStoreElimination.o: cxx ../../llvm/lib/Transforms/Scalar/DeadStoreElimination.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = DeadStoreElimination.cpp
+  source_name_part = DeadStoreElimination
+build obj/llvm/lib/Transforms/Scalar/Scalar.DivRemPairs.o: cxx ../../llvm/lib/Transforms/Scalar/DivRemPairs.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = DivRemPairs.cpp
+  source_name_part = DivRemPairs
+build obj/llvm/lib/Transforms/Scalar/Scalar.EarlyCSE.o: cxx ../../llvm/lib/Transforms/Scalar/EarlyCSE.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = EarlyCSE.cpp
+  source_name_part = EarlyCSE
+build obj/llvm/lib/Transforms/Scalar/Scalar.FlattenCFGPass.o: cxx ../../llvm/lib/Transforms/Scalar/FlattenCFGPass.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = FlattenCFGPass.cpp
+  source_name_part = FlattenCFGPass
+build obj/llvm/lib/Transforms/Scalar/Scalar.Float2Int.o: cxx ../../llvm/lib/Transforms/Scalar/Float2Int.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = Float2Int.cpp
+  source_name_part = Float2Int
+build obj/llvm/lib/Transforms/Scalar/Scalar.GVN.o: cxx ../../llvm/lib/Transforms/Scalar/GVN.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = GVN.cpp
+  source_name_part = GVN
+build obj/llvm/lib/Transforms/Scalar/Scalar.GVNHoist.o: cxx ../../llvm/lib/Transforms/Scalar/GVNHoist.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = GVNHoist.cpp
+  source_name_part = GVNHoist
+build obj/llvm/lib/Transforms/Scalar/Scalar.GVNSink.o: cxx ../../llvm/lib/Transforms/Scalar/GVNSink.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = GVNSink.cpp
+  source_name_part = GVNSink
+build obj/llvm/lib/Transforms/Scalar/Scalar.GuardWidening.o: cxx ../../llvm/lib/Transforms/Scalar/GuardWidening.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = GuardWidening.cpp
+  source_name_part = GuardWidening
+build obj/llvm/lib/Transforms/Scalar/Scalar.IVUsersPrinter.o: cxx ../../llvm/lib/Transforms/Scalar/IVUsersPrinter.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = IVUsersPrinter.cpp
+  source_name_part = IVUsersPrinter
+build obj/llvm/lib/Transforms/Scalar/Scalar.IndVarSimplify.o: cxx ../../llvm/lib/Transforms/Scalar/IndVarSimplify.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = IndVarSimplify.cpp
+  source_name_part = IndVarSimplify
+build obj/llvm/lib/Transforms/Scalar/Scalar.InductiveRangeCheckElimination.o: cxx ../../llvm/lib/Transforms/Scalar/InductiveRangeCheckElimination.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = InductiveRangeCheckElimination.cpp
+  source_name_part = InductiveRangeCheckElimination
+build obj/llvm/lib/Transforms/Scalar/Scalar.InferAddressSpaces.o: cxx ../../llvm/lib/Transforms/Scalar/InferAddressSpaces.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = InferAddressSpaces.cpp
+  source_name_part = InferAddressSpaces
+build obj/llvm/lib/Transforms/Scalar/Scalar.InstSimplifyPass.o: cxx ../../llvm/lib/Transforms/Scalar/InstSimplifyPass.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = InstSimplifyPass.cpp
+  source_name_part = InstSimplifyPass
+build obj/llvm/lib/Transforms/Scalar/Scalar.JumpThreading.o: cxx ../../llvm/lib/Transforms/Scalar/JumpThreading.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = JumpThreading.cpp
+  source_name_part = JumpThreading
+build obj/llvm/lib/Transforms/Scalar/Scalar.LICM.o: cxx ../../llvm/lib/Transforms/Scalar/LICM.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LICM.cpp
+  source_name_part = LICM
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopAccessAnalysisPrinter.o: cxx ../../llvm/lib/Transforms/Scalar/LoopAccessAnalysisPrinter.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopAccessAnalysisPrinter.cpp
+  source_name_part = LoopAccessAnalysisPrinter
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopBoundSplit.o: cxx ../../llvm/lib/Transforms/Scalar/LoopBoundSplit.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopBoundSplit.cpp
+  source_name_part = LoopBoundSplit
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopDataPrefetch.o: cxx ../../llvm/lib/Transforms/Scalar/LoopDataPrefetch.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopDataPrefetch.cpp
+  source_name_part = LoopDataPrefetch
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopDeletion.o: cxx ../../llvm/lib/Transforms/Scalar/LoopDeletion.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopDeletion.cpp
+  source_name_part = LoopDeletion
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopDistribute.o: cxx ../../llvm/lib/Transforms/Scalar/LoopDistribute.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopDistribute.cpp
+  source_name_part = LoopDistribute
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopFlatten.o: cxx ../../llvm/lib/Transforms/Scalar/LoopFlatten.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopFlatten.cpp
+  source_name_part = LoopFlatten
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopFuse.o: cxx ../../llvm/lib/Transforms/Scalar/LoopFuse.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopFuse.cpp
+  source_name_part = LoopFuse
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopIdiomRecognize.o: cxx ../../llvm/lib/Transforms/Scalar/LoopIdiomRecognize.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopIdiomRecognize.cpp
+  source_name_part = LoopIdiomRecognize
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopInstSimplify.o: cxx ../../llvm/lib/Transforms/Scalar/LoopInstSimplify.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopInstSimplify.cpp
+  source_name_part = LoopInstSimplify
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopInterchange.o: cxx ../../llvm/lib/Transforms/Scalar/LoopInterchange.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopInterchange.cpp
+  source_name_part = LoopInterchange
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopLoadElimination.o: cxx ../../llvm/lib/Transforms/Scalar/LoopLoadElimination.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopLoadElimination.cpp
+  source_name_part = LoopLoadElimination
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopPassManager.o: cxx ../../llvm/lib/Transforms/Scalar/LoopPassManager.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopPassManager.cpp
+  source_name_part = LoopPassManager
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopPredication.o: cxx ../../llvm/lib/Transforms/Scalar/LoopPredication.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopPredication.cpp
+  source_name_part = LoopPredication
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopRerollPass.o: cxx ../../llvm/lib/Transforms/Scalar/LoopRerollPass.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopRerollPass.cpp
+  source_name_part = LoopRerollPass
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopRotation.o: cxx ../../llvm/lib/Transforms/Scalar/LoopRotation.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopRotation.cpp
+  source_name_part = LoopRotation
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopSimplifyCFG.o: cxx ../../llvm/lib/Transforms/Scalar/LoopSimplifyCFG.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopSimplifyCFG.cpp
+  source_name_part = LoopSimplifyCFG
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopSink.o: cxx ../../llvm/lib/Transforms/Scalar/LoopSink.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopSink.cpp
+  source_name_part = LoopSink
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopStrengthReduce.o: cxx ../../llvm/lib/Transforms/Scalar/LoopStrengthReduce.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopStrengthReduce.cpp
+  source_name_part = LoopStrengthReduce
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopUnrollAndJamPass.o: cxx ../../llvm/lib/Transforms/Scalar/LoopUnrollAndJamPass.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopUnrollAndJamPass.cpp
+  source_name_part = LoopUnrollAndJamPass
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopUnrollPass.o: cxx ../../llvm/lib/Transforms/Scalar/LoopUnrollPass.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopUnrollPass.cpp
+  source_name_part = LoopUnrollPass
+build obj/llvm/lib/Transforms/Scalar/Scalar.LoopVersioningLICM.o: cxx ../../llvm/lib/Transforms/Scalar/LoopVersioningLICM.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LoopVersioningLICM.cpp
+  source_name_part = LoopVersioningLICM
+build obj/llvm/lib/Transforms/Scalar/Scalar.LowerAtomicPass.o: cxx ../../llvm/lib/Transforms/Scalar/LowerAtomicPass.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LowerAtomicPass.cpp
+  source_name_part = LowerAtomicPass
+build obj/llvm/lib/Transforms/Scalar/Scalar.LowerConstantIntrinsics.o: cxx ../../llvm/lib/Transforms/Scalar/LowerConstantIntrinsics.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LowerConstantIntrinsics.cpp
+  source_name_part = LowerConstantIntrinsics
+build obj/llvm/lib/Transforms/Scalar/Scalar.LowerExpectIntrinsic.o: cxx ../../llvm/lib/Transforms/Scalar/LowerExpectIntrinsic.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LowerExpectIntrinsic.cpp
+  source_name_part = LowerExpectIntrinsic
+build obj/llvm/lib/Transforms/Scalar/Scalar.LowerGuardIntrinsic.o: cxx ../../llvm/lib/Transforms/Scalar/LowerGuardIntrinsic.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LowerGuardIntrinsic.cpp
+  source_name_part = LowerGuardIntrinsic
+build obj/llvm/lib/Transforms/Scalar/Scalar.LowerMatrixIntrinsics.o: cxx ../../llvm/lib/Transforms/Scalar/LowerMatrixIntrinsics.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LowerMatrixIntrinsics.cpp
+  source_name_part = LowerMatrixIntrinsics
+build obj/llvm/lib/Transforms/Scalar/Scalar.LowerWidenableCondition.o: cxx ../../llvm/lib/Transforms/Scalar/LowerWidenableCondition.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = LowerWidenableCondition.cpp
+  source_name_part = LowerWidenableCondition
+build obj/llvm/lib/Transforms/Scalar/Scalar.MakeGuardsExplicit.o: cxx ../../llvm/lib/Transforms/Scalar/MakeGuardsExplicit.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = MakeGuardsExplicit.cpp
+  source_name_part = MakeGuardsExplicit
+build obj/llvm/lib/Transforms/Scalar/Scalar.MemCpyOptimizer.o: cxx ../../llvm/lib/Transforms/Scalar/MemCpyOptimizer.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = MemCpyOptimizer.cpp
+  source_name_part = MemCpyOptimizer
+build obj/llvm/lib/Transforms/Scalar/Scalar.MergeICmps.o: cxx ../../llvm/lib/Transforms/Scalar/MergeICmps.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = MergeICmps.cpp
+  source_name_part = MergeICmps
+build obj/llvm/lib/Transforms/Scalar/Scalar.MergedLoadStoreMotion.o: cxx ../../llvm/lib/Transforms/Scalar/MergedLoadStoreMotion.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = MergedLoadStoreMotion.cpp
+  source_name_part = MergedLoadStoreMotion
+build obj/llvm/lib/Transforms/Scalar/Scalar.NaryReassociate.o: cxx ../../llvm/lib/Transforms/Scalar/NaryReassociate.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = NaryReassociate.cpp
+  source_name_part = NaryReassociate
+build obj/llvm/lib/Transforms/Scalar/Scalar.NewGVN.o: cxx ../../llvm/lib/Transforms/Scalar/NewGVN.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = NewGVN.cpp
+  source_name_part = NewGVN
+build obj/llvm/lib/Transforms/Scalar/Scalar.PartiallyInlineLibCalls.o: cxx ../../llvm/lib/Transforms/Scalar/PartiallyInlineLibCalls.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = PartiallyInlineLibCalls.cpp
+  source_name_part = PartiallyInlineLibCalls
+build obj/llvm/lib/Transforms/Scalar/Scalar.Reassociate.o: cxx ../../llvm/lib/Transforms/Scalar/Reassociate.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = Reassociate.cpp
+  source_name_part = Reassociate
+build obj/llvm/lib/Transforms/Scalar/Scalar.Reg2Mem.o: cxx ../../llvm/lib/Transforms/Scalar/Reg2Mem.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = Reg2Mem.cpp
+  source_name_part = Reg2Mem
+build obj/llvm/lib/Transforms/Scalar/Scalar.RewriteStatepointsForGC.o: cxx ../../llvm/lib/Transforms/Scalar/RewriteStatepointsForGC.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = RewriteStatepointsForGC.cpp
+  source_name_part = RewriteStatepointsForGC
+build obj/llvm/lib/Transforms/Scalar/Scalar.SCCP.o: cxx ../../llvm/lib/Transforms/Scalar/SCCP.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = SCCP.cpp
+  source_name_part = SCCP
+build obj/llvm/lib/Transforms/Scalar/Scalar.SROA.o: cxx ../../llvm/lib/Transforms/Scalar/SROA.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = SROA.cpp
+  source_name_part = SROA
+build obj/llvm/lib/Transforms/Scalar/Scalar.Scalar.o: cxx ../../llvm/lib/Transforms/Scalar/Scalar.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = Scalar.cpp
+  source_name_part = Scalar
+build obj/llvm/lib/Transforms/Scalar/Scalar.ScalarizeMaskedMemIntrin.o: cxx ../../llvm/lib/Transforms/Scalar/ScalarizeMaskedMemIntrin.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = ScalarizeMaskedMemIntrin.cpp
+  source_name_part = ScalarizeMaskedMemIntrin
+build obj/llvm/lib/Transforms/Scalar/Scalar.Scalarizer.o: cxx ../../llvm/lib/Transforms/Scalar/Scalarizer.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = Scalarizer.cpp
+  source_name_part = Scalarizer
+build obj/llvm/lib/Transforms/Scalar/Scalar.SeparateConstOffsetFromGEP.o: cxx ../../llvm/lib/Transforms/Scalar/SeparateConstOffsetFromGEP.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = SeparateConstOffsetFromGEP.cpp
+  source_name_part = SeparateConstOffsetFromGEP
+build obj/llvm/lib/Transforms/Scalar/Scalar.SimpleLoopUnswitch.o: cxx ../../llvm/lib/Transforms/Scalar/SimpleLoopUnswitch.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = SimpleLoopUnswitch.cpp
+  source_name_part = SimpleLoopUnswitch
+build obj/llvm/lib/Transforms/Scalar/Scalar.SimplifyCFGPass.o: cxx ../../llvm/lib/Transforms/Scalar/SimplifyCFGPass.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = SimplifyCFGPass.cpp
+  source_name_part = SimplifyCFGPass
+build obj/llvm/lib/Transforms/Scalar/Scalar.Sink.o: cxx ../../llvm/lib/Transforms/Scalar/Sink.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = Sink.cpp
+  source_name_part = Sink
+build obj/llvm/lib/Transforms/Scalar/Scalar.SpeculativeExecution.o: cxx ../../llvm/lib/Transforms/Scalar/SpeculativeExecution.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = SpeculativeExecution.cpp
+  source_name_part = SpeculativeExecution
+build obj/llvm/lib/Transforms/Scalar/Scalar.StraightLineStrengthReduce.o: cxx ../../llvm/lib/Transforms/Scalar/StraightLineStrengthReduce.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = StraightLineStrengthReduce.cpp
+  source_name_part = StraightLineStrengthReduce
+build obj/llvm/lib/Transforms/Scalar/Scalar.StructurizeCFG.o: cxx ../../llvm/lib/Transforms/Scalar/StructurizeCFG.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = StructurizeCFG.cpp
+  source_name_part = StructurizeCFG
+build obj/llvm/lib/Transforms/Scalar/Scalar.TLSVariableHoist.o: cxx ../../llvm/lib/Transforms/Scalar/TLSVariableHoist.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = TLSVariableHoist.cpp
+  source_name_part = TLSVariableHoist
+build obj/llvm/lib/Transforms/Scalar/Scalar.TailRecursionElimination.o: cxx ../../llvm/lib/Transforms/Scalar/TailRecursionElimination.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = TailRecursionElimination.cpp
+  source_name_part = TailRecursionElimination
+build obj/llvm/lib/Transforms/Scalar/Scalar.WarnMissedTransforms.o: cxx ../../llvm/lib/Transforms/Scalar/WarnMissedTransforms.cpp || obj/llvm/lib/Transforms/Scalar/Scalar.inputdeps.stamp
+  source_file_part = WarnMissedTransforms.cpp
+  source_name_part = WarnMissedTransforms
+
+build ./lib/libLLVMScalarOpts.a: alink obj/llvm/lib/Transforms/Scalar/Scalar.ADCE.o obj/llvm/lib/Transforms/Scalar/Scalar.AlignmentFromAssumptions.o obj/llvm/lib/Transforms/Scalar/Scalar.AnnotationRemarks.o obj/llvm/lib/Transforms/Scalar/Scalar.BDCE.o obj/llvm/lib/Transforms/Scalar/Scalar.CallSiteSplitting.o obj/llvm/lib/Transforms/Scalar/Scalar.ConstantHoisting.o obj/llvm/lib/Transforms/Scalar/Scalar.ConstraintElimination.o obj/llvm/lib/Transforms/Scalar/Scalar.CorrelatedValuePropagation.o obj/llvm/lib/Transforms/Scalar/Scalar.DCE.o obj/llvm/lib/Transforms/Scalar/Scalar.DFAJumpThreading.o obj/llvm/lib/Transforms/Scalar/Scalar.DeadStoreElimination.o obj/llvm/lib/Transforms/Scalar/Scalar.DivRemPairs.o obj/llvm/lib/Transforms/Scalar/Scalar.EarlyCSE.o obj/llvm/lib/Transforms/Scalar/Scalar.FlattenCFGPass.o obj/llvm/lib/Transforms/Scalar/Scalar.Float2Int.o obj/llvm/lib/Transforms/Scalar/Scalar.GVN.o obj/llvm/lib/Transforms/Scalar/Scalar.GVNHoist.o obj/llvm/lib/Transforms/Scalar/Scalar.GVNSink.o obj/llvm/lib/Transforms/Scalar/Scalar.GuardWidening.o obj/llvm/lib/Transforms/Scalar/Scalar.IVUsersPrinter.o obj/llvm/lib/Transforms/Scalar/Scalar.IndVarSimplify.o obj/llvm/lib/Transforms/Scalar/Scalar.InductiveRangeCheckElimination.o obj/llvm/lib/Transforms/Scalar/Scalar.InferAddressSpaces.o obj/llvm/lib/Transforms/Scalar/Scalar.InstSimplifyPass.o obj/llvm/lib/Transforms/Scalar/Scalar.JumpThreading.o obj/llvm/lib/Transforms/Scalar/Scalar.LICM.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopAccessAnalysisPrinter.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopBoundSplit.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopDataPrefetch.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopDeletion.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopDistribute.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopFlatten.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopFuse.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopIdiomRecognize.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopInstSimplify.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopInterchange.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopLoadElimination.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopPassManager.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopPredication.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopRerollPass.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopRotation.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopSimplifyCFG.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopSink.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopStrengthReduce.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopUnrollAndJamPass.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopUnrollPass.o obj/llvm/lib/Transforms/Scalar/Scalar.LoopVersioningLICM.o obj/llvm/lib/Transforms/Scalar/Scalar.LowerAtomicPass.o obj/llvm/lib/Transforms/Scalar/Scalar.LowerConstantIntrinsics.o obj/llvm/lib/Transforms/Scalar/Scalar.LowerExpectIntrinsic.o obj/llvm/lib/Transforms/Scalar/Scalar.LowerGuardIntrinsic.o obj/llvm/lib/Transforms/Scalar/Scalar.LowerMatrixIntrinsics.o obj/llvm/lib/Transforms/Scalar/Scalar.LowerWidenableCondition.o obj/llvm/lib/Transforms/Scalar/Scalar.MakeGuardsExplicit.o obj/llvm/lib/Transforms/Scalar/Scalar.MemCpyOptimizer.o obj/llvm/lib/Transforms/Scalar/Scalar.MergeICmps.o obj/llvm/lib/Transforms/Scalar/Scalar.MergedLoadStoreMotion.o obj/llvm/lib/Transforms/Scalar/Scalar.NaryReassociate.o obj/llvm/lib/Transforms/Scalar/Scalar.NewGVN.o obj/llvm/lib/Transforms/Scalar/Scalar.PartiallyInlineLibCalls.o obj/llvm/lib/Transforms/Scalar/Scalar.Reassociate.o obj/llvm/lib/Transforms/Scalar/Scalar.Reg2Mem.o obj/llvm/lib/Transforms/Scalar/Scalar.RewriteStatepointsForGC.o obj/llvm/lib/Transforms/Scalar/Scalar.SCCP.o obj/llvm/lib/Transforms/Scalar/Scalar.SROA.o obj/llvm/lib/Transforms/Scalar/Scalar.Scalar.o obj/llvm/lib/Transforms/Scalar/Scalar.ScalarizeMaskedMemIntrin.o obj/llvm/lib/Transforms/Scalar/Scalar.Scalarizer.o obj/llvm/lib/Transforms/Scalar/Scalar.SeparateConstOffsetFromGEP.o obj/llvm/lib/Transforms/Scalar/Scalar.SimpleLoopUnswitch.o obj/llvm/lib/Transforms/Scalar/Scalar.SimplifyCFGPass.o obj/llvm/lib/Transforms/Scalar/Scalar.Sink.o obj/llvm/lib/Transforms/Scalar/Scalar.SpeculativeExecution.o obj/llvm/lib/Transforms/Scalar/Scalar.StraightLineStrengthReduce.o obj/llvm/lib/Transforms/Scalar/Scalar.StructurizeCFG.o obj/llvm/lib/Transforms/Scalar/Scalar.TLSVariableHoist.o obj/llvm/lib/Transforms/Scalar/Scalar.TailRecursionElimination.o obj/llvm/lib/Transforms/Scalar/Scalar.WarnMissedTransforms.o || obj/llvm/include/llvm/Config/llvm-config.stamp ./lib/libLLVMAnalysis.a ./lib/libLLVMCore.a ./lib/libLLVMSupport.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

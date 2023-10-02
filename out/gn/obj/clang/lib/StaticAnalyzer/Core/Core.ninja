@@ -1,0 +1,151 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/AST -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Core
+target_output_name = libclangStaticAnalyzerCore
+
+build obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp: stamp obj/clang/include/clang/AST/AbstractBasicReader.stamp obj/clang/include/clang/AST/AbstractBasicWriter.stamp obj/clang/include/clang/AST/AbstractTypeReader.stamp obj/clang/include/clang/AST/AbstractTypeWriter.stamp obj/clang/include/clang/AST/AttrImpl.stamp obj/clang/include/clang/AST/AttrNodeTraverse.stamp obj/clang/include/clang/AST/AttrTextNodeDump.stamp obj/clang/include/clang/AST/AttrVisitor.stamp obj/clang/include/clang/AST/Attrs.stamp obj/clang/include/clang/AST/CommentCommandInfo.stamp obj/clang/include/clang/AST/CommentCommandList.stamp obj/clang/include/clang/AST/CommentHTMLNamedCharacterReferences.stamp obj/clang/include/clang/AST/CommentHTMLTags.stamp obj/clang/include/clang/AST/CommentHTMLTagsProperties.stamp obj/clang/include/clang/AST/CommentNodes.stamp obj/clang/include/clang/AST/DeclNodes.stamp obj/clang/include/clang/AST/StmtDataCollectors.stamp obj/clang/include/clang/AST/StmtNodes.stamp obj/clang/include/clang/AST/TypeNodes.stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_cde_builtin_sema.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtin_aliases.stamp obj/clang/include/clang/Basic/arm_mve_builtin_sema.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_sema_rangechecks.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtin_sema.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Parse/AttrParserStringSwitches.stamp obj/clang/include/clang/Parse/AttrSubMatchRulesParserStringSwitches.stamp obj/clang/include/clang/Sema/AttrParsedAttrImpl.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/Sema/AttrTemplateInstantiate.stamp obj/clang/include/clang/Serialization/AttrPCHRead.stamp obj/clang/include/clang/Serialization/AttrPCHWrite.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/AST/AttrDocTable.stamp obj/clang/lib/AST/Opcodes.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/clang/lib/Sema/OpenCLBuiltins.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/clang/lib/StaticAnalyzer/Core/Core.APSIntType.o: cxx ../../clang/lib/StaticAnalyzer/Core/APSIntType.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = APSIntType.cpp
+  source_name_part = APSIntType
+build obj/clang/lib/StaticAnalyzer/Core/Core.AnalysisManager.o: cxx ../../clang/lib/StaticAnalyzer/Core/AnalysisManager.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = AnalysisManager.cpp
+  source_name_part = AnalysisManager
+build obj/clang/lib/StaticAnalyzer/Core/Core.AnalyzerOptions.o: cxx ../../clang/lib/StaticAnalyzer/Core/AnalyzerOptions.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = AnalyzerOptions.cpp
+  source_name_part = AnalyzerOptions
+build obj/clang/lib/StaticAnalyzer/Core/Core.BasicValueFactory.o: cxx ../../clang/lib/StaticAnalyzer/Core/BasicValueFactory.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = BasicValueFactory.cpp
+  source_name_part = BasicValueFactory
+build obj/clang/lib/StaticAnalyzer/Core/Core.BlockCounter.o: cxx ../../clang/lib/StaticAnalyzer/Core/BlockCounter.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = BlockCounter.cpp
+  source_name_part = BlockCounter
+build obj/clang/lib/StaticAnalyzer/Core/Core.BugReporter.o: cxx ../../clang/lib/StaticAnalyzer/Core/BugReporter.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = BugReporter.cpp
+  source_name_part = BugReporter
+build obj/clang/lib/StaticAnalyzer/Core/Core.BugReporterVisitors.o: cxx ../../clang/lib/StaticAnalyzer/Core/BugReporterVisitors.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = BugReporterVisitors.cpp
+  source_name_part = BugReporterVisitors
+build obj/clang/lib/StaticAnalyzer/Core/Core.CallDescription.o: cxx ../../clang/lib/StaticAnalyzer/Core/CallDescription.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = CallDescription.cpp
+  source_name_part = CallDescription
+build obj/clang/lib/StaticAnalyzer/Core/Core.CallEvent.o: cxx ../../clang/lib/StaticAnalyzer/Core/CallEvent.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = CallEvent.cpp
+  source_name_part = CallEvent
+build obj/clang/lib/StaticAnalyzer/Core/Core.Checker.o: cxx ../../clang/lib/StaticAnalyzer/Core/Checker.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = Checker.cpp
+  source_name_part = Checker
+build obj/clang/lib/StaticAnalyzer/Core/Core.CheckerContext.o: cxx ../../clang/lib/StaticAnalyzer/Core/CheckerContext.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = CheckerContext.cpp
+  source_name_part = CheckerContext
+build obj/clang/lib/StaticAnalyzer/Core/Core.CheckerHelpers.o: cxx ../../clang/lib/StaticAnalyzer/Core/CheckerHelpers.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = CheckerHelpers.cpp
+  source_name_part = CheckerHelpers
+build obj/clang/lib/StaticAnalyzer/Core/Core.CheckerManager.o: cxx ../../clang/lib/StaticAnalyzer/Core/CheckerManager.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = CheckerManager.cpp
+  source_name_part = CheckerManager
+build obj/clang/lib/StaticAnalyzer/Core/Core.CheckerRegistryData.o: cxx ../../clang/lib/StaticAnalyzer/Core/CheckerRegistryData.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = CheckerRegistryData.cpp
+  source_name_part = CheckerRegistryData
+build obj/clang/lib/StaticAnalyzer/Core/Core.CommonBugCategories.o: cxx ../../clang/lib/StaticAnalyzer/Core/CommonBugCategories.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = CommonBugCategories.cpp
+  source_name_part = CommonBugCategories
+build obj/clang/lib/StaticAnalyzer/Core/Core.ConstraintManager.o: cxx ../../clang/lib/StaticAnalyzer/Core/ConstraintManager.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = ConstraintManager.cpp
+  source_name_part = ConstraintManager
+build obj/clang/lib/StaticAnalyzer/Core/Core.CoreEngine.o: cxx ../../clang/lib/StaticAnalyzer/Core/CoreEngine.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = CoreEngine.cpp
+  source_name_part = CoreEngine
+build obj/clang/lib/StaticAnalyzer/Core/Core.DynamicExtent.o: cxx ../../clang/lib/StaticAnalyzer/Core/DynamicExtent.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = DynamicExtent.cpp
+  source_name_part = DynamicExtent
+build obj/clang/lib/StaticAnalyzer/Core/Core.DynamicType.o: cxx ../../clang/lib/StaticAnalyzer/Core/DynamicType.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = DynamicType.cpp
+  source_name_part = DynamicType
+build obj/clang/lib/StaticAnalyzer/Core/Core.Environment.o: cxx ../../clang/lib/StaticAnalyzer/Core/Environment.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = Environment.cpp
+  source_name_part = Environment
+build obj/clang/lib/StaticAnalyzer/Core/Core.ExplodedGraph.o: cxx ../../clang/lib/StaticAnalyzer/Core/ExplodedGraph.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = ExplodedGraph.cpp
+  source_name_part = ExplodedGraph
+build obj/clang/lib/StaticAnalyzer/Core/Core.ExprEngine.o: cxx ../../clang/lib/StaticAnalyzer/Core/ExprEngine.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = ExprEngine.cpp
+  source_name_part = ExprEngine
+build obj/clang/lib/StaticAnalyzer/Core/Core.ExprEngineC.o: cxx ../../clang/lib/StaticAnalyzer/Core/ExprEngineC.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = ExprEngineC.cpp
+  source_name_part = ExprEngineC
+build obj/clang/lib/StaticAnalyzer/Core/Core.ExprEngineCXX.o: cxx ../../clang/lib/StaticAnalyzer/Core/ExprEngineCXX.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = ExprEngineCXX.cpp
+  source_name_part = ExprEngineCXX
+build obj/clang/lib/StaticAnalyzer/Core/Core.ExprEngineCallAndReturn.o: cxx ../../clang/lib/StaticAnalyzer/Core/ExprEngineCallAndReturn.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = ExprEngineCallAndReturn.cpp
+  source_name_part = ExprEngineCallAndReturn
+build obj/clang/lib/StaticAnalyzer/Core/Core.ExprEngineObjC.o: cxx ../../clang/lib/StaticAnalyzer/Core/ExprEngineObjC.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = ExprEngineObjC.cpp
+  source_name_part = ExprEngineObjC
+build obj/clang/lib/StaticAnalyzer/Core/Core.FunctionSummary.o: cxx ../../clang/lib/StaticAnalyzer/Core/FunctionSummary.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = FunctionSummary.cpp
+  source_name_part = FunctionSummary
+build obj/clang/lib/StaticAnalyzer/Core/Core.HTMLDiagnostics.o: cxx ../../clang/lib/StaticAnalyzer/Core/HTMLDiagnostics.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = HTMLDiagnostics.cpp
+  source_name_part = HTMLDiagnostics
+build obj/clang/lib/StaticAnalyzer/Core/Core.LoopUnrolling.o: cxx ../../clang/lib/StaticAnalyzer/Core/LoopUnrolling.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = LoopUnrolling.cpp
+  source_name_part = LoopUnrolling
+build obj/clang/lib/StaticAnalyzer/Core/Core.LoopWidening.o: cxx ../../clang/lib/StaticAnalyzer/Core/LoopWidening.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = LoopWidening.cpp
+  source_name_part = LoopWidening
+build obj/clang/lib/StaticAnalyzer/Core/Core.MemRegion.o: cxx ../../clang/lib/StaticAnalyzer/Core/MemRegion.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = MemRegion.cpp
+  source_name_part = MemRegion
+build obj/clang/lib/StaticAnalyzer/Core/Core.PlistDiagnostics.o: cxx ../../clang/lib/StaticAnalyzer/Core/PlistDiagnostics.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = PlistDiagnostics.cpp
+  source_name_part = PlistDiagnostics
+build obj/clang/lib/StaticAnalyzer/Core/Core.ProgramState.o: cxx ../../clang/lib/StaticAnalyzer/Core/ProgramState.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = ProgramState.cpp
+  source_name_part = ProgramState
+build obj/clang/lib/StaticAnalyzer/Core/Core.RangeConstraintManager.o: cxx ../../clang/lib/StaticAnalyzer/Core/RangeConstraintManager.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = RangeConstraintManager.cpp
+  source_name_part = RangeConstraintManager
+build obj/clang/lib/StaticAnalyzer/Core/Core.RangedConstraintManager.o: cxx ../../clang/lib/StaticAnalyzer/Core/RangedConstraintManager.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = RangedConstraintManager.cpp
+  source_name_part = RangedConstraintManager
+build obj/clang/lib/StaticAnalyzer/Core/Core.RegionStore.o: cxx ../../clang/lib/StaticAnalyzer/Core/RegionStore.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = RegionStore.cpp
+  source_name_part = RegionStore
+build obj/clang/lib/StaticAnalyzer/Core/Core.SMTConstraintManager.o: cxx ../../clang/lib/StaticAnalyzer/Core/SMTConstraintManager.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = SMTConstraintManager.cpp
+  source_name_part = SMTConstraintManager
+build obj/clang/lib/StaticAnalyzer/Core/Core.SValBuilder.o: cxx ../../clang/lib/StaticAnalyzer/Core/SValBuilder.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = SValBuilder.cpp
+  source_name_part = SValBuilder
+build obj/clang/lib/StaticAnalyzer/Core/Core.SVals.o: cxx ../../clang/lib/StaticAnalyzer/Core/SVals.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = SVals.cpp
+  source_name_part = SVals
+build obj/clang/lib/StaticAnalyzer/Core/Core.SarifDiagnostics.o: cxx ../../clang/lib/StaticAnalyzer/Core/SarifDiagnostics.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = SarifDiagnostics.cpp
+  source_name_part = SarifDiagnostics
+build obj/clang/lib/StaticAnalyzer/Core/Core.SimpleConstraintManager.o: cxx ../../clang/lib/StaticAnalyzer/Core/SimpleConstraintManager.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = SimpleConstraintManager.cpp
+  source_name_part = SimpleConstraintManager
+build obj/clang/lib/StaticAnalyzer/Core/Core.SimpleSValBuilder.o: cxx ../../clang/lib/StaticAnalyzer/Core/SimpleSValBuilder.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = SimpleSValBuilder.cpp
+  source_name_part = SimpleSValBuilder
+build obj/clang/lib/StaticAnalyzer/Core/Core.Store.o: cxx ../../clang/lib/StaticAnalyzer/Core/Store.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = Store.cpp
+  source_name_part = Store
+build obj/clang/lib/StaticAnalyzer/Core/Core.SymbolManager.o: cxx ../../clang/lib/StaticAnalyzer/Core/SymbolManager.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = SymbolManager.cpp
+  source_name_part = SymbolManager
+build obj/clang/lib/StaticAnalyzer/Core/Core.TextDiagnostics.o: cxx ../../clang/lib/StaticAnalyzer/Core/TextDiagnostics.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = TextDiagnostics.cpp
+  source_name_part = TextDiagnostics
+build obj/clang/lib/StaticAnalyzer/Core/Core.WorkList.o: cxx ../../clang/lib/StaticAnalyzer/Core/WorkList.cpp || obj/clang/lib/StaticAnalyzer/Core/Core.inputdeps.stamp
+  source_file_part = WorkList.cpp
+  source_name_part = WorkList
+
+build ./lib/libclangStaticAnalyzerCore.a: alink obj/clang/lib/StaticAnalyzer/Core/Core.APSIntType.o obj/clang/lib/StaticAnalyzer/Core/Core.AnalysisManager.o obj/clang/lib/StaticAnalyzer/Core/Core.AnalyzerOptions.o obj/clang/lib/StaticAnalyzer/Core/Core.BasicValueFactory.o obj/clang/lib/StaticAnalyzer/Core/Core.BlockCounter.o obj/clang/lib/StaticAnalyzer/Core/Core.BugReporter.o obj/clang/lib/StaticAnalyzer/Core/Core.BugReporterVisitors.o obj/clang/lib/StaticAnalyzer/Core/Core.CallDescription.o obj/clang/lib/StaticAnalyzer/Core/Core.CallEvent.o obj/clang/lib/StaticAnalyzer/Core/Core.Checker.o obj/clang/lib/StaticAnalyzer/Core/Core.CheckerContext.o obj/clang/lib/StaticAnalyzer/Core/Core.CheckerHelpers.o obj/clang/lib/StaticAnalyzer/Core/Core.CheckerManager.o obj/clang/lib/StaticAnalyzer/Core/Core.CheckerRegistryData.o obj/clang/lib/StaticAnalyzer/Core/Core.CommonBugCategories.o obj/clang/lib/StaticAnalyzer/Core/Core.ConstraintManager.o obj/clang/lib/StaticAnalyzer/Core/Core.CoreEngine.o obj/clang/lib/StaticAnalyzer/Core/Core.DynamicExtent.o obj/clang/lib/StaticAnalyzer/Core/Core.DynamicType.o obj/clang/lib/StaticAnalyzer/Core/Core.Environment.o obj/clang/lib/StaticAnalyzer/Core/Core.ExplodedGraph.o obj/clang/lib/StaticAnalyzer/Core/Core.ExprEngine.o obj/clang/lib/StaticAnalyzer/Core/Core.ExprEngineC.o obj/clang/lib/StaticAnalyzer/Core/Core.ExprEngineCXX.o obj/clang/lib/StaticAnalyzer/Core/Core.ExprEngineCallAndReturn.o obj/clang/lib/StaticAnalyzer/Core/Core.ExprEngineObjC.o obj/clang/lib/StaticAnalyzer/Core/Core.FunctionSummary.o obj/clang/lib/StaticAnalyzer/Core/Core.HTMLDiagnostics.o obj/clang/lib/StaticAnalyzer/Core/Core.LoopUnrolling.o obj/clang/lib/StaticAnalyzer/Core/Core.LoopWidening.o obj/clang/lib/StaticAnalyzer/Core/Core.MemRegion.o obj/clang/lib/StaticAnalyzer/Core/Core.PlistDiagnostics.o obj/clang/lib/StaticAnalyzer/Core/Core.ProgramState.o obj/clang/lib/StaticAnalyzer/Core/Core.RangeConstraintManager.o obj/clang/lib/StaticAnalyzer/Core/Core.RangedConstraintManager.o obj/clang/lib/StaticAnalyzer/Core/Core.RegionStore.o obj/clang/lib/StaticAnalyzer/Core/Core.SMTConstraintManager.o obj/clang/lib/StaticAnalyzer/Core/Core.SValBuilder.o obj/clang/lib/StaticAnalyzer/Core/Core.SVals.o obj/clang/lib/StaticAnalyzer/Core/Core.SarifDiagnostics.o obj/clang/lib/StaticAnalyzer/Core/Core.SimpleConstraintManager.o obj/clang/lib/StaticAnalyzer/Core/Core.SimpleSValBuilder.o obj/clang/lib/StaticAnalyzer/Core/Core.Store.o obj/clang/lib/StaticAnalyzer/Core/Core.SymbolManager.o obj/clang/lib/StaticAnalyzer/Core/Core.TextDiagnostics.o obj/clang/lib/StaticAnalyzer/Core/Core.WorkList.o || obj/clang/include/clang/Config/Config.stamp ./lib/libclangAST.a ./lib/libclangASTMatchers.a ./lib/libclangAnalysis.a ./lib/libclangBasic.a ./lib/libclangCrossTU.a ./lib/libclangLex.a ./lib/libclangRewrite.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMAnalysis.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libclangFrontend.a ./lib/libclangDriver.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libclangEdit.a ./lib/libclangParse.a ./lib/libclangSema.a ./lib/libclangSupport.a ./lib/libclangSerialization.a ./lib/libclangIndex.a ./lib/libclangFormat.a ./lib/libclangToolingCore.a ./lib/libclangToolingInclusions.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

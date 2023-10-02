@@ -1,0 +1,168 @@
+rule stage2_unix_copy
+  command = ln -f ${in} ${out} 2>/dev/null || (rm -rf ${out} && cp -af ${in} ${out})
+  description = COPY ${in} ${out}
+rule stage2_unix_objcxx
+  command = ./bin/clang++ -MMD -MF ${out}.d -o ${out} -c ${in} ${defines} ${include_dirs} ${cflags} ${cflags_objcc}
+  description = OBJCXX ${out}
+  depfile = ${out}.d
+  deps = gcc
+rule stage2_unix_asm
+  command = ./bin/clang -MMD -MF ${out}.d -o ${out} -c ${in} ${defines} ${include_dirs} ${asmflags}
+  description = ASM ${out}
+  depfile = ${out}.d
+  deps = gcc
+rule stage2_unix_alink
+  command = libtool -D -static -no_warning_for_no_symbols ${arflags} -o ${out} ${in}
+  description = AR ${out}
+rule stage2_unix_solink
+  command = ./bin/clang++ -shared ${ldflags} -o ${output_dir}/${target_output_name}${output_extension} ${in} ${libs} ${frameworks}
+  description = SOLINK ${output_dir}/${target_output_name}${output_extension}
+rule stage2_unix_solink_module
+  command = ./bin/clang++ -shared ${ldflags} -Wl,-flat_namespace -Wl,-undefined,suppress -o ${output_dir}/${target_output_name}${output_extension} ${in} ${libs} ${frameworks}
+  description = SOLINK ${output_dir}/${target_output_name}${output_extension}
+rule stage2_unix_link
+  command = ./bin/clang++ ${ldflags} -o ${output_dir}/${target_output_name}${output_extension} ${in} ${libs} ${frameworks}
+  description = LINK ${output_dir}/${target_output_name}${output_extension}
+rule stage2_unix_stamp
+  command = touch ${out}
+  description = STAMP ${out}
+rule stage2_unix_copy_bundle_data
+  command = rm -rf ${out} && if [[ -d ${in} ]]; then cd ${in} && find . | cpio -pdl "$$OLDPWD"/${out} 2>/dev/null; else ln -f ${in} ${out} 2>/dev/null || (rm -rf ${out} && cp -af ${in} ${out}); fi
+  description = COPY_BUNDLE_DATA ${in} ${out}
+rule stage2_unix_compile_xcassets
+  command = false
+  description = The LLVM build doesn't use any xcasset files
+rule stage2_unix_cc
+  command = ./bin/clang -MMD -MF ${out}.d -o ${out} -c ${in} ${defines} ${include_dirs} ${cflags} ${cflags_c}
+  description = CC ${out}
+  depfile = ${out}.d
+  deps = gcc
+rule stage2_unix_cxx
+  command = ./bin/clang++ -MMD -MF ${out}.d -o ${out} -c ${in} ${defines} ${include_dirs} ${cflags} ${cflags_cc}
+  description = CXX ${out}
+  depfile = ${out}.d
+  deps = gcc
+
+build stage2_unix/obj/compiler-rt/lib/lib.stamp: stage2_unix_stamp obj/compiler-rt/lib/asan/ignorelist.stamp obj/compiler-rt/lib/cfi/ignorelist.stamp stage2_unix/obj/compiler-rt/lib/asan/asan.stamp stage2_unix/obj/compiler-rt/lib/ubsan/ubsan.stamp lib/clang/16.0.0/lib/darwin/libclang_rt.tsan_osx_dynamic.dylib lib/clang/16.0.0/lib/darwin/libclang_rt.osx.a lib/clang/16.0.0/lib/darwin/libclang_rt.profile_osx.a
+build stage2_unix/obj/compiler-rt/lib/asan/asan.stamp: stage2_unix_stamp lib/clang/16.0.0/lib/darwin/libclang_rt.asan_osx_dynamic.dylib
+subninja stage2_unix/obj/compiler-rt/lib/asan/asan_shared_library.ninja
+subninja stage2_unix/obj/compiler-rt/lib/asan/cxx_sources.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/builtins.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_16_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_16_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_16_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_16_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_1_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_1_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_1_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_1_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_2_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_2_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_2_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_2_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_4_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_4_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_4_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_4_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_8_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_8_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_8_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_cas_8_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_1_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_1_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_1_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_1_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_2_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_2_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_2_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_2_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_4_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_4_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_4_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_4_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_8_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_8_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_8_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldadd_8_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_1_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_1_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_1_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_1_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_2_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_2_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_2_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_2_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_4_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_4_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_4_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_4_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_8_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_8_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_8_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldclr_8_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_1_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_1_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_1_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_1_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_2_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_2_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_2_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_2_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_4_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_4_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_4_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_4_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_8_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_8_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_8_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldeor_8_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_1_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_1_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_1_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_1_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_2_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_2_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_2_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_2_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_4_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_4_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_4_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_4_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_8_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_8_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_8_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_ldset_8_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_1_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_1_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_1_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_1_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_2_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_2_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_2_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_2_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_4_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_4_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_4_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_4_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_8_1.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_8_2.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_8_3.ninja
+subninja stage2_unix/obj/compiler-rt/lib/builtins/lse_swp_8_4.ninja
+subninja stage2_unix/obj/compiler-rt/lib/interception/sources.ninja
+subninja stage2_unix/obj/compiler-rt/lib/lsan/common_sources.ninja
+subninja stage2_unix/obj/compiler-rt/lib/profile/profile.ninja
+subninja stage2_unix/obj/compiler-rt/lib/sanitizer_common/sources.ninja
+subninja stage2_unix/obj/compiler-rt/lib/tsan/rtl/cxx_sources.ninja
+subninja stage2_unix/obj/compiler-rt/lib/tsan/rtl/rtl.ninja
+subninja stage2_unix/obj/compiler-rt/lib/ubsan/cxx_sources.ninja
+subninja stage2_unix/obj/compiler-rt/lib/ubsan/sources.ninja
+subninja stage2_unix/obj/compiler-rt/lib/ubsan/standalone_sources.ninja
+build stage2_unix/obj/compiler-rt/lib/ubsan/ubsan.stamp: stage2_unix_stamp lib/clang/16.0.0/lib/darwin/libclang_rt.ubsan_osx_dynamic.dylib lib/clang/16.0.0/lib/darwin/libclang_rt.ubsan_osx.a
+subninja stage2_unix/obj/compiler-rt/lib/ubsan/ubsan_shared.ninja
+subninja stage2_unix/obj/compiler-rt/lib/ubsan/ubsan_static.ninja
+subninja stage2_unix/obj/compiler-rt/lib/ubsan/version_script.ninja
+build stage2_unix/obj/libunwind/src/src.stamp: stage2_unix_stamp lib/libunwind.dylib lib/libunwind.a lib/libunwind-exported.a
+subninja stage2_unix/obj/libunwind/src/unwind_shared.ninja
+subninja stage2_unix/obj/libunwind/src/unwind_static.ninja
+subninja stage2_unix/obj/libunwind/src/unwind_static_exported.ninja
+build stage2_unix/obj/llvm/utils/gn/build/libs/pthread/pthread.stamp: stage2_unix_stamp

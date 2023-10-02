@@ -1,0 +1,28 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = TextAPITests
+target_output_name = TextAPITests
+
+build obj/llvm/unittests/TextAPI/TextAPITests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/llvm/unittests/TextAPI/TextAPITests.TextStubV1Tests.o: cxx ../../llvm/unittests/TextAPI/TextStubV1Tests.cpp || obj/llvm/unittests/TextAPI/TextAPITests.inputdeps.stamp
+  source_file_part = TextStubV1Tests.cpp
+  source_name_part = TextStubV1Tests
+build obj/llvm/unittests/TextAPI/TextAPITests.TextStubV2Tests.o: cxx ../../llvm/unittests/TextAPI/TextStubV2Tests.cpp || obj/llvm/unittests/TextAPI/TextAPITests.inputdeps.stamp
+  source_file_part = TextStubV2Tests.cpp
+  source_name_part = TextStubV2Tests
+build obj/llvm/unittests/TextAPI/TextAPITests.TextStubV3Tests.o: cxx ../../llvm/unittests/TextAPI/TextStubV3Tests.cpp || obj/llvm/unittests/TextAPI/TextAPITests.inputdeps.stamp
+  source_file_part = TextStubV3Tests.cpp
+  source_name_part = TextStubV3Tests
+build obj/llvm/unittests/TextAPI/TextAPITests.TextStubV4Tests.o: cxx ../../llvm/unittests/TextAPI/TextStubV4Tests.cpp || obj/llvm/unittests/TextAPI/TextAPITests.inputdeps.stamp
+  source_file_part = TextStubV4Tests.cpp
+  source_name_part = TextStubV4Tests
+
+build obj/llvm/unittests/TextAPI/TextAPITests: link obj/llvm/unittests/TextAPI/TextAPITests.TextStubV1Tests.o obj/llvm/unittests/TextAPI/TextAPITests.TextStubV2Tests.o obj/llvm/unittests/TextAPI/TextAPITests.TextStubV3Tests.o obj/llvm/unittests/TextAPI/TextAPITests.TextStubV4Tests.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMTestingSupport.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libgtest.a ./lib/libLLVMBinaryFormat.a || obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/TextAPI

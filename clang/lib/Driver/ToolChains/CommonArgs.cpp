@@ -18,6 +18,7 @@
 #include "Arch/X86.h"
 #include "HIPAMD.h"
 #include "Hexagon.h"
+#include "Xtensa.h"
 #include "clang/Basic/CharInfo.h"
 #include "clang/Basic/LangOptions.h"
 #include "clang/Basic/ObjCRuntime.h"
@@ -468,6 +469,11 @@ std::string tools::getCPUName(const Driver &D, const ArgList &Args,
   case llvm::Triple::wasm32:
   case llvm::Triple::wasm64:
     return std::string(getWebAssemblyTargetCPU(Args));
+      
+  case llvm::Triple::xtensa:
+    if (const Arg *A = Args.getLastArg(options::OPT_mcpu_EQ))
+      return A->getValue();
+    return "";
   }
 }
 
@@ -2247,4 +2253,16 @@ void tools::addHIPRuntimeLibArgs(const ToolChain &TC,
       Arg->claim();
     }
   }
+}
+void tools::addEspMultilibsPaths(const Driver &D, const MultilibSet &Multilibs,
+                                 const Multilib &Multilib,
+                                 StringRef CPU,
+                                 StringRef InstallPath,
+                                 ToolChain::path_list &Paths) {
+  if (const auto &PathsCallback = Multilibs.filePathsCallback())
+    for (const auto &Path : PathsCallback(Multilib)) {
+      SmallString<256> LibPath(D.ResourceDir);
+      llvm::sys::path::append(LibPath, D.getTargetTriple(), CPU, Path, "lib");
+      addPathIfExists(D, LibPath, Paths);
+    }
 }

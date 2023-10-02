@@ -1,0 +1,18 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = SecondLib
+target_output_name = SecondLib
+
+build obj/llvm/unittests/Support/DynamicLibrary/SecondLib.PipSqueak.o: cxx ../../llvm/unittests/Support/DynamicLibrary/PipSqueak.cpp
+  source_file_part = PipSqueak.cpp
+  source_name_part = PipSqueak
+
+build obj/llvm/unittests/Support/DynamicLibrary/SecondLib.dylib: solink_module obj/llvm/unittests/Support/DynamicLibrary/SecondLib.PipSqueak.o
+  ldflags = -mmacos-version-min=10.10
+  libs =
+  frameworks =
+  swiftmodules =
+  output_extension = .dylib
+  output_dir = obj/llvm/unittests/Support/DynamicLibrary

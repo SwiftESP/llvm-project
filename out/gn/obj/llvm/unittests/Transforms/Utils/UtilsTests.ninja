@@ -1,0 +1,79 @@
+defines = -DGTEST_LANG_CXX11 -DGTEST_HAS_RTTI=0
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR -I../../llvm/utils/unittest/googlemock/include -I../../llvm/utils/unittest/googletest/include
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = UtilsTests
+target_output_name = UtilsTests
+
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.ASanStackFrameLayoutTest.o: cxx ../../llvm/unittests/Transforms/Utils/ASanStackFrameLayoutTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = ASanStackFrameLayoutTest.cpp
+  source_name_part = ASanStackFrameLayoutTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.BasicBlockUtilsTest.o: cxx ../../llvm/unittests/Transforms/Utils/BasicBlockUtilsTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = BasicBlockUtilsTest.cpp
+  source_name_part = BasicBlockUtilsTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.CallPromotionUtilsTest.o: cxx ../../llvm/unittests/Transforms/Utils/CallPromotionUtilsTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = CallPromotionUtilsTest.cpp
+  source_name_part = CallPromotionUtilsTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.CloningTest.o: cxx ../../llvm/unittests/Transforms/Utils/CloningTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = CloningTest.cpp
+  source_name_part = CloningTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.CodeExtractorTest.o: cxx ../../llvm/unittests/Transforms/Utils/CodeExtractorTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = CodeExtractorTest.cpp
+  source_name_part = CodeExtractorTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.CodeMoverUtilsTest.o: cxx ../../llvm/unittests/Transforms/Utils/CodeMoverUtilsTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = CodeMoverUtilsTest.cpp
+  source_name_part = CodeMoverUtilsTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.DebugifyTest.o: cxx ../../llvm/unittests/Transforms/Utils/DebugifyTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = DebugifyTest.cpp
+  source_name_part = DebugifyTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.FunctionComparatorTest.o: cxx ../../llvm/unittests/Transforms/Utils/FunctionComparatorTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = FunctionComparatorTest.cpp
+  source_name_part = FunctionComparatorTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.IntegerDivisionTest.o: cxx ../../llvm/unittests/Transforms/Utils/IntegerDivisionTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = IntegerDivisionTest.cpp
+  source_name_part = IntegerDivisionTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.LocalTest.o: cxx ../../llvm/unittests/Transforms/Utils/LocalTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = LocalTest.cpp
+  source_name_part = LocalTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.LoopRotationUtilsTest.o: cxx ../../llvm/unittests/Transforms/Utils/LoopRotationUtilsTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = LoopRotationUtilsTest.cpp
+  source_name_part = LoopRotationUtilsTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.LoopUtilsTest.o: cxx ../../llvm/unittests/Transforms/Utils/LoopUtilsTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = LoopUtilsTest.cpp
+  source_name_part = LoopUtilsTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.MemTransferLowering.o: cxx ../../llvm/unittests/Transforms/Utils/MemTransferLowering.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = MemTransferLowering.cpp
+  source_name_part = MemTransferLowering
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.ModuleUtilsTest.o: cxx ../../llvm/unittests/Transforms/Utils/ModuleUtilsTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = ModuleUtilsTest.cpp
+  source_name_part = ModuleUtilsTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.ProfDataUtilTest.o: cxx ../../llvm/unittests/Transforms/Utils/ProfDataUtilTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = ProfDataUtilTest.cpp
+  source_name_part = ProfDataUtilTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.SSAUpdaterBulkTest.o: cxx ../../llvm/unittests/Transforms/Utils/SSAUpdaterBulkTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = SSAUpdaterBulkTest.cpp
+  source_name_part = SSAUpdaterBulkTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.ScalarEvolutionExpanderTest.o: cxx ../../llvm/unittests/Transforms/Utils/ScalarEvolutionExpanderTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = ScalarEvolutionExpanderTest.cpp
+  source_name_part = ScalarEvolutionExpanderTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.SizeOptsTest.o: cxx ../../llvm/unittests/Transforms/Utils/SizeOptsTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = SizeOptsTest.cpp
+  source_name_part = SizeOptsTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.UnrollLoopTest.o: cxx ../../llvm/unittests/Transforms/Utils/UnrollLoopTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = UnrollLoopTest.cpp
+  source_name_part = UnrollLoopTest
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.VFABIUtils.o: cxx ../../llvm/unittests/Transforms/Utils/VFABIUtils.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = VFABIUtils.cpp
+  source_name_part = VFABIUtils
+build obj/llvm/unittests/Transforms/Utils/UtilsTests.ValueMapperTest.o: cxx ../../llvm/unittests/Transforms/Utils/ValueMapperTest.cpp || obj/llvm/unittests/Transforms/Utils/UtilsTests.inputdeps.stamp
+  source_file_part = ValueMapperTest.cpp
+  source_name_part = ValueMapperTest
+
+build obj/llvm/unittests/Transforms/Utils/UtilsTests: link obj/llvm/unittests/Transforms/Utils/UtilsTests.ASanStackFrameLayoutTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.BasicBlockUtilsTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.CallPromotionUtilsTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.CloningTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.CodeExtractorTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.CodeMoverUtilsTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.DebugifyTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.FunctionComparatorTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.IntegerDivisionTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.LocalTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.LoopRotationUtilsTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.LoopUtilsTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.MemTransferLowering.o obj/llvm/unittests/Transforms/Utils/UtilsTests.ModuleUtilsTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.ProfDataUtilTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.SSAUpdaterBulkTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.ScalarEvolutionExpanderTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.SizeOptsTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.UnrollLoopTest.o obj/llvm/unittests/Transforms/Utils/UtilsTests.VFABIUtils.o obj/llvm/unittests/Transforms/Utils/UtilsTests.ValueMapperTest.o obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.TestMain.o ./lib/libLLVMAnalysis.a ./lib/libLLVMAsmParser.a ./lib/libLLVMBitWriter.a ./lib/libLLVMCore.a ./lib/libLLVMPasses.a ./lib/libLLVMSupport.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMVectorize.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMCodeGen.a ./lib/libLLVMTarget.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMCoroutines.a ./lib/libLLVMipo.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMLinker.a ./lib/libLLVMInstrumentation.a ./lib/libLLVMObjCARCOpts.a ./lib/libgtest.a || obj/llvm/utils/unittest/UnitTestMain/UnitTestMain.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = obj/llvm/unittests/Transforms/Utils

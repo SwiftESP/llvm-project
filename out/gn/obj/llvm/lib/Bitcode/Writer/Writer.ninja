@@ -1,0 +1,25 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Writer
+target_output_name = libLLVMBitWriter
+
+build obj/llvm/lib/Bitcode/Writer/Writer.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/Bitcode/Writer/Writer.BitWriter.o: cxx ../../llvm/lib/Bitcode/Writer/BitWriter.cpp || obj/llvm/lib/Bitcode/Writer/Writer.inputdeps.stamp
+  source_file_part = BitWriter.cpp
+  source_name_part = BitWriter
+build obj/llvm/lib/Bitcode/Writer/Writer.BitcodeWriter.o: cxx ../../llvm/lib/Bitcode/Writer/BitcodeWriter.cpp || obj/llvm/lib/Bitcode/Writer/Writer.inputdeps.stamp
+  source_file_part = BitcodeWriter.cpp
+  source_name_part = BitcodeWriter
+build obj/llvm/lib/Bitcode/Writer/Writer.BitcodeWriterPass.o: cxx ../../llvm/lib/Bitcode/Writer/BitcodeWriterPass.cpp || obj/llvm/lib/Bitcode/Writer/Writer.inputdeps.stamp
+  source_file_part = BitcodeWriterPass.cpp
+  source_name_part = BitcodeWriterPass
+build obj/llvm/lib/Bitcode/Writer/Writer.ValueEnumerator.o: cxx ../../llvm/lib/Bitcode/Writer/ValueEnumerator.cpp || obj/llvm/lib/Bitcode/Writer/Writer.inputdeps.stamp
+  source_file_part = ValueEnumerator.cpp
+  source_name_part = ValueEnumerator
+
+build ./lib/libLLVMBitWriter.a: alink obj/llvm/lib/Bitcode/Writer/Writer.BitWriter.o obj/llvm/lib/Bitcode/Writer/Writer.BitcodeWriter.o obj/llvm/lib/Bitcode/Writer/Writer.BitcodeWriterPass.o obj/llvm/lib/Bitcode/Writer/Writer.ValueEnumerator.o || obj/llvm/include/llvm/Config/llvm-config.stamp ./lib/libLLVMAnalysis.a ./lib/libLLVMCore.a ./lib/libLLVMMC.a ./lib/libLLVMObject.a ./lib/libLLVMSupport.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

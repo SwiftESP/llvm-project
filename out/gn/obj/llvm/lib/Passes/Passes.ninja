@@ -1,0 +1,31 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Passes
+target_output_name = libLLVMPasses
+
+build obj/llvm/lib/Passes/Passes.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/Passes/Passes.OptimizationLevel.o: cxx ../../llvm/lib/Passes/OptimizationLevel.cpp || obj/llvm/lib/Passes/Passes.inputdeps.stamp
+  source_file_part = OptimizationLevel.cpp
+  source_name_part = OptimizationLevel
+build obj/llvm/lib/Passes/Passes.PassBuilder.o: cxx ../../llvm/lib/Passes/PassBuilder.cpp || obj/llvm/lib/Passes/Passes.inputdeps.stamp
+  source_file_part = PassBuilder.cpp
+  source_name_part = PassBuilder
+build obj/llvm/lib/Passes/Passes.PassBuilderBindings.o: cxx ../../llvm/lib/Passes/PassBuilderBindings.cpp || obj/llvm/lib/Passes/Passes.inputdeps.stamp
+  source_file_part = PassBuilderBindings.cpp
+  source_name_part = PassBuilderBindings
+build obj/llvm/lib/Passes/Passes.PassBuilderPipelines.o: cxx ../../llvm/lib/Passes/PassBuilderPipelines.cpp || obj/llvm/lib/Passes/Passes.inputdeps.stamp
+  source_file_part = PassBuilderPipelines.cpp
+  source_name_part = PassBuilderPipelines
+build obj/llvm/lib/Passes/Passes.PassPlugin.o: cxx ../../llvm/lib/Passes/PassPlugin.cpp || obj/llvm/lib/Passes/Passes.inputdeps.stamp
+  source_file_part = PassPlugin.cpp
+  source_name_part = PassPlugin
+build obj/llvm/lib/Passes/Passes.StandardInstrumentations.o: cxx ../../llvm/lib/Passes/StandardInstrumentations.cpp || obj/llvm/lib/Passes/Passes.inputdeps.stamp
+  source_file_part = StandardInstrumentations.cpp
+  source_name_part = StandardInstrumentations
+
+build ./lib/libLLVMPasses.a: alink obj/llvm/lib/Passes/Passes.OptimizationLevel.o obj/llvm/lib/Passes/Passes.PassBuilder.o obj/llvm/lib/Passes/Passes.PassBuilderBindings.o obj/llvm/lib/Passes/Passes.PassBuilderPipelines.o obj/llvm/lib/Passes/Passes.PassPlugin.o obj/llvm/lib/Passes/Passes.StandardInstrumentations.o || ./lib/libLLVMAnalysis.a ./lib/libLLVMCodeGen.a ./lib/libLLVMCore.a ./lib/libLLVMSupport.a ./lib/libLLVMTarget.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMCoroutines.a ./lib/libLLVMipo.a ./lib/libLLVMInstCombine.a ./lib/libLLVMInstrumentation.a ./lib/libLLVMObjCARCOpts.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMVectorize.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMBitWriter.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMLinker.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

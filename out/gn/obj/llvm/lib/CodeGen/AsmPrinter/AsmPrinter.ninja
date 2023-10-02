@@ -1,0 +1,94 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = AsmPrinter
+target_output_name = libLLVMAsmPrinter
+
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.AIXException.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/AIXException.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = AIXException.cpp
+  source_name_part = AIXException
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.ARMException.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/ARMException.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = ARMException.cpp
+  source_name_part = ARMException
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.AccelTable.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/AccelTable.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = AccelTable.cpp
+  source_name_part = AccelTable
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.AddressPool.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/AddressPool.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = AddressPool.cpp
+  source_name_part = AddressPool
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.AsmPrinter.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/AsmPrinter.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = AsmPrinter.cpp
+  source_name_part = AsmPrinter
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.AsmPrinterDwarf.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/AsmPrinterDwarf.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = AsmPrinterDwarf.cpp
+  source_name_part = AsmPrinterDwarf
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.AsmPrinterInlineAsm.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/AsmPrinterInlineAsm.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = AsmPrinterInlineAsm.cpp
+  source_name_part = AsmPrinterInlineAsm
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.CodeViewDebug.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/CodeViewDebug.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = CodeViewDebug.cpp
+  source_name_part = CodeViewDebug
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DIE.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/DIE.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = DIE.cpp
+  source_name_part = DIE
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DIEHash.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/DIEHash.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = DIEHash.cpp
+  source_name_part = DIEHash
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DbgEntityHistoryCalculator.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/DbgEntityHistoryCalculator.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = DbgEntityHistoryCalculator.cpp
+  source_name_part = DbgEntityHistoryCalculator
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DebugHandlerBase.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/DebugHandlerBase.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = DebugHandlerBase.cpp
+  source_name_part = DebugHandlerBase
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DebugLocStream.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/DebugLocStream.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = DebugLocStream.cpp
+  source_name_part = DebugLocStream
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DwarfCFIException.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/DwarfCFIException.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = DwarfCFIException.cpp
+  source_name_part = DwarfCFIException
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DwarfCompileUnit.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/DwarfCompileUnit.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = DwarfCompileUnit.cpp
+  source_name_part = DwarfCompileUnit
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DwarfDebug.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/DwarfDebug.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = DwarfDebug.cpp
+  source_name_part = DwarfDebug
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DwarfExpression.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/DwarfExpression.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = DwarfExpression.cpp
+  source_name_part = DwarfExpression
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DwarfFile.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/DwarfFile.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = DwarfFile.cpp
+  source_name_part = DwarfFile
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DwarfStringPool.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/DwarfStringPool.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = DwarfStringPool.cpp
+  source_name_part = DwarfStringPool
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DwarfUnit.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/DwarfUnit.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = DwarfUnit.cpp
+  source_name_part = DwarfUnit
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.EHStreamer.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/EHStreamer.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = EHStreamer.cpp
+  source_name_part = EHStreamer
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.ErlangGCPrinter.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/ErlangGCPrinter.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = ErlangGCPrinter.cpp
+  source_name_part = ErlangGCPrinter
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.OcamlGCPrinter.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/OcamlGCPrinter.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = OcamlGCPrinter.cpp
+  source_name_part = OcamlGCPrinter
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.PseudoProbePrinter.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/PseudoProbePrinter.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = PseudoProbePrinter.cpp
+  source_name_part = PseudoProbePrinter
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.WasmException.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/WasmException.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = WasmException.cpp
+  source_name_part = WasmException
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.WinCFGuard.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/WinCFGuard.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = WinCFGuard.cpp
+  source_name_part = WinCFGuard
+build obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.WinException.o: cxx ../../llvm/lib/CodeGen/AsmPrinter/WinException.cpp || obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.inputdeps.stamp
+  source_file_part = WinException.cpp
+  source_name_part = WinException
+
+build ./lib/libLLVMAsmPrinter.a: alink obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.AIXException.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.ARMException.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.AccelTable.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.AddressPool.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.AsmPrinter.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.AsmPrinterDwarf.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.AsmPrinterInlineAsm.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.CodeViewDebug.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DIE.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DIEHash.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DbgEntityHistoryCalculator.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DebugHandlerBase.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DebugLocStream.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DwarfCFIException.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DwarfCompileUnit.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DwarfDebug.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DwarfExpression.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DwarfFile.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DwarfStringPool.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.DwarfUnit.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.EHStreamer.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.ErlangGCPrinter.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.OcamlGCPrinter.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.PseudoProbePrinter.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.WasmException.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.WinCFGuard.o obj/llvm/lib/CodeGen/AsmPrinter/AsmPrinter.WinException.o || ./lib/libLLVMAnalysis.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMCodeGen.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMCore.a ./lib/libLLVMMC.a ./lib/libLLVMMCParser.a ./lib/libLLVMRemarks.a ./lib/libLLVMSupport.a ./lib/libLLVMTarget.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

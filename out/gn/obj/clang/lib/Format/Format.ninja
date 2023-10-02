@@ -1,0 +1,67 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -Igen/clang/include/clang/Basic -Igen/clang/include/clang/Sema -Igen/llvm/include/llvm/Frontend/OpenMP
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Format
+target_output_name = libclangFormat
+
+build obj/clang/lib/Format/Format.inputdeps.stamp: stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp
+build obj/clang/lib/Format/Format.AffectedRangeManager.o: cxx ../../clang/lib/Format/AffectedRangeManager.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = AffectedRangeManager.cpp
+  source_name_part = AffectedRangeManager
+build obj/clang/lib/Format/Format.BreakableToken.o: cxx ../../clang/lib/Format/BreakableToken.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = BreakableToken.cpp
+  source_name_part = BreakableToken
+build obj/clang/lib/Format/Format.ContinuationIndenter.o: cxx ../../clang/lib/Format/ContinuationIndenter.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = ContinuationIndenter.cpp
+  source_name_part = ContinuationIndenter
+build obj/clang/lib/Format/Format.DefinitionBlockSeparator.o: cxx ../../clang/lib/Format/DefinitionBlockSeparator.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = DefinitionBlockSeparator.cpp
+  source_name_part = DefinitionBlockSeparator
+build obj/clang/lib/Format/Format.Format.o: cxx ../../clang/lib/Format/Format.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = Format.cpp
+  source_name_part = Format
+build obj/clang/lib/Format/Format.FormatToken.o: cxx ../../clang/lib/Format/FormatToken.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = FormatToken.cpp
+  source_name_part = FormatToken
+build obj/clang/lib/Format/Format.FormatTokenLexer.o: cxx ../../clang/lib/Format/FormatTokenLexer.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = FormatTokenLexer.cpp
+  source_name_part = FormatTokenLexer
+build obj/clang/lib/Format/Format.MacroCallReconstructor.o: cxx ../../clang/lib/Format/MacroCallReconstructor.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = MacroCallReconstructor.cpp
+  source_name_part = MacroCallReconstructor
+build obj/clang/lib/Format/Format.MacroExpander.o: cxx ../../clang/lib/Format/MacroExpander.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = MacroExpander.cpp
+  source_name_part = MacroExpander
+build obj/clang/lib/Format/Format.NamespaceEndCommentsFixer.o: cxx ../../clang/lib/Format/NamespaceEndCommentsFixer.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = NamespaceEndCommentsFixer.cpp
+  source_name_part = NamespaceEndCommentsFixer
+build obj/clang/lib/Format/Format.QualifierAlignmentFixer.o: cxx ../../clang/lib/Format/QualifierAlignmentFixer.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = QualifierAlignmentFixer.cpp
+  source_name_part = QualifierAlignmentFixer
+build obj/clang/lib/Format/Format.SortJavaScriptImports.o: cxx ../../clang/lib/Format/SortJavaScriptImports.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = SortJavaScriptImports.cpp
+  source_name_part = SortJavaScriptImports
+build obj/clang/lib/Format/Format.TokenAnalyzer.o: cxx ../../clang/lib/Format/TokenAnalyzer.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = TokenAnalyzer.cpp
+  source_name_part = TokenAnalyzer
+build obj/clang/lib/Format/Format.TokenAnnotator.o: cxx ../../clang/lib/Format/TokenAnnotator.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = TokenAnnotator.cpp
+  source_name_part = TokenAnnotator
+build obj/clang/lib/Format/Format.UnwrappedLineFormatter.o: cxx ../../clang/lib/Format/UnwrappedLineFormatter.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = UnwrappedLineFormatter.cpp
+  source_name_part = UnwrappedLineFormatter
+build obj/clang/lib/Format/Format.UnwrappedLineParser.o: cxx ../../clang/lib/Format/UnwrappedLineParser.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = UnwrappedLineParser.cpp
+  source_name_part = UnwrappedLineParser
+build obj/clang/lib/Format/Format.UsingDeclarationsSorter.o: cxx ../../clang/lib/Format/UsingDeclarationsSorter.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = UsingDeclarationsSorter.cpp
+  source_name_part = UsingDeclarationsSorter
+build obj/clang/lib/Format/Format.WhitespaceManager.o: cxx ../../clang/lib/Format/WhitespaceManager.cpp || obj/clang/lib/Format/Format.inputdeps.stamp
+  source_file_part = WhitespaceManager.cpp
+  source_name_part = WhitespaceManager
+
+build ./lib/libclangFormat.a: alink obj/clang/lib/Format/Format.AffectedRangeManager.o obj/clang/lib/Format/Format.BreakableToken.o obj/clang/lib/Format/Format.ContinuationIndenter.o obj/clang/lib/Format/Format.DefinitionBlockSeparator.o obj/clang/lib/Format/Format.Format.o obj/clang/lib/Format/Format.FormatToken.o obj/clang/lib/Format/Format.FormatTokenLexer.o obj/clang/lib/Format/Format.MacroCallReconstructor.o obj/clang/lib/Format/Format.MacroExpander.o obj/clang/lib/Format/Format.NamespaceEndCommentsFixer.o obj/clang/lib/Format/Format.QualifierAlignmentFixer.o obj/clang/lib/Format/Format.SortJavaScriptImports.o obj/clang/lib/Format/Format.TokenAnalyzer.o obj/clang/lib/Format/Format.TokenAnnotator.o obj/clang/lib/Format/Format.UnwrappedLineFormatter.o obj/clang/lib/Format/Format.UnwrappedLineParser.o obj/clang/lib/Format/Format.UsingDeclarationsSorter.o obj/clang/lib/Format/Format.WhitespaceManager.o || ./lib/libclangBasic.a ./lib/libclangLex.a ./lib/libclangToolingCore.a ./lib/libclangToolingInclusions.a ./lib/libLLVMSupport.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libclangRewrite.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

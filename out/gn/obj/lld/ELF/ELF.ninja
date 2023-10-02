@@ -1,0 +1,127 @@
+defines =
+include_dirs = -I../../lld/ELF -I../../llvm/include -Igen/llvm/include -I../../lld/include -Igen/lld/include -Igen/lld/ELF -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = ELF
+target_output_name = liblldELF
+
+build obj/lld/ELF/ELF.inputdeps.stamp: stamp obj/lld/Common/write_vcsversion.stamp obj/lld/ELF/Options.stamp obj/lld/include/lld/Common/version.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build obj/lld/ELF/ELF.AArch64ErrataFix.o: cxx ../../lld/ELF/AArch64ErrataFix.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = AArch64ErrataFix.cpp
+  source_name_part = AArch64ErrataFix
+build obj/lld/ELF/ELF.ARMErrataFix.o: cxx ../../lld/ELF/ARMErrataFix.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = ARMErrataFix.cpp
+  source_name_part = ARMErrataFix
+build obj/lld/ELF/Arch/ELF.AArch64.o: cxx ../../lld/ELF/Arch/AArch64.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = AArch64.cpp
+  source_name_part = AArch64
+build obj/lld/ELF/Arch/ELF.AMDGPU.o: cxx ../../lld/ELF/Arch/AMDGPU.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = AMDGPU.cpp
+  source_name_part = AMDGPU
+build obj/lld/ELF/Arch/ELF.ARM.o: cxx ../../lld/ELF/Arch/ARM.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = ARM.cpp
+  source_name_part = ARM
+build obj/lld/ELF/Arch/ELF.AVR.o: cxx ../../lld/ELF/Arch/AVR.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = AVR.cpp
+  source_name_part = AVR
+build obj/lld/ELF/Arch/ELF.Hexagon.o: cxx ../../lld/ELF/Arch/Hexagon.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = Hexagon.cpp
+  source_name_part = Hexagon
+build obj/lld/ELF/Arch/ELF.MSP430.o: cxx ../../lld/ELF/Arch/MSP430.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = MSP430.cpp
+  source_name_part = MSP430
+build obj/lld/ELF/Arch/ELF.Mips.o: cxx ../../lld/ELF/Arch/Mips.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = Mips.cpp
+  source_name_part = Mips
+build obj/lld/ELF/Arch/ELF.MipsArchTree.o: cxx ../../lld/ELF/Arch/MipsArchTree.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = MipsArchTree.cpp
+  source_name_part = MipsArchTree
+build obj/lld/ELF/Arch/ELF.PPC.o: cxx ../../lld/ELF/Arch/PPC.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = PPC.cpp
+  source_name_part = PPC
+build obj/lld/ELF/Arch/ELF.PPC64.o: cxx ../../lld/ELF/Arch/PPC64.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = PPC64.cpp
+  source_name_part = PPC64
+build obj/lld/ELF/Arch/ELF.RISCV.o: cxx ../../lld/ELF/Arch/RISCV.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = RISCV.cpp
+  source_name_part = RISCV
+build obj/lld/ELF/Arch/ELF.SPARCV9.o: cxx ../../lld/ELF/Arch/SPARCV9.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = SPARCV9.cpp
+  source_name_part = SPARCV9
+build obj/lld/ELF/Arch/ELF.X86.o: cxx ../../lld/ELF/Arch/X86.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = X86.cpp
+  source_name_part = X86
+build obj/lld/ELF/Arch/ELF.X86_64.o: cxx ../../lld/ELF/Arch/X86_64.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = X86_64.cpp
+  source_name_part = X86_64
+build obj/lld/ELF/ELF.CallGraphSort.o: cxx ../../lld/ELF/CallGraphSort.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = CallGraphSort.cpp
+  source_name_part = CallGraphSort
+build obj/lld/ELF/ELF.DWARF.o: cxx ../../lld/ELF/DWARF.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = DWARF.cpp
+  source_name_part = DWARF
+build obj/lld/ELF/ELF.Driver.o: cxx ../../lld/ELF/Driver.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = Driver.cpp
+  source_name_part = Driver
+build obj/lld/ELF/ELF.DriverUtils.o: cxx ../../lld/ELF/DriverUtils.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = DriverUtils.cpp
+  source_name_part = DriverUtils
+build obj/lld/ELF/ELF.EhFrame.o: cxx ../../lld/ELF/EhFrame.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = EhFrame.cpp
+  source_name_part = EhFrame
+build obj/lld/ELF/ELF.ICF.o: cxx ../../lld/ELF/ICF.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = ICF.cpp
+  source_name_part = ICF
+build obj/lld/ELF/ELF.InputFiles.o: cxx ../../lld/ELF/InputFiles.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = InputFiles.cpp
+  source_name_part = InputFiles
+build obj/lld/ELF/ELF.InputSection.o: cxx ../../lld/ELF/InputSection.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = InputSection.cpp
+  source_name_part = InputSection
+build obj/lld/ELF/ELF.LTO.o: cxx ../../lld/ELF/LTO.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = LTO.cpp
+  source_name_part = LTO
+build obj/lld/ELF/ELF.LinkerScript.o: cxx ../../lld/ELF/LinkerScript.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = LinkerScript.cpp
+  source_name_part = LinkerScript
+build obj/lld/ELF/ELF.MapFile.o: cxx ../../lld/ELF/MapFile.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = MapFile.cpp
+  source_name_part = MapFile
+build obj/lld/ELF/ELF.MarkLive.o: cxx ../../lld/ELF/MarkLive.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = MarkLive.cpp
+  source_name_part = MarkLive
+build obj/lld/ELF/ELF.OutputSections.o: cxx ../../lld/ELF/OutputSections.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = OutputSections.cpp
+  source_name_part = OutputSections
+build obj/lld/ELF/ELF.Relocations.o: cxx ../../lld/ELF/Relocations.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = Relocations.cpp
+  source_name_part = Relocations
+build obj/lld/ELF/ELF.ScriptLexer.o: cxx ../../lld/ELF/ScriptLexer.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = ScriptLexer.cpp
+  source_name_part = ScriptLexer
+build obj/lld/ELF/ELF.ScriptParser.o: cxx ../../lld/ELF/ScriptParser.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = ScriptParser.cpp
+  source_name_part = ScriptParser
+build obj/lld/ELF/ELF.SymbolTable.o: cxx ../../lld/ELF/SymbolTable.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = SymbolTable.cpp
+  source_name_part = SymbolTable
+build obj/lld/ELF/ELF.Symbols.o: cxx ../../lld/ELF/Symbols.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = Symbols.cpp
+  source_name_part = Symbols
+build obj/lld/ELF/ELF.SyntheticSections.o: cxx ../../lld/ELF/SyntheticSections.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = SyntheticSections.cpp
+  source_name_part = SyntheticSections
+build obj/lld/ELF/ELF.Target.o: cxx ../../lld/ELF/Target.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = Target.cpp
+  source_name_part = Target
+build obj/lld/ELF/ELF.Thunks.o: cxx ../../lld/ELF/Thunks.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = Thunks.cpp
+  source_name_part = Thunks
+build obj/lld/ELF/ELF.Writer.o: cxx ../../lld/ELF/Writer.cpp || obj/lld/ELF/ELF.inputdeps.stamp
+  source_file_part = Writer.cpp
+  source_name_part = Writer
+
+build ./lib/liblldELF.a: alink obj/lld/ELF/ELF.AArch64ErrataFix.o obj/lld/ELF/ELF.ARMErrataFix.o obj/lld/ELF/Arch/ELF.AArch64.o obj/lld/ELF/Arch/ELF.AMDGPU.o obj/lld/ELF/Arch/ELF.ARM.o obj/lld/ELF/Arch/ELF.AVR.o obj/lld/ELF/Arch/ELF.Hexagon.o obj/lld/ELF/Arch/ELF.MSP430.o obj/lld/ELF/Arch/ELF.Mips.o obj/lld/ELF/Arch/ELF.MipsArchTree.o obj/lld/ELF/Arch/ELF.PPC.o obj/lld/ELF/Arch/ELF.PPC64.o obj/lld/ELF/Arch/ELF.RISCV.o obj/lld/ELF/Arch/ELF.SPARCV9.o obj/lld/ELF/Arch/ELF.X86.o obj/lld/ELF/Arch/ELF.X86_64.o obj/lld/ELF/ELF.CallGraphSort.o obj/lld/ELF/ELF.DWARF.o obj/lld/ELF/ELF.Driver.o obj/lld/ELF/ELF.DriverUtils.o obj/lld/ELF/ELF.EhFrame.o obj/lld/ELF/ELF.ICF.o obj/lld/ELF/ELF.InputFiles.o obj/lld/ELF/ELF.InputSection.o obj/lld/ELF/ELF.LTO.o obj/lld/ELF/ELF.LinkerScript.o obj/lld/ELF/ELF.MapFile.o obj/lld/ELF/ELF.MarkLive.o obj/lld/ELF/ELF.OutputSections.o obj/lld/ELF/ELF.Relocations.o obj/lld/ELF/ELF.ScriptLexer.o obj/lld/ELF/ELF.ScriptParser.o obj/lld/ELF/ELF.SymbolTable.o obj/lld/ELF/ELF.Symbols.o obj/lld/ELF/ELF.SyntheticSections.o obj/lld/ELF/ELF.Target.o obj/lld/ELF/ELF.Thunks.o obj/lld/ELF/ELF.Writer.o || obj/lld/ELF/Options.stamp ./lib/liblldCommon.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMCore.a ./lib/libLLVMLTO.a ./lib/libLLVMMC.a ./lib/libLLVMObject.a ./lib/libLLVMOption.a ./lib/libLLVMSupport.a obj/llvm/lib/Target/TargetsToBuild.stamp ./lib/libLLVMCodeGen.a ./lib/libLLVMAnalysis.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMTarget.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMExtensions.a ./lib/libLLVMLinker.a ./lib/libLLVMPasses.a ./lib/libLLVMCoroutines.a ./lib/libLLVMipo.a ./lib/libLLVMFrontendOpenMP.a ./lib/libLLVMInstrumentation.a ./lib/libLLVMVectorize.a ./lib/libLLVMObjCARCOpts.a ./lib/libLLVMAArch64CodeGen.a ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMAsmPrinter.a ./lib/libLLVMGlobalISel.a ./lib/libLLVMSelectionDAG.a ./lib/libLLVMCFGuard.a ./lib/libLLVMAArch64AsmParser.a ./lib/libLLVMAArch64Disassembler.a ./lib/libLLVMMCDisassembler.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

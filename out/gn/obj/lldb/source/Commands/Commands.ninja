@@ -1,0 +1,121 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -I../../clang/include -Igen/clang/include -I../../lldb/include -Igen/lldb/include -Igen/lldb/source/Commands -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/libxml2
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default -fno-strict-aliasing -fno-strict-aliasing
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = Commands
+target_output_name = liblldbCommands
+
+build obj/lldb/source/Commands/Commands.inputdeps.stamp: stamp obj/clang/include/clang/Basic/AttrHasAttributeImpl.stamp obj/clang/include/clang/Basic/AttrList.stamp obj/clang/include/clang/Basic/AttrSubMatchRulesList.stamp obj/clang/include/clang/Basic/DiagnosticASTKinds.stamp obj/clang/include/clang/Basic/DiagnosticAnalysisKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommentKinds.stamp obj/clang/include/clang/Basic/DiagnosticCommonKinds.stamp obj/clang/include/clang/Basic/DiagnosticCrossTUKinds.stamp obj/clang/include/clang/Basic/DiagnosticDriverKinds.stamp obj/clang/include/clang/Basic/DiagnosticFrontendKinds.stamp obj/clang/include/clang/Basic/DiagnosticGroups.stamp obj/clang/include/clang/Basic/DiagnosticLexKinds.stamp obj/clang/include/clang/Basic/DiagnosticParseKinds.stamp obj/clang/include/clang/Basic/DiagnosticRefactoringKinds.stamp obj/clang/include/clang/Basic/DiagnosticSemaKinds.stamp obj/clang/include/clang/Basic/DiagnosticSerializationKinds.stamp obj/clang/include/clang/Basic/arm_cde_builtins.stamp obj/clang/include/clang/Basic/arm_fp16.stamp obj/clang/include/clang/Basic/arm_mve_builtins.stamp obj/clang/include/clang/Basic/arm_neon.stamp obj/clang/include/clang/Basic/arm_sve_builtins.stamp obj/clang/include/clang/Basic/arm_sve_typeflags.stamp obj/clang/include/clang/Basic/riscv_vector_builtins.stamp obj/clang/include/clang/Basic/version.stamp obj/clang/include/clang/Config/Config.stamp obj/clang/include/clang/Driver/Options.stamp obj/clang/include/clang/Sema/AttrParsedAttrKinds.stamp obj/clang/include/clang/Sema/AttrParsedAttrList.stamp obj/clang/include/clang/Sema/AttrSpellingListIndex.stamp obj/clang/include/clang/StaticAnalyzer/Checkers/Checkers.stamp obj/clang/lib/Basic/write_vcsversion.stamp obj/lldb/include/lldb/Host/Config.stamp obj/lldb/include/lldb/Version/version.stamp obj/lldb/source/Commands/CommandOptions.stamp obj/lldb/source/Core/CoreProperties.stamp obj/lldb/source/Core/CorePropertiesEnum.stamp obj/lldb/source/Version/write_vcsversion.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMP.stamp obj/llvm/include/llvm/Frontend/OpenMP/OMPh.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/lldb/source/Commands/Commands.CommandCompletions.o: cxx ../../lldb/source/Commands/CommandCompletions.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandCompletions.cpp
+  source_name_part = CommandCompletions
+build obj/lldb/source/Commands/Commands.CommandObjectApropos.o: cxx ../../lldb/source/Commands/CommandObjectApropos.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectApropos.cpp
+  source_name_part = CommandObjectApropos
+build obj/lldb/source/Commands/Commands.CommandObjectBreakpoint.o: cxx ../../lldb/source/Commands/CommandObjectBreakpoint.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectBreakpoint.cpp
+  source_name_part = CommandObjectBreakpoint
+build obj/lldb/source/Commands/Commands.CommandObjectBreakpointCommand.o: cxx ../../lldb/source/Commands/CommandObjectBreakpointCommand.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectBreakpointCommand.cpp
+  source_name_part = CommandObjectBreakpointCommand
+build obj/lldb/source/Commands/Commands.CommandObjectCommands.o: cxx ../../lldb/source/Commands/CommandObjectCommands.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectCommands.cpp
+  source_name_part = CommandObjectCommands
+build obj/lldb/source/Commands/Commands.CommandObjectDisassemble.o: cxx ../../lldb/source/Commands/CommandObjectDisassemble.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectDisassemble.cpp
+  source_name_part = CommandObjectDisassemble
+build obj/lldb/source/Commands/Commands.CommandObjectExpression.o: cxx ../../lldb/source/Commands/CommandObjectExpression.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectExpression.cpp
+  source_name_part = CommandObjectExpression
+build obj/lldb/source/Commands/Commands.CommandObjectFrame.o: cxx ../../lldb/source/Commands/CommandObjectFrame.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectFrame.cpp
+  source_name_part = CommandObjectFrame
+build obj/lldb/source/Commands/Commands.CommandObjectGUI.o: cxx ../../lldb/source/Commands/CommandObjectGUI.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectGUI.cpp
+  source_name_part = CommandObjectGUI
+build obj/lldb/source/Commands/Commands.CommandObjectHelp.o: cxx ../../lldb/source/Commands/CommandObjectHelp.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectHelp.cpp
+  source_name_part = CommandObjectHelp
+build obj/lldb/source/Commands/Commands.CommandObjectLanguage.o: cxx ../../lldb/source/Commands/CommandObjectLanguage.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectLanguage.cpp
+  source_name_part = CommandObjectLanguage
+build obj/lldb/source/Commands/Commands.CommandObjectLog.o: cxx ../../lldb/source/Commands/CommandObjectLog.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectLog.cpp
+  source_name_part = CommandObjectLog
+build obj/lldb/source/Commands/Commands.CommandObjectMemory.o: cxx ../../lldb/source/Commands/CommandObjectMemory.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectMemory.cpp
+  source_name_part = CommandObjectMemory
+build obj/lldb/source/Commands/Commands.CommandObjectMemoryTag.o: cxx ../../lldb/source/Commands/CommandObjectMemoryTag.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectMemoryTag.cpp
+  source_name_part = CommandObjectMemoryTag
+build obj/lldb/source/Commands/Commands.CommandObjectMultiword.o: cxx ../../lldb/source/Commands/CommandObjectMultiword.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectMultiword.cpp
+  source_name_part = CommandObjectMultiword
+build obj/lldb/source/Commands/Commands.CommandObjectPlatform.o: cxx ../../lldb/source/Commands/CommandObjectPlatform.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectPlatform.cpp
+  source_name_part = CommandObjectPlatform
+build obj/lldb/source/Commands/Commands.CommandObjectPlugin.o: cxx ../../lldb/source/Commands/CommandObjectPlugin.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectPlugin.cpp
+  source_name_part = CommandObjectPlugin
+build obj/lldb/source/Commands/Commands.CommandObjectProcess.o: cxx ../../lldb/source/Commands/CommandObjectProcess.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectProcess.cpp
+  source_name_part = CommandObjectProcess
+build obj/lldb/source/Commands/Commands.CommandObjectQuit.o: cxx ../../lldb/source/Commands/CommandObjectQuit.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectQuit.cpp
+  source_name_part = CommandObjectQuit
+build obj/lldb/source/Commands/Commands.CommandObjectRegexCommand.o: cxx ../../lldb/source/Commands/CommandObjectRegexCommand.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectRegexCommand.cpp
+  source_name_part = CommandObjectRegexCommand
+build obj/lldb/source/Commands/Commands.CommandObjectRegister.o: cxx ../../lldb/source/Commands/CommandObjectRegister.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectRegister.cpp
+  source_name_part = CommandObjectRegister
+build obj/lldb/source/Commands/Commands.CommandObjectScript.o: cxx ../../lldb/source/Commands/CommandObjectScript.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectScript.cpp
+  source_name_part = CommandObjectScript
+build obj/lldb/source/Commands/Commands.CommandObjectSession.o: cxx ../../lldb/source/Commands/CommandObjectSession.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectSession.cpp
+  source_name_part = CommandObjectSession
+build obj/lldb/source/Commands/Commands.CommandObjectSettings.o: cxx ../../lldb/source/Commands/CommandObjectSettings.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectSettings.cpp
+  source_name_part = CommandObjectSettings
+build obj/lldb/source/Commands/Commands.CommandObjectSource.o: cxx ../../lldb/source/Commands/CommandObjectSource.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectSource.cpp
+  source_name_part = CommandObjectSource
+build obj/lldb/source/Commands/Commands.CommandObjectStats.o: cxx ../../lldb/source/Commands/CommandObjectStats.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectStats.cpp
+  source_name_part = CommandObjectStats
+build obj/lldb/source/Commands/Commands.CommandObjectTarget.o: cxx ../../lldb/source/Commands/CommandObjectTarget.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectTarget.cpp
+  source_name_part = CommandObjectTarget
+build obj/lldb/source/Commands/Commands.CommandObjectThread.o: cxx ../../lldb/source/Commands/CommandObjectThread.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectThread.cpp
+  source_name_part = CommandObjectThread
+build obj/lldb/source/Commands/Commands.CommandObjectThreadUtil.o: cxx ../../lldb/source/Commands/CommandObjectThreadUtil.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectThreadUtil.cpp
+  source_name_part = CommandObjectThreadUtil
+build obj/lldb/source/Commands/Commands.CommandObjectTrace.o: cxx ../../lldb/source/Commands/CommandObjectTrace.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectTrace.cpp
+  source_name_part = CommandObjectTrace
+build obj/lldb/source/Commands/Commands.CommandObjectType.o: cxx ../../lldb/source/Commands/CommandObjectType.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectType.cpp
+  source_name_part = CommandObjectType
+build obj/lldb/source/Commands/Commands.CommandObjectVersion.o: cxx ../../lldb/source/Commands/CommandObjectVersion.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectVersion.cpp
+  source_name_part = CommandObjectVersion
+build obj/lldb/source/Commands/Commands.CommandObjectWatchpoint.o: cxx ../../lldb/source/Commands/CommandObjectWatchpoint.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectWatchpoint.cpp
+  source_name_part = CommandObjectWatchpoint
+build obj/lldb/source/Commands/Commands.CommandObjectWatchpointCommand.o: cxx ../../lldb/source/Commands/CommandObjectWatchpointCommand.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandObjectWatchpointCommand.cpp
+  source_name_part = CommandObjectWatchpointCommand
+build obj/lldb/source/Commands/Commands.CommandOptionArgumentTable.o: cxx ../../lldb/source/Commands/CommandOptionArgumentTable.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandOptionArgumentTable.cpp
+  source_name_part = CommandOptionArgumentTable
+build obj/lldb/source/Commands/Commands.CommandOptionsProcessLaunch.o: cxx ../../lldb/source/Commands/CommandOptionsProcessLaunch.cpp || obj/lldb/source/Commands/Commands.inputdeps.stamp
+  source_file_part = CommandOptionsProcessLaunch.cpp
+  source_name_part = CommandOptionsProcessLaunch
+
+build ./lib/liblldbCommands.a: alink obj/lldb/source/Commands/Commands.CommandCompletions.o obj/lldb/source/Commands/Commands.CommandObjectApropos.o obj/lldb/source/Commands/Commands.CommandObjectBreakpoint.o obj/lldb/source/Commands/Commands.CommandObjectBreakpointCommand.o obj/lldb/source/Commands/Commands.CommandObjectCommands.o obj/lldb/source/Commands/Commands.CommandObjectDisassemble.o obj/lldb/source/Commands/Commands.CommandObjectExpression.o obj/lldb/source/Commands/Commands.CommandObjectFrame.o obj/lldb/source/Commands/Commands.CommandObjectGUI.o obj/lldb/source/Commands/Commands.CommandObjectHelp.o obj/lldb/source/Commands/Commands.CommandObjectLanguage.o obj/lldb/source/Commands/Commands.CommandObjectLog.o obj/lldb/source/Commands/Commands.CommandObjectMemory.o obj/lldb/source/Commands/Commands.CommandObjectMemoryTag.o obj/lldb/source/Commands/Commands.CommandObjectMultiword.o obj/lldb/source/Commands/Commands.CommandObjectPlatform.o obj/lldb/source/Commands/Commands.CommandObjectPlugin.o obj/lldb/source/Commands/Commands.CommandObjectProcess.o obj/lldb/source/Commands/Commands.CommandObjectQuit.o obj/lldb/source/Commands/Commands.CommandObjectRegexCommand.o obj/lldb/source/Commands/Commands.CommandObjectRegister.o obj/lldb/source/Commands/Commands.CommandObjectScript.o obj/lldb/source/Commands/Commands.CommandObjectSession.o obj/lldb/source/Commands/Commands.CommandObjectSettings.o obj/lldb/source/Commands/Commands.CommandObjectSource.o obj/lldb/source/Commands/Commands.CommandObjectStats.o obj/lldb/source/Commands/Commands.CommandObjectTarget.o obj/lldb/source/Commands/Commands.CommandObjectThread.o obj/lldb/source/Commands/Commands.CommandObjectThreadUtil.o obj/lldb/source/Commands/Commands.CommandObjectTrace.o obj/lldb/source/Commands/Commands.CommandObjectType.o obj/lldb/source/Commands/Commands.CommandObjectVersion.o obj/lldb/source/Commands/Commands.CommandObjectWatchpoint.o obj/lldb/source/Commands/Commands.CommandObjectWatchpointCommand.o obj/lldb/source/Commands/Commands.CommandOptionArgumentTable.o obj/lldb/source/Commands/Commands.CommandOptionsProcessLaunch.o || obj/lldb/source/Commands/CommandOptions.stamp ./lib/libLLVMSupport.a ./lib/liblldbCore.a ./lib/liblldbDataFormatters.a ./lib/liblldbHost.a ./lib/liblldbUtility.a ./lib/liblldbVersion.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libclangDriver.a ./lib/libclangBasic.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMOption.a ./lib/libLLVMWindowsDriver.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/liblldbHostMacOSXObjCXX.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

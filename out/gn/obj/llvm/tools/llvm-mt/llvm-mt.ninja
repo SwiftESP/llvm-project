@@ -1,0 +1,22 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/tools/llvm-mt
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = llvm-mt
+target_output_name = llvm-mt
+
+build obj/llvm/tools/llvm-mt/llvm-mt.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/tools/llvm-mt/Opts.stamp obj/llvm/tools/llvm-mt/llvm_mt-driver.stamp
+build obj/llvm/tools/llvm-mt/llvm-mt.llvm-mt.o: cxx ../../llvm/tools/llvm-mt/llvm-mt.cpp || obj/llvm/tools/llvm-mt/llvm-mt.inputdeps.stamp
+  source_file_part = llvm-mt.cpp
+  source_name_part = llvm-mt
+build obj/BUILD_DIR/gen/llvm/tools/llvm-mt/llvm-mt.llvm_mt-driver.o: cxx gen/llvm/tools/llvm-mt/llvm_mt-driver.cpp || obj/llvm/tools/llvm-mt/llvm-mt.inputdeps.stamp
+  source_file_part = llvm_mt-driver.cpp
+  source_name_part = llvm_mt-driver
+
+build ./bin/llvm-mt: link obj/llvm/tools/llvm-mt/llvm-mt.llvm-mt.o obj/BUILD_DIR/gen/llvm/tools/llvm-mt/llvm-mt.llvm_mt-driver.o ./lib/libLLVMOption.a ./lib/libLLVMSupport.a ./lib/libLLVMWindowsManifest.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a || obj/llvm/tools/llvm-mt/Opts.stamp obj/llvm/tools/llvm-mt/llvm_mt-driver.stamp
+  ldflags = -mmacos-version-min=10.10
+  libs = -lpthread -lz -lxml2
+  frameworks =
+  swiftmodules =
+  output_extension = 
+  output_dir = ./bin

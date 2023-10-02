@@ -1,0 +1,97 @@
+defines =
+include_dirs = -I../../lld/MachO -I../../libunwind/include -I../../llvm/include -Igen/llvm/include -I../../lld/include -Igen/lld/include -Igen/lld/MachO
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = MachO
+target_output_name = liblldMachO
+
+build obj/lld/MachO/MachO.inputdeps.stamp: stamp obj/lld/Common/write_vcsversion.stamp obj/lld/MachO/Options.stamp obj/lld/include/lld/Common/version.stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp obj/llvm/lib/Target/AArch64/AArch64GenCallingConv.stamp obj/llvm/lib/Target/AArch64/AArch64GenDAGISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenFastISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenGlobalISel.stamp obj/llvm/lib/Target/AArch64/AArch64GenMCPseudoLowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenO0PreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenPostLegalizeGILowering.stamp obj/llvm/lib/Target/AArch64/AArch64GenPreLegalizeGICombiner.stamp obj/llvm/lib/Target/AArch64/AArch64GenRegisterBank.stamp obj/llvm/lib/Target/AArch64/AsmParser/AArch64GenAsmMatcher.stamp obj/llvm/lib/Target/AArch64/Disassembler/AArch64GenDisassemblerTables.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenAsmWriter1.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenInstrInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenMCCodeEmitter.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenRegisterInfo.stamp obj/llvm/lib/Target/AArch64/MCTargetDesc/AArch64GenSubtargetInfo.stamp obj/llvm/lib/Target/AArch64/Utils/AArch64GenSystemOperands.stamp
+build obj/lld/MachO/Arch/MachO.ARM.o: cxx ../../lld/MachO/Arch/ARM.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = ARM.cpp
+  source_name_part = ARM
+build obj/lld/MachO/Arch/MachO.ARM64.o: cxx ../../lld/MachO/Arch/ARM64.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = ARM64.cpp
+  source_name_part = ARM64
+build obj/lld/MachO/Arch/MachO.ARM64Common.o: cxx ../../lld/MachO/Arch/ARM64Common.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = ARM64Common.cpp
+  source_name_part = ARM64Common
+build obj/lld/MachO/Arch/MachO.ARM64_32.o: cxx ../../lld/MachO/Arch/ARM64_32.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = ARM64_32.cpp
+  source_name_part = ARM64_32
+build obj/lld/MachO/Arch/MachO.X86_64.o: cxx ../../lld/MachO/Arch/X86_64.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = X86_64.cpp
+  source_name_part = X86_64
+build obj/lld/MachO/MachO.ConcatOutputSection.o: cxx ../../lld/MachO/ConcatOutputSection.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = ConcatOutputSection.cpp
+  source_name_part = ConcatOutputSection
+build obj/lld/MachO/MachO.Driver.o: cxx ../../lld/MachO/Driver.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = Driver.cpp
+  source_name_part = Driver
+build obj/lld/MachO/MachO.DriverUtils.o: cxx ../../lld/MachO/DriverUtils.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = DriverUtils.cpp
+  source_name_part = DriverUtils
+build obj/lld/MachO/MachO.Dwarf.o: cxx ../../lld/MachO/Dwarf.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = Dwarf.cpp
+  source_name_part = Dwarf
+build obj/lld/MachO/MachO.EhFrame.o: cxx ../../lld/MachO/EhFrame.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = EhFrame.cpp
+  source_name_part = EhFrame
+build obj/lld/MachO/MachO.ExportTrie.o: cxx ../../lld/MachO/ExportTrie.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = ExportTrie.cpp
+  source_name_part = ExportTrie
+build obj/lld/MachO/MachO.ICF.o: cxx ../../lld/MachO/ICF.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = ICF.cpp
+  source_name_part = ICF
+build obj/lld/MachO/MachO.InputFiles.o: cxx ../../lld/MachO/InputFiles.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = InputFiles.cpp
+  source_name_part = InputFiles
+build obj/lld/MachO/MachO.InputSection.o: cxx ../../lld/MachO/InputSection.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = InputSection.cpp
+  source_name_part = InputSection
+build obj/lld/MachO/MachO.LTO.o: cxx ../../lld/MachO/LTO.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = LTO.cpp
+  source_name_part = LTO
+build obj/lld/MachO/MachO.MapFile.o: cxx ../../lld/MachO/MapFile.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = MapFile.cpp
+  source_name_part = MapFile
+build obj/lld/MachO/MachO.MarkLive.o: cxx ../../lld/MachO/MarkLive.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = MarkLive.cpp
+  source_name_part = MarkLive
+build obj/lld/MachO/MachO.ObjC.o: cxx ../../lld/MachO/ObjC.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = ObjC.cpp
+  source_name_part = ObjC
+build obj/lld/MachO/MachO.OutputSection.o: cxx ../../lld/MachO/OutputSection.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = OutputSection.cpp
+  source_name_part = OutputSection
+build obj/lld/MachO/MachO.OutputSegment.o: cxx ../../lld/MachO/OutputSegment.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = OutputSegment.cpp
+  source_name_part = OutputSegment
+build obj/lld/MachO/MachO.Relocations.o: cxx ../../lld/MachO/Relocations.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = Relocations.cpp
+  source_name_part = Relocations
+build obj/lld/MachO/MachO.SectionPriorities.o: cxx ../../lld/MachO/SectionPriorities.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = SectionPriorities.cpp
+  source_name_part = SectionPriorities
+build obj/lld/MachO/MachO.SymbolTable.o: cxx ../../lld/MachO/SymbolTable.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = SymbolTable.cpp
+  source_name_part = SymbolTable
+build obj/lld/MachO/MachO.Symbols.o: cxx ../../lld/MachO/Symbols.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = Symbols.cpp
+  source_name_part = Symbols
+build obj/lld/MachO/MachO.SyntheticSections.o: cxx ../../lld/MachO/SyntheticSections.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = SyntheticSections.cpp
+  source_name_part = SyntheticSections
+build obj/lld/MachO/MachO.Target.o: cxx ../../lld/MachO/Target.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = Target.cpp
+  source_name_part = Target
+build obj/lld/MachO/MachO.UnwindInfoSection.o: cxx ../../lld/MachO/UnwindInfoSection.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = UnwindInfoSection.cpp
+  source_name_part = UnwindInfoSection
+build obj/lld/MachO/MachO.Writer.o: cxx ../../lld/MachO/Writer.cpp || obj/lld/MachO/MachO.inputdeps.stamp
+  source_file_part = Writer.cpp
+  source_name_part = Writer
+
+build ./lib/liblldMachO.a: alink obj/lld/MachO/Arch/MachO.ARM.o obj/lld/MachO/Arch/MachO.ARM64.o obj/lld/MachO/Arch/MachO.ARM64Common.o obj/lld/MachO/Arch/MachO.ARM64_32.o obj/lld/MachO/Arch/MachO.X86_64.o obj/lld/MachO/MachO.ConcatOutputSection.o obj/lld/MachO/MachO.Driver.o obj/lld/MachO/MachO.DriverUtils.o obj/lld/MachO/MachO.Dwarf.o obj/lld/MachO/MachO.EhFrame.o obj/lld/MachO/MachO.ExportTrie.o obj/lld/MachO/MachO.ICF.o obj/lld/MachO/MachO.InputFiles.o obj/lld/MachO/MachO.InputSection.o obj/lld/MachO/MachO.LTO.o obj/lld/MachO/MachO.MapFile.o obj/lld/MachO/MachO.MarkLive.o obj/lld/MachO/MachO.ObjC.o obj/lld/MachO/MachO.OutputSection.o obj/lld/MachO/MachO.OutputSegment.o obj/lld/MachO/MachO.Relocations.o obj/lld/MachO/MachO.SectionPriorities.o obj/lld/MachO/MachO.SymbolTable.o obj/lld/MachO/MachO.Symbols.o obj/lld/MachO/MachO.SyntheticSections.o obj/lld/MachO/MachO.Target.o obj/lld/MachO/MachO.UnwindInfoSection.o obj/lld/MachO/MachO.Writer.o || obj/lld/MachO/Options.stamp ./lib/liblldCommon.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMObject.a ./lib/libLLVMOption.a ./lib/libLLVMSupport.a obj/llvm/lib/Target/TargetsToBuild.stamp ./lib/libLLVMCodeGen.a ./lib/libLLVMAnalysis.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMCore.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a ./lib/libLLVMBitWriter.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMTarget.a ./lib/libLLVMScalarOpts.a ./lib/libLLVMAggressiveInstCombine.a ./lib/libLLVMInstCombine.a ./lib/libLLVMAArch64CodeGen.a ./lib/libLLVMAArch64Desc.a ./lib/libLLVMAArch64Info.a ./lib/libLLVMAArch64Utils.a ./lib/libLLVMAsmPrinter.a ./lib/libLLVMGlobalISel.a ./lib/libLLVMSelectionDAG.a ./lib/libLLVMCFGuard.a ./lib/libLLVMAArch64AsmParser.a ./lib/libLLVMAArch64Disassembler.a ./lib/libLLVMMCDisassembler.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib

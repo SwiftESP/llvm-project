@@ -1,0 +1,58 @@
+defines =
+include_dirs = -I../../llvm/include -Igen/llvm/include -Igen/llvm/include/llvm/IR
+cflags = -mmacos-version-min=10.10 -O3 -fdiagnostics-color -Wall -Wextra -Wno-unused-parameter -Wdelete-non-virtual-dtor -Wstring-conversion -no-canonical-prefixes -Werror=date-time -fPIC -Wcovered-switch-default
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti
+label_name = InstCombine
+target_output_name = libLLVMInstCombine
+
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp: stamp obj/llvm/include/llvm/Config/AsmParsers.def.stamp obj/llvm/include/llvm/Config/AsmPrinters.def.stamp obj/llvm/include/llvm/Config/Disassemblers.def.stamp obj/llvm/include/llvm/Config/TargetExegesis.def.stamp obj/llvm/include/llvm/Config/TargetMCAs.def.stamp obj/llvm/include/llvm/Config/Targets.def.stamp obj/llvm/include/llvm/Config/abi-breaking.stamp obj/llvm/include/llvm/Config/config.stamp obj/llvm/include/llvm/Config/llvm-config.stamp obj/llvm/include/llvm/IR/Attributes.stamp obj/llvm/include/llvm/IR/IntrinsicEnums.stamp obj/llvm/include/llvm/IR/IntrinsicImpl.stamp obj/llvm/include/llvm/IR/IntrinsicsAArch64.stamp obj/llvm/include/llvm/IR/IntrinsicsAMDGPU.stamp obj/llvm/include/llvm/IR/IntrinsicsARM.stamp obj/llvm/include/llvm/IR/IntrinsicsBPF.stamp obj/llvm/include/llvm/IR/IntrinsicsDirectX.stamp obj/llvm/include/llvm/IR/IntrinsicsHexagon.stamp obj/llvm/include/llvm/IR/IntrinsicsMips.stamp obj/llvm/include/llvm/IR/IntrinsicsNVPTX.stamp obj/llvm/include/llvm/IR/IntrinsicsPowerPC.stamp obj/llvm/include/llvm/IR/IntrinsicsR600.stamp obj/llvm/include/llvm/IR/IntrinsicsRISCV.stamp obj/llvm/include/llvm/IR/IntrinsicsS390.stamp obj/llvm/include/llvm/IR/IntrinsicsVE.stamp obj/llvm/include/llvm/IR/IntrinsicsWebAssembly.stamp obj/llvm/include/llvm/IR/IntrinsicsX86.stamp obj/llvm/include/llvm/IR/IntrinsicsXCore.stamp obj/llvm/include/llvm/IR/IntrinsicsXtensa.stamp obj/llvm/include/llvm/Support/write_extension_def.stamp obj/llvm/include/llvm/Support/write_vcsrevision.stamp
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineAddSub.o: cxx ../../llvm/lib/Transforms/InstCombine/InstCombineAddSub.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstCombineAddSub.cpp
+  source_name_part = InstCombineAddSub
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineAndOrXor.o: cxx ../../llvm/lib/Transforms/InstCombine/InstCombineAndOrXor.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstCombineAndOrXor.cpp
+  source_name_part = InstCombineAndOrXor
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineAtomicRMW.o: cxx ../../llvm/lib/Transforms/InstCombine/InstCombineAtomicRMW.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstCombineAtomicRMW.cpp
+  source_name_part = InstCombineAtomicRMW
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineCalls.o: cxx ../../llvm/lib/Transforms/InstCombine/InstCombineCalls.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstCombineCalls.cpp
+  source_name_part = InstCombineCalls
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineCasts.o: cxx ../../llvm/lib/Transforms/InstCombine/InstCombineCasts.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstCombineCasts.cpp
+  source_name_part = InstCombineCasts
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineCompares.o: cxx ../../llvm/lib/Transforms/InstCombine/InstCombineCompares.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstCombineCompares.cpp
+  source_name_part = InstCombineCompares
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineLoadStoreAlloca.o: cxx ../../llvm/lib/Transforms/InstCombine/InstCombineLoadStoreAlloca.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstCombineLoadStoreAlloca.cpp
+  source_name_part = InstCombineLoadStoreAlloca
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineMulDivRem.o: cxx ../../llvm/lib/Transforms/InstCombine/InstCombineMulDivRem.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstCombineMulDivRem.cpp
+  source_name_part = InstCombineMulDivRem
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineNegator.o: cxx ../../llvm/lib/Transforms/InstCombine/InstCombineNegator.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstCombineNegator.cpp
+  source_name_part = InstCombineNegator
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombinePHI.o: cxx ../../llvm/lib/Transforms/InstCombine/InstCombinePHI.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstCombinePHI.cpp
+  source_name_part = InstCombinePHI
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineSelect.o: cxx ../../llvm/lib/Transforms/InstCombine/InstCombineSelect.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstCombineSelect.cpp
+  source_name_part = InstCombineSelect
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineShifts.o: cxx ../../llvm/lib/Transforms/InstCombine/InstCombineShifts.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstCombineShifts.cpp
+  source_name_part = InstCombineShifts
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineSimplifyDemanded.o: cxx ../../llvm/lib/Transforms/InstCombine/InstCombineSimplifyDemanded.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstCombineSimplifyDemanded.cpp
+  source_name_part = InstCombineSimplifyDemanded
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineVectorOps.o: cxx ../../llvm/lib/Transforms/InstCombine/InstCombineVectorOps.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstCombineVectorOps.cpp
+  source_name_part = InstCombineVectorOps
+build obj/llvm/lib/Transforms/InstCombine/InstCombine.InstructionCombining.o: cxx ../../llvm/lib/Transforms/InstCombine/InstructionCombining.cpp || obj/llvm/lib/Transforms/InstCombine/InstCombine.inputdeps.stamp
+  source_file_part = InstructionCombining.cpp
+  source_name_part = InstructionCombining
+
+build ./lib/libLLVMInstCombine.a: alink obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineAddSub.o obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineAndOrXor.o obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineAtomicRMW.o obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineCalls.o obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineCasts.o obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineCompares.o obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineLoadStoreAlloca.o obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineMulDivRem.o obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineNegator.o obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombinePHI.o obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineSelect.o obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineShifts.o obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineSimplifyDemanded.o obj/llvm/lib/Transforms/InstCombine/InstCombine.InstCombineVectorOps.o obj/llvm/lib/Transforms/InstCombine/InstCombine.InstructionCombining.o || ./lib/libLLVMAnalysis.a ./lib/libLLVMCore.a ./lib/libLLVMSupport.a ./lib/libLLVMTransformUtils.a ./lib/libLLVMBinaryFormat.a ./lib/libLLVMSupportBlake3.a ./lib/libLLVMDemangle.a ./lib/libLLVMRemarks.a ./lib/libLLVMBitstreamReader.a ./lib/libLLVMProfileData.a ./lib/libLLVMDebugInfoDWARF.a ./lib/libLLVMMC.a ./lib/libLLVMDebugInfoCodeView.a ./lib/libLLVMDebugInfoMSF.a ./lib/libLLVMObject.a ./lib/libLLVMBitReader.a ./lib/libLLVMIRReader.a ./lib/libLLVMAsmParser.a ./lib/libLLVMMCParser.a ./lib/libLLVMTextAPI.a ./lib/libLLVMSymbolize.a ./lib/libLLVMDebugInfoPDB.a
+  arflags =
+  output_extension = 
+  output_dir = ./lib
