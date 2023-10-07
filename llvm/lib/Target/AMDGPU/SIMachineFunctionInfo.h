@@ -538,8 +538,8 @@ public: // FIXME
   bool isCalleeSavedReg(const MCPhysReg *CSRegs, MCPhysReg Reg);
 
 public:
-  SIMachineFunctionInfo(const MachineFunction &MF);
   SIMachineFunctionInfo(const SIMachineFunctionInfo &MFI) = default;
+  SIMachineFunctionInfo(const Function &F, const GCNSubtarget *STI);
 
   MachineFunctionInfo *
   clone(BumpPtrAllocator &Allocator, MachineFunction &DestMF,
@@ -991,7 +991,7 @@ public:
 
   // \returns true if a function has a use of AGPRs via inline asm or
   // has a call which may use it.
-  bool mayUseAGPRs(const MachineFunction &MF) const;
+  bool mayUseAGPRs(const Function &F) const;
 
   // \returns true if a function needs or may need AGPRs.
   bool usesAGPRs(const MachineFunction &MF) const;

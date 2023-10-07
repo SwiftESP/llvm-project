@@ -133,8 +133,8 @@ private:
 public:
   X86MachineFunctionInfo() = default;
 
-  explicit X86MachineFunctionInfo(MachineFunction &MF) {}
-  explicit X86MachineFunctionInfo(const X86MachineFunctionInfo &) = default;
+  X86MachineFunctionInfo(const Function &F, const TargetSubtargetInfo *STI) {}
+  X86MachineFunctionInfo(const X86MachineFunctionInfo &) = default;
 
   MachineFunctionInfo *
   clone(BumpPtrAllocator &Allocator, MachineFunction &DestMF,

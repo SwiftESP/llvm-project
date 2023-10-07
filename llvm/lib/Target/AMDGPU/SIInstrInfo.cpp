@@ -1516,7 +1516,8 @@ void SIInstrInfo::storeRegToStackSlot(MachineBasicBlock &MBB,
                                       Register SrcReg, bool isKill,
                                       int FrameIndex,
                                       const TargetRegisterClass *RC,
-                                      const TargetRegisterInfo *TRI) const {
+                                      const TargetRegisterInfo *TRI,
+                                      Register VReg) const {
   MachineFunction *MF = MBB.getParent();
   SIMachineFunctionInfo *MFI = MF->getInfo<SIMachineFunctionInfo>();
   MachineFrameInfo &FrameInfo = MF->getFrameInfo();
@@ -1682,7 +1683,8 @@ void SIInstrInfo::loadRegFromStackSlot(MachineBasicBlock &MBB,
                                        MachineBasicBlock::iterator MI,
                                        Register DestReg, int FrameIndex,
                                        const TargetRegisterClass *RC,
-                                       const TargetRegisterInfo *TRI) const {
+                                       const TargetRegisterInfo *TRI,
+                                       Register VReg) const {
   MachineFunction *MF = MBB.getParent();
   SIMachineFunctionInfo *MFI = MF->getInfo<SIMachineFunctionInfo>();
   MachineFrameInfo &FrameInfo = MF->getFrameInfo();

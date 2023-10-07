@@ -34,7 +34,7 @@ namespace llvm {
     SparcMachineFunctionInfo()
       : GlobalBaseReg(0), VarArgsFrameOffset(0), SRetReturnReg(0),
         IsLeafProc(false) {}
-    explicit SparcMachineFunctionInfo(MachineFunction &MF)
+    explicit SparcMachineFunctionInfo(const Function &F, const TargetSubtargetInfo *STI)
       : GlobalBaseReg(0), VarArgsFrameOffset(0), SRetReturnReg(0),
         IsLeafProc(false) {}
 

@@ -232,6 +232,11 @@ void MachineFunction::init() {
   PSVManager = std::make_unique<PseudoSourceValueManager>(getTarget());
 }
 
+void MachineFunction::initTargetMachineFunctionInfo(const TargetSubtargetInfo &STI) {
+  assert(!MFInfo && "MachineFunctionInfo already set");
+  MFInfo = Target.createMachineFunctionInfo(Allocator, F, &STI);
+}
+
 MachineFunction::~MachineFunction() {
   clear();
 }

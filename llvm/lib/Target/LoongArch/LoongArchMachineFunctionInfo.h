@@ -33,7 +33,8 @@ private:
   unsigned CalleeSavedStackSize = 0;
 
 public:
-  LoongArchMachineFunctionInfo(const MachineFunction &MF) {}
+  LoongArchMachineFunctionInfo(const Function &F,
+                               const TargetSubtargetInfo *STI) {}
 
   MachineFunctionInfo *
   clone(BumpPtrAllocator &Allocator, MachineFunction &DestMF,

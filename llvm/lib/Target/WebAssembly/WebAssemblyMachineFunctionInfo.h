@@ -70,8 +70,8 @@ class WebAssemblyFunctionInfo final : public MachineFunctionInfo {
   WasmEHFuncInfo *WasmEHInfo = nullptr;
 
 public:
-  explicit WebAssemblyFunctionInfo(MachineFunction &MF_)
-      : MF(&MF_), WasmEHInfo(MF_.getWasmEHFuncInfo()) {}
+  explicit WebAssemblyFunctionInfo(const Function &F,
+                                   const TargetSubtargetInfo *STI);
   ~WebAssemblyFunctionInfo() override;
 
   MachineFunctionInfo *

@@ -37,7 +37,7 @@ class SystemZMachineFunctionInfo : public MachineFunctionInfo {
   unsigned NumLocalDynamics;
 
 public:
-  explicit SystemZMachineFunctionInfo(MachineFunction &MF)
+  SystemZMachineFunctionInfo(const Function &F, const TargetSubtargetInfo *STI)
     : VarArgsFirstGPR(0), VarArgsFirstFPR(0), VarArgsFrameIndex(0),
       RegSaveFrameIndex(0), FramePointerSaveIndex(0), NumLocalDynamics(0) {}
 

@@ -149,7 +149,7 @@ public:
                           MachineBasicBlock &RestoreMBB, Register SGPR,
                           RegScavenger *RS) const;
 
-  void eliminateFrameIndex(MachineBasicBlock::iterator MI, int SPAdj,
+  bool eliminateFrameIndex(MachineBasicBlock::iterator MI, int SPAdj,
                            unsigned FIOperandNum,
                            RegScavenger *RS) const override;
 

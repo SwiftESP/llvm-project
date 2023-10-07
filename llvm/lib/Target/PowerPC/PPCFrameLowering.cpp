@@ -2475,8 +2475,8 @@ bool PPCFrameLowering::spillCalleeSavedRegisters(
           TII.storeRegToStackSlotNoUpd(MBB, MI, Reg, !IsLiveIn,
                                        I.getFrameIdx(), RC, TRI);
         else
-          TII.storeRegToStackSlot(MBB, MI, Reg, !IsLiveIn, I.getFrameIdx(),
-                                  RC, TRI);
+          TII.storeRegToStackSlot(MBB, MI, Reg, !IsLiveIn, I.getFrameIdx(), RC,
+                                  TRI, Register());
       }
     }
   }
@@ -2648,7 +2648,8 @@ bool PPCFrameLowering::restoreCalleeSavedRegisters(
           TII.loadRegFromStackSlotNoUpd(MBB, I, Reg, CSI[i].getFrameIdx(), RC,
                                         TRI);
         else
-          TII.loadRegFromStackSlot(MBB, I, Reg, CSI[i].getFrameIdx(), RC, TRI);
+          TII.loadRegFromStackSlot(MBB, I, Reg, CSI[i].getFrameIdx(), RC, TRI,
+                                   Register());
 
         assert(I != MBB.begin() &&
                "loadRegFromStackSlot didn't insert any code!");

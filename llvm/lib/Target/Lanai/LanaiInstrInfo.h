@@ -56,14 +56,16 @@ public:
                       MachineBasicBlock::iterator Position,
                       Register SourceRegister, bool IsKill, int FrameIndex,
                       const TargetRegisterClass *RegisterClass,
-                      const TargetRegisterInfo *RegisterInfo) const override;
+                      const TargetRegisterInfo *RegisterInfo,
+                      Register VReg) const override;
 
   void
   loadRegFromStackSlot(MachineBasicBlock &MBB,
                        MachineBasicBlock::iterator Position,
                        Register DestinationRegister, int FrameIndex,
                        const TargetRegisterClass *RegisterClass,
-                       const TargetRegisterInfo *RegisterInfo) const override;
+                       const TargetRegisterInfo *RegisterInfo,
+                       Register VReg) const override;
 
   bool expandPostRAPseudo(MachineInstr &MI) const override;
 

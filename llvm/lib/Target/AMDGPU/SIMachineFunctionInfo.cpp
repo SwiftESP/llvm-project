@@ -29,12 +29,18 @@
 
 using namespace llvm;
 
-SIMachineFunctionInfo::SIMachineFunctionInfo(const MachineFunction &MF)
-  : AMDGPUMachineFunction(MF),
-    Mode(MF.getFunction()),
-    BufferPSV(static_cast<const AMDGPUTargetMachine &>(MF.getTarget())),
-    ImagePSV(static_cast<const AMDGPUTargetMachine &>(MF.getTarget())),
-    GWSResourcePSV(static_cast<const AMDGPUTargetMachine &>(MF.getTarget())),
+const GCNTargetMachine &getTM(const GCNSubtarget *STI) {
+  const SITargetLowering *TLI = STI->getTargetLowering();
+  return static_cast<const GCNTargetMachine &>(TLI->getTargetMachine());
+}
+
+SIMachineFunctionInfo::SIMachineFunctionInfo(const Function &F,
+                                             const GCNSubtarget *STI)
+  : AMDGPUMachineFunction(F, *STI),
+    Mode(F),
+    BufferPSV(static_cast<const AMDGPUTargetMachine &>(getTM(STI))),
+    ImagePSV(static_cast<const AMDGPUTargetMachine &>(getTM(STI))),
+    GWSResourcePSV(static_cast<const AMDGPUTargetMachine &>(getTM(STI))),
     PrivateSegmentBuffer(false),
     DispatchPtr(false),
     QueuePtr(false),
@@ -54,8 +60,7 @@ SIMachineFunctionInfo::SIMachineFunctionInfo(const MachineFunction &MF)
     ImplicitArgPtr(false),
     GITPtrHigh(0xffffffff),
     HighBitsOf32BitAddress(0) {
-  const GCNSubtarget &ST = MF.getSubtarget<GCNSubtarget>();
-  const Function &F = MF.getFunction();
+  const GCNSubtarget &ST = *static_cast<const GCNSubtarget *>(STI);
   FlatWorkGroupSizes = ST.getFlatWorkGroupSizes(F);
   WavesPerEU = ST.getWavesPerEU(F);
 
@@ -106,7 +111,7 @@ SIMachineFunctionInfo::SIMachineFunctionInfo(const MachineFunction &MF)
 
     if (ST.hasGFX90AInsts() &&
         ST.getMaxNumVGPRs(F) <= AMDGPU::VGPR_32RegClass.getNumRegs() &&
-        !mayUseAGPRs(MF))
+        !mayUseAGPRs(F))
       MayNeedAGPRs = false; // We will select all MAI with VGPR operands.
   }
 
@@ -664,8 +669,8 @@ bool SIMachineFunctionInfo::initializeBaseYamlFields(
   return false;
 }
 
-bool SIMachineFunctionInfo::mayUseAGPRs(const MachineFunction &MF) const {
-  for (const BasicBlock &BB : MF.getFunction()) {
+bool SIMachineFunctionInfo::mayUseAGPRs(const Function &F) const {
+  for (const BasicBlock &BB : F) {
     for (const Instruction &I : BB) {
       const auto *CB = dyn_cast<CallBase>(&I);
       if (!CB)

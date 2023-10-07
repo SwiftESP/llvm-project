@@ -61,6 +61,10 @@ public:
   TargetLoweringObjectFile *getObjFileLowering() const override {
     return TLOF.get();
   }
+  
+  MachineFunctionInfo *
+  createMachineFunctionInfo(BumpPtrAllocator &Allocator, const Function &F,
+                            const TargetSubtargetInfo *STI) const override;
 
   void adjustPassManager(PassManagerBuilder &) override;
   void registerPassBuilderCallbacks(PassBuilder &PB) override;

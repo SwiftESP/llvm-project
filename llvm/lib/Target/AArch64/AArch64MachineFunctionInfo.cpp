@@ -66,12 +66,12 @@ static std::pair<bool, bool> GetSignReturnAddress(const Function &F) {
   return {true, false};
 }
 
-static bool ShouldSignWithBKey(const Function &F, const MachineFunction &MF) {
+static bool ShouldSignWithBKey(const Function &F, const AArch64Subtarget &STI) {
   if (!F.hasFnAttribute("sign-return-address-key")) {
     if (const auto *BKey = mdconst::extract_or_null<ConstantInt>(
             F.getParent()->getModuleFlag("sign-return-address-with-bkey")))
       return BKey->getZExtValue();
-    if (MF.getTarget().getTargetTriple().isOSWindows())
+    if (STI.getTargetTriple().isOSWindows())
       return true;
     return false;
   }
@@ -82,15 +82,15 @@ static bool ShouldSignWithBKey(const Function &F, const MachineFunction &MF) {
   return Key.equals_insensitive("b_key");
 }
 
-AArch64FunctionInfo::AArch64FunctionInfo(MachineFunction &MF_) : MF(&MF_) {
+AArch64FunctionInfo::AArch64FunctionInfo(const Function &F,
+                                         const AArch64Subtarget *STI) {
   // If we already know that the function doesn't have a redzone, set
   // HasRedZone here.
-  if (MF->getFunction().hasFnAttribute(Attribute::NoRedZone))
+  if (F.hasFnAttribute(Attribute::NoRedZone))
     HasRedZone = false;
 
-  const Function &F = MF->getFunction();
   std::tie(SignReturnAddress, SignReturnAddressAll) = GetSignReturnAddress(F);
-  SignWithBKey = ShouldSignWithBKey(F, *MF);
+  SignWithBKey = ShouldSignWithBKey(F, *STI);
   // TODO: skip functions that have no instrumented allocas for optimization
   IsMTETagged = F.hasFnAttribute(Attribute::SanitizeMemTag);
 

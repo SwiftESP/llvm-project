@@ -45,10 +45,17 @@ class AVRMachineFunctionInfo : public MachineFunctionInfo {
   int VarArgsFrameIndex;
 
 public:
-  AVRMachineFunctionInfo()
+  AVRMachineFunctionInfo(const Function &F, const TargetSubtargetInfo *STI)
       : HasSpills(false), HasAllocas(false), HasStackArgs(false),
         IsInterruptHandler(false), IsSignalHandler(false),
-        CalleeSavedFrameSize(0), VarArgsFrameIndex(0) {}
+        CalleeSavedFrameSize(0), VarArgsFrameIndex(0) {
+    CallingConv::ID CallConv = F.getCallingConv();
+          
+    this->IsInterruptHandler =
+        CallConv == CallingConv::AVR_INTR || F.hasFnAttribute("interrupt");
+    this->IsSignalHandler =
+        CallConv == CallingConv::AVR_SIGNAL || F.hasFnAttribute("signal");
+  }
 
   explicit AVRMachineFunctionInfo(MachineFunction &MF)
       : HasSpills(false), HasAllocas(false), HasStackArgs(false),

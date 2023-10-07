@@ -40,7 +40,7 @@ class MSP430MachineFunctionInfo : public MachineFunctionInfo {
 public:
   MSP430MachineFunctionInfo() = default;
 
-  explicit MSP430MachineFunctionInfo(MachineFunction &MF)
+  explicit MSP430MachineFunctionInfo(const Function &F, const TargetSubtargetInfo *STI)
     : CalleeSavedFrameSize(0), ReturnAddrIndex(0), SRetReturnReg(0) {}
 
   MachineFunctionInfo *
